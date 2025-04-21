@@ -1,0 +1,2 @@
+quartic
+nonsingular

@@ -1,0 +1,3 @@
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QIf \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, then we have \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QThen \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a proper closed subset of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and\\E$"}
+{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QThen \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a proper closed subset of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and we have \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

@@ -1,0 +1,190 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[tracking]{microtype}
+\usepackage[sc,osf]{mathpazo}
+\linespread{1.025}
+\usepackage[euler-digits,small]{eulervm}
+\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{bbm}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+\newcommand{\prob}[1]{\noindent {\bf #1}.}
+\newcommand{\abs}[1]{\left| #1  \right|}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\spec}[1]{\text{Spec}(#1)}
+\newcommand{\Ker}[1]{\text{Ker}(#1)}
+\newcommand{\Img}[1]{\text{Im}(#1)}
+\newcommand{\Coker}[1]{\text{Coker}(#1)}
+\newcommand{\Supp}[1]{\text{Supp}(#1)}
+\newcommand{\height}[1]{\text{height}~#1}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Hom}{Hom}
+\newtheorem{prop}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
+
+\item 
+\begin{itemize}
+    \item[(a)] Let $Y$ be the plane curve $y = x^2$ (i.e. $Y$ is the zero set of the polynomial $f = y - x^2$). Show that $A(Y)$ is isomorphic to a polynomial ring in one variable over $k$.
+
+    \item[(b)] Let $Z$ be the plane curve $xy = 1$. Show that $A(Z)$ is not isomorphic to a polynomial ring in one variable over $k$.
+
+    \item[(c)] Let $f$ be any irreducible quadratic polynomial in $k[x, y]$, and let $W$ be the conic defined by $f$. Show that $A(W)$ is isomorphic to $A(Y)$ or $A(Z)$. Which one is it when?
+\end{itemize}
+
+\item Let $Y \subseteq \A^3$ be the set $Y = \{(t, t^2, t^3) \mid t \in k \}$. Show that $Y$ is an affine variety of dimension $1$. Find generators for the ideal $I(Y)$. Show that $A(Y)$ is isomorphic to a polynomial ring in one variable over $k$. We say that $Y$ is given by the \textit{parametric representation} $x = t$, $y = t^2$, $z = t^3$.
+
+\begin{proof}
+    We have $I(Y) = (x^2 - y, x^3 - z)$, and $Y$ is irreducible since it is homeomorphic to the affine line $\A^1$ under the map $t \mapsto (t, t^2, t^3)$, thus $Y$ is an affine variety of dimension $1$. Consider the map $f : k[x, y, z] \to k[t]$ defined by
+    \begin{equation*}
+        x \mapsto t, \quad y \mapsto t^2, \quad z \mapsto t^3.
+    \end{equation*}
+    It is clearly surjective, and $k[t]$ is an integral domain, which implies $\ker{f}$ is a prime ideal. Since $\dim{k[t]} = 1$, the set $Y$ is an affine variety of dimension $1$ provided $\ker{f} = I(Y)$. We obviously have $I(Y) \subseteq \ker{f}$. By (1.8A), we have
+    \begin{equation*}
+        \height{\ker{f}} + \dim{k[t]} = \dim{k[x, y, z]} \implies \height{\ker{f}} = 2,
+    \end{equation*}
+    and $(x^2 - y)$ is a prime ideal contained in $I(Y)$, thus $I(Y)$ cannot be properly contained in $\ker{f}$, hence $\ker{f} = I(Y)$.
+\end{proof}
+
+\item Let $Y$ be the algebraic set in $\A^3$ defined by the two polynomials $x^2 - yz$ and $xz - x$. Show that $Y$ is a union of three irreducible components. Describe them and find their prime ideals.
+
+\begin{proof}
+    We claim that
+    \begin{equation*}
+        Y = Z((x, y)) \cup Z((x, z)) \cup Z((x^2 - y, z - 1)).
+    \end{equation*}
+    It is clear the subsets $Z((x, y))$ and $Z((x, z))$ are irreducible. What is less obvious is the irreducibility of $Z((x^2 - y, z - 1))$. Observe that
+    \begin{equation*}
+        \frac{k[x, y, z]}{(x^2 - y, z - 1)} \simeq \frac{k[x, y]}{(x^2 - y)} \simeq k[x, x^2] \simeq k[x],
+    \end{equation*} 
+    hence $(x^2 - y, z - 1)$ is a prime ideal, hence $Z((x^2 - y, z - 1))$ is irreducible.
+    If $P = (u, v, w) \in Y$, then $u^2 - vw = 0$ and $uw - u = 0$, so by the second equation either $u = 0$ or $u = 1$. If $u = 0$, either $v = 0$ or $w = 0$, which implies $P \in Z((x, y))$ or $P \in Z((x, z))$. If $u = 1$, then we have $P \in Z((x^2 - y, z - 1))$. The converse direction follows in similar fashion.
+    \newpage
+    \begin{figure}
+        \centering
+        \includegraphics*[width=9cm]{Screenshot 2024-07-26 at 10.33.08 PM.png}
+        \caption{Plot of the algebraic set $Y$ in $\R^3$. The translucent surfaces are defined by the two polynomials $x^2 - yz$ and $xz - x$, and the intersections are colored to indicate the three irreducible components of $Y$.}
+    \end{figure}
+\end{proof}
+
+\item If we identify $\A^2$ with $\A^1 \times \A^1$ in the natural way, show that the Zariski topology on $\A^2$ is not the product topology of the Zariski topology on the two copies of $\A^1$.
+
+\item Show that a $k$-algebra $B$ is isomorphic to the affine coordinate ring of some algebraic sets in $\A^n$, for some $n$, if and only if $B$ is a finitely generated $k$-algebra with no nilpotent elements.
+
+\item Any nonempty open subset of an irreducible topological space is dense and irreducible. If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology, then the closure $\overline{Y}$ is also irreducible.
+
+\begin{proof}
+    Let $X$ be an irreducible topological space and let $U$ be a non-empty proper open subset of $X$. Then $C = X - U$ is a proper closed subset of $X$, so we have $X = \overline{U} \cup C$, hence $\overline{U} = X$. Conversely, if every open subset of a topological space is dense, and we have $X = C_1 \cup C_2$ for two closed subsets of $X$ with $C_1$ proper, then $U_1 = X - C_1$ is an open subset contained in $C_2$, which implies $X = \overline{U_1} \subseteq \overline{C_2} = C_2$, hence $C_2 = X$. It follows immediately that any open subset of an irreducible space is irreducible: if $V \subset U$ are open subsets, then the closure of $V$ as a subspace of $U$ is the intersection of $U$ and its closure as a subspace of $X$, and $V$ is dense in $X$, hence it is dense in $U$. Now, if $U$ is an open subset of $\overline{Y}$ for an irreducible subset $Y$ of any topological space $X$, then it must meet $Y$ by definition of the closure of a subset, then the closure of $U$ as a subspace of $X$ contains $Y$ since $U$ is dense in $Y$, hence $\overline{U} \cap \overline{Y} = \overline{Y}$.
+\end{proof}
+
+\newpage
+
+\item
+\begin{itemize}
+    \item[(a)] Show that the following conditions are equivalent for a topological space $X$:
+    \begin{itemize}
+        \item[(i)] $X$ is noetherian;
+        \item[(ii)] every nonempty family of closed subsets has a minimal element;
+        \item[(iii)] $X$ satisfies the ascending chain condition for open subsets;
+        \item[(vi)] every nonempty family of open subsets has a maximal element.
+    \end{itemize}
+
+    \item[(b)] A noetherian topological space is \textit{quasi-compact}.
+
+    \item[(c)] A subset of a noetherian topological space is noetherian in its induced topology.
+
+    \item[(d)] A noetherian space which is also Hausdorff must be a finite set with the discrete topology.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+   \begin{itemize}
+    \item[(a)] (i) $\implies$ (ii) If (ii) is false there is a non-empty collection $T$ of closed subsets with no minimal element, and we can construct inductively a non-terminating strictly decreasing sequence in $T$.
+
+    (ii) $\implies$ (iii) Let $U_1 \subset U_2 \subset \cdots$ be an ascending chain of open subsets of $X$ and let $C_i = X - U_i$. Then $\{ C_i \}_{i \geq 1}$ is a non-empty collection of closed subsets of $X$, hence has a minimal element, say $C_m$. Hence, we have $U_m = U_{m + 1} = \cdots$.
+
+    (iii) $\implies$ (iv) If (iv) is false, then there is a non-empty collection $S$ of open subsets with no maximal element, and we can construct inductively a non-terminating strictly increasing sequence in $S$.
+
+    (iv) $\implies$ (i) Let $C_1 \supseteq C_2 \supseteq \cdots$ be a descending chain of closed subsets of $X$ and let $U_i = X - C_i$. Then $\{ U_i \}_{i \geq 1}$ is a non-empty collection of open subsets of $X$, hence has a maximal element, say $U_m$. Hence, we have $C_m = C_{m + 1} = \cdots$.
+
+    \item[(b)] Suppose $X$ is not quasi-compact so that the set $\Sigma$ of non-quasi-compact closed subsets of $X$ is non-empty. Let $Y$ be a minimal element in $\Sigma$. If $U$ is an open subset of $Y$, then $A = \overline{U}$ and $B = Y - U$  are closed subsets of $X$ contained in $Y$ such that $Y = A \cup B$. Since $Y$ is minimal amongst the set of non-quasi-compact closed subsets in $X$,  $A$ and $B$ must be compact; however, a finite union of compact sets is compact, a contradiction.
+
+    \item[(c)] Let $Y$ be a subspace of $X$. Then any open subset of $Y$ is of the form $V = U \cap Y$ for some open subset $U$ of $X$, so if $V_1 \subseteq V_2 \subseteq \cdots$ is an ascending chain of open sets in $Y$ with $V_i = U_i \cap Y$, then let $U_i' = \bigcup_{j \leq i} U_i$ so that we have the ascending chain $U_1' \subseteq U_2' \subseteq \cdots$ and
+    \begin{equation*}
+         U_i' \cap Y = \bigcup_{j \leq i} U_i \cap Y = \bigcup_{j \leq i} V_i = V_i.
+    \end{equation*}
+    If $X$ is noetherian, then this chain eventually terminates, say at $i = n$, which implies the chain $V_1 \subseteq V_2 \subseteq \cdots$ terminates at $V_n = U_n' \cap Y$. Hence, $Y$ is noetherian.
+
+    \item[(d)] Every subspace of a noetherian space is compact since every subspace is noetherian, and in a Hausdorff space every compact set is closed, hence every subset is closed, therefore a noetherian Hausdorff space must be discrete. Finiteness follows from quasi-compactness.
+   \end{itemize} 
+\end{proof}
+
+\item Let $Y$ be an affine variety of dimension $r$ in $\A^n$. Let $H$ be a hypersurface in $\A^n$, and assume that $Y \nsubseteq H$. Then every irreducible component of $Y \cap H$ has dimension $r - 1$.
+
+\begin{proof}
+    Let $Y = Z(\goth{p})$ and $H = Z(f)$ for some prime ideal $\goth{p}$ and irreducible polynomial $f$ in $k[x_1, \dots, x_n]$. If $Y \nsubseteq H$, then $f \notin \goth{p}$, so the image of $f$ in $A(Y) = k[x_1, \dots, x_n] / \goth{p}$ is not a zero-divisor. If $f$ is a unit in $A(Y)$, then $f$ does not vanish at any points in $Y$, which implies $Y$ and $H$ does not intersect, so $Y \cap H$ has no irreducible components (the empty set is defined to be not irreducible). Otherwise, the coordinate ring of an irreducible component of $Y \cap H$ corresponds to a minimal prime ideal $\goth{q}$ in $A(Y)$ which contains $f$. By Krull's Hauptidealsatz, any such prime ideal must have height $1$, and since $A(Y)$ has dimension $r$, it follows that $A(Y) / \goth{q}$ has dimension $r - 1$ by (1.8A).
+\end{proof}
+
+\item Let $\goth{a} \subseteq A = k[x_1, \dots, x_n]$ be an ideal which can be generated by $r$ elements. Then every irreducible component of $Z(\goth{a})$ has dimension $\geq n - r$.
+
+\begin{proof}
+    Induction on $r$: if $r = 1$ and $\goth{a} = (f)$, then the irreducible components of $Z(\goth{a})$ corresponds to the irreducible factors of $f$, which are hypersurfaces in $\A^n$ and therefore has dimension $n - 1$. Let $r > 1$ and assume the statement to be true for $r - 1$ and suppose $\goth{a} = (f_1, \dots, f_{r - 1}, f_r)$. An irreducible component of $Z(f_1, \dots, f_{r - 1}, f_r)$ corresponds to a minimal prime ideal $\goth{p}$ in $k[x_1, \dots, x_n]$ containing $(f_1, \dots, f_{r - 1}, f_r)$, and by the inductive hypothesis a minimal prime ideal containing $(f_1, \dots, f_{r - 1})$ have height at most $r - 1$, so by Krull's Hauptidealsatz, $\goth{p}$ can have height at most $r$, hence $A / \goth{p}$ has dimension at least $n - r$, hence an irreducible component of $Z(f_1, \dots, f_{r - 1}, f_r)$ have dimension at least $n - r$.
+\end{proof}
+
+\item
+\begin{itemize}
+    \item[(a)] If $Y$ is any subset of a topological space $X$, then $\dim{Y} \leq \dim{X}$.
+
+    \item[(b)] If $X$ is a topological space which is covered by a family of open subsets $\{ U_i \}$, then $\dim{X} = \sup{\dim{U_i}}$
+
+    \item[(c)] Give an example of a topological space $X$ and a dense open subset $U$ with $\dim{U} < \dim{X}$.
+
+    \item[(d)] If $Y$ is a closed subset of an irreducible finite dimensional topological space $X$, and if $\dim{Y} = \dim{X}$, then $Y = X$.
+
+    \item[(e)] Give an example of a noetherian topological space of infinite dimension.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize}
+        \item[(a)] If $Z_0 \subset Z_1 \subset \cdots \subset Z_n$ is a chain of distinct irreducible closed subsets of $Y$, then their closures as subsets of $X$ are also irreducible by Exercise 1.6, that is $\overline{Z_0} \subset \overline{Z_1} \subset \cdots \subset \overline{Z_n}$ is a chain of distinct irreducible closed subsets of $X$, hence $\dim{Y} \leq \dim{X}$. It is indeed distinct since if $x \in Z_{i + 1}$ and $x \in \overline{Z_i} = \overline{C_i \cap Y} \subseteq C_i \cap \overline{Y}$ for some closed subset $C_i$ of $X$, then $x$ must be in $Z_{i + 1} \cap C_i \cap \overline{Y} = Z_i$.
+
+        \item[(b)] By (a) we have $\sup{\dim{U_i}} \leq \dim{X}$. Conversely, if $Z_0 \subset Z_1 \subset \cdots \subset Z_n$ is a chain of distinct irreducible closed subsets of $X$, then there exists $U \in \{U_i\}$ such that $V_0 = Z_0 \cap U \neq \emptyset$, thus $V_i = Z_i \cap U \neq \emptyset$, so by Exercise 1.6 $V_0 \subset V_1 \subset \cdots \subset V_n$ is a distinct chain of irreducible closed subsets in $U$, therefore $n \leq \dim{U}$, hence taking the supremum we have $\dim{X} \leq \sup{\dim{U_i}}$.
+
+        \item[(c)] Let $X = \{ a, b \}$ with topology defined by the open subsets $\{ \emptyset, \{a \}, X \}$. Then $U = \{a \}$ is dense since the only closed subset containing $U$ is $X$, and it has dimension $0$, but $X$ has dimension $1$.
+
+        \item[(d)] If $Y$ itself is irreducible, then any chain $Z_0 \subset Z_1 \subset \cdots \subset Z_n$ of irreducible closed subsets of $Y$ can be extended to $Z_0 \subset Z_1 \subset \cdots \subset Z_n \subset Y$ unless $Z_n = Y$, so if $n = \dim{Y}$ then we must have $Z_n = Y$, and since $\dim{Y} = \dim{X}$, $Y$ cannot be a proper subset of $X$. Otherwise, if $Y$ is not irreducible then $Y$ and therefore $Z_n$ are proper subsets of $X$, and by the proof of (a) any chain in $Y$ induces a chain of same length in $X$. Since $\overline{Z}_n$ is a proper subset of $X$, the chain can be extended to $\overline{Z_0} \subset \overline{Z_1} \subset \cdots \subset \overline{Z_n} \subset X$, contradicting the dimensions of $X$ and $Y$. Hence, $Y = X$.
+
+        \item[(e)] Let $X = \N$ with topology defined by the closed sets $C_n = \{1, \dots, n \}$. If $\{ C_{n_\alpha}\}$ is any collection of closed subsets, then the minimal element is $C_{n_\beta}$ for $n_\beta = \min{n_\alpha}$, so $X$ is noetherian. Also, every closed set is irreducible, so we have an infinite chain of irreducible closed subsets $C_1 \subset C_2 \subset \cdots$.
+    \end{itemize}
+\end{proof}
+
+\item Let $Y \subseteq \A^3$ be the curve given parametrically by $x = t^3$, $y = t^4$, $z = t^5$. Show that $I(Y)$ is a prime ideal of height 2 in $k[x, y, z]$ which cannot be generated by 2 elements. We say $Y$ is \textit{not a local complete intersection}.
+
+\item Given an example of an irreducible polynomial $f \in \R[x, y]$ whose zero set $Z(f)$ in $\A_\R^2$ is not irreducible.
+
+\end{enumerate}
+
+\end{document}

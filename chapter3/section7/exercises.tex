@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\fP}{\mathscr{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\rProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\hd}{hd}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\dlog}{dlog}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\rExt}{\mathpzc{Ext}}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 7}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $X$ be an integral projective scheme of dimension $\geq 1$ over a field $k$, and let $\mathscr{L}$ be an ample invertible sheaf on $X$. Then $H^0(X, \mathscr{L}^{-1}) = 0$. (this is an easy special case of Kodaira's vanishing theorem.)
+
+\item Let $f : X \to Y$ be a finite morphism of projective schemes of the same dimension over a field $k$, and let $\omega_Y^\circ$ be a dualizing sheaf for $Y$.
+\begin{itemize}
+  \item[(a)] Show that $f^! \omega_Y^\circ$ is a dualizing sheaf for $X$, where $f^1$ is defined as in (Ex. 6.10).
+  \item[(b)] If $X$ and $Y$ are both nonsingular, and $k$ algebraically closed, conclude that there is a natural trace map $t : f_* \omega_X \to \omega_Y$.
+\end{itemize}
+
+\item Let $X = \PP_k^n$. Show that $H^q(X, \Omega_X^p) = 0$ for $p \neq q$, $k$ for $p = q$, $0 \leq p, q \leq n$.
+
+\item \textit{The Cohomology Class of a Subvariety.} Let $X$ be a nonsingular projective variety of dimension $n$ over an algebraically closed field $k$. Let $Y$ be a nonsingular subvariety of codimension $p$ (hence dimension $n - p$). From the natural map $\Omega_X \otimes \fO_Y \to \Omega_Y$ of (II, 8.12) we deduce a map $\Omega_X^{n - p} \to \Omega_Y^{n - p}$. This induces a map on cohomology $H^{n - p}(X, \Omega_X^{n - p}) \to H^{n - p}(Y, \Omega_Y^{n - p})$. Now $\Omega_Y^{n - p} = \omega_Y$ is a dualizing sheaf for $Y$, so we have the trace map $t_Y : H^{n - p}(Y, \Omega_Y^{n - p}) \to k$. Composing, we obtain a linear map $H^{n - p}(X, \Omega_X^{n - p}) \to k$. By (7.13) this corresponds to an element $\eta(Y) \in H^p(X, \Omega_X^p)$, which we call the \textit{cohomology class} of $Y$.
+\begin{itemize}
+  \item[(a)] If $P \in X$ is a closed point, show that $t_X(\eta(P)) = $, where $\eta(P) \in H^n(X, \Omega^n)$ and $t_X$ is the trace map.
+  \item[(b)] If $X = \PP^n$, identify $H^p(X, \Omega^p)$ with $k$ by (Ex. 7.3), and show that $\eta(Y) = (\deg Y) \cdot 1$, where $\deg Y$ is its \textit{degree} as a projective variety (I, \S 7).
+  \item[(c)] For any scheme $X$ of finite type over $k$, we define a homomorphism of sheaves of Abelian groups $\dlog : \fO_X^* \to \Omega_X$ by $\dlog(f) = f^{-1} df$. Here $\fO^*$ is a group under multiplication, and $\Omega_X$ is a group under addition. This induces a map on cohomology $\pic{X} = H^1(X, \fO_X^*) \to H^1(X, \Omega_X)$ which we denote by $c$.
+  \item[(d)] Returning to the hypotheses above, suppose $p = 1$. Show that $\eta(Y) = c(\fL(Y))$, where $\fL(Y)$ is the invertible sheaf corresponding to the divisor $Y$.
+\end{itemize}
+
+\end{enumerate}
+\end{document}

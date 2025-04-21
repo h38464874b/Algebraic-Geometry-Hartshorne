@@ -1,0 +1,5 @@
+cuspidal
+quadric
+bicontinuous
+noetherian
+surjective

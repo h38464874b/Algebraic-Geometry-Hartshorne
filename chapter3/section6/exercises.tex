@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\fP}{\mathscr{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\rProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\hd}{hd}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\rExt}{\mathpzc{Ext}}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 2}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $(X, \fO_X)$ be a ringed space, and let $\fF', \fF'' \in \goth{Mod}(X)$. An \textit{extension} of $\fF''$ by $\fF'$ is a short exact sequence
+\begin{equation*}
+  0 \to \fF' \to \fF \to \fF'' \to 0
+\end{equation*}
+in $\goth{Mod}(X)$. Two extensions are \textit{isomorphic} if there is an isomorphism of the short exact sequences, inducing the identity maps on $\fF'$ and $\fF''$. Given an extension as above consider the long exact sequence arising from $\Hom(\fF'', \cdot)$, in particular the map
+\begin{equation*}
+  \delta : \Hom(\fF'', \fF'') \to \Ext^1(\fF'', \fF'),
+\end{equation*}
+and let $\xi \in \Ext^1(\fF'', \fF')$ by $\delta(1_{\fF''})$. Show that this process gives a one-to-one correspondence between isomorphism classes of extensions of $\fF''$ by $\fF'$, and elements of the group $\Ext^1(\fF'', \fF')$.
+
+\item Let $X = \PP_k^1$, with $k$ an infinite field.
+\begin{itemize}
+  \item[(a)] Show that there does not exist a projective object $\fP \in \goth{Mod}(X)$, together with a surjective map $\fP \to \fO_X \to 0$.
+  \item[(b)] Show that there does not exist a projective object $\fP$ in either $\goth{Qco}(X)$ or $\goth{Coh}(X)$ together with a surjective $\fP \to \fO_X \to 0$.
+\end{itemize}
+
+\item Let $X$ be a Noetherian scheme, and let $\fF, \fG \in \goth{Mod}(X)$.
+\begin{itemize}
+  \item[(a)] If $\fF, \fG$ are both coherent, then $\rExt^i(\fF, \fG)$ is coherent, for all $i \geq 0$.
+  \item[(b)] If $\fF$ is coherent and $\fG$ is quasi-coherent, then $\rExt^i(\fF, \fG)$ is quasi-coherent, for all $i \geq 0$.
+\end{itemize}
+
+\item Let $X$ be a Noetherian scheme, and suppose that every coherent sheaf on $X$ is a quotient of a locally free sheaf. In this case we say $\goth{Coh}(X)$ has \textit{enough locally frees}. Then for any $\fG \in \goth{Mod}(X)$, show that the $\delta$-functor $(\rExt^i(\cdot, \fG))$, from $\goth{Coh}(X)$ to $\goth{Mod}(X)$, is a contravariant universal $\delta$-functor.
+
+\item Let $X$ be a Noetherian scheme, and assume that $\goth{Coh}(X)$ has enough locally frees (Ex. 6.4). Then for any coherent sheaf $\fF$ we define the \textit{homological dimension} of $\fF$, denoted $\hd(\fF)$, to be the least length of a locally free resolution of $\fF$ (or $+\infty$ if there is no finite one). Show:
+\begin{itemize}
+  \item[(a)] $\fF$ is locally free $\iff$ $\rExt^1(\fF, \fG) = 0$ for all $\fG \in \goth{Mod}(X)$;
+  \item[(b)] $\hd(\fF) \leq n$ $ \iff$ $\rExt^i(\fF, \fG) = 0$ for all $i > n$ and all $\fG \in \goth{Mod}(X)$;
+  \item[(c)] $\hd(\fF) = \sup_x{\pd_{\fO_X} \fF_x}$.
+\end{itemize}
+
+\item Let $A$ be a regular local ring, and let $M$ be a finitely generated $A$-module. In this case, strengthen the result (6.10A) as follows.
+\begin{itemize}
+  \item[(a)] $M$ is projective if and only if $\Ext^i(M, A) = 0$ for all $i > 0$.
+  \item[(b)] Use (a) to show that for any $n$, $\pd M \leq n$ if and only if $\Ext^i(M, A) = 0$ for all $i > n$.
+\end{itemize}
+
+\item Let $X = \spec{A}$ be an affine Noetherian scheme. Let $M, N$ be $A$-modules, with $M$ finitely generated. Then
+\begin{equation*}
+  \Ext_X^i(\tilde{M}, \tilde{N}) \cong \Ext_A^i(M, N)
+\end{equation*}
+and
+\begin{equation*}
+  \mathscr{E}xt_X^i(\tilde{M}, \tilde{N}) \cong \widetilde{\text{Ext}^i(M, N)}.
+\end{equation*}
+
+\item Prove the following theorem of Kleiman: if $X$ is a Noetherian, integral, separated, locally factorial scheme, then every coherent sheaf on $X$ is a quotient of a locally free sheaf (of finite rank).
+\begin{itemize}
+  \item[(a)] First show that open sets of the form $X_s$, for various $s \in \Gamma(X, \fL)$, and various invertible sheaves $\fL$ on $X$, form a base for the topology of $X$.
+  \item[(b)] Now use (II, 5.14) to show that any coherent sheaf is a quotient of a direct sum $\bigoplus \fL_i^{n_i}$ for various invertible sheaves $\fL_i$ and various integers $n_i$.
+\end{itemize}
+
+\item Let $X$ be a noetherian, integral, separated, regular scheme. (We say a scheme is \textit{regular} if all of its local rings are regular local rings.) Recall the definition of the \textit{Grothendieck group $K(X)$} from (II, Ex. 6.10). We define similarly another group $K_1(X)$ using locally free sheaves: it is the quotient of free abelian group generated by all locally free (coherent) sheaves, by the subgroup generated by all expressions of the form $\fE - \fE' - \fE''$, whenever $0 \to \fE' \to \fE \to \fE'' \to 0$ is a short exact sequence of locally free sheaves. Clearly there is a natural group homomorphism $\varepsilon : K_1(X) \to K(X)$. Show that $\varepsilon$ is an isomorphism as follows.
+\begin{itemize}
+  \item[(a)] Given a coherent sheaf $\fF$, use (Ex. 6.8) to show that it has a locally free resolution $\fE \to \fF \to 0$. Then use (6.11A) and (Ex. 6.5) to show that it has a finite locally free resolution
+  \begin{equation*}
+    0 \to \mathscr{E}_n \to \cdots \to \fE_1 \to \fE_0 \to \fF \to 0.
+  \end{equation*}
+  \item[(b)] For each $\fF$, choose a finite locally free resolution $\fE \to \fF \to 0$, and let $\delta(\fF) = \sum (-1)^i \gamma(\fE_i)$ in $K_1(X)$. Show that $\delta(\fF)$ is independent of the resolution chosen, that it defines a homomorphism of $K(X)$ to $K_1(X)$, and finally, that it is an inverse to $\varepsilon$.
+\end{itemize}
+
+\item \textit{Duality for a Finite Flat Morphism.}
+\begin{itemize}
+  \item[(a)] Let $f : X \to Y$ be a finite morphism of Noetherian schemes. For any quasi-coherent $\fO_Y$-module $\fG$, $$\rHom_Y(f_*\fO_X, \fG)$$ is a quasi-coherent $f_*\fO_X$-module, hence corresponds to a quasi-coherent $\fO_X$-module, which we call $f^!\fG$ (II, Ex. 5.17e).
+  \item[(b)] Show that for any coherent $\fF$ on $X$ and any quasi-coherent $\fG$ on $Y$, there is a natural isomorphism
+  \begin{equation*}
+    f_*\rHom_X(\fF, f^!\fG) \xrightarrow{\sim} \rHom_Y(f_* \fF, \fG).
+  \end{equation*}
+  \item[(c)] For each $i \geq 0$, there is a natural map
+  \begin{equation*}
+    \varphi_i : \text{Ext}_X^i(\fF, f^!\fG) \to \text{Ext}_Y^i(f_* \fF, \fG).
+  \end{equation*}
+  \item[(d)] Now assume that $X$ and $Y$ are separated, $\goth{Coh}(X)$ has enough locally frees, and assume that $f_*\fO_X$ is locally free on $Y$ (this is equivalent to saying $f$ flat - see \S 9). Show that $\varphi_i$ is an isomorphism for all $i$, all $\fF$ coherent on $X$, and all $\fG$ quasi-coherent on $Y$.
+\end{itemize}
+
+\end{enumerate}
+\end{document}

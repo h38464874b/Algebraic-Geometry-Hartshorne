@@ -1,0 +1,9 @@
+homeomorphic
+subscheme
+noetherian
+Noetherian
+Zariski
+Constructible
+constructible
+generization
+Krull

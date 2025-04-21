@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 5}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $X$ be a projective scheme over a field $k$, and let $\fF$ be a coherent sheaf on $X$. We define the \textit{Euler characteristic} of $\fF$ by
+\begin{equation*}
+  \chi(\fF) = \sum (-1)^i \text{dim}_k~H^i(X, \fF).
+\end{equation*}
+If
+\begin{equation*}
+  0 \to \fF' \to \fF \to \fF'' \to 0
+\end{equation*}
+is a short exact sequence of coherent sheaves on $X$, show that $\chi(\fF) = \chi(\fF') + \chi(\fF'')$.
+
+\item \begin{itemize}
+  \item[(a)] Let $X$ be a projective scheme over a field $k$, let $\fO_X(1)$ be a very ample invertible sheaf on $X$ over $k$, and let $\fF$ be a coherent sheaf on $X$. Show that there is a polynomial $P(z) \in \Q[z]$, such that $\chi(\fF(n)) = P(n)$ for all $n \in \Z$. We call $P$ the \textit{Hilbert polynomial} of $\fF$ with respect to the sheaf $\fO_X(1)$.
+  \item[(b)] Now let $X = \PP_k^r$, and let $M = \Gamma_*(\fF)$, considered as a graded $S = k[x_0, \dots, x_r]$-module. Use (5.2) to show that the Hilbert polynomial of $\fF$ just defined is the same as the Hilbert polynomial of $M$ defined in (I, \S 7).
+\end{itemize}
+
+\item \textit{Arithmetic Genus.} Let $X$ be a projective scheme of dimension $r$ over a field $k$. We define the \textit{arithmetic genus $p_a$} of $X$ by
+\begin{equation*}
+  p_a(X) = (-1)^r (\chi(\fO_X) - 1).
+\end{equation*}
+Note that it depends only on $X$, not on any projective embedding.
+\begin{itemize}
+  \item[(a)] If $X$ is integral, and $k$ algebraically closed, show that $H^0(X, \fO_X) \cong k$, so that
+  \begin{equation*}
+    p_a(X) = \sum_{i = 0}^{r - 1} (-1)^i \dim_k{H^{r-i}(X, \fO_X)}.
+  \end{equation*}
+  In particular, if $X$ is a curve, we have
+  \begin{equation*}
+    p_a(X) = \dim_k{H^1(X, \fO_X)}.
+  \end{equation*}
+  \item[(b)] If $X$ is a closed subvariety of $\PP_k^r$, show that this $p_a(X)$ coincides with the one defined in (I, Ex. 7.2), which apparently depended on the projective embedding.
+  \item[(c)] if $X$ is a nonsingular projective curve over an algebraically closed field $k$< show that $p_a(X)$ is in fact a \textit{birational} invariant. Conclude that a nonsingular plane curve of degree $d \geq 3$ is not rational. (This gives another proof of (II, 8.20.3) where we used the geometric genus.)
+\end{itemize}
+
+\item Recall from (II, Ex. 6.10) the definition of the Grothendieck group $K(X)$ of a noetherian scheme $X$.
+\begin{itemize}
+  \item[(a)] Let $X$ be a projective scheme over a field $k$, and let $\fO_X(1)$ be a very ample invertible sheaf on $X$. Show that there is a (unique) additive homomorphism
+  \begin{equation*}
+    P : K(X) \to \Q[z]
+  \end{equation*}
+  such that for each coherent sheaf $\fF$ on $X$, $P(\gamma(\fF))$ is the Hilbert polynomial of $\fF$ (Ex. 5.2).
+  \item[(b)] Now let $X = \PP_k^r$. For each $i = 0, \dots, r$, let $L_i$ be a linear space of dimension $i$ in $X$. Then show that
+  \begin{itemize}
+    \item[(1)] $K(X)$ is the free Abelian group generated by $\{ \gamma(\fO_{K_i}) \mid i = 0, \dots, r \}$, and
+    \item[(2)] the map $P : K(X) \to \Q[z]$ is injective.
+  \end{itemize}
+\end{itemize}
+
+\item Let $k$ be a field, let $X = \PP_k^r$, and let $Y$ be a closed subscheme of dimension $q \geq 1$, which is a complete intersection (II, Ex. 8.4). Then:
+\begin{itemize}
+  \item[(a)] for all $n \in \Z$, the natural map
+  \begin{equation*}
+    H^0(X, \fO_X(n)) \to H^0(Y, \fO_Y(n))
+  \end{equation*}
+  is surjective. (This gives a generalization and another proof of (II, Ex. 8.4c), where we assumed $Y$ was normal.)
+  \item[(b)] $Y$ is connected;
+  \item[(c)] $H^i(Y, \fO_Y(n)) = 0$ for $0 < i < q$ and all $n \in \Z$;
+  \item[(d)] $p_a(Y) = \dim_k{H^q(Y, \fO_Y)}$.
+\end{itemize}
+
+\item \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \PP_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$. These correspond to Cartier divisors on $Q$ by (II, 6.17.1). On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$. Thus for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
+\begin{itemize}
+  \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\PP^1$ in $Q$, to show:
+  \begin{itemize}
+    \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+    \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+    \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
+  \end{itemize}
+  \item[(b)] Now use these results to show:
+  \begin{itemize}
+    \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
+    \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
+    \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\PP^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
+  \end{itemize}
+  \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
+\end{itemize}
+
+\item Let $X$ (respectively, $Y$) be proper schemes over a noetherian ring $A$. We denote by $\mathscr{L}$ an invertible sheaf.
+\begin{itemize}
+  \item[(a)] If $\mathscr{L}$ is ample on $X$, and $Y$ is any closed subscheme of $X$, then $i^* \mathscr{L}$ is ample on $Y$, where $i : Y \to X$ is the inclusion.
+  \item[(b)] $\mathscr{L}$ is ample on $X$ if and only if $\mathscr{L}_\text{red} = \mathscr{L} \otimes \fO_{X_\text{red}}$ is ample on $X$.
+  \item[(c)] Suppose $X$ is reduced. Then $\mathscr{L}$ is ample on $X$ if and only if $\mathscr{L} \otimes \fO_{X_i}$ is ample on $X_i$, for each irreducible component $X_i$ of $X$.
+  \item[(d)] Let $f : X \to Y$ be a finite surjective morphism, and let $\fL$ be an invertible sheaf on $Y$. Then $\fL$ is ample on $Y$ if and only if $f^* \mathscr{L}$ is ample on $X$.
+\end{itemize}
+
+\item Prove that every one-dimensional proper scheme $X$ over an algebraically closed field $k$ is projective.
+\begin{itemize}
+  \item[(a)] If $X$ is irreducible and nonsingular, then $X$ is projective by (II, 6.7).
+  \item[(b)] If $X$ is integral, let $\tilde{X}$ be its normalization (II, Ex. 3.8). Show that $\tilde{X}$ is complete and nonsingular, hence projective by (a). Let $f : \tilde{X} \to X$ be the projection. Let $\fL$ be a very ample invertible sheaf on $\tilde{X}$. Show there is an effective divisor $D = \sum P_i$ on $\tilde{X}$ with $\fL(D) \cong \mathscr{L}$, and such that $f(P_i)$ is a nonsingular point of $X$, for each $i$. Conclude that there is an invertible sheaf $\fL_0$ on $X$ with $f^* \fL_0 \cong \mathscr{L}$. Then use (Ex. 5.7d), (II, 7.6) and (II, 5.16.1) to show that $X$ is projective.
+  \item[(c)] If $X$ is reduced, but not necessarily irreducible, let $X_1, \dots, X_r$ be the irreducible components of $X$. Use (Ex. 4.5) to show $\pic{X} \to \bigoplus \pic{X_i}$ is surjective. Then use (Ex. 5.7c) to show $X$ is projective.
+  \item[(d)] Finally, if $X$ is any one-dimensional proper scheme over $k$, use (2.7) and (Ex. 4.6) to show that $\pic{X} \to \pic{X_\text{red}}$ is surjective. Then use (Ex. 5.7b) to show $X$ is projective.
+\end{itemize}
+
+\item \textit{A Nonprojective scheme.} We show the result of (Ex. 5.8) is false in dimension $2$. Let $k$ be an algebraically closed field of characteristic $0$, and let $X = \PP_k^2$. Let $\omega$ be the sheaf of differential $2$-forms (II, \S 8). Define an infinitesimal extension $X'$ of $X$ by $\omega$ by giving the element $\xi \in H^1(X, \omega \otimes \mathscr{T})$ defined as follows (Ex. 4.10). Let $x_0, x_1, x_2$ be the homogenous coordinates of $X$, let $U_0, U_2, U_2$ be the standard open covering, and let $\xi_{ij} = (x_j / x_i) d(x_i / x_j)$. This gives a Čech $1$-cocycle with values in $\Omega_X^1$, and since $\dim{X} = 2$, we have $\omega \otimes \mathscr{T} \cong \Omega^1$ (II, Ex. 5.16b). Now use the exact sequence
+\begin{equation*}
+  \cdots \to H^1(X, \omega) \to \pic{X'} \to \pic{X} \xrightarrow{\delta} H^2(X, \omega) \to \cdots
+\end{equation*}
+of (Ex. 4.6) and show $\delta$ is injective. We have $\omega \cong \fO_X(-3)$ by (II, 8.20.1), so $H^2(X, \omega) \cong k$. Since $\text{char}~k = 0$, you need only show that $\delta(\fO(1)) \neq 0$, which can be done by calculating in Čech cohomology. Since $H^1(X, \omega) = 0$, we see that $\pic{X'} = 0$. In particular, $X'$ has no ample invertible sheaves, so it is not projective.
+
+\textit{Note.} In fact, this result can be generalized to show that for any nonsingular projective surface $X$ over an algebraically closed field $k$ of characteristic $0$, there is an infinitesimal extension $X'$ of $X$ by $\omega$, such that $X'$ is not projective over $k$. Indeed, let $D$ be an ample divisor on $X$. Then $D$ determines an element $c_1(D) \in H^1(X, \Omega^1)$ which we use to define $X'$, as above. Then for any divisor $E$ on $X$ one can show that $\delta(\fL(E)) = (D.E)$, where $(D.E)$ is the intersection number (Chapter V), considered as an element of $k$. Hence, if $E$ is ample, $\delta(\mathscr{L}(E)) \neq 0$. Therefore, $X'$ has no ample divisors.
+
+On the other hand, over a field of characteristic $p > 0$, a proper scheme $X$ is projective if and only if $X_\text{red}$ is!
+
+\item Let $X$ be a projective scheme over a noetherian ring $A$, and let $\fF^1 \to \fF^2 \to \cdots \to \fF^r$ be an exact sequence of coherent sheaves on $X$. Show that there is an integer $n_0$, such that for all $n \geq n_0$, the sequence of global sections
+\begin{equation*}
+  \Gamma(X, \fF^1(n)) \to \Gamma(X, \fF^2(n)) \to \cdots \to \Gamma(X, \fF^r(n))
+\end{equation*}
+is exact.
+
+\end{enumerate}
+\end{document}

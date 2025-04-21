@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 2}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+% \item \begin{itemize}
+%     \item[(a)] Let $X = \A_k^1$ be the affine line over an infinite field $k$. Let $P, Q$ be distinct closed points of $X$, and let $U = X - \{ P, Q \}$. Show that $H^1(X, \Z_U) \neq 0$.
+%     \item[(b)] More generally, let $Y \subseteq X = \A_k^n$ be the union of $n + 1$ hyperplanes in suitable general positions, and let $U = X - Y$. Show that $H^n(X, \Z_U) \neq 0$. Thus, the result of (2.7) is the best possible.
+% \end{itemize}
+
+% \item Let $X = \PP_k^1$ be the projective line over an algebraically closed field $k$. Show that the exact sequence $0 \to \fO \to \fK \to \fK / \fO \to 0$ of (II, Ex.1.21d) is a flasque resolution of $\fO$. Conclude from (II, Ex. 1.21e) that $H^i(X, \fO) = 0$ for all $i > 0$.
+
+% \item \textit{Cohomology with Supports.} Let $X$ be a topological space, let $Y$ be a closed subset, and let $\fF$ be a sheaf of abelian groups. Let $\Gamma_Y(X, \fF)$ denote the group of sections of $\fF$ with support in $Y$ (II, Ex. 1.20).
+% \begin{itemize}
+%     \item[(a)] Show that $\Gamma_Y(X, \cdot)$ is a left exact functor from $\goth{Ab}(X)$ to $\goth{Ab}$.
+
+%     We denote the right derived functors of $\Gamma_Y(X, \cdot)$ by $H_Y^i(X, \cdot)$. They are the \textit{cohomology groups of $X$ with supports in $Y$,} and coefficients in a given sheaf.
+
+%     \item[(b)] If $0 \to \fF' \to \fF \to \fF'' \to 0$ is an exact sequence of sheaves, with $\fF'$ flasque, show that
+%     \begin{equation*}
+%         0 \to \Gamma_Y(X, \fF') \to \Gamma_Y(X, \fF) \to \Gamma_Y(X, \fF'') \to 0
+%     \end{equation*}
+%     is exact.
+
+%     \item[(c)] Show that if $\fF$ is flasque, then $H^i_Y(X, \fF) = 0$ for all $i > 0$.
+
+%     \item[(d)] If $\fF$ is flasque, show that the sequence
+%     \begin{equation*}
+%         0 \to \Gamma_Y(X, \fF) \to \Gamma(X, \fF) \to \Gamma(X - Y, \fF) \to 0
+%     \end{equation*}
+%     is exact.
+
+%     \item[(e)] Let $U = X - Y$. Show that for any $\fF$, there is a long exact sequence of cohomology groups
+%     \[ \begin{tikzcd}
+%         0 \arrow[r]  & {H_Y^0(X, \fF)} \arrow[r] & {H^0(X, \fF)} \arrow[r] & {H^0(U, \restr{\fF}{U})} \arrow[r] & {} \\
+%         {} \arrow[r] & {H_Y^1(X, \fF)} \arrow[r] & {H^1(X, \fF)} \arrow[r] & {H^1(U, \restr{\fF}{U})} \arrow[r] & {} \\
+%         {} \arrow[r] & {H_Y^2(X, \fF)} \arrow[r] & \cdots .                  &                                     &   
+%         \end{tikzcd} \]
+    
+%     \item[(f)] \textit{Excision.} Let $V$ be an open subset of $X$ containing $Y$. Then there are natural functorial isomorphisms, for all $i$ and $\fF$,
+%     \begin{equation*}
+%         H_Y^i(X, \fF) \cong H_Y^i(V, \restr{\fF}{V}).
+%     \end{equation*}
+% \end{itemize}
+
+\item[\textbf{4.}] \textit{Mayer-Vietoris Sequence.} Let $Y_1, Y_2$ be two closed subsets of $X$. Then there is a long exact sequence of cohomology with supports
+\[ \begin{tikzcd}
+    \cdots \arrow[r] & {H^i_{Y_1 \cap Y_2}(X, \fF)} \arrow[r]       & {H_{Y_1}^i(X, \fF) \oplus H_{Y_2}^i(X, \fF)} \arrow[r] & {H^i_{Y_1 \cup Y_2}(X, \fF)} \arrow[r] & {} \\
+    {} \arrow[r]     & {H^{i + 1}_{Y_1 \cap Y_2}(X, \fF)} \arrow[r] & \cdots .                                               &                                        &   
+\end{tikzcd} \] 
+
+\begin{proof}
+    There is an exact sequence of sheaves
+    \[ \begin{tikzcd}
+        & 0 \arrow[d]                                                  & 0 \arrow[d]                        & 0 \arrow[d]                                            &   \\
+0 \arrow[r] & \fH^0_{Y_1 \cap Y_2}(\fF) \arrow[r] \arrow[d]                & \fF \arrow[r] \arrow[d]            & \fF_{X - Y_1 \cap Y_2} \arrow[r] \arrow[d]             & 0 \\
+0 \arrow[r] & \fH_{Y_1}^0(\fF) \oplus \fH_{Y_2}^0(\fF) \arrow[d] \arrow[r] & \fF \oplus \fF \arrow[d] \arrow[r] & \fF_{X - Y_1} \oplus \fF_{X - Y_2} \arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & \fH^0_{Y_1 \cup Y_2}(\fF) \arrow[d] \arrow[r]                & \fF \arrow[d] \arrow[r]            & \fF_{X - Y_1 \cup Y_2} \arrow[d] \arrow[r]             & 0 \\
+        & 0                                                            & 0                                  & 0                                                      &  
+\end{tikzcd} \]
+which induces the desired long sequence of cohomology with supports by (1.1A).
+\end{proof}
+
+% \item Let $X$ be a Zariski space (II, Ex. 3.17). Let $P \in X$ be a closed point, and let $X_P$ be the subset of $X$ containing of all points $Q \in X$ such that $P \in \overline{\{Q \}}$. We call $X_P$ the \textit{local space} of $X$ at $P$, and give it the induced topology. Let $j : X_P \to X$ be the inclusion, and for any sheaf $\fF$ on $X$, let $\fF_P = j^* \fF$ Show that for all $i$, $\fF$, we have
+% \begin{equation*}
+%     H_P^i(X, \fF) = H_P^i(X_P, \fF_P).
+% \end{equation*}
+
+\item[\textbf{6.}] Let $X$ be a noetherian topological space, and let $\{ \fI_\alpha \}_{\alpha \in A}$ be a direct system of injective sheaves of abelian groups on $X$. Then $\varinjlim \fI _\alpha$ is also injective.
+
+\begin{proof} 
+\end{proof}
+
+\item[\textbf{7.}] Let $S^1$ be the circle (with its usual topology), and let $\Z$ be the constant sheaf $\Z$.
+\begin{itemize}
+    \item[(a)] Show that $H^1(S^1, \Z) = \Z$, using our definition of cohomology.
+    \item[(b)] Now let $\fR$ be the sheaf of germs of continuous real-valued functions on $S^1$. Show that $H^1(S^1, \fR) = 0$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] We remark that cohomology commutes with colimits on paracompact Hausdorff spaces. In particular, the statements of (II, Ex.1.11), (2.9) hold for $S^1$. Let $A, B$ be closed subsets of $S^1$ homeomorphic to the unit interval such that $A \cup B = S^1$ and $A \cap B = \{ P, Q \}$ for two distinct points $P, Q$ in $S^1$ (in the obvious way...). From now on, for any closed subset $C$ of $S^1$, denote $\Z_C = i_* \Z$, where $i : C \hookrightarrow S^1$ is the inclusion map and $\Z$ is the constant sheaf on $C$. Without ambiguity $\Z$ will denote the constant sheaf on the ambient space. We claim the following sequence of sheaves
+\[\begin{tikzcd}
+    0 \arrow[r] & \Z \arrow[r, "\Delta"] & \Z_A \oplus \Z_B \arrow[r, "\tau"] & \Z_{A \cap B} \arrow[r] & 0
+    \end{tikzcd}\]
+defined by $\Delta(a) = (a, a)$ and $\tau(a, b) = b - a$ is exact. In particular, there exists natural maps $i^\#_A, i^\#_B : \Z \to \Z_A, \Z_B$ associated to the inclusion maps $i_A, i_B : A, B \hookrightarrow S^1$, so that $\Delta = (i_A^\#, i_B^\#)$. In the same way, the associated morphism of sheaves of the inclusion maps $j_A, j_B : A \cap B \to A, B$ ascends to naturally defined maps $j_A^\#, j_B^\# : \Z_A, \Z_B \to \Z_{A \cap B}$ in the form of a restriction morphism. Thus, $\tau = j_B^\# - j_A^\#$. Exactness can be checked at the level of stalks. Suppose $R \notin A \cap B$. Then either $R \in A$ or $R \in B$, say $R \in A$. Then the stalks are $(\Z)_R = \Z$, $(\Z_A)_R = \Z$, $(\Z_B)_R = 0$, which is an exact sequence. If $R \in A \cap B$, then the stalks are $(\Z)_R = \Z$, $(\Z_A)_R = \Z$, $(\Z_B)_R = \Z$, $\Z_{A \cap B} = \Z$ defined by $\Delta$ and $\tau$, which is clearly exact. Hence, the sequence is exact at all points, so the sequence is exact.
+
+Taking cohomology, we get a long exact sequence of cohomology groups
+\[ \begin{tikzcd}
+    0 \arrow[r]  & H^0(S^1, \Z) \arrow[r] & H^0(S^1, \Z_A) \oplus H^0(S^1, \Z_B) \arrow[r, "\tau_0"] & H^0(S^1, \Z_{A \cap B}) \arrow[r] & {}     \\
+    {} \arrow[r] & H^1(S^1, \Z) \arrow[r] & H^1(S^1, \Z_A) \oplus H^1(S^1, \Z_B) \arrow[r] & H^1(S^1, \Z_{A \cap B}) \arrow[r] & \cdots
+    \end{tikzcd} \]
+where $H^i(\Z_A \oplus \Z_B) \cong H^i(\Z_A) \oplus H^i(\Z_B)$ by (2.9). By (2.10), we have
+\begin{align*}
+    H^0(S^1, \Z), H^0(S^1, \Z_A), H^0(S^1, \Z_B) & = \Z, \\
+    H^0(\Z_{A \cap B}) & = \Z \oplus \Z, \\
+    H^1(\Z_{A \cap B}) & = 0
+\end{align*}
+The first line follows from the fact that $A, B , S^1$ are all connected and locally connected. The intersection $A \cap B$ is a noetherian space of dimension zero with two irreducible components, namely the points $P$ and $Q$, so its space of global sections is free of rank two. Lastly, $H^1(S^1, \Z_{A \cap B}) = H^1(A \cap B, \Z) = 0$ by (2.7). By exactness, we reduce to the following exact sequence
+\[ \begin{tikzcd}
+    0 \arrow[r] & \Z \oplus \Z / \im{\tau_0} \arrow[r] & H^1(S^1,\Z) \arrow[r] & H^1(S^1, \Z_A) \oplus H^1(S^1, \Z_B).
+    \end{tikzcd} \]
+The homomorphism $\tau_0$ is defined by $\tau_0(a, b) = (b - a, b - a)$, which is the diagonal map. Thus, the term on the left is free of rank one. It remains to show $H^1(S^1, \Z_A) = H^1(S^1, \Z_B) = 0$. By (2.10), it suffices to show $H^1(A, \Z) = 0$.
+
+From here, $\Z$ will denote the constant sheaf on $A$. Identifying $A$ with the closed unit interval $[0, 1]$, we repeat the procedure above for $A$. Pick any $t \in (0, 1)$, say $t = 2^{-1}$. Then $X = [0, t]$ and $Y = [t, 1]$ is a di, taking cohomology groups, we get a long exact sequence
+\[ \begin{tikzcd}
+    0 \arrow[r]  & H^0(A, \Z) \arrow[r] & H^0(A, \Z_X) \oplus H^0(A, \Z_Y) \arrow[r] & H^0(A, \Z_{X \cap Y}) \arrow[r] & {}     \\
+    {} \arrow[r] & H^1(A, \Z) \arrow[r] & H^1(A, \Z_X) \oplus H^1(A, \Z_Y) \arrow[r] & H^1(A, \Z_{X \cap Y}) \arrow[r] & \cdots
+    \end{tikzcd} \]
+Imitating the previous calculation, the first row is exact and $H^1(A, \Z_{X \cap Y}) = 0$ by (2.7) and (2.10). Thus, we reduce to the following exact sequence
+\[ \begin{tikzcd}
+    0 \arrow[r] & H^1(A, \Z) \arrow[r] & H^1(A,\Z_X) \oplus H^1(A, \Z_Y) \arrow[r] & 0.
+    \end{tikzcd} \]
+Since $X \cong A, B$, $H^1(A, \Z_X), H^1(A, \Z_Y) \cong H^1(A, \Z)$ by (2.10), which is possible if and only if $H^1(A, \Z) = 0$.
+
+\item[(b)]
+
+\end{itemize}
+\end{proof}
+
+\end{enumerate}
+\end{document}

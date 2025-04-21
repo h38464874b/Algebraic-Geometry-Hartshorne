@@ -1,0 +1,7 @@
+Riemann-Roch
+nonsingular
+noetherian
+nonsingularity
+surjective
+leftmargin
+Zariski

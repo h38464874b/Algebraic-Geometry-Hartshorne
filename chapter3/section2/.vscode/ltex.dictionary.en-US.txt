@@ -1,0 +1,10 @@
+noetherian
+Zariski
+Mayer-Vietoris
+functorial
+isomorphisms
+flasque
+Noetherian
+paracompact
+colimits
+homeomorphic

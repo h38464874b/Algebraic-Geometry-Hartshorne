@@ -1,0 +1,3 @@
+Bertini
+subschemes
+hypersurface

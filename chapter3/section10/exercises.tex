@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\fN}{\mathscr{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 10}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+
+\item Let $f : X \to Y$ be a property, flat morphism of varieties over $k$. Suppose for some point $y \in Y$ that the fiber $X_y$ is smooth over $k(y)$. Then show that there is an open neighborhood $U$ of $y$ in $Y$ such that $f : f^{-1}(U) \to U$ is smooth.
+
+\item A morphism $f : X \to Y$ of schemes of finite type over $k$ is \textit{étale} if it is smooth of relative dimension $0$. It is \textit{unramified} if for every $x \in X$, letting $y = f(x)$, we have $\goth{m}_y \cdot \fO_x = \goth{m}_x$, and $k(x)$ is a separable algebraic extension of $k(y)$. Show that the following conditions are equivalent:
+\begin{itemize}
+  \item[(i)] $f$ is étale;
+  \item[(ii)] $f$ is flat, and $\Omega_{X/Y} = 0$;
+  \item[(iii)] $f$ is flat and unramified.
+\end{itemize}
+
+\item Show that a morphism $f : X \to Y$ of schemes of finite type over $k$ is étale if and only if the following condition is satisfied: for each $x \in X$, let $y = f(x)$. Let $\hat{\fO}_x$ and $\hat{\fO}_y$ be the completions of the local rings at $x$ and $y$. Choose fields of representatives (II, 8.25A) $k(x) \subseteq \hat{\fO}_x$ and $k(y) \subseteq \hat{\fO}_y$ so that $k(y) \subseteq k(x)$ via the natural map $\hat{\fO}_y \to \hat{\fO}_x$. Then our condition is that for every $x \in X$, $k(x)$ is a separable algebraic extension of $k(y)$, and the natural map
+\begin{equation*}
+  \hat{\fO}_y \otimes_{k(y)} k(x) \to \hat{\fO}_x
+\end{equation*}
+is an isomorphism.
+
+\item If $x$ is a point of a scheme $X$, we define an \textit{étale neighborhood} of $x$ to be an étale morphism $f : U \to X$, together with a point $x' \in U$, such that $f(x') = x$. As an example of the use of étale neighborhoods, prove the following: if $\fF$ is a coherent sheaf on $X$, and if every point of $X$ has an étale neighborhood $f : U \to X$ for which $f^*\fF$ is a free $\fO_U$-module, then $\fF$ is locally free on $X$.
+
+\item Let $Y$ be the plane nodal cubic curve $y^2 = x^2(x + 1)$. Show that $Y$ has a finite étale covering $X$ of degree $2$2, where $X$ is a union of two irreducible components, each one isomorphic to the normalization of $Y$.
+
+\item \textit{(Serre). A linear system with moving singularities.} Let $k$ be an algebraically closed field of characteristic $2$. Let $P_1, \dots, P_7 \in \PP_k^2$ be the seven points of the projective plane over the prime field $\mathbb{F}_2 \subseteq k$. Let $\goth{d}$ be the linear system of all cubic curves in $X$ passing through $P_1, \dots, P_7$.
+\begin{itemize}
+  \item[(a)] $\goth{d}$ is a linear system of dimension $2$ with base points $P_1, \dots, P_7$, which determines an inseparable morphism of degree $2$ from $X - \{P_i\}$ to $\PP^2$.
+  \item[(b)] Every curve $C \in \goth{d}$ is singular. More precisely, either $C$ consists of $3$ lines all passing through one of the $P_i$, or $C$ is an irreducible cuspidal cubic with cusp $P \neq \text{any $P_i$}$. Furthermore, the correspondence $C \mapsto \text{the singular point of $C$}$ is a one-to-one correspondence between $\goth{d}$ and $\PP^2$. Thus, the singular points of elements of $\goth{d}$ move all over.
+\end{itemize}
+
+\item \textit{A linear system with moving singularities contained in the base locus (any characteristic).} In affine $3$-space with coordinates $x, y, z$, let $C$ be the conic $(x - 1)^2 + y^2 = 1$ in the $xy$-plane, and let $P$ be the point $(0, 0, t)$ on the $z$-axis. Let $Y_t$ be the closure in $\PP^3$ of the cone over $C$ with vertex $P$. Show that as $t$ varies, the surfaces $\{Y_t \}$ form a linear system of dimension $1$, with a moving singularity at $P$. The base locus of this linear system is the conic $C$ plus the $z$-axis.
+
+\item Let $f : X \to Y$ be a morphism of varieties over $k$. Assume that $Y$ is regular, $X$ is Cohen-Macaulay, and that every fiber of $f$ has dimension equal to $\dim{X} - \dim{Y}$. Then $f$ is flat.
+
+\end{enumerate}
+\end{document}

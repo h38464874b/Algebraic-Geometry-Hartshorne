@@ -1,0 +1,2 @@
+{"rule":"CAPITALIZATION_NNP_DERIVED","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a noetherian topological space, and let \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a direct system of injective sheaves of abelian groups on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"CAPITALIZATION_NNP_DERIVED","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a topological space, let \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a closed subset, and let \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a sheaf of abelian groups.\\E$"}

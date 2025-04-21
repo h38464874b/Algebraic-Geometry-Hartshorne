@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fR}{\mathscr{R}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+% 2.4, 2.6, 2.7
+% 3.1, 3.2, 3.6, 3.7
+% 4.1, 4.2, 4.3, 4.4, 4.5
+% 5.1, 5.2, 5.3, 5.10
+% 6.1, 6.3, 6.6, 6.7
+% 7.1, 7.3
+% 8.1, 8.2, 8.3, 
+% 9.3, 9.4, 9.11
+% 10.1, 10.2, 10.3, 10.5, 10.6
+% 11.1, 11.2, 11.8
+% 12.1, 12.2
+
+\title{Chapter 3, Section 4}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $f : X \to Y$ be an affine morphism of Noetherian separated schemes (II, Ex. 5.17). Show that for any quasi-coherent sheaf $\fF$ on $X$, there are natural isomorphisms for all $i \geq 0$,
+\begin{equation*}
+  H^i(X, \fF) \cong H^i(Y, f_* \fF).
+\end{equation*}
+
+\item Prove Chevalley's theorem: Let $f : X \to Y$ be a finite surjective morphism of Noetherian separated schemes, with $X$ affine. Then $Y$ is affine.
+\begin{itemize}
+  \item[(a)] Let $f : X \to Y$ be a finite surjective morphism of integral Noetherian schemes. Show that there is a coherent sheaf $\fM$ on $X$, and a morphism of sheaves $\alpha : \fO_Y^r \to f_* \fM$ for some $r > 0$, such that $\alpha$ is an isomorphism at the generic point of $Y$.
+  \item[(b)] For any coherent sheaf $\fF$ on $Y$, show that there is a coherent sheaf $\fG$ on $X$, and a morphism $\beta : f_* \fG \to \fF^r$ which is an isomorphism at the generic point of $Y$. 
+  \item[(c)] Now prove Chevalley's theorem.
+\end{itemize}
+
+\item Let $X = \A_k^2 = \spec{k[x, y]}$, and let $U = X - \{ (0, 0) \}$. Using a suitable cover of $U$ by open affine subsets, show that $H^i(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$. In particular, it is infinite-dimensional.
+
+\item On an arbitrary topological space $X$ with an arbitrary Abelian sheaf $\fF$, Čech cohomology may not give the same result as the derived functor cohomology. But here we show that $H^1$, there is an isomorphism if one takes the limit over all coverings.
+\begin{itemize}
+  \item[(a)] Let $\goth{U} = (U_i)_{i \in I}$ be an open covering of the topological space $X$. A \textit{refinement} of $\goth{U}$ is a covering $\goth{B} = (V_j)_{j \in J}$, together with a map $\lambda : J \to I$ of the index sets, such that for each $j \in J$, $V_j \subseteq U_{\lambda(j)}$. If $\goth{B}$ is a refinement of $\goth{U}$, show that there is a natural induced map on Čech cohomology for any Abelian sheaf $\fF$, and for each $i$,
+  \begin{equation*}
+    \lambda^i : \check{H}^i(\goth{U}, \fF) \to \check{H}^i(\goth{B}, \fF).
+  \end{equation*}
+  The coverings of $X$ form a partially ordered set under refinement, so we can consider the Čech cohomology in the limit
+  \begin{equation*}
+    \varinjlim_\goth{U} = \check{H}^i(\goth{U}, \fF).
+  \end{equation*}
+
+  \item[(b)]  For any Abelian sheaf $\fF$ on $X$, show that the natural maps (4.4) for each covering
+  \begin{equation*}
+    \check{H}^i(\goth{U}, \fF) \to H^i(X, \fF)
+  \end{equation*}
+  are compatible with the refinement maps above.
+
+  \item[(c)] Now prove the following theorem. Let $X$ be a topological space, $\fF$ a sheaf of Abelian groups. Then the natural map
+  \begin{equation*}
+    \varinjlim_\goth{U} \check{H}^1(\goth{U}, \fF) \to H^1(X, \fF)
+  \end{equation*}
+  is an isomorphism.
+\end{itemize}
+
+\item For any ringed space $(X, \fO_X)$, let $\pic{X}$ be the group of isomorphism classes of invertible sheaves (II, \S 6). Show that $\pic{X} \cong H^i(X, \fO_X^*)$ where $\fO_X^*$ denotes the sheaf whose sections over an open set $U$ are the units in the ring $\Gamma(U, \fO_X)$, with multiplication as the group operation.
+
+\item Let $(X, \fO_X)$ be a ringed space, let $\fI$ be a sheaf of ideals with $\fI^2 = 0$, and let $X_0$ be the ringed space $(X, \fO_X / \fI)$. Show that there is an exact sequence of sheaves of Abelian groups on $X$,
+\begin{equation*}
+  0 \to \mathscr{J} \to \fO_X^* \to \fO_{X_0}^* \to 0,
+\end{equation*}
+where $\fO_X^*$ (respectively, $\fO_{X_0}^*$) denotes the sheaf of (multiplicative) groups of units in the sheaf of rings $\fO_X$ (respectively, $\fO_{X_0}$); the map $\fI \to \fO_X^*$ is defined by $a \mapsto 1 + a$, and $\fI$ has its usual (additive) group structure. Conclude there is an exact sequence of Abelian groups
+\begin{equation*}
+  \cdots \to H^1(X, \fI) \to \pic{X} \to \pic{X_0} \to H^2(X, \fJ) \to \cdots.
+\end{equation*}
+
+\item Let $X$ be a subscheme of $\PP_k^2$ defined by a single homogenous equation $f(x_0, x_1, x_2) = 0$ of degree $d$. (Do no assume $f$ is irreducible.) Assume that $(1, 0, 0)$ is not on $X$. Then show that $X$ can be covered by the two open affine subsets $U = X \cap \{ x_1 \neq 0 \}$ and $V = X \cap \{ x_2 \neq 0 \}$. Now calculate the Čech complex
+\begin{equation*}
+  \Gamma(U, \fO_X) \oplus \Gamma(V, \fO_X) \to \Gamma(U \cap V, \fO_X)
+\end{equation*}
+explicitly, and thus show that
+\begin{align*}
+  \dim H^0(X, \fO_X) & = 1, \\
+  \dim H^1(X, \fO_X) & = \frac{1}{2}(d - 1)(d - 2).
+\end{align*}
+
+\item \textit{Cohomological Dimension.} Let $X$ be a noetherian separated scheme. We define the \textit{cohomological dimension} of $X$, denoted $\cd(X)$, to be the least integer $n$ such that $H^i(X, \fF) = 0$ for all quasi-coherent sheaves $\fF$ and all $i > n$. Thus, for example, Serre's theorem (3.7) says that $\text{cd}(X) = 0$ if and only if $X$ is affine. Grothendieck's theorem (2.7) implies that $\text{cd}(X) \leq \text{dim}~X$.
+\begin{itemize}
+  \item[(a)] In the definition of $\text{cd}(X)$, show that it is sufficient to consider only coherent sheaves on $X$. Use (II, Ex. 5.15) and (2.9).
+  \item[(b)] If $X$ is quasi-projective over a field $k$, then it is even sufficient to consider only locally free coherent sheaevs on $X$. Use (II, 5.18).
+  \item[(c)] Suppose $X$ has a covering by $r + 1$ open affine subsets. Use Čech cohomology to show that $\text{cd}(X) \leq r$.
+  \item[(d)] If $X$ is a quasi-projective scheme of dimsenion $r$ over a field $k$, then $X$ can be covered by $r + 1$ open affine subsets. Conclude (independently of (2.7)) that $\text{cd}(X) \leq \dim{X}$.
+  \item[(e)] Let $Y$ be a set-theoretic complete intersection (I, Ex. 2.17) of codimension $r$ in $X = \PP_k^n$. Show that $\text{cd}(X - Y) \leq r - 1$.
+\end{itemize}
+
+\item Let $X = \spec{k[x_1, x_2, x_3, x_4]}$ be affine four-space over a field $k$. Let $Y_1$ be the plane $x_1 = x_2 = 0$ and let $Y_2$ be the plane $x_3 = x_4 = 0$. Show that $Y = Y_1 \cup Y_2$ is not a set-theoretic complete intersection in $X$. Therefore, the projective closure $\overline{Y}$ in $\PP_k^4$ is also not a set-theoretic complete intersection.
+
+\item Let $X$ be a nonsingular variety over an algebraically closed field $k$, and let $\fF$ be a coherent sheaf on $X$. Show that there is a one-to-one correspondence between the set of infinitesimal extensions of $X$ by $\fF$ (II, Ex. 8.7) up to isomorphism, and the group $H^1(X, \fF \otimes \mathscr{T})$, where $\mathscr{T}$ is the tangent sheaf of $X$ (II, \S 8).
+
+\item This exercise shows that Čech cohomology will agree with the usual cohomology whenever the sheaf has no cohomology on any of the open sets. More precisely, let $X$ be a topological space, $\fF$ a sheaf of Abelian groups, and $\goth{U} = (U_i)$ an open cover. Assume for any finite intersection $V = U_{i_0} \cap \cdots \cap U_{i_p}$ of open sets of the covering, and for any $k > 0$, that $H^i(V, \restr{\fF}{V}) = 0$. Then prove that for all $p \geq 0$, the natural maps $$\check{H}^p(\goth{U}, \fF) \to H^p(X, \fF)$$ of (4.4) are isomorphisms. Show also that one can recover (4.5) as a corollary of this more general result.
+
+\end{enumerate}
+\end{document}

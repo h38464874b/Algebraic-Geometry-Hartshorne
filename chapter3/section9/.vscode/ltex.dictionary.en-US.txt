@@ -1,0 +1,8 @@
+projectively
+nonsingular
+Noetherian
+subscheme
+surjective
+leftmargin
+subschemes
+cokernel

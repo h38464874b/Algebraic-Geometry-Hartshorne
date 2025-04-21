@@ -1,0 +1,2 @@
+{"rule":"VARIETIES_IN_OF","sentence":"^\\Q[(d)] If \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is an algebraic family of projectively normal varieties in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, parametrized by a nonsingular curve \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q over an algebraically closed field \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, then \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a very flat family of schemes.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSome examples of flatness and nonflatness.\\E$"}

@@ -1,0 +1,314 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\fL}{\mathcal{L}}
+\newcommand{\fM}{\mathcal{M}}
+\newcommand{\fF}{\mathcal{F}}
+\newcommand{\fG}{\mathcal{G}}
+\newcommand{\fE}{\mathcal{E}}
+\newcommand{\fO}{\mathcal{O}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\title{Chapter 2, Section 5}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+% * 5.1, 5.7, 5.8, 5.9, 5.12, 5.13, 5.16
+
+\item[\textbf{1.}] Let $(X, \fO_X)$ be a ringed space, and let $\fE$ be a locally free $\fO_X$-module of finite rank. We define the \textit{dual} of $\fE$, denoted $\fE^\vee$ to be the sheaf $\mathcal{H}om_{\fO_X}(\fE, \fO_X)$.
+\begin{itemize} [leftmargin=0em]
+    \item[(a)] Show that $(\fE^\vee)^\vee \cong \fE$.
+    \item[(b)] For any $\fO_X$-module $\fF$, $\mathcal{H}om_{\fO_X}(\fE, \fF) \cong \fE^\vee \otimes_{\fO_X} \fF$.
+    \item[(c)] For any $\fO_X$-modules $\fF$, $\fG$, $\Hom_{\fO_X}(\fE \otimes \fF, \fG) \cong \Hom_{\fO_X}(\fF, \mathcal{H}om_{\fO_X}(\fE, \fG)).$
+    \item[(d)] (\textit{Projection Formula}). If $f : (X, \fO_X) \to (Y, \fO_Y)$ is a morphism of ringed spaces, if $\fF$ is an $\fO_X$-module, and if $\fE$ is a locally free $\fO_Y$-module of finite rank, then there is a natural isomorphism $f_*(\fF \otimes_{\fO_X} f^* \fE) \cong f_*(\fF) \otimes_{\fO_Y} \fE$.
+\end{itemize}
+
+\begin{lemma}
+    Let $(X, \fO)$ be a ringed space, let $\fF, \fG$ be $\fO$-modules, and let $\fF$ be locally free of finite rank. For any $x \in X$, $\mathcal{H}om(\fF, \fG)_x \cong \Hom_{\fO_{x, X}}(\fF_x, \fG_x)$.
+\end{lemma}
+
+\begin{proof}
+    An element of $\mathcal{H}om(\fF, \fG)_x$ can be represented as a pair $\langle U, f \rangle$, where $U$ is an open neighborhood of $x$ and $f : \restr{\fF}{U} \to \restr{\fG}{U}$ is a morphism of sheaves on $U$. Since $(\restr{\fF}{U})_x \cong \fF_x, (\restr{\fG}{U})_x \cong \fG_x$, there is a natural map
+    \begin{align*}
+        \alpha : \mathcal{H}om(\fF, \fG)_x & \to \Hom_{\fO_{x, X}}(\fF_x, \fG_x) \\
+        \langle U, f \rangle & \mapsto f_x.
+    \end{align*}
+    We show $\alpha$ is a bijection. If $\fF$ has rank $n$, then $\fF_x \cong \fO_{x}^{\oplus n}$ since colimits commute and the image of $f_x$ is a finitely generated $\fO_{x}$-module. Thus, we can represent $f_x$ as an $n \times n$-matrix, and there are only a finite number of entries, so we can further assume the entries lie in $\Gamma(W, \fO)$ for a smaller open neighborhood $W \subseteq U$. It is immediate that $\alpha$ is injective. Also, by this representation any $\varphi \in \Hom_{\fO_{x}}(\fF_x, \fG_x)$ defines a $\fO_X(W)$-module homomorphism $\fF(W) = \fO_{X}(W)^{\oplus n} \to \fG(W)$, and by sheafification it ascends to a morphism of sheaves $\restr{\fF}{W} \to \restr{\fG}{W}$. Hence, $\alpha$ is surjective.
+\end{proof}
+
+\begin{lemma}
+    Let $(X, \fO_X)$ be a ringed space, let $\fF, \fG$ be $\fO_X$-modules, and let $x \in X$. Then $(\fF \otimes_{\fO_X} \fG)_x \cong \fF_x \otimes_{\fO_{x, X}} \fG_x$.
+\end{lemma}
+
+\begin{proof}
+    (A.M. Ex. 2.20).
+\end{proof}
+
+\begin{lemma}
+    If $(f, f^\#) : (X, \fO_X) \to (Y, \fO_Y)$ is a morphism of ringed spaces, and $\fF$ and $\fG$ are $\fO_Y$-modules, then $f^*(\fF \otimes_{\fO_Y} \fG) \cong f^*(\fF) \otimes_{\fO_X} f^*(\fG)$.
+\end{lemma}
+
+\begin{proof}
+    Check locally at each point and use Lemma 2.
+\end{proof}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0em]
+    \item[(a)] The question is local, so assume $\fE$ is free of rank $n$. Then $\fE_x = \fO_{x, X}^{\oplus n}$, and by lemma 1, we have
+    \begin{align*}
+        (\fE^\vee)^\vee_x = \Hom_{\fO_{x, X}}(\Hom_{\fO_{x, X}}(\fO_{x, X}^{\oplus n}, \fO_{x, X}), \fO_{x, X}) = (\fO_{x, X}^{\oplus n\vee})^\vee \cong \fO_{x, X}^{\oplus n} = \fE_x,
+    \end{align*}
+    where the last isomorphism is a basic fact of finite free modules. The sheaves $(\fE^\vee)^\vee$ and $\fE$ are isomorphic at the level of stalks, hence they are isomorphic.
+
+    \item[(b)] The question is local, so assume $\fE$ is free of rank $n$. For any open set $U \subseteq X$, we have
+    \begin{align*}
+        \mathcal{H}om_{\fO_X}(\fE, \fF)(U) & = \Hom_{\srestr{\fO_X}{U}}(\restr{\fE}{U}, \restr{\fF}{U}), \\
+        (\fE^\vee \otimes_{\fO_X} \fF)(U) & = \fE^\vee(U) \otimes_{\fO_X(U)} \fF(U) = \Hom_{\srestr{\fO_X}{U}}(\restr{\fE}{U}, \restr{\fO_X}{U}) \otimes_{\fO_X(U)} \fF(U),
+    \end{align*}
+    and since $\fE$ is free, we have $\fE(U) = \fO_X(U)^{\oplus n}$. Let $f_i : \fE \to \fO_X$ be the projection morphisms onto the $i$th component, let $\restr{e_i}{U}$ be the standard basis of $\fE(U)$, and let $f : \mathcal{H}om_{\fO_X}(\fE, \fO_X) \to \fE^\vee \otimes_{\fO_X} \fF$ be the morphism of sheaves defined by
+    \begin{align*}
+        f(U) : \mathcal{H}om_{\fO_X}(\fE, \fF)(U) & \to (\fE^\vee \otimes_{\fO_X} \fF)(U) \\
+        g & \mapsto \sum_{i = 1}^n \restr{f_i}{U} \otimes g(\restr{e_i}{U})
+    \end{align*}
+    It is isomorphism of sheaves from the fact that $\fE$ is free and $g$ is $\fO_X$-linear.
+
+    \item[(c)] Let $f \in \Hom_{\fO_X}(\fE \otimes \fF, \fG)$, which for every open $U \subseteq X$ defines a homomorphism of abelian groups
+    \begin{align*}
+        f(U) : (\fE \otimes \fF)(U) \to \fG(U).
+    \end{align*}
+    We want to show $f$ naturally defines an element of $\Hom_{\fO_X}(\fF, \mathcal{H}om_{\fO_X}(\fE, \fG))$. Define $\tilde{f} : \fF \to \mathcal{H}om_{\fO_X}(\fE, \fG)$ as the following: for each $s \in \fF(U)$, let $\tilde{f}(s) : \restr{\fE}{U} \to \restr{\fG}{U}$ be the morphism defined by
+    \begin{align*}
+        \tilde{f}(s) : \restr{\fE}{U} & \to \restr{\fG}{U} \\
+        t \in \Gamma(V, \restr{\fE}{U}) & \mapsto f(t \otimes \restr{s}{V})
+    \end{align*}
+    where $V$ is any open subset of $U$. The fact that this defines an isomorphism of abelian groups follows the corresponding algebraic fact about finite free modules over rings.
+
+    \item[(d)] The question is local on $Y$, so assume $\fE$ is free of finite rank. Also, if the statement is true for two sheaves of $\fO_Y$-modules, then it true for their direct sum, so we can assume $\fE = \fO_Y$. Thus, we have the following composite of canonical isomorphisms
+    \begin{equation*}
+        f_* \fF \otimes_{\fO_Y} \fO_Y \cong f_* \fF \cong f_*(\fF \otimes_{\fO_X} \fO_X) \cong f_*(\fF \otimes_{\fO_X} f^*\fO_Y).
+    \end{equation*}
+    The last isomorphism is because structure sheaves pullback to structure sheaves, i.e.,
+    \begin{equation*}
+        f^*\fO_Y = f^{-1}\fO_Y \otimes_{f^{-1}\fO_Y} \fO_X \cong \fO_X.
+    \end{equation*}
+    Alternatively, by adjointness of $f_*$ and $f^*$, it suffices to show
+    \begin{equation*}
+        \fF \otimes_{\fO_X} f^* \fE \cong f^*(f_*(\fF)) \otimes_{\fO_X} f^*\fE
+    \end{equation*}
+    We assume the basic fact that the pullback distributes with tensor products, i.e., $f^*(\fF \otimes_{\fO_Y} \fG) \cong f^* \fF \otimes_{\fO_X} f^* \fG$. Again, by adjointness of $f_*$ and $f^*$, we have $f^* f_* \fF \cong \fF$, which is what we wanted to show.
+\end{itemize}
+\end{proof}
+
+\item[\textbf{7.}] Let $X$ be a noetherian scheme, and let $\fF$ be a coherent sheaf.
+\begin{itemize} [leftmargin=0em]
+    \item[(a)] If the stalk $\fF_x$ is a free $\fO_x$-module for some point $x \in X$, then there is a neighborhood $U$ of $x$ such that $\restr{\fF}{U}$ is free.
+    \item[(b)] $\fF$ is locally free if and only if its stalks $\fF_x$ are free $\fO_x$-modules for all $x \in X$.
+    \item[(c)] $\fF$ is invertible (i.e. locally free of rank $1$) if and only if there is a coherent sheaf $\fG$ such that $\fF \otimes \fG \cong \fO_X$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize}[leftmargin=0em]
+        \item[(a)] This is a local question, so assume $X = \spec{A}$ and $\fF = \tilde{M}$ for a noetherian ring $A$ and a finitely generated $A$-module $M$. We reduce to the following algebraic problem: if there exists a prime ideal $\goth{p}$ such that $M_\goth{p} \cong M \otimes_A A_\goth{p}$ is a finite free $A_\goth{p}$-module, then there exists $f \in A - \goth{p}$ such that $M_{f} \cong M \otimes_A A_f$ is a finite free $A_f$-module. Let $m_1, \dots, m_r \in M$ such that the image of $m_i$ form a basis in $M_{\goth{p}}$, and let $\phi : A^{\oplus r} \to M$ be an $A$-module homomorphism defined by $e_i \mapsto m_i$, where $e_i$ is the standard basis of $A^{\oplus r}$. We have an exact sequence
+        \begin{equation*}
+            0 \to \ker{\phi} \to A^{\oplus r} \to M \to M / \im{\phi} \to 0,
+        \end{equation*}
+        and localization is an exact functor, so we have an induced exact sequence of $A_\goth{p}$-modules
+        \begin{equation*}
+            0 \to (\ker{\phi})_\goth{p} \to A_\goth{p}^{\oplus r} \to M_\goth{p} \to (M / \im{\phi})_\goth{p} \to 0.
+        \end{equation*}
+        Since $A_\goth{p}^{\oplus r} \to M_\goth{p}$ is an isomorphism, we have $(\ker{\phi})_\goth{p}, (M / \im{\phi})_\goth{p} = 0$. Submodules and quotients of noetherian modules are noetherian; in particular they are finitely generated, so by (A.M. Ex. 2.1) we can find $f \in A - \goth{p}$ such that $(\ker{\phi})_f, (M / \im{\phi})_f = 0$. Hence, $M_f \cong A_f^{\oplus r}$.
+
+        \item[(b)] The if direction follows from (a). The converse direction follows from the following facts: we can realize finite free modules as a colimit, the stalk of a sheaf is defined as a colimit, and colimits commute.
+
+        \item[(c)] By the previous parts and lemma 2, we reduce to the following algebraic problem: let $A$ be a noetherian local ring with maximal ideal $\goth{m}$, and let $M$ be a finitely generated $A$-module. Then $M \cong A$ if and only if there exists a finitely generated $A$-module $N$ such that $M \otimes_A N \cong A$. One direction is clear. Conversely, suppose $M, N$ are finitely generated $A$-modules such that $M \otimes_A N \cong A$. Let $k = A / \goth{m}$ be the residue field of $A$. Tensoring with $k$ gives
+        \begin{equation*}
+            (M \otimes_A k) \otimes_k (N \otimes_A k) \cong (M \otimes_A N) \otimes_A k \cong A \otimes_A k \cong k,
+        \end{equation*}
+        which implies $M \otimes_A k \cong k$. By Nakayama's lemma, $M$ is generated by a single element, which implies $M \cong A / \goth{a}$ for some ideal $\goth{a}$ of $A$, and similarly $N = A / \goth{b}$. We have $$A \cong M \otimes_A N \cong A / \goth{a} \otimes_A A / \goth{b} \cong A / (\goth{a} + \goth{b}),$$
+        which implies $\goth{a} + \goth{b} = (0)$. Hence, $M, N \cong A$.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{8.}] Again let $X$ be a noetherian scheme, and $\fF$ a coherent sheaf on $X$. We will consider the function
+\begin{equation*}
+    \varphi(x) = \dim_{k(x)}\fF_x \otimes_{\fO_x} k(x),
+\end{equation*}
+where $k(x) = \fO_x / \goth{m}_x$ is the residue field at the point $x$. Use Nakayama's lemma to prove the following results:
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] The function $\varphi$ is \textit{upper semi-continuous}, i.e. for any $n \in \Z$, the set $\{ x \in X \mid \varphi(x) \geq n\}$ is closed.
+    \item[(b)] If $\fF$ is locally free, and $X$ is connected, then $\varphi$ is a constant function.
+    \item[(c)] Conversely, if $X$ is reduced, and $\varphi$ is constant, then $\fF$ is locally free.
+\end{itemize}
+
+\begin{lemma} [Nakayama]
+    Let $A$ be a local ring with residue field $k$, and let $M$ be a finitely generated $A$-module. Then any $k$-basis of $M / m M$ lifts to a minimal set of generators of $M$.
+\end{lemma}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] We show the set $\{ x \in X : \varphi(x) < n \}$ is open.  By (5.4), we reduce to the following algebraic problem: let $A$ be a noetherian ring, let $M$ be a finitely generated $A$-module, and let $\goth{p}$ be a prime ideal of $A$ with residue field $k(\goth{p})$. If $\dim_{k(\goth{p})} M_\goth{p} \otimes_{A_\goth{p}} k(\goth{p}) < n$ for some $n \in \Z$, there exists a basic open neighborhood $\spec{A_s}$ of $\goth{p}$ such that $\dim_{k(\goth{q})} M_\goth{q} \otimes_{A_\goth{q}} k(\goth{q}) < n$ for all $\goth{q} \in \spec{A_s}$, where $s \in A - \goth{p}$. By Nakayama's lemma, there exists $m_1, \dots, m_r \in M$ with $r < n$ such that their image in $M_\goth{p} \otimes_{A_\goth{p}} k(\goth{p})$ is a $k(\goth{p})$-basis. Let $f : A^{\oplus r} \to M$ be the $A$-module homomorphism defined by $e_i \mapsto m_i$. We have an exact sequence
+        \begin{equation*}
+            A^{\oplus r} \to M \to M / \im{f}.
+        \end{equation*}
+        Localizing gives
+        \begin{equation*}
+            A_\goth{p}^{\oplus r} \to M_\goth{p} \to (M / \im{f})_\goth{p},
+        \end{equation*}
+        where $(M / \im{f})_\goth{p} = 0$. Quotients of noetherian modules are noetherian, so by (A.M. Ex. 2.1), we can find $s \in A - \goth{p}$ such that $(M / \im{f})_s = 0$. Thus, we have an exact sequence
+        \begin{equation*}
+            A_s^{\oplus r} \to M_s \to 0,
+        \end{equation*}
+        which implies $M_\goth{q} \otimes_{A_\goth{q}} k(\goth{q})$ has rank at most $r$ for any $\goth{q} \in \spec{A_s}$.
+
+        \item[(b)] Let $U_i$ for $i = 1, \dots, n$ be a finite open cover of $X$ such that $\restr{\fF}{U_i}$ is a free $\restr{\fO_X}{U_i}$-module. If $X$ is connected, then for all $U_i$, there exists $U_j$ with $j \neq i$ such that $U_i \cap U_j$. Clearly $\varphi$ is constant on each $U_i$, so let $r_i$ be the rank of $\restr{\fF}{U_i}$. Choose any $x \in U_i \cap U_j$, then $r_i = r_j = \varphi(x)$.
+
+        \item[(c)] Let $x \in X$, let $\spec{A}$ be an open affine neighborhood of $x$ for some noetherian reduced ring $A$, and let $\goth{p}$ be the prime ideal corresponding to $x \in \spec{A}$. Set $r = \varphi(x)$. By (5.4), there exists a finitely generated $A$-module $M$ such that $\restr{\fF}{\spec{A}} = \tilde{M}$. Let $m_1, \dots, m_r \in \fF_x \cong M_\goth{p}$ such that their image in $\fF_x \otimes_{\fO_x} k(x)$ form a $k(x)$-basis. By Nakayama's lemma, the $m_i$'s generate $M_\goth{p}$ over $A_\goth{p}$, so they generate $M_\goth{q}$ for all prime ideals $\goth{q} \subseteq \goth{p}$. Suppose $\sum_{i = 1}^r a_i m_i = 0$ for $a_i \in A_\goth{p}$. Since the image of the $m_i$ in $M_\goth{q} \otimes_{A_\goth{q}} k(\goth{q})$ for all $i = 1, \dots, r$ form a $k(\goth{q})$-basis, the images of $a_i$ in $k(\goth{q})$ must be zero for all $i$. This implies $a_i$ is contained in all prime ideals of $A_\goth{p}$. However, $A_\goth{p}$ is reduced, so $a_i = 0$. Hence, $m_i$ are linearly independent.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{9.}] Let $S$ be a graded ring, generated by $S_1$ as an $S_0$-algebra, let $M$ be a graded $S$-module, and let $X = \proj{S}$.
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] Show that there is a natural homomorphism $\alpha : M \to \Gamma_*(\tilde{M})$.
+    \item[(b)] Assume now that $S_0 = A$ is a finitely generated $k$-algebra for some field $k$, that $S_1$ is a finitely generated $A$-module, and that $M$ is a finitely generated $S$-module. Show that the map $\alpha$ is an isomorphism in all large enough degrees, i.e. there is a $d_0 \in \Z$ such that for all $d \geq d_0$, $\alpha_d : M_d \to \Gamma(X, \tilde{M}(d))$ is an isomorphism.
+    \item[(c)] With the same hypotheses, we define an equivalence relation $\approx$ on graded $S$-modules by saying $M \approx M'$ is there is an integer $d$ such that $M_{\geq d} \cong M'_{\geq d}$. Here $M_{\geq d} = \bigoplus_{n \geq d} M_n$. We will say that a graded $S$-module $M$ is \textit{quasi-finitely generated} if it is equivalent to a finitely generated module. Now show that the functors $~\tilde{}~$ and $\Gamma_*$ induce an equivalence of categories between the category of quasi-finitely generated graded $S$-modules modulo the equivalence relation $\approx$, and the category of coherent $\fO_X$-modules.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Write $M = \bigoplus_{d = 0}^\infty M_d$. If $s \in M_d$, then $s$ determines in a natural way a global section $s \in \Gamma(X, \tilde{M}(d))$, so define $\alpha_d : M_d \to \Gamma(X, \tilde{M}(d))$ in this way. Define $\beta$ by extending this map linearly for all $d$.
+
+        \item[(b)] By (\S 1, 7.4), there is a finite filtration
+        \begin{equation*}
+            0 = M^0 \subseteq M^1 \subseteq \cdots \subseteq M^r = M
+        \end{equation*}
+        of $M$ by graded submodules, where for each $i$, $M^i / M^{i - 1} \cong (S / \goth{p}_i)(n_i)$ for some homogenous prime ideal $\goth{p}_i \subseteq S$, and some integer $n_i$. This filtration gives a filtration of $\tilde{M}$ and short exact sequences
+        \begin{equation*}
+            0 \to \tilde{M}^{i - 1} \to \tilde{M}^i \to \widetilde{M^i / M^{i - 1}} \to 0.
+        \end{equation*}
+        Twisting by $d$ and taking global sections, all maps are natural, so we have the following commutative diagram with exact rows
+        \[ \begin{tikzcd}
+            0 \arrow[r] & M_d^{i-1} \arrow[d] \arrow[r]         & M_d^i \arrow[d] \arrow[r]         & (M^i/M^{i-1})_d \arrow[d]             \\
+            0 \arrow[r] & \Gamma(X, \tilde{M}^{i-1}(d)) \arrow[r] & \Gamma(X,\tilde{M}^i(d)) \arrow[r] & \Gamma(X, \widetilde{M^i/M^{i-1}}(d))
+            \end{tikzcd} \]
+        where the vertical arrows are maps defined in (a). By the five lemma, to show that $M_d^i \to \Gamma(X, \tilde{M}^i(d))$ is surjective for large enough $d$, it will be sufficient to show that $(S/\goth{p})_d \to \Gamma(X, \widetilde{S/\goth{p}}(d))$ is surjective for large enough $d$, for each $\goth{p}$ and $n$.  Thus, we have reduced to the following special case: Let $S$ be a graded integral domain, finitely generated by $S_1$ as an $S_0$-algebra, where $S_0 = A$ is a finitely generated domain over $k$, and let $X = \proj{S}$. Then the map $\alpha : S \to S' = \bigoplus_{d \geq 0} \Gamma(X, \fO_X(d))$ is an isomorphism in all large enough degrees.
+
+        Let $x_0, \dots, x_r \in S_1$ be a set of generators of $S_1$ as an $A$-module. Following the argument in (5.13), $S'$ is a ring, containing $S$, and contained in the intersection $\bigcap S_{x_i}$ of the localizations of $S$ at the elements $x_0, \dots, x_r$. By the proof of (5.19), since $S_d'$ is a finitely generated $A$-module for every $d$, there exists $d_0 \geq 0$ such that $S_n S'_d \subseteq S_{n + d} \subseteq S'_{n + d}$ for some large enough $n$ and all $d \geq d_0$. It follows by $S_n S'_d = S'_{n + d}$ that $S_{n + d} = S'_{n + d}$ for all $d \geq d_0$.
+
+        \item[(c)] The natural homomorphism $\alpha$ viewed as a morphism between equivalence classes of quasi-finitely generated graded $S$-modules is an isomorphism by (b). Hence, the two categories are equivalent with $\beta$ from (5.15).
+
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{12.}] \begin{itemize}
+    \item[(a)] Let $X$ be a scheme over a scheme $Y$, and let $\mathcal{L}$, $\mathcal{M}$ be two very ample invertible sheaves on $X$. Show that $\mathcal{L} \otimes \mathcal{M}$ is also very ample.
+
+    \item[(b)] Let $f : X \to Y$ and $g : Y \to Z$ be two morphisms of schemes. Let $\mathcal{L}$ be a very ample invertible sheaf on $X$ relative to $Y$, and let $\mathcal{M}$ be a very ample invertible sheaf on $Y$ relative to $Z$. Show that $\mathcal{L} \otimes f^* \mathcal{M}$ is a very ample invertible sheaf on $X$ relative to $Z$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Let $g : X \to \PP_Y^r, h : X \to \PP_Y^s$ be immersions such that $\fL \cong g^* (\fO_{\PP_Y^r}(1)), \fM \cong h^*(\fO_{\PP_Y^s}(1))$ respectively, let $\psi : \PP_Y^r \times \PP_Y^s \to \PP_Y^N$ be a Segre embedding with $N = rs + r + s$, let $\pi_r, \pi_s : \PP_Y^r \times \PP_Y^s \to \PP_Y^s, \PP_Y^s$ be the natural projection morphisms, and let $f : X \to \PP_Y^r \times \PP_Y^s$ be the unique morphism such that $g = \pi_r \circ f, h = \pi_s \circ f$. A Segre embedding is an immersion, and compositions of immersions are immersions. In particular, $\psi \circ f$ is an immersion, and we have the following isomorphisms
+        \begin{align*}
+            \fL \otimes \fM & \cong g^*(\fO_{\PP_Y^r}(1)) \otimes h^*(\fO_{\PP_Y^s}(1)) \\
+            & \cong (p_r \circ f)^*(\fO_{\PP_Y^r}(1)) \otimes (p_s \circ f)^*(\fO_{\PP_Y^s}(1) \\
+            & \cong f^*(p_r^*(\fO_{\PP_Y^r}(1)) \otimes p_s^*(\fO_{\PP_Y^s}(1))) \\
+            & \cong f^* (\fO_{\PP_Y^r \times \PP_Y^s}(1)) \\
+            & \cong f^*(\psi^* (\fO_{\PP_Y^N}(1))) \\
+            & \cong (\psi \circ f)^*(\fO_{\PP_Y^N}(1)).
+        \end{align*}
+        Hence, $\fL \otimes \fM$ is very ample.
+
+        \item[(b)] Let $i : X \to \PP_Y^r$ be an immersion such that $\fL \cong i^* \fO(1)$, let $j : Y \to \PP_Z^s$ be an immersion such that $\fM \cong j^* \fO(1)$, and let $\psi : \PP_\Z^r \times \PP_\Z^s \to \PP_Z^N$ be a Segre embedding, where $N = rs + r + s$. We have the following commutative diagram
+        \[ \begin{tikzcd}
+            &                                                                                                                     & \PP_\Z^r                                                                                                                           &                             \\
+X \arrow[r, "i"] \arrow[rd, "f"] & \PP_Y^r = Y \times \PP_\Z^r \arrow[d] \arrow[ru, bend left] \arrow[r, "j \times 1_{\PP_\Z^r}"] & \PP_Z^s \times \PP_\Z^r = Z \times (\PP_\Z^r \times \PP_\Z^s) \arrow[u] \arrow[d] \arrow[r, "1_Z \times \psi"] & \PP_Z^N = Z \times \PP_\Z^N \\
+            & Y \arrow[r, "j"]                                                                                                    & \PP_Z^s                                                                                                                            &                            
+\end{tikzcd} \]
+        where $p : Y \times \PP_\Z^r \to Y, q : \PP_Z^s \times \PP_Z^r \to \PP_Z^s$ are the natural projection maps. A composition of immersions is an immersion, and a product of immersions is an immersion, so $\phi = (1_Z \times \psi) \circ (j \times 1_{\PP_\Z^r}) \circ i$ is an immersion. Hence, $\fL \otimes f^*\fM \cong \phi^* \fO(1)$.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{13.}] Let $S$ be a graded ring, generated by $S_1$ as an $S_0$-algebra. For any integer $d > 0$, let $S^{(d)}$ be the graded ring $\bigoplus_{n \geq 0} S_n^{(d)}$ where $S_n^{(d)} = S_{nd}$. Let $X = \proj{S}$. Show that $\proj{S^{(d)}} \cong X$, and that the sheaf $\fO(1)$ on $\proj{S^{(d)}}$ corresponds via this isomorphism to $\fO_X(d)$.
+
+\begin{proof}
+    The inclusion $i : S^{(d)} \hookrightarrow S$ induces a morphism of schemes $\phi : X \to X' = \proj{S^{(d)}}$ via $\goth{p} \mapsto \goth{p} \cap S^{(d)}$. If $\goth{p} \in X$ so that $\goth{p} \nsupseteq S_+ = \bigoplus_{n > 0} S_n$, then $\goth{p} \nsupseteq S_+^{(d)}$. Otherwise, $s^d \in \goth{p}$ for all $s \in S_+$, which implies $S_+ \supseteq \goth{p}$, a contradiction. Thus, $\phi$ is well-defined. Since $S^{(d)}$ is generated by $S^{(d)}_1$ as an $S_0$-algbera, we can cover $X'$ by open affines $\spec{S^{(d)}_{(f)}}$, where $f \in S^{(d)}_1 = S_d$ and $S^{(d)}_{(f)}$ consists of all degree zero elements of the form $s / f^n$ for some $s \in S^{(d)}$. Also, $\phi^{-1}(\spec{S^{(d)}_{(f)}}) = \spec{S_{(f)}}$, and clearly $S_{(f)} \cong S_{(f)}^{(d)}$ as rings. Hence, $\phi$ is an isomorphism of schemes. Lastly, we also have an isomorphism of twisted sheaves $\fO_{X'}(1) \cong (i_* \fO_{X})(1) = i_*(\fO_X(d))$.
+\end{proof}
+
+\item[\textbf{16.}] Let $(X, \fO_X)$ be a ringed spaces, and let $\fF$ be a sheaf of $\fO_X$-modules. We define the \textit{tensor algebra}, \textit{symmetric algebra}, and \textit{exterior algebra} of $\fF$ by taking the sheaves associated to the presheaf, which to each open set $U$ assigns the corresponding tensor operation applied to $\fF(U)$ as an $\fO_X(U)$-module. The results are $\fO_X$-algebras, and their components in each degree are $\fO_X$-modules.
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] Suppose that $\fF$ is locally free of rank $n$. Then $T^r(\fF), S^r(\fF)$, and $\bigwedge^r(\fF)$ are also locally free, of ranks $n^r, {n + r - 1 \choose n - 1}$, and ${n \choose r}$ respectively.
+    \item[(b)] Again let $\fF$ be locally free of rank $n$. Then the multiplication map $\bigwedge^r \fF \otimes \bigwedge^{n - r} \fF \to \bigwedge^n \fF$ is a perfect pairing for any $r$, i.e. it induces an isomorphism of $\bigwedge^r \fF$ with $(\bigwedge^{n - r} \fF)^\vee \otimes \bigwedge^n \fF$. As a special case, note if $\fF$ has rank $2$, then $\fF \cong \fF^\vee \otimes \bigwedge^2 \fF$.
+    \item[(c)] Let $0 \to \fF' \to \fF \to \fF'' \to $ be an exact sequence of locally free sheaves. Then for any $r$ there is a finite filtration of $S^r(\fF)$,
+    \begin{equation*}
+        S^r(\fF) = F^0 \supseteq F^1 \supseteq \cdots \supseteq F^r \supseteq F^{r + 1} = 0
+    \end{equation*}
+    with quotients
+    \begin{equation*}
+        F^p / F^{p + 1} \cong S^p(\fF') \otimes S^{r - p}(\fF'')
+    \end{equation*}
+    for each $p$.
+    \item[(d)] Same statement as (c), with exterior powers isntead of symmetric powers. In particular, if $\fF', \fF, \fF''$ have ranks $n', n, n''$ respectively, there is an isomorphism $\bigwedge^n \fF \cong \bigwedge^{n'} \fF \otimes \bigwedge^{n''} \fF''$.
+    \item[(e)] Let $f : X \to Y$ be a morphism of ringed spaces, and let $\fF$ be an $\fO_Y$-module. Then $f^*$ commutes with all the tensor operations on $\fF$, i.e. $f^*(S^n(\fF)) = S^n(f^* \fF)$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] The question is local, so the statements follow from the case for rings. For example, let $U$ be an open set in $X$ such that $\restr{\fF}{U} \cong \fO_U^{\oplus n}$. Then $\restr{T^r(\fF)}{U} \cong T^r(\fO_U^{\oplus n}) \cong \fO_U^{\oplus n^r}$. We remark that locally, the symmetric algebra $S(\fF)$ is isomorphic to the polynomial ring $\fO[T_1, \dots, T_n]$, and $S^r(\fF)$ correspond to the homogenous elements of degree $r$ in $\fO[T_1, \dots, T_n]$. Thus, $S^r(\fF)$ has rank ${n + r - 1 \choose n - 1}$. Let $x_1, \dots, x_n \in \Gamma(U, \fO_X)$ be a $\fO_U$-basis for $\restr{\fF}{U}$. Then $\bigwedge^r(\fF)$ is spanned by $x_{i_1} \wedge \cdots \wedge x_{i_r}$, where $1 \leq i_1 < \cdots < i_r \leq n$. Hence, $\bigwedge^r(\fF)$ has rank ${n \choose r}$.
+
+\item[(b)] 
+
+\item[(c)]
+
+\item[(d)]
+
+\item[(e)]
+
+\end{itemize}
+\end{proof}
+
+\end{enumerate}
+\end{document}

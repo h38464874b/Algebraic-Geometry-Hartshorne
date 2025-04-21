@@ -1,0 +1,4 @@
+nonsingular
+tacnode
+nonisomorphic
+Jacobian

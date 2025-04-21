@@ -1,0 +1,4 @@
+indeterminates
+nilradical
+nilpotent
+noetherian

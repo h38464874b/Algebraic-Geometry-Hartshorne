@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\OO}{\mathscr{O}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\PP}{\mathbf{P}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\newcommand\isomto{\stackrel{\sim}{\smash{\longrightarrow}\rule{0pt}{0.4ex}}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\title{Chapter 2, Section 4}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item[\textbf{1.}] Show that a finite morphism is proper.
+
+\begin{lemma}
+    If $\varphi : A \to B$ is an integral homomorphism of rings, then the corresponding morphism between affine schemes $\varphi^* : \spec{B} \to \spec{A}$ is a closed mapping. 
+\end{lemma}
+
+\begin{proof}
+    We can decompose $\varphi$ into $A \to A / \ker{\varphi} \hookrightarrow B$, and $\text{Spec}(A / \ker{\varphi})$ is homeomorphic to a closed subspace of $\spec{A}$, so we reduce to the case when $\varphi$ is injective. Let $\goth{b}$ be any ideal of $B$, then we want to show $\varphi^*(V(\goth{b})) = V(\goth{b} \cap A)$ (note that in general, we only have $\overline{\varphi(V(\goth{b}))} = V(\varphi^{-1}(\goth{b}))$). This follows from (A.M. 5.10), which states if $A \subseteq B$ are rings, $B$ integral over $A$, and $\goth{p}$ prime ideal of $A$, then there exists a prime ideal $\goth{q}$ of $B$ such that $\goth{q} \cap A = \goth{p}$.
+\end{proof}
+
+\begin{lemma}
+    Let $f : B \to B'$ be a homomorphism of $A$-algebras, and let $C$ be an $A$-algebra. If $f$ is integral, prove that $f \otimes 1 : B \otimes_A C \to B' \otimes_A C$ is integral.
+\end{lemma}
+
+\begin{proof}
+    It suffices to show all pure tensors $b'\otimes c$ in $B'\otimes_A C$ have an equation of integral dependence over $B\otimes_A C$. Since $B'$ is an integral $B$-algebra, we have $$b'^n + d_1 b'^{n - 1} + \cdots + d_n = 0$$ for some $d_i \in B$, $n > 0$, then 
+    \begin{equation*}
+        (b' \otimes c)^n + (d_1 \otimes 1)(b' \otimes c)^{n - 1} + \cdots + d_n \otimes c = 0.
+    \end{equation*}
+\end{proof}
+
+\begin{proof}
+    It follows from these lemmas that if $f : A \to B$ is integral and $C$ is any $A$-algebra, then the mapping $(f \otimes 1)^* : \text{Spec}(B \otimes_A C) \to \spec{C}$ is a closed map. Let $f : X \to Y$ be a finite morphism of schemes. A finite morphism is an affine morphism (Ex. 3.4), so by (4.6f) we reduce to the case when $X = \spec{B}$ and $Y = \spec{A}$, where $B$ is a finite $A$-module (hence integral over $A$), and $f$ is induced by a ring homomorphism $A \to B$. Morphisms between affine schemes are separated (4.1), and finite morphisms are of finite type, so it remains to show $f$ is universally closed. If $Y' \to Y$ is any morphism, then we want to show $X \times_Y Y' \to Y'$ is a closed mapping. There is an open cover of $Y'$ by spectra of $A$-algebras $C_i$ so that the fiber product $X \times_Y Y'$ is covered by spectra of $B \otimes_A C_i$. By the above remarks, the morphisms $\text{Spec}(B \otimes_A C_i) \to \spec{C_i}$ are closed, hence $X \times_Y Y' \to Y'$ is closed.
+\end{proof}
+
+\item[\textbf{2.}] Let $S$ be a scheme, let $X$ be a reduced scheme over $S$, and let $Y$ be a separated scheme over $S$. Let $f$ and $g$ be two $S$-morphisms of $X$ to $Y$ which agree on an open dense subset of $X$. Show that $f = g$. Give examples to show that this result fails if either (a) $X$ is nonreduced, or $(b)$ $Y$ is nonseparated.
+
+\begin{proof}
+    Let $U$ be an open dense subset of $X$ such that $f$ and $g$ agree on $U$, let $h : X \to Y \times_S Y$ be the map obtained from $f$ and $g$, and let $\Delta : Y \to Y \times_S Y$ be the diagonal morphism. By hypothesis, $h(U) \subseteq \Delta(Y)$. But $U$ is dense in $X$, and $\Delta(Y)$ is closed since $Y$ is separated over $S$, so $h(X) \subseteq \Delta(Y)$. This says that $f$ and $g$ agree topologically, so $f_*\OO_X = g_*\OO_X$. Set $\OO = f_* \OO_X = g_*\OO_X$. Let $V$ be open subset of $Y$, and let $t \in \Gamma(V, \OO_Y)$. We want to show $f^\#(t) = g^\#(t) \in \OO(V)$. By hypothesis, we have $W = (f^{-1}(V))_{f^\#(t) - g^\#(t)} \subseteq X - U$, but $W$ is an open subset and $U$ is dense, which implies $W = \emptyset$. This implies $f^\#(t) - g^\#(t)$ is nilpotent, but $X$ is reduced, hence $f^\#(t) - g^\#(t) = 0$.
+
+    \begin{itemize}
+        \item[(a)] Let $k$ be a field, let $X = \spec{k[\varepsilon]/(\varepsilon^2)}$ (Ex. 2.8), and let $Y$ be any scheme over $k$. Giving a $k$-morphism $X \to Y$ is equivalent to giving a point in $y \in Y$ rational over $k$, and an element of $\goth{m}_y / \goth{m}_y^2$.
+        \item[(b)] Let $X$ be the affine line, and let $Y$ be the affine line with the origin doubled. We have two possible open immersions of $X$ into $Y$ with each one having either origin in its image, and the open immersions agree on the complement of the origin of $X$, which is an open dense subset of $X$.
+    \end{itemize}
+\end{proof}
+
+\newpage
+
+\item[\textbf{6.}] Let $f : X \to Y$ be a proper morphism of affine varieties over $k$. Then $f$ is a finite morphism.
+
+\begin{proof}
+    Let $X = \spec{B}, Y = \spec{A}$, where $A$ and $B$ are finitely generated $k$-algebras that are integral domains. Let $\varphi : A \to B$ be a $k$-algebra homomorphism such that $B$ is a finitely generated $A$-algebra, and $f$ is induced by $\varphi$. Closed immersions are proper, so we reduce to the case when $\varphi$ is injective. We want to show $B$ is a finite $A$-module, which is equivalent to $B$ being finitely generated and integral over $A$, so it suffices to show $B$ is integral over $A$. Let $K$ be the field of fractions of $B$ so that $A$ and $B$ are subrings of $K$. By (4.11A), the integral closure of $A$ in $K$ is the intersection of all valuation rings of $K$ which contains $A$, so it suffices to show $B$ is contained in all such subrings. This is an easy consequence of the valuative criterion of properness: given any valuation ring $R$ containing $A$, we have inclusions $A \to R$ and $B \to K$ forming a commutative diagram
+    \[\begin{tikzcd}
+        A \arrow[d] \arrow[r]          & R \arrow[d] \\
+        B \arrow[r] \arrow[ru, dashed] & K          
+        \end{tikzcd} \]
+    and the valuation criterion of properness implies there exists a unique homomorphism $B \to R$ making the whole diagram commute. All homomorphisms are inclusions, so $B \to R$ is an inclusion, which is what we wanted to show. (See an alternative proof of this result that uses the universally closed property instead of the valuative criterion in (A.M. Ex. 5.35).)
+\end{proof}
+
+\item[\textbf{8.}] Let $\mathscr{P}$ be a property of morphisms of schemes such that:
+\begin{itemize}
+    \item[(a)] a closed immersion has $\mathscr{P}$;
+    \item[(b)] a composition of two morphisms having $\mathscr{P}$ has $\mathscr{P}$;
+    \item[(c)] $\mathscr{P}$ is stable under base extension.
+\end{itemize}
+Then show that:
+\begin{itemize}
+    \item[(d)] a product of morphisms having $\mathscr{P}$ has $\mathscr{P}$;
+    \item[(e)] if $f : X \to Y$ and $g : Y \to Z$ are two morphisms, and if $g \circ f$ has $\mathscr{P}$ and $g$ is separated, then $f$ has $\mathscr{P}$.
+    \item[(f)] if $f : X \to Y$ has $\mathscr{P}$, then $f_\text{red} : X_\text{red} \to Y_\text{red}$ has $\mathscr{P}$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+   \begin{itemize}
+    \item[(d)] Let $X \to Y$ and $X' \to Y'$ be two morphisms having $\mathscr{P}$. By (c) $X \times_Y (Y \times Y') \to Y \times Y'$ and $X' \times_Y' (Y \times Y') \to Y \times Y'$ have $\mathscr{P}$. Hence, $X \times X' = (X \times_Y (Y \times Y')) \times_{Y \times Y'} (X' \times_{Y'} (Y \times Y')) \to Y \times Y'$ has $\mathscr{P}$.
+
+    \item[(e)] We can base extend $g \circ f : X \to Z$ by $g : Y \to Z$ so that $h : X \times_Z Y \to Y$ has $\mathscr{P}$. Then $f$ factors through $h$, so by (b) it suffices to show $\Gamma_f : X \to X \times_Z Y$ has $\mathscr{P}$. By hypothesis, the diagonal morphism $\Delta : Y \to Y \times_Z Y$ has $\mathscr{P}$. We can obtain $\Gamma_f$ by base extension of $\Delta$ by $(f, 1_Y) : X \times_Z Y \to Y \times_Z Y$ since $(X \times_Z Y) \times_{Y \times_Z Y} Y \cong X \times_{Y \times_Z Y} (Y \times_Z Y) \cong X$. Hence, by (b) $\Gamma_f$ has $\mathscr{P}$.
+
+    \item[(f)] By the universal property of the reduced scheme associated to $Y$, $f_\text{red}$ is the unique morphism that makes the diagram
+    \[\begin{tikzcd}
+        &                   & Y_{\text{red}} \arrow[d] \\
+    X_{\text{red}} \arrow[r] \arrow[rru, "f_\text{red}", dashed] & X \arrow[r, "f"'] & Y                       
+    \end{tikzcd}\]
+    commute. The associated morphisms $X_{\text{red}} \to X, Y_{\text{red}} \to Y$ are closed immersions; in particular, $X_\text{red} \to Y$ has $\mathscr{P}$ and $Y_{\text{red}} \to Y$ is separated. Hence, by (e) $f_{\text{red}}$ has $\mathscr{P}$.
+   \end{itemize} 
+
+   \textit{Remark.} In the affine case, we can translate the above to statements about rings. Let $\mathscr{Q}$ be a property of homomorphisms of rings such that
+   \begin{itemize}
+    \item[(a$'$)] a surjective homomorphism has $\mathscr{Q}$;
+    \item[(b$'$)] a composition of two homomorphisms having $\mathscr{Q}$ has $\mathscr{Q}$;
+    \item[(c$'$)] if $A \to B$ has $\mathscr{Q}$ and $C$ is any $A$-algebra, then $C \to B \otimes_A C$ has $\mathscr{Q}$.
+   \end{itemize}
+   Then
+   \begin{itemize}
+    \item[(d$'$)] a product of homomorphisms having $\mathscr{Q}$ has $\mathscr{Q}$;
+    \item[(e$'$)] if $\varphi : A \to B$ and $\psi : B \to C$ are two homomorphisms, and if $\psi \circ \varphi$ has $\mathscr{Q}$, then $\psi$ has $\mathscr{Q}$;
+    \item[(f$'$)] if $\varphi : A \to B$ has $\mathscr{Q}$, then $\varphi_{\text{red}} : A_\text{red} \to B_\text{red}$ has $\mathscr{Q}$.
+   \end{itemize}
+   Note that we can ignore the condition of $g$ separated in (e$'$) since any morphism between affine schemes is separable. Indeed, (e') can be proved from the sequence
+   \[ \begin{tikzcd}
+    A \arrow[r, "f"] & B \arrow[r, "g"] & C
+    \end{tikzcd} \]
+    by tensoring with $B$ and extending the sequence as follows
+    \[ \begin{tikzcd}
+        B \cong A \otimes_A B \arrow[r, "f\otimes1_B"] & B \otimes_A B \arrow[r, "g \otimes 1_B"] & C \otimes_A B \arrow[r] & C
+        \end{tikzcd} \]
+    where $C \otimes_A B \to C$ is defined by $c \otimes b \mapsto g(b)c$. By (c$'$), $B \to C \otimes_A B$ has $\mathscr{Q}$, and $C \otimes_A B \to C$ is surjective, so it has $\mathscr{Q}$ by (a$'$). Notice that composing the homomorphisms give $g$, hence by (b$'$) $g$ has $\mathscr{Q}$.
+\end{proof}
+
+\item[\textbf{9.}] Show that a composition of projective morphisms is projective. Conclude that projective morphisms have properties (a)-(f) of (Ex. 4.8) above.
+
+\begin{proof}
+    By the results of (Ex. 3.13), (4.6), and (4.8), it suffices to show if $f : X \to \PP^r$ is a projective morphism, then $X$ is projective over $\spec{\Z}$. If $f$ is projective, then there exists a closed embedding $i : X \to \PP^r \times \PP^s$ such that $f$ factors through $\PP^r \to \PP^s$. The Segre embedding (\S 1, 2.14) $\psi : \PP^r \times \PP^s \to \PP^{rs + r + s}$ is a closed embedding, so $\psi \circ i : X \to \PP^{rs + r + s}$ is a closed embedding such that $X \to \spec{\Z}$ factors through $\PP^{rs + r + s} \to \spec{\Z}$, which is what we wanted to show.
+\end{proof}
+
+\item[\textbf{10.}] \textit{Chow's Lemma.} This result says that proper morphisms are fairly close to projective morphisms. Let $X$ be proper over a noetherian scheme $S$. Then there is a scheme $X'$ and a morphism $g : X' \to X$ such that $X'$ is projective over $S$, and there is an open dense subset $U \subseteq X$ such that $g$ induces an isomorphism of $g^{-1}(U)$ to $U$. Prove this result in the following steps:
+\begin{itemize}
+    \item[(a)] Reduce to the case $X$ is irreducible.
+    \item[(b)] Show that $X$ can be covered by a finite number of open subset $U_i$, $i = 1, \dots, n$, each of which is quasi-projective over $S$. Let $U_i \to P_i$ be an open immersion of $U_i$ into a scheme $P_i$ which is projective over $S$.
+    \item[(c)] Let $U = \bigcap U_i$, and consider the map
+    \begin{equation*}
+        f : U \to X \times_S P_1 \times_S \cdots \times_S P_n
+    \end{equation*}
+    deduced from the given maps $U \to X$ and $U \to P_i$. Let $X'$ be the closed image subscheme structure (Ex. 3.11) $\overline{f(U)}$. Let $g : X' \to X$ be the projection onto the first factor, and let $h : X' \to P = P_1 \times_S \cdots \times_S P_n$ be the projection onto the product of remaining factors. Show that $h$ is a closed immersion, hence $X'$ is projective over $S$.
+    \item[(d)] Show that $g^{-1}(U) \to U$ is an isomorphism, thus completing the proof.
+\end{itemize}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,2 @@
+{"rule":"THE_SUPERLATIVE","sentence":"^\\QConclude that if \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a rational function on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, then there is a largest open subset \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q on which \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is represented by a regular function.\\E$"}
+{"rule":"HAVE_PART_AGREEMENT","sentence":"^\\Q[(b)] The cuspidal cubic has coordinate ring \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, so its function field is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q,\\E$"}

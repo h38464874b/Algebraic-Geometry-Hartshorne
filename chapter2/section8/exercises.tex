@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathcal{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\title{Chapter 2, Section 8}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+% * 8.1, 8.2, 8.6
+
+\item[\textbf{1.}] Here we will strengthen the results of the text to include information about the sheaf of differentials at a not necessarily closed point of a scheme $X$.
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] Generalize (8.7) as follows. Let $B$ be a local ring containing a field $k$, and assume that the residue field $k(B) = B / \goth{m}$ of $B$ is a separably generated extension of $k$. Then the exact sequence of (8.4A),
+    \[ \begin{tikzcd}
+        0 \arrow[r] & \goth{m}/\goth{m}^2 \arrow[r, "\delta"] & \Omega_{B/k} \otimes k(B) \arrow[r] & \Omega_{k(B)/k} \arrow[r] & 0
+        \end{tikzcd} \]
+    is exact on the left also.
+    \item[(b)] Generalize (8.8) as follows. With $B$, $k$ as above, assume furthermore that $k$ is perfect, and that $B$ is a localization of an algebra of finite type over $k$. Then show that $B$ is a regular local ring if and only if $\Omega_{B/k}$ is free of $\rk{} = \dim{B} + \trd k(B) / k$.
+    \item[(c)] Strengthen (8.15) as follows. Let $X$ be an irreducible scheme of finite type over a perfect field $k$, and let $\dim{X} = n$. For any point $x \in X$, not necessarily closed, show that the local ring $\fO_{x, X}$ is a regular local ring if and only if the stalk $(\Omega_{X/k})_x$ of the sheaf of differentials at $x$ is free of rank $n$.
+    \item[(d)] Strengthen (8.16) as follows. If $X$ is a variety over an algebraically closed field $k$, then $U = \{x \in X \mid \fO_x \text{ is regular} \}$ is an open dense subset of $X$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] In copying the proof of (8.7), we want to show the map
+\begin{equation*}
+    \delta^\vee : \Der_{k(B)}(B, k(B)) \to \Hom_{k(B)}(\gm/\gm^2, k(B))
+\end{equation*}
+of dual vector spaces is surjective. If $d : B \to k(B)$ is a derivation, then the $\delta^\vee(d)$ is obtained by restricting to $\goth{m}$. This is well-defined, since $\goth{m} = 0$ in $k(B)$, so $d\gm^2 = \gm d\gm = 0 \subset k(B)$. Now to show $\delta^\vee$ is surjective, let $h \in \Hom_{k(B)}(\gm/\gm^2, k(B))$. Since $B / \gm^2$ is a complete local ring with residue field $k(B)$, there exists a field of representatives $K \subseteq B$ for $B$ (8.25A). Thus, for any $b \in B$, $\bar{b} \in B / \gm^2$, the image of $b$, can be written as $\bar{b} = \lambda + \bar{c}$, $\lambda \in K, \bar{c} \in \gm/\gm^2$, uniquely. Define $db = h(\bar{c})$. Let $b, b' \in B$, and write $\bar{b} = \lambda + \bar{c}, \bar{b}' = \lambda' + \bar{c}'$ for some $\lambda, \lambda' \in K, \bar{c}', \bar{c}' \in \gm/\gm^2$. Note that $\bar{b} = \lambda, \bar{b}' = \lambda'$ and $d\bar{b} = d\bar{c}, d\bar{b}' = d\bar{c}'$ in $k(B)$, $bb' = \lambda \bar{c}' + \lambda' \bar{c} \in \gm/\gm^2$. Hence, $dbb' = d(\lambda' \bar{c} + \lambda \bar{c}') = \lambda' d\bar{c} + \lambda d\bar{c}' = b'db + bdb'$, so $d$ is a well-defined $k(B)$-derivation.
+
+\item[(b)] Immediate by the exact sequence of (a), (8.6A), and (8.8).
+
+\item[(c)] If $x \in X$ is any point, then the local ring $B = \fO_{x, X}$ has dimension $n$, residue field some finitely generated, hence separable, extension $k(B)$ (since $k$ is perfect), and is a localization of a $k$-algebra of finite type. Furthermore, the module $\Omega_{B/k}$ of differentials of $B$ over $k$ is equal to the stalk $(\Omega_{X/k})_x$ of the sheaf $\Omega_{X/k}$. Thus, we can apply (b) and we see that $(\Omega_{X/k})_x$ is free of rank $n$ if and only if $B$ is a regular local ring.
+
+\item[(d)] Follows from (c) and (Ex. 5.7a).
+
+\end{itemize} 
+\end{proof}
+
+\item[\textbf{2.}] Let $X$ be a variety of dimension $n$ over $k$. Let $\fE$ be a locally free sheaf of rank $> n$ on $X$, and let $V \subseteq \Gamma(X, \fE)$ be a vector space of global sections which generate $\fE$. Then show that there is an element $s \in V$, such that for each $x \in X$, we have $s_x \notin \goth{m}_x \fE_x$. Conclude that there is a morphism $\fO_X \to \fE$ giving rise to an exact sequence
+\[ \begin{tikzcd}
+    0 \arrow[r] & \fO_X \arrow[r] & \fE \arrow[r] & \fE' \arrow[r] & 0
+    \end{tikzcd} \]
+where $\fE'$ is also locally free.
+
+\begin{proof}
+Let $m$ be the rank of $\fE$, and let $r = \dim_k{V}$. For any closed point $x \in X$, we can define a map of $k$-vector spaces $\varphi_x : V \to \fE_x / \gm_x \fE_x$ in the obvious way. It is surjective by hypothesis, and $\dim_k \fE_x / \gm_x \fE_x = m$, which shows $r \geq m$. Now considering the vector space $V$ as an affine space over $k$, consider the subset $B \subseteq X \times V$ consisting of all pairs $(x, s)$ such that $x \in X$ is a closed point and $s \in \ker{\varphi_x}$. Clearly $B$ is the set of closed points of a closed subset of $X \times V$, which we denote by $B$, and which we give a reduced induced structure. Consider the first projection $p_1 : B \to X$. It is surjective, with fiber an affine space of dimension $r - m$ (in particular, each fiber is a linear subspace of $V$). Hence, $B$ is irreducible, and has dimension $r - m + n$. By hypothesis $n < m$, so $\dim{B} \leq r - 1$. Therefore, considering the second projection $p_2 : B \to V$, we have $\dim p_2(B) \leq r - 1$. Since $\dim{V} = r$, we conclude that $p_2(B) \subset V$. Pick any $s \in V - p_2(B)$, then $X \times \{s\} \subset X \times V - B$, which is what we wanted to show. For the conclusion, the morphism $\fO_X \to \fE$ defined by $1 \mapsto s$ gives the desired exact sequence.
+\end{proof}
+
+\item[\textbf{6.}] \textit{The Infinitesimal Lifting Property.} The following result is very important in studying deformations of nonsingular varieties. Let $k$ be an algebraically closed field, let $A$ be a finitely generated $k$-algebra such that $\spec{A}$ is a nonsingular variety over $k$. Let $0 \to I \to B' \to B \to 0$ be an exact sequence, where $B'$ is a $k$-algebra, and $I$ is an ideal with $I^2 = 0$. Finally suppose given a $k$-algebra homomorphism $f : A \to B$. Then there exists a $k$-algebra homomorphism $g : A \to B'$ making a commutative diagram
+\[ \begin{tikzcd}
+    & 0 \arrow[d]  \\
+    & I \arrow[d]  \\
+    & B' \arrow[d] \\
+A \arrow[r, "f"'] \arrow[ru, "g", dashed] & B \arrow[d]  \\
+    & 0           
+\end{tikzcd} \]
+We call this result the \textit{Infinitesimal lifting property} for $A$. We prove this result in several steps.
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] First suppose that $g : A \to B'$ is a given homomorphism lifting $f$. If $g' : A \to B'$ is another such homomorphism, show that $\theta = g - g'$ is a $k$-derivation of $A$ into $I$, which we can consider as an element of $\Hom_A(\Omega_{A / k}, I)$. Note that since $I^2 = 0$, $I$ has a natural structure of $B$-module and hence also of $A$-module. Conversely, for any $\theta \in \Hom_A(\Omega_{A/k}, I)$, $g' = g + \theta$ is another homomorphism lifting $f$. (For this step, you do not need the hypothesis about $\spec{A}$ being nonsingular.)
+    
+    \item[(b)] Now let $P = k[x_1, \dots, x_n]$ be a polynomial ring over $k$ of which $A$ is a quotient, and let $J$ be the kernel. Show that there does exist a homomorphism $h : P \to B'$ making a commutative diagram,
+    \[ \begin{tikzcd}
+        0 \arrow[d]                 & 0 \arrow[d]  \\
+        J \arrow[d]                 & I \arrow[d]  \\
+        P \arrow[d] \arrow[r, "h"]  & B' \arrow[d] \\
+        A \arrow[d] \arrow[r, "f"'] & B \arrow[d]  \\
+        0                           & 0           
+        \end{tikzcd} \]
+    and show that $h$ induces an $A$-linear map $\overline{h} : J / J^2 \to I$.
+    
+    \item[(c)] Now use the hypothesis $\spec{A}$ nonsingular and (8.17) to obtain an exact sequence
+    \[ \begin{tikzcd}
+        0 \arrow[r] & {J/J^2} \arrow[r] & {\Omega_{P/k} \otimes A} \arrow[r] & {\Omega_{A/k}} \arrow[r] & 0.
+        \end{tikzcd} \]
+    Show furthermore that applying the functor $\Hom_A(\cdot, I)$ gives an exact sequence
+    \[ \begin{tikzcd}
+        0 \arrow[r] & {\Hom_A(\Omega_{A/k},I)} \arrow[r] & {\Hom_P(\Omega_{P/k},I)} \arrow[r] & {\Hom_A(J/J^2,I)} \arrow[r] & 0.
+        \end{tikzcd} \]
+    Let $\theta \in \Hom_P(\Omega_{P/k}, I)$ be an element whose image gives $\overline{h} \in \Hom_A(J/J^2, I)$. Consider $\theta$ as a derivation of $P$ to $B'$. Then let $h' = h - \theta$, and show that $h'$ is a homomorphism of $P \to B'$ such that $h'(J) = 0$. Thus, $h'$ induces the desired homomorphism $g : A \to B'$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] Let $\pi : B' \to B$ be the natural projection homomorphism. If $\pi \circ g = \pi \circ g'$, then $\pi \circ \theta = 0$. Hence, $\theta(A) \subseteq \ker{\pi} = I$. Let $a, a'$ be elements of $A$. We have $g(a) = a, g'(a') = a' \in B$, so the natural $A$-module structure of $I$ gives
+\begin{align*}
+    \theta(aa') & = g(a)g(a') - g'(a)g'(a') \\
+    & = g(a) g(a') - g(a) g'(a') + g(a) g'(a') - g'(a) g'(a') \\
+    & = g(a) (g(a') - g'(a')) + g'(a')(g(a) - g'(a)) \\
+    & = a \theta(a') - a' \theta(a).
+\end{align*}
+Also, $g, g'$ are $k$-linear, so $\theta(\lambda) = 0$ for all $\lambda \in k$. Hence, $\theta$ is a $k$-derivation.
+
+In the converse direction, since $\im{\theta} \subseteq I$, $\pi \circ g = \pi \circ g'$, it is enough to check that $g'$ is indeed a homomorphism. It is clear it is additive. For any $a, a' \in A$, we have $\theta(a)\theta(a') \in I^2 = 0$ and $g(a)\theta(a') = a\theta(a'), g(a')\theta(a) = a'\theta(a)$. It follows that
+\begin{align*}
+    g'(aa') & = g(aa') + \theta(aa') \\
+    & = g(a)g(a') + a\theta(a') + a'\theta(a) \\
+    & = g(a)g(a') + a\theta(a') + a'\theta(a) + \theta(a) \theta(a') \\
+    & = (g(a) + \theta(a))(g(a') + \theta(a')) \\
+    & = g'(a)g'(a').
+\end{align*}
+
+\item[(b)] Let $y_i \in B$ be the image of $x_i \in P$ for all $i = 1, \dots, n$. Then $f(A) = k[y_i, \dots, y_n]$, and $\pi : B' \to B$ is surjective, so there exists $z_i \in B'$ such that $\pi(z_i) = y_i$. Let $A' = k[z_1, \dots, z_n] \subseteq B'$. We have $\pi(A') = f(A)$, There is a natural map $h : P \to A' \hookrightarrow B'$ defined by $x_i \mapsto z_i$. It satisfies the conditions by construction.
+
+To show $h$ induces an $A$-lienar map $\bar{h} : J/J^2 \to I$, we need to show $h(J) \subseteq I$ and $h(J^2) = 0$. Indeed, the diagram above commutes with $h$, and $J$ gets mapped to $0$ in $B$. Hence, $h(J) \subseteq \ker{\pi} = I$. Let $cc' \in J^2$ for some $c, c' \in J$. Then $h(cc') = h(c)h(c') \in I^2 = 0$ since $h(c), h(c) \in I$. Hence, we can obtain $\bar{h}$ by restricting $h$ to $J$ and passing to the quotient $J/J^2$.
+
+\item[(c)] Let $X = \A^n = \spec{P}$, and let $X = \spec{A}$. By (8.17), (5.5), and (5.10), taking global sections of the exact sequence in (8.17) gives the desired exact sequence.
+
+In general, $\Hom_A(\cdot, I)$ is only left exact. In particular, the sequence
+\[ \begin{tikzcd}
+    0 \arrow[r] & {\Hom_A(\Omega_{A/k},I)} \arrow[r] & {\Hom_A(\Omega_{P/k} \otimes A,I)} \arrow[r] & {\Hom_A(J/J^2,I)} \arrow[r] & 0
+    \end{tikzcd} \]
+is not necessarily exact on the right. However, the middle term is isomorphic to $\Hom_P(\Omega_{P/k}, I)$, which by definition can be identified with $\Der_k(P, I)$, the set of all $k$-derivations of $P$ to $I$. Noting that $P/J^2$ has dimension $1 + \dim{A}$ as a $k$-vector space by non-singularity of $X$ and $k$ being algebraically closed, we can uniquely write any element of $P/J^2$ as a sum $\lambda + c$, where $\lambda \in k, c \in J/J^2$. We conclude that the sequence above is exact on the right as well.
+
+Imitating the proof of (a), it remains to show $h'(J) = 0$. For any $\theta$, $\theta(J^2) = 0$ Passing to the quotient $P/J^2$ gives us $h'(J) = (\bar{h} - \bar{h})(J + J^2) = 0$.
+\end{itemize} 
+\end{proof}
+
+\end{enumerate}
+\end{document}

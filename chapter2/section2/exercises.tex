@@ -1,0 +1,309 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\goth}[1]{\textfrak{#1}}
+\newcommand{\fF}{\mathscr{F}}
+\newcommand{\fG}{\mathscr{G}}
+\newcommand{\fE}{\mathscr{E}}
+\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fL}{\mathscr{L}}
+\newcommand{\fM}{\mathscr{M}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fK}{\mathscr{K}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\gm}{\goth{m}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\newcommand\srestr[2]{{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\small|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\usepackage{xcolor}
+
+\pagecolor[RGB]{8,27,31}
+
+\color[RGB]{255,255,255}
+
+\title{Chapter 2, Section 2}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $A$ be a ring, let $X = \spec{A}$, let $f \in A$ and let $D(f) \subseteq X$ be the open complement of $V((f))$. Show that the locally ringed space $(D(f), \restr{\fO_X}{D(f)})$ is isomorphic to $\spec{A_f}$.
+
+\begin{proof}
+    The natural map $A \to A_f$ defined by $a \mapsto a / 1$ induces an inclusion of schemes $\varphi ^* : \spec{A_f} \to D(f) \subseteq X$ with a morphism of sheaves which is a homeomorphism onto its image. This is by the one-to-one correspondence between prime ideals of $A_f$ and prime ideals of $A$ not containing $f$. It is an isomorphism at the local level. Let $x = \goth{p}A_f$ be a point in $\spec{A_f}$ where $\goth{p}$ is a prime ideal of $A$ not containing $f$, let $y = \varphi^*(x) = \goth{p} \in \spec{A}$, and let $\bar{f}$ denote the image of $f$ in $A_\goth{p}$. Since $\goth{p}$ does not contain $f$, $\bar{f}$ is a unit, which means $(A_\goth{p})_{\bar{f}} \cong A_\goth{p}$, so we have
+    \begin{equation*}
+        \fO_{X, \varphi(x)} = A_\goth{p} \cong (A_\goth{p})_{\bar{f}} \cong (A_f)_{\goth{p}A_f} = \fO_{\spec{A_f}, x}
+    \end{equation*}
+    (in particular, localization commutes, see (A.M. Ex. 3.3). Hence, $(D(f), \restr{\fO_X}{D(f)}))$ is isomorphic to $\spec{A_f}$.
+\end{proof}
+
+\item Let $(X, \fO_X)$ be a scheme, and let $U \subseteq X$ be any open subset. Show that $(U, \restr{\fO_X}{U})$ is a scheme. We call this the \textit{induced scheme structure} on the open set $U$, and we refer to $(U, \restr{\fO_X}{U})$ as an \textit{open subscheme} of $X$.
+
+\begin{proof}
+    We want to show $U$ can be covered by open affine subsets. Let $\{ X_i = \spec{A_i} \}$ be an affine open cover of $X$. The open subsets $U \cap A_i$ cover $U$, so we reduce to the case when $X = \spec{A}$ for some commutative ring $A$. Open sets of the form $D(f) = X - V((f))$ are a basis for $X$, so for any $\goth{p} \in U$, we can find $f \in A$ such that $\goth{p} \in D(f) \subseteq U$. By Problem 1, $(D(f), \restr{\fO_X}{D(f)})$ is isomorphic to the affine scheme $\spec{A_f}$, hence $U$ is a scheme.
+\end{proof}
+
+\item \textit{Reduced Schemes.} A scheme $(X, \fO_X)$ is \textit{reduced} if for every open set $U \subseteq X$, the ring $\fO_X(U)$ has no nilpotent elements.
+\begin{itemize}[leftmargin=0cm]
+    \item[(a)] Show that $(X, \fO_X)$ is reduced if and only if for every $P \in X$, the local ring $\fO_{X, P}$ has no nilpotent elements.
+    \item[(b)] Let $(X, \fO_X)$ be a scheme. Let $(\fO_X)_\text{red}$ be the sheaf associated to the presheaf $U \mapsto \fO_X(U)_\text{red}$, where for any ring $A$, we denote by $A_\text{red}$ the quotient of $A$ by its ideal of nilpotent elements. Show that $(X, (\fO_X)_\text{red})$ is a scheme. We call it the \textit{reduced scheme} associated to $X$, and denote it by $X_\text{red}$. Show that there is a morphism of schemes $X_\text{red} \to X$, which is a homeomorphism on the underlying topological spaces.
+    \item[(c)] Let $f : X \to Y$ be a morphism of sheaves, and assume that $X$ is reduced. Show that there is a unique morphism $g : X \to Y_\text{red}$ such that $f$ is obtained by composing $g$ with the natural map $Y_\text{red} \to Y$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+   \begin{itemize} [leftmargin=0cm]
+    \item[(a)] We show a commutative ring $A$ has no nilpotent elements if and only if $A_\goth{p}$ has no nilpotent elements for all prime ideals $\goth{p}$ of $A$, that is \textit{being reduced is a local property.} In general, if $M$ is any $A$-module, then $M = 0$ if and only if $M_\goth{p} = 0$ for all prime ideals $\goth{p}$ in $A$. In particular, if $M$ is the nilradical of $A$, then $A$ has no nilpotent elements if and only if $M = 0$ if and only if $M_\goth{p} = 0$ for all $\goth{p}$ if and only if $A_\goth{p}$ has no nilpotent elements.
+
+    \item[(b)] We proceed with the case when $X = \spec{A}$ is affine. Let $\goth{N}$ be the nilradical of $A$. It is the ideal of all nilpotent elements of $A$ and can be realized as intersection of all prime ideals of $A$. We show the sheaf of rings $(X, (\fO_X)_\text{red})$ is isomorphic to the affine scheme $\spec{A / \goth{N}}$. By definition $\spec{A} \cong \spec{A / \goth{N}}$ as topological spaces since the prime ideal structures of the rings $A$, $A / \goth{N}$ are the same. Also, if $f \in A$, then $\Gamma(D(f), (\fO_X)_\text{red} = A_f / \goth{N} A_f$ since the nilradical of $A_f$ is $\goth{N} A_f$. Thus, we see that $\fO_{\spec{A / \goth{N}}}$ and $(\fO_X)_\text{red}$ agree on basic open sets $D(f)$, hence they must be isomorphic.
+    
+    In the general case, let $U_i = \spec{A_i}$ be some affine cover of $X$. Denote $\tilde{U}_i = \spec{A_i / \goth{N}_i}$ the reduced scheme associated to $U_i$, where $\goth{N}_i$ is the nilradical of $A_i$. The scheme obtained by glueing together $\tilde{U}_i$ is exactly $(X, (\fO_X)_\text{red})$. From the canonical projection maps $A_i \to A_i / \goth{N}_i$ we obtain a morphism of schemes $X_\text{red} \to X$ which is a homeomorphism on the underlying topological spaces.
+
+    \item[(c)] Again, we proceed with the affine case. Let $X = \spec{A}$, $Y = \spec{B}$, and $Y_\text{red} = \spec{B / \goth{N}}$, where $A$ is a reduced ring and $\goth{N}$ is the nilradical of the ring $B$. The category of affine schemes is anti-equivalent to the category of commutative rings, so we can completely reduce this problem to the level of rings. We have the canonical projection map $\pi : B \to B / \goth{N}$ which induces the morphism of schemes $\pi^* : Y_\text{red} \to Y$, and giving a morphism $f : X \to Y$ is equivalent to giving a ring homomorphism $f_\# : B \to A$. We want to show there exists a unique $g : X \to Y_\text{red}$ such that the diagram commutes
+    \[ \begin{tikzcd}
+        & Y_\text{red} \arrow[d, "\pi^*"] \\
+            X \arrow[r, "f"'] \arrow[ru, "\exists!g", dashed] & Y                              
+    \end{tikzcd} \]
+    Correspondingly, we want to show there exists a unique ring homomorphism $h : B / \goth{N} \to A$ such that the diagram commutes
+    \[ \begin{tikzcd}
+        & B/\goth{N} \arrow[ld, "h"', dashed] \\
+      A & B \arrow[u, "\pi"'] \arrow[l, "f_\#"] 
+      \end{tikzcd} \]
+    Since the image of $f_\#$ must be a reduced subring of $A$, the kernel of $f_\#$ must contain the nilradical $\goth{N}$ of $B$, so we can take $b + \goth{N} \mapsto f_\#(b)$ to be $h$, and it is unique by construction. In the general case, we can cover $X$ by open affine subsets $U_i = \spec{A_i}$ such that $A_i$ is a reduced ring, then glue together the obtained morphisms $g_i : U_i \to Y_\text{red}$.
+   \end{itemize} 
+\end{proof}
+
+\item Let $A$ be a ring and let $(X, \fO_X)$ be a scheme. Given a morphism $f : X \to \spec{A}$, we have an associated map on sheaves $f^\# : \fO_{\spec{A}} \to f_* \fO_X$. Taking global sections we obtain a homomorphism $A \to \Gamma(X, \fO_X)$. Thus, there is a natural map
+\begin{equation*}
+    \alpha : \Hom_{\mathfrak{Sch}}(X, \spec{A}) \to \Hom_{\mathfrak{Rings}}(A, \Gamma(X, \fO_X)).
+\end{equation*}
+Show that $\alpha$ is bijective.
+
+\begin{proof}
+    We want to show the homomorphism between global sections $A \to \Gamma(X, \fO_X)$ completely determines the morphism $f : X \to \spec{B}$. We can check this locally on $X$. Let $V = \spec{B}$ be an open affine subset of $X$. We also have a homomorphism of global sections $A \to \Gamma(V, \fO_X) = B$ by composing with the inclusion morphism, which fits into the following commutative diagram
+    \[ \begin{tikzcd}
+        & {\Gamma(X, \fO_X)} \arrow[rd] &                               \\
+A \arrow[ru] \arrow[rr] &                               & {\Gamma(\spec{B}, \fO_X) = B}
+    \end{tikzcd} \]
+    where $\Gamma(X, \fO_X) \to B$ is the natural restriction homomorphism. By equivalence of the category of rings and affine schemes, we conclude that $\alpha$ is injective.
+
+    It remains to show $\alpha$ is surjective. Let $\varphi : A \to \Gamma(X, \fO_X)$ be a homomorphism of global sections. For each $x \in X$, let $\goth{m}_x$ be the maximal ideal of $\fO_{x, X}$, and let $i_x : \Gamma(X, \fO_X) \to \fO_{x, X}$ be the natural map. Then define $\tilde{\varphi} : X \to \spec{A}$ by $x \mapsto (i_x \circ \varphi)^{-1}(\goth{m}_x)$. This coincides with the case when $X$ is affine. Indeed, suppose $X = \spec{B}$ for some ring $B$, and let $\goth{p} \in \spec{B}$ corresponding to $x$. The inclusion homeomorphism $i_x : \Gamma(X, \fO_X) \to \fO_{x, X}$ is precisely the natural map $i_\goth{p} : B \to B_\goth{p}$ associated to localization. Thus, $i_x(\gm_x) = \goth{p} \in B$, and $\tilde{\varphi}(x) = \varphi^{-1}(\goth{p})$.
+\end{proof}
+
+\item Describe $\spec{\Z}$, and show that is a final object for the category of schemes, i.e., each scheme $X$ admits a unique morphism to $\spec{\Z}$.
+
+\begin{proof}
+    The ring of integers $\Z$ is a principal ideal domain, so all of its prime ideals are of the form $(p)$ for $p = 0$ or prime. If $p \neq 0$, then $(p)$ is a closed point in $\spec{\Z}$ since it is maximal as an ideal in $\Z$. It is also a reduced scheme since $\Z$ is a domain. To show $\spec{\Z}$ is final in the category of schemes, it suffices to show $\Z$ is initial in the category of commutative rings, because any morphism of schemes $X \to \spec{Z}$ is determined by the ring homomorphism $\Z \to \Gamma(X, \fO_X)$ by Exercise 4. Indeed, if $A$ is any commutative ring, the multiplicative unit $1 \in \Z$ additively generates $\Z$, so the homomorphism $f : \Z \to A$ is completely determined by $f(1)$, and since $f(1) = 1$, $f$ must be unique.
+\end{proof}
+
+\item[\textbf{7.}] Let $X$ be a scheme. For any $x \in X$, let $\fO_x$ be the local ring at $x$, and $\goth{m}_x$ its maximal ideal. We define the \textit{residue field} of $x$ on $X$ to be the field $k(x) = \fO_x / \goth{m}_x$. Now let $K$ be any field. Show that to give a morphism of $\spec{K}$ to $X$ it is equivalent to give a point $x \in X$ and an inclusion map $k(x) \hookrightarrow K$.
+
+\begin{proof}
+    There are two associated maps to any morphism of schemes: a continuous map $f: X \to Y$ between topological spaces, and a morphism between sheaves $f_\# : \fO_Y \to f_* \fO_X$. Any field has only the zero ideal $(0)$ as a prime ideal, so $\spec{K}$ as a topological space consists of only one point. To give a continuous map $\iota : \spec{K} \to X$ is equivalent to giving a point $x \in X$ to map $(0)$ to. Also, any morphism $\fO_X \to \iota_* \fO_{\spec{K}}$ induces a morphism of local rings $\fO_x \to K_{(0)} = K$, which is equivalent to giving an inclusion map of fields $k(x) \hookrightarrow K$. Giving any inclusion $k(x) \hookrightarrow K$, we have a morphism between spectra $\spec{K} \to \spec{k(x)}$, which can be naturally extended to $\spec{K} \to \spec{k(x)} \to X$ by mapping the unique point of $\spec{k(x)}$ to $x \in X$.
+\end{proof}
+
+\item[\textbf{8.}] Let $X$ be a scheme. For any point $x \in X$, we define the \textit{Zariski tangent space} $T_x$ to $X$ at $x$ to be the dual of the $k(x)$-vector space $\goth{m}_x / \goth{m}_x^2$. Now assume that $X$ is a scheme over a field $k$, and let $k[\varepsilon] / (\varepsilon^2)$ be the \textit{ring of dual numbers over $k$}. Show that to give a $k$-morphism of $\spec{k[\varepsilon] / (\varepsilon^2)}$ to $X$ is equivalent to giving a point $x \in X$, \textit{rational over $k$} (i.e., such that $k(x) = k$), and an element of $T_x$.
+
+\begin{proof}
+    We first identify the prime ideals of $k[\varepsilon] / (\varepsilon^2)$ and determine the topology of $\spec{k[\varepsilon] / (\varepsilon^2)}$. The only prime ideal is $(\varepsilon)$, in particular it is a local ring with nilpotent elements, so $\spec{k[\varepsilon] / (\varepsilon^2)}$ has only one point. We have the canonical projection $k[\varepsilon] / (\varepsilon^2) \to k$, which given a morphism of schemes $d : \spec{k[\varepsilon] / (\varepsilon^2)} \to X$ induces
+    \begin{equation*}
+        \spec{k} \to \spec{k[\varepsilon] / (\varepsilon^2)} \to X.
+    \end{equation*}
+    By Exercise 7, this is equivalent to giving a point $x \in X$ and an inclusion of fields $k(x) \hookrightarrow k$. Also, any $d$ induces a morphism between tangent spaces $$d^* : T_{(\varepsilon)}(\spec{k[\varepsilon]/(\varepsilon^2)}) \to T_x(X),$$
+    and since $T_{(\varepsilon)}(\spec{k[\varepsilon]/(\varepsilon^2)})$ is a one-dimensional $k$-vector space, a linear map such as $d^*$ is equivalent to giving an element of $T_x(X)$.
+\end{proof}
+
+\item[\textbf{9.}] If $X$ is a topological space, and $Z$ an irreducible closed subset of $X$, a \textit{generic point} for $Z$ is a point $\zeta$ such that $Z = \overline{\{ \zeta \} }$. If $X$ is a scheme, show that every (nonempty) irreducible closed subset has a unique generic point.
+
+\begin{proof}
+   The case when $X$ is an affine scheme is easy. If $X = \spec{A}$, then any irreducible closed subset $Z$ of $X$ is of the form $Z = V(\goth{p})$ for some prime ideal $\goth{p}$ of $A$, so $\goth{p}$ as a point in $X$ is by definition the unique generic point of $Z$ (uniqueness follows from $\goth{p}$ being the smallest, hence unique, prime ideal contained in all elements of $V(\goth{p})$). Note that any proper open subset of an irreducible closed subset of an affine scheme must contain the unique generic point, otherwise this implies the unique generic point is contained in a closed set, hence is the entire space. Generally, suppose $X$ is a scheme, and let $Z$ be a nonempty irreducible closed subset of $X$. Cover $X$ with open affine subsets $U_i = \spec{A_i}$, $i \in I$. The closed subset $Z$ can be obtained by glueing $Z_i = Z \cap U_i$ along $Z_i \cap Z_j$ for all $i, j$. Since $Z_i$ is a closed irreducible subset of $U_i$ it has a unique generic point, say $\zeta_i$. The set $Z_i \cap Z_j$ is an open in $Z_i$ and $Z_j$, so it must contain $\zeta_i$ and $\zeta_j$, thus they must be identified by the glueing process.
+\end{proof}
+
+\item[\textbf{10.}] Describe $\spec{\R[x]}$. How does its topological space compare to the set $\R$? To $\C$?
+
+\begin{proof}
+    The maximal ideals of $\R[x]$ are of the form $(x - \alpha)$ and $(x^2 + \beta x + \gamma)$, where $\alpha, \beta, \gamma \in \R$ with $\beta^2 - 4 \gamma < 0$, and the only non-maximal prime ideal of $\R[x]$ is the zero ideal $(0)$. There is a bijection between quadratic polynomials $x^2 + \beta x + \gamma$ and pairs of conjugate complex numbers $a \pm i b$ with $b \neq 0$, namely
+    \begin{equation*}
+        x^2 + \beta x + \gamma \mapsto \frac{-\beta \pm \sqrt{\beta^2 -4\gamma}}{2} 
+    \end{equation*}
+    so besides the generic point $(0)$, we can identify $\spec{\R[x]}$ with the complex plane $\C$ ``folded in half along the real axis.''
+\end{proof}
+
+\item[\textbf{12.}] \textit{Glueing Lemma.} Generalize the glueing procedure described in the text (2.3.5) as follows. Let $\{X_i\}$ be a family of schemes (possible infinite). For each $i \neq j$, suppose given an open subset $U_{ij} \subseteq X_i$, and let it have the induced scheme structure. Suppose also given for each $i \neq j$ an isomorphism of schemes $\varphi_{ij} : U_{ij} \to U_{ji}$ such that
+\begin{itemize}
+    \item[(1)] for each $i, j$, $\varphi_{ji} = \varphi_{ij}^{-1}$,
+    \item[(2)] and for each $i, j, k$, $\varphi_{ij}(U_{ij} \cap U_{ik}) = U_{ji} \cap U_{jk}$, and $\varphi_{ik} = \varphi_{jk} \circ \varphi_{ij}$ on $U_{ij} \cap U_{ik}$.
+\end{itemize}
+Then, show that there is a scheme $X$, together with morphisms $\psi_i : X_i \to X$ for each $i$, such that
+\begin{itemize}
+    \item[(1)] $\psi_i$ is an isomorphism of $X_i$ onto an open subscheme of $X$,
+    \item[(2)] the $\psi_i(X_i)$ cover $X$,
+    \item[(3)] $\psi_i(U_{ij}) = \psi_i(X_i) \cap \psi_j(X_j)$,
+    \item[(4)] and $\psi_i = \psi_j \circ \varphi_{ij}$ on $U_{ij}$.
+\end{itemize}
+We say that $X$ is obtained by \textit{glueing} the schemes $X_i$ along the isomorphisms $\varphi_{ij}$. An interesting special case is when the family $X_i$ is arbitrary, but the $U_{ij}$ and $\varphi_{ij}$ are all empty. Then the scheme $X$ is called the \textit{disjoint union} of the $X_i$, and is denoted $\coprod X_i$.
+
+\begin{proof}
+    Let $X = \coprod X_i / \sim$, where the equivalence relation identifies $U_{ij}$ with $U_{ji}$ for all $i \neq j$. It is a scheme topologically, that is there is an open cover of $X$ such that each element of the cover is homeomorphic to the spectra of some ring. We have already have a scheme struture on each open subset $X_i$ of $X$, so by Exercise 1.22 we can obtain a unique sheaf on $X$ satisfies the properties above. In particular, the structure sheaf of $X$ is given by
+    \begin{equation*}
+        \fO_X(V) = \{ \langle s_i \rangle_{i \in I} \mid s_i \in \fO_X(\iota_i^{-1}(V)) \text{ and } \varphi_{ij}(\restr{s_i}{\iota^{-1}_i(V) \cap U_{ij}}) = \restr{s_j}{\iota_j^{-1}(V) \cap U_j} \}.
+    \end{equation*}
+\end{proof}
+
+\item[\textbf{13.}] A topological space is \textit{quasi-compact} if every open cover has a finite subcover.
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] Show that a topological space is noetherian if and only if every open subset is quasi-compact.
+    \item[(b)] If $X$ is an affine scheme, show that $\text{sp}(X)$ is quasi-compact, but not in general noetherian. We say a scheme $X$ is \textit{quasi-compact} if $\text{sp}(X)$ is.
+    \item[(c)] If $A$ is a noetherian ring, show that $\text{sp}(\spec{A})$ is a noetherian topological space.
+    \item[(d)] Give an example to show that $\text{sp}(\spec{A})$ can be noetherian even when $A$ is not.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Any open subset of a noetherian space if noetherian, and any noetherian space is quasi-compact. Conversely, let $X$ be a topological space such that every open subset is quasi-compact. If $U_1 \subseteq U_2 \subseteq \cdots$ is an ascending chain of open subsets of $X$, then $U = \bigcup U_i$ is an open subset of $X$, so it is quasi-compact with open cover $\{ U_i \}_{i = 1}^\infty$. Hence, there exists a finite subcover $U_{i_1}, \dots, U_{i_n}$, so the ascending chain must terminate at $\text{max}\{i_j \}$. 
+
+        \item[(b)] Let $\{ U_i \}_{i \in I}$ be an open cover of $\spec{A}$. We can assume $U_i$ to be basic open sets of the form $D(f_i)$ for some $f_i \in A$. If $\spec{A} = \bigcup D(f_i)$, then $V((f_i)_{i \in I}) = \emptyset$, which implies the ideal generated by $f_i$ is the entire ring $A$. That means there exists a finite number of elements $f_1, \dots f_n$ such that $\sum_{i = 1}^n a_i f_i = 1$ for some $a_i \in A$, hence $D(f_1), \dots, D(f_n)$ is a finite subcover of $\spec{A}$.
+
+        \item[(c)] The descending chain of irreducible closed subsets in $\text{sp}(\spec{A})$ corresponds to an ascending chain of prime ideals in $A$. If $A$ is noetherian any ascending chain of ideals must terminate, hence the corresponding descending chain of irreducible closed subsets must terminate.
+
+        \item[(d)] Let $A = \prod_{i = 1}^\infty k$, where $k$ is any field. The prime ideals of $A$ are of the form $\goth{p}_i = \cdots \times k \times 0 \times k \cdots$, so $\spec{A}$ has countably infinite number of points, and closed subsets of $\spec{A}$ are finite set of points. Hence, $\spec{A}$ is a noetherian topological space. However, $A$ itself is not noetherian, e.g. $0 \times 0 \times \cdots \subset k \times 0 \times 0 \times \cdots \subset k \times k \times 0 \times \cdots \subset \cdots$.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{14.}]
+\begin{itemize}
+    \item[(a)] Let $S$ be a graded ring. Show that $\proj{S} = \emptyset$ if and only if every element of $S_+$ is nilpotent.
+    \item[(b)] Let $\varphi : S \to T$ be a graded homomorphism of graded rings (preserving degrees). Let $U = \{ \goth{p} \in \proj{T} \mid \goth{p} \nsupseteq \varphi(S_+) \}$. Show that $U$ is an open subset of $\proj{T}$, and show that $\varphi$ determines a natural morphism $f : U \to \proj{S}$.
+    \item[(c)] The morphism $f$ can be an isomorphism even when $\varphi$ is not. For example, suppose that $\varphi_d : S_d \to T_d$ is an isomorphism for all $d \geq d_0$, where $d_0$ is an integer. Then show that $U = \proj{T}$ and the morphism $f : \proj{T} \to \proj{S}$ is an isomorphism. We can define $f : U \to \proj{S}$ to be $f(\goth{p}) = \varphi^{-1}(\goth{p})$.
+    \item[(d)] Let $V$ be a projective variety with homogenous coordinate ring $S$. Show that $t(V) \cong \proj{S}$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] By (Ex. 2.2), $Z((0)) = \proj{S} = \emptyset$ $\iff$ $\sqrt{(0)} \supseteq S_+$ $\iff$ $S_+$ is nilpotent.
+
+        \item[(b)] Notice that $U = \proj{T} - V(\varphi(S_+))$, so $U$ is indeed open. We can define $f : U \to \proj{S}$ to be $f(\goth{p}) = \varphi^{-1}(\goth{p})$. Since $\varphi$ does not contain $\varphi(S_+)$, $\varphi^{-1}(\goth{p})$ does not contain $S_+$, so it is an element of $\proj{S}$. Also, $\varphi$ preserves degrees; in particular the preimage of a homogenous element is homogenous, so if $\goth{p}$ is a homogenous prime ideal, then so is $f(\goth{p})$.
+
+        \item[(c)] We first show $U = \proj{T}$. Assume $d_0 > 0$ and suppose $\goth{p}$ is a homogenous prime ideal in $T$ and $\goth{p} \supseteq \varphi(S_+)$. We want to show $\goth{p} \supseteq T_+$. Towards that end, $\varphi_d$ is an isomorphism for all $d \geq d_0$, which means $\bigoplus_{d \geq d_0} T_d \subseteq \varphi(S_+) \subseteq \goth{p}$. Thus, for any $x \in T_+$, there exists a sufficiently large $n > 0$ such that the lowest degree term of $x^n$ is greater than $d_0$, i.e., $x^n \in \bigoplus_{d \geq d_0} T_d \subseteq T_+$ for $n \gg 0$. Hence, $T_+ \subseteq \sqrt{\goth{p}} = \goth{p}$. By the same reasoning as above, it is bijective.
+
+        \item[(d)] A point in $t(V)$ corresponds to an irreducible closed subset of $V$, which corresponds to a homogenous prime ideal of $S$, so $t(V)$ and $\proj{S}$ are homeomorphic as topological spaces. Let $\alpha : V \to t(V)$ be the map in (2.6), so that $(t(V), \alpha_* \fO_V)$ is sheaf of rings on $t(V)$. There is a one-to-one correspondence between the open subsets of $V$ and open subsets of $t(V)$, hence $t(V)$ and $\proj{S}$ are isomorphic at the level of stalks.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{15.}] \begin{itemize}
+    \item[(a)] Let $V$ be a variety over an algebraically closed field $k$. Show that a point $P \in t(V)$ is a closed point if and only if its residue field is $k$.
+    \item[(b)] If $f : X \to Y$ is a morphism of schemes over $k$, and if $P \in X$ is a point with residue field $k$, then $f(P) \in Y$ also has residue field $k$.
+    \item[(c)] Now show that if $V, W$ are any two varieties over $k$, then the natural map
+    \begin{equation*}
+        \Hom_{\mathfrak{Var}}(V, W) \to \Hom_{\mathfrak{Sch}/k}(t(V), t(W))
+    \end{equation*}
+    is bijective.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] $P \in t(V)$ is a closed point $\iff$ $t(Y) = \{ P \}$ for some closed subset $Y \subseteq V$ $\iff$ $Y$ is a closed point in $V$ $\iff$ its residue field is $k$.
+
+        \item[(b)] We can reduce to the case when $X$ and $Y$ are affine over $k$ by taking open affine neighborhoods of $P$ and $f(P)$. Let $X = \spec{A}$ and $Y = \spec{B}$ where $A, B$ are $k$-algebras. A morphism of affine schemes $f : X \to Y$ correspond to a ring homomorphism $\varphi : B \to A$. The point $P \in X$ corresponds to a prime ideal $\goth{p}$ in $A$, and $f(P) \in Y$ corresponds to the prime ideal $\goth{P} = \varphi^{-1}(\goth{p})$ in $B$. If $P$ has residue field $k$, then $\varphi$ induces a map $B / \goth{P} \to  k$ since $A / \goth{p} = k$, so the residue field of $f(P)$ is a subfield of $k$. Since the residue field of $f(P)$ is also a $k$-algebra and $k$ is algebraically closed, $f(P)$ must have $k$ as its residue field.
+
+        \item[(c)] Injectivity is easy by the fact that any two continuous maps $V \to W$ induces the same continuous map between $t(V) \to t(W)$, which defines the same morphism of sheaves. We show surjectivity. Let $f : t(V) \to t(W)$ be a morphism of schemes, and let $\alpha_{U}, \alpha_V$ be the maps as in (2.6) for $V$, respectively. By part (a) and (b), the map $\restr{f}{\im{\alpha_U}} : \im{\alpha_U} \to \im{\alpha_V}$ is the desired map such that $t(\restr{f}{\im{\alpha_U}}) = f$.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{16.}] Let $X$ be a scheme, let $f \in \Gamma(X, \fO_X)$, and define $X_f$ to be the subset of points $x \in X$ such that the stalk $f_x$ of $f$ at $x$ is not contained in the maximal ideal $\goth{m}_x$ of the local ring $\fO_x$.
+\begin{itemize}
+    \item[(a)] If $U = \spec{B}$ is an open \textit{affine} subscheme of $X$, and if $\bar{f} \in B = \Gamma(U, \fO_X)$ is the restriction of $f$, show that $U \cap X_f = D(\bar{f})$. Conclude that $X_f$ is an open subset of $X$.
+    \item[(b)] Assume that $X$ is quasi-compact. Let $A = \Gamma(X, \fO_X)$, and let $a \in A$ be an element whose restriction to $X_f$ is $0$. Show that for some $n > 0$, $f^n a = 0$.
+    \item[(c)] Now assume that $X$ has a finite cover by open affines $U_i$ such that each intersection $U_i \cap U_j$ is quasi-compact. Let $b \in \Gamma(X_f, \fO_X)$. Show that for some $n > 0$, $f^n b$ is the restriction of an element of $A$.
+    \item[(d)] With the hypothesis of (c), conclude that $\Gamma(X_f, \fO_{X}) = A_f$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] The set $D(\bar{f})$ can be identified as the set of all prime ideals of $B$ that contain $\bar{f}$. For each $\goth{p} \in U$, the stalk of $\fO_X$ at $\goth{p}$ is the local ring $B_\goth{p}$, hence $U \cap X_f \subseteq D(\bar{f})$. Conversely, the image of $\bar{f}$ in $B_\goth{p}$ is precisely the stalk $f_x$ of $f$ at $x$, so $\bar{f} \in \goth{p}$ implies $f_x \in \goth{p}B_\goth{p}$, where $x$ and $\goth{p}$ correspond to the same point in $X$, and since $\goth{m}_x = \goth{p} B_\goth{p}$, we have inclusion in the other direction. We can cover $X_f$ by affine open subschemes so that $X_f$ is an open subset of an open subset, which implies $X_f$ is open.
+
+        \item[(b)] First assume $X$ is affine so that $X = \spec{A}$. If $a \in A$ restricts to $0$ in $X_f$, then since $X_f \simeq \spec{A_f}$ and $\Gamma(X_f, \fO_X) = A_f$, which means the image of $a$ in $A_f$ is $0$, which is true if and only if $f^n a = 0$ for some $n > 0$. The general case (with the quasi-compactness assumption) follows from the fact that we can let $X = \bigcup_{i = 1}^m \spec{A_i}$, and for each $i$, we have $f^{n_i} a = 0 \in \Gamma(\spec{A_i}, \fO_X)$ for some $n_i > 0$, and we can take $n = \max\{ n_i \}$.
+
+        \item[(c)] Let $X = \bigcup_{i = 1}^n U_i$, where $U_i = \spec{A_i}$, and let $X_{f, i} = X_f \cap U_i$. Assume $X_{f, i} \neq \emptyset$. We first show that for some $n_i > 0$, $f^{n_i} b_i$ is the restriction of an element of $\Gamma(U_i, \fO_X) = A_i$, where $b_i$ is the image of $b$ in $\Gamma(X_{f, i}, \fO_X)$. It is not hard to see that $\Gamma(X_{f, i}, \fO_X) = (A_i)_f$, so $b_i = b_i' / f^{n_i}$ for some $b_i' \in A_i$ and $n_i > 0$ (the case is trivial when $n_i = 0$), thus $f^{n_i} b_i$ is an element of $A_i$. Let $n = \max{\{n_i\}}$, then $f^n b_i$ is an element of $A_i$ for all $i$, and for all $i \neq j$, $f^n b_i$ and $f^n b_j$ restrict to the same element on $U_i \cap U_j$, so by part (b), there exists $n_{i, j} > 0$ such that $f^{n_{i, j}}(f^nb_i - f^n b_j) = 0$. Again, let $m = \max\{ n_{i, j} \}$, then $f^{m + n} b$ is the restriction of an element of $A$.
+
+        \item[(d)] The element $f$ is clearly invertible in $\Gamma(X_f, \fO_X)$, so by part (c), every element of $\Gamma(X_f, \fO_X)$ is of the form $a / f^n$ for some $a \in A$ and $n \geq 0$.
+    \end{itemize}
+\end{proof}
+
+\item[\textbf{17.}] \textit{A Criterion for Affineness.}
+\begin{itemize}
+    \item[(a)] Let $f : X \to Y$ be a morphism of schemes, and suppose that $Y$ can be covered by open subsets $U_i$, such that for each $i$, the induced map $f^{-1}(U_i) \to U_i$ is an isomorphism. Then $f$ is an isomorphism.
+    \item[(b)] A scheme $X$ is affine if and only if there is a finite set of elements $f_1, \dots, f_r \in A = \Gamma(X, \fO_X)$, such that the open subsets $X_{f_i}$ are affine, and $f_1, \dots, f_r$ generate the unit ideal in $A$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+   \begin{itemize} [leftmargin=0cm]
+    \item[(a)] Localize.
+
+    \item[(b)] One direction is obvious. Let $X$ be a scheme satisfying the hypothesis above. If $X_{f_i}$ are affine, then by Exercise 2.6 and 2.16d, $X_{f_i} \simeq \spec{A_{f_i}}$. Also, $X = \bigcup X_{f_i}$, since if there exists $P \in X$ such that $f_i \in \goth{m}_P$ for all $i = 1, \dots, r$, then $1 \in \goth{m}_P$, which is not possible. Hence, by (a), $X$ and $\spec{A}$ are isomorphic.
+   \end{itemize}
+\end{proof}
+
+\item[\textbf{19.}] Let $A$ be a ring. Show that the following condition are equivalent:
+\begin{itemize}
+    \item[(i)] $\spec{A}$ is disconnected;
+    \item[(ii)] there exist nonzero elements $e_1, e_2 \in A$ such that $e_1 e_2 = 0$, $e_1^2 = e_1$, $e_2^2 = e_2$, $e_1 + e_2 = 1$ (these elements are called \textit{orthogonal idempotents});
+    \item[(iii)] $A$ is isomorphic to a direct product $A_1 \times A_2$ of two nonzero rings.
+\end{itemize}
+
+\begin{proof}
+    (i) $\implies$ (iii) Write $\spec{A} = \spec{A/\goth{a}_1} \amalg \spec{A/\goth{a}_2}$ where $\goth{a}_i$ are the ideals corresponding to the open and closed sets $U_i = \spec{A/\goth{a}_i}$ for $i = 1, 2$. We have $$V(\goth{a}_1) \cup V(\goth{a}_2) = V(\goth{a}_1 \goth{a}_2 ) = V((0)) = \spec{A}$$ and $$V(\goth{a}_1) \cap V(\goth{a}_2) = V(\goth{a}_1 + \goth{a}_2)= V((1)) = \emptyset.$$ By (A, M Prop 1.10), $A \simeq A/\goth{a}_1 \times A/\goth{a}_2$.
+
+    (iii) $\implies$ (ii) $e_1 = (1, 0), e_2 = (0, 1)$
+
+    (ii) $\implies$ (i) $\spec{A} = V((e_1)) \amalg V((e_2))$ because any prime ideal of $A$ must contain either $e_i$ since $e_1 e_2 = 0$, but cannot contain both.
+\end{proof}
+
+\end{enumerate}
+
+\end{document}

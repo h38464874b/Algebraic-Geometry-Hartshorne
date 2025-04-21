@@ -1,0 +1,6 @@
+nonsingular
+leftmargin
+Kodaira
+codimension
+Subvariety
+subvariety

@@ -1,0 +1,3 @@
+Nakayama
+isomorphisms
+adjointness
