@@ -8,3 +8,6 @@ Noetherian
 paracompact
 colimits
 homeomorphic
+subsheaf
+leftmargin
+colimit
