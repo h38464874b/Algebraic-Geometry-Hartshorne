@@ -8,7 +8,6 @@
 \usepackage{yfonts}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
-\definecolor{mycustomcolor}{RGB}{205,230,240}
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \newcommand{\goth}[1]{\mathfrak{#1}}
 \newcommand{\fF}{\mathscr{F}}
@@ -53,60 +52,17 @@
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\spec}{Spec}
-\newcommand\srestr[2]{{
-\left.\kern-\nulldelimiterspace #1 \vphantom{\small|} \right|_{#2} }}
+\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
 
 \title{Chapter 3, Section 2}
+\author{James Lee}
 \pagecolor[RGB]{20,20,20}
-\color{mycustomcolor}
-
-% \color[RGB]{255,255,255}
+\color[RGB]{255,255,255}
 
 \begin{document}
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
-
-% \item \begin{itemize}
-%     \item[(a)] Let $X = \A_k^1$ be the affine line over an infinite field $k$. Let $P, Q$ be distinct closed points of $X$, and let $U = X - \{ P, Q \}$. Show that $H^1(X, \Z_U) \neq 0$.
-%     \item[(b)] More generally, let $Y \subseteq X = \A_k^n$ be the union of $n + 1$ hyperplanes in suitable general positions, and let $U = X - Y$. Show that $H^n(X, \Z_U) \neq 0$. Thus, the result of (2.7) is the best possible.
-% \end{itemize}
-
-% \item Let $X = \PP_k^1$ be the projective line over an algebraically closed field $k$. Show that the exact sequence $0 \to \fO \to \fK \to \fK / \fO \to 0$ of (II, Ex.1.21d) is a flasque resolution of $\fO$. Conclude from (II, Ex. 1.21e) that $H^i(X, \fO) = 0$ for all $i > 0$.
-
-% \item \textit{Cohomology with Supports.} Let $X$ be a topological space, let $Y$ be a closed subset, and let $\fF$ be a sheaf of abelian groups. Let $\Gamma_Y(X, \fF)$ denote the group of sections of $\fF$ with support in $Y$ (II, Ex. 1.20).
-% \begin{itemize}
-%     \item[(a)] Show that $\Gamma_Y(X, \cdot)$ is a left exact functor from $\goth{Ab}(X)$ to $\goth{Ab}$.
-
-%     We denote the right derived functors of $\Gamma_Y(X, \cdot)$ by $H_Y^i(X, \cdot)$. They are the \textit{cohomology groups of $X$ with supports in $Y$,} and coefficients in a given sheaf.
-
-%     \item[(b)] If $0 \to \fF' \to \fF \to \fF'' \to 0$ is an exact sequence of sheaves, with $\fF'$ flasque, show that
-%     \begin{equation*}
-%         0 \to \Gamma_Y(X, \fF') \to \Gamma_Y(X, \fF) \to \Gamma_Y(X, \fF'') \to 0
-%     \end{equation*}
-%     is exact.
-
-%     \item[(c)] Show that if $\fF$ is flasque, then $H^i_Y(X, \fF) = 0$ for all $i > 0$.
-
-%     \item[(d)] If $\fF$ is flasque, show that the sequence
-%     \begin{equation*}
-%         0 \to \Gamma_Y(X, \fF) \to \Gamma(X, \fF) \to \Gamma(X - Y, \fF) \to 0
-%     \end{equation*}
-%     is exact.
-
-%     \item[(e)] Let $U = X - Y$. Show that for any $\fF$, there is a long exact sequence of cohomology groups
-%     \[ \begin{tikzcd}
-%         0 \arrow[r]  & {H_Y^0(X, \fF)} \arrow[r] & {H^0(X, \fF)} \arrow[r] & {H^0(U, \restr{\fF}{U})} \arrow[r] & {} \\
-%         {} \arrow[r] & {H_Y^1(X, \fF)} \arrow[r] & {H^1(X, \fF)} \arrow[r] & {H^1(U, \restr{\fF}{U})} \arrow[r] & {} \\
-%         {} \arrow[r] & {H_Y^2(X, \fF)} \arrow[r] & \cdots .                  &                                     &   
-%         \end{tikzcd} \]
-    
-%     \item[(f)] \textit{Excision.} Let $V$ be an open subset of $X$ containing $Y$. Then there are natural functorial isomorphisms, for all $i$ and $\fF$,
-%     \begin{equation*}
-%         H_Y^i(X, \fF) \cong H_Y^i(V, \restr{\fF}{V}).
-%     \end{equation*}
-% \end{itemize}
-
 \item[\textbf{4.}] \textit{Mayer-Vietoris Sequence.} Let $Y_1, Y_2$ be two closed subsets of $X$. Then there is a long exact sequence of cohomology with supports
 \[ \begin{tikzcd}
     \cdots \arrow[r] & {H^i_{Y_1 \cap Y_2}(X, \fF)} \arrow[r]       & {H_{Y_1}^i(X, \fF) \oplus H_{Y_2}^i(X, \fF)} \arrow[r] & {H^i_{Y_1 \cup Y_2}(X, \fF)} \arrow[r] & {} \\
@@ -125,12 +81,7 @@
 which induces the desired long sequence of cohomology with supports by (1.1A).
 \end{proof}
 
-% \item Let $X$ be a Zariski space (II, Ex. 3.17). Let $P \in X$ be a closed point, and let $X_P$ be the subset of $X$ containing of all points $Q \in X$ such that $P \in \overline{\{Q \}}$. We call $X_P$ the \textit{local space} of $X$ at $P$, and give it the induced topology. Let $j : X_P \to X$ be the inclusion, and for any sheaf $\fF$ on $X$, let $\fF_P = j^* \fF$ Show that for all $i$, $\fF$, we have
-% \begin{equation*}
-%     H_P^i(X, \fF) = H_P^i(X_P, \fF_P).
-% \end{equation*}
-
-\item[\textbf{6.}] Let $X$ be a noetherian topological space, and let $\{ \fI_\alpha \}_{\alpha \in A}$ be a direct system of injective sheaves of abelian groups on $X$. Then $\varinjlim \fI _\alpha$ is also injective.
+\item[\textbf{6.}] Let $X$ be a Noetherian topological space, and let $\{ \fI_\alpha \}_{\alpha \in A}$ be a direct system of injective sheaves of Abelian groups on $X$. Then $\varinjlim \fI _\alpha$ is also injective.
 
 \begin{proof} 
 \end{proof}
@@ -184,3 +135,48 @@ Since $X \cong A, B$, $H^1(A, \Z_X), H^1(A, \Z_Y) \cong H^1(A, \Z)$ by (2.10), w
 
 \end{enumerate}
 \end{document}
+
+% \item \begin{itemize}
+%     \item[(a)] Let $X = \A_k^1$ be the affine line over an infinite field $k$. Let $P, Q$ be distinct closed points of $X$, and let $U = X - \{ P, Q \}$. Show that $H^1(X, \Z_U) \neq 0$.
+%     \item[(b)] More generally, let $Y \subseteq X = \A_k^n$ be the union of $n + 1$ hyperplanes in suitable general positions, and let $U = X - Y$. Show that $H^n(X, \Z_U) \neq 0$. Thus, the result of (2.7) is the best possible.
+% \end{itemize}
+
+% \item Let $X = \PP_k^1$ be the projective line over an algebraically closed field $k$. Show that the exact sequence $0 \to \fO \to \fK \to \fK / \fO \to 0$ of (II, Ex.1.21d) is a flasque resolution of $\fO$. Conclude from (II, Ex. 1.21e) that $H^i(X, \fO) = 0$ for all $i > 0$.
+
+% \item \textit{Cohomology with Supports.} Let $X$ be a topological space, let $Y$ be a closed subset, and let $\fF$ be a sheaf of abelian groups. Let $\Gamma_Y(X, \fF)$ denote the group of sections of $\fF$ with support in $Y$ (II, Ex. 1.20).
+% \begin{itemize}
+%     \item[(a)] Show that $\Gamma_Y(X, \cdot)$ is a left exact functor from $\goth{Ab}(X)$ to $\goth{Ab}$.
+
+%     We denote the right derived functors of $\Gamma_Y(X, \cdot)$ by $H_Y^i(X, \cdot)$. They are the \textit{cohomology groups of $X$ with supports in $Y$,} and coefficients in a given sheaf.
+
+%     \item[(b)] If $0 \to \fF' \to \fF \to \fF'' \to 0$ is an exact sequence of sheaves, with $\fF'$ flasque, show that
+%     \begin{equation*}
+%         0 \to \Gamma_Y(X, \fF') \to \Gamma_Y(X, \fF) \to \Gamma_Y(X, \fF'') \to 0
+%     \end{equation*}
+%     is exact.
+
+%     \item[(c)] Show that if $\fF$ is flasque, then $H^i_Y(X, \fF) = 0$ for all $i > 0$.
+
+%     \item[(d)] If $\fF$ is flasque, show that the sequence
+%     \begin{equation*}
+%         0 \to \Gamma_Y(X, \fF) \to \Gamma(X, \fF) \to \Gamma(X - Y, \fF) \to 0
+%     \end{equation*}
+%     is exact.
+
+%     \item[(e)] Let $U = X - Y$. Show that for any $\fF$, there is a long exact sequence of cohomology groups
+%     \[ \begin{tikzcd}
+%         0 \arrow[r]  & {H_Y^0(X, \fF)} \arrow[r] & {H^0(X, \fF)} \arrow[r] & {H^0(U, \restr{\fF}{U})} \arrow[r] & {} \\
+%         {} \arrow[r] & {H_Y^1(X, \fF)} \arrow[r] & {H^1(X, \fF)} \arrow[r] & {H^1(U, \restr{\fF}{U})} \arrow[r] & {} \\
+%         {} \arrow[r] & {H_Y^2(X, \fF)} \arrow[r] & \cdots .                  &                                     &   
+%         \end{tikzcd} \]
+    
+%     \item[(f)] \textit{Excision.} Let $V$ be an open subset of $X$ containing $Y$. Then there are natural functorial isomorphisms, for all $i$ and $\fF$,
+%     \begin{equation*}
+%         H_Y^i(X, \fF) \cong H_Y^i(V, \restr{\fF}{V}).
+%     \end{equation*}
+% \end{itemize}
+
+% \item Let $X$ be a Zariski space (II, Ex. 3.17). Let $P \in X$ be a closed point, and let $X_P$ be the subset of $X$ containing of all points $Q \in X$ such that $P \in \overline{\{Q \}}$. We call $X_P$ the \textit{local space} of $X$ at $P$, and give it the induced topology. Let $j : X_P \to X$ be the inclusion, and for any sheaf $\fF$ on $X$, let $\fF_P = j^* \fF$ Show that for all $i$, $\fF$, we have
+% \begin{equation*}
+%     H_P^i(X, \fF) = H_P^i(X_P, \fF_P).
+% \end{equation*}
