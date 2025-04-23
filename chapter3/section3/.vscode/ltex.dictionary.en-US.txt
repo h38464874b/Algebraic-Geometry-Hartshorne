@@ -3,3 +3,9 @@ Noetherian
 injectives
 Deligne
 surjective
+flasque
+nilpotent
+nilradical
+affines
+adjointness
+injectivity

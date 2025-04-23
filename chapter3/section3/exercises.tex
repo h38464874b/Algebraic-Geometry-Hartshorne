@@ -11,17 +11,32 @@
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
 \item[\textbf{1.}] Let $X$ be a Noetherian scheme.
-Show that $X$ is affine if and only if $X_\text{red}$ (II, Ex. 2.3) is affine.
+Show that $X$ is affine if and only if $\reduced{X}$ (II, Ex. 2.3) is affine.
 
 \begin{proof}
-
+One direction is clear.
+Suppose $\reduced{X} = \spec{A}$ where $A$ is a Noetherian ring with no nilpotent elements, let $f : \reduced{X} \to X$ be the natural map, and let $\fF$ be any quasi-coherent sheaf on $X$. 
+Following the hint, consider the filtration
+\begin{equation*}
+  \fF \supseteq \fN \cdot \fF \supseteq \fN^2 \cdot \fF \supseteq \cdots,
+\end{equation*}
+where $\fN$ is the sheaf of nilpotent elements on $X$
+Note that $X \cong \reduced{X}$ as topological space, and the associated morphism of sheaves $\fO_X \to f_* \fO_{\reduced{X}}$ is surjective with kernel $\fN$.
+Thus, each of the quotients of this filtration can be naturally viewed as $A$-modules.
+In particular, we have a natural isomorphism (2.10) $$H^i(X, \fN^r \cdot \fF / \fN^{r + 1} \fF) \cong H^i(\reduced{X}, f^*(\fN^r \cdot \fF / \fN^{r + 1} \cdot \fF)).$$
+Also, the nilradical of a Noetherian ring is nilpotent, so there exists a positive integer $r > 0$ such that $\fN^r = 0$ (A.M. 7.15).
+Using our hypothesis and (3.7), we climb up the filtration and deduce that $H^1(X, \fF) = 0$.
+Hence, $X$ is affine by (3.7).
 \end{proof}
 
 \item[\textbf{2.}] Let $X$ be a reduced Noetherian scheme.
 Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof}
-  
+Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
+The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
+In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
+Conversely, suppose each irreducible component of $X$ is affine.
 \end{proof}
 
 \item[\textbf{6.}] Let $X$ be a Noetherian scheme.
@@ -36,9 +51,9 @@ Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)]
+\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \tilde{I}$, where $j : U = \spec{A} \to X$ is an open immersion, and $I$ is an injective $A$-module. Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\tilde{I}$. Since $j^*$ is left exact, the induced map of $A$-modules $j^* \fN \to j^* \fM$ is also injective. For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \tilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\tilde{I}$. By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\tilde{I}$ that naturally extends $f : \fN \to j_*\tilde{I}$, which is what we wanted to show.
 
-\item[(b)]
+\item[(b)] Let $\fI$ be an injective object of $\goth{Qco}(X)$.
 
 \item[(c)]
 \end{itemize} 
