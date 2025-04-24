@@ -1,6 +1,6 @@
 I am a student at the University of Arizona.
 
-This repository contains my solutions to selected exercises from *Algebraic Geometry* by Robin Hartshorne. Don't quote me on anything!
+This repository contains my attempts to selected exercises from *Algebraic Geometry* by Robin Hartshorne. Don't quote me on anything!
 
 # Chapter 1
 - 1.2, 1.3, 1.6, 1.7, 1.8, 1.9, 1.10
