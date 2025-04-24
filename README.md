@@ -1,10 +1,7 @@
-## Solutions to Selected Exercises from *Algebraic Geometry* by Robin Hartshorne
-
 I am a student at the University of Arizona.
 
-This repository contains my solutions to selected exercises from *Algebraic Geometry* by Robin Hartshorne. To be safe, don't quote me!
+This repository contains my solutions to selected exercises from *Algebraic Geometry* by Robin Hartshorne. Don't quote me on anything!
 
-# 📂 List of Exercises for each Chapter
 # Chapter 1
 - 1.2, 1.3, 1.6, 1.7, 1.8, 1.9, 1.10
 - 2.1, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.12, 2.14, 2.15,
