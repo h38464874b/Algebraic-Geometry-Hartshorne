@@ -1,57 +1,12 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[tracking]{microtype}
-\usepackage[sc,osf]{mathpazo}
-\linespread{1.025}
-\usepackage[euler-digits,small]{eulervm}
-\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{bbm}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{pgfplots}
-\newcommand{\prob}[1]{\noindent {\bf #1}.}
-\newcommand{\abs}[1]{\left| #1  \right|}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\spec}[1]{\text{Spec}~#1}
-\newcommand{\Ker}[1]{\text{Ker}~#1}
-\newcommand{\Img}[1]{\text{Im}~#1}
-\newcommand{\Coker}[1]{\text{Coker}(#1)}
-\newcommand{\Supp}[1]{\text{Supp}(#1)}
-\newcommand{\height}[1]{\text{height}~#1}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\OO}{\mathcal{O}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\PP}{\mathbb{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\newtheorem{prop}{Proposition}
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 1, Section 4}
 
 \begin{document}
-\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0cm]
 
-\item If $f$ and $g$ are regular functions on open subsets $U$ and $V$ of a variety $X$, and if $f = g$ on $U \cap V$, show that the function which is $f$ on $U$ and $g$ on $V$ is a regular function on $U \cup V$. Conclude that if $f$ is a \textit{rational} function on $X$, then there is a largest open subset $U$ of $X$ on which $f$ is represented by a regular function. We say that $f$ is \textit{defined} at the points of $U$.
+\item[\textbf{1.}] If $f$ and $g$ are regular functions on open subsets $U$ and $V$ of a variety $X$, and if $f = g$ on $U \cap V$, show that the function which is $f$ on $U$ and $g$ on $V$ is a regular function on $U \cup V$. Conclude that if $f$ is a \textit{rational} function on $X$, then there is a largest open subset $U$ of $X$ on which $f$ is represented by a regular function. We say that $f$ is \textit{defined} at the points of $U$.
 
 \begin{proof}
     Denote the function which is $f$ on $U$ and $g$ on $V$ as $F$. It suffices to show for all $P \in U \cap V$ that there exists an open neighborhood $W$ of $P$ contained in $U \cap V$ such that $F$ is a rational function on $W$. Since $U \cap V$ is an open subset of $U$ and $V$, for all $P \in U \cap V$ there exists open subsets $A$ of $U$ and $B$ of $W$ such that $F$ is rational with $h(Q), h(Q) \neq 0$ for all $Q \in A \cap B$ and $F = f = g$ on $A \cap B$, hence $W = A \cap B \subseteq U \cap V$ is the desired open subset.
@@ -59,7 +14,7 @@
     If $f$ is a rational function on $X$, then the set of open subsets of $X$ on which $f$ is represented by regular function is nonempty, and since $X$ is a noetherian space, there is a maximal element in this set. Then, the largest open subset $U$ of $X$ on which $f$ is represented by a regular function is the union of maximal elements in this subset of open subsets.
 \end{proof}
 
-\item Same problem for rational maps. If $\varphi$ is a rational map of $X$ to $Y$, show there is a largest open set on which $\varphi$ is represented by a morphism. We say the rational map is \textit{defined} at the points of that open set.
+\item[\textbf{2.}] Same problem for rational maps. If $\varphi$ is a rational map of $X$ to $Y$, show there is a largest open set on which $\varphi$ is represented by a morphism. We say the rational map is \textit{defined} at the points of that open set.
 
 \begin{proof}
     Let $\varphi$ and $\psi$ be morphisms on open subsets $U$ and $V$ of a variety $X$ to a variety $Y$, and suppose $\varphi = \psi$ on $U \cap V$. If $f$ is a regular function on $Y$, then $\varphi^*f$ and $\psi^*f$ are regular functions on the open subsets $U$ and $V$ which agree on $U \cap V$, so by Exercise 1 the function which is $\varphi^*f$ on $U$ and $\psi^*f$ on $V$ is a regular function $U \cap V$, i.e. the map that is $\varphi$ on $U$ and $\psi$ on $V$ is indeed a rational map.
@@ -67,7 +22,7 @@
     If $\varphi : X \to Y$ is a rational map, then the set of open subsets of $X$ on which $\varphi$ is represented by morphism function is nonempty, and since $X$ is a noetherian space, there is a maximal element in this set. Then, the largest open subset $U$ of $X$ on which $\varphi$ is represented by a morphism is the union of maximal elements in this subset of open subsets.
 \end{proof}
 
-\item A variety $Y$ is \textit{rational} if it is birationally equivalent to $\PP^n$ for some $n$ (or, equivalently by (4.5), if $K(Y)$ is a pure transcendental extension of $k$).
+\item[\textbf{4.}] A variety $Y$ is \textit{rational} if it is birationally equivalent to $\PP^n$ for some $n$ (or, equivalently by (4.5), if $K(Y)$ is a pure transcendental extension of $k$).
 \begin{itemize}
     \item[(a)] Any conic in $\PP^2$ is a rational curve.
     \item[(b)] The cuspidal cubic $y^2 = x^3$ is a rational curve.
@@ -75,9 +30,10 @@
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] A conic in $\PP^2$ can be covered by open affine varieties that are either isomorphic to $y = x^2$ or $xy = 1$. The former is isomorphic to $\A^1$, hence it is isomorphic to an open subset of $\PP^1$, hence it is birationally equivalent to $\PP^1$. The latter has function field isomorphic to $k(x)$, hence it is birationally equivalent to $\A^1$, hence it is also birationally equivalent to $\PP^1$.
-        \filbreak
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] A conic in $\PP^2$ can be covered by open affine varieties that are either isomorphic to $y = x^2$ or $xy = 1$.
+        The former is isomorphic to $\A^1$, hence it is isomorphic to an open subset of $\PP^1$, hence it is birationally equivalent to $\PP^1$.
+        The latter has function field isomorphic to $k(x)$, hence it is birationally equivalent to $\A^1$, hence it is also birationally equivalent to $\PP^1$.
 
         \item[(b)] The cuspidal cubic has coordinate ring $k[t^2, t^3]$, so its function field is $k(t)$, hence it is birationally equivalent to $\A^1$, hence it is birationally equivalent to $\PP^1$.
 
@@ -93,24 +49,24 @@
     \end{itemize}
 \end{proof}
 
-\item Show that the quadric surface $Q : xy = zw$ in $\PP^3$ is birational to $\PP^2$, but not isomorphic to $\PP^2$.
+\item[\textbf{5.}] Show that the quadric surface $Q : xy = zw$ in $\PP^3$ is birational to $\PP^2$, but not isomorphic to $\PP^2$.
 
 \begin{proof}
    $Q$ is the Segre embedding of $\PP^1 \times \PP^1$ in $\PP^3$, and $\PP^1 \times \PP^1$ contains a copy of $\A^1 \times \A^1$, so $Q$ contains a copy of $\A^2$, hence $Q$ is birational to $\PP^2$. It is an axiom of projective geometry that any two lines intersect in $\PP^2$; however, it was shown in Exercise 2.15 that there exists lines in $Q$ that do not intersect, hence $Q$ and $\PP^2$ cannot be isomorphic.
 \end{proof}
 
-\item Let $Y$ be the cuspidal cubic curve $y^2 = x^3$ in $\A^2$. Blow up the point $O = (0, 0)$, let $E$ be the exceptional curve, and let $\tilde{Y}$ be the strict transform of $Y$. Show that $E$ meets $\tilde{Y}$ in one point, and that $\tilde{Y} \cong \A^1$. In this case the morphism $\varphi : \tilde{Y} \to Y$ is bijective and bicontinuous, but it is not an isomorphism.
+\item[\textbf{10.}] Let $Y$ be the cuspidal cubic curve $y^2 = x^3$ in $\A^2$. Blow up the point $O = (0, 0)$, let $E$ be the exceptional curve, and let $\widetilde{Y}$ be the strict transform of $Y$. Show that $E$ meets $\widetilde{Y}$ in one point, and that $\tilde{Y} \cong \A^1$. In this case the morphism $\varphi : \widetilde{Y} \to Y$ is bijective and bicontinuous, but it is not an isomorphism.
 
 \begin{proof}
     Let $t$, $u$ be homogenous coordinates for $\PP^1$. Then $X$, the blowing-up of $\A^2$ at $O$, is defined by the equation $xu = ty$ inside $\A^2 \times \PP^1$. We obtain the total inverse image of $Y$ in $X$ by considering the equations $y^2 = x^3$ and $xu = ty$ in $\A^2 \times \PP^1$. Now $\PP^1$ is covered by the open sets $t \neq 0$ and $u \neq 0$, which we consider separately. If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
     \begin{equation*}
         y^2 = x^3, \quad y = xu
     \end{equation*}
-    in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2u^2 - x^3 = 0$, which factors. Thus, we obtain two irreducible components, one defined by $x = 0$, $y = 0$, $u$ arbitrary, which is $E$, and the other defined by $u = x$ and $y = ux$. This is $\tilde{Y}$, and $\tilde{Y}$ meets $E$ at the point $u = 0$. Similarly, if $u \neq 0$, then we can set $u = 1$, and use $t$ as an affine parameter to obtain the equations
+    in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2u^2 - x^3 = 0$, which factors. Thus, we obtain two irreducible components, one defined by $x = 0$, $y = 0$, $u$ arbitrary, which is $E$, and the other defined by $u = x$ and $y = ux$. This is $\widetilde{Y}$, and $\widetilde{Y}$ meets $E$ at the point $u = 0$. Similarly, if $u \neq 0$, then we can set $u = 1$, and use $t$ as an affine parameter to obtain the equations
     \begin{equation*}
         y^2 = x^3, \quad x = ty
     \end{equation*}
-    in $\A^3$ with coordinates $x$, $y$, $t$. Substituting, we get $y^2 = t^3 y^3$, which factors as well. Besides the exceptional curve, we have the component defined by $1 - t^3 y = 0$ and $x = ty$, which does not meet $E$. Hence, $E$ meets $\tilde{Y}$ at only $(1, 0) \in E$. This also show $\tilde{Y}$ is contained in the open set defined by $t \neq 0$, so it is isomorphic to the affine variety in $\A^3$ defined by $u = x$ and $y = ux$, which isomorphic to $y = x^2$ in $\A^2$, hence $\tilde{Y} \simeq \A^1$.
+    in $\A^3$ with coordinates $x$, $y$, $t$. Substituting, we get $y^2 = t^3 y^3$, which factors as well. Besides the exceptional curve, we have the component defined by $1 - t^3 y = 0$ and $x = ty$, which does not meet $E$. Hence, $E$ meets $\widetilde{Y}$ at only $(1, 0) \in E$. This also show $\widetilde{Y}$ is contained in the open set defined by $t \neq 0$, so it is isomorphic to the affine variety in $\A^3$ defined by $u = x$ and $y = ux$, which isomorphic to $y = x^2$ in $\A^2$, hence $\widetilde{Y} \cong \A^1$.
 \end{proof}
 
 \end{enumerate}

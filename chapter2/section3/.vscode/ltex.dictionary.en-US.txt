@@ -7,3 +7,6 @@ Constructible
 constructible
 generization
 Krull
+infimum
+codimension
+affines

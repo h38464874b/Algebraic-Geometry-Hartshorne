@@ -7,7 +7,10 @@
 \usepackage{yfonts}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
+\usepackage{physics}
+
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
 \newcommand{\goth}[1]{\mathfrak{#1}}
 \newcommand{\reduced}[1]{#1_{\text{red}}}
 \newcommand{\fF}{\mathscr{F}}
@@ -32,9 +35,15 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\gF}{\goth{F}}
+\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
+\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
+
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\bProj}{\mathpzc{Proj}}
 \DeclareMathOperator{\Frac}{Frac}
@@ -44,6 +53,7 @@
 \DeclareMathOperator{\trd}{tr.d.}
 \DeclareMathOperator{\cl}{Cl}
 \DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\len}{length}
@@ -54,5 +64,7 @@
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\spec}{Spec}
-\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
-\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
+
+\author{James Lee}
+\pagecolor[RGB]{20,20,20}
+\color[RGB]{255,255,255}

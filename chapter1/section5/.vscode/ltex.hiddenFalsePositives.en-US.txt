@@ -1,0 +1,1 @@
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a point, with homogenous coordinates \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

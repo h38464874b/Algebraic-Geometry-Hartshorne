@@ -1,62 +1,12 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[tracking]{microtype}
-\usepackage[sc,osf]{mathpazo}
-\usepackage{libertine}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{bbm}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{pgfplots}
-\usepackage{mathtools}
-\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
-  #1\;\delimsize\|\;#2%
-}
-\newcommand{\infdiv}{D\infdivx}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\newcommand{\prob}[1]{\noindent {\bf #1}.}
-\newcommand{\abs}[1]{\left| #1  \right|}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\spec}[1]{\text{Spec}~#1}
-\newcommand{\Ker}[1]{\text{Ker}~#1}
-\newcommand{\Img}[1]{\text{Im}~#1}
-\newcommand{\Coker}[1]{\text{Coker}(#1)}
-\newcommand{\Supp}[1]{\text{Supp}(#1)}
-\newcommand{\height}[1]{\text{height}~#1}
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\OO}{\mathcal{O}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\PP}{\mathbb{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\newtheorem{prop}{Proposition}
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 1, Section 7}
 
 \begin{document}
-\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0cm]
 
-\item \begin{itemize}
+\item[\textbf{1.}] \begin{itemize}
   \item[(a)] Find the degree of the $d$-uple embedding of $\PP^n$ in $\PP^N$.
   \item[(b)] Find the degree of the Segre embedding of $\PP^r \times \PP^s$ in $\PP^N$.
 \end{itemize}
@@ -77,21 +27,7 @@
   \end{itemize}
 \end{proof}
 
-\item Let $Y$ be a variety of dimension $r$ in $\PP^n$, with Hilbert polynomial $P_Y$. We define the \textit{arithmetic genus} of $Y$ to be $p_a(Y) = (-1)^r(P_Y(0) - 1)$. This is an important invariant which is independent of the projective embedding of $Y$.
-\begin{itemize}
-  \item[(a)] Show that $p_a(\PP^n) = 0$.
-  \item[(b)] If $Y$ is a plane curve of degree $d$, show that $p_a(Y) = \frac{1}{2}(d - 1)(d - 2)$.
-  \item[(c)] More generally, if $H$ is a hypersurface of degree $d$ in $\PP^n$, then $p_a(H) = {d - 1 \choose n}$.
-  \item[(d)] If $Y$ is a complete intersection of surfaces of degrees $a$, $b$ in $\PP^3$, then $p_a(Y) = \frac{1}{2}ab(a + b - 4) + 1$.
-  \item[(e)] Let $Y^r \subseteq \PP^n$, $Z^s \subseteq \PP^m$ be projective varieties, and embed $Y \times Z \subseteq \PP^n \times \PP^m \to \PP^N$ by the Segre embedding. Show that
-  \begin{equation*}
-    p_a(Y \times Z) = p_a(Y)p_a(Z) + (-1)^s p_a(Y) + (-1)^r p_a(Z).
-  \end{equation*}
-\end{itemize}
-
-\newpage
-
-\item \textit{Dual Curve.} Let $Y \subseteq \PP^2$ be a curve. We regard the set of lines in $\PP^2$ as another projective space, $(\PP^2)^*$, by taking $(a_0, a_1, a_2)$ as homogenous coordinates of the line $L : a_0 x_0 + a_1 x_1 + a_2 x_2 = 0$. For each nonsingular point $P \in Y$, show that there is a unique line $T_P(Y)$ whose intersection multiplicity with $Y$ at $P$ is $ > 1$. This is the \textit{tangent line} to $Y$ at $P$. Show that the mapping $P \mapsto T_P(Y)$ defines a \textit{morphism} of $\text{Reg}~Y$ (the set of nonsingular points of $Y$) into $(\PP^2)^*$. The closure of the image of this morphism is called the dual curve $Y^* \subseteq (\PP^2)^*$ of $Y$.
+\item[\textbf{3.}] \textit{Dual Curve.} Let $Y \subseteq \PP^2$ be a curve. We regard the set of lines in $\PP^2$ as another projective space, $(\PP^2)^*$, by taking $(a_0, a_1, a_2)$ as homogenous coordinates of the line $L : a_0 x_0 + a_1 x_1 + a_2 x_2 = 0$. For each nonsingular point $P \in Y$, show that there is a unique line $T_P(Y)$ whose intersection multiplicity with $Y$ at $P$ is $ > 1$. This is the \textit{tangent line} to $Y$ at $P$. Show that the mapping $P \mapsto T_P(Y)$ defines a \textit{morphism} of $\text{Reg}~Y$ (the set of nonsingular points of $Y$) into $(\PP^2)^*$. The closure of the image of this morphism is called the dual curve $Y^* \subseteq (\PP^2)^*$ of $Y$.
 
 \begin{proof}
   Let $x_0, x_1, x_2$ be homogenous coordinates for $\PP^2$, and let $f$ be an irreducible homogenous polynomial in $S = k[x_0, x_1, x_2]$ that defines $Y$ and let $P = (c_0, c_1, c_2)$ be a nonsingular point on $Y$. Then $\PP^2$ can be covered by $U_i$ where $U_i \cong \A^2$ and is defined by $x_i \neq 0$. Since every $P$ is contained in some $U_i$, we find an affine line in $U_i$ that is tangent to the affine variety $Y_i := Y \cap U_i$. We claim that the projective closure of this line is the desired unique line $T_P(Y)$.
@@ -109,13 +45,24 @@
   since $S(Y)_{\goth{m}_P}$ is a discrete valuation ring by non-singularity of $Y$ at $P$. In terms of affine coordinates, let $\ell = b_0 + b_1 y_1 + b_2 y_2$ so that $H \cap U_0$ can be identified with the affine variety defined by the vanishing of $\ell$, where $b_0 = 0$ necessarily since $P_0 = (0, 0)$ is a root of $\ell$. Then, by the statements above, we have $\ell \in \goth{m}_{P_0}^k + (g) \subseteq \goth{m}_{P_0}^2 + (g)$, which is possible if and only if $\ell = \lambda t$ for some $\lambda \neq 0$, hence $H \cap U_0 = T$.
 \end{proof}
 
-\item Given a curve $Y$ of degree $d$ in $\PP^2$, show that there is a nonempty open subset $U$ of $(\PP^2)^*$ in its Zariski topology such that for each $L \in U$, $L$ meets $Y$ in exactly $d$ points. This result shows that we could have defined the degree of $Y$ to be the number $d$ such that almost all lines in $\PP^2$ meet $Y$ in $d$ points, where "almost all" refers to a nonempty open set of the set of lines, when this set is identified with the dual projective space $(\PP^2)^*$.
+\item[\textbf{4.}] Given a curve $Y$ of degree $d$ in $\PP^2$, show that there is a nonempty open subset $U$ of $(\PP^2)^*$ in its Zariski topology such that for each $L \in U$, $L$ meets $Y$ in exactly $d$ points. This result shows that we could have defined the degree of $Y$ to be the number $d$ such that almost all lines in $\PP^2$ meet $Y$ in $d$ points, where "almost all" refers to a nonempty open set of the set of lines, when this set is identified with the dual projective space $(\PP^2)^*$.
 
 \begin{proof}
-  Following the hint, we show that the set of lines in $(\PP^2)^*$ which are either tangent to $Y$ or pass through a singular point of $Y$ is contained in a property closed subset. By the previous exercise, a line can meet $Y$ at exactly $d$ points if and only if it has intersection multiplicity equal to $1$ at every point of intersection, thus the set of lines which are either tangent to $Y$ or pass through a singular point of $Y$ is contained in the dual curve $Y^*$ in $(\PP^2)^*$, hence the set of lines that meet $Y$ at exactly $d$ points is contained in the open subset $(\PP^2)^* - Y^*$.
-  
+  Following the hint, we show that the set of lines in $(\PP^2)^*$ which are either tangent to $Y$ or pass through a singular point of $Y$ is contained in a property closed subset. By the previous exercise, a line can meet $Y$ at exactly $d$ points if and only if it has intersection multiplicity equal to $1$ at every point of intersection, thus the set of lines which are either tangent to $Y$ or pass through a singular point of $Y$ is contained in the dual curve $Y^*$ in $(\PP^2)^*$, hence the set of lines that meet $Y$ at exactly $d$ points is contained in the open subset $(\PP^2)^* - Y^*$.  
 \end{proof}
 
 \end{enumerate}
 
 \end{document}
+
+% \item Let $Y$ be a variety of dimension $r$ in $\PP^n$, with Hilbert polynomial $P_Y$. We define the \textit{arithmetic genus} of $Y$ to be $p_a(Y) = (-1)^r(P_Y(0) - 1)$. This is an important invariant which is independent of the projective embedding of $Y$.
+% \begin{itemize}
+%   \item[(a)] Show that $p_a(\PP^n) = 0$.
+%   \item[(b)] If $Y$ is a plane curve of degree $d$, show that $p_a(Y) = \frac{1}{2}(d - 1)(d - 2)$.
+%   \item[(c)] More generally, if $H$ is a hypersurface of degree $d$ in $\PP^n$, then $p_a(H) = {d - 1 \choose n}$.
+%   \item[(d)] If $Y$ is a complete intersection of surfaces of degrees $a$, $b$ in $\PP^3$, then $p_a(Y) = \frac{1}{2}ab(a + b - 4) + 1$.
+%   \item[(e)] Let $Y^r \subseteq \PP^n$, $Z^s \subseteq \PP^m$ be projective varieties, and embed $Y \times Z \subseteq \PP^n \times \PP^m \to \PP^N$ by the Segre embedding. Show that
+%   \begin{equation*}
+%     p_a(Y \times Z) = p_a(Y)p_a(Z) + (-1)^s p_a(Y) + (-1)^r p_a(Z).
+%   \end{equation*}
+% \end{itemize}

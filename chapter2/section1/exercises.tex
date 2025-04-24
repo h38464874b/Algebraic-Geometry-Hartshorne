@@ -1,46 +1,20 @@
 \documentclass{article}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\fF}{\mathscr{F}}
-\newcommand{\fG}{\mathscr{G}}
-\newcommand{\A}{\mathbf{A}}
-\newcommand{\R}{\mathbf{R}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\N}{\mathbf{N}}
-\newcommand{\Z}{\mathbf{Z}}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Supp}{Supp}
-\DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\im}{im}
-
-\newcommand\isomto{\stackrel{\sim}{\smash{\longrightarrow}\rule{0pt}{0.4ex}}}
-\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
-}}
-
+\input{../../etc/preamble.tex}
 \title{Chapter 2, Section 1}
 
 \begin{document}
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $A$ be an abelian group, and define the \textit{constant presheaf} associated to $A$ on the topological space $X$ to be the presheaf $U \mapsto A$ for all $U \neq \emptyset$, with restriction maps the identity. Show that the constant sheaf $\mathscr{A}$ defined in the text is the sheaf associated to this presheaf.
+\item Let $A$ be an Abelian group, and define the \textit{constant presheaf} associated to $A$ on the topological space $X$ to be the presheaf $U \mapsto A$ for all $U \neq \emptyset$, with restriction maps the identity. Show that the constant sheaf $\mathscr{A}$ defined in the text is the sheaf associated to this presheaf.
 
 \begin{proof}
-    Let $\mathscr{C}^+$ be the sheaf associated to the constant presheaf $\mathscr{C}$ defined above. It suffices to show $\mathscr{C}^+$ and $\mathscr{A}$ are isomorphic at the level of stalks. Fix $P \in X$, then the stalk of $\mathscr{C}^+$ at $P$ is the same as the stalk of $\mathscr{C}$ at $P$, and since the restriction morphisms of $\mathscr{C}$ are identity maps, we must have $\mathscr{C}^+_P = \mathscr{C}_P = A$. The constant sheaf $\mathscr{A}$ is defined as $U \mapsto \{ \text{continuous maps $U \to A$}\}$, where $A$ has the discrete topology. Then, we can take the stalk of $\mathscr{A}$ at $x$ to be the direct limit of $\mathscr{A}(U)$ where $U$ is a connected open neighborhood of $x$, and if $U$ is connected, $\mathscr{A}(U) = A$ since the image of a connected set must be connected, i.e. $U \to A$ is continuous if and only if it is constant. Therefore, we have $\mathscr{A}_P = A$. Hence, $\mathscr{C}^+$ and $\mathscr{A}$ are isomorphic.
+    Let $\mathscr{C}^+$ be the sheaf associated to the constant presheaf $\mathscr{C}$ defined above.
+    It suffices to show $\mathscr{C}^+$ and $\mathscr{A}$ are isomorphic at the level of stalks.
+    Fix $P \in X$, then the stalk of $\mathscr{C}^+$ at $P$ is the same as the stalk of $\mathscr{C}$ at $P$, and since the restriction morphisms of $\mathscr{C}$ are identity maps, we must have $\mathscr{C}^+_P = \mathscr{C}_P = A$.
+    The constant sheaf $\mathscr{A}$ is defined as $U \mapsto \{ \text{continuous maps $U \to A$}\}$, where $A$ has the discrete topology.
+    Then, we can take the stalk of $\mathscr{A}$ at $x$ to be the direct limit of $\mathscr{A}(U)$ where $U$ is a connected open neighborhood of $x$, and if $U$ is connected, $\mathscr{A}(U) = A$ since the image of a connected set must be connected, i.e. $U \to A$ is continuous if and only if it is constant.
+    Therefore, we have $\mathscr{A}_P = A$. Hence, $\mathscr{C}^+$ and $\mathscr{A}$ are isomorphic.
 \end{proof}
 
 \item \begin{itemize}
@@ -68,15 +42,22 @@
 
 \begin{proof} $ $ \vspace{0pt}
     \begin{itemize} [leftmargin=0cm]
-        \item[(a)] Suppose $\varphi : \fF \to \fG$ is a surjective morphism of sheaves. Then for any $P \in U$, the induced morphism of stalks $\varphi_P : \fF_P \to \fG_P$ is surjective. The elements of $\fG_P$ (and similarly $\fF_P$) are an equivalence class of ordered pairs $(U, s)$ with $U$ an open neighborhood of $P$ and $s \in \fG(U)$ and the equivalence relation $(U, s) \sim (V, t)$ if and only if there exists some open $W \subseteq U \cap V$ containing $P$ such that $\restr{s}{W} = \restr{t}{W}$. If $\varphi_P$ is surjective, then for every $(U, s) \in \fG_P$ there exists some $(V, f) \in \fG_P$ such that
+        \item[(a)] Suppose $\varphi : \fF \to \fG$ is a surjective morphism of sheaves. Then for any $P \in U$, the induced morphism of stalks $\varphi_P : \fF_P \to \fG_P$ is surjective.
+        The elements of $\fG_P$ (and similarly $\fF_P$) are an equivalence class of ordered pairs $(U, s)$ with $U$ an open neighborhood of $P$ and $s \in \fG(U)$ and the equivalence relation $(U, s) \sim (V, t)$ if and only if there exists some open $W \subseteq U \cap V$ containing $P$ such that $\restr{s}{W} = \restr{t}{W}$. If $\varphi_P$ is surjective, then for every $(U, s) \in \fG_P$ there exists some $(V, f) \in \fG_P$ such that
         \begin{equation*}
             \varphi_P(V, f) = (V, \varphi  f), \quad \varphi : \fF(V) \to \fG(V),
         \end{equation*}
-        so there exists some open subset $W \subseteq U \cap V$ such that $\restr{\varphi f}{W} = \restr{s}{W}$. We can repeat this process for all $x \in U$ to obtain an open cover with the desired properties, that is $\{ W_x \}_{x \in U}$ of $U$ where $W_x$ is defined as above with an associated $f_x \in \fF(W_x)$ such that by definition $\varphi f_x = \restr{s}{W_x}$.
+        so there exists some open subset $W \subseteq U \cap V$ such that $\restr{\varphi f}{W} = \restr{s}{W}$.
+        We can repeat this process for all $x \in U$ to obtain an open cover with the desired properties, that is $\{ W_x \}_{x \in U}$ of $U$ where $W_x$ is defined as above with an associated $f_x \in \fF(W_x)$ such that by definition $\varphi f_x = \restr{s}{W_x}$.
 
-        Conversely, it suffices to show $\varphi_P : \fF_P \to \fG_P$ is surjective for all $P \in X$. Fix $P \in X$ and consider an arbitrary element $(U, s) \in \fF_P$. We want to show there exists some $(V, f) \in \fG_P$ such that $(V, \varphi_V(f)) \sim (U, s)$. To that end, by assumption there exists some open subset $W \subseteq U$ and $g \in \fF(W)$ such that $\varphi_W(g) = \restr{s}{W}$, hence $\varphi_P(W, g) = (U, s)$.
+        Conversely, it suffices to show $\varphi_P : \fF_P \to \fG_P$ is surjective for all $P \in X$.
+        Fix $P \in X$ and consider an arbitrary element $(U, s) \in \fF_P$.
+        We want to show there exists some $(V, f) \in \fG_P$ such that $(V, \varphi_V(f)) \sim (U, s)$.
+        To that end, by assumption there exists some open subset $W \subseteq U$ and $g \in \fF(W)$ such that $\varphi_W(g) = \restr{s}{W}$, hence $\varphi_P(W, g) = (U, s)$.
 
-        \item[(b)] We provide an example of a sheaf from open sets to sets that satisfies the condition. Let $X, Y = S^1$. Let $\pi_X : X \to S^1$ be the identity map, and let $\tau : Y \to X$ be defined by $z \mapsto z^2$ where $X$, $Y$ is identified with the unit circle in the complex plane, and let $\pi_Y := \tau \circ \pi_X$. Define a sheaf $\mathscr{F}$ on $S^1$ for a nonempty open subset $U$ of $S^1$ as
+        \item[(b)] We provide an example of a sheaf from open sets to sets that satisfies the condition.
+        Let $X, Y = S^1$. Let $\pi_X : X \to S^1$ be the identity map, and let $\tau : Y \to X$ be defined by $z \mapsto z^2$ where $X$, $Y$ is identified with the unit circle in the complex plane, and let $\pi_Y := \tau \circ \pi_X$.
+        Define a sheaf $\mathscr{F}$ on $S^1$ for a nonempty open subset $U$ of $S^1$ as
         \begin{align*}
             \mathscr{F}(U) & = \{ \text{sections $s : U \to X$ with respect to $\pi_X$} \} \\
             & = \{ \text{continuous maps $s : U \to X$ such that $\pi_X \circ s = \text{id}_U$} \},
@@ -299,12 +280,12 @@
     Hence, $\alpha*$ and $\beta^*$ are bijections with inverses to each other.
 \end{proof}
 
-\item[\textbf{22.}] \textit{Glueing Sheaves.} Let $X$ be a topological space, let $\mathfrak{U} = \{ U_i \}$ be an open cover of $X$, and suppose we are given for each $i$ a sheaf $\fF_i$ on $U_i$, and for each $i$, $j$ an isomorphism $\varphi_{ij} : \restr{\fF_i}{U_i \cap U_j} \isomto \restr{\fF_j}{U_i \cap U_j}$ such that
+\item[\textbf{22.}] \textit{Glueing Sheaves.} Let $X$ be a topological space, let $\mathfrak{U} = \{ U_i \}$ be an open cover of $X$, and suppose we are given for each $i$ a sheaf $\fF_i$ on $U_i$, and for each $i$, $j$ an isomorphism $\varphi_{ij} : \restr{\fF_i}{U_i \cap U_j} \xrightarrow{\sim} \restr{\fF_j}{U_i \cap U_j}$ such that
 \begin{itemize}
     \item[(1)] for each $i$, $\varphi_{ii} = \text{id}$,
     \item[(2)] and for each $i, j, k$, $\varphi_{ik} = \varphi_{jk} \circ \varphi_{ij}$ on $U_i \cap U_j \cap U_k$.
 \end{itemize}
-Then there exists a unique sheaf $\fF$ on $X$ together with isomorphisms $\psi_i : \restr{\fF}{U_i} \isomto \fF_i$ such that for each $i, j$, $\psi_j = \varphi_{ij} \circ \psi_i$ on $U_i \cap U_j$. We say loosely that $\fF$ is obtained by \textit{glueing} the sheaves $\fF_i$ via the isomorphisms $\varphi_{ij}$.
+Then there exists a unique sheaf $\fF$ on $X$ together with isomorphisms $\psi_i : \restr{\fF}{U_i} \xrightarrow{\sim} \fF_i$ such that for each $i, j$, $\psi_j = \varphi_{ij} \circ \psi_i$ on $U_i \cap U_j$. We say loosely that $\fF$ is obtained by \textit{glueing} the sheaves $\fF_i$ via the isomorphisms $\varphi_{ij}$.
 
 \end{enumerate}
 \end{document}

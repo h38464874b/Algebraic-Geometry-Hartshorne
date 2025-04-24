@@ -1,57 +1,12 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[tracking]{microtype}
-\usepackage[sc,osf]{mathpazo}
-\linespread{1.025}
-\usepackage[euler-digits,small]{eulervm}
-\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{bbm}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{pgfplots}
-\newcommand{\prob}[1]{\noindent {\bf #1}.}
-\newcommand{\abs}[1]{\left| #1  \right|}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\spec}[1]{\text{Spec}~#1}
-\newcommand{\Ker}[1]{\text{Ker}~#1}
-\newcommand{\Img}[1]{\text{Im}~#1}
-\newcommand{\Coker}[1]{\text{Coker}(#1)}
-\newcommand{\Supp}[1]{\text{Supp}(#1)}
-\newcommand{\height}[1]{\text{height}~#1}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\OO}{\mathcal{O}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\PP}{\mathbb{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\newtheorem{prop}{Proposition}
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 1, Section 3}
 
 \begin{document}
+\maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
 
-\item A morphism whose underlying map on the topological space is a homeomorphism need not be an isomorphism.
+\item[\textbf{2.}] A morphism whose underlying map on the topological space is a homeomorphism need not be an isomorphism.
 \begin{itemize}
     \item[(a)] For example, let $\varphi : \A^1 \to \A^2$ be defined by $t \mapsto (t^2, t^3)$. Show that $\varphi$ defines a bijective bicontinuous morphism of $\A^1$ onto the curve $y^2 = x^3$, but that $\varphi$ is not an isomorphism.
 
@@ -59,7 +14,7 @@
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-   \begin{itemize}
+   \begin{itemize} [leftmargin=0cm]
     \item[(a)] Let $Y$ be the curve $y^2 = x^3$. Then $\varphi$ clearly maps into $Y$ and is injective since
     \begin{equation*}
         (t^2, t^3) = (u^2, u^3) \implies tu^2 = t^2u \implies t = u.
@@ -72,72 +27,79 @@
    \end{itemize} 
 \end{proof}
 
-\item \begin{itemize}
-    \item[(a)] Let $\varphi : X \to Y$ be a morphism. Then for each $P \in X$, $\varphi$ induces a homomorphism of local rings $\varphi_P^* : \OO_{\varphi(P), Y} \to \OO_{P, X}$.
+\item[\textbf{3.}] \begin{itemize}
+    \item[(a)] Let $\varphi : X \to Y$ be a morphism. Then for each $P \in X$, $\varphi$ induces a homomorphism of local rings $\varphi_P^* : \fO_{\varphi(P), Y} \to \fO_{P, X}$.
     \item[(b)] Show that a morphism $\varphi$ is an isomorphism if and only if $\varphi$ is a homeomorphism, and that the induced map $\varphi_P^*$ on local rings is an isomorphism for all $P \in X$.
     \item[(c)] Show that if $\varphi(X)$ is dense in $Y$, then the map $\varphi_P^*$ is \textit{injective} for all $P \in X$.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] We have already seen that $\varphi$ induces a homomorphism $\varphi^* : \OO(Y) \to \OO(X)$. By (2.3) there exists an open affine variety $V$ in $Y$ containing $\varphi(P)$ so that $U = \varphi^{-1}(V)$ contains $P$, thus $\OO_{P, X} \simeq \OO_{P, U}$ and $\OO_{\varphi(P), Y} \simeq \OO_{\varphi(P), V}$. By definition $f$ is a regular function defined in some open neighborhood of $\varphi(P)$ in $V$, hence in $Y$, such that $f(\varphi(P))$ is nonzero if and only if $\varphi^*f$ is nonzero at $P$, hence $\varphi^*f$ is a unit in $\OO_{P, U}$, hence by the universal property of localization there exists a unique ring homeomorphism $\varphi_P^* : \OO_{\varphi(P), V} \to \OO_{P, U}$ such that the following diagram commutes:
-        \filbreak
-        \[ \begin{tikzcd}
-            & {\OO_{\varphi(P), V} \simeq \OO_{\varphi(P), Y}} \arrow[rd, "\varphi_P^*", dashed] &              \\
-            \OO(V) \arrow[rr] \arrow[ru] &                                                         & {\OO_{P, U} \simeq \OO_{P, X}}
-        \end{tikzcd} \]
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] We have already seen that $\varphi$ induces a homomorphism $\varphi^* : \fO(Y) \to \fO(X)$.
+        By (2.3), there exists an open affine variety $V$ in $Y$ containing $\varphi(P)$. Then $U = \varphi^{-1}(V)$ contains $P$, so $\fO_{P, X} \simeq \fO_{P, U}$ and $\fO_{\varphi(P), Y} \simeq \fO_{\varphi(P), V}$.
+        By definition $f$ is a regular function defined in some open neighborhood of $\varphi(P)$ in $V$ such that $f(\varphi(P))$ is nonzero if and only if $\varphi^*f$ is nonzero at $P$.
+        Thus, $\varphi^*f$ is a unit in $\fO_{P, U}$, so by the universal property of localization there exists a unique ring homeomorphism $\varphi_P^* : \fO_{\varphi(P),Y} \to \fO_{P, X}$.
 
-        \item[(b)] The only if direction is obvious. Conversely, if $\varphi_P^*$ on local rings is an isomorphism for all $P \in X$, then since isomorphism is a local property [AM p.40], we have an isomorphism $\varphi^* : \OO_V \to \OO_U$, where $V$ is any affine variety in $Y$ and $U = \varphi^{-1}(V)$, hence $\varphi\mid_U : U \to V$ is an isomorphism, hence $\varphi : U \to V$ is an isomorphism.
+        \item[(b)] The only if direction is obvious.
+        Conversely, if $\varphi_P^*$ on local rings is an isomorphism for all $P \in X$, then since isomorphism is a local property (A.M. p. 40), we have an isomorphism $\varphi^* : \fO_V \to \fO_U$, where $V$ is any affine variety in $Y$ and $U = \varphi^{-1}(V)$.
+        Hence, $\varphi : U \to V$ is an isomorphism.
 
-        \item[(c)] We want to show for any $P \in X$ that if $f$, $g$ are elements of $\OO_{\varphi(P), Y}$ such that $\varphi_P^*f = \varphi_P^*g$ on some open neighborhood $U$ of $P$, then $f = g$ in some open neighborhood $V$ of $\varphi(P)$. Let $V$ be an open neighborhood of $\varphi(P)$ with both $f$ and $g$ are defined so that $\varphi_P^*f$ and $\varphi_P^*g$ are defined on $U = \varphi^{-1}(V)$. Then, $\varphi(U) = V \cap \varphi(X)$ is a closed and dense subset of $V$ such that $f = g$, hence $f = g$ on $V$.
+        \item[(c)] We want to show for any $P \in X$ that if $f$, $g$ are elements of $\fO_{\varphi(P), Y}$ such that $\varphi_P^*f = \varphi_P^*g$ on some open neighborhood $U$ of $P$, then $f = g$ in some open neighborhood $V$ of $\varphi(P)$.
+        Let $V$ be an open neighborhood of $\varphi(P)$ with both $f$ and $g$ are defined so that $\varphi_P^*f$ and $\varphi_P^*g$ are defined on $U = \varphi^{-1}(V)$.
+        Then, $\varphi(U) = V \cap \varphi(X)$ is a closed and dense subset of $V$ such that $f = g$, hence $f = g$ on $V$.
     \end{itemize}
 \end{proof}
 
-\item Show that the $d$-uple embedding of $\PP^n$ is an isomorphism onto its image.
+\item[\textbf{4.}] Show that the $d$-uple embedding of $\PP^n$ (I, Ex. 2.12) is an isomorphism onto its image.
 
 \begin{proof}
-   Let $\rho : \PP^n \to Y \subseteq \PP^N$ be the $d$-uple embedding of $\PP^n$ with $N = {n + d \choose n} - 1$ and image restricted so that $\rho$ is a homeomorphism. By Exercise 2, to show $\rho$ is an isomorphism it suffices to show it is an isomorphism locally. Let $P = (a_0, \dots, a_n) \in \PP^n$ and $\rho(P) = (b_0, \dots, b_N) \in Y$ and assume $a_0 \neq 0$. By (3.4), we have the following identifications of local rings
+   Let $\rho : \PP^n \to Y \subseteq \PP^N$ be the $d$-uple embedding of $\PP^n$ with $N = {n + d \choose n} - 1$ and image restricted so that $\rho$ is a homeomorphism.
+   By Exercise 2, to show $\rho$ is an isomorphism it suffices to show it is an isomorphism locally.
+   Let $P = (a_0, \dots, a_n) \in \PP^n$ and $\rho(P) = (b_0, \dots, b_N) \in Y$ and assume $a_0 \neq 0$.
+   By (3.4), we have the following identifications of local rings
    \begin{equation*}
-        \OO_{P, \PP^n} = S(\PP^n)_{(\goth{m}_P)}, \quad \OO_{\rho(P), Y} = S(Y)_{(\goth{m}_{\rho(P)})},
+        \fO_{P, \PP^n} = S(\PP^n)_{(\goth{m}_P)}, \quad \fO_{\rho(P), Y} = S(Y)_{(\goth{m}_{\rho(P)})},
    \end{equation*}
-   where $\goth{m}_P$ (respectively, $\goth{m}_{\rho(P)}$) is the ideal generated by the set of homogenous $f \in S(\PP^n)$ (respectively, $f \in S(Y)$) such that $f(P) = 0$ (respectively, $f(\rho(P)) = 0$). We want to show the induced map $\rho_P^* : \OO_{\rho(P), Y} \to \OO_{P, \PP^n}$ is an isomorphism. By the identification above, the map $\rho_P^*$ can be defined by the canonical projection map $\overline{\theta} : k[y_0, \dots, y_N] / \goth{a} \to k[x_0, \dots, x_n]$ induced by $\theta$ in Exercise 2.12 as
+   where $\goth{m}_P$ (respectively, $\goth{m}_{\rho(P)}$) is the ideal generated by the set of homogenous $f \in S(\PP^n)$ (respectively, $f \in S(Y)$) such that $f(P) = 0$ (respectively, $f(\rho(P)) = 0$).
+   We want to show the induced map $\rho_P^* : \fO_{\rho(P), Y} \to \fO_{P, \PP^n}$ is an isomorphism.
+   By the identification above, the map $\rho_P^*$ can be defined by the canonical projection map $\overline{\theta} : k[y_0, \dots, y_N] / \goth{a} \to k[x_0, \dots, x_n]$ induced by $\theta$ in Exercise 2.12 as
    \begin{equation*}
         \rho_P^*\bigg( \frac{f}{g} \bigg) = \frac{\overline{\theta}(f)}{\overline{\theta}(g)},
    \end{equation*}
-   where $f$ and $g$ are homogenous elements of same degree in $S(Y)$ such that $g(\rho(P)) \neq 0$ (since we are only concerned with homogenous elements of degree $0$ in $S(Y)_{\goth{m}_P}$). Clearly $\rho_P^*$ is injective since $\overline{\theta}$ is injective, and $\rho_P^*$ maps $S(Y)_{(\goth{m}_{\rho(P)})}$ into $S(\PP^n)_{(\goth{m}_P)}$ since $\theta(y_i)$ is of the same degree for all $0 \leq i \leq N$ and $\goth{a}$ is a homogenous ideal. To show it is surjective, suppose $h / k \in \OO_{P, \PP^n}$ with $k(P) \neq 0$ and $h$, $k$ both homogenous of degree $e$. We can assume $e$ is a multiple $d$ since $x_0$ is a unit in $\OO_{P, \PP^n}$, and we can multiply $h / k$ by a sufficent power of $x_0 / x_0$ to obtain the desired degrees in the numerator and denominator. Then, each term in $h$ and $k$ is the product of monomials of degree $d$, and since $\overline{\theta}$ is surjective onto such elements, $\rho_P^*$ is surjective. Hence, $\rho_P^*$ is an isomorphism.
+   where $f$ and $g$ are homogenous elements of same degree in $S(Y)$ such that $g(\rho(P)) \neq 0$ (since we are only concerned with homogenous elements of degree $0$ in $S(Y)_{\goth{m}_P}$).
+   Clearly $\rho_P^*$ is injective since $\overline{\theta}$ is injective, and $\rho_P^*$ maps $S(Y)_{(\goth{m}_{\rho(P)})}$ into $S(\PP^n)_{(\goth{m}_P)}$ since $\theta(y_i)$ is of the same degree for all $0 \leq i \leq N$ and $\goth{a}$ is a homogenous ideal.
+   To show it is surjective, suppose $h / k \in \fO_{P, \PP^n}$ with $k(P) \neq 0$ and $h$, $k$ both homogenous of degree $e$.
+   We can assume $e$ is a multiple $d$ since $x_0$ is a unit in $\fO_{P, \PP^n}$, and we can multiply $h / k$ by a sufficent power of $x_0 / x_0$ to obtain the desired degrees in the numerator and denominator.
+   Then, each term in $h$ and $k$ is the product of monomials of degree $d$, and since $\overline{\theta}$ is surjective onto such elements, $\rho_P^*$ is surjective. Hence, $\rho_P^*$ is an isomorphism.
 \end{proof}
 
-\item There are quasi-affine varieties which are not affine. For example, show that $X = \A^2 - \{(0, 0) \}$ is not affine.
+\item[\textbf{6.}] There are quasi-affine varieties which are not affine. For example, show that $X = \A^2 - \{(0, 0) \}$ is not affine.
 
 \begin{proof}
-    The ideal $I(X)$ consists of all polynomials in $k[x, y]$ that vanish at $X$. If $f \in I(X)$, then viewing $f$ as a regular function on $\A^2$, $f^{-1}(0)$ is a closed and dense subset of $\A^2$, hence it equals to $\A^2$, hence $I(X) = (0)$. Thus, if $X$ is affine, then
+    The ideal $I(X)$ consists of all polynomials in $k[x, y]$ that vanish at $X$.
+    If $f \in I(X)$, then viewing $f$ as a regular function on $\A^2$, $f^{-1}(0)$ is a closed and dense subset of $\A^2$, hence it equals to $\A^2$, hence $I(X) = (0)$.
+    Thus, if $X$ is affine, then
     \begin{equation*}
-        \OO(X) = k[x, y] / I(X) \simeq k[x, y] = \OO(\A^2),
+        \fO(X) = k[x, y] / I(X) \simeq k[x, y] = \fO(\A^2),
     \end{equation*}
     so by (3.5) and (3.7) $X \cong \A^2$ under the inclusion map, which is ridiculous.
 \end{proof}
 
-\item If $P$ is a point on a variety $X$, then $\dim{\OO_P} = \dim{X}$.
+\item[\textbf{12.}] If $P$ is a point on a variety $X$, then $\dim{\fO_P} = \dim{X}$.
 
 \begin{proof}
-    We can find an open affine variety $Y$ in $X$ containing $P$, and since local rings behave well under open subsets, i.e. $\OO_{P, Y} \simeq \OO_{P, X}$, we can reduce to the affine case. Then, the statement follows from (3.2).
+    We can find an open affine variety $Y$ in $X$ containing $P$, and since local rings behave well under open subsets, i.e. $\fO_{P, Y} \simeq \fO_{P, X}$, we can reduce to the affine case.
+    Then, the statement follows from (3.2).
 \end{proof}
 
-\item \textit{Projection from a Point.} Let $\PP^n$ be a hyperplane in $\PP^{n + 1}$ and let $P \in \PP^{n + 1} - \PP^n$. Define a mapping $\varphi : \PP^{n + 1} - \{ P \} \to \PP^n$ by $\varphi(Q) = $ intersection of the unique line containing $P$ and $Q$ with $\PP^n$.
-\begin{itemize}
-    \item[(a)] Show that $\varphi$ is a morphism.
-    \item[(b)] Let $Y \subseteq \PP^3$ be the twisted cubic curve which is the image of the $3$-uple embedding $\PP^1$. If $t$, $u$ are the homogenous coordinates on $\PP^1$, we say that $Y$ is the curve given \textit{parametrically} by $(x, y, z, w) = (t^3, t^2u, tu^2, u^3)$. Let $P = (0, 0, 1, 0)$, and let $\PP^2$ be the hyperplane $z = 0$. Show that the projection of $Y$ from $P$ is a cuspidal cubic curve in the plane, and find its equation. 
-\end{itemize}
-
-\begin{proof}
-    
-\end{proof}
-
-\item \textit{Products of Affine Varieties.} Let $X \subseteq \A^n$ and $Y \subseteq \A^m$ be affine varieties.
+\item[\textbf{15.}] \textit{Products of Affine Varieties.} Let $X \subseteq \A^n$ and $Y \subseteq \A^m$ be affine varieties.
 \begin{itemize}
     \item[(a)] Show that $X \times Y \subseteq \A^{n + m}$ with its induced topology is irreducible. The affine variety $X \times Y$ is called the \textit{product} of $X$ and $Y$. Note that its topology is in general not equal to the product topology.
+
     \item[(b)] Show that $A(X \times Y) \simeq A(X) \otimes_k A(Y)$.
+
     \item[(c)] Show that $X \times Y$ is a product in the category of varieties.
+
     \item[(d)] Show that $\dim{X \times Y} = \dim{X} + \dim{Y}$.
 \end{itemize}
 \[ \begin{tikzcd}
@@ -146,9 +108,13 @@
                                                                         & X                              &  
 \end{tikzcd} \]
 
+\newpage
+
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] Suppose that $X \times Y$ is a union of two closed subsets $Z_1 \cup Z_2$. Let $X_i = \{ x \in X \mid x \times Y \subseteq Z_i \}$, $i = 1, 2$ and let $\pi : \A^{n + m} \to \A^m$ be the projection map. For any $x \in X$ since $x \times Y \subseteq Z_1 \cup Z_2$, we can write $x \times Y = (x \times Y \cap Z_1) \cup (x \times Y \cap Z_2)$, so let $C_i = x \times Y \cap Z_i$, then
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Suppose that $X \times Y$ is a union of two closed subsets $Z_1 \cup Z_2$.
+        Let $X_i = \{ x \in X \mid x \times Y \subseteq Z_i \}$, $i = 1, 2$ and let $\pi : \A^{n + m} \to \A^m$ be the projection map.
+        For any $x \in X$ since $x \times Y \subseteq Z_1 \cup Z_2$, we can write $x \times Y = (x \times Y \cap Z_1) \cup (x \times Y \cap Z_2)$, so let $C_i = x \times Y \cap Z_i$, then
         \begin{equation*}
             Y = \pi(x \times Y) = \pi(C_1 \cup C_2) = \pi(C_1) \cup \pi(C_2).
         \end{equation*}
@@ -156,7 +122,11 @@
         \begin{equation*}
             \pi(C_i) = \bigcap_{j = 1}^r Z(f_j(x, y_1, \dots, y_m)),
         \end{equation*}
-        where we can view $f_j(x, y_1, \dots, y_m)$ as an element in $A(\A^m)$, which shows $\pi_2(C_i)$ is a closed set in $\A^m$. Since $Y$ is irreducible, we have $\pi(C_2) = \emptyset$, say, hence $Y = \pi(C_1)$, hence $x \times Y = x \times Y \cap Z_1$, hence $x \times Y \subseteq Z_1$. In particular, we have $X = X_1 \cup X_2$, and we have shown $Z_i = X_i \times Y$. We can repeat the argument for $Y_i = \{y \in Y \mid X \times Y \subseteq Z_i\}$, $i = 1, 2$ so that $Z_i = X \times Y_i$. This is only possible if $X = X_1$ and $Y = Y_1$, say, hence $Z_1 = X \times Y$.
+        where we can view $f_j(x, y_1, \dots, y_m)$ as an element in $A(\A^m)$, which shows $\pi_2(C_i)$ is a closed set in $\A^m$.
+        Since $Y$ is irreducible, we have $\pi(C_2) = \emptyset$, say, hence $Y = \pi(C_1)$, hence $x \times Y = x \times Y \cap Z_1$, hence $x \times Y \subseteq Z_1$.
+        In particular, we have $X = X_1 \cup X_2$, and we have shown $Z_i = X_i \times Y$.
+        We can repeat the argument for $Y_i = \{y \in Y \mid X \times Y \subseteq Z_i\}$, $i = 1, 2$ so that $Z_i = X \times Y_i$.
+        This is only possible if $X = X_1$ and $Y = Y_1$, say, hence $Z_1 = X \times Y$.
         
 
         \item[(b)] We clearly have $A(\A^{n + m}) \simeq A(\A^n) \otimes_k A(\A^m)$, where $A(\A^n) = k[x_1, \dots, x_n]$ and $A(\A^m) = k[y_1, \dots, y_m]$. Then, we have
@@ -165,13 +135,15 @@
         \end{equation*}
         hence we have the isomorphism
         \begin{align*}
-           A(X \times Y) & \simeq \frac{A(\A^n) \otimes_k A(\A^m)}{I(X \times Y)} = \frac{A(\A^n) \otimes_k A(\A^m)}{ I(X) \otimes_k A(\A^m) + A(\A^n) \otimes_k I(Y)} \\
-           & \simeq \frac{A(\A^n)}{I(X)} \otimes_k \frac{A(\A^m)}{I(Y)} = A(X) \otimes_k A(Y).
+           A(X \times Y) & \cong \frac{A(\A^n) \otimes_k A(\A^m)}{I(X \times Y)} \\
+           & \cong \frac{A(\A^n) \otimes_k A(\A^m)}{ I(X) \otimes_k A(\A^m) + A(\A^n) \otimes_k I(Y)} \\
+           & \cong \frac{A(\A^n)}{I(X)} \otimes_k \frac{A(\A^m)}{I(Y)} \\
+           & \cong A(X) \otimes_k A(Y).
         \end{align*}
 
-        \item[(c)] Suppose we have morphisms $Z \to X$ and $Z \to Y$. This induces $k$-algebra homomorphisms $A(X) \to \OO(Z)$ and $A(Y) \to \OO(Z)$, which defines a $k$-bilinear map $A(X) \times A(Y) \to \OO(Z)$. By the universal property of tensor products, we have a unique $k$-algebra homomorphism $A(X) \otimes_k A(Y) \to \OO(W)$, hence we have a unique morphism $W \to X \times Y$.
+        \item[(c)] Suppose we have morphisms $Z \to X$ and $Z \to Y$. This induces $k$-algebra homomorphisms $A(X) \to \fO(Z)$ and $A(Y) \to \fO(Z)$, which defines a $k$-bilinear map $A(X) \times A(Y) \to \fO(Z)$. By the universal property of tensor products, we have a unique $k$-algebra homomorphism $A(X) \otimes_k A(Y) \to \fO(W)$, hence we have a unique morphism $W \to X \times Y$.
         \[ \begin{tikzcd}
-            \OO(Z) &                                        &                                        \\
+            \fO(Z) &                                        &                                        \\
                    & A(X) \otimes_k A(Y) \arrow[lu, dashed] & A(Y) \arrow[llu, bend right] \arrow[l] \\
                    & A(X) \arrow[luu, bend left] \arrow[u]  &                                       
             \end{tikzcd} \]
@@ -180,18 +152,7 @@
     \end{itemize}
 \end{proof}
 
-\item \textit{Products of Quasi-Projective Varieties.} Use the Segre embedding to identify $\PP^n \times \PP^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X \subseteq \PP^n$ and $Y \subseteq \PP^m$, consider $X \times Y \subseteq \PP^n \times \PP^m$.
-\begin{itemize}
-    \item[(a)] Show that $X \times Y$ is a quasi-projective variety.
-    \item[(b)] If $X$, $Y$ are both projective, show that $X \times Y$ is projective.
-    \item[(c)] Show that $X \times Y$ is a product in the category of varieties.
-\end{itemize}
-
-\begin{proof}
-    
-\end{proof}
-
-\item \textit{Normal Varieties.} A variety $Y$ is \textit{normal at a point $P \in Y$} if $\OO_P$ is integrally closed ring. $Y$ is \textit{normal} if it is normal at every point. 
+\item[\textbf{17.}] \textit{Normal Varieties.} A variety $Y$ is \textit{normal at a point $P \in Y$} if $\fO_P$ is integrally closed ring. $Y$ is \textit{normal} if it is normal at every point. 
 \begin{itemize}
     \item[(a)] Show that every conic in $\PP^2$ is normal.
     \item[(b)] Show that the quadric surfaces $Q_1$, $Q_2$ in $\PP^3$ given by equations $Q_1 : xy = zw$; $Q_2 : xy = z^2$ are normal.
@@ -201,7 +162,7 @@
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-   \begin{itemize}
+   \begin{itemize} [leftmargin=0cm]
     \item[(a)] A conic in $\PP^2$ can be covered by open affine varieties isomorphic to a conic in $\A^2$. Thus, it suffices to show all irreducible plane algebraic curves of degree $2$ are normal, that is we want to show an affine variety $X$ in $\A^2$ defined by the zero set of an irreducible quadratic polynomial $f$ in $k[x, y]$ is normal. Since being integrally closed is a local property, it suffices to show the affine coordinate ring $A(X) = k[x, y] / (f)$ is integrally closed. We first prove Exercise 1.1c, which states $A(X)$ is isomorphic to either $R = k[x, y] / (y - x^2)$ or $S = k[x, y] / (xy - 1) \simeq k[x, \frac{1}{x}]$. For simplicity assume $\text{char}~k \neq 2$. Any quadratic polynomial can be written as
     \begin{equation*}
         f(x, y)  = Ax^2 + Bxy + Cy^2 + Dx + Ey + F
@@ -237,40 +198,55 @@
         f'(x, y) = xy + (\text{linear terms}).
     \end{equation*}
 
-    Since affine coordinate rings are invariant up to affine transformations, we have either $A(X) \simeq R$ or $A(X) \simeq S$. The ring $R = k[x, y] / (y - x^2)$ is isomorphic to a polynomial ring over one variable, which is a factorial, hence it is integrally closed. The ring $S = k[x, \frac{1}{x}]$ is a discrete valuation ring, which are integrally closed by [AM p.94].
+    Since affine coordinate rings are invariant up to affine transformations, we have either $A(X) \simeq R$ or $A(X) \simeq S$.
+    The ring $R = k[x, y] / (y - x^2)$ is isomorphic to a polynomial ring over one variable, which is a factorial, hence it is integrally closed. The ring $S = k[x, x^{-1}]$ is a discrete valuation ring, which are integrally closed by (A.M. p. 94).
 
-    \item[(b)] The quadric surface $Q_1$ can be covered by open affine varieties isomoprhic to the affine surface $z = xy$. The affine coordinate ring of such surface is isomorphic to $k[x, y]$, which is integrally closed, hence $Q_1$ is normal. Similarily, $Q_2$ can be covered by open affine varieties isomoprhic to either $y = x^2$ or $xy = 1$, which was shown to be normal in (a).
+    \item[(b)] The quadric surface $Q_1$ can be covered by open affine varieties isomoprhic to the affine surface $z = xy$.
+    The affine coordinate ring of such surface is isomorphic to $k[x, y]$, which is integrally closed, hence $Q_1$ is normal.
+    Similarily, $Q_2$ can be covered by open affine varieties isomoprhic to either $y = x^2$ or $xy = 1$, which was shown to be normal in (a).
 
     \item[(c)] The affine coordinate ring $A(Y)$ is isomorphic to $k[t^2, t^3]$. The quotient field is $k(t)$, and the element $t \in k(t)$ is integral over $k[t^2, t^3]$ since $(t)^2 - t^2 = 0$ but $t \notin k[t^2, t^3]$, hence $A(Y)$ is not integrally closed, hence $Y$ is not normal by (d).
 
-    \item[(d)] Being integrally closed is a local property, that is a ring $A$ is integrally closed $\iff$ $A_\goth{m}$ is integrally closed for all maximal ideals $\goth{m}$ in $A$ by [AM p.63]. There is a one-to-one correspondence between maximal ideals of $\OO(Y) = A(Y)$ and points of $Y$, hence $Y$ is normal $\iff$ $\OO_P$ is integrally closed for all $P \in Y$ $\iff$ $A(Y)_{\goth{m}}$ is integrally closed for all maximal ideals $\goth{m}$ $\iff$ $A(Y)$ is integrally closed.
+    \item[(d)] Being integrally closed is a local property, that is a ring $A$ is integrally closed if and only if $A_\goth{m}$ is integrally closed for all maximal ideals $\goth{m}$ in $A$ by (A.M. p. 63). There is a one-to-one correspondence between maximal ideals of $\fO(Y) = A(Y)$ and points of $Y$, hence $Y$ is normal if and only if $\fO_P$ is integrally closed for all $P \in Y$ if and only if $A(Y)_{\goth{m}}$ is integrally closed for all maximal ideals $\goth{m}$ if and only if $A(Y)$ is integrally closed.
 
-    \item[(e)] To rephrase the question, we want to show there exists a normal scheme  $\hat{Y}$ with morphism $\pi : \hat{Y} \to Y$ that is universal amongst all dominant morphisms from normal schemes into $Y$. Let $A(Y)$ be the affine coordinate ring of $Y$ and let $B$ be the integral closure of $A(Y)$ in its quotient field. Then, $B$ is a finitely generated $k$-algebra by (3.9A), and it is a subring of a field, so it is an integral domain, which means it defines an affine variety. Let $\hat{Y}$ be an affine variety with coordinate ring $A(\hat{Y}) = B$, and let $\pi : \hat{Y} \to Y$ be the morphism induced by the inclusion map $A(Y) \hookrightarrow B$. Let $Z$ be a normal variety, and $\varphi : Z \to Y$ a dominant morphism. Since $Z$ can be covered by open affine varieties and local rings are perserved under open subsets, we reduce to the case when $Z$ is an affine normal variety. We want to show there exists a ring homomorphism $\alpha : \OO(\hat{Y}) \to \OO(Z)$ such that the following diagram commutes:
+    \item[(e)] We want to show there exists a normal scheme $\widehat{Y}$ with morphism $\pi : \widehat{Y} \to Y$ that is universal amongst all dominant morphisms from normal schemes into $Y$.
+    Let $A(Y)$ be the affine coordinate ring of $Y$ and let $B$ be the integral closure of $A(Y)$ in its quotient field.
+    Then, $B$ is a finitely generated $k$-algebra by (3.9A), and it is a subring of a field, so it is an integral domain, which means it defines an affine variety.
+    Let $\widehat{Y}$ be an affine variety with coordinate ring $A(\widehat{Y}) = B$, and let $\pi : \widehat{Y} \to Y$ be the morphism induced by the inclusion map $A(Y) \hookrightarrow B$.
+    Let $Z$ be a normal variety, and $\varphi : Z \to Y$ a dominant morphism.
+    Since $Z$ can be covered by open affine varieties and local rings are perserved under open subsets, we reduce to the case when $Z$ is an affine normal variety.
+    We want to show there exists a ring homomorphism $\alpha : \fO(\widehat{Y}) \to \fO(Z)$ such that the following diagram commutes:
     \[ \begin{tikzcd}
-        & \OO(\hat{Y}) \arrow[rd, "\exists! ~ \alpha", dashed] &        \\
-        \OO(Y) \arrow[rr, "\varphi^*"'] \arrow[ru, "\pi^*", hook] &                                                      & \OO(Z)
+        & \fO(\widehat{Y}) \arrow[rd, "\exists! ~ \alpha", dashed] &        \\
+        \fO(Y) \arrow[rr, "\varphi^*"'] \arrow[ru, "\pi^*", hook] &                                                      & \fO(Z)
     \end{tikzcd} \]
-    If $\varphi^*f = 0$ for some $f \in \OO(Y)$, then $f = 0$ on a closed dense subset of $Y$, hence $f = 0$ on $Y$, so $\varphi^*$ is injective. Thus, $\varphi^*$ induces a map between the function fields $\overline{\varphi^*} : K(Y) \to K(Z)$, where we have the inclusions $\OO(Y) \hookrightarrow \OO(\hat{Y}) \hookrightarrow K(Y)$ by construction. If $f \in \OO(\hat{Y})$, then there exists an equation of integral dependence of the form
+    If $\varphi^*f = 0$ for some $f \in \fO(Y)$, then $f = 0$ on a closed dense subset of $Y$, hence $f = 0$ on $Y$, so $\varphi^*$ is injective.
+    Thus, $\varphi^*$ induces a map between the function fields $\overline{\varphi^*} : K(Y) \to K(Z)$, where we have the inclusions $\fO(Y) \hookrightarrow \fO(\widehat{Y}) \hookrightarrow K(Y)$ by construction.
+    If $f \in \fO(\widehat{Y})$, then there exists an equation of integral dependence of the form
     \begin{equation*}
-        f^n + a_1 f^{n - 1} + \cdots +  a_n = 0, \quad a_i \in \OO(Y),
+        f^n + a_1 f^{n - 1} + \cdots +  a_n = 0, \quad a_i \in \fO(Y),
     \end{equation*}
-    and since $\overline{\varphi^*}(a_i) = \varphi^*(a_i) \in \OO(Z)$, we can apply $\overline{\varphi^*}$ to the equation above to obtain an equation of integral dependence of $\overline{\varphi^*}(f)$ over $\OO(Z)$
+    and since $\overline{\varphi^*}(a_i) = \varphi^*(a_i) \in \fO(Z)$, we can apply $\overline{\varphi^*}$ to the equation above to obtain an equation of integral dependence of $\overline{\varphi^*}(f)$ over $\fO(Z)$
     \begin{equation*}
-        \overline{\varphi^*}(f)^n + b_1 \overline{\varphi^*}(f)^{n - 1} + \cdots + b_n = 0, \quad b_i = \varphi^*(a_i) \in \OO(Z),
+        \overline{\varphi^*}(f)^n + b_1 \overline{\varphi^*}(f)^{n - 1} + \cdots + b_n = 0, \quad b_i = \varphi^*(a_i) \in \fO(Z),
     \end{equation*}
-    and since $\OO(Z)$ is integrally closed, we must have $\overline{\varphi^*}(f) \in \OO(Z)$. Thus, we have $\alpha = \overline{\varphi^*} \mid_{\OO(\hat{Y})}$ as the desired map, and it is unique by construction. Hence, we have a unique morphism $\theta : Z \to \hat{Y}$ such that $\varphi = \pi \circ \theta$ and $\theta^* = \alpha : \OO(\hat{Y}) \to \OO(Z)$ by (3.5).
+    and since $\fO(Z)$ is integrally closed, we must have $\overline{\varphi^*}(f) \in \fO(Z)$. Thus, we have $\alpha = \overline{\varphi^*} \mid_{\fO(\widehat{Y})}$ as the desired map, and it is unique by construction. Hence, we have a unique morphism $\theta : Z \to \hat{Y}$ such that $\varphi = \pi \circ \theta$ and $\theta^* = \alpha : \fO(\widehat{Y}) \to \fO(Z)$ by (3.5).
    \end{itemize}
 \end{proof}
 
-\item Let $Y$ be a variety of dimension $\geq 2$, and let $P \in Y$ be a normal point. Let $f$ be a regular function on $Y - P$.
+\item[\textbf{20.}] Let $Y$ be a variety of dimension $\geq 2$, and let $P \in Y$ be a normal point. Let $f$ be a regular function on $Y - P$.
 \begin{itemize}
     \item[(a)] Show that $f$ extends to a regular function on $Y$.
     \item[(b)] Show this would be false for $\dim{Y} = 1$.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] $Y$ can be covered by open affine varieties, so we reduce to the case when $Y \subseteq \A^n$ itself is an affine variety. Then by composing with the inclusion morphism $Y \to \A^n$, we futher reduce to the case when $Y = \A^n$, that is we want to show if $f = g / h$ on $\A^n - P$, then we can extend $f$ to a regular function on $Y$. We show that if a polynomial $h \in k[x_1, \dots, x_n]$ is nonzero on $\A^n - P$, then $f$ is nonzero on $P$. We can also assume $P = (0, \dots, 0)$ and $n = 2$ by induction. Suppose $h(P) = 0$, then $h$ must have zero constant term, so we can write
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] $Y$ can be covered by open affine varieties, so we reduce to the case when $Y \subseteq \A^n$ itself is an affine variety.
+        Then by composing with the inclusion morphism $Y \to \A^n$, we futher reduce to the case when $Y = \A^n$, that is we want to show if $f = g / h$ on $\A^n - P$, then we can extend $f$ to a regular function on $Y$.
+        We show that if a polynomial $h \in k[x_1, \dots, x_n]$ is nonzero on $\A^n - P$, then $f$ is nonzero on $P$.
+        We can also assume $P = (0, \dots, 0)$ and $n = 2$ by induction.
+        Suppose $h(P) = 0$, then $h$ must have zero constant term, so we can write
         \begin{equation*}
             h(x, y) = f_0(x) y^d + f_1(x) y^{d - 1} + \cdots + f_d(x), \quad f_i(x) \in k[x] - k,
         \end{equation*}
@@ -284,19 +260,28 @@
     \end{itemize}
 \end{proof}
 
-\item \textit{Group Varieties.} A group variety consists of a variety $Y$ together with a morphism $\mu : Y \times Y \to Y$, such that the set of points of $Y$ with the operation given by $\mu$ is a group, and such that the inverse map $y \mapsto y^{-1}$ is also a morphism $Y \to Y$.
-\begin{itemize}
-    \item[(a)] The \textit{additive group} $\G_a$ is given by the variety $\A^1$ and the morphism $\mu : \A^2 \to \A$ defined by $\mu(a, b) = a+ b$. Show that it is a group variety.
-    \item[(b)] The \textit{multiplicative group} $\G_m$ is given by the variety $\A^1 - \{(0) \}$ and the morphism $\mu(a, b) = ab$. Show that it is a group variety.
-    \item[(c)] If $G$ is a group variety, and $X$ is any variety, show that the set $\Hom{(X, G)}$ has a natural group structure.
-    \item[(d)] For any variety $X$, show that $\Hom{(X, \G_a)}$ is isomoprhic to $\OO(X)$ as a group under addition.
-    \item[(e)] For any variety $X$, show that $\Hom{(X, \G_m)}$ is isomorphic to the group of units in $\OO(X)$, under multiplication.
-\end{itemize}
-
-\begin{proof}
-    
-\end{proof}
-
 \end{enumerate}
 
 \end{document}
+
+% \item \textit{Projection from a Point.} Let $\PP^n$ be a hyperplane in $\PP^{n + 1}$ and let $P \in \PP^{n + 1} - \PP^n$. Define a mapping $\varphi : \PP^{n + 1} - \{ P \} \to \PP^n$ by $\varphi(Q) = $ intersection of the unique line containing $P$ and $Q$ with $\PP^n$.
+% \begin{itemize}
+%     \item[(a)] Show that $\varphi$ is a morphism.
+%     \item[(b)] Let $Y \subseteq \PP^3$ be the twisted cubic curve which is the image of the $3$-uple embedding $\PP^1$. If $t$, $u$ are the homogenous coordinates on $\PP^1$, we say that $Y$ is the curve given \textit{parametrically} by $(x, y, z, w) = (t^3, t^2u, tu^2, u^3)$. Let $P = (0, 0, 1, 0)$, and let $\PP^2$ be the hyperplane $z = 0$. Show that the projection of $Y$ from $P$ is a cuspidal cubic curve in the plane, and find its equation. 
+% \end{itemize}
+
+% \item \textit{Products of Quasi-Projective Varieties.} Use the Segre embedding to identify $\PP^n \times \PP^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X \subseteq \PP^n$ and $Y \subseteq \PP^m$, consider $X \times Y \subseteq \PP^n \times \PP^m$.
+% \begin{itemize}
+%     \item[(a)] Show that $X \times Y$ is a quasi-projective variety.
+%     \item[(b)] If $X$, $Y$ are both projective, show that $X \times Y$ is projective.
+%     \item[(c)] Show that $X \times Y$ is a product in the category of varieties.
+% \end{itemize}
+
+% \item \textit{Group Varieties.} A group variety consists of a variety $Y$ together with a morphism $\mu : Y \times Y \to Y$, such that the set of points of $Y$ with the operation given by $\mu$ is a group, and such that the inverse map $y \mapsto y^{-1}$ is also a morphism $Y \to Y$.
+% \begin{itemize}
+%     \item[(a)] The \textit{additive group} $\G_a$ is given by the variety $\A^1$ and the morphism $\mu : \A^2 \to \A$ defined by $\mu(a, b) = a+ b$. Show that it is a group variety.
+%     \item[(b)] The \textit{multiplicative group} $\G_m$ is given by the variety $\A^1 - \{(0) \}$ and the morphism $\mu(a, b) = ab$. Show that it is a group variety.
+%     \item[(c)] If $G$ is a group variety, and $X$ is any variety, show that the set $\Hom{(X, G)}$ has a natural group structure.
+%     \item[(d)] For any variety $X$, show that $\Hom{(X, \G_a)}$ is isomoprhic to $\fO(X)$ as a group under addition.
+%     \item[(e)] For any variety $X$, show that $\Hom{(X, \G_m)}$ is isomorphic to the group of units in $\fO(X)$, under multiplication.
+% \end{itemize}

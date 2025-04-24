@@ -1,42 +1,5 @@
 \documentclass{article}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\fF}{\mathscr{F}}
-\newcommand{\OO}{\mathscr{O}}
-\newcommand{\fG}{\mathscr{G}}
-\newcommand{\A}{\mathbf{A}}
-\newcommand{\R}{\mathbf{R}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\N}{\mathbf{N}}
-\newcommand{\Z}{\mathbf{Z}}
-\newcommand{\PP}{\mathbf{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Supp}{Supp}
-\DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\codim}{codim}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\im}{im}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-
-\newcommand\isomto{\stackrel{\sim}{\smash{\longrightarrow}\rule{0pt}{0.4ex}}}
-\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
-}}
-
+\input{../../etc/preamble.tex}
 \title{Chapter 2, Section 4}
 
 \begin{document}
@@ -71,9 +34,9 @@
 \item[\textbf{2.}] Let $S$ be a scheme, let $X$ be a reduced scheme over $S$, and let $Y$ be a separated scheme over $S$. Let $f$ and $g$ be two $S$-morphisms of $X$ to $Y$ which agree on an open dense subset of $X$. Show that $f = g$. Give examples to show that this result fails if either (a) $X$ is nonreduced, or $(b)$ $Y$ is nonseparated.
 
 \begin{proof}
-    Let $U$ be an open dense subset of $X$ such that $f$ and $g$ agree on $U$, let $h : X \to Y \times_S Y$ be the map obtained from $f$ and $g$, and let $\Delta : Y \to Y \times_S Y$ be the diagonal morphism. By hypothesis, $h(U) \subseteq \Delta(Y)$. But $U$ is dense in $X$, and $\Delta(Y)$ is closed since $Y$ is separated over $S$, so $h(X) \subseteq \Delta(Y)$. This says that $f$ and $g$ agree topologically, so $f_*\OO_X = g_*\OO_X$. Set $\OO = f_* \OO_X = g_*\OO_X$. Let $V$ be open subset of $Y$, and let $t \in \Gamma(V, \OO_Y)$. We want to show $f^\#(t) = g^\#(t) \in \OO(V)$. By hypothesis, we have $W = (f^{-1}(V))_{f^\#(t) - g^\#(t)} \subseteq X - U$, but $W$ is an open subset and $U$ is dense, which implies $W = \emptyset$. This implies $f^\#(t) - g^\#(t)$ is nilpotent, but $X$ is reduced, hence $f^\#(t) - g^\#(t) = 0$.
+    Let $U$ be an open dense subset of $X$ such that $f$ and $g$ agree on $U$, let $h : X \to Y \times_S Y$ be the map obtained from $f$ and $g$, and let $\Delta : Y \to Y \times_S Y$ be the diagonal morphism. By hypothesis, $h(U) \subseteq \Delta(Y)$. But $U$ is dense in $X$, and $\Delta(Y)$ is closed since $Y$ is separated over $S$, so $h(X) \subseteq \Delta(Y)$. This says that $f$ and $g$ agree topologically, so $f_*\fO_X = g_*\fO_X$. Set $\fO = f_* \fO_X = g_*\fO_X$. Let $V$ be open subset of $Y$, and let $t \in \Gamma(V, \fO_Y)$. We want to show $f^\#(t) = g^\#(t) \in \fO(V)$. By hypothesis, we have $W = (f^{-1}(V))_{f^\#(t) - g^\#(t)} \subseteq X - U$, but $W$ is an open subset and $U$ is dense, which implies $W = \emptyset$. This implies $f^\#(t) - g^\#(t)$ is nilpotent, but $X$ is reduced, hence $f^\#(t) - g^\#(t) = 0$.
 
-    \begin{itemize}
+    \begin{itemize} [leftmargin=0cm]
         \item[(a)] Let $k$ be a field, let $X = \spec{k[\varepsilon]/(\varepsilon^2)}$ (Ex. 2.8), and let $Y$ be any scheme over $k$. Giving a $k$-morphism $X \to Y$ is equivalent to giving a point in $y \in Y$ rational over $k$, and an element of $\goth{m}_y / \goth{m}_y^2$.
         \item[(b)] Let $X$ be the affine line, and let $Y$ be the affine line with the origin doubled. We have two possible open immersions of $X$ into $Y$ with each one having either origin in its image, and the open immersions agree on the complement of the origin of $X$, which is an open dense subset of $X$.
     \end{itemize}
@@ -148,17 +111,17 @@ Then show that:
     By the results of (Ex. 3.13), (4.6), and (4.8), it suffices to show if $f : X \to \PP^r$ is a projective morphism, then $X$ is projective over $\spec{\Z}$. If $f$ is projective, then there exists a closed embedding $i : X \to \PP^r \times \PP^s$ such that $f$ factors through $\PP^r \to \PP^s$. The Segre embedding (\S 1, 2.14) $\psi : \PP^r \times \PP^s \to \PP^{rs + r + s}$ is a closed embedding, so $\psi \circ i : X \to \PP^{rs + r + s}$ is a closed embedding such that $X \to \spec{\Z}$ factors through $\PP^{rs + r + s} \to \spec{\Z}$, which is what we wanted to show.
 \end{proof}
 
-\item[\textbf{10.}] \textit{Chow's Lemma.} This result says that proper morphisms are fairly close to projective morphisms. Let $X$ be proper over a noetherian scheme $S$. Then there is a scheme $X'$ and a morphism $g : X' \to X$ such that $X'$ is projective over $S$, and there is an open dense subset $U \subseteq X$ such that $g$ induces an isomorphism of $g^{-1}(U)$ to $U$. Prove this result in the following steps:
-\begin{itemize}
-    \item[(a)] Reduce to the case $X$ is irreducible.
-    \item[(b)] Show that $X$ can be covered by a finite number of open subset $U_i$, $i = 1, \dots, n$, each of which is quasi-projective over $S$. Let $U_i \to P_i$ be an open immersion of $U_i$ into a scheme $P_i$ which is projective over $S$.
-    \item[(c)] Let $U = \bigcap U_i$, and consider the map
-    \begin{equation*}
-        f : U \to X \times_S P_1 \times_S \cdots \times_S P_n
-    \end{equation*}
-    deduced from the given maps $U \to X$ and $U \to P_i$. Let $X'$ be the closed image subscheme structure (Ex. 3.11) $\overline{f(U)}$. Let $g : X' \to X$ be the projection onto the first factor, and let $h : X' \to P = P_1 \times_S \cdots \times_S P_n$ be the projection onto the product of remaining factors. Show that $h$ is a closed immersion, hence $X'$ is projective over $S$.
-    \item[(d)] Show that $g^{-1}(U) \to U$ is an isomorphism, thus completing the proof.
-\end{itemize}
-
 \end{enumerate}
 \end{document}
+
+% \item[\textbf{10.}] \textit{Chow's Lemma.} This result says that proper morphisms are fairly close to projective morphisms. Let $X$ be proper over a noetherian scheme $S$. Then there is a scheme $X'$ and a morphism $g : X' \to X$ such that $X'$ is projective over $S$, and there is an open dense subset $U \subseteq X$ such that $g$ induces an isomorphism of $g^{-1}(U)$ to $U$. Prove this result in the following steps:
+% \begin{itemize}
+%     \item[(a)] Reduce to the case $X$ is irreducible.
+%     \item[(b)] Show that $X$ can be covered by a finite number of open subset $U_i$, $i = 1, \dots, n$, each of which is quasi-projective over $S$. Let $U_i \to P_i$ be an open immersion of $U_i$ into a scheme $P_i$ which is projective over $S$.
+%     \item[(c)] Let $U = \bigcap U_i$, and consider the map
+%     \begin{equation*}
+%         f : U \to X \times_S P_1 \times_S \cdots \times_S P_n
+%     \end{equation*}
+%     deduced from the given maps $U \to X$ and $U \to P_i$. Let $X'$ be the closed image subscheme structure (Ex. 3.11) $\overline{f(U)}$. Let $g : X' \to X$ be the projection onto the first factor, and let $h : X' \to P = P_1 \times_S \cdots \times_S P_n$ be the projection onto the product of remaining factors. Show that $h$ is a closed immersion, hence $X'$ is projective over $S$.
+%     \item[(d)] Show that $g^{-1}(U) \to U$ is an isomorphism, thus completing the proof.
+% \end{itemize}

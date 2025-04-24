@@ -1,70 +1,12 @@
 \documentclass{article}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\fF}{\mathcal{F}}
-\newcommand{\fG}{\mathcal{G}}
-\newcommand{\fE}{\mathcal{E}}
-\newcommand{\fO}{\mathcal{O}}
-\newcommand{\fL}{\mathcal{L}}
-\newcommand{\fI}{\mathcal{I}}
-\newcommand{\fK}{\mathcal{K}}
-\newcommand{\PP}{\mathbb{P}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-\DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\rk}{rank}
-\DeclareMathOperator{\pic}{Pic}
-\DeclareMathOperator{\cacl}{CaCl}
-\DeclareMathOperator{\cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\len}{length}
-\DeclareMathOperator{\height}{height}
-\DeclareMathOperator{\supp}{Supp}
-\DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\spec}{Spec}
-\newcommand\srestr[2]{{
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\small|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
-}}
-\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
-}}
-
-\usepackage{xcolor}
-
-\pagecolor[RGB]{8,27,31}
-
-\color[RGB]{255,255,255}
-
+\input{../../etc/preamble.tex}
 \title{Chapter 2, Section 6}
 
 \begin{document}
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $X$ be a scheme satisfying ($*$). Then $X \times \PP^n$ also satisfies ($*$), and $\cl (X \times \PP^n) \cong (\cl X) \times \Z$.
+\item[\textbf{1.}] Let $X$ be a scheme satisfying ($*$). Then $X \times \PP^n$ also satisfies ($*$), and $\cl (X \times \PP^n) \cong (\cl X) \times \Z$.
 
 \begin{proof}
     Since $\PP^n$ is a union of $n+1$ copies of $\A^n$, it is not hard to see from (6.6) that $X \times \PP^n$ is noetherian and integral. It's left to show it is separated. Indeed, $X \times \PP^n \to X$ is a projective morphism of noetherian schemes, hence it is proper by (4.9). Composition of separated morphisms is separated. Hence, $X \times \PP^n$ satisfies ($*$).
@@ -76,7 +18,7 @@
     This exact sequence splits via $Y \in \cl{X} \mapsto Y \times \PP^n \in \cl(X \times \PP^n)$. Injectivity of this map follows from $\PP^n$ being birational to $\A^n$ and (6.6). Hence, $\cl(X \times \PP^n) \cong \cl(X) \times \Z$.
 \end{proof}
 
-\item \textit{Varieties in Projective Space.} Let $k$ be an algebraically closed field, and let $X$ be a closed subvariety of $\PP_k^n$ which is nonsingular in codimension one (hence satisfies ($*$)). For any divisor $D = \sum n_i Y_i$ on $X$, we define the \textit{degree} of $D$ to be $\sum n_i \deg Y_i$, where $\deg Y_i$ is the degree of $Y_i$, considered as a projective variety itself.
+\item[\textbf{2.}] \textit{Varieties in Projective Space.} Let $k$ be an algebraically closed field, and let $X$ be a closed subvariety of $\PP_k^n$ which is nonsingular in codimension one (hence satisfies ($*$)). For any divisor $D = \sum n_i Y_i$ on $X$, we define the \textit{degree} of $D$ to be $\sum n_i \deg Y_i$, where $\deg Y_i$ is the degree of $Y_i$, considered as a projective variety itself.
 \begin{itemize}
     \item[(a)] Let $V$ be an irreducible hypersurface in $\PP^n$ which does not contain $X$, and let $Y_i$ be the irreducible components of $V \cap X$. They all have codimension $1$ by (I, Ex. 1.8). For each $i$, let $f_i$ be a local equation for $V$ on some open set $U_i$ of $\PP^n$ for which $Y_i \cap U_i \neq \emptyset$, and let $n_i = v_{Y_i}(\bar{f}_i)$, where $\bar{f}_i$ is the restriction of $f_i$ to $U_i \cap X$. Then we define the \textit{divisor} $V.X$ to be $\sum n_i Y_i$. Extend by linearity and show that this gives a well-defined homomorphism from the subgroup of $\Div \PP^n$ consisting of divisors, none of whose components contain $X$, to $\Div X$.
     \item[(b)] If $D$ is a principal divisor on $\PP^n$, for which $D.X$ is defined as in (a), show that $D.X$ is principal on $X$. Thus, we get a homomorphism $\cl\PP^n \to \cl X$.
@@ -116,63 +58,32 @@ Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurfac
 \end{itemize}
 \end{proof}
 
-\item \textit{Cones.} In this exercise we compare the class group of a projective variety $V$ to the class group of its cone. So let $V$ be a projective variety in $\PP^n$ which is of dimension $\geq 1$ and nonsingular in codimension $1$. Let $X = C(V)$ be the affine cone over $V$ in $\mathbb{A}^{n + 1}$, and let $\bar{X}$ be its projective closure in $\PP^{n + 1}$. Let $P \in X$ be the vertex of the cone.
-\begin{itemize}
-    \item[(a)] Let $\pi : \bar{X} - P \to V$ be the projection map. Show that $V$ can be covered by open subsets $U_i$ such that $\pi^{-1}(U_i) \cong U_i \times \mathbb{A}^1$ for each $i$, and then show as in (6.6) that $\pi^* : \cl V \to \cl(\bar{X} - P)$ is an isomorphism. Since $\cl~\bar{X} \simeq \cl(\bar{X} - P)$, we have also $\cl V \simeq \cl~\bar{X}$.
-    \item[(b)] We have $V \subseteq \bar{X}$ as the hyperplane section at infinity. Show that the class of the divisor $V$ in $\cl \bar{X}$ is equal to $\pi^*$ (class of $V.H$) where $H$ is any hyperplane of $\PP^n$ not containing $V$. Thus conclude using (6.5) that there is an exact sequence
-    \begin{equation*}
-        0 \to \Z \to \cl V \to \cl X \to 0,
-    \end{equation*}
-    where the first arrow sends $1 \mapsto V.H$, and the second is $\pi^*$ followed by the restriction to $X - P$ and inclusion in $X$.
-    \item[(c)] Let $S(V)$ be the homogenous coordinate ring of $V$ (which is also the affine coordinate ring of $X$). Show that $S(V)$ is a unique factorization domain if and only if
-    \begin{itemize}
-        \item[(1)] $V$ is projectively normal, and
-        \item[(2)] $\cl V \simeq \Z$ and is generated by the class of $V.H$.
-    \end{itemize}
-\end{itemize}
-
-\item Let $k$ be a field of characteristic $\neq 2$. Let $f \in k[x_1, \dots, x_n]$ be a \textit{square-free} nonconstant polynomial, i.e., in the unique factorization of $f$ into irreducible polynomials, there are no repeated factors. Let $A = k[x_1, \dots, x_n, z] / (z^2 - f)$. Show that $A$ is an integrally closed ring.
+\item [\textbf{4.}] Let $k$ be a field of characteristic $\neq 2$. Let $f \in k[x_1, \dots, x_n]$ be a \textit{square-free} nonconstant polynomial, i.e., in the unique factorization of $f$ into irreducible polynomials, there are no repeated factors. Let $A = k[x_1, \dots, x_n, z] / (z^2 - f)$. Show that $A$ is an integrally closed ring.
 
 \begin{proof}
-    The quotient field $K$ of $A$ is just $k(x_1, \dots, x_n)[\sqrt{f}]$. It is a Galois extension of $k[x_1, \dots, x_n]$ with Galois group $\Z / 2 \Z$ generated by $\sqrt{f} \mapsto -\sqrt{f}$. It $\alpha = g + h \sqrt{f} \in K$, where $g, h \in k(x_1, \dots, x_n)$, then the minimal polynomial of $\alpha$ is $p_\alpha(X) = X^2 - 2g X + (g^2 - h^2f)$. Suppose $\alpha$ is integral over $k[x_1, \dots, x_n]$. Since $k[x_1, \dots, x_n]$ is integrally closed, the coefficients of $p_\alpha$ lie in $k[x_1, \dots, x_n]$ (A.M. 5.15). It follows $g, h \in k[x_1, \dots, x_n]$. Hence, the integral closure of $k[x_1, \dots, x_n]$ in $K$ lies in $A$. The converse is immediate by the formula for the minimal polynomial of any $\alpha \in K$. Hence, $A$ is an integrally closed ring.
+    The quotient field $K$ of $A$ is just $k(x_1, \dots, x_n)[\sqrt{f}]$.
+    It is a Galois extension of $k[x_1, \dots, x_n]$ with Galois group $\Z / 2 \Z$ generated by $\sqrt{f} \mapsto -\sqrt{f}$.
+    If $\alpha = g + h \sqrt{f} \in K$, where $g, h \in k(x_1, \dots, x_n)$, then the minimal polynomial of $\alpha$ is $X^2 - 2g X + (g^2 - h^2f)$. Suppose $\alpha$ is integral over $k[x_1, \dots, x_n]$. Since $k[x_1, \dots, x_n]$ is integrally closed, the coefficients of $p_\alpha$ lie in $k[x_1, \dots, x_n]$ (A.M. 5.15). It follows $g, h \in k[x_1, \dots, x_n]$. Hence, the integral closure of $k[x_1, \dots, x_n]$ in $K$ lies in $A$. The converse is immediate by the formula for the minimal polynomial of any $\alpha \in K$. Hence, $A$ is an integrally closed ring.
 \end{proof}
 
-\item \textit{Quadric Hypersurfaces.} Let $\text{char}~k \neq 2$, and let $X$ be the affine quadric hypersurface defined by $x_0^2 + x_1^2 + \cdots + x_r^2 = 0$.
-\begin{itemize}
-    \item[(a)] Show that $X$ is normal if $r \geq 2$.
-    \item[(b)] Show by a suitable linear change of coordinates that the equation of $X$ could be written as $x_0 x_1 = x_2^2 + \cdots + x_r^2$. Now imitate the method of (6.5.2) to show that:
-    \begin{itemize}
-        \item[(1)] If $r = 2$, then $\cl X \simeq \Z / 2 \Z$;
-        \item[(2)] If $r = 3$, then $\cl X \simeq \Z$;
-        \item[(3)] If $r \geq 4$, then $\cl X = 0$.
-    \end{itemize}
-    \item[(c)] Now let $Q$ be the projective quadric hypersurface in $\PP^n$ defined by the same equation. Show that
-    \begin{itemize}
-        \item[(1)] If $r = 2$, $\cl Q \simeq \Z$, and the class of a hyperplane section $Q.H$ is twice the generator;
-        \item[(2)] If $r = 3$, $\cl Q \simeq \Z \oplus \Z$;
-        \item[(3)] If $r \geq 4$, $\cl Q \simeq \Z$, generated by $Q.H$.
-    \end{itemize}
-    \item[(d)] Prove Klein's theorem, which says that if $r \geq 4$, and if $Y$ is an irreducible subvariety of codimension $1$ on $Q$, then there is an irreducible hypersurface $V \subseteq \PP^n$ such that $V \cap Q = Y$, with multiplicity one. In other words, $Y$ is a complete intersection.
-\end{itemize}
-
-\item Let $X$ be the nonsingular plane cubic curve $y^2 z = x^3 - xz^2$ of (6.10.2).
-\begin{itemize}
-    \item[(a)] Show that three points $P, Q, R$ of $X$ are collinear if and only if $P + Q + R = 0$ in the group law on $X$. (Note that the point $P_0 = (0, 1, 0)$ is the zero element in the group structure on $X$.)
-    \item[(b)] A point $P \in X$ has order $2$ in the group law on $X$ if and only if the tangent line at $P$ passes through $P_0$.
-    \item[(c)] A point $P \in X$ has order $3$ in the group law on $X$ if and only if $P$ is an inflection point. (An \textit{inflection point} of a plane curve is a nonsingular point $P$ of the curve, whose tangent line (\S 1, Ex. 7.3) has intersection multiplicity $\geq 3$ with the curve at $P$.)
-    \item[(d)] Let $k = \C$. Show that the points of $X$ with coordinates in $\Q$ form a subgroup of the group $X$. Can you determine the structure of this subgroup explicitly?
-\end{itemize}
-
-\item Let $X$ be the nodal cubic curve $y^2 z = x^3 + x^2 z$ in $\PP^2$. Imitate (6.11.4) and show that the group of Cartier divisors of degree $0$, $\cacl^\circ X$, is naturally isomorphic to the multiplicative group $\mathbb{G}_m$.
+\item[\textbf{7.}] Let $X$ be the nodal cubic curve $y^2 z = x^3 + x^2 z$ in $\PP^2$. Imitate (6.11.4) and show that the group of Cartier divisors of degree $0$, $\cacl^\circ X$, is naturally isomorphic to the multiplicative group $\mathbb{G}_m$.
 
 \begin{proof}
-   Take $Z = (0:0:1)$ and $P_0 = (0:1:0)$. There is a bijection with the closed points of $X - Z$, the set of non-singular points of $X$, and $\cacl^\circ X$. It remains to show $X - Z \cong \mathbb{G}_m$, where $\mathbb{G}_m = \A^1 - \{ 0 \}$ is the multiplicative group defined to be the spectrum of the ring $k[t, t^{-1}]$. Looking at the affine subset $z \neq 1$, we see that any line through the singular point $Z$, which has affine coordinates $(0, 0)$, intersects the curve one more time. Plugging in $y = \lambda x$ into the defining equation of $X$ for some $\lambda \in k^*$, we have $x = \lambda^2  - 1$. Thus, we have a map $k^* - \{ \pm 1 \} \to X - Z$ defined by $\lambda \mapsto (\lambda^2 - 1, (\lambda^2 - 1)^3 + (\lambda^2 - 1)^2)$. Extend this map to all of $k^*$ via $1 \mapsto P_0$ and $-1 \mapsto (-1, 0)$, and we are done.
+   Take $Z = (0:0:1)$ and $P_0 = (0:1:0)$.
+   There is a bijection with the closed points of $X - Z$, the set of non-singular points of $X$, and $\cacl^\circ X$.
+   It remains to show $X - Z \cong \mathbb{G}_m$, where $\mathbb{G}_m = \A^1 - \{ 0 \}$ is the multiplicative group defined to be the spectrum of the ring $k[t, t^{-1}]$.
+   Looking at the affine subset $z \neq 1$, we see that any line through the singular point $Z$, which has affine coordinates $(0, 0)$, intersects the curve one more time. 
+   Plugging in $y = \lambda x$ into the defining equation of $X$ for some $\lambda \in k^*$, we have $x = \lambda^2  - 1$.
+   Thus, we have a map $k^* - \{ \pm 1 \} \to X - Z$ defined by $\lambda \mapsto (\lambda^2 - 1, (\lambda^2 - 1)^3 + (\lambda^2 - 1)^2)$.
+   Extend this map to all of $k^*$ via $1 \mapsto P_0$ and $-1 \mapsto (-1, 0)$, and we are done.
 \end{proof}
 
-\item
+\item[\textbf{8.}]
 \begin{itemize}
     \item[(a)] Let $f : X \to Y$ be a morphism of schemes. Show that $\fL \mapsto f^* \fL$ induces a homomorphism of Picard groups, $f^* : \pic Y \to \pic X$.
+
     \item[(b)] If $f$ is a finite morphism of nonsingular curves, show that this homomorphism corresponds to the homomorphism $f^* : \cl Y \to \cl X$ defined in the text, via the isomorphisms of (6.16).
+
     \item[(c)] If $X$ is a locally factorial integral closed subscheme of $\PP_k^n$, and if $f : X \to \PP^n$ is the inclusion map, then $f^*$ on $\pic$ agrees with the homomorphism on divisor class groups defined in (Ex. 6.2) via the isomorphisms of (6.16).
 \end{itemize}
 
@@ -180,30 +91,16 @@ Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurfac
 \begin{itemize} [leftmargin=0cm]
 \item[(a)] If $V$ is an open set in $Y$ such that $\restr{\fL}{V} \cong \fO_V$, then $\restr{f^*\fL}{f^{-1}V} \cong \fO_{f^{-1}V}$.
 
-\item[(b)] Let $D$ be a Weil divisor on $Y$. We want to show $f^* (\fO_Y(D)) \cong \fO_X(f^*D)$. By the isomorphism $\cacl{X} \cong \cl{X}$, there exists a representation $\{ (U_i, s_i) \}$ of $D$ as a Cartier divisor. A finite morphism of nonsingular curves induces an inclusion of function fields $K(Y) \to K(X)$. Since the $s_i$'s are elements of $K(Y)$, by (a), $f^*(\fO_X(D))$ is the Cartier divisor defined by $\{ (f^{-1}U_i, f^{-1}s_i)\}$. It is clear that the Weil divisor associated to $\{ (f^{-1}U_i, f^{-1}s_i)\}$ is $f^* D$. 
+\item[(b)] Let $D$ be a Weil divisor on $Y$. We want to show $f^* (\fO_Y(D)) \cong \fO_X(f^*D)$. By the isomorphism $\cacl{X} \cong \cl{X}$, there exists a representation $\{ (U_i, s_i) \}$ of $D$ as a Cartier divisor.
+A finite morphism of nonsingular curves induces an inclusion of function fields $K(Y) \to K(X)$.
+Since the $s_i$'s are elements of $K(Y)$, by (a), $f^*(\fO_X(D))$ is the Cartier divisor defined by $\{ (f^{-1}U_i, f^{-1}s_i)\}$.
+It is clear that the Weil divisor associated to $\{ (f^{-1}U_i, f^{-1}s_i)\}$ is $f^* D$. 
 
 \item[(c)] The map defined in (Ex. 6.2) is precisely $f^* : \cl{Y} \to \cl{X}$ as defined in the text.
-
 \end{itemize} 
 \end{proof}
 
-\item \textit{Singular Curves.} Here we give another method of calculating the Picard group of a singular curve. Let $X$ be a projective curve over $k$, let $\widetilde{X}$ be its normalization, and let $\pi : \widetilde{X} \to X$ be the projection map. For each point $P \in X$, let $\fO_P$ be its local ring, and let $\widetilde{\fO}_P$ be the integral closure of $\fO_P$. We use a * to denote the group of units in a ring.
-\begin{itemize}
-    \item[(a)] Show that there is an exact sequence
-    \begin{equation*}
-        0 \to \bigoplus_{P \in X} \widetilde{\fO}_P^* / \fO_P^* \to \pic X \xrightarrow{\pi^*} \pic \widetilde{X} \to 0.
-    \end{equation*}
-    \item[(b)] Use (a) to give another proof of the fact that if $X$ is a plane cuspidal cubic curve, then there is an exact sequence
-    \begin{equation*}
-        0 \to \mathbb{G}_a \to \pic X \to \Z \to 0,
-    \end{equation*}
-    and if $X$ is a plane nodal cubic curve, there is an exact sequence
-    \begin{equation*}
-        0 \to \mathbb{G}_m \to \pic X \to \Z \to 0.
-    \end{equation*}
-\end{itemize}
-
-\item \textit{The Grothendiek Group $K(X)$.} Let $X$ be a noetherian scheme. We define $K(X)$ to be the quotient of the free abelian group generated by all the coherent sheaves on $X$, by the subgroup generated by all expressions $\fF - \fF' - \fF''$, whenever there is an exact sequence $0 \to \fF' \to \fF \to \fF'' \to 0$ of coherent sheaves on $X$. If $\fF$ is a coherent sheaf, we denote by $\gamma(\fF)$ its image in $K(X)$.
+\item[\textbf{10.}] \textit{The Grothendiek Group $K(X)$.} Let $X$ be a noetherian scheme. We define $K(X)$ to be the quotient of the free abelian group generated by all the coherent sheaves on $X$, by the subgroup generated by all expressions $\fF - \fF' - \fF''$, whenever there is an exact sequence $0 \to \fF' \to \fF \to \fF'' \to 0$ of coherent sheaves on $X$. If $\fF$ is a coherent sheaf, we denote by $\gamma(\fF)$ its image in $K(X)$.
 \begin{itemize}
     \item[(a)] If $X = \A_k^1$, then $K(X) \cong \Z$.
 
@@ -226,12 +123,10 @@ which implies $\gamma(A / \goth{p}) = 0$. Hence, we can identify elements of $K(
 
 \item[(b)] Take $\fF = \fO_X^{\oplus n}$ for each $n$, then $\rk \fF = n$.
 
-\item[(c)]
-
 \end{itemize}
 \end{proof}
 
-\item \textit{The Grothendiek Group of a Nonsingular Curve.} Let $X$ be a nonsingular curve over an algebraically closed field $k$. We will show that $K(X) \cong \pic X \oplus \Z$, in several steps.
+\item[\textbf{11.}] \textit{The Grothendiek Group of a Nonsingular Curve.} Let $X$ be a nonsingular curve over an algebraically closed field $k$. We will show that $K(X) \cong \pic X \oplus \Z$, in several steps.
 \begin{itemize}
     \item[(a)] For any divisor $D = \sum n_i P_i$ on $X$, let $\psi(D) = \sum n_i \gamma(k(P_i)) \in K(X)$, where $k(P_i)$ is the skyscraper sheaf $k$ at $P_i$ and $0$ elsewhere. If $D$ is an effective divisor, let $\fO_D$ be the structure sheaf of the associated subscheme of codimension $1$, and show that $\psi(D) = \gamma(\fO_D)$. Then use (6.18) to show that for any $D$, $\psi(D)$ depends only on the linear equivalence class of $D$, so $\psi$ defines a homomorphism $\psi : \cl X \to K(X)$.
 
@@ -248,12 +143,13 @@ which implies $\gamma(A / \goth{p}) = 0$. Hence, we can identify elements of $K(
 
 We need to show for any principal divisor $D = (f)$, where $f \in K^*$, the function field of $X$, $\psi(D) = 0$. Any principal divisor can be written as a difference of two effective principal divisors, so we assume $D$ is effective. Let $Y$ be the associated closed subscheme of $D$. Then the ideal sheaf $\fI_Y$ is generated by $f$, so we have an isomorphism of $\fO_X$-modules $\fO_X \to \fI_Y$ defined by multiplication by $f$. Hence, $\psi(D) = \gamma(\fO_D) = \gamma(\fO_X / \fI_Y) = \gamma(\fO_X) - \gamma(\fI_Y) = 0$ by (6.18).
 
-\item[(b)] Let $U_i = \spec{A_i}$ be an open affine cover of $X$ such that $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some finitely generated $A_i$-module. Since $X$ is noetherian, a finite number will do, and let $N > 0$ such that the minimal number of generators for $M_i$ is at most $N$ for all $i$.
-
+\item[(b)] Let $U_i = \spec{A_i}$ be an open affine cover of $X$ such that $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some finitely generated $A_i$-module.
+Since $X$ is noetherian, a finite number will do, and let $N > 0$ such that the minimal number of generators for $M_i$ is at most $N$ for all $i$.
 \end{itemize} 
 \end{proof}
 
-\item Let $X$ be a complete nonsingular curve. Show that there is a unique way to define the \textit{degree} of any coherent sheaf on $X$, $\deg \fF \in \Z$, such that:
+\item[\textbf{12.}] Let $X$ be a complete nonsingular curve.
+Show that there is a unique way to define the \textit{degree} of any coherent sheaf on $X$, $\deg \fF \in \Z$, such that:
 \begin{itemize}
     \item[(1)] If $D$ is a divisor, $\deg \fL(D) = \deg D$.
     \item[(2)] If $\fF$ is a \textit{torsion sheaf} (meaning a sheaf whose stalk at the generic point is zero), then $$\deg \fF = \sum_{P \in X} \len(\fF_P).$$
@@ -265,4 +161,62 @@ We need to show for any principal divisor $D = (f)$, where $f \in K^*$, the func
 \end{proof}
 
 \end{enumerate}
+
 \end{document}
+
+% \item \textit{Cones.} In this exercise we compare the class group of a projective variety $V$ to the class group of its cone. So let $V$ be a projective variety in $\PP^n$ which is of dimension $\geq 1$ and nonsingular in codimension $1$. Let $X = C(V)$ be the affine cone over $V$ in $\mathbb{A}^{n + 1}$, and let $\bar{X}$ be its projective closure in $\PP^{n + 1}$. Let $P \in X$ be the vertex of the cone.
+% \begin{itemize}
+%     \item[(a)] Let $\pi : \bar{X} - P \to V$ be the projection map. Show that $V$ can be covered by open subsets $U_i$ such that $\pi^{-1}(U_i) \cong U_i \times \mathbb{A}^1$ for each $i$, and then show as in (6.6) that $\pi^* : \cl V \to \cl(\bar{X} - P)$ is an isomorphism. Since $\cl~\bar{X} \simeq \cl(\bar{X} - P)$, we have also $\cl V \simeq \cl~\bar{X}$.
+%     \item[(b)] We have $V \subseteq \bar{X}$ as the hyperplane section at infinity. Show that the class of the divisor $V$ in $\cl \bar{X}$ is equal to $\pi^*$ (class of $V.H$) where $H$ is any hyperplane of $\PP^n$ not containing $V$. Thus conclude using (6.5) that there is an exact sequence
+%     \begin{equation*}
+%         0 \to \Z \to \cl V \to \cl X \to 0,
+%     \end{equation*}
+%     where the first arrow sends $1 \mapsto V.H$, and the second is $\pi^*$ followed by the restriction to $X - P$ and inclusion in $X$.
+%     \item[(c)] Let $S(V)$ be the homogenous coordinate ring of $V$ (which is also the affine coordinate ring of $X$). Show that $S(V)$ is a unique factorization domain if and only if
+%     \begin{itemize}
+%         \item[(1)] $V$ is projectively normal, and
+%         \item[(2)] $\cl V \simeq \Z$ and is generated by the class of $V.H$.
+%     \end{itemize}
+% \end{itemize}
+
+% \item \textit{Quadric Hypersurfaces.} Let $\text{char}~k \neq 2$, and let $X$ be the affine quadric hypersurface defined by $x_0^2 + x_1^2 + \cdots + x_r^2 = 0$.
+% \begin{itemize}
+%     \item[(a)] Show that $X$ is normal if $r \geq 2$.
+%     \item[(b)] Show by a suitable linear change of coordinates that the equation of $X$ could be written as $x_0 x_1 = x_2^2 + \cdots + x_r^2$. Now imitate the method of (6.5.2) to show that:
+%     \begin{itemize}
+%         \item[(1)] If $r = 2$, then $\cl X \simeq \Z / 2 \Z$;
+%         \item[(2)] If $r = 3$, then $\cl X \simeq \Z$;
+%         \item[(3)] If $r \geq 4$, then $\cl X = 0$.
+%     \end{itemize}
+%     \item[(c)] Now let $Q$ be the projective quadric hypersurface in $\PP^n$ defined by the same equation. Show that
+%     \begin{itemize}
+%         \item[(1)] If $r = 2$, $\cl Q \simeq \Z$, and the class of a hyperplane section $Q.H$ is twice the generator;
+%         \item[(2)] If $r = 3$, $\cl Q \simeq \Z \oplus \Z$;
+%         \item[(3)] If $r \geq 4$, $\cl Q \simeq \Z$, generated by $Q.H$.
+%     \end{itemize}
+%     \item[(d)] Prove Klein's theorem, which says that if $r \geq 4$, and if $Y$ is an irreducible subvariety of codimension $1$ on $Q$, then there is an irreducible hypersurface $V \subseteq \PP^n$ such that $V \cap Q = Y$, with multiplicity one. In other words, $Y$ is a complete intersection.
+% \end{itemize}
+
+% \item Let $X$ be the nonsingular plane cubic curve $y^2 z = x^3 - xz^2$ of (6.10.2).
+% \begin{itemize}
+%     \item[(a)] Show that three points $P, Q, R$ of $X$ are collinear if and only if $P + Q + R = 0$ in the group law on $X$. (Note that the point $P_0 = (0, 1, 0)$ is the zero element in the group structure on $X$.)
+%     \item[(b)] A point $P \in X$ has order $2$ in the group law on $X$ if and only if the tangent line at $P$ passes through $P_0$.
+%     \item[(c)] A point $P \in X$ has order $3$ in the group law on $X$ if and only if $P$ is an inflection point. (An \textit{inflection point} of a plane curve is a nonsingular point $P$ of the curve, whose tangent line (\S 1, Ex. 7.3) has intersection multiplicity $\geq 3$ with the curve at $P$.)
+%     \item[(d)] Let $k = \C$. Show that the points of $X$ with coordinates in $\Q$ form a subgroup of the group $X$. Can you determine the structure of this subgroup explicitly?
+% \end{itemize}
+
+% \item \textit{Singular Curves.} Here we give another method of calculating the Picard group of a singular curve. Let $X$ be a projective curve over $k$, let $\widetilde{X}$ be its normalization, and let $\pi : \widetilde{X} \to X$ be the projection map. For each point $P \in X$, let $\fO_P$ be its local ring, and let $\widetilde{\fO}_P$ be the integral closure of $\fO_P$. We use a * to denote the group of units in a ring.
+% \begin{itemize}
+%     \item[(a)] Show that there is an exact sequence
+%     \begin{equation*}
+%         0 \to \bigoplus_{P \in X} \widetilde{\fO}_P^* / \fO_P^* \to \pic X \xrightarrow{\pi^*} \pic \widetilde{X} \to 0.
+%     \end{equation*}
+%     \item[(b)] Use (a) to give another proof of the fact that if $X$ is a plane cuspidal cubic curve, then there is an exact sequence
+%     \begin{equation*}
+%         0 \to \mathbb{G}_a \to \pic X \to \Z \to 0,
+%     \end{equation*}
+%     and if $X$ is a plane nodal cubic curve, there is an exact sequence
+%     \begin{equation*}
+%         0 \to \mathbb{G}_m \to \pic X \to \Z \to 0.
+%     \end{equation*}
+% \end{itemize}

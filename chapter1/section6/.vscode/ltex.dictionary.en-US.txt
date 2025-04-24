@@ -2,3 +2,6 @@ nonsingular
 nonconstant
 surjective
 isomorphisms
+Hauptidealsatz
+Krull
+subring

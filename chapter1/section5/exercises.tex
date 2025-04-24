@@ -1,64 +1,12 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[tracking]{microtype}
-\usepackage[sc,osf]{mathpazo}
-\linespread{1.025}
-\usepackage[euler-digits,small]{eulervm}
-\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{bbm}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage{makecell}
-\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
-  #1\;\delimsize\|\;#2%
-}
-\newcommand{\infdiv}{D\infdivx}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\newcommand{\prob}[1]{\noindent {\bf #1}.}
-\newcommand{\abs}[1]{\left| #1  \right|}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\spec}[1]{\text{Spec}~#1}
-\newcommand{\Ker}[1]{\text{Ker}~#1}
-\newcommand{\Img}[1]{\text{Im}~#1}
-\newcommand{\Coker}[1]{\text{Coker}(#1)}
-\newcommand{\Supp}[1]{\text{Supp}(#1)}
-\newcommand{\height}[1]{\text{height}~#1}
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\OO}{\mathcal{O}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\PP}{\mathbb{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\newtheorem{prop}{Proposition}
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 1, Section 5}
 
 \begin{document}
-\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0cm]
 
-\item Locate the singular points and sketch the following curves in $\A^2$ (assume $\text{char}~k \neq 2$):
+\item[\textbf{1.}] Locate the singular points and sketch the following curves in $\A^2$ (assume $\text{char}~k \neq 2$):
 \begin{itemize}
     \item[(a)] $x^2 = x^4 + y^4$;
     \item[(b)] $xy = x^6 + y^6$;
@@ -73,14 +21,14 @@
              $f$ & $\partial f / \partial x$ & $\partial f / \partial y$ & $\langle \partial f / \partial x, \partial f / \partial y\rangle = \langle 0, 0\rangle$ & $\text{Sing}~f$ \\ \hline
             $x^4 - x^2 + y^4$ & $4x^3 - 2x$ & $4y^3$ & $(0, 0)$, $(\pm 1/\sqrt{2}, 0)$ & $(0, 0)$ \\ \hline
             $x^6 + y^6 - xy$ & $6x^5 - y$ & $6y^5 - x$ & $(0, 0)$, $(6^{-1/4}, 6^{-1/4})$ & $(0, 0)$ \\ \hline
-            $x^4 + y^4 - x^3 + y^2$ & $4x^3 - 3x^2$ & $4y^3 - 2y$ & \makecell{$(0, 0)$, $(3/4, 0)$, \\ $(0, \pm 1 / \sqrt{2})$, $(3/4, \pm 1 / \sqrt{2})$} & $(0, 0)$ \\ \hline
+            $x^4 + y^4 - x^3 + y^2$ & $4x^3 - 3x^2$ & $4y^3 - 2y$ & $(0, 0), (3/4, 0), (0, \pm 1 / \sqrt{2}), (3/4, \pm 1 / \sqrt{2})$ & $(0, 0)$ \\ \hline
             $x^4 + y^4 - x^2 y - xy^2$ & $4x^3 - 2xy - y^2$ & $4y^3 - 2xy - x^2$ & $(0, 0)$, $(3/4, 3/4)$ & $(0, 0)$
         \end{tabular}
     \end{center}
     (a) is the tacnode, (b) is the node, (c) is the cusp, and (d) is the triple point.
 \end{proof}
 
-\item Locate the singular points and describe the singularities of the following surfaces in $\A^3$ (assume $\text{char}~k \neq 2$).
+\item[\textbf{2.}] Locate the singular points and describe the singularities of the following surfaces in $\A^3$ (assume $\text{char}~k \neq 2$).
 \begin{itemize}
     \item[(a)] $xy^2 = z^2$;
     \item[(b)] $x^2 + y^2 = z^2$;
@@ -100,52 +48,61 @@
     (a) is the pinch point, (b) is the conical double point, and (c) is the double line.
 \end{proof}
 
-\item \textit{Multiplicities.} Let $Y \subseteq \A^2$ be a curve defined by the equation $f(x, y) = 0$. Let $P = (a, b)$ be a point of $\A^2$. Make a linear change of coordinates so that $P$ becomes the point $(0, 0)$. Then write $f$ as a sum $f = f_0 + f_1 + \cdots + f_d$, where $f_i$ is a homogenous polynomial of degree $i$ in $x$ and $y$. Then we define the \textit{multiplicity} of $P$ on $Y$, denoted $\mu_P(Y)$, to be the least $r$ such that $f_r \neq 0$. (Note that $P \in Y$ $\iff$ $\mu_P(Y) > 0$.) The linear factors of $f_r$ are called the \textit{tangent directions at} $P$.
+\item[\textbf{3.}] \textit{Multiplicities.} Let $Y \subseteq \A^2$ be a curve defined by the equation $f(x, y) = 0$. Let $P = (a, b)$ be a point of $\A^2$. Make a linear change of coordinates so that $P$ becomes the point $(0, 0)$. Then write $f$ as a sum $f = f_0 + f_1 + \cdots + f_d$, where $f_i$ is a homogenous polynomial of degree $i$ in $x$ and $y$. Then we define the \textit{multiplicity} of $P$ on $Y$, denoted $\mu_P(Y)$, to be the least $r$ such that $f_r \neq 0$. (Note that $P \in Y$ $\iff$ $\mu_P(Y) > 0$.) The linear factors of $f_r$ are called the \textit{tangent directions at} $P$.
 \begin{itemize}
     \item[(a)] Show that $\mu_P(Y) = 1$ $\iff$ $P$ is a nonsingular point of $Y$.
     \item[(b)] Find the multiplicity of each of the singular points in Exercise 1 above.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] Let $f'$ be the polynomial $f(x, y)$ after change of coordinates so that $P$ becomes the origin and let $O$ be the origin. Then, $P$ is a nonsingular point of $Y$ $\iff$ $(\partial f / \partial x)(P), ~ (\partial f / \partial y)(P) \neq 0$ $\iff$ $(\partial f' / \partial x)(O), ~ (\partial f' / \partial y)(O) \neq 0$ $\iff$ $\partial f' / \partial x, ~ \partial f' / \partial y = \text{higher degree terms} + \text{constant}$ $\iff$ $f'$ has linear terms $\iff$ $\mu_P(Y) = 1$.
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Let $f'$ be the polynomial $f(x, y)$ after change of coordinates so that $P$ becomes the origin and let $O = (0, 0)$ be the origin. Then, $P$ is a nonsingular point of $Y$ $\iff$ $(\partial f / \partial x)(P), ~ (\partial f / \partial y)(P) \neq 0$ $\iff$ $(\partial f' / \partial x)(O), ~ (\partial f' / \partial y)(O) \neq 0$ $\iff$ $\partial f' / \partial x, ~ \partial f' / \partial y = \text{higher degree terms} + \text{constant}$ $\iff$ $f'$ has linear terms $\iff$ $\mu_P(Y) = 1$.
 
-        \item[(b)] (a), (b), and (c) has multiplicity $2$, and (d) has multiplicity $3$ at $O = (0, 0)$.
+        \item[(b)] (a), (b), and (c) has multiplicity $2$, and (d) has multiplicity $3$ at $O$.
     \end{itemize}
 \end{proof}
 
-\item \textit{Blowing Up Curve Singularities.}
+\item[\textbf{6.}] \textit{Blowing Up Curve Singularities.}
 \begin{itemize}
-    \item[(a)] Let $Y$ be the cusp or node of Exercise 1. Show that the curve $\tilde{Y}$ obtained by blowing up $Y$ at $O = (0, 0)$ is nonsingular.
-    \item[(b)] We define a \textit{node} (also called \textit{ordinary double point}) to be a double point (i.e., a point of multiplicity $2$) of a plane curve with distinct tangent directions. If $P$ is a node on a plane curve $Y$, show that $\varphi^{-1}(P)$ consists of two distinct nonsingular points on the blown-up curve $\tilde{Y}$. We say that "blowing up $P$ resolves the singularity at $P$".
-    \item[(c)] Let $P \in Y$ be the tacnode of Exercise 1. If $\varphi : \tilde{Y} \to Y$ is the blowing-up at $P$, show that $\varphi^{-1}(P)$ is a node. Using (b) we see that the tacnode can be resolved by two successive blowing-ups.
-    \item[(d)] Let $Y$ be the plane curve $y^3 = x^5$, which has a "high order cusp" at $O$. Show that $O$ is a triple point; that blowing up $O$ gives rise to a double point (what kind?) and that one further blowing up resolves the singularity.
+    \item[(a)] Let $Y$ be the cusp or node of Exercise 1.
+    Show that the curve $\widetilde{Y}$ obtained by blowing up $Y$ at $O = (0, 0)$ is nonsingular.
+
+    \item[(b)] We define a \textit{node} (also called \textit{ordinary double point}) to be a double point (i.e., a point of multiplicity $2$) of a plane curve with distinct tangent directions.
+    If $P$ is a node on a plane curve $Y$, show that $\varphi^{-1}(P)$ consists of two distinct nonsingular points on the blown-up curve $\widetilde{Y}$.
+    We say that "blowing up $P$ resolves the singularity at $P$".
+
+    \item[(c)] Let $P \in Y$ be the tacnode of Exercise 1.
+    If $\varphi : \widetilde{Y} \to Y$ is the blowing-up at $P$, show that $\varphi^{-1}(P)$ is a node.
+    Using (b) we see that the tacnode can be resolved by two successive blowing-ups.
+
+    \item[(d)] Let $Y$ be the plane curve $y^3 = x^5$, which has a "high order cusp" at $O$.
+    Show that $O$ is a triple point; that blowing up $O$ gives rise to a double point (what kind?) and that one further blowing up resolves the singularity.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
+    \begin{itemize} [leftmargin=0cm]
         \item[(a)] Let $Y$ be the curve defined by the equation $xy = x^6 + y^6$. It is the node of Exercise 1. We consider the equations $xy = x^6 + y^6$ and $xu = ty$ in $\A^2 \times \PP^1$, where $t$, $u$ are homogenous coordinates for $\PP^1$. Now $\PP^1$ is covered by open sets $t \neq 0$ and $u \neq 0$, which we can consider separately. If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
         \begin{align*}
             xy & = x^6 + y^6 \\
             y & = xu
         \end{align*}
-        in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2 u = x^6 + x^6 u^6$, which factors. Thus, we obtain two irreducible components, one defined by $x = 0$, $y = 0$, $u$ arbitrary, which is the exceptional curve $E$, and the other defined by $u = x^4 + x^4 u^6$. This is $\tilde{Y}$, which meets $E$ at the point $u = 0$. This curve is nonsingular since if we set $f(x, y, u) = x^4(1 + u^6) - u$, then
+        in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2 u = x^6 + x^6 u^6$, which factors. Thus, we obtain two irreducible components, one defined by $x = 0$, $y = 0$, $u$ arbitrary, which is the exceptional curve $E$, and the other defined by $u = x^4 + x^4 u^6$. This is $\widetilde{Y}$, which meets $E$ at the point $u = 0$. This curve is nonsingular since if we set $f(x, y, u) = x^4(1 + u^6) - u$, then
         \begin{equation*}
-            \pd{f}{x}(O) = 0, \quad \pd{f}{y}(O) = 0, \quad \pd{f}{u}(O) = -1,
+            \pdv{f}{x}(O) = 0, \quad \pdv{f}{y}(O) = 0, \quad \pdv{f}{u}(O) = -1,
         \end{equation*}
-        so $\tilde{Y}$ is nonsingular for all points $t \neq 0$. The curve $Y$ is symmetric with respect to $x = y$, so $\tilde{Y}$ is also nonsingular for all points $u \neq 0$, hence $\tilde{Y}$ is nonsingular.
+        so $\widetilde{Y}$ is nonsingular for all points $t \neq 0$. The curve $Y$ is symmetric with respect to $x = y$, so $\widetilde{Y}$ is also nonsingular for all points $u \neq 0$, hence $\widetilde{Y}$ is nonsingular.
 
         \item[(b)] We can assume $P$ is the origin so that $Y$ is defined by $f = f_2 + f_3 + \cdots + f_r$. Thus, we can write $f_2 = (ax + by)(cx + dy)$, where $(a, b) \neq (c, d)$ as points in $\PP^1$. Take $t$, $u$ to be homogenous coordinates for $\PP^1$. If $t \neq 0$, substituting $y = xu$ we have the equation
         \begin{equation*}
             F_u = (a + bu)(c + du) + f_3' + \cdots + f_r' = 0,
         \end{equation*}
-        where $f'_i$ is obtained by substituting $y = xu$ into $f_i$ and dividing by $x^2$, which is possible since $f_i$ is homogenous of degree $i > 2$. This equation defines $\tilde{Y}$, which meets the exceptional curve at $(b, -a)$ and $(d, -c)$. Similarly, if $u \neq 0$, then we obtain the equation
+        where $f'_i$ is obtained by substituting $y = xu$ into $f_i$ and dividing by $x^2$, which is possible since $f_i$ is homogenous of degree $i > 2$. This equation defines $\widetilde{Y}$, which meets the exceptional curve at $(b, -a)$ and $(d, -c)$. Similarly, if $u \neq 0$, then we obtain the equation
         \begin{equation*}
             F_t = (at + b)(ct + d) + \hat{f}_3 + \cdots + \hat{f}_r = 0,
         \end{equation*}
-        thus $(b, -a)$ and $(d, -c)$ are the only points $\tilde{Y}$ meets the exceptional curve, that is $\varphi^{-1}(P) = \{ (a, b), (c, d) \}$. Also, $\tilde{Y}$ is nonsingular at both points since
+        thus $(b, -a)$ and $(d, -c)$ are the only points $\widetilde{Y}$ meets the exceptional curve, that is $\varphi^{-1}(P) = \{ (a, b), (c, d) \}$. Also, $\widetilde{Y}$ is nonsingular at both points since
         \begin{equation*}
-            \pd{F_u}{u}(0, 0, - a / b) = b\bigg( c - \frac{ad}{b} \bigg) \neq 0, \quad \pd{F_t}{u}(0, 0, - c / d) = b\bigg( a - \frac{bc}{d} \bigg) \neq 0.
+            \pdv{F_u}{u}(0, 0, - a / b) = b\bigg( c - \frac{ad}{b} \bigg) \neq 0, \quad \pdv{F_t}{u}(0, 0, - c / d) = b\bigg( a - \frac{bc}{d} \bigg) \neq 0.
         \end{equation*}
 
         \item[(c)] Let $Y$ be the plane curve defined by $x^2 = x^4 + y^4$ and let $t$, $u$, be homogenous coordinates for $\PP^1$. If $t \neq 0$, then we have the equations
@@ -153,23 +110,30 @@
             x^2 & = x^4 + y^4 \\
             y & = xu
         \end{align*}
-        in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2 = x^4 + x^4 u^4$, thus $\tilde{Y}$ is defined by $1 = x^2 + x^2u^4$, which intersects the exceptional curve at $u = 0$. Similarly, if $ u \neq 0$, then $\tilde{Y}$ is defined by $t^2 = t^2 y^2 + y^2$ and intersects the exceptional curve at $t = 0$. These two points correspond to the slopes of the two branches of $Y$ at $P$, which are the two distinct tangent directions on the node $P$.
+        in $\A^3$ with coordinates $x$, $y$, $u$. Substituting, we get $x^2 = x^4 + x^4 u^4$, thus $\widetilde{Y}$ is defined by $1 = x^2 + x^2u^4$, which intersects the exceptional curve at $u = 0$. Similarly, if $ u \neq 0$, then $\widetilde{Y}$ is defined by $t^2 = t^2 y^2 + y^2$ and intersects the exceptional curve at $t = 0$. These two points correspond to the slopes of the two branches of $Y$ at $P$, which are the two distinct tangent directions on the node $P$.
 
-        \item[(d)] If $t \neq 0$, then we have the equation $x^2 = u^3$, which is a cusp. If $u \neq 0$, then we have the equation $1 = t^5 y^2$, which does not meet the exceptional curve.
+        \item[(d)] If $t \neq 0$, then we have the equation $x^2 = u^3$, which is a cusp.
+        If $u \neq 0$, then we have the equation $1 = t^5 y^2$, which does not meet the exceptional curve.
     \end{itemize}
 \end{proof}
 
-\item Let $Y \subseteq \PP^n$ be a projective variety of dimension $r$. Let $f_1, \dots, f_t \in S = k[x_0, \dots, x_n]$ be homogenous polynomials which generate the ideal of $Y$. Let $P \in Y$ be a point, with homogenous coordinates $P = (a_0, \dots, a_n)$. Show that $P$ is nonsingular on $Y$ if and only if the rank of the matrix $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is $n - r$.
+\item[\textbf{8.}] Let $Y \subseteq \PP^n$ be a projective variety of dimension $r$. Let $f_1, \dots, f_t \in S = k[x_0, \dots, x_n]$ be homogenous polynomials which generate the ideal of $Y$. Let $P \in Y$ be a point, with homogenous coordinates $P = (a_0, \dots, a_n)$. Show that $P$ is nonsingular on $Y$ if and only if the rank of the matrix $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is $n - r$.
 
 \begin{proof}
-    We follow the hint. The matrix $\norm{(\partial f_i / \partial x_i)(a_0, \dots, a_n)}$ has rank $n-r$ if and only if there exists a $(n - r) \times (n - r)$ submatrix with nonzero determinant. The determinant of a matrix of homogenous polynomials where entries of the same row have same degree is also a homogenous polynomial, hence the rank of $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is independent of the choice of homogenous coordinates of $P$. Assuming $a_0 \neq 0$, we can pass to an open affine $U_0 \subseteq \PP^n$ containing $P$ and use the affine Jacobian matrix, where $U_0$ is the open affine subset consisting of all points with nonzero $0$th coordinate; that is if we set $Y_0 = Y \cap U_0$, then $g_i(y_1, \dots, y_n) = f_i(1, y_1, \dots, y_n)$ ($1 \leq i \leq t$) generate the ideal of $Y_0$. Thus, $P$ is nonsingular if and only if the rank of the matrix $\norm{(\partial g_i / \partial y_j)(a_1 / a_0, \dots, a_n / a_0)}$ is $n - r$. Then, we have
+    We follow the hint.
+    The matrix $\norm{(\partial f_i / \partial x_i)(a_0, \dots, a_n)}$ has rank $n-r$ if and only if there exists a $(n - r) \times (n - r)$ submatrix with nonzero determinant.
+    The determinant of a matrix of homogenous polynomials where entries of the same row have same degree is also a homogenous polynomial, hence the rank of $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is independent of the choice of homogenous coordinates of $P$.
+    Assuming $a_0 \neq 0$, we can pass to an open affine $U_0 \subseteq \PP^n$ containing $P$ and use the affine Jacobian matrix, where $U_0$ is the open affine subset consisting of all points with nonzero $0$th coordinate.
+    In particular, f we set $Y_0 = Y \cap U_0$, then $g_i(y_1, \dots, y_n) = f_i(1, y_1, \dots, y_n)$ ($1 \leq i \leq t$) generate the ideal of $Y_0$.
+    Thus, $P$ is nonsingular if and only if the rank of the matrix $\norm{(\partial g_i / \partial y_j)(a_1 / a_0, \dots, a_n / a_0)}$ is $n - r$.
+    Then, we have
     \begin{equation*}
-        \pd{g_i}{y_j} = \pd{f_i(1, y_1, \dots, y_n)}{y_j} = \pd{f_i(1, x_1, \dots, x_n)}{x_j},
+        \pdv{g_i}{y_j} = \pdv{f_i(1, y_1, \dots, y_n)}{y_j} = \pdv{f_i(1, x_1, \dots, x_n)}{x_j},
     \end{equation*}
-    thus if $\norm{(\partial g_i / \partial y_j)(a_1 / a_0, \dots, a_n / a_0)}$ has an invertible $(n - r) \times (n - r)$ submatrix if and only if $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ has an invertible $(n - r) \times (n - r)$ submatrix since the rank of a matrix is independent of the homogenous coordinates chosen for $P$.
+    so $|| (\partial g_i / \partial y_j)(a_1 / a_0, \dots, a_n / a_0) ||$ has an invertible $(n - r) \times (n - r)$ submatrix if and only if $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ has an invertible $(n - r) \times (n - r)$ submatrix since the rank of a matrix is independent of the homogenous coordinates chosen for $P$.
 \end{proof}
 
-\item For a point $P$ on a variety $X$, let $\goth{m}$ be the maximal ideal of the local ring $\OO_P$. We define the \textit{Zariski tangent space} $T_P(X)$ of $X$ at $P$ to be the dual $k$-vector space of $\goth{m} / \goth{m}^2$.
+\item[\textbf{10.}] For a point $P$ on a variety $X$, let $\goth{m}$ be the maximal ideal of the local ring $\fO_P$. We define the \textit{Zariski tangent space} $T_P(X)$ of $X$ at $P$ to be the dual $k$-vector space of $\goth{m} / \goth{m}^2$.
 \begin{itemize}
     \item[(a)] For any point $P \in X$, $\dim{T_P(X)} \geq \dim{X}$, with equality if and only if $P$ is nonsingular.
     \item[(b)] For any morphism $\varphi : X \to Y$, there is a natural induced $k$-linear map $T_P(\varphi) : T_P(X) \to T_{\varphi(P)}(Y)$.
@@ -177,45 +141,32 @@
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] Since $\goth{m} / \goth{m}^2$ is a finite dimension $k$-vector space, $\dim_k{T_p(X)} = \dim_k{\goth{m} / \goth{m}^2} \geq \dim{X}$ by (5.2A), and $\dim_k{\goth{m} / \goth{m}^2} = \dim{\OO_{P, X}} = \dim{X}$ by definition of nonsingular points and Exercise 3.12.
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Since $\goth{m} / \goth{m}^2$ is a finite dimension $k$-vector space, $\dim_k{T_p(X)} = \dim_k{\goth{m} / \goth{m}^2} \geq \dim{X}$ by (5.2A), and $\dim_k{\goth{m} / \goth{m}^2} = \dim{\fO_{P, X}} = \dim{X}$ by definition of nonsingular points and Exercise 3.12.
 
-        \item[(b)] A morphism $\varphi : X \to Y$ induces a map $\varphi_{P}^* : \OO_{\varphi(P), Y} \to \OO_{P, X}$ between local rings, where the maximal ideal $\goth{n}$ of $\OO_{\varphi(P), Y}$ is mapped into the maximal ideal $\goth{m}$ of $\OO_{P, X}$. Thus, we can define $T_P(\varphi)F$ as
+        \item[(b)] A morphism $\varphi : X \to Y$ induces a map $\varphi_{P}^* : \fO_{\varphi(P), Y} \to \fO_{P, X}$ between local rings, where the maximal ideal $\goth{n}$ of $\fO_{\varphi(P), Y}$ is mapped into the maximal ideal $\goth{m}$ of $\fO_{P, X}$. Thus, we can define $T_P(\varphi)F$ as
         \begin{equation*}
             (T_P(\varphi)F)f = F(d_\varphi f) = F(f \circ \varphi),
         \end{equation*}
-        where $d_\varphi : \goth{n} / \goth{n}^2 \to \goth{m} / \goth{m}^2$ is the map induced by $\varphi_P^*$. This map is $k$-linear since $F$ is a linear functional and $\varphi_P^*$ is a $k$-algebra homomorphism; in particular, for any other $G \in T_P(X)$ and $\lambda \in k$, we have
-        \begin{gather*}
-            (T_P(\varphi)(\lambda F))f = \lambda (F(f \circ \varphi)) = \lambda(T_P(\varphi)F)f, \\
-            (T_P(\varphi)(F + G))f = (F + G)(f \circ \varphi) = F(f \circ \varphi) + G(f \circ \varphi) = (T_P(\varphi)F)f + (T_P(\varphi)G)f.
-        \end{gather*}
-        \item[(c)] By the formula above, it suffices to show $d_\varphi$ is the zero map at $0$. Let $X$ be the parabola $x = y^2$ and let $Y$ by the $x$-axis. The maximal ideal $\goth{m}$ of the local ring $\OO_{0, X}$ is generated by $y$, thus $\goth{m} / \goth{m}^2$ is a one dimensional $k$-vector space spanned by $y$, and similarly $\goth{n} / \goth{n}^2$ of $\OO_{0, Y}$ is a one dimensional $k$-vector space spanned by $x$. Thus, we have $\varphi^* x = y^2 \in \goth{m}^2$, hence $d_\varphi = 0$, hence $T_0(\varphi) = 0$.
+        where $d_\varphi : \goth{n} / \goth{n}^2 \to \goth{m} / \goth{m}^2$ is the map induced by $\varphi_P^*$. It is clearly $k$-linear.
+
+        \item[(c)] By the formula above, it suffices to show $d_\varphi$ is the zero map at $0$. Let $X$ be the parabola $x = y^2$ and let $Y$ by the $x$-axis. The maximal ideal $\goth{m}$ of the local ring $\fO_{0, X}$ is generated by $y$, thus $\goth{m} / \goth{m}^2$ is a one dimensional $k$-vector space spanned by $y$, and similarly $\goth{n} / \goth{n}^2$ of $\fO_{0, Y}$ is a one dimensional $k$-vector space spanned by $x$. Thus, we have $\varphi^* x = y^2 \in \goth{m}^2$, hence $d_\varphi = 0$, hence $T_0(\varphi) = 0$.
     \end{itemize} 
-\end{proof}
-
-\item \textit{Analytically Isomorphic Singularities.}
-\begin{itemize}
-    \item[(a)] If $P \in Y$ and $Q \in Z$ are analytically isomorphic plane curve singularities, show that the multiplicities $\mu_P(Y)$ and $\mu_Q(Z)$ are the same.
-    \item[(b)] Generalize the example in the text (5.6.3) to show that if $f = f_r + f_{r + 1} + \cdots \in k[[x, y]]$, and if the leading form $f_r$ of $f$ factors as $f_r = g_s h_t$, where $g_s$, $h_t$ are homogenous of degrees $s$ and $t$ respectively, and have no common linear factor, then there are formal power series
-    \begin{gather*}
-        g = g_s + g_{s + 1} + \cdots \\
-        h = h_t + h_{t + 1} + \cdots
-    \end{gather*}
-    in $k[[x, y]]$ such that $f = gh$.
-    \item[(c)] Let $Y$ be defined by the equation $f(x, y) = 0$ in $\A^2$, and let $P = (0, 0)$ be a point of multiplicity $r$ on $Y$, so that when $f$ is expanded as a polynomial in $x$ and $y$, we have $f = f_r + \text{higher terms}$. We say that $P$ is an \textit{ordinary $r$-fold} point if $f_r$ is a product of $r$ \textit{distinct} linear factors. Show that any two ordinary double points are analytically isomorphic. Ditto for ordinary triple points. But show that there is a one-parameter family of mutually nonisomorphic ordinary $4$-fold points.
-    \item[(d)] Assume $\text{char}~k \neq 2$. Show that any double point of a plane curve is analytically isomorphic to the singularity at $(0, 0)$ of the curve $y^2 = x^r$, for a uniquely determined $r \geq 2$. If $r = 2$ it is a node. If $r = 3$ we call it a \textit{cusp}; if $r = 4$ a \textit{tacnode}.
-\end{itemize}
-
-\begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)]
-        \item[(b)]
-        \item[(c)]
-        \item[(d)]
-    \end{itemize}
-    
 \end{proof}
 
 \end{enumerate}
 
 \end{document}
+
+% \item \textit{Analytically Isomorphic Singularities.}
+% \begin{itemize}
+%     \item[(a)] If $P \in Y$ and $Q \in Z$ are analytically isomorphic plane curve singularities, show that the multiplicities $\mu_P(Y)$ and $\mu_Q(Z)$ are the same.
+%     \item[(b)] Generalize the example in the text (5.6.3) to show that if $f = f_r + f_{r + 1} + \cdots \in k[[x, y]]$, and if the leading form $f_r$ of $f$ factors as $f_r = g_s h_t$, where $g_s$, $h_t$ are homogenous of degrees $s$ and $t$ respectively, and have no common linear factor, then there are formal power series
+%     \begin{gather*}
+%         g = g_s + g_{s + 1} + \cdots \\
+%         h = h_t + h_{t + 1} + \cdots
+%     \end{gather*}
+%     in $k[[x, y]]$ such that $f = gh$.
+%     \item[(c)] Let $Y$ be defined by the equation $f(x, y) = 0$ in $\A^2$, and let $P = (0, 0)$ be a point of multiplicity $r$ on $Y$, so that when $f$ is expanded as a polynomial in $x$ and $y$, we have $f = f_r + \text{higher terms}$. We say that $P$ is an \textit{ordinary $r$-fold} point if $f_r$ is a product of $r$ \textit{distinct} linear factors. Show that any two ordinary double points are analytically isomorphic. Ditto for ordinary triple points. But show that there is a one-parameter family of mutually nonisomorphic ordinary $4$-fold points.
+%     \item[(d)] Assume $\text{char}~k \neq 2$. Show that any double point of a plane curve is analytically isomorphic to the singularity at $(0, 0)$ of the curve $y^2 = x^r$, for a uniquely determined $r \geq 2$. If $r = 2$ it is a node. If $r = 3$ we call it a \textit{cusp}; if $r = 4$ a \textit{tacnode}.
+% \end{itemize}

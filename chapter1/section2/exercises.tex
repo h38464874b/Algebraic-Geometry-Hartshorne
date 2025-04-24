@@ -1,94 +1,52 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[tracking]{microtype}
-\usepackage[sc,osf]{mathpazo}
-\linespread{1.025}
-\usepackage[euler-digits,small]{eulervm}
-\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{bbm}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{pgfplots}
-\newcommand{\prob}[1]{\noindent {\bf #1}.}
-\newcommand{\abs}[1]{\left| #1  \right|}
-\newcommand{\goth}[1]{\textfrak{#1}}
-\newcommand{\spec}[1]{\text{Spec}~#1}
-\newcommand{\Ker}[1]{\text{Ker}~#1}
-\newcommand{\Img}[1]{\text{Im}~#1}
-\newcommand{\Coker}[1]{\text{Coker}(#1)}
-\newcommand{\Supp}[1]{\text{Supp}(#1)}
-\newcommand{\height}[1]{\text{height}~#1}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\PP}{\mathbb{P}}
-\DeclareMathOperator{\Hom}{Hom}
-\newtheorem{prop}{Proposition}
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 1, Section 2}
 
 \begin{document}
-\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=-0.05em]
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0cm]
 
-\item Prove the "homogenous Nullstellensatz," which says if $\goth{a} \subseteq S$ is a homogenous ideal, and if $f \in S$ is a homogenous polynomial with $\deg{f} > 0$, such that $f(P) = 0$ for all $P \in Z(\goth{a})$ in $\PP^n$, then $f^q \in \goth{a}$ for some $q > 0$.
+\item[\textbf{1.}] Prove the ``homogenous Nullstellensatz,'' which says if $\goth{a} \subseteq S$ is a homogenous ideal, and if $f \in S$ is a homogenous polynomial with $\deg{f} > 0$, such that $f(P) = 0$ for all $P \in Z(\goth{a})$ in $\PP^n$, then $f^q \in \goth{a}$ for some $q > 0$.
 
 \begin{proof}
-    We can apply the usual Nullstellensatz by viewing $f$ as a polynomial over $\A^{n + 1}$ and $Z(\goth{a})$ as the set $Z(\goth{a})'$ consisting of all $(n + 1)$-uples $Q = (a_0, \dots, a_{n + 1}) \in \A^{n + 1}$ such that $Q$ is the homogenous coordinate of some point $P \in Z(\goth{a})$. Since $f$ is homogenous, $f(P) = 0$ for $P \in \PP^n$ if and only if $f(Q) = 0$ where $P$ has $Q$ as homogenous coordinates, thus $f^q \in \goth{a}$ by the Nullstellensatz.
+    We can apply the usual Nullstellensatz by viewing $f$ as a polynomial over $\A^{n + 1}$ and $Z(\goth{a})$ as the set $Z(\goth{a})'$ consisting of all $(n + 1)$-uples $Q = (a_0, \dots, a_{n + 1}) \in \A^{n + 1}$ such that $Q$ is the homogenous coordinate of some point $P \in Z(\goth{a})$.
+    Since $f$ is homogenous, $f(P) = 0$ for $P \in \PP^n$ if and only if $f(Q) = 0$ where $P$ has $Q$ as homogenous coordinates.
+    Thus, $f^q \in \goth{a}$ by the Nullstellensatz.
 \end{proof}
 
-\item For a homogenous ideal $\goth{a} \subseteq S$, show that the following conditions are equivalent:
+\item[\textbf{2.}] For a homogenous ideal $\goth{a} \subseteq S$, show that the following conditions are equivalent:
 \begin{itemize}
     \item[(i)] $Z(\goth{a}) = \emptyset$;
-    \item[(ii)] $\sqrt{\goth{a}} = $ either $S$ or the ideal $S_+ = \bigoplus_{d > 0} S_d$;
+
+    \item[(ii)] $\sqrt{\goth{a}} =$ either $S$ or the ideal $S_+ = \bigoplus_{d > 0} S_d$;
+
     \item[(iii)] $\goth{a} \supseteq S_d$ for some $d > 0$.
 \end{itemize}
 
 \begin{proof}
-    (i) $\implies$ (ii) If $Z(\goth{a}) \empty$, then all homogenous polynomials in  $S$ with degree $ > 0 $ are in $\sqrt{\goth{a}}$ vacuously by the Nullstellensatz, so we have $S_+ \subseteq \sqrt{\goth{a}}$. If $\sqrt{\goth{a}}$ contains any element in $S - S_+$, then $\sqrt{\goth{a}}$ contains an element in $S_0$, which is a unit, hence $\sqrt{\goth{a}} = S$.
+    (i) $\implies$ (ii) Let $S = k[x_0, \dots, x_n]$.
+    If $Z(\goth{a}) \empty$, then all homogenous polynomials in $S$ with degree $> 0$ are in $\sqrt{\goth{a}}$ by the Nullstellensatz, so we have $S_+ \subseteq \sqrt{\goth{a}}$.
+    If $\sqrt{\goth{a}}$ contains any element in $S - S_+$, then $\sqrt{\goth{a}}$ contains an element in $S_0$, which is a unit.
+    Hence, $\sqrt{\goth{a}} = S$.
 
-    (ii) $\implies$ (iii) Either case $S_+ \subseteq \sqrt{\goth{a}}$, then for each $0 \leq i \leq n$ where $S = k[x_0, \dots, x_{n}]$, we have $x_i^{d_i} \in \goth{a}$ for some integer $d_i$, which implies $S_d \subseteq \goth{a}$ where $d = \max{d_i}$.
+    (ii) $\implies$ (iii) Either case $S_+ \subseteq \sqrt{\goth{a}}$, so $x_i^{d_i} \in \goth{a}$ for some $d_i \geq 0$ for each $i$, which implies $S_d \subseteq \goth{a}$ where $d = \max{d_i}$.
 
-    (iii) $\implies$ (i) Let $d > 0$ be the smallest integer such that $\goth{a} \supseteq S_d$, then we have $\goth{a} \supseteq \bigoplus_{l \geq d} S_l$ so that $x_i^l \in \goth{a}$ for all $0 \leq i \leq n$ and $l \geq d$. If there exists $P = (a_0, \dots, a_n) \in Z(\goth{a})$, then $a_i^d = a_i^{d + 1} = 0$, which implies $a_i = 0$ for all $0 \leq i \leq n$, which is impossible.
+    (iii) $\implies$ (i) Let $d > 0$ be the smallest integer such that $\goth{a} \supseteq S_d$, then we have $\goth{a} \supseteq \bigoplus_{l \geq d} S_l$ so that $x_i^l \in \goth{a}$ for all $0 \leq i \leq n$ and $l \geq d$.
+    If there exists $P = (a_0, \dots, a_n) \in Z(\goth{a})$, then $a_i^d = a_i^{d + 1} = 0$, which implies $a_i = 0$ for all $0 \leq i \leq n$, which is impossible.
 \end{proof}
 
-\item \begin{itemize}
-    \item[(a)] If $T_1 \subseteq T_2$ are subsets of $S^h$, then $Z(T_1) \supseteq Z(T_2)$.
-    \item[(b)] If $Y_1 \subseteq Y_2$ are subsets of $\PP^n$, then $I(Y_1) \supseteq I(Y_2)$.
-    \item[(c)] For any two subsets $Y_1$, $Y_2$ of $\PP^n$, $I(Y_1 \cup Y_2) = I(Y_1) \cap I(Y_2)$.
-    \item[(d)] If $\goth{a} \subseteq S$ is a homogenous ideal with $Z(\goth{a}) \neq \emptyset$, then $I(Z(\goth{a})) = \sqrt{\goth{a}}$.
-    \item[(e)] For any subset $Y \subseteq \PP^n$, $Z(I(Y)) = \overline{Y}$.
-\end{itemize}
+\item[\textbf{4.}] \begin{itemize}
+    \item[(a)] There is a $1$-$1$ inclusion-reversing correspondence between algebraic sets in $\PP^n$, and homogenous radicals of $S$ not equal $S_+$, given by $Y \mapsto I(Y)$ and $\goth{a} \mapsto Z(\goth{a})$.
+    \textit{Note:} Since $S_+$ does not occur in this correspondence, it is sometimes called the \textit{irrelevant} maximal ideal of $S$.
 
-\item \begin{itemize}
-    \item[(a)] There is a $1$-$1$ inclusion-reversing correspondence between algebraic sets in $\PP^n$, and homogenous radicals of $S$ not equal $S_+$, given by $Y \mapsto I(Y)$ and $\goth{a} \mapsto Z(\goth{a})$. \textit{Note:} Since $S_+$ does not occur in this correspondence, it is sometimes called the \textit{irrelevant} maximal ideal of $S$.
     \item[(b)] An algebraic set $Y \subseteq \PP^n$ is irreducible if and only if $I(Y)$ is a prime ideal.
+
     \item[(c)] Show that $\PP^n$ itself is irreducible.
 \end{itemize}
 
-\newpage
-
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] Only the last part that states $S_+$ does not occur in this correspondence is new. This is because if $I(Y) \supseteq S_+$ for some algebraic set $Y = Z(\goth{a})$, then by Exericse 2 we have $Z(\goth{a}) = \emptyset$, and any constant polynomial $f \in S_0$ vacuously satisfies $f(P) = 0$ for all $P \in Z(\goth{a})$, hence $I(Y) = S$.
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Only the last part that states $S_+$ does not occur in this correspondence is new. Indeed, $I(Y) \supseteq S_+$ for some algebraic set $Y = Z(\goth{a})$, then $Z(\goth{a}) = \emptyset$ b (I, Ex. 2.2), and any constant polynomial $f \in S_0$ vacuously satisfies $f(P) = 0$ for all $P \in Z(\goth{a})$. Hence, $I(Y) = S$.
 
         \item[(b)] By the $1$-$1$ correspondence from (a), $I(Y)$ is a homogenous ideal, so it is sufficient to show for any two homogenous elements $f$, $g$, that $fg \in I(Y)$ implies $f \in I(Y)$ or $g(Y)$. Indeed, if $fg \in I(Y)$, then $Y \subseteq Z(fg) = Z(f) \cup Z(g)$, thus $Y = (Y \cap Z(f)) \cup (Y \cap Z(g))$ both being closed subsets of $Y$. Since $Y$ is irreducible, we have either $Y = Y \cap Z(f)$, in which case $Y \subseteq Z(f)$, or $Y \subseteq Z(g)$. Hence, either $f \in I(Y)$ or $g \in I(Y)$.
 
@@ -98,34 +56,39 @@
     \end{itemize}
 \end{proof}
 
-\item \begin{itemize}
+\item[\textbf{5.}] \begin{itemize}
     \item[(a)] $\PP^n$ is a noetherian topological space.
     \item[(b)] Every algebraic set in $\PP^n$ can be written uniquely as a finite union of irreducible algebraic sets, no one containing another. These are called its \textit{irreducible components}.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] $\PP^n$ is covered by the open sets $U_i$ ($0 \leq i \leq n$) defined the non-vanshing of the $i$th homogenous coordinate, each of which is homeomorphic to the affine plane $\A^n$. The affine plane is a noetherian topological space, so it suffices to show a finite union of noetherian topological spaces is also noetherian. An equivalent condition for a space to be noetherian is if every subset is quasi-compact by Atiyah-MacDonald [p. 79], so if $Y$ is any subset of $\PP^n$, then $Y = \bigcup (Y \cap U_i)$, each of which is quasi-compact in the induced topology of $U_i$, so $Y$ is a finite union of quasi-compact sets, hence $Y$ is quasi-compact.
+    \begin{itemize} [leftmargin=0cm]
+        \item[(a)] $\PP^n$ is covered by the open set $U_i$ defined the non-vanshing of the $i$th homogenous coordinate, each of which is homeomorphic to the affine plane $\A^n$.
+        The affine plane is a noetherian topological space, so it suffices to show a finite union of noetherian topological spaces is also noetherian.
+        An equivalent condition for a space to be noetherian is if every subset is quasi-compact by (A.M. p. 79). If $Y$ is any subset of $\PP^n$, then $Y = Y \cap \bigcup U_i$, each of which is quasi-compact in the induced topology of $U_i$, so $Y$ is a finite union of quasi-compact sets. Hence, $Y$ is quasi-compact.
 
-        \item[(b)] Follows from part (a), (1.5), and Exercise 4 part (b).
+        \item[(b)] Follows from (a), (1.5), and (I, Ex. 2.4b).
     \end{itemize}
 \end{proof}
 
-\item If $Y$ is a projective variety with homogenous coordinate ring $S(Y)$, show that $\dim{S(Y)} = \dim{Y} + 1$.
+\item[\textbf{6.}] If $Y$ is a projective variety with homogenous coordinate ring $S(Y)$, show that $\dim{S(Y)} = \dim{Y} + 1$.
 
 \begin{proof}
     Let $\varphi_i : U_i \to \A^n$ be the homeomoprhism of (2.2),  let $Y_i$ be the affine variety $\varphi_i(Y \cap U_i)$, and let $A(Y_i)$ be its affine coordinate ring. If $g(y_1, \dots, y_n)$ is an element of $A(Y_i)$, then define the map $A(Y_i) \rightarrow S(Y)_{x_i}$ as $g(x_0 / x_i, \dots, x_n / x_i)$, or equivalently $g \mapsto \varphi_i^* g = g \circ \varphi_i$; thus we can identify $A(Y_i)$ with the subring of elements of degree $0$ of the localized ring $S(Y)_{x_i}$. Then, $S(Y)_{x_i} \simeq A(Y_i)[x_i, x_i^{-1}]$ since every monomial in $k[x_0, \dots, x_n]$ can be written as
     \begin{equation*}
         x_0^{d_0} \cdots x_i^{d_i} \cdots x_n^{d_n} = \frac{x_0^{d_0} \cdots \widehat{x_i^{d_i}} \cdots x_n^{d_n}}{x_i^{d_0 + \cdots + \widehat{d_i} + \cdots + d_n}} x_i^{d_0 + \cdots + d_n},
     \end{equation*}
-    where the hat symbol denotes omission from the product/sum, and the quotient is in the image of $A(Y_i) \to S(Y)_{x_i}$. By (1.8A), the dimension of $S(Y)$ is equal to the transcendence degree of the quotient field of $S(Y)$, which is isomorphic to the quotient field of $S(Y)_{x_i}$, and by (1.7) the dimension of $A(Y_i)$ is equal to the dimension to $Y_i$, therefore we have
-    \begin{equation*}
-        \dim{S(Y)} = \dim{S(Y)_{x_i}} = \dim{A(Y_i)[x_i, x_i^{-1}]} = \dim{A(Y_i)} + 1 = \dim{Y_i} + 1.
-    \end{equation*}
-    Since the $Y_i$ cover $Y$, by Exercise 1.10 $\dim{Y} = \sup{\dim{Y_i}}$, so $\dim{S(Y)} = \dim{Y} + 1$.
+    where $~\widehat{}~$ denotes omission, and the quotient is in the image of $A(Y_i) \to S(Y)_{x_i}$. By (1.8A), the dimension of $S(Y)$ is equal to the transcendence degree of the quotient field of $S(Y)$, which is isomorphic to the quotient field of $S(Y)_{x_i}$. The dimension of $A(Y_i)$ is equal to the dimension to $Y_i$ by (1.7). Therefore, we have
+    \begin{align*}
+        \dim{S(Y)} & = \dim{S(Y)_{x_i}} \\
+        & = \dim{A(Y_i)[x_i, x_i^{-1}]} \\
+        & = \dim{A(Y_i)} + 1 \\
+        & = \dim{Y_i} + 1.
+    \end{align*}
+    Since the $Y_i$ cover $Y$, $\dim{Y} = \sup{\dim{Y_i}}$, so $\dim{S(Y)} = \dim{Y} + 1$ By (I, Ex. 1.10).
 \end{proof}
 
-\item \begin{itemize}
+\item[\textbf{7.}] \begin{itemize}
     \item[(a)] $\dim{\PP^n} = n$.
     \item[(b)] If $Y \subseteq \PP^n$ is quasi-projective variety, then $\dim{Y} = \dim{\overline{Y}}$.
 \end{itemize}
@@ -137,59 +100,17 @@
    \end{itemize} 
 \end{proof}
 
-\item A projective variety $Y \subseteq \PP^n$ has dimension $n - 1$ if and only if it is the zero set of a single irreducible homogenous polynomial $f$ of positive degree. $Y$ is called a \textit{hypersurface} in $\PP^n$.
+\item[\textbf{8.}] A projective variety $Y \subseteq \PP^n$ has dimension $n - 1$ if and only if it is the zero set of a single irreducible homogenous polynomial $f$ of positive degree. $Y$ is called a \textit{hypersurface} in $\PP^n$.
 
 \begin{proof}
     If $Y$ has dimension $n - 1$, then by (1.13) $Y$ is the union of affine varieties $Y_i$ of dimension $n - 1$, so by the map $\beta$ in the proof of (2.2) and (1.13) each $Y_i$ is the zero set of an irreducible homogenous polynomial $f$ of positive degree, hence $Y = \bigcup Y_i = \bigcup_{Y_i \neq \emptyset} Z(f_i) = Z(f_0 \cdots f_n)$. Conversely, if $Y = Z(f)$ for some homogenous polynomial $f$ of positive degree, then $Y_i = Z(\alpha(f))$ where $\alpha$ is the map defined in the proof of (2.2), hence by (1.13) and Exercise 6 we have $\dim{Y} = \dim{Y_i} = n - 1$.
 \end{proof}
 
-\item \textit{Projective Closure of an Affine Variety.} If $Y \subseteq \A^n$ is an affine variety, we identify $\A^n$ with an open set $U_0 \subseteq \PP^n$ by the homeomorphism $\varphi_0$. Then we can speak of $\overline{Y}$, the closure of $Y$ in $\PP^n$, which is called the \textit{projective closure} of $Y$.
-\begin{itemize}
-    \item[(a)] Show that $I(\overline{Y})$ is the ideal generated by $\beta(I(Y))$, using the notation of the proof of (2.2).
-    \item[(b)] Let $Y \subseteq \A^3$ be the twisted cubic of (Ex. 1.2). Its projective closure $\overline{Y} \subseteq \PP^3$ is called the \textit{twisted cubic curve} in $\PP^3$. Find generators for $I(Y)$ and $I(\overline{Y})$, and use this example to show that if $f_1, \dots, f_r$ generated $I(Y)$, then $\beta(f_1), \dots, \beta(f_r)$ do \textit{not} necessarily generated $I(\overline{Y})$.
-\end{itemize}
-
-\begin{proof}
-    
-\end{proof}
-
-\item \textit{The Cone Over a Projective Variety.} Let $Y \subseteq \PP^n$ be a nonempty algebraic set, and let $\theta : \A^{n + 1} - \{(0, \dots, 0) \} \to \PP^n$ be the map which sends the point with affine coordinates $(a_0, \dots, a_n)$ to the point with homogenous coordinates $(a_0, \dots, a_n)$. We define the \textit{affine cone} over $Y$ to be
-\begin{equation*}
-    C(Y) = \theta^{-1}(Y) \cup \{ (0, \dots, 0) \}.
-\end{equation*}
-\begin{itemize}
-    \item[(a)] Show that $C(Y)$ is an algebraic set in $\A^{n + 1}$, whose ideal is equal to $I(Y)$ considered as an ordinary ideal in $k[x_0, \dots, x_n]$.
-    \item[(b)] $C(Y)$ is irreducible if and only if $Y$ is.
-    \item[(c)] $\dim{C(Y)} = \dim{Y} + 1$.
-\end{itemize}
-Sometimes we consider the projective closure $\overline{C(Y)}$ of $C(Y)$ in $\PP^{n + 1}$. This is called the \textit{projective cone} over $Y$.
-\begin{figure}[H]
-    \centering
-    \includegraphics*[width=9cm]{Screenshot 2024-07-27 at 4.33.42 PM.png}
-    \caption{The cone over a curve in $\PP^2$.}
-\end{figure}
-
-\begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
-        \item[(a)] The origin $(0, \dots, 0)$ is a zero of every homogenous polynomial of positive degree.
-        \item[(b)] $C(Y)$ is irreducible $\iff$ $I(C(Y)) = I(Y)$ is a prime ideal $\iff$ $Y$ is irreducible.
-        \item[(c)] $\dim{C(Y)} = \dim{S(Y)} = \dim{Y} + 1$.
-    \end{itemize}
-\end{proof}
-
-\item \textit{Linear Varieties in $\PP^n$.} A hypersurface defined by a linear polynomial in is called a \textit{hyperplane}.
-\begin{itemize}
-    \item[(a)] Show that the following two conditions are equivalent for a variety $Y$ in $\PP^n$:
-    \begin{itemize}
-        \item[(i)] $I(Y)$ can be generated by linear polynomials.
-        \item[(ii)] $Y$ can be written as an intersection of hyperplanes.
-    \end{itemize}
-    In this case we say that $Y$ is a \textit{linear variety} in $\PP^n$.
-    \item[(b)] If $Y$ is a linear variety of dimension $r$ in $\PP^n$, show that $I(Y)$ is minimally generated by $n - r$ linear polynomials.
-    \item[(c)] Let $Y$, $Z$ be linear varieties in $\PP^n$, with $\dim{Y} = r$, $\dim{Z} = s$. If $r + s - n \geq 0$, then $Y \cap Z$ is a linear variety of dimension $\geq r + s - n$.
-\end{itemize}
-
-\item \textit{The $d$-Uple Embedding.} For given $n, d > 0$, let $M_0, M_1, \dots, M_N$ be all the monomials of degree $d$ in the $n + 1$ variables $x_0, \dots, x_n$, where $N = {n + d \choose n} - 1$. We define a mapping $\rho_d : \PP^n \to \PP^N$ by sending the point $P = (a_0, \dots, a_n)$ to the point $\rho_d(P) = (M_0(a), \dots, M_N(a))$ obtained by substituting the $a_i$ in the monomials $M_j$. This is called the $d$-uple \textit{embedding} of $\PP^n$ in $\PP^N$. For example, if $n = 1$, $d = 2$, then $N = 2$, and the image of $Y$ of the $2$-uple embedding of $\PP^1$ in $\PP^2$ is a conic.
+\item[\textbf{12.}] \textit{The $d$-Uple Embedding.}
+For given $n, d > 0$, let $M_0, M_1, \dots, M_N$ be all the monomials of degree $d$ in the $n + 1$ variables $x_0, \dots, x_n$, where $N = {n + d \choose n} - 1$.
+We define a mapping $\rho_d : \PP^n \to \PP^N$ by sending the point $P = (a_0, \dots, a_n)$ to the point $\rho_d(P) = (M_0(a), \dots, M_N(a))$ obtained by substituting the $a_i$ in the monomials $M_j$.
+This is called the $d$-uple \textit{embedding} of $\PP^n$ in $\PP^N$.
+For example, if $n = 1$, $d = 2$, then $N = 2$, and the image of $Y$ of the $2$-uple embedding of $\PP^1$ in $\PP^2$ is a conic.
 \begin{itemize}
     \item[(a)] Let $\theta : k[y_0, \dots, y_N] \to k[x_0, \dots, x_n]$ be the homomorphism defined by sending $y_i$ to $M_i$, and let $\goth{a}$ be the kernel of $\theta$. Then $\goth{a}$ is a homogenous prime ideal, and so $Z(\goth{a})$ is a projective variety in $\PP^N$.
     \item[(b)] Show that the image of $\rho_d$ is exactly $Z(\goth{a})$.
@@ -198,10 +119,10 @@ Sometimes we consider the projective closure $\overline{C(Y)}$ of $C(Y)$ in $\PP
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
+    \begin{itemize} [leftmargin=0cm]
         \item[(a)] The image of $\theta$ is an integral domain, so $\goth{a}$ is a prime ideal, and it is clearly homogenous since each $y_i$ is sent to a polynomial of same degree.
 
-        \item[(b)] If $Q \in \Img{\rho_d}$, then $Q = \rho_d(P)$ for some $P \in \PP^n$, for any $f \in \goth{a}$ we have
+        \item[(b)] If $Q \in \im{\rho_d}$, then $Q = \rho_d(P)$ for some $P \in \PP^n$, for any $f \in \goth{a}$ we have
         \begin{equation*}
             f(Q) = f(\rho_d(P)) = \theta(f)(P) = 0 \implies Q \in Z(\goth{a}).
         \end{equation*}
@@ -224,32 +145,26 @@ Sometimes we consider the projective closure $\overline{C(Y)}$ of $C(Y)$ in $\PP
     \end{itemize}
 \end{proof}
 
-\item Let $Y$ be the image of the $2$-uple embedding of $\PP^2$ in $\PP^5$. This is the \textit{Veronese surface}. If $Z \subseteq Y$ is a closed curve (a \textit{curve} is a variety of dimension $1$), show that there exists a hypersurface $V \subseteq \PP^5$ such that $V \cap Y = Z$.
 
-\item \textit{Segre Embedding.} Let $\psi : \PP^r \times \PP^s \to \PP^N$ be the map defined by sending the ordered pair $(a_0, \dots, a_r) \times (b_0, \dots, b_s)$ to $(\dots, a_i b_j, \dots)$ in lexicographic order, where $N = rs + r + s$. Note that $\psi$ is well-defined and injective. It is called the \textit{Segre embedding}. Show that the image of $\psi$ is a \textit{subvariety} of $\PP^N$.
+\item[\textbf{14.}] \textit{Segre Embedding.} Let $\psi : \PP^r \times \PP^s \to \PP^N$ be the map defined by sending the ordered pair $(a_0, \dots, a_r) \times (b_0, \dots, b_s)$ to $(\dots, a_i b_j, \dots)$ in lexicographic order, where $N = rs + r + s$. Note that $\psi$ is well-defined and injective. It is called the \textit{Segre embedding}. Show that the image of $\psi$ is a \textit{subvariety} of $\PP^N$.
 
 \begin{proof}
-    Let the homogenous coordinates of $\PP^N$ be $\{ z_{ij} \mid i = 0, \dots, r, j = 0, \dots, s \}$, and let $\goth{a}$ be the kernel of the homomorphism $\theta : k[\{ z_{ij} \}] \to k[x_0, \dots, x_r, y_0, \dots, y_s]$ which sends $z_{ij}$ to $x_i y_j$. If $P \in \Img{\psi}$, then $P = \psi(Q, R)$ for some $Q \in \PP^r$ and $R \in \PP^s$, then for any $f \in \goth{a}$ we have
+    Let the homogenous coordinates of $\PP^N$ be $\{ z_{ij} \mid i = 0, \dots, r, j = 0, \dots, s \}$, and let $\goth{a}$ be the kernel of the homomorphism $\theta : k[\{ z_{ij} \}] \to k[x_0, \dots, x_r, y_0, \dots, y_s]$ which sends $z_{ij}$ to $x_i y_j$. If $P \in \im{\psi}$, then $P = \psi(Q, R)$ for some $Q \in \PP^r$ and $R \in \PP^s$, then for any $f \in \goth{a}$ we have
     \begin{equation*}
         f(P) = f(\psi(Q, R)) = \theta(f)(Q, R) = 0 \implies P \in Z(\goth{a}).
     \end{equation*}
     Conversely, viewing points of $\PP^N$ as $(r + 1)\times(s + 1)$-matrices, the variety $Z(\goth{a})$ is defined as the vanshing of all $2\times2$-minors, i.e. $z_{ij}z_{kl} = z_{il}z_{jk}$ for all $0 \leq i, k \leq r$ and $0 \leq j, l \leq s$. This means $\{ z_{ij} \} \in Z(\goth{a})$ has rank $1$, so it can be expressed as the outer product of two vectors in $k^{r + 1}$ and $k^{s + 1}$, which is exactly the mapping defined by $\psi$.
 \end{proof}
 
-\item \textit{Quadric Surface in $\PP^3$.} Consider the surface $Q$ (a \textit{surface} is a variety of dimension $2$) in $\PP^3$ defined by the equation $xy - zw = 0$. 
+\item[\textbf{15.}] \textit{Quadric Surface in $\PP^3$.} Consider the surface $Q$ (a \textit{surface} is a variety of dimension $2$) in $\PP^3$ defined by the equation $xy - zw = 0$. 
 \begin{itemize}
     \item[(a)] Show that $Q$ is equal to the Segre embedding of $\PP^1 \times \PP^1$ in $\PP^3$, for suitable choice of coordinates.
     \item[(b)] Show that $Q$ contains two families of lines (a \textit{line} is a linear variety of dimension $1$) $\{ L_t \}$, $\{ M_t \}$, each parametrized by $t \in \PP^1$, with the proeprties that if $L_t \neq L_u$, then $L_t \cap L_u = \emptyset$; if $M_t \neq M_u$, $M_t \cap M_u = \emptyset$, and for all $t$, $u$, $L_t \cap M_u = \text{one point}$.
     \item[(c)] Show that $Q$ contains other curves besides these lines, and deduce that the Zariski topology on $Q$ is not homeomoprhic via $\psi$ to the product topology on $\PP^1 \times \PP^1$ (where each $\PP^1$ has its Zariski topology).
 \end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics*[width=6cm]{Screenshot 2024-07-27 at 4.56.35 PM.png}
-    \caption{The quadric surface in $\PP^3$.}
-\end{figure}
 
 \begin{proof} $ $ \vspace{0pt}
-    \begin{itemize}
+    \begin{itemize} [leftmargin=0cm]
         \item[(a)] The kernel of the mapping $k[z_{00}, z_{01}, z_{10}, z_{11}] \to k[x_0, x_1, y_0, y_1]$ as in Exercise 14 is generated by $z_{00} z_{11} - z_{01} z_{10}$. Then $Z(z_{00} z_{11} - z_{01} z_{11})$ is equal to $Q$ for a suitable choice of coordinates.
 
         \item[(b)] From here, we assume $Q$ is defined by $xw - yz = 0$ (the author was too lazy to fix his mistake after realizing it at (c)). Consider the Segre embedding $\psi : \PP^1 \times \PP^1 \to \PP^3$ defined by
@@ -270,36 +185,66 @@ Sometimes we consider the projective closure $\overline{C(Y)}$ of $C(Y)$ in $\PP
         \end{equation*}
 
         \item[(c)] Consider the curve $K$ in $Q$ defined by $x = w$. It is clearly not a line since it is the intersection of a nonlinear curve and a linear curve; however it is a closed subset of $Q$. On the other hand, $\psi^{-1}(K)$ is the diagonal in $\PP^1 \times \PP^1$, which is certainly not closed since $\PP^1$ is not Hausdorff.
-
-        \begin{figure} [H]
-            \centering
-            \includegraphics*[width=6cm]{Screenshot 2024-08-08 at 10.51.37 AM.png}
-            \caption{Another curve in $Q$.}
-        \end{figure}
     \end{itemize} 
-\end{proof}
-
-\item \begin{itemize}
-    \item[(a)] The intersection of two varities need not be a variety. For example, let $Q_1$ and $Q_2$ be the quadric surfaces in $\PP^3$ given by the equations $x^2 - yw = 0$ and $xy - zw = 0$, respectively. Show that $Q_1 \cap Q_2$ is the union of a twisted cubic curve and a line.
-    \item[(b)] Even if the intersection of two varieties is a variety, the ideal of the intersection may not be the sum of the ideals. For example, let $C$ be the conic in $\PP^2$ given by the equations $x^2 - yz = 0$. Let $L$ be the line given by $y = 0$. Show that $C \cap L$ consists of one point $P$, but that $I(C) + I(L) \neq I(P)$.
-\end{itemize}
-
-\item \textit{Complete intersections.} A variety $Y$ of dimension $r$ in $\PP^n$ is a \textit{(strict) complete intersection} if $I(Y)$ can be generated by $n - r$ elements. $Y$ is a \textit{set-theoretic complete intersection} if $Y$ can be written as the intersection of $n - r$ hypersurfaces.
-\begin{itemize}
-    \item[(a)] Let $Y$ be a variety in $\PP^n$, let $Y = Z(\goth{a})$; and suppose that $\goth{a}$ can be generated by $q$ elements. Then show that $\dim{Y} \geq n - q$.
-    \item[(b)] Show that a strict complete intersection is a set-theoretic complete intersection.
-    \item[(c)] The converse of (b) is false. For example let $Y$ be the twisted cubnic curve in $\PP^3$ (Ex. 2.9). Show that $I(Y)$ cannot be generated by two elements. On the other hand, find hypersurfaces $H_1$, $H_2$ of degrees $2$, $3$ respectively, such that $Y = H_1 \cap H_2$.
-    \item[(d)] It is an unsolved problem whether every closed irreducible curve in $\PP^3$ is a set-theoretic intersection of two surfaces.
-\end{itemize}
-
-\begin{proof} $ $ \vspace{0pt}
-   \begin{itemize}
-    \item[(a)]
-    \item[(b)]
-    \item[(c)]
-   \end{itemize} 
 \end{proof}
 
 \end{enumerate}
 
 \end{document}
+
+% \item \begin{itemize}
+%     \item[(a)] The intersection of two varities need not be a variety. For example, let $Q_1$ and $Q_2$ be the quadric surfaces in $\PP^3$ given by the equations $x^2 - yw = 0$ and $xy - zw = 0$, respectively. Show that $Q_1 \cap Q_2$ is the union of a twisted cubic curve and a line.
+%     \item[(b)] Even if the intersection of two varieties is a variety, the ideal of the intersection may not be the sum of the ideals. For example, let $C$ be the conic in $\PP^2$ given by the equations $x^2 - yz = 0$. Let $L$ be the line given by $y = 0$. Show that $C \cap L$ consists of one point $P$, but that $I(C) + I(L) \neq I(P)$.
+% \end{itemize}
+
+% \item \textit{Complete intersections.} A variety $Y$ of dimension $r$ in $\PP^n$ is a \textit{(strict) complete intersection} if $I(Y)$ can be generated by $n - r$ elements. $Y$ is a \textit{set-theoretic complete intersection} if $Y$ can be written as the intersection of $n - r$ hypersurfaces.
+% \begin{itemize}
+%     \item[(a)] Let $Y$ be a variety in $\PP^n$, let $Y = Z(\goth{a})$; and suppose that $\goth{a}$ can be generated by $q$ elements. Then show that $\dim{Y} \geq n - q$.
+%     \item[(b)] Show that a strict complete intersection is a set-theoretic complete intersection.
+%     \item[(c)] The converse of (b) is false. For example let $Y$ be the twisted cubnic curve in $\PP^3$ (Ex. 2.9). Show that $I(Y)$ cannot be generated by two elements. On the other hand, find hypersurfaces $H_1$, $H_2$ of degrees $2$, $3$ respectively, such that $Y = H_1 \cap H_2$.
+%     \item[(d)] It is an unsolved problem whether every closed irreducible curve in $\PP^3$ is a set-theoretic intersection of two surfaces.
+% \end{itemize}
+
+% \item \begin{itemize}
+%     \item[(a)] If $T_1 \subseteq T_2$ are subsets of $S^h$, then $Z(T_1) \supseteq Z(T_2)$.
+%     \item[(b)] If $Y_1 \subseteq Y_2$ are subsets of $\PP^n$, then $I(Y_1) \supseteq I(Y_2)$.
+%     \item[(c)] For any two subsets $Y_1$, $Y_2$ of $\PP^n$, $I(Y_1 \cup Y_2) = I(Y_1) \cap I(Y_2)$.
+%     \item[(d)] If $\goth{a} \subseteq S$ is a homogenous ideal with $Z(\goth{a}) \neq \emptyset$, then $I(Z(\goth{a})) = \sqrt{\goth{a}}$.
+%     \item[(e)] For any subset $Y \subseteq \PP^n$, $Z(I(Y)) = \overline{Y}$.
+% \end{itemize}
+
+% \item \textit{Projective Closure of an Affine Variety.} If $Y \subseteq \A^n$ is an affine variety, we identify $\A^n$ with an open set $U_0 \subseteq \PP^n$ by the homeomorphism $\varphi_0$. Then we can speak of $\overline{Y}$, the closure of $Y$ in $\PP^n$, which is called the \textit{projective closure} of $Y$.
+% \begin{itemize}
+%     \item[(a)] Show that $I(\overline{Y})$ is the ideal generated by $\beta(I(Y))$, using the notation of the proof of (2.2).
+%     \item[(b)] Let $Y \subseteq \A^3$ be the twisted cubic of (Ex. 1.2). Its projective closure $\overline{Y} \subseteq \PP^3$ is called the \textit{twisted cubic curve} in $\PP^3$. Find generators for $I(Y)$ and $I(\overline{Y})$, and use this example to show that if $f_1, \dots, f_r$ generated $I(Y)$, then $\beta(f_1), \dots, \beta(f_r)$ do \textit{not} necessarily generated $I(\overline{Y})$.
+% \end{itemize}
+
+% \item \textit{The Cone Over a Projective Variety.} Let $Y \subseteq \PP^n$ be a nonempty algebraic set, and let $\theta : \A^{n + 1} - \{(0, \dots, 0) \} \to \PP^n$ be the map which sends the point with affine coordinates $(a_0, \dots, a_n)$ to the point with homogenous coordinates $(a_0, \dots, a_n)$. We define the \textit{affine cone} over $Y$ to be
+% \begin{equation*}
+%     C(Y) = \theta^{-1}(Y) \cup \{ (0, \dots, 0) \}.
+% \end{equation*}
+% \begin{itemize}
+%     \item[(a)] Show that $C(Y)$ is an algebraic set in $\A^{n + 1}$, whose ideal is equal to $I(Y)$ considered as an ordinary ideal in $k[x_0, \dots, x_n]$.
+%     \item[(b)] $C(Y)$ is irreducible if and only if $Y$ is.
+%     \item[(c)] $\dim{C(Y)} = \dim{Y} + 1$.
+% \end{itemize}
+% Sometimes we consider the projective closure $\overline{C(Y)}$ of $C(Y)$ in $\PP^{n + 1}$. This is called the \textit{projective cone} over $Y$.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics*[width=9cm]{Screenshot 2024-07-27 at 4.33.42 PM.png}
+%     \caption{The cone over a curve in $\PP^2$.}
+% \end{figure}
+
+% \item \textit{Linear Varieties in $\PP^n$.} A hypersurface defined by a linear polynomial in is called a \textit{hyperplane}.
+% \begin{itemize}
+%     \item[(a)] Show that the following two conditions are equivalent for a variety $Y$ in $\PP^n$:
+%     \begin{itemize}
+%         \item[(i)] $I(Y)$ can be generated by linear polynomials.
+%         \item[(ii)] $Y$ can be written as an intersection of hyperplanes.
+%     \end{itemize}
+%     In this case we say that $Y$ is a \textit{linear variety} in $\PP^n$.
+%     \item[(b)] If $Y$ is a linear variety of dimension $r$ in $\PP^n$, show that $I(Y)$ is minimally generated by $n - r$ linear polynomials.
+%     \item[(c)] Let $Y$, $Z$ be linear varieties in $\PP^n$, with $\dim{Y} = r$, $\dim{Z} = s$. If $r + s - n \geq 0$, then $Y \cap Z$ is a linear variety of dimension $\geq r + s - n$.
+% \end{itemize}
+
+% \item Let $Y$ be the image of the $2$-uple embedding of $\PP^2$ in $\PP^5$. This is the \textit{Veronese surface}. If $Z \subseteq Y$ is a closed curve (a \textit{curve} is a variety of dimension $1$), show that there exists a hypersurface $V \subseteq \PP^5$ such that $V \cap Y = Z$.
