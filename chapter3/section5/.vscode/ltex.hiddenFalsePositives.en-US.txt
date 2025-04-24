@@ -1,1 +1,0 @@
-{"rule":"EN_A_VS_AN","sentence":"^\\QThis gives a Čech \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-cocycle with values in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and since \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we have \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (II, Ex. 5.16b).\\E$"}

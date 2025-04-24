@@ -1,1 +1,0 @@
-{"rule":"EN_A_VS_AN","sentence":"^\\QIf \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a point of a scheme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we define an étale neighborhood of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q to be an étale morphism \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, together with a point \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, such that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

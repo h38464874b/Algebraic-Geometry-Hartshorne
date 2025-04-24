@@ -1,1 +1,0 @@
-{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QSuppose that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a single closed point \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

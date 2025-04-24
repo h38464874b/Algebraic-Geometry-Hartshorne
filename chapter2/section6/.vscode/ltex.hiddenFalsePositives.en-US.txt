@@ -1,2 +1,0 @@
-{"rule":"VARIETIES_IN_OF","sentence":"^\\QVarieties in Projective Space.\\E$"}
-{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be the associated principal closed subscheme of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

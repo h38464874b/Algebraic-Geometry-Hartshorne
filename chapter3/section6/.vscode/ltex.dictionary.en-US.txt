@@ -1,4 +1,0 @@
-Kleiman
-Noetherian
-homological
-surjective

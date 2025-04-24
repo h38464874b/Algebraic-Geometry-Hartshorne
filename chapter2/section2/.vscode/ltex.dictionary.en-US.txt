@@ -1,4 +1,0 @@
-homeomorphism
-isomorphisms
-noetherian
-subcover

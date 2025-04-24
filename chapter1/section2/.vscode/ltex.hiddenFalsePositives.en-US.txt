@@ -1,1 +1,0 @@
-{"rule":"VARIETIES_IN_OF","sentence":"^\\QLinear Varieties in \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}

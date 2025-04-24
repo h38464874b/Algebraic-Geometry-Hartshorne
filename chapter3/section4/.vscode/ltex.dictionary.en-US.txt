@@ -1,5 +1,0 @@
-Čech
-surjective
-Noetherian
-isomorphisms
-Chevalley

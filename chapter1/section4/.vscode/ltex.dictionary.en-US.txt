@@ -1,6 +1,0 @@
-cuspidal
-quadric
-bicontinuous
-noetherian
-surjective
-leftmargin

@@ -1,6 +1,0 @@
-subscheme
-subvariety
-nonsingular
-nilpotent
-Noetherian
-surjective

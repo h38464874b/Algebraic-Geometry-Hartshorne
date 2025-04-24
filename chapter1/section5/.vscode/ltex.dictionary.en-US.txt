@@ -1,6 +1,0 @@
-nonsingular
-tacnode
-nonisomorphic
-Jacobian
-submatrix
-Zariski

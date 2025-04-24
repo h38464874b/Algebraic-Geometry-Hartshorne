@@ -1,8 +1,0 @@
-surjective
-homeomorphic
-non-quasi-compcat
-noetherian
-Krull
-Hauptidealsatz
-hypersurfaces
-supremum

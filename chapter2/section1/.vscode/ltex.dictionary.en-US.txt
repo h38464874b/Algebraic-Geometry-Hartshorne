@@ -1,4 +1,0 @@
-isomorphisms
-presheaf
-surjective
-leftmargin

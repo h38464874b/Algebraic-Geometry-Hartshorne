@@ -1,3 +1,0 @@
-étale
-unramified
-cuspidal

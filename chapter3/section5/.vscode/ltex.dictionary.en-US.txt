@@ -1,5 +1,0 @@
-nonsingular
-surjective
-subscheme
-noetherian
-Čech

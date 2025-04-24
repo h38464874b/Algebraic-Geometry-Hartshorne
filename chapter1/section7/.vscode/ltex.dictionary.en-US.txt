@@ -1,3 +1,0 @@
-hypersurface
-nonsingular
-Zariski
