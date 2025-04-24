@@ -14,6 +14,7 @@
 .*.lb
 .vscode/
 .DS_Store
+**/.vscode/
 
 ## Intermediate documents:
 *.dvi
