@@ -1,0 +1,47 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 4, Section 1}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item[\textbf{1.}] Let $X$ be a curve, and let $P \in X$ be a point.
+Then there exists a nonconstant  rational function $f \in K(X)$, which is regular everywhere except at $P$.
+
+\begin{proof}
+  Pick another point $Q \in X$ different from $P$.
+  By the Riemann-Roch Theorem, there exists $n > 0$ such that $\dim|-P + nQ| > 0$.
+  This means there exists an effective divisor $D$ that has a pole at $P$ and regular everywhere else.
+  Thus, there exists $f \in K(X)$ such that $v_P(f) = -1$ and $v_Q(f) \geq 0$ for all $Q \neq P$.
+\end{proof}
+
+\item[\textbf{2.}] Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
+Then there is a rational function $f \in K(X)$ having poles (of some order) at each of the $P_i$, and regular elsewhere.
+
+\item[\textbf{3.}] Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
+Then $X$ is affine.
+
+\item[\textbf{4.}] Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
+
+\item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$. Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
+
+\begin{proof}
+  By Riemann-Roch, we have
+  \begin{equation*}
+    \dim{|D|} = \ell(D) - 1 = \ell(K - D) + \deg{D} - g,
+  \end{equation*}
+  so we want to show $\ell(K - D) \leq g$. But $g = \ell(K)$ by definition, and $D$ is effective, so the result follows from the proof...
+\end{proof}
+
+\item[\textbf{6.}] Let $X$ be a curve of genus $g$.
+Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
+
+\item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
+\begin{itemize}
+  \item[(a)] If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without base points. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
+  \item[(b)] Show taht the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus there exist hyperelliptic curves of any genus $g \geq 2$.
+\end{itemize}
+
+\end{enumerate}
+\end{document}

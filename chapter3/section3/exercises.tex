@@ -10,29 +10,29 @@
 Show that $X$ is affine if and only if $\reduced{X}$ (II, Ex. 2.3) is affine.
 
 \begin{proof}
-One direction is clear.
-Suppose $\reduced{X} = \spec{A}$ where $A$ is a Noetherian ring with no nilpotent elements, let $f : \reduced{X} \to X$ be the natural map, and let $\fF$ be any quasi-coherent sheaf on $X$. 
-Following the hint, consider the filtration
-\begin{equation*}
-  \fF \supseteq \fN \cdot \fF \supseteq \fN^2 \cdot \fF \supseteq \cdots,
-\end{equation*}
-where $\fN$ is the sheaf of nilpotent elements on $X$.
-Note that $X \cong \reduced{X}$ as topological space, and the associated morphism of sheaves $\fO_X \to f_* \fO_{\reduced{X}}$ is surjective with kernel $\fN$.
-Thus, each of the quotients of this filtration can be naturally viewed as $A$-modules.
-In particular, we have a natural isomorphism (2.10) $$H^i(X, \fN^r \cdot \fF / \fN^{r + 1} \fF) \cong H^i(\reduced{X}, f^*(\fN^r \cdot \fF / \fN^{r + 1} \cdot \fF)).$$
-Also, the nilradical of a Noetherian ring is nilpotent, so there exists a positive integer $r > 0$ such that $\fN^r = 0$ (A.M. 7.15).
-Using our hypothesis and (3.7), we climb up the filtration and deduce that $H^1(X, \fF) = 0$.
-Hence, $X$ is affine by (3.7).
+  One direction is clear.
+  Suppose $\reduced{X} = \spec{A}$ where $A$ is a Noetherian ring with no nilpotent elements, let $f : \reduced{X} \to X$ be the natural map, and let $\fF$ be any quasi-coherent sheaf on $X$. 
+  Following the hint, consider the filtration
+  \begin{equation*}
+    \fF \supseteq \fN \cdot \fF \supseteq \fN^2 \cdot \fF \supseteq \cdots,
+  \end{equation*}
+  where $\fN$ is the sheaf of nilpotent elements on $X$.
+  Note that $X \cong \reduced{X}$ as topological space, and the associated morphism of sheaves $\fO_X \to f_* \fO_{\reduced{X}}$ is surjective with kernel $\fN$.
+  Thus, each of the quotients of this filtration can be naturally viewed as $A$-modules.
+  In particular, we have a natural isomorphism (2.10) $$H^i(X, \fN^r \cdot \fF / \fN^{r + 1} \fF) \cong H^i(\reduced{X}, f^*(\fN^r \cdot \fF / \fN^{r + 1} \cdot \fF)).$$
+  Also, the nilradical of a Noetherian ring is nilpotent, so there exists a positive integer $r > 0$ such that $\fN^r = 0$ (A.M. 7.15).
+  Using our hypothesis and (3.7), we climb up the filtration and deduce that $H^1(X, \fF) = 0$.
+  Hence, $X$ is affine by (3.7).
 \end{proof}
 
 \item[\textbf{2.}] Let $X$ be a reduced Noetherian scheme.
 Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof}
-Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
-The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
-In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
-Conversely, suppose each irreducible component of $X$ is affine.
+  Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
+  The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
+  In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
+  Conversely, suppose each irreducible component of $X$ is affine.
 \end{proof}
 
 \item[\textbf{6.}] Let $X$ be a Noetherian scheme.
