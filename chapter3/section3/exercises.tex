@@ -29,10 +29,13 @@ Show that $X$ is affine if and only if $\reduced{X}$ (II, Ex. 2.3) is affine.
 Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof}
-  Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
-  The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
-  In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
-  Conversely, suppose each irreducible component of $X$ is affine.
+Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
+The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
+In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
+Conversely, let $X_i = \spec{A_i}$ be the irreducible components of $X$, where $A_i$ is a reduced Noetherian ring for each $i = 1, \dots, n$, and let $\fF$ be any quasi-coherent sheaf on $X$.
+We have $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some $A_i$-module $M_i$, and we have a natural map $\fF \to j_* \restr{\fF}{X_i} = j_* j^* \fF$ (I, Ex. 1.18). Thus, we have a natural map of $\fO_X$-modules $\phi : \fF \to \bigoplus_{i = 1}^n j_* \restr{\fF}{X_i}$. Each $j_* \restr{\fF}{X_i}$ has vanishing cohomology for $i > 0$ by (2.10) and (3.5). Cohomology commutes with direct sums (2.9), so it suffices to show $\phi$ is an isomorphism. It is clearly injective. Conversely, let $(f_1, \dots, f_n) \in \bigoplus_{i = 1}^n j_* \restr{\fF}{X_i}$, where $f_i$ is an element belonging to some localization of $M_i$.
+
+
 \end{proof}
 
 \item[\textbf{6.}] Let $X$ be a Noetherian scheme.
