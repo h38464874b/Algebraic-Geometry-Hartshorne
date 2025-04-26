@@ -10,32 +10,41 @@
 Then there exists a nonconstant  rational function $f \in K(X)$, which is regular everywhere except at $P$.
 
 \begin{proof}
-  Pick another point $Q \in X$ different from $P$.
-  By the Riemann-Roch Theorem, there exists $n > 0$ such that $\dim|-P + nQ| > 0$.
-  This means there exists an effective divisor $D$ that has a pole at $P$ and regular everywhere else.
-  Thus, there exists $f \in K(X)$ such that $v_P(f) = -1$ and $v_Q(f) \geq 0$ for all $Q \neq P$.
+  Pick another point $Q \neq P \in X$, which exists since we always assume the ground field $k$ is algebraically closed.
+  By the Riemann-Roch Theorem, there exists $n > 0 $ such that $\dim|n(-P + 2Q)| > 0$.
+  Hence, there exists a rational function with pole at $P$ of order $n$, and regular everywhere else.
 \end{proof}
 
 \item[\textbf{2.}] Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
 Then there is a rational function $f \in K(X)$ having poles (of some order) at each of the $P_i$, and regular elsewhere.
+
+\begin{proof}
+  Pick another point $Q \neq P_i \in X$, and repeat (Ex. 1.1) with $n(-\sum P_i + 2rQ)$.
+\end{proof}
 
 \item[\textbf{3.}] Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
 Then $X$ is affine.
 
 \item[\textbf{4.}] Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
 
-\item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$. Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
+\item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$.
+Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
 
 \begin{proof}
-  By Riemann-Roch, we have
+  By definition $\dim|D| = \ell(D) - 1$. Rearranging the Riemann-Roch Theorem gives
   \begin{equation*}
-    \dim{|D|} = \ell(D) - 1 = \ell(K - D) + \deg{D} - g,
+    \dim{|D|} = \ell(K - D) + \deg{D} - g,
   \end{equation*}
-  so we want to show $\ell(K - D) \leq g$. But $g = \ell(K)$ by definition, and $D$ is effective, so the result follows from the proof...
+  so we want to show $\ell(K - D) \leq g$. But $D$ is effective, so $\fL(K - D) \to \fL(K)$ is injective, and $g = \ell(K) = \dim{H^0(X, \fL(K))}$ by definition.
 \end{proof}
 
 \item[\textbf{6.}] Let $X$ be a curve of genus $g$.
 Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
+
+\begin{proof}
+  By the Riemann-Roch Theorem, it suffices to show there exists a divisor $D$ such that $2 \leq \ell(D) \leq \ell(K - D)$.
+  Indeed, take $D = -P$
+\end{proof}
 
 \item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
 \begin{itemize}

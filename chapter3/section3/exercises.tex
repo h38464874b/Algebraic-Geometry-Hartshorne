@@ -6,7 +6,7 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item[\textbf{1.}] Let $X$ be a Noetherian scheme.
+\item[1.] Let $X$ be a Noetherian scheme.
 Show that $X$ is affine if and only if $\reduced{X}$ (II, Ex. 2.3) is affine.
 
 \begin{proof}
@@ -25,20 +25,25 @@ Show that $X$ is affine if and only if $\reduced{X}$ (II, Ex. 2.3) is affine.
   Hence, $X$ is affine by (3.7).
 \end{proof}
 
-\item[\textbf{2.}] Let $X$ be a reduced Noetherian scheme.
+\item[2.] Let $X$ be a reduced Noetherian scheme.
 Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof}
-Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
-The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
-In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
-Conversely, let $X_i = \spec{A_i}$ be the irreducible components of $X$, where $A_i$ is a reduced Noetherian ring for each $i = 1, \dots, n$, and let $\fF$ be any quasi-coherent sheaf on $X$.
-We have $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some $A_i$-module $M_i$, and we have a natural map $\fF \to j_* \restr{\fF}{X_i} = j_* j^* \fF$ (I, Ex. 1.18). Thus, we have a natural map of $\fO_X$-modules $\phi : \fF \to \bigoplus_{i = 1}^n j_* \restr{\fF}{X_i}$. Each $j_* \restr{\fF}{X_i}$ has vanishing cohomology for $i > 0$ by (2.10) and (3.5). Cohomology commutes with direct sums (2.9), so it suffices to show $\phi$ is an isomorphism. It is clearly injective. Conversely, let $(f_1, \dots, f_n) \in \bigoplus_{i = 1}^n j_* \restr{\fF}{X_i}$, where $f_i$ is an element belonging to some localization of $M_i$.
-
-
+  Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
+  The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
+  In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
+  Conversely, let $X_i$ be the irreducible components of $X$, and let $\phi : \fF \to \bigoplus_i j_* \restr{\fF}{X_i}$ be the natural map of $\fO_X$-modules, where $j : X_i \hookrightarrow X$ is the inclusion.
+  Since $X$ is Noetherian, $X_i \cap X_j$ is quasi-compact, so we can cover it with a finite number of open affine subsets $X_{ijk}$.
+  Because $X$ is reduced, $\phi$ is injective, so we can extend $\phi$ by the following exact sequence
+  \[ \begin{tikzcd}
+    0 \arrow[r] & \fF \arrow[r] & \bigoplus_i j_* \restr{\fF}{X_i} \arrow[r] & \bigoplus_{i,j} j_* \restr{\fF}{X_{ijk}}.
+  \end{tikzcd} \]
+  Each $j_* \restr{\fF}{X_i}, j_* \restr{\fF}{X_{ijk}}$ has vanishing cohomology for $i > 0$ by (2.10), (3.5), and (3.7).
+  While the sequence above is not surjective on the right, the image is still a quasi-coherent sheaf, so using the long exact sequence of cohomology, we deduce that $H^i(X, \fF) = 0$ for $i > 0$.
+  Hence, $X$ is affine by (3.7).
 \end{proof}
 
-\item[\textbf{6.}] Let $X$ be a Noetherian scheme.
+\item[6.] Let $X$ be a Noetherian scheme.
 \begin{itemize}
   \item[(a)] Show that the sheaf $\fG$ constructed in the proof of (3.6) is an injective object in the category $\goth{Qco}(X)$ of quasi-coherent sheaves on $X$.
   Thus, $\goth{Qco}(X)$ has enough injectives.
@@ -50,19 +55,26 @@ We have $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some $A_i$-module $M_i$, an
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \tilde{I}$, where $j : U = \spec{A} \to X$ is an open immersion, and $I$ is an injective $A$-module. Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\tilde{I}$. Since $j^*$ is left exact, the induced map of $A$-modules $j^* \fN \to j^* \fM$ is also injective. For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \tilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\tilde{I}$. By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\tilde{I}$ that naturally extends $f : \fN \to j_*\tilde{I}$, which is what we wanted to show.
+\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \widetilde{I}$, where $j : U = \spec{A} \to X$ is the inclusion, and $I$ is an injective $A$-module.
+Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\widetilde{I}$.
+Since $j^*$ is left exact when $j$ is an open immersion, the induced map of $A$-modules $j^* \fN \to j^* \fM$ is also injective.
+For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \widetilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\widetilde{I}$.
+By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\widetilde{I}$ that naturally extends $f$, which is what we wanted to show.
 
-\item[(b)] Let $\fI$ be an injective object of $\goth{Qco}(X)$.
+\item[(b)] Essentially imitating (a), we deduce that $\restr{\fI}{U}$ is an injective object of $\goth{Qco}(U)$.
+Covering $X$ with finite number of open affines $U_i = \spec{A_i}$, we have $\restr{\fI}{U_i} \cong \widetilde{I}_i$  for some injective $A_i$-module $I_i$ for each $i$ by (II, 5.5).
+Each $\tilde{I}_i$ is flasque by (3.4), so $\fI$ is flasque on a local basis.
+Hence, $\fI$ is flasque.
 
-\item[(c)]
+\item[(c)] Considering $\Gamma(X, \cdot)$ as a functor from $\goth{Qco}(X)$ to $\goth{Ab}$, we calculate its derived funcotrs by taking injective resolutions in the category $\goth{Qco}(X)$. But any injective is flasque (b), and flasques are acyclic (2.5), so this resolution gives the usual cohomology functors (1.2A).
 \end{itemize} 
 \end{proof}
 
-\item[\textbf{7.}] Let $A$ be a Noetherian ring, let $X = \spec{A}$, let $\goth{a} \subseteq A$ be an ideal, and let $U \subseteq X$ be the open set $X - V(\goth{a})$.
+\item[7.] Let $A$ be a Noetherian ring, let $X = \spec{A}$, let $\goth{a} \subseteq A$ be an ideal, and let $U \subseteq X$ be the open set $X - V(\goth{a})$.
 \begin{itemize}
   \item[(a)] For any $A$-module $M$, establish the following formula of Deligne:
   \begin{equation*}
-    \Gamma(U, \tilde{M}) \cong \varinjlim_n{\text{Hom}_A(\goth{a}^n, M)}.
+    \Gamma(U, \widetilde{M}) \cong \varinjlim_n{\text{Hom}_A(\goth{a}^n, M)}.
   \end{equation*}
   \item[(b)] Apply this in the case of an injective $A$-module $I$, to give another proof of (3.4).
 \end{itemize}
@@ -86,7 +98,7 @@ We have $\restr{\fF}{U_i} \cong \widetilde{M}_i$ for some $A_i$-module $M_i$, an
 %   \item[(b)] Now let $X = \spec{A}$, $Y = V(\goth{a})$.
 %   Show that for any $A$-module $M$,
 %   \begin{equation*}
-%     H_\goth{a}^i(M) = H_Y^i(X, \tilde{M}),
+%     H_\goth{a}^i(M) = H_Y^i(X, \widetilde{M}),
 %   \end{equation*}
 %   where $H_Y^i(X, \cdot)$ denotes cohomology with supports in $Y$ (Ex. 2.3).
 
