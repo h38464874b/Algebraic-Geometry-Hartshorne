@@ -2,6 +2,10 @@ I am a student at the University of Arizona.
 
 This repository contains my attempts at selected exercises from *Algebraic Geometry* by Robin Hartshorne. Don't quote me on anything - use at your own risk!
 
+Big shout out to the following websites:
+- https://tikzcd.yichuanshen.de/
+- https://detexify.kirelabs.org/classify.html
+
 # Chapter 1
 - 1.2, 1.3, 1.6, 1.7, 1.8, 1.9, 1.10
 - 2.1, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.12, 2.14, 2.15,
