@@ -2,6 +2,8 @@ I am a student at the University of Arizona.
 
 This repository contains my attempts at selected exercises from *Algebraic Geometry* by Robin Hartshorne. Don't quote me on anything - use at your own risk!
 
+My main source for commutative algebra is *Introduction to Commutative Algebra* by M.F. Atiyah and I.G. MacDonald.
+
 Big shout out to the following websites:
 - https://tikzcd.yichuanshen.de/
 - https://detexify.kirelabs.org/classify.html
