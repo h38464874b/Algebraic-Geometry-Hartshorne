@@ -61,7 +61,7 @@ Since $j^*$ is left exact when $j$ is an open immersion, the induced map of $A$-
 For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \widetilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\widetilde{I}$.
 By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\widetilde{I}$ that naturally extends $f$, which is what we wanted to show.
 
-\item[(b)] Essentially imitating (a), we deduce that $\restr{\fI}{U}$ is an injective object of $\goth{Qco}(U)$.
+\item[(b)] Essentially imitating (a) replacing $i^*$ with $i_*$ and vice versa, we deduce that $\restr{\fI}{U}$ is an injective object of $\goth{Qco}(U)$.
 Covering $X$ with finite number of open affines $U_i = \spec{A_i}$, we have $\restr{\fI}{U_i} \cong \widetilde{I}_i$  for some injective $A_i$-module $I_i$ for each $i$ by (II, 5.5).
 Each $\tilde{I}_i$ is flasque by (3.4), so $\fI$ is flasque on a local basis.
 Hence, $\fI$ is flasque.
@@ -81,7 +81,15 @@ Hence, $\fI$ is flasque.
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)]
+\item[(a)] Consider the case when $\goth{a}$ is principal, that is $\goth{a} = (f)$ for some $f \in A$.
+The left hand side above is isomorphsm to $M_f \cong M \otimes A_f$.
+On the other hand, we can write $M_f$ as the colmit $M_f \cong \varinjlim Af^{-n} \otimes M$, and $Af^{-n}$ is invertible with dual $Af^n = \goth{a}^n$.
+Thus, we have a natural ismorphism $\Hom_A(\goth{a}^n, M) \cong Af^{-n} \otimes M$, which is what we wanted to show.
+This is a generalization of (II, 2.2) and (II, 5.1).
+
+Generally, $A$ is Noetherian by hypothesis, so there exists a finite set of generators $\goth{a} = (f_1, \dots, f_r)$.
+
+
 
 \item[(b)]
 \end{itemize} 
