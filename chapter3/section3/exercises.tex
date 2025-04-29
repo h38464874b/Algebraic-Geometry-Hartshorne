@@ -55,14 +55,14 @@ Show that $X$ is affine if and only if each irreducible component is affine.
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \widetilde{I}$, where $j : U = \spec{A} \to X$ is the inclusion, and $I$ is an injective $A$-module.
-Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\widetilde{I}$.
+\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \tilde{I}$, where $j : U = \spec{A} \to X$ is the inclusion, and $I$ is an injective $A$-module.
+Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\tilde{I}$.
 Since $j^*$ is left exact when $j$ is an open immersion, the induced map of $A$-modules $j^* \fN \to j^* \fM$ is also injective.
-For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \widetilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\widetilde{I}$.
-By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\widetilde{I}$ that naturally extends $f$, which is what we wanted to show.
+For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \tilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\widetilde{I}$.
+By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\tilde{I}$ that naturally extends $f$, which is what we wanted to show.
 
 \item[(b)] Essentially imitating (a) replacing $i^*$ with $i_*$ and vice versa, we deduce that $\restr{\fI}{U}$ is an injective object of $\goth{Qco}(U)$.
-Covering $X$ with finite number of open affines $U_i = \spec{A_i}$, we have $\restr{\fI}{U_i} \cong \widetilde{I}_i$  for some injective $A_i$-module $I_i$ for each $i$ by (II, 5.5).
+Covering $X$ with finite number of open affines $U_i = \spec{A_i}$, we have $\restr{\fI}{U_i} \cong \tilde{I}_i$  for some injective $A_i$-module $I_i$ for each $i$ by (II, 5.5).
 Each $\tilde{I}_i$ is flasque by (3.4), so $\fI$ is flasque on a local basis.
 Hence, $\fI$ is flasque.
 
@@ -87,11 +87,16 @@ On the other hand, we can write $M_f$ as the colmit $M_f \cong \varinjlim Af^{-n
 Thus, we have a natural ismorphism $\Hom_A(\goth{a}^n, M) \cong Af^{-n} \otimes M$, which is what we wanted to show.
 This is a generalization of (II, 2.2) and (II, 5.1).
 
-Generally, $A$ is Noetherian by hypothesis, so there exists a finite set of generators $\goth{a} = (f_1, \dots, f_r)$.
+In the general case, by the Noetherian hypothesis, $\goth{a}$ is a finitely generated $A$-module, say $\goth{a} = (f_1, \dots, f_r)$.
+Any module over a ring can be expressed as a colimit over its finitely generated submodules.
+In particular, $\goth{a} = \varinjlim (f_i)$, and clearly $\Hom_A(\cdot, M)$ commutes with colimits for any $M$.
+We can also express $U$ as a colimit $U = \varinjlim U_{f_i}$ in the category of open sets of $X$, where $U_{f_i}$ is the basic open set assocaited to the elment $f_i \in A$.
+Note that $U =\bigcup U_{f_i}$.
+By naturality of $\Gamma(\cdot, \widetilde{M})$ and $\hspace{4pt}\widetilde{}\hspace{4pt}$ we conclude the general case from the case when $\goth{a}$ is principal.
 
+\item[(b)] Let $I$ be an injective $A$-module.
+It will be sufficeint to show for any open set $U \subseteq X$, where $U = X - V(\goth{a})$ for some ideal $\goth{a}$ of $A$, that $\Gamma(X, \tilde{I}) \to \Gamma(U, \tilde{I})$ is surjective.
 
-
-\item[(b)]
 \end{itemize} 
 \end{proof}
 
