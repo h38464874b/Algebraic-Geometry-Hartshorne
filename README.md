@@ -8,6 +8,8 @@ Big shout out to the following websites:
 - https://tikzcd.yichuanshen.de/
 - https://detexify.kirelabs.org/classify.html
 
+Any feedback is appreciated and welcomed: slee1241@arizona.edu
+
 # Chapter 1
 - 1.2, 1.3, 1.6, 1.7, 1.8, 1.9, 1.10
 - 2.1, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.12, 2.14, 2.15,
@@ -39,3 +41,7 @@ Big shout out to the following websites:
 - 10.1, 10.2, 10.3, 10.5, 10.6
 - 11.1, 11.2, 11.8
 - 12.1, 12.2
+
+# TODO
+- Chapters 4, 5
+- *Introduciton to Commutaive Algbera* by M.F. Atiyah, I.G. MacDonald
