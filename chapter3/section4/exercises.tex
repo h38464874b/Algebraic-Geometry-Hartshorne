@@ -1,66 +1,6 @@
 \documentclass{article}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
-\usepackage{xcolor}
-\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
-\newcommand{\goth}[1]{\mathfrak{#1}}
-\newcommand{\fF}{\mathscr{F}}
-\newcommand{\fG}{\mathscr{G}}
-\newcommand{\fE}{\mathscr{E}}
-\newcommand{\fO}{\mathscr{O}}
-\newcommand{\fL}{\mathscr{L}}
-\newcommand{\fM}{\mathscr{M}}
-\newcommand{\fI}{\mathscr{I}}
-\newcommand{\fT}{\mathscr{T}}
-\newcommand{\fK}{\mathscr{K}}
-\newcommand{\fS}{\mathscr{S}}
-\newcommand{\fN}{\mathscr{N}}
-\newcommand{\fJ}{\mathscr{J}}
-\newcommand{\fR}{\mathscr{R}}
-\newcommand{\fH}{\mathscr{H}}
-\newcommand{\PP}{\mathbb{P}}
-\newcommand{\gm}{\goth{m}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
-\DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\rk}{rank}
-\DeclareMathOperator{\pic}{Pic}
-\DeclareMathOperator{\cacl}{CaCl}
-\DeclareMathOperator{\trd}{tr.d.}
-\DeclareMathOperator{\cl}{Cl}
-\DeclareMathOperator{\depth}{depth}
-\DeclareMathOperator{\Div}{Div}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\len}{length}
-\DeclareMathOperator{\height}{height}
-\DeclareMathOperator{\supp}{Supp}
-\DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Der}{Der}
-\DeclareMathOperator{\spec}{Spec}
-\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
-\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
-
+\input{../../etc/preamble.tex}
 \title{Chapter 3, Section 4}
-\author{James Lee}
-\pagecolor[RGB]{20,20,20}
-\color[RGB]{255,255,255}
 
 \begin{document}
 \maketitle
@@ -71,6 +11,10 @@ Show that for any quasi-coherent sheaf $\fF$ on $X$, there are natural isomorphi
 \begin{equation*}
   H^i(X, \fF) \cong H^i(Y, f_* \fF).
 \end{equation*}
+
+\begin{proof}
+  Ahhh!
+\end{proof}
 
 \item Prove Chevalley's theorem: Let $f : X \to Y$ be a finite surjective morphism of Noetherian separated schemes, with $X$ affine.
 Then $Y$ is affine.
@@ -83,8 +27,14 @@ Then $Y$ is affine.
   \item[(c)] Now prove Chevalley's theorem.
 \end{itemize}
 
+\begin{proof} $ $ \vspace{0pt}
+\begin{enumerate} [label=(\alph*), leftmargin=0cm]
+\item 
+\end{enumerate} 
+\end{proof}
+
 \item Let $X = \A_k^2 = \spec{k[x, y]}$, and let $U = X - \{ (0, 0) \}$.
-Using a suitable cover of $U$ by open affine subsets, show that $H^i(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$.
+Using a suitable cover of $U$ by open affine subsets, show that $H^1(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$.
 In particular, it is infinite-dimensional.
 
 \item On an arbitrary topological space $X$ with an arbitrary Abelian sheaf $\fF$, Čech cohomology may not give the same result as the derived functor cohomology.
