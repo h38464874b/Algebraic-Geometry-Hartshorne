@@ -113,11 +113,13 @@ We want to show there exists an $A$-homomoprhism $\alpha : \goth{a}^N \to M$ for
 Imitating the proof of (3.3), let $\goth{b}_1 \subseteq \goth{b}_2 \subseteq \cdots$ be the sequence of annihilators of $\cdots \subseteq \goth{a}^2 \subseteq \goth{a}$.
 Since $A$ is Noetherian, there is an $r$ such that $\goth{b}_r = \goth{b}_{r + 1} = \cdots$.
 Define $\sigma : \goth{a}^{n + r} \to M$ by sending $f_i^{n + r}$ to $f_i^r m_i$ for all $i$ and extending by zero.
-This is a well-defined homomorphism because the annihilator of $f_i^{n + r}$ is $\goth{b}_{n + r} = \goth{b}_r$, and $\goth{b}_r$ annhilates $f_i^r m_i$.
+This is a well-defined homomorphism because the annihilator of $f_i^{n + r}$ is $\goth{b}_{n + r} = \goth{b}_r$, and $\goth{b}_r$ annihilates $f_i^r m_i$.
 Hence, $\phi_{n + r}(\sigma) = s$.
 
 \item[(b)] Let $I$ be an injective $A$-module.
 It will be sufficient to show for any open set $U \subseteq X$, where $U = X - V(\goth{a})$ for some ideal $\goth{a}$ of $A$, that $\Gamma(X, \tilde{I}) \to \Gamma(U, \tilde{I})$ is surjective.
+Indeed, d$\Gamma(X, \tilde{I}) \to \Gamma(U, \tilde{I})$ is induced by the natural maps $\Hom_A(A, I) \to \Hom_A(\goth{a}^n, I)$, which is surjective since $I$ is injective.
+Hence, $\Gamma(X, I) \to \Gamma(U, I)$ is surjective.
 \end{itemize}
 \end{proof}
 
