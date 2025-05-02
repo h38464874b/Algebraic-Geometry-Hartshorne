@@ -6,28 +6,28 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item[\textbf{1.}] Let $X$ be a curve, and let $P \in X$ be a point.
+\item Let $X$ be a curve, and let $P \in X$ be a point.
 Then there exists a nonconstant  rational function $f \in K(X)$, which is regular everywhere except at $P$.
 
 \begin{proof}
-  Pick another point $Q \neq P \in X$, which exists since we always assume the ground field $k$ is algebraically closed.
-  By the Riemann-Roch Theorem, there exists $n > 0 $ such that $\dim|n(-P + 2Q)| > 0$.
-  Hence, there exists a rational function with pole at $P$ of order $n$, and regular everywhere else.
+  Pick another closed point $Q \neq P \in X$.
+  By (1.3.2), there exists $n > 0 $ such that $\dim|n(-P + 2Q)| > 0$.
+  Hence, there exists a rational function with a pole at $P$ of order $n$ and regular everywhere else.
 \end{proof}
 
-\item[\textbf{2.}] Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
+\item Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
 Then there is a rational function $f \in K(X)$ having poles (of some order) at each of the $P_i$, and regular elsewhere.
 
 \begin{proof}
-  Pick another point $Q \neq P_i \in X$, and repeat (Ex. 1.1) with $n(-\sum P_i + 2rQ)$.
+  Imitate the proof of the previous exercise for the divisor $D = -\sum_{i = 1}^r P_i + (r + 1)Q$. This time, such a $Q$ always exists because $k$ is algebraically, so it is infinite.
 \end{proof}
 
-\item[\textbf{3.}] Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
+\item Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
 Then $X$ is affine.
 
-\item[\textbf{4.}] Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
+\item Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
 
-\item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$.
+\item For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$.
 Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
 
 \begin{proof}
@@ -38,19 +38,53 @@ Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
   so we want to show $\ell(K - D) \leq g$. But $D$ is effective, so $\fL(K - D) \to \fL(K)$ is injective, and $g = \ell(K) = \dim{H^0(X, \fL(K))}$ by definition.
 \end{proof}
 
-\item[\textbf{6.}] Let $X$ be a curve of genus $g$.
+\item Let $X$ be a curve of genus $g$.
 Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
 
 \begin{proof}
-  By the Riemann-Roch Theorem, it suffices to show there exists a divisor $D$ such that $2 \leq \ell(D) \leq \ell(K - D)$.
-  Indeed, take $D = -P$
 \end{proof}
 
-\item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
-\begin{itemize}
-  \item[(a)] If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without base points. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
-  \item[(b)] Show taht the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus there exist hyperelliptic curves of any genus $g \geq 2$.
-\end{itemize}
+\item A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
+\begin{enumerate} [label=(\alph*)]
+  \item If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without base points. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
+  \item Show that the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus, there exist hyperelliptic curves of any genus $g \geq 2$.
+\end{enumerate}
+
+\begin{proof} $ $ \vspace{0pt}
+  \begin{enumerate} [label=(\alph*), leftmargin=0cm]
+    \item In general, $|K|$ has no base points for $g \geq 2$ (5.1).
+    If $g = 2$, then $\dim|K| = g - 1 = 1$ and $\deg{K} = 2g - 2 = 2$. Thus, $|K|$ defines a finite morphism $f : X \to \PP^1$ of degree 2 by (II, 7.8.1).
+    \item 
+  \end{enumerate}
+\end{proof}
+
+\item \textit{$p_a$ of a Singular Curve.} Let $X$ be an integral projective scheme of dimension 1 over $k$, and let $\widetilde{X}$ be its normalization (II, Ex. 3.8). Then there is an exact sequence of sheaves on $X$,
+\[ \begin{tikzcd}
+  0 \arrow[r] & \fO_X \arrow[r] & f_*\fO_{\widetilde{X}} \arrow[r] & \sum_{P \in X} \widetilde{\fO}_P/\fO_P \arrow[r] & 0
+  \end{tikzcd} \]
+where $\widetilde{\fO}_P$ is the integral closure of $\fO_P$. For each $P \in X$, let $\delta_P = \len(\widetilde{\fO}_P/\fO_P)$.
+\begin{enumerate} [label=(\alph*)]
+  \item Show that $p_a(X) = p_a(\widetilde{X}) + \sum_{P \in X} \delta_P$.
+  \item If $p_a(X) = 0 $, show that $X$ is already nonsingular and in fact isomorphic to $\PP^1$.
+  \item If $P$ is a node or an ordinary cusp (I, Ex. 5.6, Ex. 5.14), show that $\delta_P = 1$.
+\end{enumerate}
+
+\item \textit{Riemann-Roch for Singular Curves.} Let $X$ be an integral projective scheme of dimension 1 over $k$. Let $\reg{X}$ be the set of regular points of $X$.
+\begin{enumerate} [label=(\alph*)]
+  \item Let $D = \sum n_i P_i$ be a divisor with support in $\reg{X}$, i.e., all $P_i \in \reg{X}$. Then define $\deg{D} = \sum n_i$. Let $\fL(D)$ be the associated invertible sheaf on $X$, and show that
+  \begin{equation*}
+    \chi(\fL(D)) = \deg{D} + 1 - p_a.
+  \end{equation*}
+  \item Show that any Cartier divisor on $X$ is the difference of two very ample Cartier divisors.
+  \item Conclude that every invertible sheaf $\fL$ on $X$ is isomorphic to $\fL(D)$ for some divisor $D$ with support in $\reg{X}$.
+  \item Assume Furthermore that $X$ is locally complete intersection in some projective space. Then by (III, 7.11) the dualizing sheaf $\omega_X^\circ$ is an invertible sheaf on $X$, so we can define the \textit{canonical divisor} $K$ to be a divisor with support in $\reg{X}$ corresponding to $\omega_X^\circ$. Then the formula of (a) becomes
+  \begin{equation*}
+    \ell(D) = \ell(K - D) = \deg{D} + 1 - p_a.
+  \end{equation*}
+  \item Let $X$ be an integral projective scheme of dimension 1 over $k$, which is locally complete intersection, and has $p_a = 1$.
+  Fix a point $P_0 \in \reg{X}$.
+  Imitate (1.3.7) to show that the map $P \to \fL(P - P_0)$ gives a one-to-cone correspondence between the pints of $\reg{X}$ and the elements of the group $\pic^\circ{X}$. This generalizes (II, 6.11.4) and (II, Ex. 6.7).
+\end{enumerate}
 
 \end{enumerate}
 \end{document}

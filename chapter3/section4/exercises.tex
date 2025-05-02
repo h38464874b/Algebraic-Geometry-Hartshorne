@@ -33,7 +33,15 @@ Then $Y$ is affine.
 \begin{proof} $ $ \vspace{0pt}
 \begin{enumerate} [label=(\alph*), leftmargin=0cm]
 
-\item 
+\item The question is local on $Y$, so assume $Y = \spec{A}$ for some Noetherian ring $A$.
+Let $K = \Frac(A)$ and $L = \Frac(B)$.
+Then $X = \spec{B}$ for some $A$-algebra $B$, where $B$ is finitely generated as an $A$-module.
+Since the image of $f$ is dense in $Y$, and $Y$ is integral, hence reduced, the structure homomorphism $A \to B$ is injective.
+In particular, $K \subseteq L$.
+We want to find a finitely generated $B$ module $M$ such that $M \otimes_B L$ is a finite-dimensional $K$-vectorspace.
+But $L/K$ is a finite extension since $B$ is a finite $A$-module.
+
+\item
 
 \end{enumerate}
 \end{proof}
@@ -41,6 +49,22 @@ Then $Y$ is affine.
 \item Let $X = \A_k^2 = \spec{k[x, y]}$, and let $U = X - \{ (0, 0) \}$.
 Using a suitable cover of $U$ by open affine subsets, show that $H^1(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$.
 In particular, it is infinite-dimensional.
+
+\begin{proof}
+  Let $\goth{U}$ be the open covering by the two open sets $V = X - \{ x = 0 \}$ and $U = X - \{ y = 0 \}$, with affine coordinates obtained by restricting the ones from $X$.
+  Then the Čech complex has only two terms:
+  \begin{align*}
+    C^0 & = \Gamma(V, \fO_V) \times \Gamma(W, \fO_W), \\
+    C^1 & = \Gamma(V \cap W, \fO_{V \cap W}).
+  \end{align*}
+  Now
+  \begin{align*}
+    \Gamma(V, \Omega) & = k\bigg[ x, \frac{1}{x}, y \bigg] \\
+    \Gamma(W, \Omega) & = k\bigg[ x, y, \frac{1}{y}\bigg] \\
+    \Gamma(V, W, \Omega) & = k\bigg[ x, y, \frac{1}{x}, \frac{1}{y} \bigg] 
+  \end{align*}
+  and the map $d : C^0 \to C^1$ is given by $(f, g) \mapsto f - g$. To compute $H^1$, the image of $d$ is the set of all expressions $x^i y^j$ where at least one of $i, j$ is non-negative. Hence, $H^1(U, \fO_U)$ is spanned by $\{ x^iy^j \mid i, j < 0 \}$.
+\end{proof}
 
 \item On an arbitrary topological space $X$ with an arbitrary Abelian sheaf $\fF$, Čech cohomology may not give the same result as the derived functor cohomology.
 But here we show that $H^1$, there is an isomorphism if one takes the limit over all coverings.
@@ -53,7 +77,7 @@ But here we show that $H^1$, there is an isomorphism if one takes the limit over
   \end{equation*}
   The coverings of $X$ form a partially ordered set under refinement, so we can consider the Čech cohomology in the limit
   \begin{equation*}
-    \varinjlim_\goth{U} = \check{H}^i(\goth{U}, \fF).
+    \varinjlim_\goth{U} \check{H}^i(\goth{U}, \fF).
   \end{equation*}
 
   \item[(b)]  For any Abelian sheaf $\fF$ on $X$, show that the natural maps (4.4) for each covering
@@ -83,6 +107,12 @@ But here we show that $H^1$, there is an isomorphism if one takes the limit over
 
 \item For any ringed space $(X, \fO_X)$, let $\pic{X}$ be the group of isomorphism classes of invertible sheaves (II, \S 6).
 Show that $\pic{X} \cong H^1(X, \fO_X^*)$ where $\fO_X^*$ denotes the sheaf whose sections over an open set $U$ are the units in the ring $\Gamma(U, \fO_X)$, with multiplication as the group operation.
+
+\begin{proof}
+  Let $\fL$ be an invertible sheaf on $X$, and let $\goth{U} = (U_i)$ be an open cover of $X$ such that $\restr{\fL}{U_i} \cong \fO_{U_i}$ for each $i$.
+  Fix such an isomorphism once and for all.
+  Let $s_i \in \restr{\fL}{U_i}$ that corresponds to $1 \in \fO_{U_i}$ for each $i$.
+\end{proof}
 
 \end{enumerate}
 \end{document}
