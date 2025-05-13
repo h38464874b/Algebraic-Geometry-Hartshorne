@@ -1,43 +1,57 @@
 \usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amssymb}
+\usepackage[l2tabu,orthodox]{nag}
+\usepackage{microtype} % fixes spacing or whatever
 \usepackage{enumitem}
 \usepackage{tikz-cd}
-\usepackage{yfonts}
-\usepackage{mathrsfs}
 \usepackage{xcolor}
 \usepackage{physics}
+% \usepackage{mathrsfs}
+\usepackage{kpfonts}
+\usepackage[cal=dutchcal,
+bb=boondox,
+bbscaled=1.05,
+scr=boondoxupr]{mathalpha}
+
+\renewcommand{\epsilon}{\varepsilon}
 
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 
 \newcommand{\goth}[1]{\mathfrak{#1}}
 \newcommand{\reduced}[1]{#1_{\text{red}}}
 \newcommand{\reg}[1]{#1_{\text{reg}}}
+
+\newcommand{\fE}{\mathscr{E}}
 \newcommand{\fF}{\mathscr{F}}
 \newcommand{\fG}{\mathscr{G}}
-\newcommand{\fE}{\mathscr{E}}
-\newcommand{\fO}{\mathscr{O}}
+\newcommand{\fH}{\mathscr{H}}
+\newcommand{\fI}{\mathscr{I}}
+\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fK}{\mathscr{K}}
 \newcommand{\fL}{\mathscr{L}}
 \newcommand{\fM}{\mathscr{M}}
-\newcommand{\fI}{\mathscr{I}}
-\newcommand{\fT}{\mathscr{T}}
-\newcommand{\fK}{\mathscr{K}}
-\newcommand{\fS}{\mathscr{S}}
 \newcommand{\fN}{\mathscr{N}}
-\newcommand{\fJ}{\mathscr{J}}
+\newcommand{\fO}{\mathscr{O}}
 \newcommand{\fR}{\mathscr{R}}
-\newcommand{\fH}{\mathscr{H}}
-\newcommand{\PP}{\mathbb{P}}
+\newcommand{\fS}{\mathscr{S}}
+\newcommand{\fT}{\mathscr{T}}
+\newcommand{\fX}{\mathscr{X}}
+\newcommand{\fY}{\mathscr{Y}}
+\newcommand{\fZ}{\mathscr{Z}}
+
 \newcommand{\gm}{\goth{m}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\G}{\mathbb{G}}
 \newcommand{\gF}{\goth{F}}
+\newcommand{\gU}{\goth{U}}
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
 \newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
 
@@ -46,7 +60,7 @@
 \newtheorem{corollary}{Corollary}
 
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\bProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\rProj}{\mathpzc{Proj}}
 \DeclareMathOperator{\Frac}{Frac}
 \DeclareMathOperator{\rk}{rank}
 \DeclareMathOperator{\pic}{Pic}
@@ -63,6 +77,7 @@
 \DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\Aut}{Aut}
@@ -77,8 +92,8 @@
 % \color[RGB]{191,191,191}
 
 % Sephia
-% \pagecolor[RGB]{249,239,220}
+\pagecolor[RGB]{249,239,220}
 
 % Black
-\pagecolor[RGB]{20,20,20}
-\color[RGB]{220,220,220}
+% \pagecolor[RGB]{20,20,20}
+% \color[RGB]{200,200,200}
