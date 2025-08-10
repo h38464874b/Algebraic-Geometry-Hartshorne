@@ -1,4 +1,4 @@
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsfonts,mathtools,amsthm,amssymb}
 \usepackage[l2tabu,orthodox]{nag}
 \usepackage{microtype} % fixes spacing or whatever
@@ -6,21 +6,23 @@
 \usepackage{tikz-cd}
 \usepackage{xcolor}
 \usepackage{physics}
-% \usepackage{mathrsfs}
-\usepackage{kpfonts}
-\usepackage[cal=dutchcal,
-bb=boondox,
-bbscaled=1.05,
-scr=boondoxupr]{mathalpha}
+\usepackage{mathrsfs}
+% \usepackage{kpfonts}
+% \usepackage[cal=dutchcal,
+% bb=boondox,
+% bbscaled=1.05,
+% scr=boondoxupr]{mathalpha}
 
 \renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
 
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 
 \newcommand{\goth}[1]{\mathfrak{#1}}
-\newcommand{\reduced}[1]{#1_{\text{red}}}
+\newcommand{\red}[1]{#1_{\text{red}}}
 \newcommand{\reg}[1]{#1_{\text{reg}}}
 
+\newcommand{\fA}{\mathscr{A}}
 \newcommand{\fE}{\mathscr{E}}
 \newcommand{\fF}{\mathscr{F}}
 \newcommand{\fG}{\mathscr{G}}
@@ -32,6 +34,7 @@ scr=boondoxupr]{mathalpha}
 \newcommand{\fM}{\mathscr{M}}
 \newcommand{\fN}{\mathscr{N}}
 \newcommand{\fO}{\mathscr{O}}
+\newcommand{\fP}{\mathscr{P}}
 \newcommand{\fR}{\mathscr{R}}
 \newcommand{\fS}{\mathscr{S}}
 \newcommand{\fT}{\mathscr{T}}
@@ -42,15 +45,17 @@ scr=boondoxupr]{mathalpha}
 \newcommand{\gm}{\goth{m}}
 \newcommand{\gF}{\goth{F}}
 \newcommand{\gU}{\goth{U}}
+\newcommand{\gV}{\goth{V}}
 
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\PP}{\mathbb{P}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\G}{\mathbf{G}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
 
 \newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
@@ -58,9 +63,12 @@ scr=boondoxupr]{mathalpha}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
 
-\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\rProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\rSpec}{\mathpzc{Spec}}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Frac}{Frac}
 \DeclareMathOperator{\rk}{rank}
 \DeclareMathOperator{\pic}{Pic}
@@ -77,13 +85,21 @@ scr=boondoxupr]{mathalpha}
 \DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\ch}{char}
 \DeclareMathOperator{\tor}{Tor}
 \DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Supp}{Supp}
 
 \author{James Lee}
 

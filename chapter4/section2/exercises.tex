@@ -8,131 +8,16 @@
 
 \item Use (2.5.3) to show that $\PP^n$ is simply connected.
 
-\item \textit{Classification of Curves of Genus 2.} Fix an algebraically closed field $k$ of characteristic $\neq 2$
+\item \textit{Classification of Curves of Genus 2.} Fix an algebraically closed field $k$ of characteristic $\neq 2$.
 \begin{enumerate} [label=(\alph*)]
-    \item If $X$ is a curve of genus 2 over $k$, the canonical linear system $|K|$ determines a finite morphism $f: X \PP^1$ of degree 2 (Ex. 1.7).
-    Show that it is ramified at exactly 6 points, with ramification index 2 at each one.
-    Note that $f$ is uniquely determined up to an automorphism of $\PP^1$, so $X$ determines an (unordered) set of 6 points of $\PP^1$, up to an automorphism of $\mathbb{P}^1$.
+  \item If $X$ is a curve of genus 2 over $k$, the canonical linear system $|K|$ determines a finite morphism $f : X \to \PP^1$ of degree 2 (Ex. 1.7). Show that it is ramified at exactly 6 points, with ramification index 2 at each one.
+  Note that $f$ is uniquely determined, up to an automorphism of $\PP^1$, so $X$ determines an (unordered) set of 6 points of $\PP^1$, up to an automorphism of $\PP^1$.
 
-    \item Conversely, given six distinct elements $a_1, \dots, a_6 \in k$, let $K$ be the extension of $k(x)$ determined by the equation $z^2 = (x - a_1)\cdots(x - a_6)$.
-    Let $f: X \to \mathbb{P}^1$ be the corresponding morphism of curves.
-    Show that $g(X) = 2$, the map $f$ is the same as the one determined by the canonical linear system, and $f$ is ramified over the six points $x = a_i$ of $\mathbb{P}^1$, and nowhere else. (Cf. (II, Ex. 6.4).)
-
-    \item Using (I, Ex. 6.6), show that if $P_1, P_2, P_3$ are three distinct points of $\mathbb{P}^1$, then there exists a unique $\varphi \in \text{Aut}(\mathbb{P}^1)$ such that $\varphi(P_1) = 0$, $\varphi(P_2) = 1$, $\varphi(P_3) = \infty$.
-    Thus in (a), if we order the six points of $\mathbb{P}^1$ and then normalize by sending the first three to $0,1,\infty$ respectively, we may assume that $X$ is ramified over $0,1,\infty,\beta_1,\beta_2,\beta_3$, where $\beta_1, \beta_2, \beta_3$ are three distinct elements of $k \setminus \{0,1\}$.
-
-    \item Let $S_6$ be the symmetric group on 6 letters.
-    Define an action of $S_6$ on sets of three distinct elements $\beta_1, \beta_2, \beta_3$ of $k$, $\neq 0,1$, as follows:
-    reorder the set $\{0,1,\infty,\beta_1,\beta_2,\beta_3\}$ according to a given element $\sigma \in S_6$, then renormalize as in (c) so that the first three become $0,1,\infty$ again.
-    Then the last three are the new $\beta'_1, \beta'_2, \beta'_3$.
-
-    \item Summing up, conclude that there is a one-to-one correspondence between the set of isomorphism classes of curves of genus 2 over $k$, and triples of distinct elements $\beta_1, \beta_2, \beta_3$ of $k, \neq 0, 1$, modulo the action of $\Sigma_6$ described in (d).
-    In particular, there are many non-isomorphic curves of genus 2.
-    We say that curves of genus 2 depend on three parameters, since they correspond to the points of an open subset of $\A^3$ modulo a finite group.
-\end{enumerate}
-
-\item \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\PP^2$.
-For each point $P \in X$, let $T_P(X)$ be the tangent line to $X$ at $P$ (I, Ex. 7.3).
-Considering $T_P(X)$ as a point of the dual projective plane $(\mathbb{P}^2)^*$, the map $P \mapsto T_P(X)$ gives a morphism $X \to X^* \subset (\mathbb{P}^2)^*$.
-Assume $\ch(k) = 0$.
-\begin{enumerate}[label=(\alph*)]
-    \item Fix a line $L \subset \PP^2$ which is not tangent to $X$. Define a morphism $\varphi: X \to L$ by $\varphi(P) = T_P(X) \cap L$. Show that $\varphi$ is ramified at $P$ if and only if either:
-    \begin{enumerate}
-        \item $P \in L$, or
-        \item $P$ is an inflection point of $X$, i.e., the intersection multiplicity of $T_P(X)$ with $X$ at $P$ is $\geq 3$.
-    \end{enumerate}
-    Conclude that $X$ has only finitely many inflection points.
-
-    \item A line in $\PP^2$ is a multiple tangent of $X$ if it is tangent to $X$ at more than one point.
-    It is a bitangent if it is tangent to $X$ at exactly two points.
-    If $L$ is a multiple tangent to $X$ at points $P_1, \dots, P_r$ and none of the $P_i$ is an inflection point, show that the corresponding point of the dual curve $X^*$ is an ordinary $r$-fold point.
-    Conclude that $X$ has only finitely many multiple tangents.
-
-    \item Let $O \in \PP^2$ be a point not on $X$, nor on any inflectional or multiple tangent of $X$.
-    Let $L$ be a line not containing $O$.
-    Define $\psi: X \to L$ by projection from $O$. Show that $\psi$ is ramified at $P \in X$ iff line $OP$ is tangent to $X$ at $P$, and then the ramification index is 2.
-    Use Hurwitz's theorem to conclude that there are exactly $d(d - 1)$ tangents of $X$ passing through $O$.
-    Hence, $\deg(X^*) = d(d - 1)$.
-
-    \item Show that for all but a finite number of points on $X$, a point lies on exactly $(d + 1)(d - 2)$ tangents of $X$, not counting the tangent at that point.
-
-    \item Show that the degree of the morphism $\varphi$ in (a) is $d(d - 1)$.
-    Conclude that if $d \geq 2$, then $X$ has $3d(d - 2)$ inflection points, properly counted (if $T_P(X)$ has intersection multiplicity $r$, then $P$ is counted $r - 2$ times).
-    Show that an ordinary inflection point corresponds to an ordinary cusp of $X^*$.
-
-    \item Let $X$ be a plane curve of degree $d \geq 2$, and suppose $X^*$ has only nodes and ordinary cusps.
-    Then show that $X$ has exactly $\frac{1}{2}d(d - 2)(d - 3)(d + 3)$ bitangents.
-    [Hint: Use normalization and compute $p_a(X^*)$ in two ways.]
-
-    \item For example, a plane cubic curve has exactly 9 inflection points, all ordinary.
-    The line joining any two of them intersects the curve in a third one
-
-    \item A plane quartic has exactly 28 bitangents.
-    (This holds even if the curve has a tangent with four-fold contact, in which case the dual curve $X^*$ has a tacnode.)
-\end{enumerate}
-
-\item Let $X$ be the plane quartic curve $x^3 y + y^3 + z^3 x = 0$ over a field of characteristic 3.
-Show that $X$ is nonsingular, every point of $X$ is an inflection point, $X^* \cong X$, but the natural map $X \to X^*$ is purely inseparable.
-
-\item \textit{Automorphismss of a Curve of Genus $\geq 2$.} Prove Hurwitz's theorem: A curve $X$ of genus $g \geq 2$ over a field of char 0 has at most $84(g - 1)$ automorphisms.
-Let $G = \Aut(X)$, $|G| = n$. Then $G$ acts on $K(X)$, let $L = K(X)^G$, corresponding to a morphism $f: X \to Y$ of degree $n$.
-\begin{enumerate}[label=(\alph*)]
-    \item For a ramification point $P \in X$ with index $r$, show that $f^{-1}(f(P))$ has $n/r$ points with ramification index $r$.
-    Let $P_1, \dots, P_s$ be ramification points over distinct points of $Y$ with indices $r_i$. Then Hurwitz's formula implies:
-    \[
-    \frac{2g - 2}{n} = 2g(Y) - 2 + \sum_{i=1}^s \left(1 - \frac{1}{r_i}\right)
-    \]
-
-    \item Since $g \geq 2$, the LHS $> 0$. Show the RHS has minimum $1/42$, so $n \leq 84(g - 1)$.
-    \textbf{Note:} This bound is sharp for infinitely many $g$ (Macbeath).
-    In characteristic $p > 0$, same bound holds if $p > g + 1$, with one exception: $y^2 = x^p - x$, $p = 2g + 1$, which has $2p(p^2 - 1)$ automorphisms (Roquette).
-\end{enumerate}
-
-\item  Let $f: X \to Y$ be a finite morphism of curves of degree $n$.
-\begin{enumerate}[label=(\alph*)]
-    \item Define $f_*: \Div(X) \to \Div(Y)$ by $f_*(\sum n_i P_i) = \sum n_i f(P_i)$.
-
-    For any locally free sheaf $\fF$ on $Y$ of rank $r$, define $\det \fG = \bigwedge^r \fF \in \pic(Y)$. For invertible sheaf $\mathcal{L}$ on $X$, $f_* \fL$ is locally free of rank $n$ on $Y$.
-    Show
-    \[
-    \det(f_*\fO_X(D)) \cong \det(f_* \fO_X) \otimes \fO_Y(f_*D)
-    \]
-
-    \item Conclude that $f_*D$ depends only on the linear equivalence class of $D$.
-    Then $f_*$ induces a homomorphism $f_*: \pic(X) \to \pic(Y)$.
-    Show that $f^* \circ f_*: \pic(Y) \to \pic(Y)$ is multiplication by $n$.
-
-    \item Use duality for finite flat morphisms to show:
-    \[
-    \det(f_* \omega_X) \cong \det(f_* \fO_X)^{-1} \otimes \omega_Y
-    \]
-
-    \item If $f$ is separable with ramification divisor $R$, define the branch divisor $B = f_* R$. Show:
-    \[
-    \det(f_* \fO_X)^2 \cong \fO_Y(-B)
-    \]
-\end{enumerate}
-
-\item  Let $Y$ be a curve over a field of $\ch{} \neq 2$.
-There is a one-to-one correspondence between finite étale covers $f: X \to Y$ of degree 2 and 2-torsion elements of $pic(Y)$.
-\begin{enumerate}[label=(\alph*)]
-    \item Given $f: X \to Y$ étale of degree 2, there is a natural map $\fO_Y \to f_* \fO_X$, with cokernel $\fL$.
-    Then $fL$ is invertible on $Y$, and $\fL^2 \cong \fO_Y$.
-
-    \item Conversely, given a 2-torsion line bundle $\fL$, define $\fO_Y$-algebra structure on $\fO_Y \oplus \fL$ by:
-    \[
-    (a, b) \cdot (a', b') = (aa' + \varphi(b \otimes b'), ab' + a'b)
-    \]
-    where $\varphi: \fL \otimes \fL \to \fO_Y$ is an isomorphism. Let $X = \spec(\fO_Y \oplus \fL)$.
-
-    \item Show these two constructions are inverses of each other. Use the involution on $X$ and the trace map $a \mapsto a + \tau(a)$ to split the exact sequence.
+  \item Conversely, given six distinct elements $\alpha_1, \dots, \alpha_6 \in k$, let $K$ be the extension of $k(x)$ determined by the equation $z^2 = (x - \alpha_1) \cdots (x-\alpha_6)$.
+  Let $f : X \to \PP^1$ be the corresponding morphism of curves.
+  Show that $g(X) = 2$, the map $f$ is the same as the one determined by the canonical linear system, and $f$ is ramified over the six points $x = \alpha_i$ of $\PP^1$, and nowhere else.
 \end{enumerate}
 
 \end{enumerate}
-
-\end{document}
-
-
-\section*{2.7 Étale Covers of Degree 2}
 
 \end{document}
