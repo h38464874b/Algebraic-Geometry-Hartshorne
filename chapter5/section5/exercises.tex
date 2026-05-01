@@ -1,0 +1,49 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 5, Section 5}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $f$ be a rational function on the surface $X$.
+Show that it is possible to ``resolve the singularities of $f$'' in the following sense: there is a birational moprhism $g : X' \to X$ so that $f$ induces a morphism of $X'$ to $\PP^1$.
+
+\item Let $Y \cong \PP^1$ be a curve in a surface $X$, with $Y^2 < 0$.
+Show that $Y$ is contractible (5.7.2) to a point on a projective variety $X_0$ (in general singular).
+
+\item If $\pi : \tilde{X} \to X$ is a monoidal transformation with center $P$, show that $\cH^1(\tilde{X}, \Omega_{\tilde{X}}) \cong \cH^1(X, \Omega_X) \oplus k$.
+This gives another proof of (5.8).
+
+\item Let $f : X \to X'$ be a birational morphism of nonsingular surfaces.
+\begin{itemize}
+    \item[(a)] If $Y \subseteq X$ is an irreducible curve such that $f(Y)$ is a point, then $Y \cong \PP^1$ and $Y^2 < 0$.
+    \item[(b)] (Mumford [6].) Let $P' \in X'$ be a fundamental point of $f^{-1}$, and let $Y_1, \dots, Y_r$ be the irreducible components of $f^{-1}(P')$.
+    Show that the matrix $||Y_i.Y_j||$ is negative definite.
+\end{itemize}
+
+\item Let $C$ be a curve, and let $\pi : X \to C$ and $\pi' : X' \to C$ be two geometrically ruled surfaces over $C$.
+Show that there is a finite sequence of elementary transformations (5.7.1) which transform $X$ into $X'$.
+
+\item Let $X$ be a surface with function field $K$.
+Show that every valuation ring $R$ of $K/k$ is one of the three kinds described in (II, Ex 4.12).
+
+\item Let $Y$ be an irreducible curve on a surface $X$, and suppose there is a morphism $f : X \to X_0$ to a projective variety $X_0$ of dimension 2, such that $f(Y)$ is a point $P$ and $f^{-1}(P) = Y$.
+Then show that $Y^2 < 0$.
+
+\item \textit{A surface singularity.} Let $k$ be an algebraically closed field, and let $X$ be the surface in $\A_k^3$ defined by the equation $x^2 + y^3 + z^5 = 0$.
+It has an isolated singularity at the origin $P = (0, 0, 0)$.
+\begin{itemize}
+    \item[(a)] Show that the affine ring $A = k[x, y, z] / (x^2 + y^3 + z^5)$ of $X$ is a unique factorization domain, as follows.
+    Let $t = z^{-1}$, $u = t^3x$, and $v = t^2 y$.
+    Show that $z$ is irreducible in $A$, $t \in k[u, v]$, and $A[z^{-1}] = k[u, v, t^{-1}]$.
+    Conclude that $A$ is a UFD.
+    \item[(b)] Show that the singularity at $P$ can be resolved by eight successive blowing-up.
+    If $\tilde{X}$ is the resulting nonsingular surface, then the inverse image of $P$ is a union of eight projective lines, which intersect each other according to the Dynkin diagram $\mathbb{E}_8$:
+    \tble{E/{8}}
+    Here each circle denotes a line, and two circles are joined by a line segment whenever the corresponding lines intersect.
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}

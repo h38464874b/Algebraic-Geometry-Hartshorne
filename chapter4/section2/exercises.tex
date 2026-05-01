@@ -1,0 +1,194 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 4, Section 2}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Use (2.5.3) to show that $\PP^n$ is simply connected.
+
+\begin{proof}
+  Let $f : X \to \PP^n$ be an étale covering.
+  We may assume $X$ is connected.
+  Then $X$ is smooth over $k$ since $f$ is étale, and $X$ is projective over $k$ since $f$ has finite, so $X$ has dimension $n$.
+
+\end{proof}
+
+\item \textit{Classification of Curves of Genus 2.} Fix an algebraically closed field $k$ of characteristic $\neq 2$.
+\begin{enumerate} [label=(\alph*)]
+  \item If $X$ is a curve of genus 2 over $k$, the canonical linear system $|K|$ determines a finite morphism $f : X \to \PP^1$ of degree 2 (Ex. 1.7). Show that it is ramified at exactly 6 points, with ramification index 2 at each one.
+  Note that $f$ is uniquely determined, up to an automorphism of $\PP^1$, so $X$ determines an (unordered) set of 6 points of $\PP^1$, up to an automorphism of $\PP^1$.
+
+  \item Conversely, given six distinct elements $\alpha_1, \dots, \alpha_6 \in k$, let $K$ be the extension of $k(x)$ determined by the equation $z^2 = (x - \alpha_1) \cdots (x-\alpha_6)$.
+  Let $f : X \to \PP^1$ be the corresponding morphism of curves.
+  Show that $g(X) = 2$, the map $f$ is the same as the one determined by the canonical linear system, and $f$ is ramified over the six points $x = \alpha_i$ of $\PP^1$, and nowhere else.
+
+  \item Using (I, Ex. 6.6), show that if $P_1, P_2, P_3$ are three distinct points of $\PP^1$, then there exists a unique $\varphi \in \Aut{\PP^1}$ such that $\varphi(P_1) = 0$, $\varphi(P_2) = 1$, $\varphi(P_3) = \infty$.
+  Thus in (a), if we order the six points of $\PP^1$, and then normalize by sending the first three to $0, 1, \infty$, respectively, we may assume that $X$ is ramified over $0, 1, \infty, \beta_1, \beta_2, \beta_3$, where $\beta_1, \beta_2, \beta_3$ are three distinct elements of $k$, $\neq 0, 1$.
+
+  \item Let $\Sigma_6$ be the symmetric group on 6 letters.
+  Define an action of $\Sigma_6$ on sets of three distinct elements $\beta_1, \beta_2, \beta_3$ of $k$, $\neq 0, 1$, as follows: reorder the set $0, 1, \infty, \beta_1, \beta_2, \beta_3$ according to a given element $\sigma \in \Sigma_6$, then renormalize as in (c) so that the three become $0, 1, \infty$ again.
+  Then the last three are the new $\beta_1', \beta_2', \beta_3'$.
+
+  \item Summing up, conclude that there is a one-to-one correspondence between the set of isomorphism classes of curves of genus 2 over $k$, and triples of distinct elements $\beta_1, \beta_2, \beta_3$ of $k$, $\neq 0, 1$, modulo the action of $\Sigma_6$ described in (d).
+  In particular, there are many non-isomorphic curves of genus 2.
+  We say that curves of genus 2 depend on three parameters, since they correspond to the points of an open subset of $\A_k^3$ modulo a finite group.
+\end{enumerate}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{enumerate} [leftmargin=0cm]
+  \item By Hurtwitz theorem, the degree of the ramification divisor is computed to be
+  \begin{equation*}
+    \deg{R} = 2g(X) - 2 - n(2g(\PP^1) - 2) = 6.
+  \end{equation*}
+  The ramification index at a point cannot exceed the degree of the morphism, so $f$ must be ramified at exactly 6 distinct points each having ramification index 2.
+
+  \item Since $K$ has degree 2 over $k(x)$, the degree of $f$ is 2.
+
+  \item Let $x$ be an affine coordinate on $\PP^1$ such that $P_i \neq \infty$ and identify $P_i$ with some $\alpha_i \in k$.
+  The following automorphism will do
+  \begin{equation*}
+    \varphi(x) = \frac{\alpha_2 - \alpha_3}{\alpha_2 - \alpha_1}\frac{x - \alpha_1}{x - \alpha_3}.
+  \end{equation*}
+
+  \item[(e)] We want to show two curves of genus 2 are isomorphic if and only if they correspond to the same triples of distinct elements in $k$, $\neq 0, 1$, described in (d).
+\end{enumerate} 
+\end{proof}
+
+\item[\textbf{5.}] \textit{Automorphisms of a Curve of Genus $\geq 2$.} Prove the theorem of Hurtwitz [1] that a curve $X$ of genus $g \geq 2$ over a field of characteristic 0 has at most $84(g - 1)$ automorphisms.
+We will see later (Ex. 5.2) or (V, Ex. 1.11) that the group $G = \Aut{X}$ is finite.
+So let $G$ have order $n$.
+Then $G$ acts on the function field $K(X)$.
+Let $L$ be the fixed field.
+Then the field extension $L \subseteq K(X)$ corresponds to a finite morphism of curves $f : X \to Y$ degree $n$.
+\begin{itemize}
+  \item[(a)] If $P \in X$ is a ramification point, and $e_p = r$, show that $f^{-1}f(P)$ consists of exactly $n/r$ points, each having ramification index $r$.
+  Let $P_1, \dots, P_s$ be a maximal set of ramification points of $X$ lying over distinct points of $Y$, and let $e_{P_i} = r_i$.
+  Then show that Hurtwitz's theorem implies that
+  \begin{equation*}
+    (2g - 2)/n = 2g(Y) - 2 + \sum_{i = 1}^s (1 - 1/r_i).
+  \end{equation*}
+  \item[(b)] Since $g \geq 2$, the left hand side of the equation is $> 0$.
+  Show that if $g(Y) \geq 0$, $s \geq 0$, $r_i \geq 2$, $i = 1, \dots, s$ are integers such that
+  \begin{equation*}
+    2g(Y) - 2 + \sum_{i = 1}^s (1 - 1 / r_i) > 0,
+  \end{equation*}
+  then the minimum value of this expression is $1 / 42$.
+  Conclude that $n \geq 84(g - 1)$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{enumerate} [leftmargin=0cm]
+  \item[(a)]
+
+  \item[(b)] The following values give the minimum value
+  \begin{equation*}
+    g(Y) = 0, \quad s = 3, \quad r_1 = \frac{1}{2}, \quad r_2 = \frac{1}{3}, \quad r_3 = \frac{1}{7}.
+  \end{equation*}
+  We conclude that
+  \begin{equation*}
+    n \leq 42(2g - 2) = 84(g - 1).
+  \end{equation*}
+\end{enumerate} 
+\end{proof}
+
+\newpage
+
+\item[\textbf{6.}] \textit{$f_*$ for Divisors.} Let $f : X \to Y$ be a finite morphism of curves of degree $n$.
+We define a homomorphism $f_* : \Div{X} \to \Div{Y}$ by $f_*(\sum n_i P_i) = \sum n_i f(P_i)$ for any divisor $D = \sum n_i P_i$ on $X$.
+\begin{itemize}
+  \item[(a)] For any locally free sheaf $\fE$ on $Y$, of rank $r$, we define $\det \fE = \wedge^r \fE \in \pic{Y}$ (II, Ex. 6.11).
+  In particular, for any invertible sheaf $\fM$ on $X$, $f_*\fM$ is locally free of rank $n$ on $Y$, so we can consider $\det f_*\fM \in \pic{Y}$.
+  Show that for any divisor $D$ on $X$,
+  \begin{equation*}
+    \det(f_*\fO_X(D)) \cong (\det f_*\fO_X) \otimes \fO_Y(f_*D).
+  \end{equation*}
+  Note in particular that $\det(f_*\fO_X(D)) \neq \fO_Y(f_*D)$ in general!.
+  \item[(b)] Conclude that $f_*D$ depends only on the linear equivalence class of $D$, so there is an induced homomorphism $f_* : \pic{X} \to \pic{Y}$.
+  Show that $f_* \circ f^* : \pic{Y} \to \pic{Y}$ is just multiplication by $n$.
+  \item[(c)] Use duality for a finite flat morphisms (III, Ex. 6.10) and (III, Ex. 7.2) to show that
+  \begin{equation*}
+    \det f_*\Omega_X \cong (\det f_*\fO_X )^{-1} \otimes \Omega_Y^{\otimes n}.
+  \end{equation*}
+  \item[(d)] Now assume that $f$ is separable, so we have the ramification divisor $R$.
+  We define the \textit{branch divisor} $B$ to be the divisor $f_*R$ on $Y$.
+  Show that
+  \begin{equation*}
+    (\det f_*\fO_X)^2 \cong \fO_Y(-B).
+  \end{equation*}
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+  \item[(a)] Consider the case when $D$ is an effective divisor.
+  The pushfoward $f_*$ is exact for finite morphisms, so applying $f_*$ to the exact sequence
+  \[ \begin{tikzcd}
+    0 \arrow[r] & \fO_X \arrow[r] & \fO_X(D) \arrow[r] & \fO_D \arrow[r] & 0
+  \end{tikzcd}\]
+  gives us another exact sequence
+  \[ \begin{tikzcd}
+    0 \arrow[r] & f_*\fO_X \arrow[r] & f_*\fO_X(D) \arrow[r] & f_*\fO_D \arrow[r] & 0.
+  \end{tikzcd}\]
+  Taking determinants, we have
+  \begin{equation*}
+    \det(f_*\fO_X(D)) \cong (\det f_*\fO_X) \otimes \det(f_*\fO_D)
+  \end{equation*}
+
+  \item[(b)] It suffices to show $f_*f^*Q = nQ$ for every point $Q \in Y$.
+  By definition, $f_*f^*Q = n'Q$ for some $n' \geq 0$.
+  On the otherhand, $\deg f_*D = \deg{D}$, and $\deg f^*D = n \deg{D}$ (II, 6.9), so $\deg f_*f^*D = n \deg{D}$.
+  Hence, $n' = n$.
+
+  \item[(c)]
+
+  \item[(d)] Let $K_X$ and $K_Y$ be canonical divisors of $X$ and $Y$, respectively.
+  They satisfy the following relation (2.3)
+  \begin{equation*}
+    f^*K_Y - K_X \sim -R.
+  \end{equation*}
+  Applying $f_*$ gives
+  \begin{equation*}
+    nK_Y - f_*K_X \sim - B,
+  \end{equation*}
+  where we used the fact that $f_*f^*K_Y = nK_Y$ (b).
+  On the otherhand, the results of (a) applied to $D = K_X$ and (c) give
+  \begin{equation*}
+    \fO_Y(nK_Y) \cong (\det f_*\fO_X) \otimes (\det f_*\Omega_X), \quad \fO_Y(-f_*K_X) \cong (\det f_*\Omega_X) \otimes (\det f_*\Omega_X)^{-1},
+  \end{equation*}
+  so combining everything, we get
+  \begin{equation*}
+    (\det f_*\fO_X)^2 \cong \fO_Y(nK_Y - f_*K_X) \cong \fO_Y(-B).
+  \end{equation*}
+\end{itemize} 
+\end{proof}
+
+\item[\textbf{7.}] \textit{Étale Covers of Degree 2.} Let $Y$ be a curve over a field $k$ of characteristic $\neq 2$.
+We show there is a one-to-one correspondence between finite étale morphisms $f : X \to Y$ of degree 2, and 2-torsion elements of $\pic{Y}$, i.e., invertible sheaves $\fL$ on $Y$ with $\fL^2 \cong \fO_Y$.
+\begin{itemize}
+  \item[(a)] Given an étale morphism $f : X \to Y$ of degree 2, there is a natural map $\fO_Y \to f_*\fO_X$.
+  Let $\fL$ be the cokernel.
+  Then $\fL$ is an invertible sheaf on $Y$, $\fL \cong \det f_*\fO_X$, and so $\fL^2 \cong \fO_X$ by (Ex. 2.6).
+  Thus an étale cover of degree 2 determines a 2-torsion element in $\pic{Y}$.
+  \item[(b)] Conversely, given a 2-torsion element $\fL$ in $\pic{Y}$, define an $\fO_Y$-algebra structure on $\fO_Y \oplus \fL$ by $\langle a, b \rangle \cdot \langle a', b' \rangle = \langle aa' + \varphi(b \otimes b'), ab' + a'b \rangle$, where $\varphi$ is an isomorphism of $\fL \otimes \fL \to \fO_Y$.
+  Then take $X = \rSpec(\fO_Y \oplus \fL)$.
+  Show that $X$ is an étale cover of $Y$.
+  \item[(c)] Show that these two processes are inverse to each other.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+  \item[(b)] For each point $y \in Y$, we have $X_y \cong \spec(\fO_y^{\oplus 2})$ with $\fO_{y}$-algebra structure given by
+  \begin{equation*}
+    \langle a, b \rangle \cdot \langle a', b' \rangle = \langle aa' + bb', ab' + a'b \rangle.
+  \end{equation*}
+  In particular, the natural morphism $f : X \to Y$ is flat because $f_*\fO_X$ is locally free of rank 2, and the structure morphism $\fO_{y} \to \fO_{y}^{\oplus 2}$ is given by $1 \mapsto \langle 1, 0 \rangle$.
+
+  \item[(c)]
+\end{itemize} 
+\end{proof}
+
+
+\end{enumerate}
+
+\end{document}

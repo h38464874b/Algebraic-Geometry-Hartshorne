@@ -1,0 +1,183 @@
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amssymb}
+\usepackage[l2tabu,orthodox]{nag}
+\usepackage{microtype} % fixes spacing or whatever
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{xcolor}
+\usepackage{physics}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{libertine,libertinust1math}
+\usepackage{eucal}
+\usepackage[toc,page]{appendix}
+\usepackage{pgfplots}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+% \usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
+% \linespread{1.025}              % Palatino leads a little more leading
+% % Euler for math and numbers
+% \usepackage[euler-digits,small]{eulervm}
+% \AtBeginDocument{\renewcommand{\hbar}{\hslash}}
+
+\usepackage{etoolbox}
+\usepackage{dynkin-diagrams}
+\def\row#1/#2!{\dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+\allowdisplaybreaks
+
+\renewcommand{\epsilon}{\varepsilon}
+% \renewcommand{\phi}{\varphi}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\goth}[1]{\mathfrak{#1}}
+\newcommand{\red}[1]{#1_{\text{red}}}
+\newcommand{\ad}[1]{#1_{\text{Ad}}}
+\newcommand{\reg}[1]{#1_{\text{reg}}}
+\newcommand{\sh}[1]{#1^{\text{sh}}}
+\newcommand{\cpdv}[2]{\cfrac{\partial #1}{\partial #2}}
+
+\newcommand{\fA}{\mathcal{A}}
+\newcommand{\fB}{\mathcal{B}}
+\newcommand{\fC}{\mathcal{C}}
+\newcommand{\fD}{\mathcal{D}}
+\newcommand{\fE}{\mathcal{E}}
+\newcommand{\fF}{\mathcal{F}}
+\newcommand{\fG}{\mathcal{G}}
+\newcommand{\fH}{\mathcal{H}}
+\newcommand{\fI}{\mathcal{I}}
+\newcommand{\fJ}{\mathcal{J}}
+\newcommand{\fK}{\mathcal{K}}
+\newcommand{\fL}{\mathcal{L}}
+\newcommand{\fM}{\mathcal{M}}
+\newcommand{\fN}{\mathcal{N}}
+\newcommand{\fO}{\mathcal{O}}
+\newcommand{\fP}{\mathcal{P}}
+\newcommand{\fQ}{\mathcal{Q}}
+\newcommand{\fR}{\mathcal{R}}
+\newcommand{\fS}{\mathcal{S}}
+\newcommand{\fT}{\mathcal{T}}
+\newcommand{\fX}{\mathcal{X}}
+\newcommand{\fY}{\mathcal{Y}}
+\newcommand{\fZ}{\mathcal{Z}}
+
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bone}{\mathbf{1}}
+\newcommand{\cx}{\bar{x}}
+\newcommand{\cy}{\bar{y}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vsigma}{\vec{\sigma}}
+\newcommand{\tzeta}{\tilde{\zeta}}
+
+\newcommand{\gm}{\goth{m}}
+\newcommand{\gp}{\goth{p}}
+\newcommand{\gF}{\goth{F}}
+\newcommand{\gU}{\goth{U}}
+\newcommand{\gV}{\goth{V}}
+
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\G}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\newcommand{\dlog}{\dd\log}
+
+\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
+\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
+\newcommand\gsec[2]{\Gamma({#1}, {#2})}
+\newcommand\gsecx[1]{\Gamma(X, {#1})}
+
+\DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\rProj}{\mathbf{Proj}}
+\DeclareMathOperator{\rSpec}{\mathbf{Spec}}
+\DeclareMathOperator{\rHom}{\mathbf{Hom}}
+\DeclareMathOperator{\rExt}{\mathbf{Ext}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\deter}{det}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ch}{char}
+\DeclareMathOperator{\tor}{Tor}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\hd}{hd}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Oth}{O}
+\DeclareMathOperator{\Uni}{U}
+\DeclareMathOperator{\evf}{ev}
+\DeclareMathOperator{\cH}{H}
+\DeclareMathOperator{\dR}{R}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hasse}{Hasse}
+\DeclareMathOperator{\Num}{Num}
+
+\author{James Lee}
+
+% Solarized
+% \pagecolor[RGB]{0,20,26}
+% \color[RGB]{191,191,191}
+
+% Sephia
+% \pagecolor[RGB]{249,239,220}
+
+% Grey
+% \pagecolor[RGB]{200, 200, 200}
+
+% Black
+% \pagecolor[RGB]{0,0,0}
+% \color[RGB]{255,255,255}

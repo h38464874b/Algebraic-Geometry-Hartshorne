@@ -1,0 +1,58 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 5, Section 3}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $X$ be a nonsingular projective variety of any dimension, let $Y$ be a nonsingular subvariety, and let $\pi : \tilde{X} \to X$ be obtained by blowing up $Y$.
+Show that $p_a(\tilde{X}) = p_a(X)$.
+
+\item Let $C$ and $D$ be curves on a surface $X$, meeting at a point $P$.
+Let $\pi : \tilde{X} \to X$ be the monoidal transformation with center $P$.
+Show that $\tilde{C} . \tilde{D} = C. D - \mu_P(C) \cdot \mu_P(D)$.
+Conclude that $C.D. = \sum \mu_P(C) \cdot \mu_P(D)$, where the sum is taken over all intersection points of $C$ and $D$, including infinitely near intersection points.
+
+\item Let $\pi : \tilde{X} \to X$ be a monoidal transformation, and let $D$ be a very ample divisor on $X$.
+Show that $2\pi^*D - E$ is ample on $\tilde{X}$.
+
+\item \textit{Multiplicity of a Local Ring.} Let $A$ be a Noetherian local ring with maximal ideal $\gm$.
+For any $l > 0$, let $\psi(l) = \len(A/\gm^i)$.
+We call $\psi$ the \textit{Hilbert-Samuel function} of $A$.
+\begin{itemize}
+    \item[(a)] Show that there is a polynomial $P_A(z) \in \Q[z]$ such that $P_A(l) = \psi(l)$ for all $l \gg 0$.
+    This is the \textit{Hilbert-Samuel polynomial} of $A$.
+    \item[(b)] Show that $\deg{P_A} = \dim{A}$.
+    \item[(c)] Let $n = \dim{A}$.
+    Then we define the \textit{multiplicity} of $A$, denoted $\mu(A)$, to be $(n!) \cdot (\text{leading coefficient of $P_A$})$.
+    If $P$ is a point on a Noetherian scheme $X$, we define the \textit{multiplicity} of $P$ on $X$, $\mu_P(X)$, to be $\mu(\fO_{P, X})$.
+    \item[(d)] Show that for a point $P$ on a curve $C$ on a surface $X$, this definition of $\mu_P(C)$ coincides with the one in the text just before (3.5.2).
+    \item[(e)] If $Y$ is a variety of degree $d$ in $\PP^n$, show that the vertex of the cone over $Y$ is a point of multiplicity $d$.
+\end{itemize}
+
+\item Let $a_1, \dots, a_r$, $r \geq 5$, be distinct elements of $k$, and let $C$ be the curve in $\PP^2$ given by the (affine) equation $y^2 = \prod_{i = 1}^r (x - a_i)$.
+Show that the point $P$ at infinity on the $y$-axis is a singular point.
+Compute $\delta_P$ and $g(\tilde{Y})$, where $\tilde{Y}$ is the normalization of $Y$.
+Show in this way that one obtains hyperelliptic curves of ever genus $g \geq 2$.
+
+\item Show that analytically isomorphic curve singularities (I, 5.6.1) are equivalent in the sense of (3.9.4), but not conversely.
+
+\item For each of the following singularities at $(0, 0)$ in the plane, give an embedded resolution, compute $\delta_P$, and decide which ones are equivalent.
+\begin{itemize}
+    \item[(a)] $x^3 + y^5 = 0$
+    \item[(b)] $x^3 + x^4 + y^5 = 0$
+    \item[(c)] $x^3 + y^4 + y^5 = 0$
+    \item[(d)] $x^3 + y^5 + y^6 = 0$
+    \item[(e)] $x^3 + xy^3 + y^5 = 0$
+\end{itemize}
+
+\item[\textbf{8.}] Show that the following two singularities have the same multiplicity, and the same configuration of infinitely near singular points with the same multiplicities, hence the same $\delta_P$, but are not equivalent.
+\begin{itemize}
+    \item[(a)] $x^4 - xy^4 = 0$
+    \item[(b)] $x^4 - x^2 y^3 - x^2 y^5 + y^8 = 0$
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}

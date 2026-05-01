@@ -1,0 +1,163 @@
+\documentclass[a4paper]{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 3, Section 10}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Over a nonperfect field, smooth and regular are not equivalent.
+For example, let $k_0$ be a field of characteristic $p > 0$, let $k = k_0(t)$, and let $X \subseteq \A_k^2$ be the curve defined by $y^2 = x^p - t$.
+Show that every local ring of $X$ is a regular local ring, but $X$ is not smooth over $k$.
+
+\begin{proof}
+  To show every local ring of $X$ is a regular local ring, it suffices to show the coordinate ring of $X$ defined by $A = k[x, y] / (y^2 - x^p - t)$ is integrally closed.
+  If $p \neq 2$, the result follows from (II, Ex. 6.4), so assume $p = 2$.
+  An immediate consequence is
+  \begin{equation*}
+    y^2 - x^2 - t = (x + y)^2 - t,
+  \end{equation*}
+  which implies the isomorphism
+  \begin{equation*}
+    A = \frac{k[x, y]}{(x + y)^2 - t} \cong k(\sqrt{t})[z].
+  \end{equation*}
+  But $k(\sqrt{t})$ is a field, and polynomial rings over fields are integrally closed, so we conclude that $A$ is integrally closed.
+
+  Let $\bar{k}$ be the algebraic closure of $k$.
+  By (10.2), $X$ is smooth over $k$ if and only if $X \times_k \bar{k}$ is regular, i.e., $A \otimes_k \bar{k}$ defines a nonsingular $\bar{k}$-variety; but $t^{1/p} \in \bar{k}$, so we can factorize
+  \begin{equation*}
+    y^2 - x^p - t = y^2 - (x + t^{1/p})^p.
+  \end{equation*}
+  Thus, $(-t^{1/p}, 0)$ is a singular point of $X \times_k \bar{k}$ (A.M., Ex. 11.1), so $X$ is not smooth over $k$.
+\end{proof}
+
+\item Let $f : X \to Y$ be a proper, flat morphism of varieties over $k$. Suppose for some point $y \in Y$ that the fiber $X_y$ is smooth over $k(y)$. Then show that there is an open neighborhood $V$ of $y$ in $Y$ such that $f : f^{-1}(V) \to V$ is smooth.
+
+\begin{proof}
+  Flat morphisms of finite type between Noetherian schemes are open (Ex. 9.1), proper morphisms are closed, $X$ and $Y$ are irreducible, so $f$ must be surjective, and the generic point $\xi \in X$ is mapped to the generic point of $Y$.
+  Some immediate consequence are the following: $f$ trivially satisfies (2) in the definition of smoothness of relative dimension $n = \dim{X} - \dim{Y}$, so for every open set $V \subseteq X$, $f : f^{-1}(V) \to V$ satisfies (2).
+  Thus, we want to find an open neighborhood $V$ of $y$ such that $\Omega_{X / Y}$ is free at every point in $f^{-1}(V)$ (10.0.2).
+  For every $x \in X_y$, we have the inequalities
+  \begin{equation*}
+    \dim{X} - \dim{Y} \leq \dim_{k(\xi)} \Omega_{X / Y} \otimes k(\xi) \leq \dim_{k(x)} \Omega_{X / Y} \otimes k(x) = \dim{X_y},
+  \end{equation*}
+  by (II, Ex. 5.8a) and (II, 8.6A), where the last equality is by smoothness of $X_y$ over $k(y)$ and the fact that relative differentials commute with base change.
+  Since $n = \dim{X_y}$ (9.6), $\Omega_{X / Y}$ is free of rank $n$ at every $x \in X_y$ (II, 8.9).
+
+  Now, let $U = \{ x \in X \mid \Omega_{X / Y} \text{ is free at $x$}\}$, and $Z = X - U$.
+  Being free is an open property for finitely generated modules, so $U$ is an open subset of $X$.
+  Then $f$ is an open and closed mapping, so $f(U)$ and $X - f(Z)$ are open sets in $Y$.
+  Also, $f^{-1}(y) = X_y$ is a subset of $U$, which means $y$ is not in $f(Z)$.
+  Therefore, $f(U) \cap (X - f(Z))$ is a nonempty open set containing $y$, so we can find an open neighborhood $V$ of $y$ such that $V \subseteq f(U) \cap (X - f(Z))$.
+  Since $f^{-1}(V) \subseteq U$, $\Omega_{X / Y}$ is free at every point in $f^{-1}(V)$, which is what we wanted to show.
+\end{proof}
+
+\item A morphism $f : X \to Y$ of schemes of finite type over $k$ is \textit{étale} if it is smooth of relative dimension $0$. It is \textit{unramified} if for every $x \in X$, letting $y = f(x)$, we have $\goth{m}_y \cdot \fO_{x, X} = \goth{m}_x$, and $k(x)$ is a separable algebraic extension of $k(y)$. Show that the following conditions are equivalent:
+\begin{itemize}
+  \item[(i)] $f$ is étale;
+  \item[(ii)] $f$ is flat, and $\Omega_{X/Y} = 0$;
+  \item[(iii)] $f$ is flat and unramified.
+\end{itemize}
+
+\begin{proof}
+  $(i) \iff (ii)$ The forward direction is trivial.
+  On the other hand, $\Omega_{X/Y} = 0$ trivially satisfies condition (3) in the definition of smoothness, and we want to show condition (2) holds as well.
+  According to (9.6), condition (2) is equivalent to saying that every irreducible component of every fibre $X_y$ of $f$ has dimension $0$, so let $X'$ be an irreducible component of $X_y$ with its reduced induced structure.
+  Then $X'$ is an integral scheme of finite type over $k(y)$, and $\Omega_{X'/k(y)}$ is a coherent sheaf, so by (II, Ex. 3.20b) and (II, 8.6A),  we reduce to showing $\Omega_{X'/k(y)} \otimes k(x) = 0$ for every $x \in X'$.
+  Then
+  \begin{equation*}
+    \Omega_{X_y / k(y)} \otimes k(x) = \Omega_{X / Y} \otimes k(x) = 0
+  \end{equation*}
+  since relative differentials commute with base extension and $\Omega_{X / Y} = 0$.
+  Hence, the result follows from the surjective map of (II, 8.12)
+  \[ \begin{tikzcd}
+    \Omega_{X_y/k(y)} \otimes k(x) \arrow[r] & \Omega_{X'/k(y)} \otimes k(x) \arrow[r] & 0.
+  \end{tikzcd} \]
+
+  $(i) \iff (iii)$ Relative differentials commute with base extension, so by the equivalence of (i) and (ii), we reduce to the case when $Y = \spec{k}$.
+  Thus, we want to show $X$ is smooth of relative dimension 0 over $k$ if and only if $\goth{m}_x = 0$ and $k(x)$ is a separable algebraic extension of $k$ for every $x \in X$.
+  Consider the exact sequence of (II, 8.4A)
+  \[ \begin{tikzcd}
+    \goth{m}_x/\goth{m}_x^2 \arrow[r] & \Omega_{X/k} \otimes k(x) \arrow[r] & \Omega_{k(x)/k} \arrow[r] & 0.
+  \end{tikzcd} \]
+  In the forward direction, suppose $\Omega_{X / k} = 0$.
+  Then $\Omega_{k(x) / k} = 0$ by the exact sequence, so $k(x)$ is a separable algebraic extension of $k$ (II, 8.6A)
+  Also, $X$ is smooth of relative dimension 0 over $k$ if and only if $\bar{X} = X \times \bar{k}$ is equidimensional of dimension zero and regular, where $\bar{k}$ an algebraic closure of $k$ (10.2).
+  Regularity and dimension of $X \times \bar{k}$ implies $\goth{m}_x \otimes_k \bar{k} = 0$, hence $\goth{m}_x = 0$.
+  On the otherhand, if $\goth{m}_x = 0$ and $k(x)$ is a separable algebraic extension of $k$.
+  Then $\Omega_{k(x) / k} = 0$ (II, 8.6A), and the term on the left hand of the exact sequence is zero.
+  Hence, $\Omega_{X / k} = 0$.
+\end{proof}
+
+\item[\textbf{5.}] If $x$ is a point of a scheme $X$, we define an \textit{étale neighborhood} of $x$ to be an étale morphism $f : U \to X$, together with a point $x' \in U$, such that $f(x') = x$. As an example of the use of étale neighborhoods, prove the following: if $\fF$ is a coherent sheaf on $X$, and if every point of $X$ has an étale neighborhood $f : U \to X$ for which $f^*\fF$ is a free $\fO_U$-module, then $\fF$ is locally free on $X$.
+
+\begin{proof}
+  Consider the following lemma:
+  \begin{lemma}
+    If $B$ is a faithfully flat $A$-algebra, then for any $A$-module $M$, we have $M$ is $A$-flat if and only if $M \otimes_A B$ is $B$-flat.
+  \end{lemma}
+  Let $\goth{a}$ be an ideal of $A$.
+  Then
+  \begin{equation*}
+    \tor_1^A(M, A / \goth{a}) \otimes_A B \cong \tor_1^B(M \otimes_A B, B / \goth{a}B) = 0,
+  \end{equation*}
+  so by faithfull flatness, we conclude that $\tor_1^A(M, A / \goth{a}) = 0$ (A.M., Ex. 3.16).
+
+  Now, if $f^*\fF$ is a free $\fO_U$-module, then $(f^*\fF)_{x'}$ is a free $\fO_{x', U}$-module with $(f^*\fF)_{x'} \cong \fF_x \otimes_{\fO_{x, X}} \fO_{x', U}$, and $\fO_{x', U}$ is a faithfully flat $\fO_{x, X}$-algebra, so the result follows from Lemma 1 and the fact that for finitely generated modules over Noetherian local rings, being free is equivalent to being flat.
+\end{proof}
+
+\item[\textbf{6.}] Let $Y$ be the plane nodal cubic curve $y^2 = x^2(x + 1)$. Show that $Y$ has a finite étale covering $X$ of degree 2, where $X$ is a union of two irreducible components, each one isomorphic to the normalization of $Y$.
+
+\begin{proof}
+  For simplicity, assume $k$ is algebraically closed and has characteristic $\neq 2$.
+  Consider two copies of the twisted cubic curve $X_1$ and $X_2$ in $\A^3$ with affine coordinates $x, y, z$ given by the parametric equations
+  \begin{equation*}
+    X_1 : \begin{cases}
+      x = t^2 - 1 \\
+      y = t^3 - t \\
+      z = t
+    \end{cases}, \quad X_2 : \begin{cases*}
+      x = t^2 - 1 \\
+      y = t^3 - t \\
+      z = -t
+    \end{cases*}.
+  \end{equation*}
+  Each are isomorphic to the normalization of $Y$, and they intersect at the following three points
+  \begin{equation*}
+    P_1 = (0, 0, 1), \quad P_2 = (0, 0, -1), \quad Q = (-1, 0, 0).
+  \end{equation*}
+  Let $X$ be the closed subscheme of $X$ with two irreducible components $X_1$ and $X_2$.
+  There is an obvious map $X \to Y$ given by the projection map onto the $xy$-plane, and each irreducible component of $X$ maps onto $Y$.
+  Finally, let $\pi : \tilde{X} \to X$ be obtained from $X$ by blowing up the point $Q$.
+  Then $\tilde{X} \to Y$ is our desired étale covering of degree 2.
+\end{proof}
+
+\end{enumerate}
+\end{document}
+
+% \item[\textbf{7.}] \textit{(Serre). A linear system with moving singularities.} Let $k$ be an algebraically closed field of characteristic $2$. Let $P_1, \dots, P_7 \in \PP_k^2$ be the seven points of the projective plane over the prime field $\F_2 \subseteq k$. Let $\goth{d}$ be the linear system of all cubic curves in $\PP^2$ passing through $P_1, \dots, P_7$.
+% \begin{itemize}
+%   \item[(a)] $\goth{d}$ is a linear system of dimension $2$ with base points $P_1, \dots, P_7$, which determines an inseparable morphism of degree $2$ from $\PP^2 - \{P_i\}$ to $\PP^2$.
+%   \item[(b)] Every curve $C \in \goth{d}$ is singular. More precisely, either $C$ consists of $3$ lines all passing through one of the $P_i$, or $C$ is an irreducible cuspidal cubic with cusp $P \neq \text{any $P_i$}$. Furthermore, the correspondence $C \mapsto \text{the singular point of $C$}$ is a one-to-one correspondence between $\goth{d}$ and $\PP^2$. Thus, the singular points of elements of $\goth{d}$ move all over.
+% \end{itemize}
+% 
+% \begin{proof} $ $ \vspace{0pt}
+%   \begin{itemize} [leftmargin=0cm]
+%     \item[(a)] 
+% 
+%     \item[(b)]
+%   \end{itemize}
+% \end{proof}
+
+
+% \item Show that a morphism $f : X \to Y$ of schemes of finite type over $k$ is étale if and only if the following condition is satisfied: for each $x \in X$, let $y = f(x)$. Let $\hat{\fO}_x$ and $\hat{\fO}_y$ be the completions of the local rings at $x$ and $y$. Choose fields of representatives (II, 8.25A) $k(x) \subseteq \hat{\fO}_x$ and $k(y) \subseteq \hat{\fO}_y$ so that $k(y) \subseteq k(x)$ via the natural map $\hat{\fO}_y \to \hat{\fO}_x$. Then our condition is that for every $x \in X$, $k(x)$ is a separable algebraic extension of $k(y)$, and the natural map
+% \begin{equation*}
+%   \hat{\fO}_y \otimes_{k(y)} k(x) \to \hat{\fO}_x
+% \end{equation*}
+% is an isomorphism.
+
+
+
+% \item \textit{A linear system with moving singularities contained in the base locus (any characteristic).} In affine $3$-space with coordinates $x, y, z$, let $C$ be the conic $(x - 1)^2 + y^2 = 1$ in the $xy$-plane, and let $P$ be the point $(0, 0, t)$ on the $z$-axis. Let $Y_t$ be the closure in $\PP^3$ of the cone over $C$ with vertex $P$. Show that as $t$ varies, the surfaces $\{Y_t \}$ form a linear system of dimension $1$, with a moving singularity at $P$. The base locus of this linear system is the conic $C$ plus the $z$-axis.
+
+% \item Let $f : X \to Y$ be a morphism of varieties over $k$. Assume that $Y$ is regular, $X$ is Cohen-Macaulay, and that every fiber of $f$ has dimension equal to $\dim{X} - \dim{Y}$. Then $f$ is flat.

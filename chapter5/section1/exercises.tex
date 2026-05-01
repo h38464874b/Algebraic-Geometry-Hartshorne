@@ -1,0 +1,224 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 5, Section 1}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item Let $C, D$ be any two divisors on a surface $X$, and let the corresponding invertible sheaves be $\fL$ and $\fM$.
+Show that
+\begin{equation*}
+    C.D = \chi(\fO_X) - \chi(\fL^{-1}) - \chi(\fM^{-1}) + \chi(\fL^{-1} \otimes \fM^{-1}).
+\end{equation*}
+
+\begin{proof}
+    Applying Riemann-Roch to the divisor $-C - D$ gives
+    \begin{equation*}
+        \chi(\fO_X(-C - D)) = \frac{1}{2}(-C - D).(-C - D - K) + \chi(\fO_X)
+    \end{equation*}
+    The first term on the right hand side simplies to
+    \begin{equation*}
+        (-C - D).(-C - D - K) = C^2 + 2C.D. + D^2 + C.K + D.K.
+    \end{equation*}
+    Substitutting back to above and isolating $C.D$ gives
+    \begin{align*}
+       C.D & = -\chi(\fO_X) + \chi(\fO_X(-C - D)) - \frac{1}{2}C.(C + K) - \frac{1}{2}C.(C + K) \\
+       & = \chi(\fO_X) + \chi(\fO_X(-C - D)) - \bigg(\chi(\fO_X) - \frac{1}{2}C.(-C-K) \bigg) - \bigg(\chi(\fO_X) -\frac{1}{2}D.(-D -K)\bigg) \\
+       & = \chi(\fO_X) + \chi(\fO_X(-C-D)) - \chi(\fO_X(-C)) - \chi(\fO_X(-D)).
+    \end{align*}
+\end{proof}
+
+\item Let $H$ be a very ample divisor on the surface $X$, corresponding to a projective embedding $X \subseteq \PP^N$.
+If we write the Hilbert polynomial of $X$ (III, Ex. 5.2) as
+\begin{equation*}
+    P(z) = \frac{1}{2}az^2 + bz + c,
+\end{equation*}
+show that $a = H^2$, $b = \frac{1}{2}H^2 + 1 - \pi$, where $\pi$ is the genus of a nonsingular curve representing $H$, and $c = 1 + p_a$.
+Thus the \textit{degree} of $X$ in $\PP^N$, as defined in (I, \S 7), is just $H^2$.
+Show also that if $C$ is any curve in $X$, then the degree of $C$ in $\PP^N$ is just $C.H$.
+
+\begin{proof}
+    By Riemann-Roch, we have the equality
+    \begin{equation*}
+        P(z) = \frac{1}{2}H^2z - \frac{1}{2}(H.K)z + 1 + p_a.
+    \end{equation*}
+    Matching coefficients readily gives $a$ and $c$.
+    We can rewrite the coefficient of $z$ as
+    \begin{equation*}
+        -\frac{1}{2}(H.K) = \frac{1}{2}H^2 - \frac{1}{2} H.(H + K),
+    \end{equation*}
+    and the adjunction formula (1.5) gives
+    \begin{equation*}
+        2\pi - 2 = H.(H + K),
+    \end{equation*}
+    so we conclude that
+    \begin{equation*}
+        b = \frac{1}{2}H^2 + 1 - \pi.
+    \end{equation*}
+    If $C$ is any curve in $X$, then the degree of $C$ in $\PP^N$ is just the degree of $\fO_X(H) \otimes \fO_C$, which is equal to $C.H$ by (1.3).
+\end{proof}
+
+\item Recall that the \textit{arithmetic genus} of a projective scheme $D$ of dimension 1 is defined as $p_a = 1 - \chi(\fO_D)$ (III, Ex. 5.3).
+\begin{itemize}
+    \item[(a)] If $D$ is an effective divisor on a surface $X$, use (1.6) to show that $2p_a - 2 = D.(D + K)$.
+    \item[(b)] $p_a(D)$ depends only on the linear equivalence class of $D$ on $X$.
+    \item[(c)] More generally, for \textit{any} divisor $D$ on $X$, we define the \textit{virtual arithmetic genus} (which is equal to the ordinary arithmetic genus if $D$ is effective) by the same formula: $2p_a - 2 = D.(D + K)$.
+    Show that for any two divisors $C, D$, we hae
+    \begin{equation*}
+        p_a(-D) = D^2 - p_a(D) + 2
+    \end{equation*}
+    and $$p_a(C + D) = p_a(C) + p_a(D) + C.D - 1.$$
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] We have the exact sequence
+      \[ \begin{tikzcd}
+    0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0,
+    \end{tikzcd} \]
+    and taking Euler characteristics gives
+    \begin{equation*}
+        \chi(\fO_D) = \chi(\fO_X) - \chi(\fO_X(-D)).
+    \end{equation*}
+    On the other hand, Riemann-Roch gives
+    \begin{equation*}
+        \chi(\fO_X(-D)) = \frac{1}{2}D.(D + K) + \chi(\fO_X),
+    \end{equation*}
+    so combining everything, we have
+    \begin{equation*}
+        1 - \chi(\fO_D) = 1 + \frac{1}{2}D.(D + K).
+    \end{equation*}
+    \item[(b)]
+    \item[(c)]
+\end{itemize} 
+\end{proof}
+
+\item \begin{itemize}
+    \item[(a)] If a surface $X$ of degree $d$ in $\PP^3$ contains a straight line $C = \PP^1$, show that $C^2 = 2 - d$.
+    \item[(b)] Assume $\chr{k} = 0$, and show for every $d \geq 1$, there exists a nonsingular surface $X$ of degree $d$ in $\PP^3$ containing the line $x = y = 0$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)]
+    \item[(b)] $f(x, y, z, w)$
+\end{itemize} 
+\end{proof}
+
+\item \begin{itemize}
+    \item[(a)] If $X$ is a surface of degree $d$ in $\PP^3$, then $K^2 = d(d - 4)^2$.
+    \item[(b)] If $X$ is a product of two nonsingular curves $C, C'$, of genus $g, g'$ respectively, then $K^2 = 8(g - 1)(g' - 1)$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+   \begin{itemize} [leftmargin=0cm]
+    \item[(a)] The adjunction formula gives $\fO_X(K) = \fO_X(d - 4)$.
+    If $H$ is a general hyperplane section of $X$ in $\PP^3$, then $K = (d - 4)H$, and $H^2 = d$ by (Ex. 1.2).
+    Hence, we have $$K^2 = (d - 4)^2H^2 = d(d - 4)^2.$$
+    
+    \item[(b)] Let $l = C \times \text{pt}$ and $m = \text{pt} \times C'$.
+    By (II, Ex. 8.3), we have $K = (2g - 2)m + (2g' - 2)l$.
+   \end{itemize} 
+\end{proof}
+
+\item \begin{itemize}
+    \item[(a)] If $C$ is a curve of genus $g$, show that the diagonal $\Delta \subseteq C \times C$ has self-intersection $\Delta^2 = 2 - 2g$. (Use the definition of $\omega_C$ in (II, \S 8).)
+    \item[(b)] Let $l = C \times \text{pt}$ and $m = \text{pt} \times C$.
+    If $g \geq 1$, show that $l$, $m$, and $\Delta$ are lienarly independent in $\Num(C \times C)$.
+    Thus $\Num(C \times C)$ has rank $\geq 3$, and in particular, $\pic(C \times C) \neq p_1^*\pic{C} \oplus p_2^*\pic{C}$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] We have $\omega_{C} \cong \fO_X(-\Delta) \otimes \fO_\Delta$, and by (1.3), we have $\deg_\Delta(\fO_X(-\Delta) \otimes \fO_\Delta) = -\Delta^2$.
+
+    \item[(b)]
+\end{itemize} 
+\end{proof}
+
+\newpage
+
+\item \textit{Algebraic Equivalence of Divisors.} Let $X$ be a surface.
+Recall that we have defined an algebraic family of effective divisors on $X$, parametrized by a nonsingular curve $T$, to be an effective Cartier divisor $D$ on $X \times T$, flat over $T$ (III, 9.8.5).
+In this case, for any two closed points $0, 1 \in T$, we say that the corresponding divisors $D_0, D_1$ on $X$ are prealgebraically equivalent.
+Two arbitrary divisors are prealgebraically equivalent if they are differences of prealgebraically equivalent divisors.
+Two divisors $D, D'$ are \textit{algebraically equivalent} if there is a finite sequence $D = D_0, D_1, \dots, D_n = D'$ with $D_i$ and $D_{i + 1}$ prealgebraically equivalent for each $i$.
+\begin{itemize}
+    \item[(a)] Show that the divisors algebraically equivalent to 0 form a subgroup of $\div{X}$.
+    \item[(b)] Show that linearly equivalent divisors are algebraically equivalent.
+    \item[(c)] Show that algebraically equivalent divisors are numerically equivalent.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)]
+
+    \item[(b)]
+
+    \item[(c)]
+\end{itemize} 
+\end{proof}
+
+\item \textit{Cohomology Class of a Divisor.} For any divisor $D$ on the surface $X$, we define its cohomology class $c(D) \in \cH^1(X, \Omega_X)$ by using the isomorphism $\pic{X} \cong \cH^1(X, \fO_X^*)$ of (III, Ex. 4.5) and the sheaf homomorphism $\dlog : \fO_X^* \to \Omega_X$ (III, Ex. 7.4c).
+Thus we obtain a group homomorphism $c : \pic{X} \to \cH^1(X, \Omega_X)$.
+On the other hand, $\cH^1(X, \Omega_X)$ is dual to itself by Serre duality (III, 7.13), so we have a nondegenerate bilinear map
+\begin{equation*}
+    \langle \quad, \quad \rangle : \cH^1(X, \Omega_X) \times \cH^1(X, \Omega_X) \to k.
+\end{equation*}
+\begin{itemize}
+    \item[(a)] Prove that this is compatible with the intersection pairing, in the following sense: for any two divisors $D, E$ on $X$, we have
+    \begin{equation*}
+        \langle c(D), c(E) \rangle = (D.E) \cdot 1
+    \end{equation*}
+    in $k$.
+    \item[(b)] If $\chr{k} = 0$, use the fact that $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space to show that $\Num{X}$ is a finitely generated free abelian group.
+\end{itemize}
+
+\item \begin{itemize}
+    \item[(a)] If $H$ is an ample divisor on the surface $X$, and if $D$ is any divisor, show that
+    \begin{equation*}
+        (D^2)(H^2) \leq (D.H)^2.
+    \end{equation*}
+    \item[(b)] Now let $X$ be a product of two curves $X = C \times C'$.
+    Let $l = C \times \text{pt}$, and $m = \text{pt} \times C'$.
+    For any divisor $D$ on $X$, let $a = D.l$, $b = D.m$.
+    Then we say $D$ has \textit{type} $(a, b)$.
+    If $D$ has type $(a, b)$, with $a, b \in \Z$, show that
+    \begin{equation*}
+        D^2 \leq 2ab,
+    \end{equation*}
+    and equality holds if and only if $D = bl + am$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)] If $H$ is ample, then $m H$ is very ample for some $m \gg 0$, and if the result holds for $mH$, then it also holds for $H$, so assume $H$ is very ample.
+
+    \item[(b)]
+\end{itemize} 
+\end{proof}
+
+\item \textit{Weil's Proof [2] of the Analogue of the Riemann Hypothesis for Curves.} Let $C$ be a curve of genus $g$ defined over the finite field $\F_q$, and let $N$ be the number of points of $C$ rational over $\F_q$.
+Then $N = 1 - a + q$, with $|a| \leq 2g \sqrt{q}$.
+To prove this, we consider $C$ as a curve over the algebraic closure $k$ of $\F_q$.
+Let $f : C \to C$ be the $k$-linear Frobenius morphism obtained by taking $q$th powers, which makes sense since $C$ is defined over $\F_q$, so $X_q \cong X$ (IV, 2.4.1).
+Let $\Gamma \subseteq C \times C$ be the graph of $f$, and let $\Delta \subseteq C \times C$ be the diagonal.
+Show that $\Gamma^2 = q(2 - 2g)$, and $\Gamma.\Delta = N$.
+Then apply (Ex. 1.9) to $D = r\Gamma + s\Delta$ for all $r$ and $s$ to obtain the result.
+
+\item In this problem, we assume that $X$ is a surface for which $\Num{X}$ is finitely generated.
+\begin{itemize}
+    \item[(a)] If $H$ is an ample divisor on $X$, and $d \in \Z$, show that the set of effective divisors $D$ with $D.H = d$, modulo numerical equivalence, is a finite set.
+    \item[(b)] Now let $C$ be a curve of genus $g \geq 2$, and use (a) to show that the group of automorphisms of $C$ is finite, as follows.
+    Given an automorphism $\sigma$ of $C$, let $\Gamma \subseteq X = C \times C$ be its graph.
+    First show that if $\Gamma \equiv \Delta$, then $\Gamma = \Delta$, using the fact that $\Delta^2 < 0$, since $g \geq 2$ (Ex. 1.6).
+    Then use (a).
+\end{itemize}
+
+\item If $D$ is an ample divisor on the surface $X$, and $D' \equiv D$, then $D'$ is also ample.
+Give an example to show, however, that if $D$ is very ample, $D'$ need not be very ample.
+
+\end{enumerate}
+
+\end{document}

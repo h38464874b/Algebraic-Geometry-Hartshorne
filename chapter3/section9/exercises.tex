@@ -1,0 +1,346 @@
+\documentclass[a4paper]{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 3, Section 9}
+
+\begin{document}
+\maketitle
+
+\begin{lemma} [Stacks Project, Tag 00HT]
+  Let $A \to B$ be a ring homomorphism, and let $M$ be a $B$-module.
+  The following are equivalent:
+  \begin{itemize}
+    \item[(i)] $M$ is a flat $A$-module;
+    \item[(ii)] for every prime ideal $\goth{q}$ of $B$, $\goth{p}$ its contraction in $A$, $M_\goth{q}$ is a flat $A_\goth{p}$-module.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  $(i) \implies (ii)$ Suppose $M$ is flat as an $A$-module.
+  Let $\goth{q}$ be a prime ideal of $B$, and let $\goth{p}$ be its contraction in $A$.
+  Then $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
+  We want to show $\goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is an $A_\goth{p}$-module monomorphism.
+  By (A.M., 2.15), and because $M_\goth{q}$ is a natural $A_\goth{p}$-module, we have the isomorphisms
+  \begin{align*}
+    (\goth{a} \otimes_A M) \otimes_B B_\goth{q} & \cong \goth{a} \otimes_A (M \otimes_B B_\goth{q}) \\
+    & \cong \goth{a} \otimes_A (A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q}) \\
+    & \cong \goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q},
+  \end{align*} 
+  which shows $\goth{a} A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is given by localizing the $B$-module homomorphism $\goth{a} \otimes_A M \to M$ at the prime ideal $\goth{q}$.
+  Localizing preserves injections, so we are done.
+
+  \noindent $(ii) \implies (i)$ We want to show $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
+  Because $M$ is a $B$-module, localizing at $\goth{q}$ gives $(\goth{a} \otimes_A M) \otimes_B B_\goth{q} \to M_\goth{q}$, which is injective by assumption and isomorphism of above.
+  Thus, $\goth{a} \otimes_A M \to M$ is injective as a $B$-module homomorphism, and therefore injective as an $A$-module homomorphism.
+\end{proof}
+
+\begin{lemma}
+  Let $A \to B \to C$ be ring homomorphisms, and suppose $C$ is flat over $B$.
+  Then for every ideal $\goth{a} \subseteq A$, there is a natural isomorphism
+  \begin{equation*}
+    C \otimes_B \tor_1^A(B, A / \goth{a}) \cong \tor_1^A(C, A / \goth{a}).
+  \end{equation*}
+\end{lemma}
+
+\begin{proof}
+  Consider the exact sequence
+  \[ \begin{tikzcd}
+    0 \arrow[r] & \goth{a} \arrow[r] & A \arrow[r] & A/\goth{a} \arrow[r] & 0.
+  \end{tikzcd} \]
+  Tensoring by $B$ over $A$ gives an exact sequence with $\tor$
+  \[ \begin{tikzcd}
+    0\arrow[r] & \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A B \arrow[r] & B \arrow[r] & B/\goth{a}B \arrow[r] & 0.
+  \end{tikzcd} \]
+  Each term in the sequence is a natural $B$-module, so we can tensor the sequence by $C$ over $B$
+  \[ \begin{tikzcd}
+    0\arrow[r] & C \otimes_B \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+  \end{tikzcd} \]
+  Here, we used the fact that
+  \begin{equation*}
+    (\goth{a} \otimes_A B) \otimes_B C \cong \goth{a} \otimes_A (B \otimes_B C) \cong \goth{a} \otimes_A C.
+  \end{equation*}
+  We can also tensor the original sequence by $C$ over $A$ to get
+  \[ \begin{tikzcd}
+    0\arrow[r] & \tor_1^A(C, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+  \end{tikzcd} \]
+  The $A$-module homomorphism $B \to C$ induces $\tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})$, and $\tor_1^A(C, A)$ is a natural $C$-module, so there is a natural map
+  \begin{equation*}
+    \phi : C \otimes_B \tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})
+  \end{equation*}
+  given by multiplication.
+  Consider the commutative diagram
+  \[ \begin{tikzcd}
+0 \arrow[r] & {C \otimes_B \tor_1^A(B, A / \goth{a})} \arrow[r] \arrow[d, "\phi"] & \goth{a} \otimes_A C \arrow[r] \arrow[d, Rightarrow, no head] & C \arrow[r] \arrow[d, Rightarrow, no head] & C/\goth{a}C \arrow[r] \arrow[d, Rightarrow, no head] & 0 \\
+0 \arrow[r] & {\tor_1^A(C, A / \goth{a})} \arrow[r]                       & \goth{a} \otimes_A C \arrow[r]                                & C \arrow[r]                                & C / \goth{a}C \arrow[r]                              & 0
+  \end{tikzcd}. \]
+  The five lemma implies $\phi$ is actually an isomorphism.
+\end{proof}
+
+\newpage
+
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item[\textbf{3.}] Some examples of flatness and nonflatness.
+\begin{itemize}
+  \item[(a)] If $f : X \to Y$ is a finite surjective morphism of nonsingular varieties over an algebraically closed field $k$, then $f$ is flat.
+  \item[(b)] Let $X$ be a union of two planes meeting at a point, each of which maps isomorphically to a plane $Y$. Show that $f$ is not flat. For example, let $Y = \spec{k[x, y]}$ and $X = \spec{k[x, y, z, w]} / (z, w) \cap (x + z, y + w)$.
+  \item[(c)] Again let $Y = \spec{k[x, y]}$, but take $X = \spec{k[x, y, z, w] / (z^2, zw, w^2, xz - yw)}$. Show that $X_\text{red} \cong Y$, $X$ has no embedded points, but that $f$ is not flat.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+  \item[(a)] By Lemma 1, we reduce to the case $X = \spec{B}$ and $Y = \spec{A}$, with $A$ a regular local ring, and $B$ a finite $A$-algebra containing $A$ such that $B_\goth{n}$ is a regular local ring for all maximal ideals $\goth{n} \in \spec{B}$.
+  Then $f$ is flat if and only if $B$ is a projective $A$-module.
+  We use the criterion of (6.12A); that is, we want to show $\depth{B} = \dim{A}$.
+  Let $\goth{m}$ be the maximal ideal of $A$, and let $n = \dim{A}$.
+  It suffices to show $\depth{B} \geq n$ by (6.11A), i.e., we show there exists an $A$-regular sequence for $B$ of length $n$.
+
+  Regular local rings are integrally closed, so $A$ is integrally closed, and $B$ is integral over $A$, so $\dim{B} = \dim{A}$ by (A.M., 11.26).
+  This implies the following: pick any maximal ideal $\goth{n}$ of $B$, then $B_\goth{n}$ is a regular local ring and $\dim{B_\goth{n}} = \dim{B}$ (A.M., 11.27); in particular, it is a Cohen-Macaulay ring, so a sequence of $n$ elements $x_1, \dots, x_n$ in $B_\goth{n}$ is a $B_\goth{n}$-regular sequence for $B_\goth{n}$ if and only if $B_{\goth{n}}/(x_1, \dots, x_n) = \dim{B} - n = 0$ (II, 8.21A).
+  By the inclusions $A \subseteq B \subseteq B_\goth{n}$, a sequence of elements in $A$ is an $A$-regular sequence for $B$ if and only if it is a $B_\goth{n}$-regular sequence for $B_\goth{n}$.
+  Thus, we further reduce to showing there exists a $B_\goth{n}$-regular sequence contained in $A$ for $B_\goth{n}$ of length $n$.
+
+  Since $A$ is a regular local ring, there exist $n$ elements $x_1, \dots, x_n \in A$ that form a minimal set of generators of $\goth{m}$ and an $A$-regular sequence for $A$.
+  Viewing $x_1, \dots, x_n$ as elements in $B_\goth{n}$, the elements $x_1, \dots, x_n$ generate the extension of $\goth{m}$ in $B$, so $B_\goth{n} / (x_1, \dots, x_n) \cong B_\goth{n} / \goth{m}B_\goth{n}$, which is an Artin local ring (A.M., 5.8) and has Krull dimension equal to zero.
+  Thus, $x_1, \dots, x_n$ is the desired $B_\goth{n}$-regular sequence for $B_\goth{n}$.
+
+  \item[(b)] We establish the following notation
+  \begin{align*}
+    I & = (z, w) \cap (x + z, y + w) \subseteq k[x, y, z, w], \\
+    Q & = (x, y) \subseteq k[x, y].
+  \end{align*}
+  Let $K = k(x, y)$ be the function field of $Y$.
+  Following the proof of (a), we show
+  \begin{equation}
+    \dim_k k[x, y, z, w]/(I + Q) \neq \dim_K K[z, w]/I.
+  \end{equation}
+  We start with the left hand side of (1) by computing the image of $I + Q$ under the quotient $k[x, y, z, w] \to k[z, w]$ with kernel $Q$.
+  It is not hard to see
+  \begin{equation*}
+    (xz + z^2, yz + zw, xw + zw, yw + w^2) \subseteq I \subseteq (x, y, z, w)^2, \quad (z, w)^2 + Q \subseteq I + Q \subseteq (x, y, z, w)^2 + Q,
+  \end{equation*}
+  and the image of $(x, y, z, w)^2 + Q$ in $k[z, w]$ is $(z, w)^2$, so the image of $I + Q$ is also $(z, w)^2$, i.e.,
+  \begin{equation*}
+    k[x, y, z, w]/(I + Q) \cong k[z, w]/(z, w)^2.
+  \end{equation*}
+  Hence, we have
+  \begin{equation*}
+    \dim_k k[x, y, z, w]/(I + Q) = 3.
+  \end{equation*}
+  It remains to compute the right hand side of (1).
+  The $k[x, y]$-module $k[x, y, z, w]/I$ can be generated by $1, z, w$, so it spans $K[z, w]/I$ over $K$, and $wx - zy$ is in $I$, which implies $z$ and $w$ are $K$-linearly dependent in $K[z, w]/I$.
+  Hence, the $K$-dimension of $K[z, w]/I$ is at most 2.
+
+  \item[(c)] Let $I = (z^2, zw, w^2, xz - yw)$.
+  It suffices to show $$\sqrt{I} = (z, w).$$
+  The generators of $I$ are also in $(z, w)$, a prime ideal, so we have inclusion in one direction, and the left-hand side contains $z, w$, so we have inclusion in the other direction.
+  Also, $I$ is a $(z, w)$-primary ideal, so it can only have one associated point (A.M., 4.5).
+  Hence, $X$ has no embedded points.
+  Lastly, by the same reasoning in (b), we have
+  \begin{equation*}
+    \dim_k k[x, y, z, w]/(I + Q) = 3, \quad \dim_K K[z, w]/I \leq 2.
+  \end{equation*}
+\end{itemize} 
+\end{proof}
+
+\item[\textbf{4.}] \textit{Open Nature of Flatness.} Let $f : X \to Y$ be a morphism of finite type of Noetherian schemes. Then $\{ x \in X \mid \text{$f$ is flat at $x$} \}$ is an open subset of $X$ (possibly empty).
+
+\begin{proof}
+  The question is local on $X$, so we can reduce to the affine case.
+  \begin{lemma}
+    Let $A$ be a Noetherian ring, $B$ an $A$-algebra of finite type, and $\goth{q}$ a prime ideal of $B$.
+    If $B_\goth{q}$ is flat over $A$, then there exists $g \in B - \goth{q}$ such that $B_g$ is flat over $A$.
+  \end{lemma}
+  We remark that by Lemma 1, $B_\goth{q}$ is flat over $A$ if and only if $B_\goth{q}$ is flat over $A_\goth{p}$, where $\goth{p}$ is the contraction of $\goth{q}$ in $A$.
+  Let $E$ be the flat locus of $f$.
+  Since $X = \spec{B}$ is a Noetherian space, we can use the following criterion:
+  \begin{lemma} [A.M., Ex. 7.22]
+    Let $X$ be a Noetherian space, and let $E$ be a subset of $X$.
+    Then $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0 \subseteq X$, either $E \cap X_0 = \emptyset$, or else $E \cap X_0$ contains a nonempty open subset of $X_0$.
+  \end{lemma}
+  In our case, $E$ is open in $X = \spec{B}$ if and only if, for each prime ideal $\goth{q}$ of $B$, either $E \cap V(\goth{q}) = \emptyset$, or else there exists $g \in B - \goth{q}$ such that $V(\goth{q}) \cap X_g \subseteq E \cap V(\goth{q})$.
+  Notice that if $E \cap V(\goth{q})$ is nonempty, then $\goth{q} \in E$, because if there exists a prime ideal $\goth{q}' \supset \goth{q}$ such that $B_{\goth{q}'}$ is flat over $A$, then $B_\goth{q}$ is a localization of $B_{\goth{q}'}$, so $B_{\goth{q}}$ is also flat over $A$ by transitivity of flatness.
+  Thus, we can replace the condition $V(\goth{q}) \cap E$ is nonempty with $\goth{q}$ is in $E$.
+
+  To proceed, we need a couple preliminary algebraic results:
+
+  \begin{lemma} [Matsumura, 22.3]
+    Let $A$ be a Noetherian ring, $I$ an ideal of $A$, and $M$ an $A$-module.
+    If $\bigcap_{n = 1}^\infty I^n(\goth{a} \otimes_A M) = 0$ for any ideal $\goth{a}$ of $A$, then the following are equivalent:
+    \begin{itemize}
+      \item[(i)] $M$ is flat over $A$;
+      \item[(ii)] $M/IM$ is flat over $A / I$, and $\tor_1^A(M, A / I) = 0$.
+      \item[(iii)] $M / I^nM$ is flat over $A / I^n$ for every $n \geq 1$.
+    \end{itemize}
+  \end{lemma}
+  The main application of Lemma 5 is to the following case: suppose $B$ is a Noetherian $A$-algebra, and $I$ is an ideal in $A$ such that $IB$ is contained in the Jacobson radical of $B$.
+  Recall that the radical of a ring is the intersection of all maximal ideals.
+  If $\goth{a}$ is any ideal in $A$, then $\goth{a} \otimes_A B$ is a finitely generated $B$ module, so (A.M., 10.19) gives us
+  \begin{equation*}
+    \bigcap_{n = 1}^\infty I^n(\goth{a} \otimes_A B) = \bigcap_{n = 1}^\infty (IB)^n (\goth{a} \otimes_A B) = 0.
+  \end{equation*}
+  Hence, $B$ satisfies the hypothesis of Lemma 5.
+
+  We proceed with a partial proof of Lemma 5.
+  The implications $(i) \implies (ii) \implies (iii)$ are clear and holds without any special assumptions on $A, I$, or $M$, so we just prove $(iii) \implies (i)$.
+  See (Matsumura, 22.3, 24.3) for more details.
+
+  Denote $A_n = A / I^n$ and $M_n = M / I^n M$, and fix an ideal $\goth{a}$ of $A$.
+  We want to show $\goth{a} \otimes_A M \xrightarrow{j} M$ has zero kernel.
+  By the assumption $\bigcap_n I^n(\goth{a} \otimes_A M) = 0$, it suffices to show $\ker{j} \subseteq I^n(\goth{a} \otimes_A M)$ for all $n$.
+  By Krull's Theorem (A.M., 10.11) or (3.1A), for ecah $n$ there exists a sufficiently large integer $k > n$ such that $I^k \cap \goth{a} \subseteq I^n \goth{a}$.
+  Consider the commutative diagram
+  \[ \begin{tikzcd}
+\goth{a} \otimes_A M \arrow[r, "f"] \arrow[d, "j"'] & (\goth{a} / I^k \cap \goth{a}) \otimes_A M \arrow[r] \arrow[r] \arrow[d] & (\goth{a}/I^n \goth{a}) \otimes_A M \cong (\goth{a} \otimes_A M) / I^n(\goth{a} \otimes_A M) \\
+M \arrow[r]                                         & M_k                                                                      &                         \end{tikzcd}. \]
+  The $A$-module $\goth{a} / I^k \cap \goth{a}$ is a natural $A_k$-module, so we have the isomorphism
+  \begin{equation*}
+    (\goth{a} / I^k \cap \goth{a}) \otimes_A M \cong (\goth{a} / I^k \cap \goth{a}) \otimes_{A_k} M_k.
+  \end{equation*}
+  There is the natural isomorphism $\goth{a} / I^k \cap \goth{a} \cong (\goth{a} + I^k) / I^k$ (A.M., 2.1), which is an ideal in $A_k$.
+  Since $M_k$ is a flat $A_k$-module, the map $(\goth{a} / I^k \cap \goth{a}) \otimes_A M \to M_k$ is injective.
+  Hence, we get
+  \begin{equation*}
+    \ker{j} \subseteq \ker{f} \subseteq I^n(\goth{a} \otimes_A M).
+  \end{equation*}
+
+  The last algebraic result we need is the same statement of Lemma 3 but with the additional assumption that $A$ is an integral domain.
+  In fact, a stronger statement holds, which we won't prove:
+  \begin{lemma} [Nitsure, 5.11]
+    Let $A$ be a Noetherian integeral domain, and $B$ an $A$-algebra of finite type.
+    Then there exists $s \in A - \{ 0 \}$ such that $B_s$ is a free $A_s$-module.
+  \end{lemma}
+
+  We are ready to prove Lemma 3 by using the criterion of Lemma 4.
+  The extended ideal $\goth{p}B_\goth{q}$ is contained in the maximal ideal of $B_{\goth{q}'}$ for any $\goth{q}' \in V(\goth{q})$, $B_{\goth{q}'}$ is flat over $A$ if and only if $B_{\goth{q}'} / \goth{p}B_{\goth{q}'}$ is flat over $A / \goth{p}$ and $\tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ (Lemma 5).
+  Lemma 2 implies the isomorphism
+  \begin{equation*}
+    B_\goth{q} \otimes_B \tor_1^A(B, A / \goth{p}) \cong \tor_1^A(B_\goth{q}, A / \goth{p}) = 0,
+  \end{equation*}
+  and $\tor_1^A(B, A / \goth{p})$ is a finitely generated $B$-module because it is a $B$-submodule of $\goth{p} \otimes_A B$, so there exists $g \in B - \goth{q}$ such that
+  \begin{equation*}
+    B_g \otimes_B \tor_1^A(B, A / \goth{p}) \cong \tor_1^A(B_g, A / \goth{p}) = 0.
+  \end{equation*}
+  Thus, $\tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ for any $\goth{q}' \in V(\goth{q}) \cap X_g$.
+  By Lemma 6, there exists $s \in A - \goth{p}$ such that $B_s / \goth{p}B_s$ is free over $A_s / \goth{p}A_s$, hence flat over $A / \goth{p}$ (Lemma 1).
+  For any $\goth{q}' \in V(\goth{q}) \cap X_s$, $B_{\goth{q}'} / \goth{p}B_{\goth{q}'}$ is a localization of $B_{s} / \goth{p}B_s$, so it is flat over $A / \goth{p}$ as well.
+  Hence, $V(\goth{q}) \cap X_g \cap X_s$ is a nonempty open subset of $V(\goth{q})$ contained in $E \cap V(\goth{q})$.
+\end{proof}
+
+\item[\textbf{11.}] Let $Y$ be a nonsingular curve of degree $d$ in $\PP_k^n$, over an algebraically closed field $k$. Show that
+\begin{equation*}
+  0 \leq p_a(Y) \leq \frac{1}{2}(d - 1)(d - 2).
+\end{equation*}
+
+\begin{proof}
+  If $n = 2$, the inequalitie becomes an equality even if $Y$ is singular or not irreducible (I, Ex. 7.2b) (Ex. 4.7), so assume $n > 2$.
+  We claim there exists a linear subspace $L \subset \PP^n$ of dimension $n - 3$ such that $Y \cap L = \emptyset$.
+  In fact, we can find a linear subspace of dimension $n - 2$ that does not meet $Y$, which is what we will prove.
+  A general hyperplane $H \subset \PP^n$ intersects $Y$ at $d$ distinct points, and we want to find a hyperplane plane of $H$, which is a linear subspace of $\PP^n$ with dimension $n - 2$, that does not meet $Y \cap H$.
+  Thus, the statement reduces to the following: for any set of distinct points $P_1, \dots, P_d \in \PP^n$, there exists a hyperplane $H \subset \PP^n$ such that $P_i \notin H$ for every $i$.
+  Proceeding by induction on $n$, let $(x_0 : \cdots : x_n)$ be homogenous coordinates for $\PP^n$.
+  The base case $n = 1$ is trivial because $k$ is infinite, so assume the statement for $\PP^{n - 1}$ with $n > 1$.
+  Let $U_0$ be the affine patch of $\PP^n$ defined by $x_0 \neq 0$ so that $\PP^n$ is the disjoint union $U_0 \cup \PP^{n - 1}$.
+  Relabel the points $P_1, \dots, P_{r}, Q_1, \dots, Q_s$ so that $P_i \in U_0$ and $Q_j \in \PP^{n - 1}$.
+  Applying the inductive step to $\PP^{n - 1}$ and $\{Q_j\}$ gives a hyperplane $H$ defined by $$H : \quad f(x_1, \dots, x_n) = a_1x_1 + \cdots + a_nx_n = 0, \quad a_i \in k,$$ such that $Q_j \notin H$.
+  Taking the projective cone of $H$ in $\PP^n$, we want to show there exists $a_0 \in k - \{0\}$ such that the hyperplane defined $a_0x_0 + f(x_1, \dots, x_n) = 0$ does not meet $P_i$ for every $i, \dots, r$.
+  Indeed, if we consider $f(x_1, \dots, x_n)$ as a function on $U_0$, then we can pick any $a_0 \in k - \{0\}$ such that $a_0 \neq -f(P_i)$ for every $i = 1, \dots, r$.
+
+  Now, after a suitable automorphism of $\PP^n$ we can assume $L$ corresponds to the linear subspace defined by $x_i = 0$ for $i = 0, 1, 2$.
+  Consider the projection map $\pi : \PP^n - L \to \PP^2$ defined by $(x_0 : \cdots : x_n) \mapsto (x_0 : x_1 : x_2)$.
+  For each $a \in k$, $a \neq 0$, consider the automorphism $\sigma_a$ of $\PP^n$ defined by
+  \begin{align*}
+    \sigma_a : \PP^n & \to \PP^n, \\
+    (x_0 : \cdots : x_n) & \mapsto (x_0 : x_1 : x_2 : ax_3 : \cdots : ax_n).
+  \end{align*}
+  Further assume $\pi$ induces a birational from $Y$ to its image (I, Ex. 4.9).
+  For each $a \neq 0$, let $Y_a = \sigma_a(Y)$ with $Y_1 = Y$.
+  Then the $Y_a$ form a flat family parametrized by $\A^1 - \{0\}$, and according to (9.8) this family extends uniquely to a flat family defined over all of $\A^1$, and the fibre $Y_0$ over 0 agrees set-theoretically with the projection $\pi(Y) \subseteq \PP^2$.
+  The degree and arithmetic genus of $Y_a$ is independent of $a$ (9.10), which means
+  \begin{equation*}
+    p_a(Y_0) = p_a(Y), \quad \deg{Y_0} = d.
+  \end{equation*}
+  If we take $Y_{(0)}$ to be $Y_0$ with its reduced induced structure, then we have an isomorphism of schemes $Y_{(0)} \cong \pi(Y)$.
+  Since $\pi(Y)$ is a closed subscheme of $\PP^2$, one has
+  \begin{equation*}
+    p_a(Y_{(0)}) = \frac{1}{2}(d' - 1)(d' - 2),
+  \end{equation*}
+  where we take $d'$ to be the degree of $Y_{(0)}$ as a closed subscheme of $\PP^2$.
+  The Hilbert polynomial of $Y_{(0)}$ as a closed subscheme of $\PP^2$ is same as $Y_{{(0)}}$ considered as a closed subcheme of $\PP^n$.
+  This has the following implication: there is an exact sequence of $\fO_{Y_0}$-modules
+  \[ \begin{tikzcd}
+    0 \arrow[r] & \fI \arrow[r] & \fO_{Y_0} \arrow[r] & \fO_{Y_{(0)}} \arrow[r] & 0,
+  \end{tikzcd} \]
+  where $\fI$ is a nilpotent ideal sheaf of $\fO_{Y_0}$.
+  Hilbert polynomials are additive (Ex. 5.1, 5.2a), so one has
+  \begin{equation*}
+    P_{Y_{0}}(n) = P_{\fI}(n) + P_{Y_{(0)}}(n),
+  \end{equation*}
+  where $P_{\fI}(n)$, $P_{Y_0}(n)$, and $P_{Y_{(0)}}(n)$ are the Hilbert polynomials of $\fI, \fO_{Y_0}$, and $\fO_{Y_{(0)}}$ with respect to $\fO_{\PP^n}(1)$, and by our remark, $d' = \deg P_{Y_{(0)}}(n)$.
+  If we can show the following:
+  \begin{itemize}
+    \item[(1)] $p_a(Y_0) \leq p_a(Y_{(0)})$, and
+    \item[(2)] $\deg {Y_{(0)}} \leq \deg{Y_0}$,
+  \end{itemize}
+  then we can combine the inequalities to conclude that
+  \begin{equation*}
+    0 \leq p_a(Y) = p_a(Y_0) \leq p_a(Y_{(0)}) = \frac{1}{2}(d' - 1)(d' - 2) \leq \frac{1}{2}(d - 1)(d - 2).
+  \end{equation*}
+  The degree of the Hilbert polynomial is at most the dimension the dimension of the support, and its leading coefficient is always positive, which proves (2).
+  In addition, we can plug in $n = 0$ to obtain the equality
+  \begin{equation*}
+    P_\fI(0) + p_a(Y_0) = p_a(Y_{(0)}),
+  \end{equation*}
+  so to prove (1), we want to show $P_\fI(0) = \chi(\fI) \geq 0$.
+  Since $\pi : Y \to \pi(Y)$ is a birational morphism, $\dim{\Supp{\fI}} = 0$, so $\fI$ is supported at a finite set of closed points, hence $\chi(\fI) = h^0(\fI) \geq 0$
+\end{proof}
+
+\end{enumerate}
+\end{document}
+
+% \item A flat morphism $f : X \to Y$ of finite type of Noetherian schemes is open, i.e., for every open subset $U \subseteq X$, $f(U)$ is open in $Y$.
+
+% \item Do the calculation of (9.8.4) for the curves of (I, Ex. 3.14). Show that you get an embedded point at the cusp of the plane cubic curve.
+
+% \item \textit{Very Flat Families.} For any closed subscheme $X \subseteq \PP^n$, we denote by $C(X) \subseteq \PP^{n + 1}$ the projective cone over $X$ (I, Ex. 2.10). If $I = \subseteq k[x_0, \dots, x_n]$ is the (largest) homogenous ideal of $X$, then $C(X)$ is defined by the ideal generated by $I$ in $k[x_0, \dots, x_{n + 1}]$.
+% \begin{itemize}
+%   \item[(a)] Give an example to show that if $\{ X_t \}$ is a flat family of closed subschemes of $\PP^n$, then $\{ C(X_t) \}$ need not be a flat family in $\PP^{n + 1}$.
+%   \item[(b)] To remedy this situation, we make the following definition. Let $X \subseteq \PP_T^n$ be a closed subscheme, where $T$ is a Noetherian integral scheme. For each $t \in T$, let $I_t \subseteq S_t = k(t)[x_0, \dots, x_n]$ be the homogenous ideal of $X_t$ in $\PP_{k(t)}^n$. We say that the family $\{X_t \}$ is \textit{very flat} if for all $d \geq 0$,
+%   \begin{equation*}
+%     \dim_{k(t)}(S_t / I_t)_d
+%   \end{equation*}
+%   is independent of $t$.
+%   \item[(c)] If $\{X_t\}$ is a very flat family in $\PP^n$, show that it is flat. Show also that $\{ C(X_t) \}$ is a very flat family in $\PP^{n + 1}$, and hence flat.
+%   \item[(d)] If $\{ X_{(t)}\}$ is an algebraic family of projectively normal varieties in $\PP_k^n$, parametrized by a nonsingular curve $T$ over an algebraically closed field $k$, then $\{X_{(t)} \}$ is a very flat family of schemes.
+% \end{itemize}
+
+% \item Let $Y \subseteq \PP^n$ be a nonsingular variety of dimension $\geq 2$ over an algebraically closed field $k$. Suppose $\PP^{n - 1}$ is a hyperplane in $\PP^n$ which does not contain $Y$, and such that the scheme $Y' = Y \cap \PP^{n - 1}$ is also nonsingular. Prove that $Y$ is a complete intersection in $\PP^n$ if and only if $Y'$ is a complete intersection in $\PP^{n - 1}$.
+
+% \item Let $Y \subseteq X$ be a closed subscheme, where $X$ is a scheme of finite type over a field $k$. Let $D = k[t] / (t^2)$ be the ring of dual numbers, and define an \textit{infinitesimal deformation} of $Y$ \textit{as a closed subscheme of $X$}, to be a closed subscheme $Y' \subseteq X \times_k D$, which is flat over $D$, and whose closed fiber is $Y$. Show that these $Y'$ are classified by $H^0(Y, \fN_{Y/X})$, where
+% \begin{equation*}
+%   \fN_{Y/X} = \rHom_{\fO_Y}(\mathscr{J}_y/\mathscr{J}_Y^2, \fO_Y).
+% \end{equation*}
+
+
+
+% \item A $k$-algebra $A$ is said to be \textit{rigid} if it has no infinitesimal deformations, or equivalently, by (Ex. 9.8) if $T^1(A) = 0$. Let $A = k[x, y, z, w] / (x, y) \cap (z, w)$, and show that $A$ is rigid. This corresponds to two planes in $\A^4$ which meet at a point.
+
+% \item A scheme $X_0$ over a field $k$ is \textit{rigid} if it has no infinitesimal deformations.
+% \begin{itemize}
+%   \item[(a)] Show that $\PP_k^1$ is rigid, using (9.13.2).
+%   \item[(b)] one might think that if $X_0$ is rigid over $k$, then every global deformation of $X_0$ is locally trivial. Show that this is not so, by constructing a proper, flat morphism $f : X \to \A^2$ over $k$ algebraically closed, such that $X_0 \cong \PP_k^1$, but there is no open neighborhood $U$ of $0$ in $\A^2$ for which $f^{-1}(U) \cong U \times \PP^1$.
+%   \item[(c)] Show, however, that one can trivialize a global deformation of $\PP^1$ after a flat base extension, in the following sense: let $f : X \to T$ be a flat projective morphism, where $T$ is a nonsingular curve over $k$ algebraically closed. Assume there is a closed point $t \in T$ such that $X_t \cong \PP_k^1$. Then there exists a nonsingular curve $T'$, and a flat morphism $g : T' \to T$, whose image contains $t$, such that if $X' = X \times_T T'$ is the base extension, then the new family $f' : X' \to T'$ is isomorphic to $\PP_T^1 \to T'$.
+% \end{itemize}
+
+% \item[\textbf{8.}] Let $A$ be a finitely generated $k$-algebra. Write $A$ as a quotient of a polynomial ring $P$ over $k$, and let $J$ be the kernel:
+% \begin{equation*}
+  % 0 \to J \to P \to A \to 0.
+% \end{equation*}
+% Consider the exact sequence of (II, 8.4A)
+% \begin{equation*}
+  % J / J^2 \to \Omega_{P/k} \otimes_P A \to \Omega_{A / k} \to 0.
+% \end{equation*}
+% Apply the functor $\text{Hom}_A(\cdot, A)$ and let $T^1(A)$ be the cokernel:
+% \begin{equation*}
+  % \Hom_A(\Omega_{P/k} \otimes A, A) \to \Hom_A(J/J^2, A) \to T^1(A) \to 0.
+% \end{equation*}
+% Now use the construction of (II, Ex. 8.6) to show that $T^1(A)$ classifies infinitesimal deformations of $A$, i.e., algebras $A'$ flat over $D = k[t] / (t^2)$, with $A' \otimes_D k \cong A$. It follows that $T^1(A)$ is independent of the given representation of $A$ as quotient of a polynomial ring $P$.

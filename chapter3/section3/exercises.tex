@@ -1,0 +1,166 @@
+\documentclass{article}
+\input{../../etc/preamble.tex}
+\title{Chapter 3, Section 3}
+
+\begin{document}
+\maketitle
+\begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
+
+\item[1.] Let $X$ be a Noetherian scheme.
+Show that $X$ is affine if and only if $\red{X}$ (II, Ex. 2.3) is affine.
+
+\begin{proof}
+  One direction is clear.
+  Suppose $\red{X} = \spec{A}$ where $A$ is a Noetherian ring with no nilpotent elements, let $f : \red{X} \to X$ be the natural map, and let $\fF$ be any quasi-coherent sheaf on $X$. 
+  Following the hint, consider the filtration
+  \begin{equation*}
+    \fF \supseteq \fN \cdot \fF \supseteq \fN^2 \cdot \fF \supseteq \cdots,
+  \end{equation*}
+  where $\fN$ is the sheaf of nilpotent elements on $X$.
+  Note that $X \cong \red{X}$ as topological space, and the associated morphism of sheaves $\fO_X \to f_* \fO_{\red{X}}$ is surjective with kernel $\fN$.
+  Thus, each of the quotients of this filtration can be naturally viewed as $A$-modules.
+  In particular, we have a natural isomorphism (2.10) $$\cH^i(X, \fN^r \cdot \fF / \fN^{r + 1} \fF) \cong \cH^i(\red{X}, f^*(\fN^r \cdot \fF / \fN^{r + 1} \cdot \fF)).$$
+  Also, the nilradical of a Noetherian ring is nilpotent, so there exists a positive integer $r > 0$ such that $\fN^r = 0$ (A.M. 7.15).
+  Using our hypothesis and (3.7), we climb up the filtration and deduce that $H^1(X, \fF) = 0$.
+  Hence, $X$ is affine by (3.7).
+\end{proof}
+
+\item[2.] Let $X$ be a reduced Noetherian scheme.
+Show that $X$ is affine if and only if each irreducible component is affine.
+
+\begin{proof}
+  Suppose $X = \spec{A}$ is affine for some reduced Noetherian ring $A$.
+  The irreducible components of $X$ correspond to the minimal prime ideals $\goth{p}$ of $A$ (A.M. Ex. 1.20).
+  In particular, the irreducible components of $X$ are precisely $\spec{A / \goth{p}}$.
+  Conversely, let $X_i$ be the irreducible components of $X$, and let $\phi : \fF \to \bigoplus_i j_* \restr{\fF}{X_i}$ be the natural map of $\fO_X$-modules, where $j : X_i \hookrightarrow X$ is the inclusion.
+  Since $X$ is Noetherian, $X_i \cap X_j$ is quasi-compact, so we can cover it with a finite number of open affine subsets $X_{ijk}$.
+  Because $X$ is reduced, $\phi$ is injective, so we can extend $\phi$ by the following exact sequence
+  \[ \begin{tikzcd}
+    0 \arrow[r] & \fF \arrow[r] & \bigoplus_i j_* \restr{\fF}{X_i} \arrow[r] & \bigoplus_{i,j} j_* \restr{\fF}{X_{ijk}}.
+  \end{tikzcd} \]
+  Each $j_* \restr{\fF}{X_i}, j_* \restr{\fF}{X_{ijk}}$ has vanishing cohomology for $i > 0$ by (2.10), (3.5), and (3.7).
+  While the sequence above is not surjective on the right, the image is still a quasi-coherent sheaf, so using the long exact sequence of cohomology, we deduce that $H^i(X, \fF) = 0$ for $i > 0$.
+  Hence, $X$ is affine by (3.7).
+\end{proof}
+
+\item[6.] Let $X$ be a Noetherian scheme.
+\begin{itemize}
+  \item[(a)] Show that the sheaf $\fG$ constructed in the proof of (3.6) is an injective object in the category $\goth{Qco}(X)$ of quasi-coherent sheaves on $X$.
+  Thus, $\goth{Qco}(X)$ has enough injectives.
+
+  \item[(b)] Show that any injective object of $\goth{Qco}(X)$ is flasque.
+
+  \item[(c)] Conclude that one can compute cohomology as the derived functors of $\Gamma(X, \cdot)$, considered as a functor $\goth{Qco}(X)$ to $\goth{Ab}$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] The $\Hom$ functor commutes with finite direct sums in the second argument, so we can assume $\fG = j_* \tilde{I}$, where $j : U = \spec{A} \to X$ is the inclusion, and $I$ is an injective $A$-module.
+Suppose $\fN \to \fM$ is an injective map of $\fO_X$-modules, and we are given any $f : \fN \to j_*\tilde{I}$.
+Since $j^*$ is left exact when $j$ is an open immersion, the induced map of $A$-modules $j^* \fN \to j^* \fM$ is also injective.
+For any such $f$ there is an associated morphism of $A$-modules $g : j^* \fN \to \tilde{I}$ by adjointness of $j_*$, so there exists an extension of $g$ to $j^*\fM$ by injectivity of $\tilde{I}$.
+By adjointness of $j^*$ again, we obtain a morphism $\fM \to j_*\tilde{I}$ that naturally extends $f$, which is what we wanted to show.
+
+\item[(b)] Essentially imitating (a) but replacing $i^*$ with $i_*$ and vice versa, we deduce that $\restr{\fI}{U}$ is an injective object of $\goth{Qco}(U)$.
+Covering $X$ with finite number of open affines $U_i = \spec{A_i}$, we have $\restr{\fI}{U_i} \cong \tilde{I}_i$  for some injective $A_i$-module $I_i$ for each $i$ by (II, 5.5).
+Each $\tilde{I}_i$ is flasque by (3.4), so $\fI$ is flasque on a local basis.
+Hence, $\fI$ is flasque.
+
+\item[(c)] Considering $\Gamma(X, \cdot)$ as a functor from $\goth{Qco}(X)$ to $\goth{Ab}$, we calculate its derived funcotrs by taking injective resolutions in the category $\goth{Qco}(X)$. But any injective is flasque (b), and flasques are acyclic (2.5), so this resolution gives the usual cohomology functors (1.2A).
+\end{itemize} 
+\end{proof}
+
+\item[7.] Let $A$ be a Noetherian ring, let $X = \spec{A}$, let $\goth{a} \subseteq A$ be an ideal, and let $U \subseteq X$ be the open set $X - V(\goth{a})$.
+\begin{itemize}
+  \item[(a)] For any $A$-module $M$, establish the following formula of Deligne:
+  \begin{equation*}
+    \Gamma(U, \widetilde{M}) \cong \varinjlim_n{\text{Hom}_A(\goth{a}^n, M)}.
+  \end{equation*}
+  \item[(b)] Apply this in the case of an injective $A$-module $I$, to give another proof of (3.4).
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+\begin{itemize} [leftmargin=0cm]
+\item[(a)] To define a map $\phi : \varinjlim_n \Hom_A(\goth{a}^n, M) \to \Gamma(U, \widetilde{M})$, it suffices to define $A$-homomoprhisms $$\phi_n : \Hom_A(\goth{a}^n, M) \to \Gamma(U, \widetilde{M})$$ that respect the direct system
+\[ \begin{tikzcd}
+  {M \cong \Hom_A(A, M)} \arrow[r, "\mu_0"] & {\Hom_A(\goth{a}, M)} \arrow[r, "\mu_1"] & {\Hom_A(\goth{a}^2, M)} \arrow[r, "\mu_2"] & \cdots,
+  \end{tikzcd} \]
+i.e., $\phi_n = \phi_{n + 1} \circ \mu_n$ for all $n$.
+By the Noetherian hypothesis, $\goth{a}$ is generated by finitely many elements, say $f_1, \dots, f_r$.
+Consider the localization of any $\alpha \in \Hom_A{(\goth{a}^n, M)}$ with respect to $f_i$ for any $i$, that is $\alpha_i : (\goth{a}^n)_{f_i}\to M_{f_i}$.
+Then $(\goth{a}^n)_{f_i} \cong A_{f_i}$ since $f_i^n \in \goth{a}^n$ and $f_i$ is a unit in $A_{f_i}$ (we exclude the case when $f_i$ is nilpotent, since $A_{f_i} = 0$).
+Let $\phi_n(\alpha)$ be the section equal to $\alpha_i(1)$ on $U_i$, where $U_i$ is the distinguished open set associated to $f_i$.
+We remark that $U = \bigcup_{i = 1}^r U_i$, so this definition is well-defined, and it respects the direct system of above since the localization of the inclusion $\goth{a}^{n} \hookrightarrow \goth{a}^{n - 1}$ is the identity map on $A_{f_i}$.
+Thus, to show $\phi_n(\alpha)$ is a well-defined section, it is sufficient to show $\alpha_i(1)$ and $\alpha_j(1)$ agree on $U_i \cap U_j \cong \spec{A_{f_if_j}}$ for all $i, j$.
+Indeed, $\alpha(f_i^n) = \alpha_i(f_i^n)$ where we naturally view $\alpha(f_i^n)$ as an element of $M_{f_i}$, $\alpha_i$ is $A_{f_i}$-linear, and the restriction map $U_i \to U_i \cap U_j$ is given by $m/f_i^n \mapsto f_j^n/(f_if_j)^n$.
+Thus, we have
+\begin{align*}
+  \restr{\alpha_i(1)}{U_i \cap U_j} & = \restr{\alpha_i(f_i^{-n}f_i^n)}{U_i \cap U_j} \\
+  & = \restr{\frac{\alpha(f_i^n)}{f_i^n}}{U_i \cap U_j} \\
+  & = \frac{f_j^n \alpha(f_i^n)}{(f_if_j)^n} \\
+  & = \frac{f_i^n \alpha(f_j^n)}{(f_if_j)^n} \\
+  & = \restr{\alpha_j(1)}{U_i \cap U_j}.
+\end{align*}
+Also, each $\phi_n$ is injective, so the induced map $\phi : \varinjlim_n \Hom_A(\goth{a}^n, M) \to \Gamma(U, \widetilde{M})$ is injective.
+It remains to show $\phi$ is surjective.
+Let $s \in \Gamma(U, \widetilde{M})$ be any section.
+For each $i$, we can express $\restr{s}{U_i}$ as $m_i/f_i^{n_i}$ for some $n_i > 0$ and $m_i \in M$ such that $\restr{m_i/f_i^{n_i}}{U_i \cap U_j} = \restr{m_j/f_j^{n_j}}{U_i \cap U_j}$, where $U_i \cap U_j = \spec{A_{f_if_j}}$ for all $i, j$.
+Choose $n = n_i$ that works for all $i$, so we have
+\begin{equation*}
+  \frac{f_j^n m_i}{(f_if_j)^n} = \frac{f_i^n m_j}{(f_if_j)^n}.
+\end{equation*}
+We want to show there exists an $A$-homomoprhism $\alpha : \goth{a}^N \to M$ for some $N \geq n$ such that $\alpha_i(1) = f_i^{N-n} m_i / f_i^N$.
+Imitating the proof of (3.3), let $\goth{b}_1 \subseteq \goth{b}_2 \subseteq \cdots$ be the sequence of annihilators of $\cdots \subseteq \goth{a}^2 \subseteq \goth{a}$.
+Since $A$ is Noetherian, there is an $r$ such that $\goth{b}_r = \goth{b}_{r + 1} = \cdots$.
+Define $\sigma : \goth{a}^{n + r} \to M$ by sending $f_i^{n + r}$ to $f_i^r m_i$ for all $i$ and extending by zero.
+This is a well-defined homomorphism because the annihilator of $f_i^{n + r}$ is $\goth{b}_{n + r} = \goth{b}_r$, and $\goth{b}_r$ annihilates $f_i^r m_i$.
+Hence, $\phi_{n + r}(\sigma) = s$.
+
+\item[(b)] Let $I$ be an injective $A$-module.
+It will be sufficient to show for any open set $U \subseteq X$, where $U = X - V(\goth{a})$ for some ideal $\goth{a}$ of $A$, that $\Gamma(X, \tilde{I}) \to \Gamma(U, \tilde{I})$ is surjective.
+The map $\Gamma(X, \tilde{I}) \to \Gamma(U, \tilde{I})$ is induced by the natural maps $\Hom_A(A, I) \to \Hom_A(\goth{a}^n, I)$, which is surjective since $I$ is injective.
+Hence, $\Gamma(X, I) \to \Gamma(U, I)$ is surjective.
+\end{itemize}
+\end{proof}
+
+\end{enumerate}
+\end{document}
+
+% \item Let $A$ be a Noetherian ring, and let $\goth{a}$ be an ideal of $A$.
+% \begin{itemize}
+%   \item[(a)] Show that $\Gamma_\goth{a}(\cdot)$ (II, Ex. 5.6) is left-exact functor from the category of $A$-modules to itself.
+%   We denote its right derived functors, calculated in $\goth{Mod}(A)$, by $H_\goth{a}^i(\cdot)$.
+
+%   \item[(b)] Now let $X = \spec{A}$, $Y = V(\goth{a})$.
+%   Show that for any $A$-module $M$,
+%   \begin{equation*}
+%     H_\goth{a}^i(M) = H_Y^i(X, \widetilde{M}),
+%   \end{equation*}
+%   where $H_Y^i(X, \cdot)$ denotes cohomology with supports in $Y$ (Ex. 2.3).
+
+%   \item[(c)] For any $i$, show that $\Gamma_\goth{a}(H_\goth{a}^i(M)) = H_\goth{a}^i(M)$.
+% \end{itemize}
+
+% \item \textit{Cohomological Interpretation of Depth.} If $A$ is a ring, $\goth{a}$ an ideal, and $M$ an $A$-module, then $\textit{depth}_\goth{a}~M$ is the maximum length of an $M$-regular sequence $x_1, \dots, x_r$, with all $x_i \in \goth{a}$. This generalizes the notion of depth introduced in (II, \S 8).
+% \begin{itemize}
+%   \item[(a)] Assume that $A$ is Noetherian. Show that if $\text{depth}_\goth{a}~M \geq 1$, then $\Gamma_\goth{a}(M) = 0$, and the converse is true if $M$ is finitely generated.
+%   \item[(b)] Show inductively, for $M$ finitely generated, that for any $n \geq 0$, the following conditions are equivalent:
+%   \begin{itemize}
+%     \item[(i)] $\text{depth}_\goth{a}~M \geq n$;
+%     \item[(ii)] $H_\goth{a}^i(M) = 0$ for all $i < n$.
+%   \end{itemize}
+% \end{itemize}
+
+% \item Let $X$ be a Noetherian scheme, and let $P$ be a closed point of $X$.
+% Show that the following conditions are equivalent:
+% \begin{itemize}
+%   \item[(i)] $\depth \fO_P geq 2$;
+%   \item[(ii)] if $U$ is any open neighborhood of $P$, then every section of $\fO_X$ over $U - P$ extends uniquely to a section of $\fO_X$ of $U$.
+% \end{itemize}
+
+% This generalizes (I, Ex. 3.20), in view of (II, 8.22A).
+
+% \item Without the Noetherian hypothesis, (3.3) and (3.4) are false.
+% Let $A = k[x_0, x_1, x_2, \dots]$ with the relations $x_0^n x_n = 0$ for $n = 1, 2, \dots$.
+% Let $I$ be an injective $A$-module containing $A$.
+% Show that $I \to I_{x_0}$ is not surjective.
