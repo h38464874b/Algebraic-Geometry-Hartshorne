@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[12pt]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 3, Section 12}
 
@@ -14,11 +14,10 @@ is upper semicontinuous on the set of closed points of $Y$.
 
 \begin{proof}
   Apply (12.7.2) to the sheaf of relative differentials $\Omega_{Y/k}$.
-  For each closed point $y \in Y$, we have a natural isomorphism
+  For each closed point $y \in Y$, we have a natural isomorphism (II, 8.7A)
   \begin{equation*}
-    \gm_y/\gm_y^2 \cong \Omega_{Y / k} \otimes k(y)
+    \gm_y/\gm_y^2 \cong \Omega_{Y / k} \otimes k(y).
   \end{equation*}
-  by (II, 8.7A).
 \end{proof}
 
 \item Let $\{X_t\}$ be a family of hypersurfaces of the same degree in $\PP_k^n$. Show that for each $i$, the function $h^i(X_t, \fO_{X_t})$ is a constant function of $t$.
@@ -69,7 +68,7 @@ is upper semicontinuous on the set of closed points of $Y$.
   \end{equation*}
   is upper semicontinuous on $Y$ (12.8), and we have the strict inequality
   \begin{equation*}
-    1 = \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{k(y)}}) < \dim_{k(\xi)} \cH^0(\PP_{\xi}^n, \fO_{\PP^n_{\xi}}(d_\xi))
+    \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{k(y)}}) < \dim_{k(\xi)} \cH^0(\PP_{\xi}^n, \fO_{\PP^n_{\xi}}(d_\xi))
   \end{equation*}
   by the explicit calculations of (5.1).
   But this implies the set $\{ y \in Y | h^0(y, \fM) \geq h^0(\xi, \fM)\}$ is a closed set containing $\xi$ and not containing $y'$, a contradiction.
@@ -77,16 +76,18 @@ is upper semicontinuous on the set of closed points of $Y$.
 
   Next, we prove the inequality in the opposite direction.
   By Serre duality (5.1) (7.7), we have
-  \begin{equation*}
-    h^n(y, \fM) = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(d_y)) = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(-d_y - n - 1)) = h^0(y, \fO(-n-1) \otimes \fM^{-1}),
-  \end{equation*}
+  \begin{align*}
+    h^n(y, \fM) & = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(d_y)) \\
+    & = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(-d_y - n - 1)) \\
+    & = h^0(y, \fO(-n-1) \otimes \fM^{-1}),
+  \end{align*}
   and $h^n(y, \fM)$ is also an upper semicontinuous on $Y$.
   Suppose there exists $y' \in Y$ such that $d_\xi < d_{y'}$.
   After twisting by $\fO(-d_\xi + n + 1)$, we can assume $d_\xi = n + 1$.
   In particular $d_{y'}$ is a positive integer.
   Again, we have the strict inequality
   \begin{equation*}
-     0  = \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{y'}^n}(-d_{y'} - n - 1)) = h^n(y', \fM) < h^n(\xi, \fM) = \dim_{k(\xi)} \cH^0(\PP_\xi^n, \fO_{\PP_\xi^n}) = 1,
+     \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{y'}^n}(-d_{y'} - n - 1)) < \dim_{k(\xi)} \cH^0(\PP_\xi^n, \fO_{\PP_\xi^n}),
   \end{equation*}
   arriving at the same contradiction as above.
   Hence, $d_y$ is constant for all $y \in Y$, and we have shown $\varphi$ is surjective.

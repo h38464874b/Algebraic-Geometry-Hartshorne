@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 2, Section 9}
 
@@ -8,13 +8,13 @@
 
 \item Let $X$ be a Noetherian scheme, $Y$ a closed subscheme, and $\hat{X}$ the completion of $X$ along $Y$. We call the ring $\Gamma(\hat{X}, \fO_{\hat{X}})$ the ring of \textit{formal-regular functions} on $X$ along $Y$. In this exercise we show that if $Y$ is a connected, nonsingular, positive dimensional subvariety of $X = \PP_k^n$ over an algebraically closed field $k$, then $\Gamma(\hat{X}, \fO_{\hat{X}}) = k$.
 \begin{itemize}
-    \item[(a)] Let $\mathscr{J}$ be the ideal sheaf of $Y$. Use (8.13) and (8.17) to show that here is an inclusion of sheaves on $Y, \mathscr{J} / \mathscr{J}^2 \hookrightarrow \fO_Y(-1)^{n + 1}$.
-    \item[(b)] Show that for any $r \geq 1$, $\Gamma(Y, \mathscr{J}^r / \mathscr{J}^{r + 1}) = 0$.
+    \item[(a)] Let $\fJ$ be the ideal sheaf of $Y$. Use (8.13) and (8.17) to show that here is an inclusion of sheaves on $Y, \fJ / \fJ^2 \hookrightarrow \fO_Y(-1)^{n + 1}$.
+    \item[(b)] Show that for any $r \geq 1$, $\Gamma(Y, \fJ^r / \fJ^{r + 1}) = 0$.
     \item[(c)] Use the exact sequences
     \begin{equation*}
-        0 \to \mathscr{J}^r / \mathscr{J}^{r + 1} \to \fO_X / \mathscr{J}^{r + 1} \to \fO_X / \mathscr{J}^r \to 0
+        0 \to \fJ^r / \fJ^{r + 1} \to \fO_X / \fJ^{r + 1} \to \fO_X / \fJ^r \to 0
     \end{equation*}
-    and induction on $r$ to show that $\Gamma(Y, \fO_X/\mathscr{J}^r) = k$ for all $r \geq 1$.
+    and induction on $r$ to show that $\Gamma(Y, \fO_X/\fJ^r) = k$ for all $r \geq 1$.
     \item[(d)] Conclude that $\Gamma(\hat{X}, \fO_{\hat{X}}) = k$.
 \end{itemize}
 

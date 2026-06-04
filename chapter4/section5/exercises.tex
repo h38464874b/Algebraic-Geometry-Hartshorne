@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 5}
 
@@ -6,84 +6,85 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Show that a hyperelliptic curve can never be a complete intersection in any projective space.
+  \item Show that a hyperelliptic curve can never be a complete intersection in any projective space.
 
-\begin{proof}
-  Combine (Ex. 3.3) and (5.2).
-\end{proof}
+        \begin{proof}
+          Combine (Ex. 3.3) and (5.2).
+        \end{proof}
 
-\item If $X$ is a curve of genus $\geq 2$ over a field of characteristic 0, show that the group $\Aut{X}$ of automorphisms of $X$ is finite.
+  \item If $X$ is a curve of genus $\geq 2$ over a field of characteristic 0, show that the group $\Aut{X}$ of automorphisms of $X$ is finite.
 
-\begin{proof}
-  
-\end{proof}
+        \begin{proof}
+          Suppose $X$ is hyperelliptic, and let $f : X \to \PP^1$ be a 2-fold covering $f : X \to \PP^1$ given by the unique $g_2^1$.
+          The ramification locus consists of $2g + 2$ distinct points.
+          After a suitable automorphism of $\PP^1$, we can label them $0, 1, \infty, \beta_1, \dots, \beta_{2g - 1}$.
+          Let $\sigma$ be an automorphism of $X$.
+          Then $f \circ \sigma$ gives a $g_2^1$, so by uniqueness of $g_2^1$, there exists an automorphism $\tau$ of $\PP^1$ such that the following diagram commutes
+          \[ \begin{tikzcd}
+              X \arrow[d] \arrow[r, "\sigma"] & X \arrow[d] \\
+              \PP^1 \arrow[r, "\tau"]         & \PP^1
+            \end{tikzcd}. \]
+            Thus, $\sigma$ permutes the ramification points of $f$ which induces a group homomorphism $\Aut{X} \to \Sigma_{2g - 1}$.
+            If $\sigma$ is in the kernel, i.e., $\sigma$ fixes the ramification points of $f$,
 
-\item \textit{Moduli of Curves of Genus 4.} The hyperelliptic curves of genus 4 form an irreducible family of dimension 7.
-The nonhyperelliptic ones form an irreducible family of dimension 9.
-The subset of those having only one $g_3^1$ is an irreducible family of dimension 8.
+            If $X$ is not hyperelliptic, we show that $\Aut(X)$ permutes the hyperosculation points of the canonical embedding.
+        \end{proof}
 
-\begin{proof}
-  Hyperelliptic elliptic curves of genus 4 are determined as two-fold coverings of $\PP^1$, ramified at $0, 1, \infty$, and $2g - 1 = 7$ additional points, up to the action of a certain finite group.
-  If $X$ is a nonhyperelliptic curve of genus 4, then its canonical embedding in $\PP^3$ is the complete intersection of a unique irreducible quadric surface and an irreducible cubic surface.
-  Conversely, if $X$ is a nonsingular curve in $\PP^3$ which is a complete intersection of a quadric and a cubic surface, then $X$ is a canonical curve of genus 4.
-  The family of all these curves is parametrized by an open subset $U \subseteq |\fO_{\PP^3}(2)| \times |\fO_{\PP^3}(3)|$, with $\dim{U} = 9 + 19 = 28$, because a form of degree 2 has 10 coefficients, and a form of degree 3 has 20 coefficients.
-  So there is a morphism $U \to \goth{M}_4$ given by $(Q, F_3) \mapsto Q \cap F_3$, and it remains to count the dimension of each fibre, so let $U_X$ be any fibre, with $X \in \fM_g$.
-  First consider the action of $\PGL(3)$ on $\PP^3$.
-  It has dimension $(3 + 1)^2 - 1 = 15$, and given any pair $(Q, F_3) \in U_X$, we have $Q \cap F_3 \cong \sigma(Q \cap F_3) \cong \sigma(Q) \cap \sigma(F_3)$ for all $\sigma \in \PGL(3)$.
-  Since the embedding is canonical, two of them are isomorphic as abstract curves if and only if they differ by an automorphism of $\PP^3$.
+  \item \textit{Moduli of Curves of Genus 4.} The hyperelliptic curves of genus 4 form an irreducible family of dimension 7.
+        The nonhyperelliptic ones form an irreducible family of dimension 9.
+        The subset of those having only one $g_3^1$ is an irreducible family of dimension 8.
 
+        \begin{proof}
+          Hyperelliptic elliptic curves of genus 4 are determined as two-fold coverings of $\PP^1$, ramified at $0, 1, \infty$, and $2g - 1 = 7$ additional points, up to the action of a certain finite group.
+          If $X$ is a nonhyperelliptic curve of genus 4, then its canonical embedding in $\PP^3$ is the complete intersection of a unique irreducible quadric surface and an irreducible cubic surface.
+          Conversely, if $X$ is a nonsingular curve in $\PP^3$ which is a complete intersection of a quadric and a cubic surface, then $X$ is a canonical curve of genus 4.
+          There are only two isomorphism classes of irreducible quadric surfaces in $\PP^3$, so the family of all nonhyperelliptic curves of genus 4 is parametrized by two copies of an open set $U \subseteq \PP^{N}$ with $N = 19$, because a form of degree 3 has 20 coefficients.
+          Fixing a quadric surface $Q \subseteq \PP^3$, there is a dominant morphism $U \to \goth{M}_4$ defined by $F \mapsto Q \cap F$, so it remains to compute the dimension of a general fibre.
+          Let $F, F'$ be two irreducible cubic surfaces.
+          Since the embedding is canonical, $Q \cap F$ and $Q \cap F'$ are  isomorphic if and only if they differ by an automorphism of $\PP^3$.
+        \end{proof}
 
+  \item[\textbf{5.}] \textit{Curves of Genus 5.} Assume $X$ is not hyperelliptic.
+        \begin{itemize}
+          \item[(a)] The curves of genus 5 whose canonical model in $\PP^4$ is a complete intersection $F_1.F_2.F_3$ form a family of dimension 12.
+          \item[(b)] $X$ has a $g_3^1$ if and only if it can be represented as a plane quintic with one node.
+                These form an irreducible family of dimension 11.
+          \item[(c)] In that case, the conics through the node cut out the canonical system (not counting the fixed points at the node).
+                Mapping $\PP^2 \to \PP^4$ by this linear system of conics, show that the canonical curve $X$ is contained in a cubic surface $V \subseteq \PP^4$, with $V$ isomorphic to $\PP^2$ with one point blown up (II, Ex. 7.7).
+                Furthermore, $V$ is the union of all the trisecants of $X$ corresponding to the $g_3^1$ (5.5.3), so $V$ is contained in the intersection of all the quadric hypersurfaces containing $X$.
+                Thus $V$ and $g_3^1$ are unique.
+        \end{itemize}
 
-  More specifically, if $C = Q \cap F_3$ and $C' = Q' \cap F_3'$ are isomorphic, then there exists $\sigma \in \PGL(3)$ such that $C' = \sigma(C)$, which implies $Q' \cap F_3' = \sigma(Q) \cap \sigma(F_3)$, so if two genus 4 curves are isomorphic, then they lie in the same quadric.
-  Since a genus 4 curve in $\PP^3$ is contained in a unique quadric, we have $Q' = \sigma(Q)$.
-  For each quadric $Q$, we consider the number of unique genus 3 curves $Q \cap F_3$.
-  
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
 
+            \item[(b)]
 
-  A nonhyperelliptic genus 4 curve has only one $g_3^1$ if and only if it lies on a singular quadric surface in its canonical embedding, and the space of singular quadrics form an irreducible family of dimension 8 in $|\fO_{\PP^3}(2)|$.
-\end{proof}
+            \item[(c)]
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{5.}] \textit{Curves of Genus 5.} Assume $X$ is not hyperelliptic.
-\begin{itemize}
-  \item[(a)] The curves of genus 5 whose canonical model in $\PP^4$ is a complete intersection $F_1.F_2.F_3$ form a family of dimension 12.
-  \item[(b)] $X$ has a $g_3^1$ if and only if it can be represented as a plane quintic with one node.
-  These form an irreducible family of dimension 11.
-  \item[(c)] In that case, the conics through the node cut out the canonical system (not counting the fixed points at the node).
-  Mapping $\PP^2 \to \PP^4$ by this linear system of conics, show that the canonical curve $X$ is contained in a cubic surface $V \subseteq \PP^4$, with $V$ isomorphic to $\PP^2$ with one point blown up (II, Ex. 7.7).
-  Furthermore, $V$ is the union of all the trisecants of $X$ corresponding to the $g_3^1$ (5.5.3), so $V$ is contained in the intersection of all the quadric hypersurfaces containing $X$.
-  Thus $V$ and $g_3^1$ are unique.
-\end{itemize}
+  \item[\textbf{7.}] \begin{itemize}
+          \item[(a)] Any automorphism of a curve of genus 3 is induced by an automorphism of $\PP^2$ via the canonical embedding.
+          \item[(b)] Assume $\chr{k} \neq 3$.
+                If $X$ is the curve given by
+                \begin{equation*}
+                  x^3y + y^3z + z^3 x = 0,
+                \end{equation*}
+                the group $\Aut{X}$ is the simple group of order 168, whose order is the maximum $84(g - 1)$ allowed by (Ex. 2.5).
+          \item[(c)] Most curves of genus 3 have no automorphisms except the identity.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)]
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
 
-  \item[(b)]
+            \item[(b)]
 
-  \item[(c)]
-\end{itemize} 
-\end{proof}
-
-\item[\textbf{7.}] \begin{itemize}
-  \item[(a)] Any automorphism of a curve of genus 3 is induced by an automorphism of $\PP^2$ via the canonical embedding.
-  \item[(b)] Assume $\chr{k} \neq 3$.
-  If $X$ is the curve given by
-  \begin{equation*}
-    x^3y + y^3z + z^3 x = 0,
-  \end{equation*}
-  the group $\Aut{X}$ is the simple group of order 168, whose order is the maximum $84(g - 1)$ allowed by (Ex. 2.5).
-  \item[(c)] Most curves of genus 3 have no automorphisms except the identity.
-\end{itemize}
-
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)]
-
-  \item[(b)]
-
-  \item[(c)]
-\end{itemize} 
-\end{proof}
+            \item[(c)]
+          \end{itemize}
+        \end{proof}
 
 \end{enumerate}
 

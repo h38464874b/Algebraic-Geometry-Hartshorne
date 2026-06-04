@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 4}
 
@@ -6,137 +6,146 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-% 3, 4, 7, 9, 11, 13, 14, 15, 16, 17, 20, 22
+      % 3, 4, 7, 9, 11, 13, 14, 15, 16, 17, 20, 22
 
-\item[\textbf{3.}] Let the elliptic curve $X$ be embedded in $\PP^2$ so as to have the equation $y^2 = x(x - 1)(x - \lambda)$.
-Show that any automorphism of $X$ leaving $P_0 = (0:1:0)$ fixed is induced by an automorphism of $\PP^2$ coming from the automorphism of the affine $(x, y)$-plane given by
-\begin{equation*}
-  \begin{cases*}
-    x' = ax + b \\
-    y' = cy.
-  \end{cases*}
-\end{equation*}
-In each of the four cases of (4.7), describe these automorphisms of $\PP^2$ explicitly, and hence determine the structure of the group $G = \Aut(X, P_0)$.
+      \item[\textbf{3.}] Let the elliptic curve $X$ be embedded in $\PP^2$ so as to have the equation $y^2 = x(x - 1)(x - \lambda)$.
+            Show that any automorphism of $X$ leaving $P_0 = (0:1:0)$ fixed is induced by an automorphism of $\PP^2$ coming from the automorphism of the affine $(x, y)$-plane given by
+            \begin{equation*}
+                  \begin{cases*}
+                        x' = ax + b \\
+                        y' = cy.
+                  \end{cases*}
+            \end{equation*}
+            In each of the four cases of (4.7), describe these automorphisms of $\PP^2$ explicitly, and hence determine the structure of the group $G = \Aut(X, P_0)$.
 
-\item[\textbf{4.}] Let $X$ be an elliptic curve in $\PP^2$ given by an equation of the form
-\begin{equation*}
-  y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6.
-\end{equation*}
-Show that the $j$-invariant is a rational function of the $a_i$, with coefficients in $\Q$.
-In particular, if the $a_i$ are all in some field $k_0 \subseteq k$, then $j \in k_0$ also.
-Furthermore, for every $\alpha \in k_0$, there exists an elliptic curve defined over $k_0$ with $j$-invariant equal to $\alpha$.
+            \begin{proof}
+                  Embedding of $X$ in $\PP^2$ given by linear system $|3P_0|$.
+            \end{proof}
 
-\begin{proof}
-  asdf
-\end{proof}
+      \item[\textbf{4.}] Let $X$ be an elliptic curve in $\PP^2$ given by an equation of the form
+            \begin{equation*}
+                  y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6.
+            \end{equation*}
+            Show that the $j$-invariant is a rational function of the $a_i$, with coefficients in $\Q$.
+            In particular, if the $a_i$ are all in some field $k_0 \subseteq k$, then $j \in k_0$ also.
+            Furthermore, for every $\alpha \in k_0$, there exists an elliptic curve defined over $k_0$ with $j$-invariant equal to $\alpha$.
 
-\item[\textbf{7.}] \textit{The Dual of a Morphism.} Let $X$ and $X'$ be elliptic curves over $k$, with base points $P_0, P_0'$.
-\begin{itemize}
-  \item[(a)] If $f : X \to X'$ is any morphism, use (4.11) to show that $f^* : \pic{X'} \to \pic{X}$ induces a homomorphism $\hat{f} : (X', P_0') \to (X, P_0)$.
-  We call this the \textit{dual} of $f$.
-  \item[(b)] If $f : X \to X'$ and $g : X' \to X''$ are two morphisms, then $\widehat{g \circ f} = \hat{f} \circ \hat{g}$.
-  \item[(c)] Assume $f(P_0) = P_0'$, and let $n = \deg{f}$.
-  Show that if $Q \in X$ is any point, and $f(Q) = Q'$, then $\hat{f}(Q') = n_X(Q)$.
-  Conclude that $f \circ \hat{f} = n_{X'}$ and $\hat{f} \circ f = n_X$.
-  \item[(d)] If $f, g : X \to X'$ are two morphisms preserving the base points $P_0, P_0'$, then $\widehat{f + g} = \hat{f} + \hat{g}$.
-  \item[(e)] Using (d), show that for any $n \in \Z$, $\hat{n}_X = n_X$.
-  Conclude that $\deg n_X = n^2$.
-  \item[(f)] Show for any $f$ that $\deg{\hat{f}} = \deg{f}$.
-\end{itemize}
+            \begin{proof}
+            \end{proof}
 
-\item[\textbf{9.}] We say two elliptic curves $X, X'$ are \textit{isogenous} if there is a finite morphism $f : X \to X'$.
-\begin{itemize}
-  \item[(a)] Show that isogeny is an equivalence relation.
-  \item[(b)] For any elliptic curve $X$, show that the set of elliptic curves $X'$ isogenous to $X$, up to isomorphism is countable.
-\end{itemize}
+      \item[\textbf{7.}] \textit{The Dual of a Morphism.} Let $X$ and $X'$ be elliptic curves over $k$, with base points $P_0, P_0'$.
+            \begin{itemize}
+                  \item[(a)] If $f : X \to X'$ is any morphism, use (4.11) to show that $f^* : \pic{X'} \to \pic{X}$ induces a homomorphism $\hat{f} : (X', P_0') \to (X, P_0)$.
+                        We call this the \textit{dual} of $f$.
+                  \item[(b)] If $f : X \to X'$ and $g : X' \to X''$ are two morphisms, then $\widehat{g \circ f} = \hat{f} \circ \hat{g}$.
+                  \item[(c)] Assume $f(P_0) = P_0'$, and let $n = \deg{f}$.
+                        Show that if $Q \in X$ is any point, and $f(Q) = Q'$, then $\hat{f}(Q') = n_X(Q)$.
+                        Conclude that $f \circ \hat{f} = n_{X'}$ and $\hat{f} \circ f = n_X$.
+                  \item[(d)] If $f, g : X \to X'$ are two morphisms preserving the base points $P_0, P_0'$, then $\widehat{f + g} = \hat{f} + \hat{g}$.
+                  \item[(e)] Using (d), show that for any $n \in \Z$, $\hat{n}_X = n_X$.
+                        Conclude that $\deg n_X = n^2$.
+                  \item[(f)] Show for any $f$ that $\deg{\hat{f}} = \deg{f}$.
+            \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)] The only nontrivial axiom of equivalence relations to check is reflexivity, which is taken care of by (Ex. 4.7a).
-\end{itemize} 
-\end{proof}
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)] Since $f^*$ maps $\pic(X')^\circ$ to $\pic(X)^\circ$, 
+                  \end{itemize}
+            \end{proof}
 
-\item[\textbf{11.}] Let $X$ be an elliptic curve over $\C$, defined by the elliptic functions with periods $1, \tau$.
-Let $R$ be the the ring of endormorphisms of $X$.
-\begin{itemize}
-  \item[(a)] If $f \in R$ is a nonzero endormorphism correspondending to complex multiplication by $\alpha$ as in (4.18), show that $\deg{f} = |\alpha|^2$.
-  \item[(b)] If $f \in R$ corresponds to $\alpha \in \C$ again, show that the dual $\hat{f}$ of (Ex. 4.7) corresponds to the complex conjugate $\bar{\alpha}$ of $\alpha$.
-  \item[(c)] If $\tau \in \Q(\sqrt{-d})$ happens to be integral over $\Z$, show that $R = \Z[\tau]$.
-\end{itemize}
+      \item[\textbf{9.}] We say two elliptic curves $X, X'$ are \textit{isogenous} if there is a finite morphism $f : X \to X'$.
+            \begin{itemize}
+                  \item[(a)] Show that isogeny is an equivalence relation.
+                  \item[(b)] For any elliptic curve $X$, show that the set of elliptic curves $X'$ isogenous to $X$, up to isomorphism is countable.
+            \end{itemize}
 
-\item[\textbf{13.}] If $p = 13$, there is just one value of $j$ for which the Hasse invariant of the corresponding curve is 0.
-Find it.
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)] The only nontrivial axiom of equivalence relations to check is reflexivity, which is taken care of by (Ex. 4.7a).
+                  \end{itemize}
+            \end{proof}
 
-\begin{proof}
-  The polynomial $h_p(\lambda)$ of (4.22) for $p = 13$ is
-  \begin{align*}
-    h_{13}(\lambda) = \lambda^6 + 10\lambda^5 + 4\lambda^4 + 10\lambda^3 + 4\lambda^2 + 10\lambda + 1,
-  \end{align*}
-  and an elliptic curve has Hasse invariant 0 if and only if $h_{13}(\lambda) = 0$.
-  On the otherhand, consider the $j$-invariant
-  \begin{equation*}
-    j = 2^8 \frac{(\lambda^2 - \lambda + 1)^3}{\lambda^2(\lambda - 1)^2}.
-  \end{equation*}
-  Expanding above modulo 13 gives
-  \begin{equation*}
-    \lambda^6 + 10\lambda^5 + (10j + 6)\lambda^4 + (6j + 6)\lambda^3 + (10j + 6)\lambda^2 + 10\lambda + 1 = 0.
-  \end{equation*}
-  Matching coefficients with $h_{13}(\lambda)$ and solving for $j$ gives $j \equiv 5 \mod{13}$.
-\end{proof}
+      \item[\textbf{11.}] Let $X$ be an elliptic curve over $\C$, defined by the elliptic functions with periods $1, \tau$.
+            Let $R$ be the the ring of endormorphisms of $X$.
+            \begin{itemize}
+                  \item[(a)] If $f \in R$ is a nonzero endormorphism correspondending to complex multiplication by $\alpha$ as in (4.18), show that $\deg{f} = |\alpha|^2$.
+                  \item[(b)] If $f \in R$ corresponds to $\alpha \in \C$ again, show that the dual $\hat{f}$ of (Ex. 4.7) corresponds to the complex conjugate $\bar{\alpha}$ of $\alpha$.
+                  \item[(c)] If $\tau \in \Q(\sqrt{-d})$ happens to be integral over $\Z$, show that $R = \Z[\tau]$.
+            \end{itemize}
 
-\item[\textbf{14.}] The Fermat curve $X : x^3 + y^3 = z^3$ gives a nonsingular curve in characteristic $p$ for every $p \neq 3$.
-Determine the set $\goth{P} = \{p \neq 3 \mid \text{$X_{(p)}$ has Hasse invariant 0}\}$, and observe (modulo Dirichlet's theorem) that it is a set of primes of density $1 / 2$.
+      \item[\textbf{13.}] If $p = 13$, there is just one value of $j$ for which the Hasse invariant of the corresponding curve is 0.
+            Find it.
 
-\begin{proof}
-  Using (4.21) with $f(x, y, z) = x^3 + y^3 - z^3$, we find that the coefficient of $(xyz)^{p - 1}$ in $f^{p - 1}$ is zero if and only if $p \equiv 2 \mod{3}$.
-  By Dirichlet's theorem, the density of $\goth{P}$ is $1 / \phi(3) = 1 / 2$.
-\end{proof}
+            \begin{proof}
+                  The polynomial $h_p(\lambda)$ of (4.22) for $p = 13$ is
+                  \begin{align*}
+                        h_{13}(\lambda) = \lambda^6 + 10\lambda^5 + 4\lambda^4 + 10\lambda^3 + 4\lambda^2 + 10\lambda + 1,
+                  \end{align*}
+                  and an elliptic curve has Hasse invariant 0 if and only if $h_{13}(\lambda) = 0$.
+                  On the otherhand, consider the $j$-invariant
+                  \begin{equation*}
+                        j = 2^8 \frac{(\lambda^2 - \lambda + 1)^3}{\lambda^2(\lambda - 1)^2}.
+                  \end{equation*}
+                  Expanding above modulo 13 gives
+                  \begin{equation*}
+                        \lambda^6 + 10\lambda^5 + (10j + 6)\lambda^4 + (6j + 6)\lambda^3 + (10j + 6)\lambda^2 + 10\lambda + 1 = 0.
+                  \end{equation*}
+                  Matching coefficients with $h_{13}(\lambda)$ and solving for $j$ gives $j \equiv 5 \mod{13}$.
+            \end{proof}
 
-\item[\textbf{15.}] Let $X$ be an elliptic curve over a field $k$ of characteristic $p$.
-Let $F' : X_p \to X$ be the $k$-linear Frobenius morphism (2.4.1).
-Use (4.10.7) to show that the dual morphism $\hat{F}' : X \to X_p$ is separable if and only if the Hasse invariant of $X$ is 1.
-Now use (Ex. 4.7) to show that if the Hasse invariant is 1, then the subgroup of points of order $p$ on $X$ is isomorphic to $\Z / p$; if the Hasse invariant is 0, then it is 0.
+      \item[\textbf{14.}] The Fermat curve $X : x^3 + y^3 = z^3$ gives a nonsingular curve in characteristic $p$ for every $p \neq 3$.
+            Determine the set $\goth{P} = \{p \neq 3 \mid \text{$X_{(p)}$ has Hasse invariant 0}\}$, and observe (modulo Dirichlet's theorem) that it is a set of primes of density $1 / 2$.
 
-\item[\textbf{16.}] Again let $X$ be an elliptic curve over $k$ of characteristic $p$, and suppose $X$ is defined over the field $\F_q$ of $q = p^r$ elements, i.e., $X \subseteq \PP^2$ can be defined by an equation with coefficients in $\F_q$.
-Assume also that $X$ has a rational point over $\F_q$.
-Let $F' : X_q \to X$ be the $k$-linear Frobenius with respect to $q$.
-\begin{itemize}
-  \item[(a)] Show that $X_q \cong X$ as schemes over $k$, and that under this identification, $F' : X \to X$ is the map obtained by the $q$th-power map on the coordinates of points of $X$, embedded in $\PP^2$.
-  \item[(b)] Show that $1_X - F'$ is a separable morphism and its kernel is just the set $X(\F_q)$ of points of $X$ with coordinates in $\F_{q}$.
-  \item[(c)] Using (Ex. 4.7), show that $F' + \hat{F}' = a_X$ for some integer $a$, and that $N = q - a + 1$, where $N = \# X(\F_q)$.
-  \item[(d)] Use the fact that $\deg(m + nF') > 0$ for all $m, n \in \Z$ to show that $|\alpha| \leq 2\sqrt{q}$.
-  This is Hasse's proof of the analogue of the Riemann hypothesis for elliptic curves.
-  \item[(e)] Now assume $q = p$, and show that the Hasse invariant of $X$ is 0 if and only if $a \equiv 0 \mod{p}$.
-  Conclude that for $p \geq 5$ that $X$ has Hasse invariant 0 if and only if $N = p + 1$.
-\end{itemize}
+            \begin{proof}
+                  Using (4.21) with $f(x, y, z) = x^3 + y^3 - z^3$, we find that the coefficient of $(xyz)^{p - 1}$ in $f^{p - 1}$ is zero if and only if $p \equiv 2 \mod{3}$.
+                  By Dirichlet's theorem, the density of $\goth{P}$ is $1 / \phi(3) = 1 / 2$.
+            \end{proof}
 
-\item[\textbf{17.}] Let $X$ be the curve $y^2 + y = x^3 - x$ of (4.23.8).
-\begin{itemize}
-  \item[(a)] If $Q = (a, b)$ is a point on the curve, compute the coordinates of the point $P + Q$, where $P = (0, 0)$, as a function of $a, b$.
-  Use this formula to find the coordinates $nP$, $n = 1, 2, \dots, 10$.
-  \item[(b)] This equation defines a nonsingular curve over $\F_q$ for all $p \neq 37$.
-\end{itemize}
+      \item[\textbf{15.}] Let $X$ be an elliptic curve over a field $k$ of characteristic $p$.
+            Let $F' : X_p \to X$ be the $k$-linear Frobenius morphism (2.4.1).
+            Use (4.10.7) to show that the dual morphism $\hat{F}' : X \to X_p$ is separable if and only if the Hasse invariant of $X$ is 1.
+            Now use (Ex. 4.7) to show that if the Hasse invariant is 1, then the subgroup of points of order $p$ on $X$ is isomorphic to $\Z / p$; if the Hasse invariant is 0, then it is 0.
 
-\item[\textbf{20.}] Let $X$ be an elliptic curve over a field $k$ of characteristic $p > 0$, and let $R = \End(X, P_0)$ be its ring of endormorphisms.
-\begin{itemize}
-  \item[(a)] Let $X_p$ be the curve over $k$ defined by changing the $k$-structure of $X$ (2.4.1).
-  Show that $j(X_p) = j(X)^{1/p}$.
-  Thus, $X \cong X_p$ over $k$ if and only if $j \in \F_p$.
-  \item[(b)] Show that $p_X$ in $R$ factors into a product of $\pi \hat{\pi}$ of two elements of degree $p$ if and only if $X \cong X_p$.
-  In this case, the Hasse invariant of $X$ is 0 if and only if $\pi$ and $\hat{\pi}$ are associates in $R$.
-  \item[(c)] If $\Hasse(X) = 0$ show in any case $j \in \F_{p^2}$. 
-  \item[(d)] For any $f \in R$, there is an induced map $f^* : \cH^1(\fO_X) \to \cH^1(\fO_X)$.
-  This must be multiplication by an element $\lambda_f \in k$.
-  So we obtain a ring homomorphism $\varphi : R \to k$ by sending $f$ to $\lambda_f$.
-  Show that any $f \in R$ commutes with the (nonlinear) Frobenius moprhism $F : X \to X$, and conclude that if $\Hasse(X) \neq 0$, then the image of $\varphi$ is $\F_p$.
-  Therefore, $R$ contains a prime ideal $\goth{p}$ with $R / \goth{p} \cong \F_p$.
-\end{itemize}
+      \item[\textbf{16.}] Again let $X$ be an elliptic curve over $k$ of characteristic $p$, and suppose $X$ is defined over the field $\F_q$ of $q = p^r$ elements, i.e., $X \subseteq \PP^2$ can be defined by an equation with coefficients in $\F_q$.
+            Assume also that $X$ has a rational point over $\F_q$.
+            Let $F' : X_q \to X$ be the $k$-linear Frobenius with respect to $q$.
+            \begin{itemize}
+                  \item[(a)] Show that $X_q \cong X$ as schemes over $k$, and that under this identification, $F' : X \to X$ is the map obtained by the $q$th-power map on the coordinates of points of $X$, embedded in $\PP^2$.
+                  \item[(b)] Show that $1_X - F'$ is a separable morphism and its kernel is just the set $X(\F_q)$ of points of $X$ with coordinates in $\F_{q}$.
+                  \item[(c)] Using (Ex. 4.7), show that $F' + \hat{F}' = a_X$ for some integer $a$, and that $N = q - a + 1$, where $N = \# X(\F_q)$.
+                  \item[(d)] Use the fact that $\deg(m + nF') > 0$ for all $m, n \in \Z$ to show that $|\alpha| \leq 2\sqrt{q}$.
+                        This is Hasse's proof of the analogue of the Riemann hypothesis for elliptic curves.
+                  \item[(e)] Now assume $q = p$, and show that the Hasse invariant of $X$ is 0 if and only if $a \equiv 0 \mod{p}$.
+                        Conclude that for $p \geq 5$ that $X$ has Hasse invariant 0 if and only if $N = p + 1$.
+            \end{itemize}
 
-\item[\textbf{22.}] If $X \to \A_C^1$ is a family of elliptic curves having a section, show that the family is trivial.
+      \item[\textbf{17.}] Let $X$ be the curve $y^2 + y = x^3 - x$ of (4.23.8).
+            \begin{itemize}
+                  \item[(a)] If $Q = (a, b)$ is a point on the curve, compute the coordinates of the point $P + Q$, where $P = (0, 0)$, as a function of $a, b$.
+                        Use this formula to find the coordinates $nP$, $n = 1, 2, \dots, 10$.
+                  \item[(b)] This equation defines a nonsingular curve over $\F_q$ for all $p \neq 37$.
+            \end{itemize}
 
-\begin{proof}
-  Let $\sigma : \A_C^1 \to X$ be a section.
-\end{proof}
+      \item[\textbf{20.}] Let $X$ be an elliptic curve over a field $k$ of characteristic $p > 0$, and let $R = \End(X, P_0)$ be its ring of endormorphisms.
+            \begin{itemize}
+                  \item[(a)] Let $X_p$ be the curve over $k$ defined by changing the $k$-structure of $X$ (2.4.1).
+                        Show that $j(X_p) = j(X)^{1/p}$.
+                        Thus, $X \cong X_p$ over $k$ if and only if $j \in \F_p$.
+                  \item[(b)] Show that $p_X$ in $R$ factors into a product of $\pi \hat{\pi}$ of two elements of degree $p$ if and only if $X \cong X_p$.
+                        In this case, the Hasse invariant of $X$ is 0 if and only if $\pi$ and $\hat{\pi}$ are associates in $R$.
+                  \item[(c)] If $\Hasse(X) = 0$ show in any case $j \in \F_{p^2}$.
+                  \item[(d)] For any $f \in R$, there is an induced map $f^* : \cH^1(\fO_X) \to \cH^1(\fO_X)$.
+                        This must be multiplication by an element $\lambda_f \in k$.
+                        So we obtain a ring homomorphism $\varphi : R \to k$ by sending $f$ to $\lambda_f$.
+                        Show that any $f \in R$ commutes with the (nonlinear) Frobenius moprhism $F : X \to X$, and conclude that if $\Hasse(X) \neq 0$, then the image of $\varphi$ is $\F_p$.
+                        Therefore, $R$ contains a prime ideal $\goth{p}$ with $R / \goth{p} \cong \F_p$.
+            \end{itemize}
+
+      \item[\textbf{22.}] If $X \to \A_C^1$ is a family of elliptic curves having a section, show that the family is trivial.
+
+            \begin{proof}
+                  Let $\sigma : \A_C^1 \to X$ be a section.
+            \end{proof}
 
 \end{enumerate}
 

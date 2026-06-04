@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 3}
 
@@ -6,99 +6,100 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item If $X$ is a curve of genus 2, show that a divisor $D$ is very ample $\iff$ $\deg{D} \geq 5$.
-This strengthens (3.3.4).
+  \item If $X$ is a curve of genus 2, show that a divisor $D$ is very ample $\iff$ $\deg{D} \geq 5$.
+        This strengthens (3.3.4).
 
-\begin{proof}
-  Let $D$ be a very ample divisor on $X$.
-  By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, and since $D$ gives an embedding into projective space $|D|$, we must have $\ell(D) = \dim|D| + 1 \geq 4$.
-  By Riemann-Roch, we have
-  \begin{equation*}
-    \deg{D} = \ell(D) - \ell(K - D) + 1,
-  \end{equation*}
-  so it remains to show $\ell(K - D) = 0$.
-  By (Ex. 1.5), $\deg{D} \geq 3$, so $\deg(K - D) < 0$.
-  Hence, $\ell(K - D) = 0$.
-\end{proof}
+        \begin{proof}
+          Let $D$ be a very ample divisor on $X$.
+          By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, which implies $\dim |D| \geq 3$.
+          By Riemann-Roch, we have
+          \begin{equation*}
+            \deg{D} = \ell(D) - \ell(K - D) + 1 \geq 5 - \ell(K - D),
+          \end{equation*}
+          so it suffices to show $\ell(K - D) = 0$.
+          By (Ex. 1.5), $\deg{D} \geq 3$, so $\deg(K - D) < 0$.
+          Hence, $\ell(K - D) = 0$.
+        \end{proof}
 
-\item[\textbf{3.}] If $X$ is a curve of genus $\geq 2$ which is a complete intersection (II, Ex. 8.4) in some $\PP^n$, show that the canonical divisor $K$ is very ample.
-Conclude that a curve of genus 2 can never be a complete intersection in any $\PP^n$.
+  \item[\textbf{3.}] If $X$ is a curve of genus $\geq 2$ which is a complete intersection (II, Ex. 8.4) in some $\PP^n$, show that the canonical divisor $K$ is very ample.
+        Conclude that a curve of genus 2 can never be a complete intersection in any $\PP^n$.
 
-\begin{proof}
-  Let $d$ be the degree of $X$ in $\PP^n$.
-  Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(\ell)$, where $\ell = \sum d_i - n - 1$.
-  Thus, we have two ways of computing $\deg{K}$, and $g \geq 2$, so we have
-  \begin{equation*}
-    \ell d = \deg{K} = 2 g - 2 \geq 2,
-  \end{equation*}
-  which implies $\ell \geq 2$.
-  Hence, $\fO_X(K)$ is very ample.
-  If $X$ is a curve of genus 2, then $\ell(K) = 2$, so $K$ corresponds to a morphism $X \to \PP^1$, which can never be an embedding.
-\end{proof}
+        \begin{proof}
+          Let $d$ be the degree of $X$ in $\PP^n$.
+          Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(\ell)$, where $\ell = \sum d_i - n - 1$.
+          Thus, we have two ways of computing $\deg{K}$
+          \begin{equation*}
+            \ell d = \deg{K} = 2 g - 2 \geq 2,
+          \end{equation*}
+          which implies $\ell \geq 2$.
+          Hence, $\fO_X(K)$ is very ample.
+          If $X$ is a curve of genus 2, then $\ell(K) = 2$, so $K$ corresponds to a morphism $X \to \PP^1$, which can never be an embedding.
+        \end{proof}
 
-% \item[\textbf{5.}] Let $X$ be a curve in $\PP^3$, which is not contained in any plane.
-% \begin{itemize}
-%   \item[(a)] If $O \notin X$ is a point, such that the projection from $O$ induces a birational morphism $\varphi$ from $X$ to its image in $\PP^2$, show that $\varphi(X)$ \textit{must} be singular.
-%   \item[(b)] If $X$ has degree $d$ and genus $g$, conclude that $g < \frac{1}{2}(d - 1)(d - 2)$.
-%   \item[(c)] Now let $\{ X _t\}$ be the flat family of curves induced by the projection (III, 9.8.3) whose fibre over $t = 1$ is $X$, and whose fibre $X_0$ over $t = 0$ is the scheme with support $\varphi(X)$.
-%   Show that $X_0$ always has nilpotent elements.
-% \end{itemize}
+        % \item[\textbf{5.}] Let $X$ be a curve in $\PP^3$, which is not contained in any plane.
+        % \begin{itemize}
+        %   \item[(a)] If $O \notin X$ is a point, such that the projection from $O$ induces a birational morphism $\varphi$ from $X$ to its image in $\PP^2$, show that $\varphi(X)$ \textit{must} be singular.
+        %   \item[(b)] If $X$ has degree $d$ and genus $g$, conclude that $g < \frac{1}{2}(d - 1)(d - 2)$.
+        %   \item[(c)] Now let $\{ X _t\}$ be the flat family of curves induced by the projection (III, 9.8.3) whose fibre over $t = 1$ is $X$, and whose fibre $X_0$ over $t = 0$ is the scheme with support $\varphi(X)$.
+        %   Show that $X_0$ always has nilpotent elements.
+        % \end{itemize}
 
-\item[\textbf{6.}] \textit{Curves of Degree 4.}
-\begin{itemize}
-  \item[(a)] If $X$ is a curve of degree 4 in some $\PP^n$, show that either
-  \begin{itemize}
-    \item[(1)] $g = 0$, in which case $X$ is either the rational normal quartic in $\PP^4$ (Ex. 3.4) or the rational quartic curve in $\PP^3$ (II, 7.8.6), or
-    \item[(2)] $X \subseteq \PP^2$, in which case $g = 3$, or
-    \item[(3)] $X \subseteq \PP^3$ and $g = 1$.
-  \end{itemize}
-  \item[(b)] In the case $g = 1$, show that $X$ is a complete intersection of two irreducible quadric surfaces in $\PP^3$ (I, Ex. 5.1).
-\end{itemize}
+  \item[\textbf{6.}] \textit{Curves of Degree 4.}
+        \begin{itemize}
+          \item[(a)] If $X$ is a curve of degree 4 in some $\PP^n$, show that either
+                \begin{itemize}
+                  \item[(1)] $g = 0$, in which case $X$ is either the rational normal quartic in $\PP^4$ (Ex. 3.4) or the rational quartic curve in $\PP^3$ (II, 7.8.6), or
+                  \item[(2)] $X \subseteq \PP^2$, in which case $g = 3$, or
+                  \item[(3)] $X \subseteq \PP^3$ and $g = 1$.
+                \end{itemize}
+          \item[(b)] In the case $g = 1$, show that $X$ is a complete intersection of two irreducible quadric surfaces in $\PP^3$ (I, Ex. 5.1).
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)] Assume $X$ is not contained in any hyperplane of $\PP^n$.
-  An embedding $X \to \PP^n$ is given a by linear system $\goth{d}$ of degree $d$ and dimension $n$, where there is a one-to-one correspondence between elements of $\goth{d}$ and hyperplane sections of $X$ in $\PP^n$.
-  The linear system $\goth{d}$ corresponds to an invertible sheaf $\fO_X(D)$ on $X$ and a sub-vector space $V \subseteq \Gamma(X, \fO_X(D))$, where $\goth{d} = \PP(V)$.
-  By (Ex. 1.5), we have $\dim{\goth{d}} \leq \dim{|D|} \leq \deg{D}$, so we can assume $1 \leq n \leq 4$.
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] \fbox{$n = 2$} The degree-genus formula gives
+                  \begin{equation*}
+                    g = \frac{(d - 1)(d - 2)}{2} = 3.
+                  \end{equation*}
 
-  If $n = 2$, then the degree genus formula gives
-  \begin{equation*}
-    g = \frac{(d - 1)(d - 2)}{2} = 3.
-  \end{equation*}
-  If $n = 3$, then $g < 3$ by (III, Ex. 9.11) (Ex. 3.5b).
-  We cannot have $g = 2$ by (Ex. 3.1), so $g = 0, 1$, and $X$ is the rational quartic curve in $\PP^3$ if $g = 0$.
-  If $n = 4$, $X$ is rational by (Ex. 1.5).
+                  \fbox{$n = 3$} If $X$ is not contained in any hyperplane, then $g < 3$ (III, Ex. 9.11) (Ex. 3.5b).
+                  Since $g \neq 2$ by (Ex. 3.1), $X$ is either the rational quartic curve in $\PP^3$, or an elliptic curve.
 
-  \item[(b)] Let $\fI$ be the ideal sheaf of $X$ in $\PP^3$, and consider the exact sequence
-  \[ \begin{tikzcd}
-    0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
-  \end{tikzcd} \]
-  Twisting by $\fO_{\PP_3}(2)$ and taking cohomology gives
-  \[ \begin{tikzcd}
-    0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
-  \end{tikzcd} \]
-  Now, $X$ is an elliptic curve, and $\fO_X(2)$ corresponds to a divisor $D$ of degree 8.
-  Then, Riemann Roch gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\PP^3, \fI(2)) \geq 2$.
-  An element of $\cH^0(\PP^3, \fI(2))$ is a form of degree 2, whose zero-set will be a surface $Q \subseteq \PP^3$ of degree 2 containing $X$.
-  It must be irreducible and reduced because $X$ is not contained in any $\PP^2$, so $X$ must be contained in two distinct irreducible quadric surfaces $Q, Q'$, and $Q \cap Q' = X$ because $X$ has degree 4 (I, 7.7).
-\end{itemize} 
-\end{proof}
-\filbreak
+                  \fbox{$n = 4$} $X$ is rational by (Ex. 1.5).
 
+            \item[(b)] Let $\fI$ be the ideal sheaf of $X$ in $\PP^3$, and consider the exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
+                    \end{tikzcd} \]
+                  Twisting by $\fO_{\PP_3}(2)$ and taking cohomology gives
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
+                    \end{tikzcd} \]
+                  Now, $X$ is an elliptic curve, and $\fO_X(2)$ corresponds to a divisor $D$ of degree 8.
+                  Riemann Roch gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\PP^3, \fI(2)) \geq 2$.
+                  An element of $\cH^0(\PP^3, \fI(2))$ is a form of degree 2, whose zero-set will be a surface $Q \subseteq \PP^3$ of degree 2 containing $X$.
+                  It must be irreducible and reduced because $X$ is not contained in any $\PP^2$, so $X$ must be contained in two distinct irreducible quadric surfaces $Q, Q'$, and $Q \cap Q' = X$ because $X$ has degree 4 (I, 7.7).
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{9.}] Prove the following lemma of Bertini: if $X$ is a curve of degree $d$ in $\PP^3$, not contained in any plane, then for almost all planes $H \subseteq \PP^3$ (meaning a Zariski open subset of the dual projective space $(\PP^3)^*$), the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
+  \item[\textbf{9.}] Prove the following lemma of Bertini: if $X$ is a curve of degree $d$ in $\PP^3$, not contained in any plane, then for almost all planes $H \subseteq \PP^3$ (meaning a Zariski open subset of the dual projective space $(\PP^3)^*$), the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
 
-\begin{proof}
-  Let $D$ be a very ample divisor of degree $d$ corresponding to the embedding $X \hookrightarrow \PP^3$.
-  Bertini's theorem (II, 8.18) says for all hyperplanes $H$ in $|D|$, the intersection $X \cap H$ consists of exactly $d$ distinct points.
-\end{proof}
+        \begin{proof}
+          A hyperplane $H \subset \PP^3$ meets $X$ at $d$ distinct points if and only if $H$ does not contain any tangent lines of $X$.
+          Given a line $l \subset \PP^3$, the collection of hyperplanes containing $l$ has dimension one as a closed subset of $(\PP^3)^*$.
+          Thus, the collection of hyperplanes containing a tangent vector of $X$ has dimension at most 2.
+        \end{proof}
 
-\item[\textbf{12.}] For each value of $d = 2, 3, 4, 5$ and $r$ satisfying $0 \leq r \leq \frac{1}{2}(d - 1)(d - 2)$, show that there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
+  \item[\textbf{12.}] For each value of $d = 2, 3, 4, 5$ and $r$ satisfying $0 \leq r \leq \frac{1}{2}(d - 1)(d - 2)$, show that there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
 
-\begin{proof}
-  There is nothing to prove for $d = 2$ or $r = 0$, so assume otherwise.
-\end{proof}
+        \begin{proof}
+          There is nothing to prove for $d = 2$ or $r = 0$, so assume otherwise.
+          By (Ex. 1.8) (3.10), for each $d = 2, 3, 4, 5$, we want to show there exists a smooth curve of degree $d$ and genus $0 \leq g \leq \frac{1}{2}(d - 1)(d - 2)$ in some $\PP^n$.
+
+          \fbox{$d = 2$} There is nothing to prove.
+
+          \fbox{$d = 3$} $g = 0$ corresponds to the rational cubic in $\PP^3$, $g = 1$ 
+        \end{proof}
 
 \end{enumerate}
 

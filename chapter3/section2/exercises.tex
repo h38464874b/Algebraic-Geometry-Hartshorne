@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 3, Section 2}
 
@@ -51,7 +51,7 @@ where $d_{ijk}$ is the minimum of $d_i, d_j, d_k$. The terms on the right are fi
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)] We remark that cohomology commutes with colimits on paracompact Hausdorff spaces. In particular, the statements of (II, Ex.1.11), (2.9) hold for $S^1$. Let $A, B$ be closed subsets of $S^1$ homeomorphic to the unit interval such that $A \cup B = S^1$ and $A \cap B = \{ P, Q \}$ for two distinct points $P, Q$ in $S^1$ (in the obvious way...). From now on, for any closed subset $C$ of $S^1$, denote $\Z_C = i_* \Z$, where $i : C \hookrightarrow S^1$ is the inclusion map and $\Z$ is the constant sheaf on $C$. Without ambiguity $\Z$ will denote the constant sheaf on the ambient space. We claim the following sequence of sheaves
+\item[(a)] We remark that cohomology commutes with colimits on paracompact Hausdorff spaces. In particular, the statements of (II, Ex. 1.11), (2.9) hold for $S^1$. Let $A, B$ be closed subsets of $S^1$ homeomorphic to the unit interval such that $A \cup B = S^1$ and $A \cap B = \{ P, Q \}$ for two distinct points $P, Q$ in $S^1$. From now on, for any closed subset $C$ of $S^1$, denote $\Z_C = i_* \Z$, where $i : C \hookrightarrow S^1$ is the inclusion map and $\Z$ is the constant sheaf on $C$. Without ambiguity $\Z$ will denote the constant sheaf on the ambient space. We claim the following sequence of sheaves
 \[\begin{tikzcd}
     0 \arrow[r] & \Z \arrow[r, "\Delta"] & \Z_A \oplus \Z_B \arrow[r, "\tau"] & \Z_{A \cap B} \arrow[r] & 0
     \end{tikzcd}\]
@@ -64,7 +64,7 @@ Taking cohomology, we get a long exact sequence of cohomology groups
     \end{tikzcd} \]
 where $\cH^i(\Z_A \oplus \Z_B) \cong H^i(\Z_A) \oplus H^i(\Z_B)$ by (2.9). By (2.10), we have
 \begin{align*}
-    \cH^0(S^1, \Z), H^0(S^1, \Z_A), \cH^0(S^1, \Z_B) & = \Z, \\
+    \cH^0(S^1, \Z), ~\cH^0(S^1, \Z_A), ~\cH^0(S^1, \Z_B) & = \Z, \\
     \cH^0(\Z_{A \cap B}) & = \Z \oplus \Z, \\
     \cH^1(\Z_{A \cap B}) & = 0
 \end{align*}

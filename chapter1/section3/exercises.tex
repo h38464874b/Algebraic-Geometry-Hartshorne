@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 1, Section 3}
 
@@ -108,8 +108,6 @@
                                                                         & X                              &  
 \end{tikzcd} \]
 
-\newpage
-
 \begin{proof} $ $ \vspace{0pt}
     \begin{itemize} [leftmargin=0cm]
         \item[(a)] Suppose that $X \times Y$ is a union of two closed subsets $Z_1 \cup Z_2$.
@@ -128,7 +126,6 @@
         We can repeat the argument for $Y_i = \{y \in Y \mid X \times Y \subseteq Z_i\}$, $i = 1, 2$ so that $Z_i = X \times Y_i$.
         This is only possible if $X = X_1$ and $Y = Y_1$, say, hence $Z_1 = X \times Y$.
         
-
         \item[(b)] We clearly have $A(\A^{n + m}) \simeq A(\A^n) \otimes_k A(\A^m)$, where $A(\A^n) = k[x_1, \dots, x_n]$ and $A(\A^m) = k[y_1, \dots, y_m]$. Then, we have
         \begin{equation*}
             I(X \times Y) = I(X) \otimes_k A(\A^m) + A(\A^n) \otimes_k I(Y),
