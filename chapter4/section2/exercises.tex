@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 2}
 
@@ -11,11 +11,14 @@
   \item Use (2.5.3) to show that $\PP^n$ is simply connected.
 
         \begin{proof}
+          Proceed by induction on $n$.
           Let $f : X \to \PP^n$ be an étale covering.
           We may assume $X$ is connected.
-          It suffices to show $f$ is one-to-one.
-          Let $y$ be any closed point in  $\PP^n$, and let $L = \PP^{1}$ be any line in $\PP^n$ containing $y$.
-          The restriction $f : f^{-1}(L) \to L$, obtained by taking the base change $L \hookrightarrow \PP^1$, is is an étale covering, so $f^{-1}(L)$ is a disjoint union of rational curves (2.5.3).
+          Then $X$ is smooth over $k$ since $f$ is étale (III, 10.1), and $X$ is projective over $k$ since $f$ is finite, so $X$ is a smooth irreducible projective variety of dimension $n$.
+          Let $\goth{d}$ be the linear system of $X$ corresponding to $f$.
+          By (III, Ex. 11.3), almost every member of $\goth{d}$ is connected.
+          In particular, if $H \subseteq \PP^n$ is a hyperplane, then $f^{-1}(H) \in \goth{d}$ is smooth and irreducible, and the restriction $f : f^{-1}(H) \to H$ is an étale covering of $\PP^{n - 1}$.
+          By the inductive hypothesis, the restriction of $f$ to $f^{-1}(H)$ is an isomorphism, hence $f$ is an isomorphism.
         \end{proof}
 
   \item \textit{Classification of Curves of Genus 2.} Fix an algebraically closed field $k$ of characteristic $\neq 2$.
@@ -43,40 +46,175 @@
           \begin{enumerate} [leftmargin=0cm]
             \item By Hurtwitz's theorem, the degree of the ramification divisor is computed to be
                   \begin{equation*}
-                    \deg{R} = 2g(X) - 2 - n(2g(\PP^1) - 2) = 6.
+                    \deg{R} = 2g(X) - 2 - 2(2g(\PP^1)- 2) = 6.
                   \end{equation*}
                   The ramification index at a point cannot exceed the degree of the morphism, so $f$ must be ramified at exactly 6 distinct points each having ramification index 2.
 
-            \item $B = k[x, z]/(z^2 - g(x))$ and $g(x) = (x - \alpha_1) \cdots (x - \alpha_6)$, and $f$ is the projection morphism onto the $x$-axis.
-            By (II, 8.3A), we have
-            \begin{equation*}
-              \Omega_{B / k} \cong (B \dd x \oplus B \dd z) / (g'(x) \dd x + 2z \dd z).
-            \end{equation*}
-            Let $P = (x', z')$ be a closed point on $X$.
-            If $z' \neq 0$, then $z$ is invertible in $\fO_{P, X}$, so that
-            \begin{equation*}
-              \dd z = - \frac{g'(x)}{2z} \dd x,
-            \end{equation*}
-            which means $\dd x$ generates $(\Omega_{B / k})_P$.
-            If $z' = 0$, then $x' = \alpha_i$ for some $i$, and $g'(x)$ is invertible in $\fO_{P, X}$, so that
-            \begin{equation*}
-              \dd x = - \frac{2z}{g'(x)} \dd z,
-            \end{equation*}
-            which means $\dd z$ generates $(\Omega_{B / k})_P$.
-            Since $\dd x $ is a local parameter of $\PP^1$, we see that $P$ is ramified if and only if $z' = 0$, with $\dd x / \dd z = - 2 z / g'(z)$.
-            Moreoever, $v_P( \dd x / \dd z) = 1$, so the ramification index is 2 (2.2), and the degree of the ramification divisor is 6.
-            By Hurwitz's theorem, $g(X) = 2$.
-
-            \item Let $x$ be an affine coordinate on $\PP^1$ such that $P_i \neq \infty$ and identify $P_i$ with some $\alpha_i \in k$.
-                  The following automorphism will do
+            \item Let $B = k[x, z]/(z^2 - g(x))$ be an affine coordinate ring of $X$ with $g(x) = (x - \alpha_1) \cdots (x - \alpha_6)$, and let $f$ be the projection morphism onto the $x$-axis.
+                  By (II, 8.3A), we have
                   \begin{equation*}
-                    \varphi(x) = \frac{\alpha_2 - \alpha_3}{\alpha_2 - \alpha_1}\frac{x - \alpha_1}{x - \alpha_3}.
+                    \Omega_{B / k} \cong (B \dd x \oplus B \dd z) / (g'(x) \dd x + 2z \dd z).
                   \end{equation*}
-
-            \item[(e)] We want to show two curves of genus 2 are isomorphic if and only if they correspond to the same triples of distinct elements in $k$, $\neq 0, 1$, described in (d).
+                  Let $P = (x', z')$ be a closed point in $X$.
+                  If $z' \neq 0$, then $z$ is invertible in $\fO_{P, X}$, so that
+                  \begin{equation*}
+                    \dd z = - \frac{g'(x)}{2z} \dd x,
+                  \end{equation*}
+                  which means $\dd x$ generates $(\Omega_{B / k})_P$.
+                  If $z' = 0$, then $x' = \alpha_i$ for some $i$, and $g'(x)$ is invertible in $\fO_{P, X}$, so that
+                  \begin{equation*}
+                    \dd x = - \frac{2z}{g'(x)} \dd z,
+                  \end{equation*}
+                  which means $\dd z$ generates $(\Omega_{B / k})_P$.
+                  Since $\dd x $ is a local parameter of $\PP^1$, we see that $P$ is ramified if and only if $z' = 0$ with ramification index $e_P = v_P( \dd x / \dd z) + 1 = 2$.
+                  There are six ramification points corresponding to the six roots of $g(x)$.
+                  Hence, $g(X) = 2$ by the Hurwitz formula.
           \end{enumerate}
         \end{proof}
 
+  \item[\textbf{3.}] \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\PP^2$.
+  For each $P \in X$, let $T_P(X)$ be the tangent line to $X$ at $P$ (I, Ex.7.3).
+  Considering $T_P(X)$ as a point of the dual projective plane $(\PP^2)^*$, the map $P \to T_P(X)$ gives a morphism of $X$ to its \textit{dual curve} $X^*$ in $(\PP^2)^*$ (I, Ex. 7.3).
+  Note that even though $X$ is nonsingular, $X^*$ in general will have singularities.
+  We assume $\chr{k} = 0$ below.
+
+    \begin{itemize}
+      \item[(a)] Fix a line $L \subseteq \PP^2$ which is not tangent to $X$.
+      Define a morphism $\varphi : X \to L$ by $\varphi(P) = L \cap T_P(X)$, for each point $P \in X$.
+      Show that $\varphi$ is ramified at $P$ if and only if either (1) $P \in L$, or (2) $P$ is an \textit{inflection point} of $X$, which means that the intersection multiplicity (I, Ex. 5.4) of $T_P(X)$ with $X$ at $P$ is $\geq 3$.
+      Conclude that $X$ has only finitely many inflection points.
+
+      \item[(b)] A line of $\PP^2$ is a \textit{multiple tangent} of $X$ if it is tangent to $X$ at more than one point.
+      It is a \textit{bitangent} if it is tangent to $X$ at exactly two points.
+      If $L$ is a multiple tangent of $X$, tangent to $X$ at the points $P_1, \dots, P_r$, and if none of the $P_i$ is an inflection point, show that the corresponding point of the dual curve $X^*$ is an \textit{ordinary $r$-fold point}, which means a point of multiplicity $r$ with distinct tangent directions (I, Ex. 5.3).
+      Conclude that $X$ has only finitely many multiple tangents.
+
+      \item[(c)] Let $O \in \PP^2$ be a point which is not on $X$, nor on any inflectional or multiple tangent of $X$.
+      Let $L$ be a line not containing $O$.
+      Let $\psi : X \to L$ be the morphism defined by projection from $O$.
+      Show that $\psi$ is ramified at $P \in X$ if and only if the line $OP$ is tangent to $X$ at $P$, and that the ramification index is 2.
+      Use Hurwitz's theorem and (I, Ex. 7.2) to conclude that there are exactly $d(d - 1)$ tangents of $X$ passing through $O$.
+      Hence, the degree of the dual curve (sometimes called the \textit{class} of $X$) is $d(d - 1)$.
+
+      \item[(d)] Show that for all but a finite number of points of $X$, a point $O$ of $X$ lies on exactly $(d + 1)(d - 2)$ tangents of $X$, not counting the tangent at $O$.
+
+      \item[(e)] Show that the degree of the morphism $\varphi$ of (a) is $d(d - 1)$.
+      Conclude that if $d \geq 2$, then $X$ has $3d(d - 2)$ inflection points, properly counted.
+      (If $T_P(X)$ has intersection multiplicity $r$ with $X$ at $P$, then $P$ should be counted $r - 2$ times as an inflection point.
+      If $r = 3$, we called it an \textit{ordinary inflection point}.)
+      Show that an ordinary inflection point of $X$ corresponds to an ordinary cusp of the dual curve $X^*$.
+
+      \item[(f)] Now let $X$ be a plane curve of degree $d \geq 2$, and assume that the dual curve $X^*$ has only nodes and ordinary cusps as singularities (which should be true for sufficiently general $X$.)
+      Then show that $X$ has exactly $\frac{1}{2}d(d - 2)(d - 3)(d + 3)$ bitangents.
+
+      \item[(g)] For example, a plane cubic curve has exactly 9 inflection points, all ordinary.
+      The line joining any two of the intersects the curve in a third one.
+
+      \item[(h)] A plane quartic curve has exactly 28 bitangents.
+      (This holds even if the curve has a tangent with four-fold contact, in which case the dual curve $X^*$ has a tacnode.)
+    \end{itemize}
+
+    \begin{proof} $ $ \vspace{0pt}
+      \begin{itemize} [leftmargin=0cm]
+        \item[(a)] Find local coordinates $x, y$ of $\PP^2$ such that $X$ is given by $y = f(x)$, $L$ is defined by $y = 0$, and $P$ is not mapped to the point of infinity of $L$.
+        Setting $u = x$ and $t = x$ to be local parameters for $X$ and $L$, respectively, $\varphi$ and $\varphi^* \dd t$ can locally be written in the form
+        \begin{equation*}
+          \varphi(u) = u - f / f', \quad \varphi^* \dd t = \frac{\dd t}{\dd u} \dd u = \frac{f f''}{(f')^2} \dd t.
+        \end{equation*}
+        By (2.2), $\varphi$ is ramified at $P$ if and only if $v_P(\dd t / \dd u) > 0$.
+        Since $v_P$ is multiplicative, we have
+        \begin{equation*}
+          v_P\bigg(\dv{t}{u}\bigg) = v_P(f) + v_P(f'') - 2 v_P(f').
+        \end{equation*}
+        By definition, $f$ is zero at $P$ if and only if $P \in L$, and 1 otherwise.
+        Also, $\varphi(P)$ is the point of infinity of $L$ if and only if $f'(P) = 0$, which implies $v_P(f') = 0$.
+        The last assertion to prove is $v_P(f'') > 0$ if and only if $P$ is an inflection point of $X$.
+        We prove that the intersection multiplicity $\mu_P(X, T_P(X))$ and the ordering of vanishing $v_P(f'')$ is related in the following way
+        \begin{equation*}
+          v_P(f'') + 2 = \mu_P(X, T_P(X)).
+        \end{equation*}
+        Suppose $P = (0, f(0))$, and recall the following
+        \begin{equation*}
+          X : y - f(x) = 0, \quad T_P(X) : y - (f'(0)x + f(0)) = 0.
+        \end{equation*}
+        By definition, we have
+        \begin{align*}
+          \mu_p(X, T_P(X)) & = \len{(k[x]/(f(x) - (f'(0)x + f(0))))_{(x)}} \\
+          & = \text{largest $d > 0$ such that $x^d \mid f(x) - (f'(0)x + f(0))$} \\
+          & = v_P(f(x) - (f'(0)x + f(0))) \\
+          & = v_P(x^2f'') \\
+          & = 2 + v_P(f'').
+        \end{align*}
+        Hence, $v_P(\dd t / \dd u) > 0$ if and only if $P \in L$ or $P$ is an inflection point of $X$.
+        Since $\varphi : X \to L$ ramifies at finitely many points because $\chr{k} = 0$, and $\varphi$ ramifies at every inflection point, we conclude that $X$ has only finitely many inflection points.
+
+        \item[(b)] Find local coordinates $x, y$ such that $L$ is defined by $y = 0$, and $X$ intersects $L$ at non-inflection points $P_1, \dots, P_r$, let $\xi, \eta$ be dual coordinates of $(\PP^2)^*$, and let $f(x, y) = 0$ be a defining equation of $X$.
+        We can locally write $\phi : X \to X^* \subseteq (\PP^2)^*$ in terms of the partial derivatives of $f$
+        \begin{equation*}
+          P \mapsto \phi(P) = (f_x(P), f_y(P)).
+        \end{equation*}
+        \begin{remark}
+          Notice that $\phi$ is given by the linear system in $\fO_X(d - 1)$ spanned by the partial derivatives of $f$.
+          In particular, $\fO_X(d - 1)$ has degree $d(d - 1)$ as a line bundle on $X$, so the dual curve $X^* = \phi(X)$ is a curve of degree $d(d - 1)$ in $(\PP^2)^*$.
+        \end{remark}
+        The image of the tangent vector of $X$ at $P_i$ can be computed via the Hessian of $f$, which is given by
+        \begin{equation*}
+          v_i = \begin{pmatrix}
+            f_{xx} \\ f_{xy}
+          \end{pmatrix}_{P_i} =
+          \begin{pmatrix*}
+            f_{xx} & f_{xy} \\ 
+            f_{xy} & f_{yy}
+          \end{pmatrix*}_{P_i} \begin{pmatrix*}
+            1 \\ 0
+          \end{pmatrix*} \in T_Q(X^*),
+        \end{equation*}
+        and each $v_i$ corresponds to a tangent vector of $X^*$ at $Q$.
+        We want to show each $v_i$ is (1) non-zero and (2) distinct.
+
+        (1) By definition, $P_i$ is an inflection point if and only if $f_{xx}(P_i) = 0$.
+        Hence, $v_i$ is non-zero.
+
+        (2) Without loss of generality, assume $P_1 = (0, 0)$.
+        Suppose there exists $P_2 = (x', 0)$ such that $v_1$ and $v_2$ differ by a constant multiple.
+        This means we have
+        \begin{equation*}
+          f_{xx}(0, 0) f_{xy}(x', 0) - f_{xx}(x', 0) f_{xy}(0, 0) = 0,
+        \end{equation*}
+        which is a polynomial in $x'$.
+        Thus, only finitel
+
+
+        \item[(c)] Find coordinates $x, y, z$ such that $O = (0 : 1 : 0)$, $L$ is the $x$-axis defined by $y = 0$, $\psi$ is the projection onto $x$-axis, $f(x, y) = 0$ be a locally defining equation of $X$ with a point $P$ in $X$.
+        Let $u$ be a local parameter of $X$ at $P$.
+        We want to determine when $v_p(\dd x / \dd u) > 0$.
+        We have two cases to consider:
+
+        \fbox{$\partial_x f(P) = 0$} The tangent line is not vertical, so $x$ is a local parameter of $X$ at $P$, which means $\psi$ cannot be ramified at $P$.
+
+        \fbox{$\partial_x f(P) \neq 0$} The tangent line is not horizontal, so we can locally describe $x$ as a function of $y$, i.e., $y$ is a local parameter of $X$ at $P$.
+        Using the relation $\dd f = 0$, we find that
+        \begin{equation*}
+          \frac{\dd x}{\dd y} = -\frac{\partial_y f}{\partial_x f} \dd y, \quad v_P\bigg(\frac{\dd x}{\dd y}\bigg) = v_P(\partial_y f).
+        \end{equation*}
+        Hence, $\psi$ is ramified at $P$ if and only if $v_P(\partial_y f) > 0$ if and only if $\partial_y f(P) = 0$ if and only if the tangent line of $P$ intersects $O$.
+        In this case, the intersection multiplicity of $OP$ with $X$ is $< 2$, 
+
+        The degree of $\psi$ is $d$, so the degree of the ramification index of $\psi$ is $d(d - 1)$ by Hurwitz's theorem.
+        Hence, $X$ has exactly $d(d - 1)$ tangents passing through $O$.
+
+        \item[(d)] 
+
+        \item[(e)] 
+
+        \item[(f)] 
+
+        \item[(g)] 
+
+        \item[(h)] $x^4 + y^4 + z^4 = 0$, $x^3y + y^3 z + z^3 x = 0$
+
+      \end{itemize}
+    \end{proof}
   \item[\textbf{5.}] \textit{Automorphisms of a Curve of Genus $\geq 2$.} Prove the theorem of Hurtwitz [1] that a curve $X$ of genus $g \geq 2$ over a field of characteristic 0 has at most $84(g - 1)$ automorphisms.
         We will see later (Ex. 5.2) or (V, Ex. 1.11) that the group $G = \Aut{X}$ is finite.
         So let $G$ have order $n$.
@@ -96,12 +234,19 @@
                   2g(Y) - 2 + \sum_{i = 1}^s (1 - 1 / r_i) > 0,
                 \end{equation*}
                 then the minimum value of this expression is $1 / 42$.
-                Conclude that $n \geq 84(g - 1)$.
+                Conclude that $n \leq 84(g - 1)$.
         \end{itemize}
 
         \begin{proof} $ $ \vspace{0pt}
           \begin{enumerate} [leftmargin=0cm]
-            \item[(a)]
+            \item[(a)] Each $\sigma \in G$ induces an automorphism of $X$ such that $f \circ \sigma = f$, so there is a group action of $G$ on each fibre $f^{-1}f(P)$.
+            The action is transitive (A.M., Ex. 5.13), and we have $v_{P_i}(f(P_i)) = v_{\sigma(P_i)}(f(\sigma(P_i)))$ because $\sigma$ induces an isomorphism of local rings $\fO_{P_i, X} \cong \fO_{\sigma(P_i), X}$.
+            The equation follows from
+            \begin{align*}
+              \sum_{P \in Y} (e_P - 1) & = \sum_{i = 1}^s \sum_{Q \in f^{-1}f(P_i)} (e_Q - 1) \\
+              & = \sum_{i = 1}^s \frac{n}{r_i}(r_i - 1) \\
+              & = n \sum_{i = 1}^s (1 - 1/r_i).
+            \end{align*}
 
             \item[(b)] The following give the minimum value
                   \begin{equation*}
@@ -143,16 +288,12 @@
             \item[(a)] Consider the case when $D$ is an effective divisor.
                   The pushfoward $f_*$ is exact for finite morphisms, so applying $f_*$ to the exact sequence
                   \[ \begin{tikzcd}
-                      0 \arrow[r] & \fO_X \arrow[r] & \fO_X(D) \arrow[r] & \fO_D \arrow[r] & 0
+                      0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0
                     \end{tikzcd}\]
                   gives us another exact sequence
                   \[ \begin{tikzcd}
-                      0 \arrow[r] & f_*\fO_X \arrow[r] & f_*\fO_X(D) \arrow[r] & f_*\fO_D \arrow[r] & 0.
+                      0 \arrow[r] & f_*(\fO_X(-D)) \arrow[r] & f_*\fO_X \arrow[r] & f_*\fO_D \arrow[r] & 0.
                     \end{tikzcd}\]
-                  Taking determinants, we have
-                  \begin{equation*}
-                    \det(f_*\fO_X(D)) \cong (\det f_*\fO_X) \otimes \det(f_*\fO_D)
-                  \end{equation*}
 
             \item[(b)] It suffices to show $f_*f^*Q = nQ$ for every point $Q \in Y$.
                   By definition, $f_*f^*Q = n'Q$ for some $n' \geq 0$.
@@ -172,10 +313,10 @@
                   \end{equation*}
                   where we used the fact that $f_*f^*K_Y = nK_Y$ (b).
                   On the otherhand, the results of (a) applied to $D = K_X$ and (c) give
-                  \begin{equation*}
-                    \fO_Y(nK_Y) \cong (\det f_*\fO_X) \otimes (\det f_*\Omega_X), \quad \fO_Y(-f_*K_X) \cong (\det f_*\Omega_X) \otimes (\det f_*\Omega_X)^{-1},
-                  \end{equation*}
-                  so combining everything, we get
+                  \begin{align*}
+                    \fO_Y(nK_Y) & \cong (\det f_*\fO_X) \otimes (\det f_*\Omega_X) \\ , \quad \fO_Y(-f_*K_X) & \cong (\det f_*\Omega_X) \otimes (\det f_*\Omega_X)^{-1}.
+                  \end{align*}
+                  Combining these two isomorphisms gives
                   \begin{equation*}
                     (\det f_*\fO_X)^2 \cong \fO_Y(nK_Y - f_*K_X) \cong \fO_Y(-B).
                   \end{equation*}

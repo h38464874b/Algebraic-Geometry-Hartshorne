@@ -6,104 +6,110 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Show that the result of (11.2) is false without the projective hypothesis.
-For example, let $X = \A_k^n$, let $P = (0, \dots, 0)$, let $U = X - P$, and let $f: U \to X$ be the inclusion.
-Then the fibers of $f$ all have dimension $0$, but $\dR^{n - 1} f_* \fO_U \neq 0$.
+    \item Show that the result of (11.2) is false without the projective hypothesis.
+          For example, let $X = \A_k^n$, let $P = (0, \dots, 0)$, let $U = X - P$, and let $f: U \to X$ be the inclusion.
+          Then the fibers of $f$ all have dimension $0$, but $\dR^{n - 1} f_* \fO_U \neq 0$.
 
-\begin{proof}
-   By (8.2) and (8.5), we have the isomorphism
-   \begin{equation*}
-        \restr{\dR^{n - 1} f_* \fO_U}{U} \cong \widetilde{\cH^{n - 1}(U, \fO_U)},
-   \end{equation*}
-   so it suffices to show $\cH^{n - 1}(U, \fO_U) \neq 0$.
-   This is a generalization of (Ex. 4.3), and we compute $\cH^{n - 1}(U, \fO_U)$ via Čech cohomology.
-   Let $x_1, \dots, x_n$ be affine coordinates of $X$, i.e., $X = \spec{k[x_1, \dots, x_n]}$, and take $\goth{U}$ to be the open covering of $U$ by the open sets $U_i = X - \{x_i \neq 0 \}$.
-   Setting $V = \bigcap_{i = 1}^n U_i$ and $V_j = \bigcap_{i \neq j} U_i$, the last two terms of the Čech complex are
-   \begin{equation*}
-    C^{n - 2} = \prod_{j = 1}^n \Gamma(V_j, \fO_U), \quad C^{n - 1} = \Gamma(V, \fO_U).
-   \end{equation*}
-   Now
-   \begin{align*}
-    \Gamma(V_j, \Omega) & = k\bigg[x_1, \dots, x_n, \frac{1}{x_1}, \dots, \widehat{\frac{1}{x_j}}, \dots, \frac{1}{x_n} \bigg], \\
-    \Gamma(V, \Omega) & = k\bigg[x_1, \dots, x_n, \frac{1}{x_1}, \dots, \frac{1}{x_n} \bigg],
-   \end{align*}
-   and the image of the boundary map $d : C^{n - 2} \to C^{n - 1}$ consists of all expressions $x_1^{r_1} \cdots x_n^{r_n}$ where at least one of $r_1, \dots, r_n$ is non-negative.
-   Hence, $\cH^{n - 1}(U, \fO_U)$ consists of all expressions $x_1^{r_1} \cdots x_n^{r_n}$ with $r_i < 0$ for all $i$.
-\end{proof}
+          \begin{proof}
+              By (8.2) and (8.5), we have the isomorphism
+              \begin{equation*}
+                  \restr{\dR^{n - 1} f_* \fO_U}{U} \cong \widetilde{\cH^{n - 1}(U, \fO_U)},
+              \end{equation*}
+              so it suffices to show $\cH^{n - 1}(U, \fO_U) \neq 0$.
+              This is a generalization of (Ex. 4.3), and we compute $\cH^{n - 1}(U, \fO_U)$ via Čech cohomology.
+              Let $x_1, \dots, x_n$ be affine coordinates of $X$, i.e., $X = \spec{k[x_1, \dots, x_n]}$, and take $\goth{U}$ to be the open covering of $U$ by the open sets $U_i = X - \{x_i \neq 0 \}$.
+              Setting $V = \bigcap_{i = 1}^n U_i$ and $V_j = \bigcap_{i \neq j} U_i$, the last two terms of the Čech complex are
+              \begin{equation*}
+                  C^{n - 2} = \prod_{j = 1}^n \Gamma(V_j, \fO_U), \quad C^{n - 1} = \Gamma(V, \fO_U).
+              \end{equation*}
+              Now
+              \begin{align*}
+                  \Gamma(V_j, \Omega) & = k\bigg[x_1, \dots, x_n, \frac{1}{x_1}, \dots, \widehat{\frac{1}{x_j}}, \dots, \frac{1}{x_n} \bigg], \\
+                  \Gamma(V, \Omega)   & = k\bigg[x_1, \dots, x_n, \frac{1}{x_1}, \dots, \frac{1}{x_n} \bigg],
+              \end{align*}
+              and the image of the boundary map $d : C^{n - 2} \to C^{n - 1}$ consists of all expressions $x_1^{r_1} \cdots x_n^{r_n}$ where at least one of $r_1, \dots, r_n$ is non-negative.
+              Hence, $\cH^{n - 1}(U, \fO_U)$ consists of all expressions $x_1^{r_1} \cdots x_n^{r_n}$ with $r_i < 0$ for all $i$.
+          \end{proof}
 
-\item Show that a projective morphism with finite fibers is a finite morphism.
+    \item Show that a projective morphism with finite fibers is a finite morphism.
 
-\begin{proof}
-    Let $f : X \to Y$ be a projective morphism of Noetherian schemes, and let $Y' = \rSpec{f_*\fO_X}$.
-    The natural map $g : Y' \to Y$ is finite, and we get a projective morphism $f' : X \to Y'$ with connected fibres such that $f$ factors into $g \circ f'$ (11.5).
-    The property of quasi-finiteness satisfies the conditions of (II, Ex. 4.8), and finite morphisms are separated, so $f'$ is quasi-finite.
-    The composition of finite morphisms is finite, so it suffices to show $f'$ is a finite morphism.
-    Thus, we reduce to showing projective morphisms with finite and connected fibres is a finite morphism.
-    By (II, Ex. 3.4), we further reduce to the case $Y = \spec{A}$ for some Noetherian ring $A$ and show $X = \spec{B}$, where $B$ is a finite $A$-algebra.
-    If $f$ has finite and connected fibres, then $f$ is injective as a map between topological spaces.
-    Since projective morphisms are closed mappings, $f$ is a homeomorphism of $X$ onto a closed subscheme of $Y$.
-    Hence, the result follows from (II, Ex. 3.11).
-\end{proof}
+          \begin{proof}
+              Let $f : X \to Y$ be a projective morphism of Noetherian schemes, and let $Y' = \rSpec{f_*\fO_X}$.
+              The natural map $g : Y' \to Y$ is finite, and we get a projective morphism $f' : X \to Y'$ with connected fibres such that $f$ factors into $g \circ f'$ (11.5).
+              The property of quasi-finiteness satisfies the conditions of (II, Ex. 4.8), and finite morphisms are separated, so $f'$ is quasi-finite.
+              The composition of finite morphisms is finite, so it suffices to show $f'$ is a finite morphism.
+              Thus, we reduce to showing projective morphisms with finite and connected fibres is a finite morphism.
+              By (II, Ex. 3.4), we further reduce to the case $Y = \spec{A}$ for some Noetherian ring $A$ and show $X = \spec{B}$, where $B$ is a finite $A$-algebra.
+              If $f$ has finite and connected fibres, then $f$ is injective as a map between topological spaces.
+              Since projective morphisms are closed mappings, $f$ is a homeomorphism of $X$ onto a closed subscheme of $Y$.
+              The result follows from (II, Ex. 3.11).
+          \end{proof}
 
-\item[\textbf{8.}] Let $f : X \to Y$ be a projective morphism, let $\fF$ be a coherent sheaf on $X$ which is flat over $Y$, and assume that $\cH^i(X_y, \fF_y) = 0$ for some $i$ and some $y \in Y$. Then show that $\dR^if_*(\fF)$ is $0$ in a neighborhood of $y$.
+    \item[\textbf{3.}] Let $X$ be a normal, projective variety over an algebraically closed field $k$.
+          Let $\goth{d}$ be a linear system (of effective Cartier divisors) without base points, and assume that $\goth{d}$ is \textit{not composite with a pencil}, which means that if $f : X \to \PP_k^n$ is the morphism determined by $\goth{d}$, then $\dim{f(X)} \geq 2$.
+          Then show that every divisor in $\goth{d}$ is connected.
+          This improves Bertini's theorem (10.9.1).
 
-\begin{proof}
-    Since $\dR^i f_*(\fF)$ is a coherent sheaf on $Y$ (8.8b), it suffices to show $\dR^if_*(\fF)_y = 0$.
-    The question is local on $Y$, so we reduce to the case $Y$ is affine, equal to the spectrum of the local Noetherian ring $A = \fO_y$, and $y$ is the closed point of $Y$.
-    Let $\hat{A}$ denote the completion of $A$ with respect to its maximal ideal $\goth{m}$.
-    Consider the natural isomorphism of (11.1)
-    \begin{equation*}
-        \widehat{\dR^if_*(\fF)}_y \cong \varprojlim \cH^i(X_n, \fF_n).
-    \end{equation*}
-    We claim it suffices to show the right hand side is zero.
-    Indeed, by (8.2) and (8.5), we have the isomorphism
-    \begin{equation*}
-        \dR^if_*(\fF)_y \cong \cH^i(X, \fF),
-    \end{equation*}
-    and according to (A.M., 10.13), we also have the isomorphism
-    \begin{equation*}
-        \widehat{\dR^if_*(\fF)}_y \cong \cH^i(X, \fF) \otimes \hat{A},
-    \end{equation*}
-    so the claim follows from the fact that $\hat{A}$ is a fathfully flat $A$-algebra.
+          \begin{proof}
 
-    Now, we will show the natural map $\cH^i(X_{n + 1}) \to \cH^i(X_n, \fF_n)$ is injective for every $n > 1$.
-    Admitting this for the moment, since $X_1 = X_y$ and $\fF_1 = \fF_y$, it follows by induction that $$\cH^i(X_n, \fF_n) \hookrightarrow \cH^i(X_y, \fF_y) = 0,$$
-    which in turn implies the inverse limit is zero, which is what we want.
+          \end{proof}
 
-    Consider the exact sequence of $A$-modules
-    \[ \begin{tikzcd}
-0 \arrow[r] & \gm^n/\gm^{n + 1} \arrow[r] & A/\goth{m}^{n + 1} \arrow[r] & A/\goth{m}^n \arrow[r] & 0.
-\end{tikzcd} \]
-    Since $\fF$ is flat over $Y$, tensoring with $\fF$ is an exact functor, so we have an exact sequence
-    \[ \begin{tikzcd}
-0 \arrow[r] & \fF \otimes \gm^n/\gm^{n + 1} \arrow[r] & \fF_{n + 1} \arrow[r] & \fF_n \arrow[r] & 0.
-\end{tikzcd} \]
-    Taking the long exact sequence in cohomology gives
-    \[ \begin{tikzcd}
-\cH^i(X, \fF \otimes \gm^n/\gm^{n + 1}) \arrow[r] & \cH^i(X_{n + 1}, \fF_{n + 1}) \arrow[r] & \cH^i(X_{n}, \fF_{n}),
-\end{tikzcd} \]
-    so it suffices to show the term on the left is zero.
-    Since $\goth{m}^n / \goth{m}^{n + 1}$ is a finite-dimensional vector space over $k(y)$, and cohomology commutes with direct sums, we have the isomorphism
-    \begin{equation*}
-        \cH^i(X, \fF \otimes \gm^n / \gm^{n + 1}) \cong \cH^i(X, \fF \otimes k(y)) \otimes_{k(y)} \gm^n/\gm^{n + 1},
-    \end{equation*}
-    where $k(y)$ is the constant sheaf $k(y)$ on the closed point $y$ of $Y$.
-    Thus, we can apply the isomorphism of (9.4)
-    \begin{equation*}
-        \cH^i(X, \fF \otimes k(y)) \cong \cH^i(X_y, \fF_y) = 0
-    \end{equation*}
-    to conclude that $\cH^i(X, \fF \otimes \gm^n / \gm^{n + 1}) = 0$.
-    
 
-\end{proof}
+
+    \item[\textbf{8.}] Let $f : X \to Y$ be a projective morphism, let $\fF$ be a coherent sheaf on $X$ which is flat over $Y$, and assume that $\cH^i(X_y, \fF_y) = 0$ for some $i$ and some $y \in Y$. Then show that $\dR^if_*(\fF)$ is $0$ in a neighborhood of $y$.
+
+          \begin{proof}
+              Since $\dR^i f_*(\fF)$ is a coherent sheaf on $Y$ (8.8b), it suffices to show $\dR^if_*(\fF)_y = 0$.
+              The question is local on $Y$, so we reduce to the case $Y$ is affine, equal to the spectrum of the local Noetherian ring $A = \fO_y$, and $y$ is the closed point of $Y$.
+              Let $\hat{A}$ denote the completion of $A$ with respect to its maximal ideal $\goth{m}$.
+              Consider the natural isomorphism of (11.1)
+              \begin{equation*}
+                  \widehat{\dR^if_*(\fF)}_y \cong \varprojlim \cH^i(X_n, \fF_n).
+              \end{equation*}
+              We claim it suffices to show the right hand side is zero.
+              Indeed, by (8.2) and (8.5), we have the isomorphism
+              \begin{equation*}
+                  \dR^if_*(\fF)_y \cong \cH^i(X, \fF),
+              \end{equation*}
+              and according to (A.M., 10.13), we also have the isomorphism
+              \begin{equation*}
+                  \widehat{\dR^if_*(\fF)}_y \cong \cH^i(X, \fF) \otimes \hat{A},
+              \end{equation*}
+              so the claim follows from the fact that $\hat{A}$ is a fathfully flat $A$-algebra.
+
+              Now, we will show the natural map $\cH^i(X_{n + 1}) \to \cH^i(X_n, \fF_n)$ is injective for every $n > 1$.
+              Admitting this for the moment, since $X_1 = X_y$ and $\fF_1 = \fF_y$, it follows by induction that $$\cH^i(X_n, \fF_n) \hookrightarrow \cH^i(X_y, \fF_y) = 0,$$
+              which in turn implies the inverse limit is zero, which is what we want.
+
+              Consider the exact sequence of $A$-modules
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \gm^n/\gm^{n + 1} \arrow[r] & A/\goth{m}^{n + 1} \arrow[r] & A/\goth{m}^n \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Since $\fF$ is flat over $Y$, tensoring with $\fF$ is an exact functor, so we have an exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fF \otimes \gm^n/\gm^{n + 1} \arrow[r] & \fF_{n + 1} \arrow[r] & \fF_n \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Taking the long exact sequence in cohomology gives
+              \[ \begin{tikzcd}
+                      \cH^i(X, \fF \otimes \gm^n/\gm^{n + 1}) \arrow[r] & \cH^i(X_{n + 1}, \fF_{n + 1}) \arrow[r] & \cH^i(X_{n}, \fF_{n}),
+                  \end{tikzcd} \]
+              so it suffices to show the term on the left is zero.
+              Since $\goth{m}^n / \goth{m}^{n + 1}$ is a finite-dimensional vector space over $k(y)$, and cohomology commutes with direct sums, we have the isomorphism
+              \begin{equation*}
+                  \cH^i(X, \fF \otimes \gm^n / \gm^{n + 1}) \cong \cH^i(X, \fF \otimes k(y)) \otimes_{k(y)} \gm^n/\gm^{n + 1},
+              \end{equation*}
+              where $k(y)$ is the constant sheaf $k(y)$ on the closed point $y$ of $Y$.
+              Thus, we can apply the isomorphism of (9.4)
+              \begin{equation*}
+                  \cH^i(X, \fF \otimes k(y)) \cong \cH^i(X_y, \fF_y) = 0
+              \end{equation*}
+              to conclude that $\cH^i(X, \fF \otimes \gm^n / \gm^{n + 1}) = 0$.
+
+
+          \end{proof}
 
 \end{enumerate}
 \end{document}
-
-% \item Let $X$ be a normal, projective variety over an algebraically closed field $k$.
-% Let $\goth{d}$ be a linear system (of effective Cartier divisors) without base points, and assume that $\goth{d}$ is \textit{not composite with a pencil}, which means that if $f : X \to \PP_k^n$ is the morphism determined by $\goth{d}$, then $\dim{f(X)} \geq 2$.
-% Then show that every divisor in $\goth{d}$ is connected.
-% This improves Bertini's theorem (10.9.1).
 
 
 % \item \textit{Principle of Connectedness.} Let $\{ X_t \}$ be a flat family of closed subschemes of $\PP_k^n$ parameterized by an irreducible curve $T$ of finite type over $k$> Suppose there is a nonempty open set $Y \subseteq T$, such that for all closed points $t \in Y$, $X_t$ is connected. Then prove that $X_t$ is connected for all $t \in T$.

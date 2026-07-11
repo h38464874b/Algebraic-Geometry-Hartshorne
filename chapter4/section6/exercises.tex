@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 6}
 
@@ -33,11 +33,14 @@
     \[ \begin{tikzcd}
         0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
     \end{tikzcd} \]
-    Twistiting by $\fO_{\PP^3}(3)$ and taking cohomology gives
+    Twisting by $\fO_{\PP^3}(3)$ and taking cohomology gives
     \[ \begin{tikzcd}
         0 \arrow[r] & \cH^0(\PP^3, \fI(3)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(3)) \arrow[r] & \cH^0(X, \fO_X(3)) \arrow[r] & \cdots.
     \end{tikzcd} \]
-    Now, the middle vector space has dimension 20, and $\fO_X(3)$ corresponds to a linear system of degree 15, so by Riemann-Roch $h^0(X, \fO_X(3)) \leq 16$, and $h^0(\PP^3, \fI(3)) \geq 4$.
+    Now, the middle vector space has dimension 20, and the right hand vector space has dimension 16 by Riemann-Roch on $X$ (note that $\fO_X(3)$ corresponds to a divisor of degree 15).
+    So we conclude that $h^0(\PP^3, \fI(3)) \geq 4$.
+
+
 \end{proof}
 
 \item A curve of degree 5 and genus 2 in $\PP^3$ is contained in a unique quadric surface $Q$.
@@ -53,19 +56,18 @@ Show that for any abstract curve $X$ of genus 2, there exist embeddings of degre
     \[ \begin{tikzcd}
         0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
     \end{tikzcd} \]
-    The middle vector space has dimension 10, and $\fO_X(2)$ corresponds to a linear system $|D|$ of degree 10.
-    Since $\deg{K} = 2$, $D$ is a nonspecial divisor, so Riemann Roch gives $\dim{|D|} = 8$.
-    Thus, $\cH^0(\PP^2, \fI(2)) \neq 0$, hence $X$ is contained in a quadric surface.
-    By the degree genus formula, $X$ cannot be contained in any hyperplane, so any quadric surface containing $X$ must be irreducible.
-    The curve $X$ cannot be contained in two distinct irreducible quadric surfaces, because then it would be contained in their intersection, which is a curve of degree 4, and that is impossible because $\deg{X} = 5$.
-    So we see that $X$ is contained in a unique irreducible quadric surface.
+    The middle vector space has dimension 10, and the right hand vector space has dimension 9 by Riemann-Roch on $X$ (note that $\fO_X(2)$ corresponds to a nonspecial divisor of degree 10).
+    So we conclude that $h^0(\PP^3, \fI(2)) \geq 1$.
+    By reason of degree, $X$ cannot be contained in two distinct quadric surfaces, so there is a unique irreducible quadric surface $Q$ containing $X$.
+
+
 \end{proof}
 
 \item There is no curve of degree 9 and genus 11 in $\PP^3$.
 
 \begin{proof}
-    By way of contradiction, suppose there exists a curve $X \subseteq \PP^3$ of degree 9 and genus 11.
-    Imitating (Ex. 6.1), we have an exact sequence
+    Suppose there exists a curve $X \subseteq \PP^3$ of degree 9 and genus 11, and let $\fI$ be its ideal sheaf.
+    We have an exact sequence
     \[ \begin{tikzcd}
         0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
     \end{tikzcd} \]
@@ -102,7 +104,7 @@ Show that for any abstract curve $X$ of genus 2, there exist embeddings of degre
 \begin{proof}
     If $X$ is a complete intersection of surfaces $H, H'$ of degree $a, b$ respectively, in $\PP^3$, then $X$ has degree $ab$.
     Without loss of generality, suppose $a \leq b$.
-    If $H''$ is any other surface of degree $c < a$, then the irreducible components of $H \cap H''$ can have degree at most $ac$ (I, 7.7), which is strictly less than $ab$, so $X$ cannot be an irreducible component of $H \cap H''$.
+    If $H''$ is surface of degree $c < a$ containing $X$, then the irreducible components of $H \cap H''$ can have degree at most $ac$ (I, 7.7), which is strictly less than $ab$, so $X$ cannot be an irreducible component of $H \cap H''$.
     Hence, $X$ cannot lie on any surface of degree $< a$.
 \end{proof}
 

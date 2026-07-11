@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 1}
 
@@ -6,140 +6,131 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $X$ be a curve, and let $P \in X$ be a point.
-Then there exists a nonconstant rational function $f \in K(X)$, which is regular everywhere except at $P$.
+  \item Let $X$ be a curve, and let $P \in X$ be a point.
+        Then there exists a nonconstant rational function $f \in K(X)$, which is regular everywhere except at $P$.
 
-\begin{proof}
-  For large enough $n \gg 0$, $\ell(nP) > 1$ by (1.3.2).
-  This implies the existence of an effective divisor $D'$ such that $D' - nP = (f)$, where $f$ is a rational function and $(f)$ is the divisor of zeros of $f$. 
-  Since $D'$ is effective, the only pole of $f$ is at $P$ of order at most $n$.
-\end{proof}
+        \begin{proof}
+          For large $n > 0$, we have $\cH^0(\fO_X(nP)) \neq 0$ (1.3.2).
+          This implies the existence of an effective divisor $D'$ such that $D' - nP = (f)$, where $f$ is a rational function and $(f)$ is the divisor of zeros of $f$.
+          Since $D'$ is effective, the only pole of $f$ is at $P$ of order at most $n$.
+        \end{proof}
 
-% \item Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
-% Then there is a rational function $f \in K(X)$ having poles (of some order) at each of the $P_i$, and regular elsewhere.
+        % \item Again let $X$ be a curve, and let $P_1, \dots, P_r \in X$ be points.
+        % Then there is a rational function $f \in K(X)$ having poles (of some order) at each of the $P_i$, and regular elsewhere.
 
-% \begin{proof}
-  % Imitate the proof of the previous exercise for the divisor $D = -\sum_{i = 1}^r P_i + (r + 1)Q$. This time, such a $Q$ always exists because $k$ is algebraically, so it is infinite.
-% \end{proof}
+        % \begin{proof}
+        % Imitate the proof of the previous exercise for the divisor $D = -\sum_{i = 1}^r P_i + (r + 1)Q$. This time, such a $Q$ always exists because $k$ is algebraically, so it is infinite.
+        % \end{proof}
 
-% \item Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
-% Then $X$ is affine.
+        % \item Let $X$ be an integral, separated, regular, one-dimensional scheme of finite type over $k$, which is \textit{not} proper over $k$.
+        % Then $X$ is affine.
 
-% \item Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
+        % \item Show that a separated, one-dimensional scheme of finite type over $k$, none of whose irreducible components is proper over $k$, is affine.
 
-\item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$.
-Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
+  \item[\textbf{5.}] For an effective divisor $D$ on a curve $X$ of genus $g$, show that $\dim{|D|} \leq \deg{D}$.
+        Furthermore, equality holds if and only if $D = 0$ or $g = 0$.
 
-\begin{proof}
-  The Riemann-Roch theorem gives
-  \begin{equation*}
-    \ell(D) - 1 = \ell(K - D) + \deg{D} - g,
-  \end{equation*}
-  where $\dim|D| = \ell(D) - 1$, so it suffices to show $\ell(K - D) \leq g$.
-  If $D$ is effective, we have an exact sequence
-    \[\begin{tikzcd}
-      0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0,
-    \end{tikzcd} \]
-  and we can tensor by $\fO_X(K)$ to get
-    \[\begin{tikzcd}
-      0 \arrow[r] & \fO_X(K-D) \arrow[r] & \fO_X(K) \arrow[r] & \fO_D \arrow[r] & 0.
-    \end{tikzcd} \]
-  Taking cohomology gives an injection $\cH^0(\fO_X(K - D)) \to \cH^0(\fO_X(K))$, so we conclude that $\ell(K - D) \leq \ell(K) = g$.
+        \begin{proof}
+          The Riemann-Roch theorem gives
+          \begin{equation*}
+            \ell(D) - 1 = \ell(K - D) + \deg{D} - g,
+          \end{equation*}
+          so it suffices to show $\ell(K - D) \leq g$ and equality holds if and only if $D = 0$ or $g = 0$.
 
-  Now, we have shown $\dim|D| = \deg{D}$ if and only if $\ell(K - D) = \ell(K)$, and it is clear this equality holds if either $D = 0$ or $g = 0$.
-  Conversely, suppose $D \neq 0$ and $g \neq 0$.
-  We will show $\ell(K - D) < \ell(K)$.
-  Since $D$ is effective, $d = \deg{D} > 0$, so we proceed by induction on $d$.
-  If $D = P$ for a point $P \in X$, then $\ell(P) = 1$ because $X$ is not rational.
-  Thus, Riemann-Roch gives
-  \begin{equation*}
-    \ell(K - P) = g - 1 < g = \ell(K).
-  \end{equation*}
-  Now, assume the statement for $d > 1$, and let $D$ be an effective divisor of degree $d + 1$.
-  Let $P$ be a point in the support of $D$ so that $D' = D - P$ is an effective divisor of degree $d$.
-  By the inductive hypothesis, we have $\ell(K - D') < \ell(K)$.
-  Consider the exact sequence
-    \[\begin{tikzcd}
-      0 \arrow[r] & \fO_X(-P) \arrow[r] & \fO_X \arrow[r] & \fO_P \arrow[r] & 0.
-    \end{tikzcd} \]
-  Tensoring with $\fO_X(K - D')$, we get
-    \[\begin{tikzcd}
-      0 \arrow[r] & \fO_X(K - D) \arrow[r] & \fO_X(K - D') \arrow[r] & \fO_P \arrow[r] & 0,
-    \end{tikzcd} \]
-  so there is an inclusion $\cH^0(\fO_X(K - D)) \hookrightarrow \cH^0(\fO_X(K - D'))$.
-  Thus, $\ell(K - D) \leq \ell(K - D')$, so combining inequalities, we get
-  \begin{equation*}
-    \ell(K - D) \leq \ell(K - D') < \ell(K).
-  \end{equation*}
-\end{proof}
+          If $D$ is effective, then we have an exact sequence
+          \[\begin{tikzcd}
+              0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0,
+            \end{tikzcd} \]
+          Tensoring by $\fO_X(K)$ and taking global sections gives an injection of vector spaces $\cH^0(\fO_X(K - D)) \to \cH^0(\fO_X(K))$, so we conclude that $\ell(K - D) \leq \ell(K) = g$.
 
-\item[\textbf{6.}] Let $X$ be a curve of genus $g$.
-Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
+          Now, we have $\dim|D| = \deg{D}$ if and only if $\ell(K - D) = \ell(K)$, and it is clear this equality holds if either $D = 0$ or $g = 0$.
+          Conversely, suppose $D \neq 0$ and $g \neq 0$.
+          We will show $\ell(K - D) < \ell(K)$.
+          Since $D$ is effective, $d = \deg{D} > 0$, so we proceed by induction on $d$.
+          If $D = P$ for a point $P \in X$, then $\ell(P) = 1$ because $X$ is not rational.
+          Thus, Riemann-Roch gives $\ell(K - P) = g - 1$.
 
-\begin{proof}
-  Fix a point $P \in X$, and consider the divisor $D = (g + 1)P$.
-  By Riemann-Roch, $\ell(D) > 1$, which implies the existence of a nonconstant rational function $f \in K(X)$ with poles no worse than $D$.
-  This means $f = g / h$, where $g$ and $h$ are global functions on $X$ of same degree such that the order of vanishing of $h$ at $P$ is at most $g + 1$, and $h$ has no other zeros.
-  The inclusion of fields $k(f) \subseteq K(X)$ induces a finite morphism $f : X \to \PP^1$.
-  Now, the fibre of $f$ at $0 \in \PP^1$ is at most $g + 1$ points, so $f$ has degree at most $g + 1$ by (II, 6.9).
-\end{proof}
+          Assume the statement for $d > 1$, and let $D$ be an effective divisor of degree $d + 1$.
+          Let $P$ be a point in the support of $D$ so that $D' = D - P$ is an effective divisor of degree $d$.
+          By the inductive hypothesis, we have $\ell(K - D') < \ell(K)$.
+          Consider the exact sequence
+          \[\begin{tikzcd}
+              0 \arrow[r] & \fO_X(-P) \arrow[r] & \fO_X \arrow[r] & \fO_P \arrow[r] & 0.
+            \end{tikzcd} \]
+          Tensoring with $\fO_X(K - D')$ and taking global sections gives an inclusion of vector spaces $\cH^0(\fO_X(K - D)) \to \cH^0(\fO_X(K - D'))$.
+          Thus, $\ell(K - D) \leq \ell(K - D')$, so combining inequalities, we get
+          \begin{equation*}
+            \ell(K - D) \leq \ell(K - D') < \ell(K).
+          \end{equation*}
+        \end{proof}
 
-\item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
-\begin{enumerate} [label=(\alph*)]
-  \item If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without basepoints. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
-  \item Show that the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus, there exist hyperelliptic curves of any genus $g \geq 2$.
-\end{enumerate}
+  \item[\textbf{6.}] Let $X$ be a curve of genus $g$.
+        Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{enumerate} [label=(\alph*), leftmargin=0cm]
-    \item By Riemann-Roch, $\deg{K} = 2 g - 2 = 2$ and $\dim{|K|} = \ell(K) - 1 = 1$.
-    For any $P \in X$, consider the exact sequence
-    \[\begin{tikzcd}
-      0 \arrow[r] & \fO_X(K - P) \arrow[r] & \fO_X(K) \arrow[r] & \fO_P \arrow[r] & 0.
-    \end{tikzcd} \]
-    Then $|K|$ is basepoint free if and only if $\cH^0(\fO_X(K)) \to \cH^0(\fO_P)$ is surjective for every $P \in X$.
-    Taking the long exact sequence in cohomology gives
-    \[\begin{tikzcd}
-      0 \arrow[r] & \cH^0(\fO_X(K - P)) \arrow[r] & \cH^0(\fO_X(K)) \arrow[r] & \cH^0(\fO_P),
-    \end{tikzcd} \]
-    and $h^0(\fO_X(K)) = 2$ and $h^0(\fO_P) = 1$, so it suffices to show $h^0(\fO_X(K - P)) = 1$.
-    Indeed, Riemann-Roch gives $\ell(K - P) = \ell(P)$, and since $X$ is not rational, $\ell(P) = 1$.
-    Hence, $\ell(K - P) = 1$.
+        \begin{proof}
+          Fix a point $P \in X$, and consider the divisor $D = (g + 1)P$.
+          By Riemann-Roch, $\ell(D) > 1$, which implies the existence of a nonconstant rational function $f \in K(X)$ with poles no worse than $D$.
+          This means we can write $f = g / h$ such that the order of vanishing of $h$ at $P$ is at most $g + 1$, and $h$ has no other zeros.
+          The inclusion of fields $k(f) \subseteq K(X)$ induces a finite morphism $f : X \to \PP^1$.
+          Now, the degree of $f^{-1}(0)$ is at most $g + 1$ points, so $f$ has degree at most $g + 1$ by (II, 6.9).
+        \end{proof}
 
-    \item Let $X$ be an irreducible and nonsingular divisor of type $(g + 1, 2)$ on $\PP^1 \times \PP^1$ with a closed embedding $j : X \to \PP^1 \times \PP^1$, and let $\pi : \PP^1 \times \PP^1 \to \PP^1$ be the projection map onto its first argument.
-    We claim $f = \pi \circ j : X \to \PP^1$ is a finite morphism of degree 2.
-    For any $P \in \PP^1$, $\pi^{-1}(P)$ is a divisor of type $(1, 0)$, and the intersection of $X$ and $\pi^{-1}(P)$ will generally be 2 distinct points.
-    Hence, $f$ has degree 2 by (II, 6.9).
-  \end{enumerate}
-\end{proof}
+  \item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
+        \begin{enumerate} [label=(\alph*)]
+          \item If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without basepoints. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
+          \item Show that the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus, there exist hyperelliptic curves of any genus $g \geq 2$.
+        \end{enumerate}
 
-% \item \textit{$p_a$ of a Singular Curve.} Let $X$ be an integral projective scheme of dimension 1 over $k$, and let $\widetilde{X}$ be its normalization (II, Ex. 3.8). Then there is an exact sequence of sheaves on $X$,
-% \[ \begin{tikzcd}
-  % 0 \arrow[r] & \fO_X \arrow[r] & f_*\fO_{\widetilde{X}} \arrow[r] & \sum_{P \in X} \widetilde{\fO}_P/\fO_P \arrow[r] & 0
-  % \end{tikzcd} \]
-% where $\widetilde{\fO}_P$ is the integral closure of $\fO_P$. For each $P \in X$, let $\delta_P = \len(\widetilde{\fO}_P/\fO_P)$.
-% \begin{enumerate} [label=(\alph*)]
-  % \item Show that $p_a(X) = p_a(\widetilde{X}) + \sum_{P \in X} \delta_P$.
-  % \item If $p_a(X) = 0 $, show that $X$ is already nonsingular and in fact isomorphic to $\PP^1$.
-  % \item If $P$ is a node or an ordinary cusp (I, Ex. 5.6, Ex. 5.14), show that $\delta_P = 1$.
-% \end{enumerate}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{enumerate} [label=(\alph*), leftmargin=0cm]
+            \item By Riemann-Roch, $\deg{K} = 2 g - 2 = 2$ and $\dim{|K|} = \ell(K) - 1 = 1$.
+                  For any $P \in X$, consider the exact sequence
+                  \[\begin{tikzcd}
+                      0 \arrow[r] & \fO_X(K - P) \arrow[r] & \fO_X(K) \arrow[r] & \fO_P \arrow[r] & 0.
+                    \end{tikzcd} \]
+                  The linear system $|K|$ is basepoint free if and only if $\cH^0(\fO_X(K)) \to \cH^0(\fO_P)$ is surjective for every $P \in X$.
+                  Taking the long exact sequence in cohomology gives
+                  \[\begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\fO_X(K - P)) \arrow[r] & \cH^0(\fO_X(K)) \arrow[r] & \cH^0(\fO_P).
+                    \end{tikzcd} \]
+                  Since $\ell(K) = 2$ and $h^0(\fO_P) = 1$, it suffices to show $h^0(\fO_X(K - P)) = 1$.
+                  Indeed, Riemann-Roch gives $\ell(K - P) = \ell(P)$, and $\ell(P) = 1$ because $X$ is not rational.
+                  Hence, $\ell(K - P) = 1$.
 
-% \item \textit{Riemann-Roch for Singular Curves.} Let $X$ be an integral projective scheme of dimension 1 over $k$. Let $\reg{X}$ be the set of regular points of $X$.
-% \begin{enumerate} [label=(\alph*)]
-  % \item Let $D = \sum n_i P_i$ be a divisor with support in $\reg{X}$, i.e., all $P_i \in \reg{X}$. Then define $\deg{D} = \sum n_i$. Let $\fL(D)$ be the associated invertible sheaf on $X$, and show that
-  % \begin{equation*}
-    % \chi(\fL(D)) = \deg{D} + 1 - p_a.
-  % \end{equation*}
-  % \item Show that any Cartier divisor on $X$ is the difference of two very ample Cartier divisors.
-  % \item Conclude that every invertible sheaf $\fL$ on $X$ is isomorphic to $\fL(D)$ for some divisor $D$ with support in $\reg{X}$.
-  % \item Assume Furthermore that $X$ is locally complete intersection in some projective space. Then by (III, 7.11) the dualizing sheaf $\omega_X^\circ$ is an invertible sheaf on $X$, so we can define the \textit{canonical divisor} $K$ to be a divisor with support in $\reg{X}$ corresponding to $\omega_X^\circ$. Then the formula of (a) becomes
-  % \begin{equation*}
-    % \ell(D) = \ell(K - D) = \deg{D} + 1 - p_a.
-  % \end{equation*}
-  % \item Let $X$ be an integral projective scheme of dimension 1 over $k$, which is locally complete intersection, and has $p_a = 1$.
-  % Fix a point $P_0 \in \reg{X}$.
-  % Imitate (1.3.7) to show that the map $P \to \fL(P - P_0)$ gives a one-to-cone correspondence between the pints of $\reg{X}$ and the elements of the group $\pic^\circ{X}$. This generalizes (II, 6.11.4) and (II, Ex. 6.7).
-% \end{enumerate}
+            \item If $D$ is a divisor of type $(a, b)$ with $a, b > 0$, then $D$ is very ample, so by Bertini's theorem there exists an irreducible nonsingular curve $C \subseteq Q = \PP^1 \times \PP^1$ that is linearly equivalent to $D$ and has type $(a, b)$ as a divisor in $Q$.
+            Also, $a = \deg \restr{p_2}{C}$ and $b = \deg \restr{p_1}{C}$.
+            Suppose $(a, b) = (g + 1, 2)$.
+            By (III, Ex. 5.6), $C$ has genus $=(g + 1 - 1)(2 - 1) = g$, and $\restr{p_1}{C} : C \to \PP^1$ is a morphism of degree 2.
+          \end{enumerate}
+        \end{proof}
+
+        % \item \textit{$p_a$ of a Singular Curve.} Let $X$ be an integral projective scheme of dimension 1 over $k$, and let $\widetilde{X}$ be its normalization (II, Ex. 3.8). Then there is an exact sequence of sheaves on $X$,
+        % \[ \begin{tikzcd}
+        % 0 \arrow[r] & \fO_X \arrow[r] & f_*\fO_{\widetilde{X}} \arrow[r] & \sum_{P \in X} \widetilde{\fO}_P/\fO_P \arrow[r] & 0
+        % \end{tikzcd} \]
+        % where $\widetilde{\fO}_P$ is the integral closure of $\fO_P$. For each $P \in X$, let $\delta_P = \len(\widetilde{\fO}_P/\fO_P)$.
+        % \begin{enumerate} [label=(\alph*)]
+        % \item Show that $p_a(X) = p_a(\widetilde{X}) + \sum_{P \in X} \delta_P$.
+        % \item If $p_a(X) = 0 $, show that $X$ is already nonsingular and in fact isomorphic to $\PP^1$.
+        % \item If $P$ is a node or an ordinary cusp (I, Ex. 5.6, Ex. 5.14), show that $\delta_P = 1$.
+        % \end{enumerate}
+
+        % \item \textit{Riemann-Roch for Singular Curves.} Let $X$ be an integral projective scheme of dimension 1 over $k$. Let $\reg{X}$ be the set of regular points of $X$.
+        % \begin{enumerate} [label=(\alph*)]
+        % \item Let $D = \sum n_i P_i$ be a divisor with support in $\reg{X}$, i.e., all $P_i \in \reg{X}$. Then define $\deg{D} = \sum n_i$. Let $\fL(D)$ be the associated invertible sheaf on $X$, and show that
+        % \begin{equation*}
+        % \chi(\fL(D)) = \deg{D} + 1 - p_a.
+        % \end{equation*}
+        % \item Show that any Cartier divisor on $X$ is the difference of two very ample Cartier divisors.
+        % \item Conclude that every invertible sheaf $\fL$ on $X$ is isomorphic to $\fL(D)$ for some divisor $D$ with support in $\reg{X}$.
+        % \item Assume Furthermore that $X$ is locally complete intersection in some projective space. Then by (III, 7.11) the dualizing sheaf $\omega_X^\circ$ is an invertible sheaf on $X$, so we can define the \textit{canonical divisor} $K$ to be a divisor with support in $\reg{X}$ corresponding to $\omega_X^\circ$. Then the formula of (a) becomes
+        % \begin{equation*}
+        % \ell(D) = \ell(K - D) = \deg{D} + 1 - p_a.
+        % \end{equation*}
+        % \item Let $X$ be an integral projective scheme of dimension 1 over $k$, which is locally complete intersection, and has $p_a = 1$.
+        % Fix a point $P_0 \in \reg{X}$.
+        % Imitate (1.3.7) to show that the map $P \to \fL(P - P_0)$ gives a one-to-cone correspondence between the pints of $\reg{X}$ and the elements of the group $\pic^\circ{X}$. This generalizes (II, 6.11.4) and (II, Ex. 6.7).
+        % \end{enumerate}
 
 \end{enumerate}
 \end{document}

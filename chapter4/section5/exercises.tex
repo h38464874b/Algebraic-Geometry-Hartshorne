@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 5}
 
@@ -15,19 +15,13 @@
   \item If $X$ is a curve of genus $\geq 2$ over a field of characteristic 0, show that the group $\Aut{X}$ of automorphisms of $X$ is finite.
 
         \begin{proof}
-          Suppose $X$ is hyperelliptic, and let $f : X \to \PP^1$ be a 2-fold covering $f : X \to \PP^1$ given by the unique $g_2^1$.
-          The ramification locus consists of $2g + 2$ distinct points.
-          After a suitable automorphism of $\PP^1$, we can label them $0, 1, \infty, \beta_1, \dots, \beta_{2g - 1}$.
-          Let $\sigma$ be an automorphism of $X$.
-          Then $f \circ \sigma$ gives a $g_2^1$, so by uniqueness of $g_2^1$, there exists an automorphism $\tau$ of $\PP^1$ such that the following diagram commutes
-          \[ \begin{tikzcd}
-              X \arrow[d] \arrow[r, "\sigma"] & X \arrow[d] \\
-              \PP^1 \arrow[r, "\tau"]         & \PP^1
-            \end{tikzcd}. \]
-            Thus, $\sigma$ permutes the ramification points of $f$ which induces a group homomorphism $\Aut{X} \to \Sigma_{2g - 1}$.
-            If $\sigma$ is in the kernel, i.e., $\sigma$ fixes the ramification points of $f$,
+          Suppose $X$ is hyperelliptic, and let $f : X \to \PP^1$ be the unique $g_2^1$ of $X$.
+          If $\sigma \in \Aut{X}$, then $f' = f \circ \sigma$ is also a $g_2^1$, so by uniqueness, there exists $\tau \in \Aut{\PP^1}$ such that $f' = \tau \circ f$.
+          In particular, $\tau$ sends the ramification points of $f$ to the ramification points of $f'$.
+          If $\tau = \id$, then either $\sigma = \id$ or $\sigma$ is the autormophism interchanging the sheets of $f$.
+          If $\tau \neq \id$, then $\tau$ gives an element of $S_{2g + 2}$, where $2g + 2$ is the number of ramification points of $f$.
 
-            If $X$ is not hyperelliptic, we show that $\Aut(X)$ permutes the hyperosculation points of the canonical embedding.
+          \fbox{$X$ is not hyperelliptic.} Let $X \subseteq \PP^{g - 1}$ be the canonical embedding of $X$.
         \end{proof}
 
   \item \textit{Moduli of Curves of Genus 4.} The hyperelliptic curves of genus 4 form an irreducible family of dimension 7.
@@ -36,17 +30,28 @@
 
         \begin{proof}
           Hyperelliptic elliptic curves of genus 4 are determined as two-fold coverings of $\PP^1$, ramified at $0, 1, \infty$, and $2g - 1 = 7$ additional points, up to the action of a certain finite group.
-          If $X$ is a nonhyperelliptic curve of genus 4, then its canonical embedding in $\PP^3$ is the complete intersection of a unique irreducible quadric surface and an irreducible cubic surface.
-          Conversely, if $X$ is a nonsingular curve in $\PP^3$ which is a complete intersection of a quadric and a cubic surface, then $X$ is a canonical curve of genus 4.
-          There are only two isomorphism classes of irreducible quadric surfaces in $\PP^3$, so the family of all nonhyperelliptic curves of genus 4 is parametrized by two copies of an open set $U \subseteq \PP^{N}$ with $N = 19$, because a form of degree 3 has 20 coefficients.
-          Fixing a quadric surface $Q \subseteq \PP^3$, there is a dominant morphism $U \to \goth{M}_4$ defined by $F \mapsto Q \cap F$, so it remains to compute the dimension of a general fibre.
-          Let $F, F'$ be two irreducible cubic surfaces.
-          Since the embedding is canonical, $Q \cap F$ and $Q \cap F'$ are  isomorphic if and only if they differ by an automorphism of $\PP^3$.
+          So the hyperelliptic curves form an irreducible subvariety of dimension 7 of $\goth{M}_4$.
+
+          The canonical embedding of nonhyperelliptic curves of genus 4 is a complete intersection of a unique irreducible quadric surface and an irreducible cubic surface.
+
+          Fix a quadric surface $Q \subseteq \PP^3$.
+          The family of all these curves is parametrized by an open set $U \subseteq \PP(\cH^0(Q, \fO_Q(3)))$, which has dimension 15.
+          So there is a morphism $U \to \goth{M}_4$ with $F_2 \in U$ mapped to the isomorphism class of the curve $F_2.Q$.
+
+          \fbox{$Q$ is nonsingular.} $U$ has dimension 15.
+          $Q.F \cong Q'.F'$ if and only if there exists $\sigma \in \PGL(3)$ such that $\sigma(Q).\sigma(F) = Q'.F'$ if and only if $\sigma(Q) = Q'$ and there exists $\tau \in \PGL(3)$ such that $\tau$ fixes $Q'$ and $\tau(\sigma(F)) = F'$.
+          Thus, the fibre of $U \to \goth{M}_4$ over $Q.F$ is the image of the subgroup $G \subseteq \PGL(3)$ fixing $Q$, which has dimension 6.
+          Note that $\sigma \in G$ fixing $Q$ is equivalent to fixing a nondegenerate quadratic form.
+          If $\sigma \in G$ fixes $Q.F$ as a subscheme of $Q$, then $\sigma$ induces a nontrivial automorphism of $Q.F$.
+          The automorphism group of a curve of genus $\geq 2$ is finite.
+          Hence, the fibres of $U \to \goth{M}_4$ over $Q.F$ has dimension 6, so the image of $U \to \goth{M}_4$ has dimension 9.
+
+          \fbox{$Q$ is singular.} $U$ has dimension 15, but subgroup $G \subseteq \PGL(3)$ fixing $Q$ has dimension $7$.
         \end{proof}
 
   \item[\textbf{5.}] \textit{Curves of Genus 5.} Assume $X$ is not hyperelliptic.
         \begin{itemize}
-          \item[(a)] The curves of genus 5 whose canonical model in $\PP^4$ is a complete intersection $F_1.F_2.F_3$ form a family of dimension 12.
+          \item[(a)] The curves of genus 5 whose canonical model in $\PP^4$ is a complete intersection $F_2.F_2.F_2$ form a family of dimension 12.
           \item[(b)] $X$ has a $g_3^1$ if and only if it can be represented as a plane quintic with one node.
                 These form an irreducible family of dimension 11.
           \item[(c)] In that case, the conics through the node cut out the canonical system (not counting the fixed points at the node).
@@ -57,12 +62,20 @@
 
         \begin{proof} $ $ \vspace{0pt}
           \begin{itemize} [leftmargin=0cm]
-            \item[(a)]
+            \item[(a)] $\dim \Stab(Q) = 15$, $\dim \PP \cH^0(Q, \fO_Q(2)) = $
 
-            \item[(b)]
+            \item[(b)] Suppose there exists a birational morphism $f : X \to X'$ such that $X'$ is a plane quintic with one node.
+            Then $f$ is the normalization of $X'$, and the preimage of the node is a divisor $D$ of degree 2 on $X$.
 
             \item[(c)]
           \end{itemize}
+        \end{proof}
+
+  \item[\textbf{6.}] Show that a nonsingular plane curve of degree 5 has no $g_3^1$.
+  Show that there are nonhyperelliptic curves of genus 6 which cannot be represented as a nonsingular plane quintic curve.
+
+        \begin{proof}
+
         \end{proof}
 
   \item[\textbf{7.}] \begin{itemize}

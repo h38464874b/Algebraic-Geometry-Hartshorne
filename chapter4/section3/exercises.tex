@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 3}
 
@@ -11,13 +11,13 @@
 
         \begin{proof}
           Let $D$ be a very ample divisor on $X$.
-          By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, which implies $\dim |D| \geq 3$.
-          By Riemann-Roch, we have
+          By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, which implies $\ell(D) \geq 4$.
+          By the Riemann-Roch theorem, we have
           \begin{equation*}
             \deg{D} = \ell(D) - \ell(K - D) + 1 \geq 5 - \ell(K - D),
           \end{equation*}
           so it suffices to show $\ell(K - D) = 0$.
-          By (Ex. 1.5), $\deg{D} \geq 3$, so $\deg(K - D) < 0$.
+          Indeed, $\deg{D} \geq 3$ by (Ex. 1.5), so $K - D$ has negative degree.
           Hence, $\ell(K - D) = 0$.
         \end{proof}
 
@@ -26,13 +26,10 @@
 
         \begin{proof}
           Let $d$ be the degree of $X$ in $\PP^n$.
-          Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(\ell)$, where $\ell = \sum d_i - n - 1$.
-          Thus, we have two ways of computing $\deg{K}$
-          \begin{equation*}
-            \ell d = \deg{K} = 2 g - 2 \geq 2,
-          \end{equation*}
-          which implies $\ell \geq 2$.
-          Hence, $\fO_X(K)$ is very ample.
+          Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(e)$, where $e = \sum d_i - n - 1$, so it suffices to show $e \geq 1$.
+          Indeed, $\deg{K} = ed$ and $\deg{K} \geq 2$.
+          Hence, $e \geq 1$.
+
           If $X$ is a curve of genus 2, then $\ell(K) = 2$, so $K$ corresponds to a morphism $X \to \PP^1$, which can never be an embedding.
         \end{proof}
 
@@ -76,18 +73,17 @@
                       0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
                     \end{tikzcd} \]
                   Now, $X$ is an elliptic curve, and $\fO_X(2)$ corresponds to a divisor $D$ of degree 8.
-                  Riemann Roch gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\PP^3, \fI(2)) \geq 2$.
-                  An element of $\cH^0(\PP^3, \fI(2))$ is a form of degree 2, whose zero-set will be a surface $Q \subseteq \PP^3$ of degree 2 containing $X$.
-                  It must be irreducible and reduced because $X$ is not contained in any $\PP^2$, so $X$ must be contained in two distinct irreducible quadric surfaces $Q, Q'$, and $Q \cap Q' = X$ because $X$ has degree 4 (I, 7.7).
+                  The Riemann Roch theorem gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\PP^3, \fI(2)) \geq 2$.
+                  An element of $\cH^0(\PP^3, \fI(2))$ is a form of degree 2, whose zero-set is a quadric surface containing $X$.
+                  Any such quadric must be irreducible and reduced because $X$ is not contained in any hyperplane.
+                  Hence, $X$ is contained in two distinct irreducible quadric surfaces and is a complete intersection because $X$ is a curve of degree 4.
           \end{itemize}
         \end{proof}
 
   \item[\textbf{9.}] Prove the following lemma of Bertini: if $X$ is a curve of degree $d$ in $\PP^3$, not contained in any plane, then for almost all planes $H \subseteq \PP^3$ (meaning a Zariski open subset of the dual projective space $(\PP^3)^*$), the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
 
         \begin{proof}
-          A hyperplane $H \subset \PP^3$ meets $X$ at $d$ distinct points if and only if $H$ does not contain any tangent lines of $X$.
-          Given a line $l \subset \PP^3$, the collection of hyperplanes containing $l$ has dimension one as a closed subset of $(\PP^3)^*$.
-          Thus, the collection of hyperplanes containing a tangent vector of $X$ has dimension at most 2.
+
         \end{proof}
 
   \item[\textbf{12.}] For each value of $d = 2, 3, 4, 5$ and $r$ satisfying $0 \leq r \leq \frac{1}{2}(d - 1)(d - 2)$, show that there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
@@ -98,7 +94,7 @@
 
           \fbox{$d = 2$} There is nothing to prove.
 
-          \fbox{$d = 3$} $g = 0$ corresponds to the rational cubic in $\PP^3$, $g = 1$ 
+          \fbox{$d = 3$} $g = 0$ corresponds to the rational cubic in $\PP^3$, $g = 1$
         \end{proof}
 
 \end{enumerate}

@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
 \input{../../etc/preamble.tex}
 \title{Chapter 4, Section 4}
 
@@ -19,7 +19,33 @@
             In each of the four cases of (4.7), describe these automorphisms of $\PP^2$ explicitly, and hence determine the structure of the group $G = \Aut(X, P_0)$.
 
             \begin{proof}
-                  Embedding of $X$ in $\PP^2$ given by linear system $|3P_0|$.
+                  The embedding of $X$ in $\PP^2$ is given by the complete linear system $|3P_0| \cong \PP^2$.
+                  Let $1, x, y$ be a $k$-basis of $\cH^0(X, \fO_X(3P_0))$ such that $x, y$ are local affine coordinates of $|3P_0|$.
+                  Any automorphism of $X$ leaving $P_0$ induces an automorphism of $|3P_0|$, i.e., there exists a faithful representation $\rho : G \hookrightarrow \Aut(|3P_0|) \cong\PGL(2)$.
+                  If $\sigma \in G$, then we can write
+                  \begin{equation*}
+                        \rho(\sigma) = \begin{pmatrix}
+                              a & 0 & b \\
+                              c & d & e \\
+                              f & 0 & g \\
+                        \end{pmatrix}, \quad d(ag - bf) \neq 0.
+                  \end{equation*}
+                  The unique $g_2^1$, denoted $f : X \to \PP^1$, is given by the projection of $X$ onto the $x$-axis.
+                  By (4.4), there exists $\tau \in \PGL(1)$ such that $\tau \circ f = f \circ \sigma$.
+
+                  \fbox{$j \neq 0, 1728$} The unique nontrivial element $\sigma \in G$ interchanges the sheets of the unique $g_2^1$ and can be written as
+                  \begin{equation*}
+                        \begin{cases*}
+                              x' = x \\
+                              y' = -y
+                        \end{cases*}.
+                  \end{equation*}
+
+                  \fbox{$j = 1728$ and $\chr{k} \neq 3$}
+
+                  \fbox{$j = 0$ and $\chr{k} \neq 3$}
+
+                  \fbox{$j = 0 ~ (= 1728)$ and $\chr{k} = 3$}
             \end{proof}
 
       \item[\textbf{4.}] Let $X$ be an elliptic curve in $\PP^2$ given by an equation of the form
@@ -31,6 +57,24 @@
             Furthermore, for every $\alpha \in k_0$, there exists an elliptic curve defined over $k_0$ with $j$-invariant equal to $\alpha$.
 
             \begin{proof}
+                  Complete the square in $y$ to get an equation of the form
+                  \begin{equation*}
+                        y^2 = x^3 + Ax^2 + Bx + C,
+                  \end{equation*}
+                  with
+                  \begin{equation*}
+                        A = \frac{a_1^2}{4} + a_2, \quad B = \frac{a_1a_3}{2} + a_4, \quad C = \frac{a_3^2}{4} + a_6.
+                  \end{equation*}
+                  Let $\alpha, \beta, \gamma$ be the roots of the cubic on the right-hand side.
+                  Make a linear change of $x$ to send $\alpha, \beta$ to $0, 1$ so that the equation becomes
+                  \begin{equation*}
+                        y^2 = x(x - 1)(x - \lambda), \quad \lambda = \frac{\gamma - \alpha}{\beta - \alpha}.
+                  \end{equation*}
+                  Plugging in $\lambda$ into the $j$-invariant formula gives
+                  \begin{equation*}
+                        j = -2^8 \frac{(\alpha + \beta + \gamma)^2 - 3(\alpha \beta - \beta \gamma - \gamma \alpha)}{(\alpha - \beta)^2(\beta - \gamma)^2(\gamma - \alpha)^2}.
+                  \end{equation*}
+                  This is a rational function of the symmetric polynomials in $\alpha, \beta, \gamma$, which are themselves polynomials in $A, B, C$, and hence in the $a_i$.
             \end{proof}
 
       \item[\textbf{7.}] \textit{The Dual of a Morphism.} Let $X$ and $X'$ be elliptic curves over $k$, with base points $P_0, P_0'$.
@@ -49,7 +93,23 @@
 
             \begin{proof} $ $ \vspace{0pt}
                   \begin{itemize} [leftmargin=0cm]
-                        \item[(a)] Since $f^*$ maps $\pic(X')^\circ$ to $\pic(X)^\circ$, 
+                        \item[(a)] Any morphism $f : X \to X'$ induces a natural transformation of functors $f^* : \pic^\circ(X' / -) \to \pic^\circ(X / -)$ (4.10.2).
+                              Under the identification $\pic^\circ(X / -) \cong \Hom(-, J)$ and $\pic^\circ(X'/-) \cong \Hom(-, J')$, Yoneda's lemma says there exists a natural bijection
+                              \begin{equation*}
+                                    \Hom(J', J) \cong \Hom(\pic^\circ(X'/-), \pic^\circ(X/-)),
+                              \end{equation*}
+                              which means there exists a unique $\hat{f} : J' \to J$ such that $f^*$ is given by composition by $\hat{f}$.
+                              We obtain our desired morphism by identifying $X \cong J$ and $X' \cong J'$, and composing $\hat{f}$ by an automorphism of $X$ that sends $f(P_0')$ to $P_0$ (4.2).
+
+                        \item[(b)] 
+
+                        \item[(c)] 
+
+                        \item[(d)]
+
+                        \item[(e)] Apply (d) to $f = \id_X$ and $\hat{1}_X = 1_X$ to get $\hat{n}_X = n_X$.
+
+                        \item[(f)]
                   \end{itemize}
             \end{proof}
 
@@ -61,7 +121,7 @@
 
             \begin{proof} $ $ \vspace{0pt}
                   \begin{itemize} [leftmargin=0cm]
-                        \item[(a)] The only nontrivial axiom of equivalence relations to check is reflexivity, which is taken care of by (Ex. 4.7a).
+                        \item[(b)]
                   \end{itemize}
             \end{proof}
 
@@ -72,6 +132,16 @@
                   \item[(b)] If $f \in R$ corresponds to $\alpha \in \C$ again, show that the dual $\hat{f}$ of (Ex. 4.7) corresponds to the complex conjugate $\bar{\alpha}$ of $\alpha$.
                   \item[(c)] If $\tau \in \Q(\sqrt{-d})$ happens to be integral over $\Z$, show that $R = \Z[\tau]$.
             \end{itemize}
+
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)]
+
+                        \item[(b)]
+
+                        \item[(c)]
+                  \end{itemize}
+            \end{proof}
 
       \item[\textbf{13.}] If $p = 13$, there is just one value of $j$ for which the Hasse invariant of the corresponding curve is 0.
             Find it.
@@ -106,6 +176,10 @@
             Use (4.10.7) to show that the dual morphism $\hat{F}' : X \to X_p$ is separable if and only if the Hasse invariant of $X$ is 1.
             Now use (Ex. 4.7) to show that if the Hasse invariant is 1, then the subgroup of points of order $p$ on $X$ is isomorphic to $\Z / p$; if the Hasse invariant is 0, then it is 0.
 
+            \begin{proof}
+                  
+            \end{proof}
+
       \item[\textbf{16.}] Again let $X$ be an elliptic curve over $k$ of characteristic $p$, and suppose $X$ is defined over the field $\F_q$ of $q = p^r$ elements, i.e., $X \subseteq \PP^2$ can be defined by an equation with coefficients in $\F_q$.
             Assume also that $X$ has a rational point over $\F_q$.
             Let $F' : X_q \to X$ be the $k$-linear Frobenius with respect to $q$.
@@ -119,12 +193,35 @@
                         Conclude that for $p \geq 5$ that $X$ has Hasse invariant 0 if and only if $N = p + 1$.
             \end{itemize}
 
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)]
+
+                        \item[(b)]
+
+                        \item[(c)]
+
+                        \item[(d)]
+
+                        \item[(e)]
+                  \end{itemize}
+            \end{proof}
+
       \item[\textbf{17.}] Let $X$ be the curve $y^2 + y = x^3 - x$ of (4.23.8).
             \begin{itemize}
                   \item[(a)] If $Q = (a, b)$ is a point on the curve, compute the coordinates of the point $P + Q$, where $P = (0, 0)$, as a function of $a, b$.
                         Use this formula to find the coordinates $nP$, $n = 1, 2, \dots, 10$.
                   \item[(b)] This equation defines a nonsingular curve over $\F_q$ for all $p \neq 37$.
             \end{itemize}
+
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)]
+
+                        \item[(b)]
+
+                  \end{itemize}
+            \end{proof}
 
       \item[\textbf{20.}] Let $X$ be an elliptic curve over a field $k$ of characteristic $p > 0$, and let $R = \End(X, P_0)$ be its ring of endormorphisms.
             \begin{itemize}
@@ -141,12 +238,22 @@
                         Therefore, $R$ contains a prime ideal $\goth{p}$ with $R / \goth{p} \cong \F_p$.
             \end{itemize}
 
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)]
+
+                        \item[(b)]
+
+                        \item[(c)]
+
+                        \item[(d)]
+                  \end{itemize}
+            \end{proof}
+
       \item[\textbf{22.}] If $X \to \A_C^1$ is a family of elliptic curves having a section, show that the family is trivial.
 
             \begin{proof}
-                  Let $\sigma : \A_C^1 \to X$ be a section.
             \end{proof}
-
 \end{enumerate}
 
 \end{document}

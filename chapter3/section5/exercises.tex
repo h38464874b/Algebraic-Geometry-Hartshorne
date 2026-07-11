@@ -43,11 +43,7 @@ is a short exact sequence of coherent sheaves on $X$, show that $\chi(\fF) = \ch
   \begin{itemize} [leftmargin=0cm]
     \item[(a)] Since $\fO_X(1)$ is a very ample sheaf on $X$ over $k$, there is a closed immersion $i : X \to \PP_k^r$ of schemes over $k$, for some $r$, such that $\fO_X(1) = i^* \fO_{\PP^r}(1)$.
     If $\fF$ is coherent on $X$, then $i_* \fF$ is coherent on $\PP_k^r$ (II, Ex. 5.5), and the cohomology is the same (2.10).
-    The Euler characteristic is defined in terms of cohomology, and the projection formula (II, Ex. 5.1d) gives us
-    \begin{equation*}
-      i_*(\fF(n)) = i_*(\fF \otimes_{\fO_X} i^* \fO_{\PP_r}(n)) \cong i_*\fF \otimes_{\fO_{\PP^r}} \fO_{\PP^r}(n) = (i_*\fF)(n).
-    \end{equation*}
-    Thus, we reduce to the case $X = \PP_k^r$.
+    The Euler characteristic is defined in terms of cohomology, so we reduce to the case $X = \PP_k^r$.
 
     Cover $X$ by a finite number of open affines $U_i \cong \spec{k[y_1, \dots, y_r]}$.
     Then there exist finitely generated $k[y_1, \dots, y_r]$-modules $M_i$ such that $\restr{\fF}{U_i} \cong \tilde{M}_i$.
@@ -120,25 +116,38 @@ Note that it depends only on $X$, not on any projective embedding.
   \end{itemize}
 \end{proof}
 
-% \item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \PP_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
-% These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
-% On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
-% Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
-% \begin{itemize}
-%   \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\PP^1$ in $Q$, to show:
-%   \begin{itemize}
-%     \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-%     \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-%     \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
-%   \end{itemize}
-%   \item[(b)] Now use these results to show:
-%   \begin{itemize}
-%     \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
-%     \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
-%     \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\PP^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
-%   \end{itemize}
-%   \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
-% \end{itemize}
+\item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \PP_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
+These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
+On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
+Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
+\begin{itemize}
+  \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\PP^1$ in $Q$, to show:
+  \begin{itemize}
+    \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+    \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+    \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
+  \end{itemize}
+  \item[(b)] Now use these results to show:
+  \begin{itemize}
+    \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
+    \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
+    \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\PP^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
+  \end{itemize}
+  \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
+\end{itemize}
+
+\begin{proof} $ $ \vspace{0pt}
+  \begin{itemize} [leftmargin=0cm]
+    \item[(a)]
+    \item[(b)] (1)
+
+    (2)
+
+    (3)
+
+    \item[(c)]
+  \end{itemize}
+\end{proof}
 
 \item[\textbf{7.}]  Let $X$ (respectively, $Y$) be proper schemes over a Noetherian ring $A$.
 We note by $\fL$ an invertible sheaf.
