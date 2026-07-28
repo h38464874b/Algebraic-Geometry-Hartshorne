@@ -8,11 +8,15 @@
 \usepackage{physics}
 \usepackage{mathrsfs}
 \usepackage{cancel}
-% \usepackage{libertine,libertinust1math}
-\usepackage{eucal}
 \usepackage[toc,page]{appendix}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+
+% font stuff
+\usepackage[T1]{fontenc}
+\usepackage{eucal}
+\usepackage[euler-digits,small]{eulervm}
+\usepackage{tgbonum}
 
 \newtheorem{proposition}{Proposition}
 \newtheorem{theorem}{Theorem}
@@ -24,12 +28,6 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Example}
 
-% \usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
-% \linespread{1.025}              % Palatino leads a little more leading
-% % Euler for math and numbers
-% \usepackage[euler-digits,small]{eulervm}
-% \AtBeginDocument{\renewcommand{\hbar}{\hslash}}
-
 \usepackage{etoolbox}
 \usepackage{dynkin-diagrams}
 \def\row#1/#2!{\dynkin{#1}{#2}\\}
@@ -39,8 +37,6 @@
       \begin{array}{ll}\docsvlist{#1}\end{array}
    \]
 }
-
-\allowdisplaybreaks
 
 \renewcommand{\epsilon}{\varepsilon}
 % \renewcommand{\phi}{\varphi}
@@ -74,6 +70,7 @@
 \newcommand{\fR}{\mathcal{R}}
 \newcommand{\fS}{\mathcal{S}}
 \newcommand{\fT}{\mathcal{T}}
+\newcommand{\fU}{\mathcal{U}}
 \newcommand{\fX}{\mathcal{X}}
 \newcommand{\fY}{\mathcal{Y}}
 \newcommand{\fZ}{\mathcal{Z}}
@@ -93,33 +90,46 @@
 \newcommand{\gU}{\goth{U}}
 \newcommand{\gV}{\goth{V}}
 
-\newcommand{\A}{\mathbf{A}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\F}{\mathbf{F}}
-\newcommand{\G}{\mathbf{G}}
-\newcommand{\bH}{\mathbf{H}}
-\newcommand{\N}{\mathbf{N}}
-\newcommand{\PP}{\mathbf{P}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\R}{\mathbf{R}}
-\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bH}{\mathbb{H}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\dlog}{\dd\log}
+
+% Cateogries
+\newcommand{\cSet}{\mathbf{Set}}
+\newcommand{\cAb}{\mathbf{Ab}}
+\newcommand{\cGroup}{\mathbf{Grp}}
+
+\newcommand{\ckSch}[1]{\mathbf{Sch}(#1)}
+\newcommand{\ckAlg}[1]{\mathbf{Alg}(#1)}
+\newcommand{\cMod}[1]{\mathbf{Mod}(#1)}
 
 \newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
 \newcommand\gsec[2]{\Gamma({#1}, {#2})}
 \newcommand\gsecx[1]{\Gamma(X, {#1})}
 
+% Relative stuff
+\DeclareMathOperator{\rSpec}{\mathpzc{Spec}}
+\DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\DeclareMathOperator{\rProj}{\mathpzc{Proj}}
+\DeclareMathOperator{\rExt}{\mathpzc{Ext}}
+
+% Linear Algebra related notions (?)
+\DeclareMathOperator{\deter}{det}
+\DeclareMathOperator{\rk}{rank}
+
 \DeclareMathOperator{\chr}{char}
-\DeclareMathOperator{\rProj}{\mathbf{Proj}}
-\DeclareMathOperator{\rSpec}{\mathbf{Spec}}
-\DeclareMathOperator{\rHom}{\mathbf{Hom}}
-\DeclareMathOperator{\rExt}{\mathbf{Ext}}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\rk}{rank}
-\DeclareMathOperator{\deter}{det}
 \DeclareMathOperator{\pic}{Pic}
 \DeclareMathOperator{\cacl}{CaCl}
 \DeclareMathOperator{\trd}{tr.d.}
@@ -161,12 +171,15 @@
 \DeclareMathOperator{\Uni}{U}
 \DeclareMathOperator{\evf}{ev}
 \DeclareMathOperator{\cH}{H}
+\DeclareMathOperator{\cdh}{h}
 \DeclareMathOperator{\dR}{R}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hasse}{Hasse}
 \DeclareMathOperator{\Num}{Num}
 
 \author{James Lee}
+
+\allowdisplaybreaks
 
 % Solarized
 % \pagecolor[RGB]{0,20,26}
@@ -179,5 +192,5 @@
 % \pagecolor[RGB]{200, 200, 200}
 
 % Black
-% \pagecolor[RGB]{0,0,0}
-% \color[RGB]{255,255,255}
+% \pagecolor[RGB]{20,20,20}
+% \color[RGB]{210,210,210}

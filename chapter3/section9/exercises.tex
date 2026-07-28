@@ -1,79 +1,12 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 3, Section 9}
 
 \begin{document}
+
 \maketitle
-
-\begin{lemma} [Stacks Project, Tag 00HT]
-  Let $A \to B$ be a ring homomorphism, and let $M$ be a $B$-module.
-  The following are equivalent:
-  \begin{itemize}
-    \item[(i)] $M$ is a flat $A$-module;
-    \item[(ii)] for every prime ideal $\goth{q}$ of $B$, $\goth{p}$ its contraction in $A$, $M_\goth{q}$ is a flat $A_\goth{p}$-module.
-  \end{itemize}
-\end{lemma}
-
-\begin{proof}
-  $(i) \implies (ii)$ Suppose $M$ is flat as an $A$-module.
-  Let $\goth{q}$ be a prime ideal of $B$, and let $\goth{p}$ be its contraction in $A$.
-  Then $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
-  We want to show $\goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is an $A_\goth{p}$-module monomorphism.
-  By (A.M., 2.15), and because $M_\goth{q}$ is a natural $A_\goth{p}$-module, we have the isomorphisms
-  \begin{align*}
-    (\goth{a} \otimes_A M) \otimes_B B_\goth{q} & \cong \goth{a} \otimes_A (M \otimes_B B_\goth{q})                     \\
-                                                & \cong \goth{a} \otimes_A (A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q}) \\
-                                                & \cong \goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q},
-  \end{align*}
-  which shows $\goth{a} A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is given by localizing the $B$-module homomorphism $\goth{a} \otimes_A M \to M$ at the prime ideal $\goth{q}$.
-  Localizing preserves injections, so we are done.
-
-  \noindent $(ii) \implies (i)$ We want to show $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
-  Because $M$ is a $B$-module, localizing at $\goth{q}$ gives $(\goth{a} \otimes_A M) \otimes_B B_\goth{q} \to M_\goth{q}$, which is injective by assumption and isomorphism of above.
-  Thus, $\goth{a} \otimes_A M \to M$ is injective as a $B$-module homomorphism, and therefore injective as an $A$-module homomorphism.
-\end{proof}
-
-\begin{lemma}
-  Let $A \to B \to C$ be ring homomorphisms, and suppose $C$ is flat over $B$.
-  Then for every ideal $\goth{a} \subseteq A$, there is a natural isomorphism
-  \begin{equation*}
-    C \otimes_B \tor_1^A(B, A / \goth{a}) \cong \tor_1^A(C, A / \goth{a}).
-  \end{equation*}
-\end{lemma}
-
-\begin{proof}
-  Consider the exact sequence
-  \[ \begin{tikzcd}
-      0 \arrow[r] & \goth{a} \arrow[r] & A \arrow[r] & A/\goth{a} \arrow[r] & 0.
-    \end{tikzcd} \]
-  Tensoring by $B$ over $A$ gives an exact sequence with $\tor$
-  \[ \begin{tikzcd}
-      0\arrow[r] & \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A B \arrow[r] & B \arrow[r] & B/\goth{a}B \arrow[r] & 0.
-    \end{tikzcd} \]
-  Each term in the sequence is a natural $B$-module, so we can tensor the sequence by $C$ over $B$
-  \[ \begin{tikzcd}
-      0\arrow[r] & C \otimes_B \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
-    \end{tikzcd} \]
-  Here, we used the fact that
-  \begin{equation*}
-    (\goth{a} \otimes_A B) \otimes_B C \cong \goth{a} \otimes_A (B \otimes_B C) \cong \goth{a} \otimes_A C.
-  \end{equation*}
-  We can also tensor the original sequence by $C$ over $A$ to get
-  \[ \begin{tikzcd}
-      0\arrow[r] & \tor_1^A(C, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
-    \end{tikzcd} \]
-  The $A$-module homomorphism $B \to C$ induces $\tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})$, and $\tor_1^A(C, A)$ is a natural $C$-module, so there is a natural map
-  \begin{equation*}
-    \phi : C \otimes_B \tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})
-  \end{equation*}
-  given by multiplication.
-  Consider the commutative diagram
-  \[ \begin{tikzcd}
-      0 \arrow[r] & {C \otimes_B \tor_1^A(B, A / \goth{a})} \arrow[r] \arrow[d, "\phi"] & \goth{a} \otimes_A C \arrow[r] \arrow[d, Rightarrow, no head] & C \arrow[r] \arrow[d, Rightarrow, no head] & C/\goth{a}C \arrow[r] \arrow[d, Rightarrow, no head] & 0 \\
-      0 \arrow[r] & {\tor_1^A(C, A / \goth{a})} \arrow[r]                       & \goth{a} \otimes_A C \arrow[r]                                & C \arrow[r]                                & C / \goth{a}C \arrow[r]                              & 0
-    \end{tikzcd}. \]
-  The five lemma implies $\phi$ is actually an isomorphism.
-\end{proof}
 
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
@@ -292,7 +225,80 @@
           \textit{Incomplete.}
         \end{proof}
 
+        \newpage
+
+        \begin{lemma} [Stacks Project, Tag 00HT]
+          Let $A \to B$ be a ring homomorphism, and let $M$ be a $B$-module.
+          The following are equivalent:
+          \begin{itemize}
+            \item[(i)] $M$ is a flat $A$-module;
+            \item[(ii)] for every prime ideal $\goth{q}$ of $B$, $\goth{p}$ its contraction in $A$, $M_\goth{q}$ is a flat $A_\goth{p}$-module.
+          \end{itemize}
+        \end{lemma}
+
+        \begin{proof}
+          $(i) \implies (ii)$ Suppose $M$ is flat as an $A$-module.
+          Let $\goth{q}$ be a prime ideal of $B$, and let $\goth{p}$ be its contraction in $A$.
+          Then $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
+          We want to show $\goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is an $A_\goth{p}$-module monomorphism.
+          By (A.M., 2.15), and because $M_\goth{q}$ is a natural $A_\goth{p}$-module, we have the isomorphisms
+          \begin{align*}
+            (\goth{a} \otimes_A M) \otimes_B B_\goth{q} & \cong \goth{a} \otimes_A (M \otimes_B B_\goth{q})                     \\
+                                                        & \cong \goth{a} \otimes_A (A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q}) \\
+                                                        & \cong \goth{a}A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q},
+          \end{align*}
+          which shows $\goth{a} A_\goth{p} \otimes_{A_\goth{p}} M_\goth{q} \to M_\goth{q}$ is given by localizing the $B$-module homomorphism $\goth{a} \otimes_A M \to M$ at the prime ideal $\goth{q}$.
+          Localizing preserves injections, so we are done.
+
+          \noindent $(ii) \implies (i)$ We want to show $\goth{a} \otimes_A M \to M$ is injective for any ideal $\goth{a}$ of $A$.
+          Because $M$ is a $B$-module, localizing at $\goth{q}$ gives $(\goth{a} \otimes_A M) \otimes_B B_\goth{q} \to M_\goth{q}$, which is injective by assumption and isomorphism of above.
+          Thus, $\goth{a} \otimes_A M \to M$ is injective as a $B$-module homomorphism, and therefore injective as an $A$-module homomorphism.
+        \end{proof}
+
+        \begin{lemma}
+          Let $A \to B \to C$ be ring homomorphisms, and suppose $C$ is flat over $B$.
+          Then for every ideal $\goth{a} \subseteq A$, there is a natural isomorphism
+          \begin{equation*}
+            C \otimes_B \tor_1^A(B, A / \goth{a}) \cong \tor_1^A(C, A / \goth{a}).
+          \end{equation*}
+        \end{lemma}
+
+        \begin{proof}
+          Consider the exact sequence
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \goth{a} \arrow[r] & A \arrow[r] & A/\goth{a} \arrow[r] & 0.
+            \end{tikzcd} \]
+          Tensoring by $B$ over $A$ gives an exact sequence with $\tor$
+          \[ \begin{tikzcd}
+              0\arrow[r] & \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A B \arrow[r] & B \arrow[r] & B/\goth{a}B \arrow[r] & 0.
+            \end{tikzcd} \]
+          Each term in the sequence is a natural $B$-module, so we can tensor the sequence by $C$ over $B$
+          \[ \begin{tikzcd}
+              0\arrow[r] & C \otimes_B \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+            \end{tikzcd} \]
+          Here, we used the fact that
+          \begin{equation*}
+            (\goth{a} \otimes_A B) \otimes_B C \cong \goth{a} \otimes_A (B \otimes_B C) \cong \goth{a} \otimes_A C.
+          \end{equation*}
+          We can also tensor the original sequence by $C$ over $A$ to get
+          \[ \begin{tikzcd}
+              0\arrow[r] & \tor_1^A(C, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+            \end{tikzcd} \]
+          The $A$-module homomorphism $B \to C$ induces $\tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})$, and $\tor_1^A(C, A)$ is a natural $C$-module, so there is a natural map
+          \begin{equation*}
+            \phi : C \otimes_B \tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})
+          \end{equation*}
+          given by multiplication.
+          Consider the commutative diagram
+          \[ \begin{tikzcd}
+              0 \arrow[r] & {C \otimes_B \tor_1^A(B, A / \goth{a})} \arrow[r] \arrow[d, "\phi"] & \goth{a} \otimes_A C \arrow[r] \arrow[d, Rightarrow, no head] & C \arrow[r] \arrow[d, Rightarrow, no head] & C/\goth{a}C \arrow[r] \arrow[d, Rightarrow, no head] & 0 \\
+              0 \arrow[r] & {\tor_1^A(C, A / \goth{a})} \arrow[r]                       & \goth{a} \otimes_A C \arrow[r]                                & C \arrow[r]                                & C / \goth{a}C \arrow[r]                              & 0
+            \end{tikzcd}. \]
+          The five lemma implies $\phi$ is actually an isomorphism.
+        \end{proof}
+
 \end{enumerate}
+
 \end{document}
 
 % \item A flat morphism $f : X \to Y$ of finite type of Noetherian schemes is open, i.e., for every open subset $U \subseteq X$, $f(U)$ is open in $Y$.

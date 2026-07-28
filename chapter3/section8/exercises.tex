@@ -6,173 +6,171 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $f : X \to Y$ be a continuous map of topological spaces.
-Let $\fF$ be a sheaf of Abelian groups on $X$, and assume that $\dR^if_*(\fF) = 0$ for all $i > 0$.
-Show that there are natural isomorphisms, for each $i \geq 0$,
-\begin{equation*}
-  \cH^i(X, \fF) \cong \cH^i(Y, f_* \fF).
-\end{equation*}
+  \item Let $f : X \to Y$ be a continuous map of topological spaces.
+        Let $\fF$ be a sheaf of Abelian groups on $X$, and assume that $\dR^if_*(\fF) = 0$ for all $i > 0$.
+        Show that there are natural isomorphisms, for each $i \geq 0$,
+        \begin{equation*}
+          \cH^i(X, \fF) \cong \cH^i(Y, f_* \fF).
+        \end{equation*}
 
-\begin{proof}
-  Let $0 \to \fF \to \fI^\bullet$ be an injective resolution of $\fF$.
-  By hypothesis, $0 \to f_* \fF \to f_* \fI^\bullet$ is also exact.
-  The pushforward of an injective object in $\goth{Ab}(X)$ is also injective in $\goth{Ab}(Y)$ because $f_*$ is a right adjoint functor, so $0 \to f_*\fF \to f_* \fI^\bullet$ is an injective resolution of $f_* \fF$ in $\goth{Ab}(Y)$.
-  Suppose $\fG \to \fG'$ is a monomorphism of sheaves on $Y$, and $\fG \to f_*\fI$ is any morphism of sheaves.
-  By adjunction, there is a morphism $f^{-1} \fG \to \fI$, and because $f^{-1}$ is an exact functor, $f^{-1} \fG \to f^{-1} \fG'$ is also a monomorphism (note that in general, $f^*$ is only right exact).
-  By injectivity of $\fI$, there is an extension of $f^{-1} \fG \to \fI$ making the following diagram commute
-  \[ \begin{tikzcd}
-                                & \fI                           \\
-f^{-1} \fG \arrow[r] \arrow[ru] & f^{-1} \fG' \arrow[u, dashed]
-\end{tikzcd}. \]
-Hence, by adjunction again, there is an extension of $\fG \to f_* \fI$ making the following diagram commute
-  \[ \begin{tikzcd}
-                                & f_*\fI                           \\
-\fG \arrow[r] \arrow[ru] & \fG' \arrow[u, dashed]
-\end{tikzcd}. \]
-  Since $\fF$ and $f_*\fF$ have same global sections for any $\fF$, there are natural identificiations
-  \[ \begin{tikzcd}
-0 \arrow[r] & {\Gamma(X, \fF)} \arrow[r] \arrow[d, Rightarrow, no head] & {\Gamma(X, f_* \fI^\bullet)} \arrow[d, Rightarrow, no head] \\
-0 \arrow[r] & {\Gamma(Y, f_* \fF)} \arrow[r]                            & {\Gamma(Y, f_*\fI^\bullet)}                                
-\end{tikzcd}. \]
-  Taking cohomology gives the desired natural isomorphisms for all $i \geq 0$.
-\end{proof}
+        \begin{proof}
+          Let $0 \to \fF \to \fI^\bullet$ be an injective resolution of $\fF$.
+          By hypothesis, $0 \to f_* \fF \to f_* \fI^\bullet$ is also exact.
+          The pushforward of an injective object in $\goth{Ab}(X)$ is also injective in $\goth{Ab}(Y)$ because $f_*$ is a right adjoint functor, so $0 \to f_*\fF \to f_* \fI^\bullet$ is an injective resolution of $f_* \fF$ in $\goth{Ab}(Y)$.
+          Suppose $\fG \to \fG'$ is a monomorphism of sheaves on $Y$, and $\fG \to f_*\fI$ is any morphism of sheaves.
+          By adjunction, there is a morphism $f^{-1} \fG \to \fI$, and because $f^{-1}$ is an exact functor, $f^{-1} \fG \to f^{-1} \fG'$ is also a monomorphism (note that in general, $f^*$ is only right exact).
+          By injectivity of $\fI$, there is an extension of $f^{-1} \fG \to \fI$ making the following diagram commute
+          \[ \begin{tikzcd}
+              & \fI                           \\
+              f^{-1} \fG \arrow[r] \arrow[ru] & f^{-1} \fG' \arrow[u, dashed]
+            \end{tikzcd}. \]
+          Hence, by adjunction again, there is an extension of $\fG \to f_* \fI$ making the following diagram commute
+          \[ \begin{tikzcd}
+              & f_*\fI                           \\
+              \fG \arrow[r] \arrow[ru] & \fG' \arrow[u, dashed]
+            \end{tikzcd}. \]
+          Since $\fF$ and $f_*\fF$ have same global sections for any $\fF$, there are natural identificiations
+          \[ \begin{tikzcd}
+              0 \arrow[r] & {\Gamma(X, \fF)} \arrow[r] \arrow[d, Rightarrow, no head] & {\Gamma(X, f_* \fI^\bullet)} \arrow[d, Rightarrow, no head] \\
+              0 \arrow[r] & {\Gamma(Y, f_* \fF)} \arrow[r]                            & {\Gamma(Y, f_*\fI^\bullet)}
+            \end{tikzcd}. \]
+          Taking cohomology gives the desired natural isomorphisms for all $i \geq 0$.
+        \end{proof}
 
-\item Let $f : X \to Y$ be an affine morphism of schemes (II, Ex. 5.17) with $X$ Noetherian, and let $\fF$ be a quasi-coherent sheaf on $X$.
-Show that the hypotheses of (Ex. 8.1) are satisfies, and hence that $\cH^i(X, \fF) \cong \cH^i(Y, f_* \fF)$ for each $i \geq 0$.
+  \item Let $f : X \to Y$ be an affine morphism of schemes (II, Ex. 5.17) with $X$ Noetherian, and let $\fF$ be a quasi-coherent sheaf on $X$.
+        Show that the hypotheses of (Ex. 8.1) are satisfies, and hence that $\cH^i(X, \fF) \cong \cH^i(Y, f_* \fF)$ for each $i \geq 0$.
 
-\begin{proof}
-  Let $V$ be an open affine subset of $Y$.
-  By (8.2) and (8.5), we have
-  \begin{equation*}
-    \restr{\dR^i f_*(\fF)}{V} \cong \widetilde{\cH^i(f^{-1}V, \restr{\fF}{f^{-1}(V)})},
-  \end{equation*}
-  which is zero because $f^{-1}(V)$ is affine (3.7).
-  Hence, $\dR^i f_*(\fF) = 0$, and the result follows by the previous exercise.
-\end{proof}
+        \begin{proof}
+          Let $V$ be an open affine subset of $Y$.
+          By (8.2) and (8.5), we have
+          \begin{equation*}
+            \restr{\dR^i f_*(\fF)}{V} \cong \widetilde{\cH^i(f^{-1}V, \restr{\fF}{f^{-1}(V)})},
+          \end{equation*}
+          which is zero because $f^{-1}(V)$ is affine (3.7).
+          Hence, $\dR^i f_*(\fF) = 0$, and the result follows by the previous exercise.
+        \end{proof}
 
-\item Let $f : X \to Y$ be a morphism of ringed spaces, let $\fF$ be an $\fO_X$-module, and let $\fE$ be a locally free $\fO_Y$-module of finite rank.
-Prove the \textit{projection formula} (cf. (II, Ex. 5.1))
-\begin{equation*}
-  \dR^if_*(\fF \otimes f^* \fE) \cong \dR^i f_*(\fF) \otimes \fE.
-\end{equation*}
+  \item Let $f : X \to Y$ be a morphism of ringed spaces, let $\fF$ be an $\fO_X$-module, and let $\fE$ be a locally free $\fO_Y$-module of finite rank.
+        Prove the \textit{projection formula} (cf. (II, Ex. 5.1))
+        \begin{equation*}
+          \dR^if_*(\fF \otimes f^* \fE) \cong \dR^i f_*(\fF) \otimes \fE.
+        \end{equation*}
 
-\begin{proof}
-  The pullback of a locally free sheaf of finite rank is also locally free of finite rank.
-  Localization is an exact monoidal functor from the category of $\fO_Y$-modules to the category of Abelian groups, so by checking exactness at stalks, tensoring by $\fE$ is an exact functor, and it also has a left adjoint, where for any $\fO_Y$-modules $\fM$ and $\fN$ (II, Ex. 5.1) 
-  \begin{align*}
-    \Hom_{\fO_Y}(\fM \otimes \fE^\vee, \fN) & \cong \Hom_{\fO_Y}(\fM, \rHom_{\fO_Y}(\fE^\vee, \fN)) \\
-    & \cong \Hom_{\fO_Y}(\fM, \fN \otimes (\fE^\vee)^\vee) \\
-    & \cong \Hom_{\fO_Y}(\fM, \fN \otimes \fE).
-  \end{align*}
-  Hence, the result follows from the $i = 0$ case, (1.3A), and Lemma 1.
-  \filbreak
-  It remains to prove
-  \begin{equation*}
-    f_*(\fF \otimes f^* \fE) \cong f_*(\fF) \otimes \fE.
-  \end{equation*}
-  We first show there is a natural map
-  \begin{equation*}
-    \phi : f_*(\fF) \otimes \fE \to f_*(\fF \otimes f^*\fE).
-  \end{equation*}
-  Let $\fP$ be the presheaf on $Y$ defined for open subsets $V \subseteq Y$ by
-  \begin{equation*}
-    V \mapsto f_*(\fF)(V) \otimes \fE(V)
-  \end{equation*}
-  so that $\sh{\fP} \cong f_*(\fF) \otimes \fE$, and let $\fQ$ be the presheaf on $X$ defined for open subsets $U \subseteq X$ by
-  \begin{equation*}
-    U \mapsto \fF(U) \otimes f^*\fE(U)
-  \end{equation*}
-  so that $\sh{\fQ} \cong \fF \otimes f^*\fE$.
-  Sheafification and pushforward do not commute; nonetheless there is a natural morphism $\sh{(f_*\fQ)} \to f_*(\sh{\fQ})$.
-  In particular, consider the natural morphism $\fQ \to \sh{\fQ}$.
-  Taking the pushforward gives $f_*\fQ \to f_*(\sh{\fQ})$.
-  Because $f_*(\sh{\fQ})$ is already a sheaf, by the universal property of sheafification (II, 1.2), there is unique map $\tau : \sh{(f_*\fQ)} \to f_*(\sh{\fQ})$ fitting into the commutative diagram
-  \[ \begin{tikzcd}
-                             & \sh{(f_*\fQ)} \arrow["\tau", rd, dashed] &               \\
-f_*\fQ \arrow[rr] \arrow[ru] &                                & f_*(\sh{\fQ})
-\end{tikzcd}. \]
-  Thus, we define a morphism of presheaves $\psi : \fP \to f_*\fQ$, which induces a morphism of sheaves $\sh{\psi} : \sh{\fP} \to \sh{(f_*\fQ)}$, and composing with $\tau$ gives our desired morphism
-  \begin{equation*}
-    \phi = \tau \circ \sh{\psi} : \sh{\fP} \to \sh{(f_*\fQ)} \to f_*(\sh{\fQ}).
-  \end{equation*}
-  The pushforward for the presheaf $\fQ$ distributes over the tensor product, that is
-  \begin{equation*}
-    \Gamma(V, f_*\fQ) = f_*(\fF)(V) \otimes f_*f^*(\fE)(V).
-  \end{equation*}
-  There is a natural morphism of sheaves $\iota : \fE \to f_*f^*(\fE)$, so take $\psi = \id_{f_*\fF} \otimes \iota$ to be our morphism of presheaves
-  \[ \begin{tikzcd}
-\sh{\fP} \arrow[r, "\sh{\psi}"] \arrow[rr, "\phi", bend left] & \sh{(f_*\fQ)} \arrow[r, "\tau"] & f_*(\sh{\fQ}) \\
-\fP \arrow[r, "\psi"'] \arrow[u]                              & f_*\fQ \arrow[u] \arrow[ru]     &              
-  \end{tikzcd}. \]
-  Now that we defined a morphism, we remark that the question is local on $Y$.
-  In particular, let $y$ be a point in $Y$, and let $V$ be an open subset of $Y$ such that $\fE$ is free of finite rank.
-  Then $f^*\fE$ is free of finite rank on $U = f^{-1}(V)$.
-  Consider the commutative diagram
-  \[ \begin{tikzcd}
-    U \arrow[r, "\bar{f}"] \arrow[d, "i"'] & V \arrow[d, "j"] \\
-    X \arrow[r, "f"]                       & Y               
-  \end{tikzcd}. \]
-  Because $i$ and $j$ are open immersions, there is an isomorphism of functors
-  \begin{equation*}
-    j^*f_* \cong \bar{f}_*i^*, \quad i^*f^* \cong \bar{f}^*j^*.
-  \end{equation*}
-  Pullback distributes over tensor products, so we have
-  \begin{align*}
-    j^*f_*(\fF \otimes f^*\fE) & \cong \bar{f}_*i^*(\fF \otimes f^*\fE) \\
-    & \cong \bar{f}_*(i^*\fF \otimes i^*f^*\fE) \\
-    & \cong \bar{f}_*(i^*\fF \otimes \bar{f}^*j^*\fE), \\
-    j^*(f_*(\fF) \otimes \fE) & \cong j^*f_*(\fF) \otimes j^*\fE \\
-    & \cong \bar{f}_*(i^*\fF) \otimes j^*\fE.
-  \end{align*}
-  Open immersions preserve stalks, so we can assume $\fE$ to be a free $\fO_X$-module of finite rank $n$.
-  The pullback of a free sheaf of finite rank is also free of finite rank, so we have the isomorphisms
-  \begin{align*}
-    f_*(\fF \otimes f^*\fE) & \cong f_*(\fF \otimes \fO_X^{\oplus n}) \\
-    & \cong f_*(\fF^{\oplus n}) \\
-    & \cong f_*(\fF)^{\oplus n} \\
-    & \cong f_*(\fF) \otimes \fO_Y^{\oplus n} \\
-    & \cong f_*(\fF) \otimes \fE.
-  \end{align*}
-  The third isomorphism holds because $f_*$ is right adjoint, and right adjoint functors preserve limits, and a direct sum of finite number of terms can be realized as a limit, so the pushforward and finite direct sums commute.
-\end{proof}
+        \begin{proof}
+          The pullback of a locally free sheaf of finite rank is also locally free of finite rank.
+          Localization is an exact monoidal functor from the category of $\fO_Y$-modules to the category of Abelian groups, so by checking exactness at stalks, tensoring by $\fE$ is an exact functor, and it also has a left adjoint, where for any $\fO_Y$-modules $\fM$ and $\fN$ (II, Ex. 5.1)
+          \begin{align*}
+            \Hom_{\fO_Y}(\fM \otimes \fE^\vee, \fN) & \cong \Hom_{\fO_Y}(\fM, \rHom_{\fO_Y}(\fE^\vee, \fN)) \\
+                                                    & \cong \Hom_{\fO_Y}(\fM, \fN \otimes (\fE^\vee)^\vee)  \\
+                                                    & \cong \Hom_{\fO_Y}(\fM, \fN \otimes \fE).
+          \end{align*}
+          Hence, the result follows from the $i = 0$ case, (1.3A), and Lemma 1.
 
-\newpage
+          It remains to show
+          \begin{equation*}
+            f_*(\fF \otimes f^* \fE) \cong f_*(\fF) \otimes \fE.
+          \end{equation*}
+          We first show there is a natural map
+          \begin{equation*}
+            \phi : f_*(\fF) \otimes \fE \to f_*(\fF \otimes f^*\fE).
+          \end{equation*}
+          Let $\fP$ be the presheaf on $Y$ defined for open subsets $V \subseteq Y$ by
+          \begin{equation*}
+            V \mapsto f_*(\fF)(V) \otimes \fE(V)
+          \end{equation*}
+          so that $\sh{\fP} \cong f_*(\fF) \otimes \fE$, and let $\fQ$ be the presheaf on $X$ defined for open subsets $U \subseteq X$ by
+          \begin{equation*}
+            U \mapsto \fF(U) \otimes f^*\fE(U)
+          \end{equation*}
+          so that $\sh{\fQ} \cong \fF \otimes f^*\fE$.
+          Sheafification and pushforward do not commute; nonetheless there is a natural morphism $\sh{(f_*\fQ)} \to f_*(\sh{\fQ})$.
+          In particular, consider the natural morphism $\fQ \to \sh{\fQ}$.
+          Taking the pushforward gives $f_*\fQ \to f_*(\sh{\fQ})$.
+          Because $f_*(\sh{\fQ})$ is already a sheaf, by the universal property of sheafification (II, 1.2), there is unique map $\tau : \sh{(f_*\fQ)} \to f_*(\sh{\fQ})$ fitting into the commutative diagram
+          \[ \begin{tikzcd}
+              & \sh{(f_*\fQ)} \arrow["\tau", rd, dashed] &               \\
+              f_*\fQ \arrow[rr] \arrow[ru] &                                & f_*(\sh{\fQ})
+            \end{tikzcd}. \]
+          Thus, we define a morphism of presheaves $\psi : \fP \to f_*\fQ$, which induces a morphism of sheaves $\sh{\psi} : \sh{\fP} \to \sh{(f_*\fQ)}$, and composing with $\tau$ gives our desired morphism
+          \begin{equation*}
+            \phi = \tau \circ \sh{\psi} : \sh{\fP} \to \sh{(f_*\fQ)} \to f_*(\sh{\fQ}).
+          \end{equation*}
+          The pushforward for the presheaf $\fQ$ distributes over the tensor product, that is
+          \begin{equation*}
+            \Gamma(V, f_*\fQ) = f_*(\fF)(V) \otimes f_*f^*(\fE)(V).
+          \end{equation*}
+          There is a natural morphism of sheaves $\iota : \fE \to f_*f^*(\fE)$, so take $\psi = \id_{f_*\fF} \otimes \iota$ to be our morphism of presheaves
+          \[ \begin{tikzcd}
+              \sh{\fP} \arrow[r, "\sh{\psi}"] \arrow[rr, "\phi", bend left] & \sh{(f_*\fQ)} \arrow[r, "\tau"] & f_*(\sh{\fQ}) \\
+              \fP \arrow[r, "\psi"'] \arrow[u]                              & f_*\fQ \arrow[u] \arrow[ru]     &
+            \end{tikzcd}. \]
+          Now that we defined a morphism, we remark that the question is local on $Y$.
+          In particular, let $y$ be a point in $Y$, and let $V$ be an open subset of $Y$ such that $\fE$ is free of finite rank.
+          Then $f^*\fE$ is free of finite rank on $U = f^{-1}(V)$.
+          Consider the commutative diagram
+          \[ \begin{tikzcd}
+              U \arrow[r, "\bar{f}"] \arrow[d, "i"'] & V \arrow[d, "j"] \\
+              X \arrow[r, "f"]                       & Y
+            \end{tikzcd}. \]
+          Because $i$ and $j$ are open immersions, there is an isomorphism of functors
+          \begin{equation*}
+            j^*f_* \cong \bar{f}_*i^*, \quad i^*f^* \cong \bar{f}^*j^*.
+          \end{equation*}
+          Pullback distributes over tensor products, so we have
+          \begin{align*}
+            j^*f_*(\fF \otimes f^*\fE) & \cong \bar{f}_*i^*(\fF \otimes f^*\fE)           \\
+                                       & \cong \bar{f}_*(i^*\fF \otimes i^*f^*\fE)        \\
+                                       & \cong \bar{f}_*(i^*\fF \otimes \bar{f}^*j^*\fE), \\
+            j^*(f_*(\fF) \otimes \fE)  & \cong j^*f_*(\fF) \otimes j^*\fE                 \\
+                                       & \cong \bar{f}_*(i^*\fF) \otimes j^*\fE.
+          \end{align*}
+          Open immersions preserve stalks, so we can assume $\fE$ to be a free $\fO_X$-module of finite rank $n$.
+          The pullback of a free sheaf of finite rank is also free of finite rank, so we have the isomorphisms
+          \begin{align*}
+            f_*(\fF \otimes f^*\fE) & \cong f_*(\fF \otimes \fO_X^{\oplus n}) \\
+                                    & \cong f_*(\fF^{\oplus n})               \\
+                                    & \cong f_*(\fF)^{\oplus n}               \\
+                                    & \cong f_*(\fF) \otimes \fO_Y^{\oplus n} \\
+                                    & \cong f_*(\fF) \otimes \fE.
+          \end{align*}
+          The third isomorphism holds because $f_*$ is right adjoint, and right adjoint functors preserve limits, and a direct sum of finite number of terms can be realized as a limit, so the pushforward and finite direct sums commute.
+        \end{proof}
 
-\begin{lemma}
-  Let $\fA, \fB, \fC$ be Abelian categories, and assume $\fA$ and $\fB$ have enough injectives.
-  Let $F : \fA \to \fB$ and $G : \fB \to \fC$ be functors such that $F$ has a left adjoint (or more generally preserves injectives), and either
-  \begin{itemize}
-    \item[(a)] $F$ is left exact, and $G$ is exact; or
-    \item[(b)] $F$ is exact, and $G$ is left exact.
-  \end{itemize}
-  In each case, we have the following natural isomorphisms
-  \begin{itemize}
-    \item[(a)] $\dR^i(G \circ F) \cong G \circ \dR^i(F)$;
-    \item[(b)] $\dR^i(G \circ F) \cong \dR^i(G) \circ F$.
-  \end{itemize}
-\end{lemma}
+        \begin{lemma}
+          Let $\fA, \fB, \fC$ be Abelian categories, and assume $\fA$ and $\fB$ have enough injectives.
+          Let $F : \fA \to \fB$ and $G : \fB \to \fC$ be functors such that $F$ has a left adjoint (or more generally preserves injectives), and either
+          \begin{itemize}
+            \item[(a)] $F$ is left exact, and $G$ is exact; or
+            \item[(b)] $F$ is exact, and $G$ is left exact.
+          \end{itemize}
+          In each case, we have the following natural isomorphisms
+          \begin{itemize}
+            \item[(a)] $\dR^i(G \circ F) \cong G \circ \dR^i(F)$;
+            \item[(b)] $\dR^i(G \circ F) \cong \dR^i(G) \circ F$.
+          \end{itemize}
+        \end{lemma}
 
-\begin{proof} 
-  The proof for (b) is similar to the proof of Exercise 1, so we prove (a).
-  Let $A$ be an object in $\fA$ and choose an injective resolution
-  \begin{equation*}
-    0 \to A \to I^\bullet,
-  \end{equation*}
-  where one has
-  \begin{equation*}
-    \dR^iF(A) = h^i(FI^\bullet).
-  \end{equation*}
-  Applying $G \circ F$ gives a complex in $\fC$
-  \begin{equation*}
-    0 \to (G \circ F)A \to (G \circ F) I^\bullet,
-  \end{equation*}
-  and we want to show
-  \begin{equation*}
-    h^i((G \circ F)I^\bullet) \cong G \circ h^i(FI^\bullet).
-  \end{equation*}
-  But this follows from exact functors commuting with cohomology.
-  
-\end{proof}
+        \begin{proof}
+          The proof for (b) is similar to the proof of Exercise 1, so we prove (a).
+          Let $A$ be an object in $\fA$ and choose an injective resolution
+          \begin{equation*}
+            0 \to A \to I^\bullet,
+          \end{equation*}
+          where one has
+          \begin{equation*}
+            \dR^iF(A) = h^i(FI^\bullet).
+          \end{equation*}
+          Applying $G \circ F$ gives a complex in $\fC$
+          \begin{equation*}
+            0 \to (G \circ F)A \to (G \circ F) I^\bullet,
+          \end{equation*}
+          and we want to show
+          \begin{equation*}
+            h^i((G \circ F)I^\bullet) \cong G \circ h^i(FI^\bullet).
+          \end{equation*}
+          But this follows from exact functors commuting with cohomology.
+
+        \end{proof}
 
 \end{enumerate}
 

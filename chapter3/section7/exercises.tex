@@ -1,114 +1,119 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 3, Section 7}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $X$ be an integral projective scheme of dimension $\geq 1$ over a field $k$, and let $\fL$ be an ample invertible sheaf on $X$. Then $\cH^0(X, \fL^{-1}) = 0$.
+  \item Let $X$ be an integral projective scheme of dimension $\geq 1$ over a field $k$, and let $\fL$ be an ample invertible sheaf on $X$. Then $\cH^0(X, \fL^{-1}) = 0$.
 
-\begin{proof}
-  A global section of $\fL^{-1}$ defines an $\fO_X$-module morphism
-  \begin{equation*}
-    \varphi : \fL \to \fO_X,
-  \end{equation*}
-  and hence induces morphisms
-  \begin{equation*}
-    \varphi^{\otimes n} : \fL^{\otimes n} \to \fO_X
-  \end{equation*}
-  for all $n > 0$.
-  Since $\fL$ is locally free of rank one, $\varphi$ is locally given by multiplication by a section of $\fO_X$.
-  If for some $x \in X$ the stalk map $\varphi_x^{\otimes n}$ is not injectve, it must be the zero map.
-  As $X$ is integral, this forces $\varphi$ to vanish at the generic point, hence $\varphi = 0$.
-  Assume therefore $\varphi \neq 0$.
-  Since the global section functor is left exact, $\varphi^{\otimes n}$ induces an injective map
-  \begin{equation*}
-    \Gamma(\varphi^{\otimes n}) : \cH^0(X, \fL^{\otimes n}) \to \cH^0(X, \fO_X).
-  \end{equation*}
-  However, $\cH^0(X, \fO_X)$ is finite dimensional over $k$ (5.2), while for $n \gg 0$, we have
-  \begin{equation*}
-    \dim_k \cH^0(X, \fL^{\otimes n}) = \chi(\fL^{\otimes n}),
-  \end{equation*}
-  which is a polynomial in $n$ (5.3), and hence eventually exceeds $\dim_k \cH^0(X, \fO_X)$.
-  This is a contradiction, and therefore $\varphi = 0$.
-\end{proof}
+        \begin{proof}
+          A global section of $\fL^{-1}$ defines an $\fO_X$-module morphism
+          \begin{equation*}
+            \varphi : \fL \to \fO_X,
+          \end{equation*}
+          and hence induces morphisms
+          \begin{equation*}
+            \varphi^{\otimes n} : \fL^{\otimes n} \to \fO_X
+          \end{equation*}
+          for all $n > 0$.
+          Since $\fL$ is locally free of rank one, $\varphi$ is locally given by multiplication by a section of $\fO_X$.
+          If for some $x \in X$ the stalk map $\varphi_x^{\otimes n}$ is not injectve, it must be the zero map.
+          As $X$ is integral, this forces $\varphi$ to vanish at the generic point, hence $\varphi = 0$.
+          Assume therefore $\varphi \neq 0$.
+          Since the global section functor is left exact, $\varphi^{\otimes n}$ induces an injective map
+          \begin{equation*}
+            \Gamma(\varphi^{\otimes n}) : \cH^0(X, \fL^{\otimes n}) \to \cH^0(X, \fO_X).
+          \end{equation*}
+          However, $\cH^0(X, \fO_X)$ is finite dimensional over $k$ (5.2), while for $n \gg 0$, we have
+          \begin{equation*}
+            \dim_k \cH^0(X, \fL^{\otimes n}) = \chi(\fL^{\otimes n}),
+          \end{equation*}
+          which is a polynomial in $n$ (5.3), and hence eventually exceeds $\dim_k \cH^0(X, \fO_X)$.
+          This is a contradiction, and therefore $\varphi = 0$.
+        \end{proof}
 
-\item Let $f : X \to Y$ be a finite morphism of projective schemes of the same dimension over a field $k$, and let $\omega_Y^\circ$ be a dualizing sheaf for $Y$.
-\begin{itemize}
-  \item[(a)] Show that $f^! \omega_Y^\circ$ is a dualizing sheaf for $X$, where $f^!$ is defined as in (Ex. 6.10).
-  \item[(b)] If $X$ and $Y$ are both nonsingular, and $k$ algebraically closed, conclude that there is a natural trace map $t : f_* \omega_X \to \omega_Y$.
-\end{itemize}
+  \item Let $f : X \to Y$ be a finite morphism of projective schemes of the same dimension over a field $k$, and let $\omega_Y^\circ$ be a dualizing sheaf for $Y$.
+        \begin{itemize}
+          \item[(a)] Show that $f^! \omega_Y^\circ$ is a dualizing sheaf for $X$, where $f^!$ is defined as in (Ex. 6.10).
+          \item[(b)] If $X$ and $Y$ are both nonsingular, and $k$ algebraically closed, conclude that there is a natural trace map $t : f_* \omega_X \to \omega_Y$.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)] We must first define a trace map $t_X : \cH^n(X, f^!\omega_Y^\circ) \to k$.
-  By (Ex. 4.1), we have a natural isomorphism
-  \begin{equation*}
-    \cH^n(X, f^! \omega_Y^\circ) \xrightarrow{\sim} \cH^n(Y, f_*f^!\omega_Y^\circ).
-  \end{equation*}
-  There is a natural morphism of $\fO_Y$-modules $f_*f^!\omega_Y \to \omega_Y$, which induces a map between cohomology
-  \begin{equation*}
-    \cH^n(Y, f_*f^!\omega_Y^\circ) \to \cH^n(Y, \omega_Y^\circ).
-  \end{equation*}
-  Composing with the trace map of $\omega_Y^\circ$ gives us a trace map for $f^!\omega_Y^\circ$.
-  It remains to show $t_X$ satisfies the universal property, so let $\fF$ be a coherent sheaf on $X$.
-  Then $f_*\fF$ is also a coherent sheaf on $Y$, so by (Ex. 6.10), we have
-  \begin{equation*}
-    \Hom_X(\fF, f^!\omega_Y) \cong \Hom_Y(f_*\fF, \omega_Y) \cong \cH^n(Y, f_*\fF)^\vee \cong \cH^n(X, \fF)^\vee.
-  \end{equation*}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] We must first define a trace map $t_X : \cH^n(X, f^!\omega_Y^\circ) \to k$.
+                  By (Ex. 4.1), we have a natural isomorphism
+                  \begin{equation*}
+                    \cH^n(X, f^! \omega_Y^\circ) \xrightarrow{\sim} \cH^n(Y, f_*f^!\omega_Y^\circ).
+                  \end{equation*}
+                  There is a natural morphism of $\fO_Y$-modules $f_*f^!\omega_Y \to \omega_Y$, which induces a map between cohomology
+                  \begin{equation*}
+                    \cH^n(Y, f_*f^!\omega_Y^\circ) \to \cH^n(Y, \omega_Y^\circ).
+                  \end{equation*}
+                  Composing with the trace map of $\omega_Y^\circ$ gives us a trace map for $f^!\omega_Y^\circ$.
+                  It remains to show $t_X$ satisfies the universal property, so let $\fF$ be a coherent sheaf on $X$.
+                  Then $f_*\fF$ is also a coherent sheaf on $Y$, so by (Ex. 6.10), we have
+                  \begin{equation*}
+                    \Hom_X(\fF, f^!\omega_Y) \cong \Hom_Y(f_*\fF, \omega_Y) \cong \cH^n(Y, f_*\fF)^\vee \cong \cH^n(X, \fF)^\vee.
+                  \end{equation*}
 
-  \item[(b)] By (Ex. 6.10), defining a morphim $t : f_*\omega_X \to \omega_Y$ is the same as defining a morphism $\omega_X \to f^!\omega_Y$, so we can let $t$ be the morphism corresponding to a fixed (unique) isomorphism $\omega_X \to f^!\omega_Y$.
-\end{itemize} 
-\end{proof}
+            \item[(b)] By (Ex. 6.10), defining a morphim $t : f_*\omega_X \to \omega_Y$ is the same as defining a morphism $\omega_X \to f^!\omega_Y$, so we can let $t$ be the morphism corresponding to a fixed (unique) isomorphism $\omega_X \to f^!\omega_Y$.
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{3.}] Let $X = \PP_k^n$. Show that $\cH^q(X, \Omega_X^p) = 0$ for $p \neq q$, $k$ for $p = q$, $0 \leq p, q \leq n$.
+  \item[\textbf{3.}] Let $X = \PP_k^n$. Show that $\cH^q(X, \Omega_X^p) = 0$ for $p \neq q$, $k$ for $p = q$, $0 \leq p, q \leq n$.
 
-\begin{proof}
-  Consider the exact sequence (II, 8.13)
-  \[ \begin{tikzcd}
-    0 \arrow[r] & \Omega_X \arrow[r] & \fO_X(-1)^{\oplus n + 1} \arrow[r] & \fO_X \arrow[r] & 0.
-  \end{tikzcd} \]
-  By (II, Ex. 5.16c), for each $0 \leq p \leq n$, there exists a filtration $\{ \fF^q\}$ of $$\fG^{p + 1} := \bigwedge^{p + 1} \fO_X(-1)^{\oplus n + 1} \cong \fO_X(-1)^{\oplus {n + 1 \choose p + 1}}$$ such that
-  \begin{equation*}
-    \fF^q / \fF^{q + 1} \cong \Omega_X^q \otimes \bigwedge^{p + 1 - q} \fO_X = \begin{cases*}
-      \Omega_X^q & $q = p, p + 1$ \\ 
-      0 & otherwise.
-    \end{cases*}.
-  \end{equation*}
-  Since $\fO_X$ has rank one,
-  \begin{equation*}
-    \fG^{p + 1} = \fF^0 = \fF^1 = \cdots = \fF^p, \quad \fF^p / \fF^{p + 1} \cong \Omega_X^p, \quad \fF^{p + 1} \cong \Omega_X^{p + 1},
-  \end{equation*}
-  which can be put into the short exact sequence
-  \[ \begin{tikzcd}
-0 \arrow[r] & \Omega_X^{p + 1} \arrow[r] & \fG^{p + 1} \arrow[r] & \Omega_X^p \arrow[r] & 0.
-\end{tikzcd} \]
-  Taking the long exact sequence of cohomology gives
-  \[ \begin{tikzcd}
-\cdots \arrow[r] & {\cH^i(X, \fG^{p + 1})} \arrow[r] & {\cH^i(X, \Omega_X^{p})} \arrow[r] & {\cH^{i + 1}(X, \Omega_X^{p + 1})} \arrow[r] & {\cH^{i+1}(X, \fG^{p + 1})} \arrow[r] & \cdots
-\end{tikzcd} \]
-Direct sums commute with cohomology (2.9), and $\cH^i(X, \fO_X(-1)) = 0$ for all $i$, which means $\cH^i(X, \fG^{p + 1}) = 0$, so from the long exact sequence, we obtain the isomorphisms
-\begin{equation*}
-  \cH^i(X, \Omega_X^p) \cong \cH^{i + 1}(X, \Omega_X^{p + 1}).
-\end{equation*}
-Hence, if $q \geq p$,
-\begin{equation*}
-  \cH^q(X, \Omega_X^p) \cong \cH^{q - p}(X, \fO_X) = \begin{cases*}
-    k & \quad $p = q$, \\
-    0 & otherwise.
-  \end{cases*}
-\end{equation*}
-The other Hodge numbers are obtained via Serre duality.
-\end{proof}
+        \begin{proof}
+          Consider the Euler sequence of (II, 8.13)
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \Omega_X \arrow[r] & \fO_X(-1)^{\oplus n + 1} \arrow[r] & \fO_X \arrow[r] & 0.
+            \end{tikzcd} \]
+          For each $0 \leq p \leq n$, let $\fG^{p + 1} = \bigwedge^{p + 1} \fO_X(-1)^{\oplus n + 1}$, which is isomorphic to the direct sum of ${n + 1 \choose p + 1}$ copies of $\fO_X(-1)$.
+          By (II, Ex. 5.16c), for each $0 \leq p \leq n$, there exists a filtration $\{ \fF^q\}$ of $\fG^{p + 1}$ such that
+          \begin{equation*}
+            \fF^q / \fF^{q + 1} \cong \Omega_X^q \otimes \bigwedge^{p + 1 - q} \fO_X = \begin{cases*}
+              \Omega_X^q & $q = p, p + 1$ \\
+              0          & otherwise.
+            \end{cases*}.
+          \end{equation*}
+          Since $\fO_X$ has rank one,
+          \begin{equation*}
+            \fG^{p + 1} = \fF^0 = \fF^1 = \cdots = \fF^p, \quad \fF^p / \fF^{p + 1} \cong \Omega_X^p, \quad \fF^{p + 1} \cong \Omega_X^{p + 1},
+          \end{equation*}
+          which can be put into the short exact sequence
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \Omega_X^{p + 1} \arrow[r] & \fG^{p + 1} \arrow[r] & \Omega_X^p \arrow[r] & 0.
+            \end{tikzcd} \]
+          Taking the long exact sequence of cohomology gives
+          \[ \begin{tikzcd}
+              \cdots \arrow[r] & {\cH^i(X, \fG^{p + 1})} \arrow[r] & {\cH^i(X, \Omega_X^{p})} \arrow[r] & {\cH^{i + 1}(X, \Omega_X^{p + 1})} \arrow[r] & {\cH^{i+1}(X, \fG^{p + 1})} \arrow[r] & \cdots
+            \end{tikzcd} \]
+          Direct sums commute with cohomology (2.9), and $\cH^i(X, \fO_X(-1)) = 0$ for all $i$, which means $\cH^i(X, \fG^{p + 1}) = 0$, so from the long exact sequence, we obtain the isomorphisms
+          \begin{equation*}
+            \cH^i(X, \Omega_X^p) \cong \cH^{i + 1}(X, \Omega_X^{p + 1}).
+          \end{equation*}
+          Hence, if $q \geq p$,
+          \begin{equation*}
+            \cH^q(X, \Omega_X^p) \cong \cH^{q - p}(X, \fO_X) = \begin{cases*}
+              k & \quad $p = q$, \\
+              0 & otherwise.
+            \end{cases*}
+          \end{equation*}
+          The other Hodge numbers are obtained via Serre duality.
+        \end{proof}
 
-\item[\textbf{4.}] \textit{The Cohomology Class of a Subvariety.} Let $X$ be a nonsingular projective variety of dimension $n$ over an algebraically closed field $k$. Let $Y$ be a nonsingular subvariety of codimension $p$ (hence dimension $n - p$). From the natural map $\Omega_X \otimes \fO_Y \to \Omega_Y$ of (II, 8.12) we deduce a map $\Omega_X^{n - p} \to \Omega_Y^{n - p}$. This induces a map on cohomology $\cH^{n - p}(X, \Omega_X^{n - p}) \to \cH^{n - p}(Y, \Omega_Y^{n - p})$. Now $\Omega_Y^{n - p} = \omega_Y$ is a dualizing sheaf for $Y$, so we have the trace map $t_Y : \cH^{n - p}(Y, \Omega_Y^{n - p}) \to k$. Composing, we obtain a linear map $\cH^{n - p}(X, \Omega_X^{n - p}) \to k$. By (7.13) this corresponds to an element $\eta(Y) \in \cH^p(X, \Omega_X^p)$, which we call the \textit{cohomology class} of $Y$.
-\begin{itemize}
-  \item[(a)] If $P \in X$ is a closed point, show that $t_X(\eta(P)) = 1$, where $\eta(P) \in \cH^n(X, \Omega^n)$ and $t_X$ is the trace map.
-  \item[(b)] If $X = \PP^n$, identify $\cH^p(X, \Omega^p)$ with $k$ by (Ex. 7.3), and show that $\eta(Y) = (\deg Y) \cdot 1$, where $\deg Y$ is its \textit{degree} as a projective variety (I, \S 7).
-  \item[(c)] For any scheme $X$ of finite type over $k$, we define a homomorphism of sheaves of Abelian groups $\dlog : \fO_X^* \to \Omega_X$ by $\dlog(f) = f^{-1} df$. Here $\fO_X^*$ is a group under multiplication, and $\Omega_X$ is a group under addition. This induces a map on cohomology $\pic{X} = \cH^1(X, \fO_X^*) \to \cH^1(X, \Omega_X)$ which we denote by $c$.
-  \item[(d)] Returning to the hypotheses above, suppose $p = 1$. Show that $\eta(Y) = c(\fL(Y))$, where $\fL(Y)$ is the invertible sheaf corresponding to the divisor $Y$.
-\end{itemize}
+  \item[\textbf{4.}] \textit{The Cohomology Class of a Subvariety.} Let $X$ be a nonsingular projective variety of dimension $n$ over an algebraically closed field $k$. Let $Y$ be a nonsingular subvariety of codimension $p$ (hence dimension $n - p$). From the natural map $\Omega_X \otimes \fO_Y \to \Omega_Y$ of (II, 8.12) we deduce a map $\Omega_X^{n - p} \to \Omega_Y^{n - p}$. This induces a map on cohomology $\cH^{n - p}(X, \Omega_X^{n - p}) \to \cH^{n - p}(Y, \Omega_Y^{n - p})$. Now $\Omega_Y^{n - p} = \omega_Y$ is a dualizing sheaf for $Y$, so we have the trace map $t_Y : \cH^{n - p}(Y, \Omega_Y^{n - p}) \to k$. Composing, we obtain a linear map $\cH^{n - p}(X, \Omega_X^{n - p}) \to k$. By (7.13) this corresponds to an element $\eta(Y) \in \cH^p(X, \Omega_X^p)$, which we call the \textit{cohomology class} of $Y$.
+        \begin{itemize}
+          \item[(a)] If $P \in X$ is a closed point, show that $t_X(\eta(P)) = 1$, where $\eta(P) \in \cH^n(X, \Omega^n)$ and $t_X$ is the trace map.
+          \item[(b)] If $X = \PP^n$, identify $\cH^p(X, \Omega^p)$ with $k$ by (Ex. 7.3), and show that $\eta(Y) = (\deg Y) \cdot 1$, where $\deg Y$ is its \textit{degree} as a projective variety (I, \S 7).
+          \item[(c)] For any scheme $X$ of finite type over $k$, we define a homomorphism of sheaves of Abelian groups $\dlog : \fO_X^* \to \Omega_X$ by $\dlog(f) = f^{-1} df$. Here $\fO_X^*$ is a group under multiplication, and $\Omega_X$ is a group under addition. This induces a map on cohomology $\pic{X} = \cH^1(X, \fO_X^*) \to \cH^1(X, \Omega_X)$ which we denote by $c$.
+          \item[(d)] Returning to the hypotheses above, suppose $p = 1$. Show that $\eta(Y) = c(\fL(Y))$, where $\fL(Y)$ is the invertible sheaf corresponding to the divisor $Y$.
+        \end{itemize}
 
 \end{enumerate}
 

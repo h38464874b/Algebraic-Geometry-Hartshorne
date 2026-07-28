@@ -1,283 +1,287 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 3, Section 6}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item[\textbf{1.}] Let $(X, \fO_X)$ be a ringed space, and let $\fF', \fF'' \in \goth{Mod}(X)$. An \textit{extension} of $\fF''$ by $\fF'$ is a short exact sequence
-\[ \begin{tikzcd}
-0 \arrow[r] & \fF' \arrow[r] & \fF \arrow[r] & \fF'' \arrow[r] & 0
-\end{tikzcd} \]
-in $\goth{Mod}(X)$. Two extensions are \textit{isomorphic} if there is an isomorphism of the short exact sequences, inducing the identity maps on $\fF'$ and $\fF''$. Given an extension as above consider the long exact sequence arising from $\Hom(\fF'', \cdot)$, in particular the map
-\begin{equation*}
-  \delta : \Hom(\fF'', \fF'') \to \Ext^1(\fF'', \fF'),
-\end{equation*}
-and let $\xi \in \Ext^1(\fF'', \fF')$ by $\delta(1_{\fF''})$. Show that this process gives a one-to-one correspondence between isomorphism classes of extensions of $\fF''$ by $\fF'$, and elements of the group $\Ext^1(\fF'', \fF')$.
+  \item[\textbf{1.}] Let $(X, \fO_X)$ be a ringed space, and let $\fF', \fF'' \in \goth{Mod}(X)$. An \textit{extension} of $\fF''$ by $\fF'$ is a short exact sequence
+        \[ \begin{tikzcd}
+            0 \arrow[r] & \fF' \arrow[r] & \fF \arrow[r] & \fF'' \arrow[r] & 0
+          \end{tikzcd} \]
+        in $\goth{Mod}(X)$. Two extensions are \textit{isomorphic} if there is an isomorphism of the short exact sequences, inducing the identity maps on $\fF'$ and $\fF''$. Given an extension as above consider the long exact sequence arising from $\Hom(\fF'', \cdot)$, in particular the map
+        \begin{equation*}
+          \delta : \Hom(\fF'', \fF'') \to \Ext^1(\fF'', \fF'),
+        \end{equation*}
+        and let $\xi \in \Ext^1(\fF'', \fF')$ by $\delta(1_{\fF''})$. Show that this process gives a one-to-one correspondence between isomorphism classes of extensions of $\fF''$ by $\fF'$, and elements of the group $\Ext^1(\fF'', \fF')$.
 
-\begin{proof}
-  Let $0 \to \fF' \to \fI^\bullet$ be an injective resolution of $\fF'$.
-  An element of the group $\xi \in \Ext^1(\fF'', \fF')$ gives a morphism $\xi : \fF'' \to \fI^1$ such that
-  \[ \begin{tikzcd}
-    \fF'' \arrow[d, "\xi"'] \arrow[rd, "0"] &       \\
-    \fI^1 \arrow[r, "\psi"]                                 & \fI^2
-  \end{tikzcd} \]
-  commutes, i.e., $\xi \in \Hom(\fF'', \fI^0 / \fF')$.
-  From now, denote this subsheaf of $\fI^1$ as $\fJ = \fI^0 / \fF'$.
-  The pull-back diagram of $\xi$ and $\psi$ gives the following commutative diagram with exact rows
-  \[ \begin{tikzcd}
-0 \arrow[r] & \fF' \arrow[r] \arrow[d, Rightarrow, no head] & \fI^0 \times_{\fI^1} \fF'' \arrow[r, dashed] \arrow[d, dashed] & \fF'' \arrow[d, "\xi"'] \arrow[r] & 0        \\
-0 \arrow[r] & \fF' \arrow[r]                           & \fI^0 \arrow[r, "\psi"]                                           & \fJ \arrow[r]                           & 0 
-\end{tikzcd}, \]
-so the top row is an extension of $\fF''$ by $\fF'$.
-If we are given another representative $\bar{\xi}$ of $\xi$, then $\bar{\xi} - \xi = j \circ \psi$ for some $\psi \in \Hom(\fF'', \fI^0)$, and repeating the construction above for $j \circ \psi$ gives the trivial extension $\fF' \times \fF''$ of $\fF''$ by $\fF'$, so this construction is well-defined.
-Because $\Hom(\fF'', \cdot)$ is a covariant $\delta$-functor, there is a commutative diagram
-\[ \begin{tikzcd}
-{\Hom(\fF'', \fF'')} \arrow[d] \arrow[r, "\delta"] & {\Ext^1(\fF'', \fF')} \arrow[d, Rightarrow, no head] \\
-{\Hom(\fF'', \fJ)} \arrow[r]      & {\Ext^1(\fF'', \fF')}                               
-\end{tikzcd} \]
-which ensures $\delta(1_{\fF''}) = \xi$.
-Hence, this process is surjective.
+        \begin{proof}
+          Let $0 \to \fF' \to \fI^\bullet$ be an injective resolution of $\fF'$.
+          An element of the group $\xi \in \Ext^1(\fF'', \fF')$ gives a morphism $\xi : \fF'' \to \fI^1$ such that
+          \[ \begin{tikzcd}
+              \fF'' \arrow[d, "\xi"'] \arrow[rd, "0"] &       \\
+              \fI^1 \arrow[r, "\psi"]                                 & \fI^2
+            \end{tikzcd} \]
+          commutes, i.e., $\xi \in \Hom(\fF'', \fI^0 / \fF')$.
+          From now, denote this subsheaf of $\fI^1$ as $\fJ = \fI^0 / \fF'$.
+          The pull-back diagram of $\xi$ and $\psi$ gives the following commutative diagram with exact rows
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \fF' \arrow[r] \arrow[d, Rightarrow, no head] & \fI^0 \times_{\fI^1} \fF'' \arrow[r, dashed] \arrow[d, dashed] & \fF'' \arrow[d, "\xi"'] \arrow[r] & 0        \\
+              0 \arrow[r] & \fF' \arrow[r]                           & \fI^0 \arrow[r, "\psi"]                                           & \fJ \arrow[r]                           & 0
+            \end{tikzcd}, \]
+          so the top row is an extension of $\fF''$ by $\fF'$.
+          If we are given another representative $\bar{\xi}$ of $\xi$, then $\bar{\xi} - \xi = j \circ \psi$ for some $\psi \in \Hom(\fF'', \fI^0)$, and repeating the construction above for $j \circ \psi$ gives the trivial extension $\fF' \times \fF''$ of $\fF''$ by $\fF'$, so this construction is well-defined.
+          Because $\Hom(\fF'', \cdot)$ is a covariant $\delta$-functor, there is a commutative diagram
+          \[ \begin{tikzcd}
+              {\Hom(\fF'', \fF'')} \arrow[d] \arrow[r, "\delta"] & {\Ext^1(\fF'', \fF')} \arrow[d, Rightarrow, no head] \\
+              {\Hom(\fF'', \fJ)} \arrow[r]      & {\Ext^1(\fF'', \fF')}
+            \end{tikzcd} \]
+          which ensures $\delta(1_{\fF''}) = \xi$.
+          Hence, this process is surjective.
 
-To prove injectivity, we show $\fF \cong \fI^0 \times_{\fI^1} \fF''$.
-Let $\alpha : \fF \to \fF''$ be the epimorphism from the extension.
-By injectivity of $\fI^0$, there exists a morphism $\beta : \fF \to \fI^0$ that extends $\fF' \to \fI^0$, which induces a morphism $\gamma : \fF'' \to \fI^1$ making the diagram commute
-\[ \begin{tikzcd}
-0 \arrow[r] & \fF' \arrow[r] \arrow[d, Rightarrow, no head] & \fF \arrow[r] \arrow[d, "\beta"'] & \fF'' \arrow[r] \arrow[d, "\gamma"'] & 0 \\
-0 \arrow[r] & \fF' \arrow[r]                                & \fI^0 \arrow[r]                   & \fJ \arrow[r]                       & 0
-\end{tikzcd} \]
-The pull-back $\fI^0 \times_{\fI^1} \fF''$ is unique up to unique isomorphism, so it remains to show $\gamma$ is a representative of $\xi$.
-Again, $\Hom(\fF'', \cdot)$ is a covariant $\delta$-functor with $\Hom(\fF'', \fF'') \to \Hom(\fF'', \fJ)$ given by composition with $\gamma$, so $\gamma$ is a representative of $\xi$.
+          To prove injectivity, we show $\fF \cong \fI^0 \times_{\fI^1} \fF''$.
+          Let $\alpha : \fF \to \fF''$ be the epimorphism from the extension.
+          By injectivity of $\fI^0$, there exists a morphism $\beta : \fF \to \fI^0$ that extends $\fF' \to \fI^0$, which induces a morphism $\gamma : \fF'' \to \fI^1$ making the diagram commute
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \fF' \arrow[r] \arrow[d, Rightarrow, no head] & \fF \arrow[r] \arrow[d, "\beta"'] & \fF'' \arrow[r] \arrow[d, "\gamma"'] & 0 \\
+              0 \arrow[r] & \fF' \arrow[r]                                & \fI^0 \arrow[r]                   & \fJ \arrow[r]                       & 0
+            \end{tikzcd} \]
+          The pull-back $\fI^0 \times_{\fI^1} \fF''$ is unique up to unique isomorphism, so it remains to show $\gamma$ is a representative of $\xi$.
+          Again, $\Hom(\fF'', \cdot)$ is a covariant $\delta$-functor with $\Hom(\fF'', \fF'') \to \Hom(\fF'', \fJ)$ given by composition with $\gamma$, so $\gamma$ is a representative of $\xi$.
 
-\end{proof}
+        \end{proof}
 
-\item[\textbf{3.}] Let $X$ be a Noetherian scheme, and let $\fF, \fG \in \goth{Mod}(X)$.
-\begin{itemize}
-  \item[(a)] If $\fF, \fG$ are both coherent, then $\rExt^i(\fF, \fG)$ is coherent, for all $i \geq 0$.
-  \item[(b)] If $\fF$ is coherent and $\fG$ is quasi-coherent, then $\rExt^i(\fF, \fG)$ is quasi-coherent, for all $i \geq 0$.
-\end{itemize}
+  \item[\textbf{3.}] Let $X$ be a Noetherian scheme, and let $\fF, \fG \in \goth{Mod}(X)$.
+        \begin{itemize}
+          \item[(a)] If $\fF, \fG$ are both coherent, then $\rExt^i(\fF, \fG)$ is coherent, for all $i \geq 0$.
+          \item[(b)] If $\fF$ is coherent and $\fG$ is quasi-coherent, then $\rExt^i(\fF, \fG)$ is quasi-coherent, for all $i \geq 0$.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)] The question is local (6.2), so assume $X = \spec{A}$ for some Noetherian ring $A$, and $\fF \cong \tilde{M}, \fG \cong \tilde{N}$ for some $A$-modules $M, N$.
-    Because $A$ is Noetherian, there exists a finite free resolution of $M$
-    \[ \begin{tikzcd}
-      F_\bullet \arrow[r] & M \arrow[r] & 0
-    \end{tikzcd} \]
-    where each $F_\bullet$ is a free $A$-module of finite rank.
-    Applying the $~\tilde{}~$-functor and setting $\fL_\bullet = \tilde{F}_\bullet$, we obtain a free resolution of $\fF$ of finite rank
-    \[ \begin{tikzcd}
-      \fL_\bullet \arrow[r] & \fF \arrow[r] & 0,
-    \end{tikzcd} \]
-    which we can use to compute $\rExt^i(\fF, \fG)$ (6.5)
-    \begin{equation*}
-      \rExt^i(\fF, \fG) \cong h^i(\rHom(\fL_\bullet, \fG)).
-    \end{equation*}
-    By equivalence of categories between coherent $\fO_X$-modules and finitely generated $A$-modules (\S2, 5.5), one has
-    \begin{equation*}
-      \rHom(\fL_\bullet, \fG) \cong \widetilde{\Hom_A(F_\bullet, N)}.
-    \end{equation*}
-    Each $\rHom(\fL_\bullet, \fG)$ is coherent because each $\Hom(F_\bullet, N)$ is finitely generated, and $A$ is Noetherian, so any sub-$\fO_X$-module of $\rHom(\fL_\bullet, \fG)$ is also coherent (\S2, 5.7).
-    Hence, $\rExt^i(\fF, \fG)$ is coherent for every $i \geq 0$.
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] The question is local (6.2), so assume $X = \spec{A}$ for some Noetherian ring $A$, and $\fF \cong \tilde{M}, \fG \cong \tilde{N}$ for some $A$-modules $M, N$.
+                  Because $A$ is Noetherian, there exists a finite free resolution of $M$
+                  \[ \begin{tikzcd}
+                      F_\bullet \arrow[r] & M \arrow[r] & 0
+                    \end{tikzcd} \]
+                  where each $F_\bullet$ is a free $A$-module of finite rank.
+                  Applying the $~\tilde{}~$-functor and setting $\fL_\bullet = \tilde{F}_\bullet$, we obtain a free resolution of $\fF$ of finite rank
+                  \[ \begin{tikzcd}
+                      \fL_\bullet \arrow[r] & \fF \arrow[r] & 0,
+                    \end{tikzcd} \]
+                  which we can use to compute $\rExt^i(\fF, \fG)$ (6.5)
+                  \begin{equation*}
+                    \rExt^i(\fF, \fG) \cong h^i(\rHom(\fL_\bullet, \fG)).
+                  \end{equation*}
+                  By equivalence of categories between coherent $\fO_X$-modules and finitely generated $A$-modules (\S2, 5.5), one has
+                  \begin{equation*}
+                    \rHom(\fL_\bullet, \fG) \cong \widetilde{\Hom_A(F_\bullet, N)}.
+                  \end{equation*}
+                  Each $\rHom(\fL_\bullet, \fG)$ is coherent because each $\Hom(F_\bullet, N)$ is finitely generated, and $A$ is Noetherian, so any sub-$\fO_X$-module of $\rHom(\fL_\bullet, \fG)$ is also coherent (\S2, 5.7).
+                  Hence, $\rExt^i(\fF, \fG)$ is coherent for every $i \geq 0$.
 
-    \item[(b)] The proof is essentially the same as (a) except $\fG \cong \tilde{N}$ for some $A$-module $N$, and the result still follows by (\S2, 5.7).
-  \end{itemize} 
-\end{proof}
+            \item[(b)] The proof is essentially the same as (a) except $\fG \cong \tilde{N}$ for some $A$-module $N$, and the result still follows by (\S2, 5.7).
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{6.}] Let $A$ be a regular local ring, and let $M$ be a finitely generated $A$-module. In this case, strengthen the result (6.10A) as follows.
-\begin{itemize}
-  \item[(a)] $M$ is projective if and only if $\Ext^i(M, A) = 0$ for all $i > 0$.
-  \item[(b)] Use (a) to show that for any $n$, $\pd M \leq n$ if and only if $\Ext^i(M, A) = 0$ for all $i > n$.
-\end{itemize}
+  \item[\textbf{6.}] Let $A$ be a regular local ring, and let $M$ be a finitely generated $A$-module. In this case, strengthen the result (6.10A) as follows.
+        \begin{itemize}
+          \item[(a)] $M$ is projective if and only if $\Ext^i(M, A) = 0$ for all $i > 0$.
+          \item[(b)] Use (a) to show that for any $n$, $\pd M \leq n$ if and only if $\Ext^i(M, A) = 0$ for all $i > n$.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)] All noetherian local rings have finite Krull dimension, so $n = \pd(M) < \infty$ (6.11A), and $\Ext_A^i(M, N) = 0$ for all $i > n$ and all $A$-modules $N$ (6.10A).
-    Suppose $\Ext_A^i(M, A) = 0$ for all $i > 0$.
-    Let $N$ be any finitely generated $A$-module.
-    There exists an exact sequence
-    \[ \begin{tikzcd}
-      0 \arrow[r] & K \arrow[r] & A^{\oplus m} \arrow[r] & N \arrow[r] & 0,
-    \end{tikzcd} \]
-    where $K$ is some finitely generated $A$-module.
-    Applying $\Hom_A(M, \cdot)$ gives a long exact sequence in cohomology
-    \[ \begin{tikzcd}
-      0 \arrow[r]  & {\Hom_A(M,K)} \arrow[r]   & {\Hom_A(M,A^{\oplus m})} \arrow[r] & {\Hom_A(M,N)} \arrow[r]   & {}     \\
-      {} \arrow[r] & {\Ext_A^1(M,K)} \arrow[r] & {\Ext_A^1(M,A^{\oplus m})} \arrow[r] & {\Ext_A^1(M,N)} \arrow[r] & \cdots \\
-      \cdots \arrow[r] & {\Ext_A^n(M,K)} \arrow[r] & {\Ext_A^n(M,A^{\oplus m})} \arrow[r] & {\Ext_A^n(M,N)} \arrow[r] & 0.
-    \end{tikzcd} \]
-    The $\Hom_A(M, \cdot)$ functor commute with direct sums, so $\Ext_A^i(M, A^{\oplus m}) \cong \Ext_A^i(M, A)^{\oplus m} = 0$ for all $i > 0$.
-    By the long exact sequence of above, $\Ext_A^{i - 1}(M, N) \cong \Ext_A^i(M, K)$ and $\Ext_A^n(M, N) = 0$.
-    Thus, $\Ext_A^n(M, N) = 0$ for all finitely generated $A$-modules $N$, and descending induction on $i$ shows $\Ext_A^i(M, N) = 0$ for all $i > 0$ and all finitely generated $A$-modules $N$.
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] Noetherian local rings have finite Krull dimension, so $n = \pd(M) < \infty$ (6.11A), and $\Ext_A^i(M, N) = 0$ for all $i > n$ and all $A$-modules $N$ (6.10A).
+                  Suppose $\Ext_A^i(M, A) = 0$ for all $i > 0$.
+                  Let $N$ be any finitely generated $A$-module.
+                  There exists an exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & K \arrow[r] & A^{\oplus m} \arrow[r] & N \arrow[r] & 0,
+                    \end{tikzcd} \]
+                  where $K$ is some finitely generated $A$-module.
+                  Applying $\Hom_A(M, \cdot)$ gives a long exact sequence in cohomology
+                  \[ \begin{tikzcd}
+                      0 \arrow[r]  & {\Hom_A(M,K)} \arrow[r]   & {\Hom_A(M,A^{\oplus m})} \arrow[r] & {\Hom_A(M,N)} \arrow[r]   & {}     \\
+                      {} \arrow[r] & {\Ext_A^1(M,K)} \arrow[r] & {\Ext_A^1(M,A^{\oplus m})} \arrow[r] & {\Ext_A^1(M,N)} \arrow[r] & \cdots \\
+                      \cdots \arrow[r] & {\Ext_A^n(M,K)} \arrow[r] & {\Ext_A^n(M,A^{\oplus m})} \arrow[r] & {\Ext_A^n(M,N)} \arrow[r] & 0.
+                    \end{tikzcd} \]
+                  The $\Hom_A(M, \cdot)$ functor commute with direct sums, so $\Ext_A^i(M, A^{\oplus m}) \cong \Ext_A^i(M, A)^{\oplus m} = 0$ for all $i > 0$.
+                  By the long exact sequence of above, $\Ext_A^{i - 1}(M, N) \cong \Ext_A^i(M, K)$ and $\Ext_A^n(M, N) = 0$.
+                  Thus, $\Ext_A^n(M, N) = 0$ for all finitely generated $A$-modules $N$, and descending induction on $i$ shows $\Ext_A^i(M, N) = 0$ for all $i > 0$ and all finitely generated $A$-modules $N$.
 
-    By assumption, $M$ is finitely generated, so there exists an exact sequence
-    \[ \begin{tikzcd}
-      0 \arrow[r] & Q \arrow[r] & A^{\oplus r} \arrow[r] & M \arrow[r] & 0
-    \end{tikzcd} \]
-    where $Q$ is a finitely generated $A$-module.
-    Since $\Ext^1(M, Q) = 0$, which classifies all extensions of $M$ by $Q$, $A^{\oplus r}$ must be the trivial extension of $M$ by $Q$, i.e., $A^{\oplus r} \cong M \oplus Q$.
+                  By assumption, $M$ is finitely generated, so there exists an exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & Q \arrow[r] & A^{\oplus r} \arrow[r] & M \arrow[r] & 0
+                    \end{tikzcd} \]
+                  where $Q$ is a finitely generated $A$-module.
+                  Since $\Ext^1(M, Q) = 0$, which classifies all extensions of $M$ by $Q$, $A^{\oplus r}$ must be the trivial extension of $M$ by $Q$, i.e., $A^{\oplus r} \cong M \oplus Q$.
 
-    Let $\pi : N' \to N$ be a surjective $A$-module homomorphism and $\phi : M \to N$ any $A$-module homomorphism.
-    There is a natural extension of $\phi$ to $A^{\oplus r}$ via taking the pull-back by the projection $A^{\oplus r} \to M$.
-    Any free module is projective, so there exists unique $A$-module homomorphism $h : A^{\oplus r} \to N'$ such that $\phi' = \pi \circ h$, so by restriction one has $\phi = \pi \circ \restr{h}{M}$.
-    Hence, $M$ is projective.
-    In particular, a module is projective if and only if it is a direct summand of a free module.
+                  Let $\pi : N' \to N$ be a surjective $A$-module homomorphism and $\phi : M \to N$ any $A$-module homomorphism.
+                  There is a natural extension of $\phi$ to $A^{\oplus r}$ via taking the pull-back by the projection $A^{\oplus r} \to M$.
+                  Any free module is projective, so there exists unique $A$-module homomorphism $h : A^{\oplus r} \to N'$ such that $\phi' = \pi \circ h$, so by restriction one has $\phi = \pi \circ \restr{h}{M}$.
+                  Hence, $M$ is projective.
+                  In particular, a module is projective if and only if it is a direct summand of a free module.
 
-    \item[(b)] We prove the following general result from (Weibel, 1994):
+            \item[(b)] We prove the following general result from (Weibel, 1994):
 
-    \begin{lemma}
-      Let $F : \fC \to \fD$ be a left exact contravariant functor between two Abelian categories.
-      Assume $\fA$ has enough projectives.
-      If
-      \[ \begin{tikzcd}
-        0 \arrow[r] & N \arrow[r] & P_m \arrow[r] & \cdots \arrow[r] & P_0 \arrow[r] & M \arrow[r] & 0
-      \end{tikzcd} \]
-      is an exact sequence in $\fC$ with the $P_i$ projective (or $F$-cyclic), then $\dR^iF(M) \cong \dR^{i - m - 1} F(N)$ for $i \geq m + 2$.
-    \end{lemma}
+                  \begin{lemma}
+                    Let $F : \fC \to \fD$ be a left exact contravariant functor between two Abelian categories.
+                    Assume $\fA$ has enough projectives.
+                    If
+                    \[ \begin{tikzcd}
+                        0 \arrow[r] & N \arrow[r] & P_m \arrow[r] & \cdots \arrow[r] & P_0 \arrow[r] & M \arrow[r] & 0
+                      \end{tikzcd} \]
+                    is an exact sequence in $\fC$ with the $P_i$ projective (or $F$-cyclic), then $\dR^iF(M) \cong \dR^{i - m - 1} F(N)$ for $i \geq m + 2$.
+                  \end{lemma}
 
-    For each $0 \leq j \leq m + 1$, label the morphisms $f_j : P_j \to P_{j - 1}$, where $P_{-1}, P_{m + 1}$ understood as $M, N$, respectively. 
-    We have an exact sequence
-    \[ \begin{tikzcd}
-      0 \arrow[r] & \im{f_{j + 1}} \arrow[r] & P_{j} \arrow[r] & \im{f_{j}} \arrow[r] & 0,
-    \end{tikzcd} \]
-    which induces the natural isomorphism
-    \begin{equation*}
-      \dR^i F(\im{f_{j}}) \cong \dR^{i - 1} F(\im{f_{j + 1}})
-    \end{equation*}
-    for all $i \geq 2$.
-    Thus,
-    \begin{equation*}
-      \dR^{i} F(\im{f_j}) \cong \dR^{i - k} F(\im{f_{j + k}})
-    \end{equation*}
-    for all $i \geq k + 1$.
-    Since $\im{f_0} = M$ and $\im{f_{m + 1}} = N$, setting $j = 0$ and $k = m + 1$, we obtain our desired result.
+                  For each $0 \leq j \leq m + 1$, label the morphisms $f_j : P_j \to P_{j - 1}$, where $P_{-1}, P_{m + 1}$ understood as $M, N$, respectively.
+                  We have an exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \im{f_{j + 1}} \arrow[r] & P_{j} \arrow[r] & \im{f_{j}} \arrow[r] & 0,
+                    \end{tikzcd} \]
+                  which induces the natural isomorphism
+                  \begin{equation*}
+                    \dR^i F(\im{f_{j}}) \cong \dR^{i - 1} F(\im{f_{j + 1}})
+                  \end{equation*}
+                  for all $i \geq 2$.
+                  Thus,
+                  \begin{equation*}
+                    \dR^{i} F(\im{f_j}) \cong \dR^{i - k} F(\im{f_{j + k}})
+                  \end{equation*}
+                  for all $i \geq k + 1$.
+                  Since $\im{f_0} = M$ and $\im{f_{m + 1}} = N$, setting $j = 0$ and $k = m + 1$, we obtain our desired result.
 
-    Continuing on to our main problem, let $M$ be a finitely generated $A$-module, and suppose $\Ext^i(M, A) = 0$ for all $i > n$.
-    Let $P_\bullet \to M \to 0$ be any projective resolution of $M$, and consider the exact sequence
-    \[ \begin{tikzcd}
-        0 \arrow[r] & N \arrow[r] & P_{n - 1} \arrow[r] & \cdots \arrow[r] & P_0 \arrow[r] & M \arrow[r] & 0
-      \end{tikzcd} \]
-      where $N$ is the image of $P_{n + 1} \to P_n$.
-      Applying Lemma 1 with $F = \Hom(\cdot, A)$ and $i = n + 1$ so that $\dR^iF = \Ext^i(\cdot, A)$, one has an isomorphism
-      \begin{equation*}
-        \Ext^{n + 1}(M, A) \cong \Ext^1(N, A).
-      \end{equation*}
-      But $\Ext^{n + 1}(M, A) = 0$, so $N$ is projective by (a).
-      Hence, $\pd{M} \leq n$.
-  \end{itemize}
-\end{proof}
+                  Continuing on to our main problem, let $M$ be a finitely generated $A$-module, and suppose $\Ext^i(M, A) = 0$ for all $i > n$.
+                  Let $P_\bullet \to M \to 0$ be any projective resolution of $M$, and consider the exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & N \arrow[r] & P_{n - 1} \arrow[r] & \cdots \arrow[r] & P_0 \arrow[r] & M \arrow[r] & 0
+                    \end{tikzcd} \]
+                  where $N$ is the image of $P_{n + 1} \to P_n$.
+                  Applying Lemma 1 with $F = \Hom(\cdot, A)$ and $i = n + 1$ so that $\dR^iF = \Ext^i(\cdot, A)$, one has an isomorphism
+                  \begin{equation*}
+                    \Ext^{n + 1}(M, A) \cong \Ext^1(N, A).
+                  \end{equation*}
+                  But $\Ext^{n + 1}(M, A) = 0$, so $N$ is projective by (a).
+                  Hence, $\pd{M} \leq n$.
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{7.}] Let $X = \spec{A}$ be an affine Noetherian scheme. Let $M, N$ be $A$-modules, with $M$ finitely generated. Then
-\begin{equation*}
-  \Ext_X^i(\tilde{M}, \tilde{N}) \cong \Ext_A^i(M, N)
-\end{equation*}
-and
-\begin{equation*}
-  \rExt_X^i(\tilde{M}, \tilde{N}) \cong \widetilde{\Ext_A^i(M, N)}.
-\end{equation*}
+  \item[\textbf{7.}] Let $X = \spec{A}$ be an affine Noetherian scheme. Let $M, N$ be $A$-modules, with $M$ finitely generated. Then
+        \begin{equation*}
+          \Ext_X^i(\tilde{M}, \tilde{N}) \cong \Ext_A^i(M, N)
+        \end{equation*}
+        and
+        \begin{equation*}
+          \rExt_X^i(\tilde{M}, \tilde{N}) \cong \widetilde{\Ext_A^i(M, N)}.
+        \end{equation*}
 
-\begin{proof}
-  Both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Ab}$, and the functors $\Hom_X(\tilde{M}, \tilde{\cdot})$ and $\Hom_A(M, \cdot)$ are equal (\S2, 5.5), so their derived functors (as functors from $\goth{Mod}(A)$ to $\goth{Ab})$ are the same.
+        \begin{proof}
+          Both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Ab}$, and the functors $\Hom_X(\tilde{M}, \tilde{\cdot})$ and $\Hom_A(M, \cdot)$ are equal (\S2, 5.5), so their derived functors (as functors from $\goth{Mod}(A)$ to $\goth{Ab})$ are the same.
 
-  For the next isomorphism, both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Mod}(X)$ because the $~\tilde{}~$-functor is an exact functor.
-  Both sides vanish for $i > 0$ and $N$ injective $A$-module because localization is exact, and $\tilde{N}$ is flasque if $N$ is injective (3.4).
-  Thus, to invoke (1.3A), we need to show the functors are equal for $i = 0$.
-  We check locally.
-  If $x \in X$ is a point, let $\goth{p}$ be the prime ideal in $A$ corresponding to $x$.
-  By (\S2, 5.1) and (6.8), we have
-  \begin{equation*}
-    \rExt_X^i(\tilde{M}, \tilde{N})_x \cong \Ext^i_{A_\goth{p}}(M_\goth{p}, N_\goth{p}), \quad \widetilde{\Ext_A^i(M, N)}_x \cong \Ext^i(M, N)_\goth{p},
-  \end{equation*}
-  and there is a natural map of $\fO_X$-modules
-  \begin{align*}
-     \widetilde{\Hom_A(M, N)} & \to \rHom_X(\tilde{M}, \tilde{N}) \\
-     f / s & \mapsto (m \mapsto f(m) / s).
-  \end{align*}
-  Thus, we reduce to the following algebraic problem: let $A$ be a Noetherian ring, $M, N$ $A$-modules with $M$ finitely generated.
-  Then the natural map of $A_\goth{p}$-modules
-  \begin{equation*}
-    \Hom_A(M, N)_\goth{p} \to \Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})
-  \end{equation*}
-  is an isomorphism.
-  If $M$ is finitely generated, there exists an exact sequence
-  \[ \begin{tikzcd}
-    A^{\oplus n} \arrow[r] & A^{\oplus r} \arrow[r] & M \arrow[r] & 0.
-  \end{tikzcd} \]
-  Applying $\Hom_A(\cdot, N)$ and localizing the first exact sequence gives
-  \[ \begin{tikzcd}
-    0 \arrow[r] & {\Hom_A(M, N)_\goth{p}} \arrow[r] & {\Hom_A(A^{\oplus r}, N)_\goth{p}} \arrow[r] & {\Hom_A(A^{\oplus n}, N)_\goth{p}}
-  \end{tikzcd} \]
-  Switching the order, i.e., localizing first then applying $\Hom_{A_\goth{p}}(\cdot, N_\goth{p})$, gives
-  \[ \begin{tikzcd}
-    0 \arrow[r] & {\Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A^{\oplus n}_\goth{p}, N_\goth{p})}.
-  \end{tikzcd} \]
-  The statement obvious holds For finite free modules
-  \begin{equation*}
-    \Hom_A(A^{\oplus r}, N)_\goth{p} \cong N^{\oplus r}_\goth{p} \cong \Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})
-  \end{equation*}
-  We obtain our desired isomorphism by applying the five lemma to the following commutative diagram
-  \[ \begin{tikzcd}
-    0 \arrow[r] & {\Hom_A(M, N)_\goth{p}} \arrow[r] \arrow[d]           & {\Hom_A(A^{\oplus r}, N)_\goth{p}} \arrow[r] \arrow[d] & {\Hom_A(A^{\oplus n}, N)_\goth{p}} \arrow[d]  \\
-    0 \arrow[r] & {\Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})} \arrow[r] & \Hom_{A_\goth{p}}(A_\goth{p}^{\oplus n}, N_\goth{p})
-  \end{tikzcd}. \]
-\end{proof}
+          For the next isomorphism, both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Mod}(X)$ because the $~\tilde{}~$-functor is an exact functor.
+          Both sides vanish for $i > 0$ and $N$ injective $A$-module because localization is exact, and $\tilde{N}$ is flasque if $N$ is injective (3.4).
+          Thus, to invoke (1.3A), we need to show the functors are equal for $i = 0$.
+          We check locally.
+          If $x \in X$ is a point, let $\goth{p}$ be the prime ideal in $A$ corresponding to $x$.
+          By (\S2, 5.1) and (6.8), we have
+          \begin{equation*}
+            \rExt_X^i(\tilde{M}, \tilde{N})_x \cong \Ext^i_{A_\goth{p}}(M_\goth{p}, N_\goth{p}), \quad \widetilde{\Ext_A^i(M, N)}_x \cong \Ext^i(M, N)_\goth{p},
+          \end{equation*}
+          and there is a natural map of $\fO_X$-modules
+          \begin{align*}
+            \widetilde{\Hom_A(M, N)} & \to \rHom_X(\tilde{M}, \tilde{N}) \\
+            f / s                    & \mapsto (m \mapsto f(m) / s).
+          \end{align*}
+          Thus, we reduce to the following algebraic problem: let $A$ be a Noetherian ring, $M, N$ $A$-modules with $M$ finitely generated.
+          Then the natural map of $A_\goth{p}$-modules
+          \begin{equation*}
+            \Hom_A(M, N)_\goth{p} \to \Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})
+          \end{equation*}
+          is an isomorphism.
+          If $M$ is finitely generated, there exists an exact sequence
+          \[ \begin{tikzcd}
+              A^{\oplus n} \arrow[r] & A^{\oplus r} \arrow[r] & M \arrow[r] & 0.
+            \end{tikzcd} \]
+          Applying $\Hom_A(\cdot, N)$ and localizing the first exact sequence gives
+          \[ \begin{tikzcd}
+              0 \arrow[r] & {\Hom_A(M, N)_\goth{p}} \arrow[r] & {\Hom_A(A^{\oplus r}, N)_\goth{p}} \arrow[r] & {\Hom_A(A^{\oplus n}, N)_\goth{p}}
+            \end{tikzcd} \]
+          Switching the order, i.e., localizing first then applying $\Hom_{A_\goth{p}}(\cdot, N_\goth{p})$, gives
+          \[ \begin{tikzcd}
+              0 \arrow[r] & {\Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A^{\oplus n}_\goth{p}, N_\goth{p})}.
+            \end{tikzcd} \]
+          The statement obvious holds For finite free modules
+          \begin{equation*}
+            \Hom_A(A^{\oplus r}, N)_\goth{p} \cong N^{\oplus r}_\goth{p} \cong \Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})
+          \end{equation*}
+          We obtain our desired isomorphism by applying the five lemma to the following commutative diagram
+          \[ \begin{tikzcd}
+              0 \arrow[r] & {\Hom_A(M, N)_\goth{p}} \arrow[r] \arrow[d]           & {\Hom_A(A^{\oplus r}, N)_\goth{p}} \arrow[r] \arrow[d] & {\Hom_A(A^{\oplus n}, N)_\goth{p}} \arrow[d]  \\
+              0 \arrow[r] & {\Hom_{A_\goth{p}}(M_\goth{p}, N_\goth{p})} \arrow[r] & {\Hom_{A_\goth{p}}(A_\goth{p}^{\oplus r}, N_\goth{p})} \arrow[r] & \Hom_{A_\goth{p}}(A_\goth{p}^{\oplus n}, N_\goth{p})
+            \end{tikzcd}. \]
+        \end{proof}
 
-\item[\textbf{8.}] Prove the following theorem of Kleiman: if $X$ is a Noetherian, integral, separated, locally factorial scheme, then every coherent sheaf on $X$ is a quotient of a locally free sheaf (of finite rank).
-\begin{itemize}
-  \item[(a)] First show that open sets of the form $X_s$, for various $s \in \Gamma(X, \fL)$, and various invertible sheaves $\fL$ on $X$, form a base for the topology of $X$.
-  \item[(b)] Now use (II, 5.14) to show that any coherent sheaf is a quotient of a direct sum $\bigoplus \fL_i^{n_i}$ for various invertible sheaves $\fL_i$ and various integers $n_i$.
-\end{itemize}
+  \item[\textbf{8.}] Prove the following theorem of Kleiman: if $X$ is a Noetherian, integral, separated, locally factorial scheme, then every coherent sheaf on $X$ is a quotient of a locally free sheaf (of finite rank).
+        \begin{itemize}
+          \item[(a)] First show that open sets of the form $X_s$, for various $s \in \Gamma(X, \fL)$, and various invertible sheaves $\fL$ on $X$, form a base for the topology of $X$.
+          \item[(b)] Now use (II, 5.14) to show that any coherent sheaf is a quotient of a direct sum $\bigoplus \fL_i^{n_i}$ for various invertible sheaves $\fL_i$ and various integers $n_i$.
+        \end{itemize}
 
-\item[\textbf{10.}] \textit{Duality for a Finite Flat Morphism.}
-\begin{itemize}
-  \item[(a)] Let $f : X \to Y$ be a finite morphism of Noetherian schemes. For any quasi-coherent $\fO_Y$-module $\fG$, $\rHom_Y(f_*\fO_X, \fG)$ is a quasi-coherent $f_*\fO_X$-module, hence corresponds to a quasi-coherent $\fO_X$-module, which we call $f^!\fG$ (II, Ex. 5.17e).
-  \item[(b)] Show that for any coherent $\fF$ on $X$ and any quasi-coherent $\fG$ on $Y$, there is a natural isomorphism
-  \begin{equation*}
-    f_*\rHom_X(\fF, f^!\fG) \xrightarrow{\sim} \rHom_Y(f_* \fF, \fG).
-  \end{equation*}
-  \item[(c)] For each $i \geq 0$, there is a natural map
-  \begin{equation*}
-    \varphi_i : \Ext_X^i(\fF, f^!\fG) \to \Ext_Y^i(f_* \fF, \fG).
-  \end{equation*}
-  \item[(d)] Now assume that $X$ and $Y$ are separated, $\goth{Coh}(X)$ has enough locally frees, and assume that $f_*\fO_X$ is locally free on $Y$ (this is equivalent to saying $f$ flat - see \S 9). Show that $\varphi_i$ is an isomorphism for all $i$, all $\fF$ coherent on $X$, and all $\fG$ quasi-coherent on $Y$.
-\end{itemize}
+  \item[\textbf{10.}] \textit{Duality for a Finite Flat Morphism.}
+        \begin{itemize}
+          \item[(a)] Let $f : X \to Y$ be a finite morphism of Noetherian schemes. For any quasi-coherent $\fO_Y$-module $\fG$, $\rHom_Y(f_*\fO_X, \fG)$ is a quasi-coherent $f_*\fO_X$-module, hence corresponds to a quasi-coherent $\fO_X$-module, which we call $f^!\fG$ (II, Ex. 5.17e).
+          \item[(b)] Show that for any coherent $\fF$ on $X$ and any quasi-coherent $\fG$ on $Y$, there is a natural isomorphism
+                \begin{equation*}
+                  f_*\rHom_X(\fF, f^!\fG) \xrightarrow{\sim} \rHom_Y(f_* \fF, \fG).
+                \end{equation*}
+          \item[(c)] For each $i \geq 0$, there is a natural map
+                \begin{equation*}
+                  \varphi_i : \Ext_X^i(\fF, f^!\fG) \to \Ext_Y^i(f_* \fF, \fG).
+                \end{equation*}
+          \item[(d)] Now assume that $X$ and $Y$ are separated, $\goth{Coh}(X)$ has enough locally frees, and assume that $f_*\fO_X$ is locally free on $Y$ (this is equivalent to saying $f$ flat - see \S 9). Show that $\varphi_i$ is an isomorphism for all $i$, all $\fF$ coherent on $X$, and all $\fG$ quasi-coherent on $Y$.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(b)] The question is local on $Y$, so we can assume $Y = \spec{A}$ for some Noetherian ring $A$.
-  Then $X = \spec{B}$ for some finite $A$-algebra $B$ so that $$f_*\fO_X \cong \tilde{B}, \quad \fF \cong \tilde{M}, \quad \fG \cong \tilde{N}$$ for some finitely generated $B$-module $M$, and $A$-module $N$.
-  Now, the statement just says there is a natural isomorphism of $A$-modules
-  \begin{equation*}
-    \Hom_B(M, \Hom_A(B, N)) \xrightarrow{\sim} \Hom_A(M, N).
-  \end{equation*}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(b)] The question is local on $Y$, so we can assume $Y = \spec{A}$ for some Noetherian ring $A$.
+                  Then $X = \spec{B}$ for some finite $A$-algebra $B$ so that $$f_*\fO_X \cong \tilde{B}, \quad \fF \cong \tilde{M}, \quad \fG \cong \tilde{N}$$ for some finitely generated $B$-module $M$, and $A$-module $N$.
+                  Now, the statement just says there is a natural isomorphism of $A$-modules
+                  \begin{equation*}
+                    \Hom_B(M, \Hom_A(B, N)) \xrightarrow{\sim} \Hom_A(M, N).
+                  \end{equation*}
 
-  \item[(c)] If $\fH$ is any quasi-coherent $\fO_X$-module, there is a natural map
-  \begin{equation*}
-    \Hom_X(\fF, \fH) \to \Hom_Y(f_*\fF, f_*\fH)
-  \end{equation*}
-  by functoriality of $f_*$.
-  Note that $f_*$ is an exact functor when $f$ is an a finite morphism (8.1), so both $\Ext_X^i(\fF, \cdot)$ and $\Ext_Y^i(f_*\fF, f_* \cdot)$ is a $\delta$-functor in $\fH$ from $\goth{Mod}(X)$ to $\goth{Ab}$.
-  Since $\Ext_X^i(\fF, \cdot)$ is a universal $\delta$-functor (1.4), there is an induced natural map by definition
-  \begin{equation*}
-    \psi_i : \Ext_X^i(\fF, \fH) \to \Ext_Y^i(f_*\fF, f_*\fH).
-  \end{equation*}
-  Now, consider the case $\fH = f^!\fG$.
-  Taking the global sections of (b) shows
-  \begin{equation*}
-    \Hom_X(f^!\fG, f^!\fG) \cong \Hom_Y(f_*f^!\fG, \fG),
-  \end{equation*}
-  so let $\xi : f_*f^!\fG \to \fG$ be the morphism corresponding to the identitiy $1_{f^!\fG}$.
-  Then $\xi$ induces a map of derived functors
-  \begin{equation*}
-    \xi_i : \Ext_Y^i(f_*\fF, f_*f^!\fG) \to \Ext_Y(f_*\fF, \fG).
-  \end{equation*}
-  Hence, $\varphi_i = \xi_i \circ \psi_i$ is our desired natural map.
+            \item[(c)] If $\fH$ is any quasi-coherent $\fO_X$-module, there is a natural map
+                  \begin{equation*}
+                    \Hom_X(\fF, \fH) \to \Hom_Y(f_*\fF, f_*\fH)
+                  \end{equation*}
+                  by functoriality of $f_*$.
+                  Note that $f_*$ is an exact functor when $f$ is an a finite morphism (8.1), so both $\Ext_X^i(\fF, \cdot)$ and $\Ext_Y^i(f_*\fF, f_* \cdot)$ is a $\delta$-functor in $\fH$ from $\goth{Mod}(X)$ to $\goth{Ab}$.
+                  Since $\Ext_X^i(\fF, \cdot)$ is a universal $\delta$-functor (1.4), there is an induced natural map by definition
+                  \begin{equation*}
+                    \psi_i : \Ext_X^i(\fF, \fH) \to \Ext_Y^i(f_*\fF, f_*\fH).
+                  \end{equation*}
+                  Now, consider the case $\fH = f^!\fG$.
+                  Taking the global sections of (b) shows
+                  \begin{equation*}
+                    \Hom_X(f^!\fG, f^!\fG) \cong \Hom_Y(f_*f^!\fG, \fG),
+                  \end{equation*}
+                  so let $\xi : f_*f^!\fG \to \fG$ be the morphism corresponding to the identitiy $1_{f^!\fG}$.
+                  Then $\xi$ induces a map of derived functors
+                  \begin{equation*}
+                    \xi_i : \Ext_Y^i(f_*\fF, f_*f^!\fG) \to \Ext_Y(f_*\fF, \fG).
+                  \end{equation*}
+                  Hence, $\varphi_i = \xi_i \circ \psi_i$ is our desired natural map.
 
 
-  \item[(d)]
-\end{itemize} 
-\end{proof}
+            \item[(d)]
+          \end{itemize}
+        \end{proof}
 
 \end{enumerate}
 

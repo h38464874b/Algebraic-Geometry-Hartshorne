@@ -1,206 +1,209 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 3, Section 5}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $X$ be a projective scheme over a field $k$, and let $\fF$ be a coherent sheaf on $X$.
-We define the \textit{Euler characteristic} of $\fF$ by
-\begin{equation*}
-  \chi(\fF) = \sum (-1)^i \dim_k{\cH^i(X, \fF)}.
-\end{equation*}
-If
-\[ \begin{tikzcd}
-0 \arrow[r] & \fF' \arrow[r] & \fF \arrow[r] & \fF'' \arrow[r] & 0
-\end{tikzcd} \]
-is a short exact sequence of coherent sheaves on $X$, show that $\chi(\fF) = \chi(\fF') + \chi(\fF'')$.
+  \item Let $X$ be a projective scheme over a field $k$, and let $\fF$ be a coherent sheaf on $X$.
+        We define the \textit{Euler characteristic} of $\fF$ by
+        \begin{equation*}
+          \chi(\fF) = \sum (-1)^i \dim_k{\cH^i(X, \fF)}.
+        \end{equation*}
+        If
+        \[ \begin{tikzcd}
+            0 \arrow[r] & \fF' \arrow[r] & \fF \arrow[r] & \fF'' \arrow[r] & 0
+          \end{tikzcd} \]
+        is a short exact sequence of coherent sheaves on $X$, show that $\chi(\fF) = \chi(\fF') + \chi(\fF'')$.
 
-\begin{proof}
-  We get an exact sequence of finite dimensional $k$-vector spaces (5.2)
-  \[ \begin{tikzcd}
-    \cdots \arrow[r, "\delta_{i - 1}"] & {\cH^i(X, \fF')} \arrow[r] & {\cH^i(X, \fF)} \arrow[r] & {\cH^i(X, \fF'')} \arrow[r, "\delta_{i}"] & \cdots
-  \end{tikzcd}, \]
-  where the $\delta_i$'s are connecting homomorphisms.
-  By exactness, we have
-  \begin{align*}
-    \chi(\fF) & =  \sum (-1)^i \dim_k \cH^i(X, \fF) \\
-    & = \sum (-1)^i(\dim_k \coker{\delta_{i - 1}} + \dim_k \ker{\delta_i}) \\
-    & = \sum (-1)^i (\dim_k \cH^i(X, \fF') - \dim_k{\im{\delta_{i -1 }}} + \dim_k \cH^i(X, \fF'') - \dim_k{\im{\delta_i}}) \\
-    & = \sum (-1)^i \dim_k \cH^i(X, \fF') + \sum (-1)^i \dim_k \cH^i(X, \fF'') \\
-    & = \chi(\fF') + \chi(\fF'').
-  \end{align*}
-\end{proof}
+        \begin{proof}
+          We get an exact sequence of finite dimensional $k$-vector spaces (5.2)
+          \[ \begin{tikzcd}
+              \cdots \arrow[r, "\delta_{i - 1}"] & {\cH^i(X, \fF')} \arrow[r] & {\cH^i(X, \fF)} \arrow[r] & {\cH^i(X, \fF'')} \arrow[r, "\delta_{i}"] & \cdots
+            \end{tikzcd}, \]
+          where the $\delta_i$'s are connecting homomorphisms.
+          By exactness, we have
+          \begin{align*}
+            \chi(\fF) & =  \sum (-1)^i \dim_k \cH^i(X, \fF)                                                                                  \\
+                      & = \sum (-1)^i(\dim_k \coker{\delta_{i - 1}} + \dim_k \ker{\delta_i})                                                 \\
+                      & = \sum (-1)^i (\dim_k \cH^i(X, \fF') - \dim_k{\im{\delta_{i -1 }}} + \dim_k \cH^i(X, \fF'') - \dim_k{\im{\delta_i}}) \\
+                      & = \sum (-1)^i \dim_k \cH^i(X, \fF') + \sum (-1)^i \dim_k \cH^i(X, \fF'')                                             \\
+                      & = \chi(\fF') + \chi(\fF'').
+          \end{align*}
+        \end{proof}
 
-\item \begin{itemize}
-  \item[(a)] Let $X$ be a projective scheme over a field $k$, let $\fO_X(1)$ be a very ample invertible sheaf on $X$ over $k$, and let $\fF$ be a coherent sheaf on $X$.
-  Show that there is a polynomial $P(z) \in \Q[z]$, such that $\chi(\fF(n)) = P(n)$ for all $n \in \Z$. We call $P$ the \textit{Hilbert polynomial} of $\fF$ with respect to the sheaf $\fO_X(1)$.
-  \item[(b)] Now let $X = \PP_k^r$, and let $M = \Gamma_*(\fF)$, considered as a graded $S = k[x_0, \dots, x_r]$-module. Use (5.2) to show that the Hilbert polynomial of $\fF$ just defined is the same as the Hilbert polynomial of $M$ defined in (I, \S 7).
-\end{itemize}
+  \item \begin{itemize}
+          \item[(a)] Let $X$ be a projective scheme over a field $k$, let $\fO_X(1)$ be a very ample invertible sheaf on $X$ over $k$, and let $\fF$ be a coherent sheaf on $X$.
+                Show that there is a polynomial $P(z) \in \Q[z]$, such that $\chi(\fF(n)) = P(n)$ for all $n \in \Z$. We call $P$ the \textit{Hilbert polynomial} of $\fF$ with respect to the sheaf $\fO_X(1)$.
+          \item[(b)] Now let $X = \PP_k^r$, and let $M = \Gamma_*(\fF)$, considered as a graded $S = k[x_0, \dots, x_r]$-module. Use (5.2) to show that the Hilbert polynomial of $\fF$ just defined is the same as the Hilbert polynomial of $M$ defined in (I, \S 7).
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)] Since $\fO_X(1)$ is a very ample sheaf on $X$ over $k$, there is a closed immersion $i : X \to \PP_k^r$ of schemes over $k$, for some $r$, such that $\fO_X(1) = i^* \fO_{\PP^r}(1)$.
-    If $\fF$ is coherent on $X$, then $i_* \fF$ is coherent on $\PP_k^r$ (II, Ex. 5.5), and the cohomology is the same (2.10).
-    The Euler characteristic is defined in terms of cohomology, so we reduce to the case $X = \PP_k^r$.
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] Since $\fO_X(1)$ is a very ample sheaf on $X$ over $k$, there is a closed immersion $i : X \to \PP_k^r$ of schemes over $k$, for some $r$, such that $\fO_X(1) = i^* \fO_{\PP^r}(1)$.
+                  If $\fF$ is coherent on $X$, then $i_* \fF$ is coherent on $\PP_k^r$ (II, Ex. 5.5), and the cohomology is the same (2.10).
+                  The Euler characteristic is defined in terms of cohomology, so we reduce to the case $X = \PP_k^r$.
 
-    Cover $X$ by a finite number of open affines $U_i \cong \spec{k[y_1, \dots, y_r]}$.
-    Then there exist finitely generated $k[y_1, \dots, y_r]$-modules $M_i$ such that $\restr{\fF}{U_i} \cong \tilde{M}_i$.
-    Since $\spec{A_i} \cap \supp{\fF}$ is a closed subset of $\spec{A_i}$; in fact, $\spec{A_i} \cap \supp{\fF} = V(\Ann{M_i})$ (AM, Ex. 3.19), $\Supp{\fF}$ is a closed subset of $X$.
-    We proceed by induction on $\dim{\supp{\fF}}$.
-    If $\supp{\fF}$ has dimension zero, then $\supp{\fF} \cap U_i$ is affine (II, Ex. 3.11b) equal to spectra of a Noetherian ring $A$ of dimension zero, which are precisely Artinian rings (AM, 8.5).
-    So $U_i \cap \supp{\fF}$ is a finite set (AM, Ex. 8.2), and since $X$ can be covered by a finite number of $U_i$, $\Supp{\fF}$ is a finite set of closed points.
-    Thus, $\fF$ is isomorphic to a direct sum of skyscraper sheaves.
-    More precisely, $\fF = \bigoplus_{P \in \Supp{\fF}} \fF_P$, where $\fF_P$ is the stalk of $\fF$ at $P$, and cohomology commutes with direct sums, so by (Ex. 1), we reduce to the case when $\Supp{\fF}$ consists of a single point.
-    Then, $\chi(\fF(n))$ is just the Hilbert polynomial of $\fF_P$ (I, 7.5) as a graded $A[y_1, \dots, y_r]$-module.
-    
-    Assume the statement to be true for all coherent sheaves with support dimension less than $n$.
-    Consider the exact sequence
-    \[ \begin{tikzcd}
-      0 \arrow[r] & \fO_X(-1) \arrow[r, "x_r"] & \fO_X \arrow[r] & \fO_H \arrow[r] & 0,
-    \end{tikzcd} \]
-    where $H$ is the hyperplane $x_r = 0$.
-    Taking the tensor product of this sequence with $\fF$ gives us
-    \[ \begin{tikzcd}
-      0 \arrow[r] & \fR \arrow[r] & \fF(-1) \arrow[r] & \fF \arrow[r] & \fF_H \arrow[r] & 0,
-    \end{tikzcd} \]
-    where $\fR$ is the kernel of the map $\fF(-1) \to \fF$.
-    Twisting by $\fO_X(n)$ is exact, so we get
-    \begin{equation*}
-      \chi(\fF(n)) - \chi(\fF(n - 1)) = \chi(\fF_H(n)) - \chi(\fR(n))
-    \end{equation*}
-    by (III, Ex. 5.1).
-    Consider the coherent $\fO_X$-module $\fR$. It vanishes under the multiplication map $x_r$, where $x_r$ locally defines one of the coordinates such that $x_r = 0$  is the defining equation for $H$, and such that there is a inclusion $\Supp{\fR} \subseteq H$, which exists by Bertini's theorem.
-    Since $H \cong \PP^{r - 1}_k$, we can apply the induction hypothesis to $\fR$ and $\fF_H$, so let $P_\fR(z), P_{\fF_H}(z) \in \Q[z]$ be polynomials such that
-    \begin{equation*}
-      \chi(\fR(n)) = P_\fR(n), \quad \chi(\fF_H(n)) = P_{\fF_H}(n).
-    \end{equation*}
-    The difference function of $\chi(\fF(n))$ is equal to $P_{\fF_H}(z) - P_{\fR}(n) \in \Q[z]$, so by (\S 1, 7.3), we conclude that $\chi(\fF(n)) = P(n)$ for some $P(z) \in \Q[z]$.
+                  Cover $X$ by a finite number of open affines $U_i \cong \spec{k[y_1, \dots, y_r]}$.
+                  Then there exist finitely generated $k[y_1, \dots, y_r]$-modules $M_i$ such that $\restr{\fF}{U_i} \cong \tilde{M}_i$.
+                  Since $\spec{A_i} \cap \supp{\fF}$ is a closed subset of $\spec{A_i}$; in fact, $\spec{A_i} \cap \supp{\fF} = V(\Ann{M_i})$ (AM, Ex. 3.19), $\Supp{\fF}$ is a closed subset of $X$.
+                  We proceed by induction on $\dim{\supp{\fF}}$.
+                  If $\supp{\fF}$ has dimension zero, then $\supp{\fF} \cap U_i$ is affine (II, Ex. 3.11b) equal to spectra of a Noetherian ring $A$ of dimension zero, which are precisely Artinian rings (AM, 8.5).
+                  So $U_i \cap \supp{\fF}$ is a finite set (AM, Ex. 8.2), and since $X$ can be covered by a finite number of $U_i$, $\Supp{\fF}$ is a finite set of closed points.
+                  Thus, $\fF$ is isomorphic to a direct sum of skyscraper sheaves.
+                  More precisely, $\fF = \bigoplus_{P \in \Supp{\fF}} \fF_P$, where $\fF_P$ is the stalk of $\fF$ at $P$, and cohomology commutes with direct sums, so by (Ex. 1), we reduce to the case when $\Supp{\fF}$ consists of a single point.
+                  Then, $\chi(\fF(n))$ is just the Hilbert polynomial of $\fF_P$ (I, 7.5) as a graded $A[y_1, \dots, y_r]$-module.
 
-    \item[(b)] By (5.2), there exists an integer $n_0$ such that for each $i > 0$ and each $n \geq n_0$, $H^i(X, \fF(n)) = 0$.
-    Let $P(n)$ be the Hilbert polynomial just defined, and let $P'(n)$ be the polynomial from associated to the graded $S$-module $M$ from (I, \S 7).
-    Then $P(n) = \dim_k H^0(X, \fF(n))$ for each $n \geq n_0$, but $M_n = \Gamma(X, \fF(n)) = H^0(X, \fF(n))$ and $P'(n) = \dim_k M_n$; in particular, $P(n)$ and $P'(n)$ agree at infinitely many values.
-    Hence, they must be equal.
-  \end{itemize}
-\end{proof}
+                  Assume the statement to be true for all coherent sheaves with support dimension less than $n$.
+                  Consider the exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \fO_X(-1) \arrow[r, "x_r"] & \fO_X \arrow[r] & \fO_H \arrow[r] & 0,
+                    \end{tikzcd} \]
+                  where $H$ is the hyperplane $x_r = 0$.
+                  Taking the tensor product of this sequence with $\fF$ gives us
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \fR \arrow[r] & \fF(-1) \arrow[r] & \fF \arrow[r] & \fF_H \arrow[r] & 0,
+                    \end{tikzcd} \]
+                  where $\fR$ is the kernel of the map $\fF(-1) \to \fF$.
+                  Twisting by $\fO_X(n)$ is exact, so we get
+                  \begin{equation*}
+                    \chi(\fF(n)) - \chi(\fF(n - 1)) = \chi(\fF_H(n)) - \chi(\fR(n))
+                  \end{equation*}
+                  by (III, Ex. 5.1).
+                  Consider the coherent $\fO_X$-module $\fR$. It vanishes under the multiplication map $x_r$, where $x_r$ locally defines one of the coordinates such that $x_r = 0$  is the defining equation for $H$, and such that there is a inclusion $\Supp{\fR} \subseteq H$, which exists by Bertini's theorem.
+                  Since $H \cong \PP^{r - 1}_k$, we can apply the induction hypothesis to $\fR$ and $\fF_H$, so let $P_\fR(z), P_{\fF_H}(z) \in \Q[z]$ be polynomials such that
+                  \begin{equation*}
+                    \chi(\fR(n)) = P_\fR(n), \quad \chi(\fF_H(n)) = P_{\fF_H}(n).
+                  \end{equation*}
+                  The difference function of $\chi(\fF(n))$ is equal to $P_{\fF_H}(z) - P_{\fR}(n) \in \Q[z]$, so by (\S 1, 7.3), we conclude that $\chi(\fF(n)) = P(n)$ for some $P(z) \in \Q[z]$.
 
-\item \textit{Arithmetic Genus.} Let $X$ be a projective scheme of dimension $r$ over a field $k$. We define the \textit{arithmetic genus $p_a$} of $X$ by
-\begin{equation*}
-  p_a(X) = (-1)^r (\chi(\fO_X) - 1).
-\end{equation*}
-Note that it depends only on $X$, not on any projective embedding.
-\begin{itemize}
-  \item[(a)] If $X$ is integral, and $k$ algebraically closed, show that $\cH^0(X, \fO_X) \cong k$, so that
-  \begin{equation*}
-    p_a(X) = \sum_{i = 0}^{r - 1} (-1)^i \dim_k{\cH^{r-i}(X, \fO_X)}.
-  \end{equation*}
-  In particular, if $X$ is a curve, we have
-  \begin{equation*}
-    p_a(X) = \dim_k{\cH^1(X, \fO_X)}.
-  \end{equation*}
-  \item[(b)] If $X$ is a closed subvariety of $\PP_k^r$, show that this $p_a(X)$ coincides with the one defined in (I, Ex. 7.2), which apparently depended on the projective embedding.
-  \item[(c)] If $X$ is a nonsingular projective curve over an algebraically closed field $k$, show that $p_a(X)$ is in fact a \textit{birational} invariant. Conclude that a nonsingular plane curve of degree $d \geq 3$ is not rational.
-\end{itemize}
+            \item[(b)] By (5.2), there exists an integer $n_0$ such that for each $i > 0$ and each $n \geq n_0$, $H^i(X, \fF(n)) = 0$.
+                  Let $P(n)$ be the Hilbert polynomial just defined, and let $P'(n)$ be the polynomial from associated to the graded $S$-module $M$ from (I, \S 7).
+                  Then $P(n) = \dim_k H^0(X, \fF(n))$ for each $n \geq n_0$, but $M_n = \Gamma(X, \fF(n)) = H^0(X, \fF(n))$ and $P'(n) = \dim_k M_n$; in particular, $P(n)$ and $P'(n)$ agree at infinitely many values.
+                  Hence, they must be equal.
+          \end{itemize}
+        \end{proof}
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)] For any embedding $j : X \to \PP_k^r$, $\cH^0(X, \fO_X) \cong k$ (I, 3.4).
+  \item \textit{Arithmetic Genus.} Let $X$ be a projective scheme of dimension $r$ over a field $k$. We define the \textit{arithmetic genus $p_a$} of $X$ by
+        \begin{equation*}
+          p_a(X) = (-1)^r (\chi(\fO_X) - 1).
+        \end{equation*}
+        Note that it depends only on $X$, not on any projective embedding.
+        \begin{itemize}
+          \item[(a)] If $X$ is integral, and $k$ algebraically closed, show that $\cH^0(X, \fO_X) \cong k$, so that
+                \begin{equation*}
+                  p_a(X) = \sum_{i = 0}^{r - 1} (-1)^i \dim_k{\cH^{r-i}(X, \fO_X)}.
+                \end{equation*}
+                In particular, if $X$ is a curve, we have
+                \begin{equation*}
+                  p_a(X) = \dim_k{\cH^1(X, \fO_X)}.
+                \end{equation*}
+          \item[(b)] If $X$ is a closed subvariety of $\PP_k^r$, show that this $p_a(X)$ coincides with the one defined in (I, Ex. 7.2), which apparently depended on the projective embedding.
+          \item[(c)] If $X$ is a nonsingular projective curve over an algebraically closed field $k$, show that $p_a(X)$ is in fact a \textit{birational} invariant. Conclude that a nonsingular plane curve of degree $d \geq 3$ is not rational.
+        \end{itemize}
 
-    \item[(b)] Let $\fI_X$ be the ideal sheaf of $X$ on $\PP_k^r$.
-    The homogenous coordinate ring $S(X)$ of $X$ for the given embedding is $k[x_0, \dots, x_r] / I$, where $I$ is the ideal $\Gamma_*(\fI_X)$ (II, Ex. 5.14).
-    The result follows by (Ex. 1) and (Ex. 2b).
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] By (II, Ex. 2.4), there exists a natural bijection
+                  \begin{equation*}
+                    \Hom_{\ckSch{k}}(X, \A^1) \cong \Hom_{\ckAlg{k}}(k[t], \Gamma(X, \fO_X)).
+                  \end{equation*}
+                  The space on the right is naturally isomorphic to $\cH^0(X, \fO_X)$ as vector spaces over $k$, so it is enough to show any morphism $f : X \to \A^1$ over $k$ must be constant.
+                  Since $X$ is projective over $k$, and $\A^1$ is separated scheme over $k$, by (II, Ex. 4.8) $f$ is a proper morphism.
+                  In particular, $f$ is a closed map, so the image of $X$ in $\A^1$ is a closed subscheme.
+                  The proper closed subschemes of $\A^1$ are finite sets of points.
+                  But the image of a proper scheme is proper (II, Ex. 4.4), and $\A^1$ is not a proper scheme over $k$.
+                  Hence, $f$ must be constant.
 
-    \item[(c)] Two nonsingular projective curves are birational if and only if they are isomorphic (II, 6.7), so they must have the same cohomology.
-    If $X$ is a nonsingular plane curve of degree $d \geq 3$, then $$p_a(X) = \frac{1}{2}(d - 1)(d - 2) > 0$$ by (I, Ex. 7.2), but $p_a(\PP^1) = 0$.
-  \end{itemize}
-\end{proof}
+            \item[(b)] Let $\fI_X$ be the ideal sheaf of $X$ on $\PP_k^r$.
+                  The homogenous coordinate ring $S(X)$ of $X$ for the given embedding is $k[x_0, \dots, x_r] / I$, where $I$ is the ideal $\Gamma_*(\fI_X)$ (II, Ex. 5.14).
+                  The result follows by (Ex. 1) and (Ex. 2b).
 
-\item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \PP_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
-These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
-On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
-Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
-\begin{itemize}
-  \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\PP^1$ in $Q$, to show:
-  \begin{itemize}
-    \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-    \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-    \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
-  \end{itemize}
-  \item[(b)] Now use these results to show:
-  \begin{itemize}
-    \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
-    \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
-    \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\PP^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
-  \end{itemize}
-  \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
-\end{itemize}
+            \item[(c)] Two nonsingular projective curves are birational if and only if they are isomorphic (II, 6.7), so they must have the same cohomology.
+                  But by the degree-genus formula, any curve of degree $\geq 3$ has non-zero arithematic genus, while $\PP^1$ has genus zero.
+          \end{itemize}
+        \end{proof}
 
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)]
-    \item[(b)] (1)
+  \item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \PP_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
+        These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
+        On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
+        Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
+        \begin{itemize}
+          \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\PP^1$ in $Q$, to show:
+                \begin{itemize}
+                  \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+                  \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
+                  \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
+                \end{itemize}
+          \item[(b)] Now use these results to show:
+                \begin{itemize}
+                  \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
+                  \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
+                  \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\PP^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
+                \end{itemize}
+          \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
+        \end{itemize}
 
-    (2)
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
+            \item[(b)]
+            \item[(c)]
+          \end{itemize}
+        \end{proof}
 
-    (3)
+  \item[\textbf{7.}]  Let $X$ (respectively, $Y$) be proper schemes over a Noetherian ring $A$.
+        We note by $\fL$ an invertible sheaf.
+        \begin{itemize}
+          \item[(a)] If $\fL$ is ample on $X$, and $Y$ is any closed subscheme of $X$, then $i^* \fL$ is ample on $Y$, where $i : Y \to X$ is the inclusion.
+          \item[(b)] $\fL$ is ample on $X$ if and only if $\red{\fL} = \fL \otimes \fO_{\red{X}}$ is ample on $\red{X}$.
+          \item[(c)] Suppose $X$ is reduced. Then $\fL$ is ample on $X$ if and only if $\fL \otimes \fO_{X_i}$ is ample on $X_i$, for each irreducible component $X_i$ of $X$.
+          \item[(d)] Let $f : X \to Y$ be a finite surjective morphism, and let $\fL$ be an invertible sheaf on $Y$.
+                Then $\fL$ is ample on $Y$ if and only if $f^* \fL$ is ample on $X$.
+        \end{itemize}
 
-    \item[(c)]
-  \end{itemize}
-\end{proof}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
+            \item[(b)]
+            \item[(c)]
+            \item[(d)]
+          \end{itemize}
+        \end{proof}
 
-\item[\textbf{7.}]  Let $X$ (respectively, $Y$) be proper schemes over a Noetherian ring $A$.
-We note by $\fL$ an invertible sheaf.
-\begin{itemize}
-  \item[(a)] If $\fL$ is ample on $X$, and $Y$ is any closed subscheme of $X$, then $i^* \fL$ is ample on $Y$, where $i : Y \to X$ is the inclusion.
-  \item[(b)] $\fL$ is ample on $X$ if and only if $\red{\fL} = \fL \otimes \fO_{\red{X}}$ is ample on $\red{X}$.
-  \item[(c)] Suppose $X$ is reduced. Then $\fL$ is ample on $X$ if and only if $\fL \otimes \fO_{X_i}$ is ample on $X_i$, for each irreducible component $X_i$ of $X$.
-  \item[(d)] Let $f : X \to Y$ be a finite surjective morphism, and let $\fL$ be an invertible sheaf on $Y$.
-  Then $\fL$ is ample on $Y$ if and only if $f^* \fL$ is ample on $X$.
-\end{itemize}
+  \item[\textbf{10.}] Let $X$ be a projective scheme over a Noetherian ring $A$, and let $\fF^1 \to \fF^2 \to \cdots \to \fF^r$ be an exact sequence of coherent sheaves on $X$. Show that there is an integer $n_0$, such that for all $n \geq n_0$, the sequence of global sections
+        \[ \begin{tikzcd}
+            {\Gamma(X, \fF^1(n))} \arrow[r] & {\Gamma(X, \fF^2(n))} \arrow[r] & \cdots \arrow[r] & {\Gamma(X, \fF^r(n))}
+          \end{tikzcd} \]
+        is exact.
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
-  \item[(a)] If $\fF$ is any coherent sheaf on $Y$, then $f_*\fF$ is a coherent $\fO_X$-module (II, 5.5c)
-
-  \item[(b)]
-
-  \item[(c)]
-
-  \item[(d)] By (b) and (c), we reduce to the case $X$ and $Y$ are irreducible, reduced, and proper schemes  over $A$.
-
-
-\end{itemize} 
-\end{proof}
-
-\item[\textbf{10.}] Let $X$ be a projective scheme over a Noetherian ring $A$, and let $\fF^1 \to \fF^2 \to \cdots \to \fF^r$ be an exact sequence of coherent sheaves on $X$. Show that there is an integer $n_0$, such that for all $n \geq n_0$, the sequence of global sections
-\[ \begin{tikzcd}
-{\Gamma(X, \fF^1(n))} \arrow[r] & {\Gamma(X, \fF^2(n))} \arrow[r] & \cdots \arrow[r] & {\Gamma(X, \fF^r(n))}
-\end{tikzcd} \]
-is exact.
-
-\begin{proof}
-  Denote $f_i : \fF^i : \to \fF^{i + 1}$ for each $i = 1, \dots, n - 1$. 
-  For every $i = 2, \dots, n-1$, we have the following three short exact sequence
-  \[ \begin{tikzcd}
-    0 \arrow[r] & \im{f_{i - 1}} \arrow[r]  & \fF^i \arrow[r]       & \im{f_{i}} \arrow[r]   & 0, \\
-    0 \arrow[r] & \ker{f_{i - 1}} \arrow[r] & \fF^{i - 1} \arrow[r] & \im{f_{i-1}} \arrow[r] & 0, \\
-    0 \arrow[r] & \im{f_i} \arrow[r]        & \fF^{i + 1} \arrow[r]       & \coker{f_i} \arrow[r]  & 0.
-  \end{tikzcd} \]
-  Every sheaf above is coherent (II, 5.7).
-  By (5.2), there exists an integer $n_i$ such that for each $i > 0$ and each $n \geq n_i$, the cohomology vanishes for every sheaf, i.e., there is an exact sequence of global sections
-  \[ \begin{tikzcd}
-    0 \arrow[r] & \gsecx{\im{f_{i - 1}}(n)} \arrow[r]  & \gsecx{\fF^i(n)} \arrow[r]       & \gsecx{\im{f_{i}}(n)} \arrow[r]   & 0 \\
-    0 \arrow[r] & \gsecx{\ker{f_{i - 1}}(n)} \arrow[r] & \gsecx{\fF^{i - 1}(n)} \arrow[r] & \gsecx{\im{f_{i-1}}(n)} \arrow[r] & 0 \\
-    0 \arrow[r] & \gsecx{\im{f_i}(n)} \arrow[r]        & \gsecx{\fF^{i + 1}(n)} \arrow[r]       & \gsecx{\coker{f_i}(n)} \arrow[r]  & 0
-  \end{tikzcd} \]
-  which implies the sequence
-  \[ \begin{tikzcd}
-    \gsecx{\fF^{i - 1}(n)} \arrow[r] & \gsecx{\fF^{i}(n)} \arrow[r] & \gsecx{\fF^{i + 1}(n)}
-  \end{tikzcd} \]
-  is exact.
-  Take $n_0 = \max{n_i}$ to obtain the desired integer.
-\end{proof}
+        \begin{proof}
+          Denote $f_i : \fF^i : \to \fF^{i + 1}$ for each $i = 1, \dots, n - 1$.
+          For every $i = 2, \dots, n-1$, we have the following three short exact sequence
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \im{f_{i - 1}} \arrow[r]  & \fF^i \arrow[r]       & \im{f_{i}} \arrow[r]   & 0, \\
+              0 \arrow[r] & \ker{f_{i - 1}} \arrow[r] & \fF^{i - 1} \arrow[r] & \im{f_{i-1}} \arrow[r] & 0, \\
+              0 \arrow[r] & \im{f_i} \arrow[r]        & \fF^{i + 1} \arrow[r]       & \coker{f_i} \arrow[r]  & 0.
+            \end{tikzcd} \]
+          Every sheaf above is coherent (II, 5.7).
+          By (5.2), there exists an integer $n_i$ such that for each $i > 0$ and each $n \geq n_i$, the cohomology vanishes for every sheaf, i.e., there is an exact sequence of global sections
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \gsecx{\im{f_{i - 1}}(n)} \arrow[r]  & \gsecx{\fF^i(n)} \arrow[r]       & \gsecx{\im{f_{i}}(n)} \arrow[r]   & 0 \\
+              0 \arrow[r] & \gsecx{\ker{f_{i - 1}}(n)} \arrow[r] & \gsecx{\fF^{i - 1}(n)} \arrow[r] & \gsecx{\im{f_{i-1}}(n)} \arrow[r] & 0 \\
+              0 \arrow[r] & \gsecx{\im{f_i}(n)} \arrow[r]        & \gsecx{\fF^{i + 1}(n)} \arrow[r]       & \gsecx{\coker{f_i}(n)} \arrow[r]  & 0
+            \end{tikzcd} \]
+          which implies the sequence
+          \[ \begin{tikzcd}
+              \gsecx{\fF^{i - 1}(n)} \arrow[r] & \gsecx{\fF^{i}(n)} \arrow[r] & \gsecx{\fF^{i + 1}(n)}
+            \end{tikzcd} \]
+          is exact.
+          Take $n_0 = \max{n_i}$ to obtain the desired integer.
+        \end{proof}
 
 \end{enumerate}
 \end{document}

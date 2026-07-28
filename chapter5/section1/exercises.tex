@@ -1,9 +1,13 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 5, Section 1}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
     \item Let $C, D$ be any two divisors on a surface $X$, and let the corresponding invertible sheaves be $\fL$ and $\fM$.
@@ -115,7 +119,10 @@
                         By (1.3), $C.K = d - 4$, because $C$ is a straight line and $\fO_X(K) = \fO_X(d - 4)$.
                         Hence, $C^2 = 2 - d$.
 
-                  \item[(b)] $f(x, y, z, w) = xz^{d - 1} + yw^{d - 1} + x^2w^{d - 2} + y^2z^{d - 2}$
+                  \item[(b)] Fix an integer $d > 0$, let $L$ be any line in $\PP^3$ with ideal sheaf $\fI$.
+                        Consider the linear system $\goth{d}$ on $\PP^3$ associated to $\cH^0(\PP^3, \fI(d))$.
+                        It has base-locus equal to $L$, and by Bertini's theorem (III, 10.9) (III, 10.9.1) (III, 10.9.2) (III, Ex. 11.3), a general member of $\goth{d}$ is connected and can have singularities only at the base points.
+                        Now, 
               \end{itemize}
           \end{proof}
 
@@ -128,15 +135,19 @@
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)] The adjunction formula gives $\fO_X(K) = \fO_X(d - 4)$.
                         If $H$ is a general hyperplane section of $X$ in $\PP^3$, then $K = (d - 4)H$, and $H^2 = d$ by (Ex. 1.2).
-                        Hence, we have $$K^2 = (d - 4)^2H^2 = d(d - 4)^2.$$
+                        Hence, $$K^2 = (d - 4)^2H^2 = d(d - 4)^2.$$
 
-                  \item[(b)] We have $K = D + D'$ with $D = p_1^*K_C$ and $D' = p_2^*K_{C'}$.
-                        Then $\Supp(D) = \Supp(K_C) \times C'$, and similarly for $D'$, which by (1.3) implies $$D.D' = \deg{K_C} \cdot \deg{K_{C'}} = 4(g - 1)(g' - 1).$$
-                        Since we have
+                  \item[(b)] By (II, Ex. 8.3), there is an isomorphism $\omega_{X} \cong p_1^*\omega_C \otimes p_2^*\omega_{C'}$.
+                        In particular, if $K_C$ (resp. $K_{C'}$) is a canonical divisor of $C$ (resp. $C'$), then $p_1^*K_C + p_2^*K_{C'}$ is a canonical divisor of $X$.
+                        Denote $D = p_1^*K_C$ and $D' = p_2^*K_{C'}$.
+                        The support of $D$ consists of $2g - 2$ copies of $C'$ which are the fibres of the points in $K_C$ with respect to $p_1 : X \to C$.
+                        It follows that
                         \begin{equation*}
-                            K^2 = D^2 + 2D.D' + D'^2,
+                            D.D' = (\deg{K_C}) \cdot (\deg{K_{C'}}) = 4(g - 1)(g' - 1).
                         \end{equation*}
-                        it suffices to show $D^2 = 0$.
+                        Also, for any finite set of points in $C$, there exists a canonical divisor with disjoint support.
+                        The intersection pairing only depends on the linear equivalence class, so we have $D^2 = 0$.
+                        We conclude that $K^2 = 2D.D' = 8(g - 1)(g' - 1)$.
               \end{itemize}
           \end{proof}
 
@@ -155,6 +166,8 @@
               \end{itemize}
           \end{proof}
 
+          \newpage
+
     \item \textit{Algebraic Equivalence of Divisors.} Let $X$ be a surface.
           Recall that we have defined an algebraic family of effective divisors on $X$, parametrized by a nonsingular curve $T$, to be an effective Cartier divisor $D$ on $X \times T$, flat over $T$ (III, 9.8.5).
           In this case, for any two closed points $0, 1 \in T$, we say that the corresponding divisors $D_0, D_1$ on $X$ are prealgebraically equivalent.
@@ -170,7 +183,13 @@
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)]
 
-                  \item[(b)]
+                  \item[(b)] We divide the problem into steps by successively proving more general cases, i.e., when $D$ is an (1) irreducible curve, (2) effective divisor, and (3) arbitrary divisor.
+
+                        (1) By definition, there exists a rational function $f \in K(X)^*$ such that $D - D' = (f)$.
+                        On an open subset $U \subset X$, let $g, g'$ be locally defining equations of $D, D'$ such that $g = fg'$.
+                        The divisors associated to $h = (1 - t)g + tg'$ for each $t \in \A^1$ gives a family of divisors on $U \times \A^1$.
+                        Covering $C$ by open subsets and patching local equations give an effective Cartier divisor $E$ on $X \times T$, flat over $T$, and $E_0 = D, E_1 = D'$.
+                        Hence, if $D$ and $D'$ are linearly equivalent irreducible curves in $X$, then they are algebraically equivalent.
 
                   \item[(c)]
               \end{itemize}
@@ -191,6 +210,18 @@
               \item[(b)] If $\chr{k} = 0$, use the fact that $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space to show that $\Num{X}$ is a finitely generated free abelian group.
           \end{itemize}
 
+          \begin{proof} $ $ \vspace{0pt}
+              \begin{itemize} [leftmargin=0cm]
+                  \item[(a)] We need to first show numerically equivalent divisors give isomorphic cohomology classes.
+                        Suppose $D \equiv 0$ and $D \neq 0$ in $\pic{X}$.
+                        Let $(U, f)$ be a locally defining equation of $D$.
+                        We want to show $\dd f / f = 0$.
+                        Let $P$ be any point in $X$,
+
+                  \item[(b)]
+              \end{itemize}
+          \end{proof}
+
     \item \begin{itemize}
               \item[(a)] If $H$ is an ample divisor on the surface $X$, and if $D$ is any divisor, show that
                     \begin{equation*}
@@ -209,7 +240,26 @@
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] If $H$ is ample, then $m H$ is very ample for some $m \gg 0$, and if the result holds for $mH$, then it also holds for $H$, so assume $H$ is very ample.
+                  \item[(a)] Before we prove the statement, let us look at an example first.
+                        Consider the quadric surface $Q = \PP^1 \times \PP^1$ with $H$ divisor of type $(1, 1)$, which gives the standard embedding into $\PP^3$.
+                        If $D$ be a divisor of type $(a, b)$, then by (1.4.3), the left-hand side is equal to $2(a^2 + b^2)$, while the right-hand side is $(a + b)^2$ (IV, 6.4.1) (Ex. 1), so the inequality holds.
+
+                        Now, let $D$ be any divisor, and let $E$ be any irreducible curve in $X$.
+                        By replacing $H$ with $mH$ for some $m \gg 0$ if necessary, we may assume that $H$ is very ample.
+                        The hypothesis of (1.2) is satisfied, so further assume $H$ is irreducible, nonsingular, and meets $E$ and each irreducible component of $D$ transversally.
+
+                        We will show that the inequality holds for $D$ if and only if it holds for $D + E$ (IV, 1.3).
+                        Plugging in $D + E$ into above simplifies to
+                        \begin{equation*}
+                            (D^2)(H^2) + 2(D.C)(H^2) \leq (D.E)^2 + 2(D.E)(C.E),
+                        \end{equation*}
+                        so it is enough to show
+                        \begin{equation*}
+                            (D.E)(H^2) \leq (D.H)(E.H)
+                        \end{equation*}
+                        for any divisor $D$ and irreducible curve $E$.
+                        Here, we can apply the reasoning above again, and for the last time further reduce to the case $D$ is also an irreducible curve.
+
 
                   \item[(b)]
               \end{itemize}
@@ -234,6 +284,10 @@
 
     \item If $D$ is an ample divisor on the surface $X$, and $D' \equiv D$, then $D'$ is also ample.
           Give an example to show, however, that if $D$ is very ample, $D'$ need not be very ample.
+
+          \begin{proof}
+
+          \end{proof}
 
 \end{enumerate}
 
