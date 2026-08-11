@@ -1,22 +1,26 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 5, Section 4}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item The linear system of conics in $\PP^2$ with two assigned base points $P_1$ and $P_2$ (4.1) determines a morphism $\psi$ of $X'$ (which is $\PP^2$ with $P_1$ and $P_2$ blown up) to a nonsingular quadric surface $Y$ in $\PP^3$, and furthermore $X'$ via $\psi$ is isomorphic to $Y$ with one point blown up.
+\item The linear system of conics in $\P^2$ with two assigned base points $P_1$ and $P_2$ (4.1) determines a morphism $\psi$ of $X'$ (which is $\P^2$ with $P_1$ and $P_2$ blown up) to a nonsingular quadric surface $Y$ in $\P^3$, and furthermore $X'$ via $\psi$ is isomorphic to $Y$ with one point blown up.
 
 \item Let $\varphi$ be the quadratic transformation of (4.2.3), centered at $P_1, P_2, P_3$.
-If $C$ is an irreducible curve of degree $d$ in $\PP^2$, with points of multiplicity $r_1, r_2, r_3$ at $P_1, P_2, P_3$, then the strict transform $C'$ of $C$ by $\varphi$ has degree $d' = 2d - r_1 - r_2 - r_3$, and has points of multiplicity $d - r_2 - r_3$ at $Q_1$, $d - r_1 - r_3$ at $Q_2$, and $d - r_1 - r_2$ at $Q_3$.
+If $C$ is an irreducible curve of degree $d$ in $\P^2$, with points of multiplicity $r_1, r_2, r_3$ at $P_1, P_2, P_3$, then the strict transform $C'$ of $C$ by $\varphi$ has degree $d' = 2d - r_1 - r_2 - r_3$, and has points of multiplicity $d - r_2 - r_3$ at $Q_1$, $d - r_1 - r_3$ at $Q_2$, and $d - r_1 - r_2$ at $Q_3$.
 The curve may have arbitrary singularities.
 
-\item Let $C$ be an irreducible curve in $\PP^2$.
+\item Let $C$ be an irreducible curve in $\P^2$.
 Then there exists a finite sequence of quadratic transformations, centered at suitable triples of points, so that the strict transform $C'$ of $C$ has only \textit{ordinary} singularities, i.e., multiple points with all distinct tangent directions.
 
 \item \begin{itemize}
-    \item[(a)] Use (4.5) to prove the following lemma on cubics: If $C$ is an irreducible plane cubic curve, if $L$ is a line meeting $C$ in points $P, Q, R$, and $L'$ is a line meeting $C$ in points $P', Q' R'$, let $P'$ be the third intersection of the line $PP'$ with $C$, and define $Q''$, $R''$ similarly.
+    \item[(a)] Use (4.5) to prove the following lemma on cubics: If $C$ is an irreducible plane cubic curve, if $L$ is a line meeting $C$ in points $P, Q, R$, and $L'$ is a line meeting $C$ in points $P', Q' R'$, let $P'$ be the third intersection of the line $P'$ with $C$, and define $Q''$, $R''$ similarly.
     Then $P'', Q'', R''$ are collinear.
     \item[(b)] Let $P_0$ be an inflection point of $C$, and \textit{deifne} the group operation on the set of regular points of $C$ by the geometric recipe ``let the line $PQ$ meet $C$ at $R$, and let $P_0R$ meet $C$ at $T$, then $P + Q = T$'' as in (II, 6.10.2) and (II, 6.11.4).
     Use (a) to show that this operation is associative.
@@ -118,25 +122,25 @@ The relations are $x_i^2 = 1$ for each $i$; $(x_ix_j)^2 = 1$ if $i$ and $j$ are 
 \item Use (4.11) to show that if $D$ is any ample divisor on the cubic surface $X$, then $\cH^1(X, \fO_X(-D)) = 0$.
 This is Kodaira's vanishing theorem for the cubic surface (III, 7.15).
 
-\item Let $X$ be the Del Pezzo surface of degree 4 in $\PP^4$ obtained by blowing up 5 points of $\PP^2$ (4.7).
+\item Let $X$ be the Del Pezzo surface of degree 4 in $\P^4$ obtained by blowing up 5 points of $\P^2$ (4.7).
 \begin{itemize}
     \item[(a)] Show that $X$ contains 16 lines.
-    \item[(b)] Show that $X$ is a complete intersection of two quadric hypersurfaces in $\PP^4$ (the converse follows from (4.7.1)).
+    \item[(b)] Show that $X$ is a complete intersection of two quadric hypersurfaces in $\P^4$ (the converse follows from (4.7.1)).
 \end{itemize}
 
-\item Using the method of (4.13.1), verify that there are nonsingular curves in $\PP^3$ with $d = 8$, $g = 6, 7$; $d = 9$, $g = 7, 8, 9$; $d = 10$, $g = 8, 9, 10, 11$.
-Combining with (IV, \S 6), this completes the determination of all possible $g$ for curves of degree $d \geq 10$ in $\PP^3$.
+\item Using the method of (4.13.1), verify that there are nonsingular curves in $\P^3$ with $d = 8$, $g = 6, 7$; $d = 9$, $g = 7, 8, 9$; $d = 10$, $g = 8, 9, 10, 11$.
+Combining with (IV, \SS 6), this completes the determination of all possible $g$ for curves of degree $d \geq 10$ in $\P^3$.
 
-\item Let $P_1, \dots, P_4$ be a fintie set of (ordinary) points of $\PP^2$, no 3 collinear.
+\item Let $P_1, \dots, P_4$ be a fintie set of (ordinary) points of $\P^2$, no 3 collinear.
 We define an \textit{admissible transformation} to be a quadratic transformation (4.2.3) centered at some three of the $P_i$ (call them $P_1, P_2, P_3$).
-This gives a new $\PP^2$, and a new set of $r$ points, namely $Q_1, Q_2, Q_3$, and the images of $P_4, \dots, P_r$.
+This gives a new $\P^2$, and a new set of $r$ points, namely $Q_1, Q_2, Q_3$, and the images of $P_4, \dots, P_r$.
 We say that $P_1, \dots, P_r$ are in \textit{general position} if no three are collinear, and furthermore after any finite sequence of admissible transformations, the new set of $r$ points also have no three collinear.
 \begin{itemize}
     \item[(a)] A set of 6 points is in general position if and only if no three are collinear and not all six lie on a conic.
     \item[(b)] If $P_1, \dots, P_r$ are in general position, then the $r$ points obtained by any finite sequence of admissible transformations are also in general position.
     \item[(c)] Assume the ground field $k$ is uncountable.
-    Then given $P_1, \dots, P_r$ in general position, there is a dense $V \subseteq \PP^2$ such that for any $P_{r + 1} \in V$, $P_1, \dots, P_{r + 1}$ will be in general position.
-    \item[(d)] Now take $P_1, \dots, P_r \in \PP^2$ in general position, and let $X$ be the surface obtained by blowing up $P_1, \dots, P_r$.
+    Then given $P_1, \dots, P_r$ in general position, there is a dense $V \subseteq \P^2$ such that for any $P_{r + 1} \in V$, $P_1, \dots, P_{r + 1}$ will be in general position.
+    \item[(d)] Now take $P_1, \dots, P_r \in \P^2$ in general position, and let $X$ be the surface obtained by blowing up $P_1, \dots, P_r$.
     If $r = 7$, show that $X$ has exactly 56 irreducible nonsingular curves $C$ with $g = 0$, $C^2 = -1$, and that these are the only irreducible curves with negative self-intersection.
     Ditto for $r = 8$, the number being 240.
     \item[(e)] For $r = 9$, show that the surface $X$ defined in (d) has infinitely many irreducible nonsingular curves $C$ with $g = 0$ and $C^2 = -1$.

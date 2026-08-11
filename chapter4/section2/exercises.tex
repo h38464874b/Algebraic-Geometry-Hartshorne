@@ -8,32 +8,32 @@
 
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-  \item Use (2.5.3) to show that $\PP^n$ is simply connected.
+  \item Use (2.5.3) to show that $\P^n$ is simply connected.
 
         \begin{proof}
           Proceed by induction on $n$.
           The base case $n = 1$ is (2.5.3).
-          Let $f : X \to \PP^n$ be an étale covering.
+          Let $f : X \to \P^n$ be an étale covering.
           We may assume $X$ is connected.
           Then $X$ is smooth over $k$ since $f$ is étale (III, 10.1), and $X$ is projective over $k$ since $f$ is finite, so $X$ is a smooth irreducible projective variety of dimension $n$.
           It is enough to show the degree of $f$ is 1.
-          By (III, Ex. 11.3), $f^{-1}(H) = X \times_{\PP^n} H$ is smooth and irreducible for almost every hyperplane $H \subset \PP^n$.
-          Also, the induced morphism $f' : f^{-1}(H) \to H$ is an étale covering of $H \cong \PP^{n - 1}$, since étale morphisms are stable under base change.
+          By (III, Ex. 11.3), $f^{-1}(H) = X \times_{\P^n} H$ is smooth and irreducible for almost every hyperplane $H \subset \P^n$.
+          Also, the induced morphism $f' : f^{-1}(H) \to H$ is an étale covering of $H \cong \P^{n - 1}$, since étale morphisms are stable under base change.
           By the inductive hypothesis, $f'$ is an isomorphism.
           Hence, $f$ is an isomorphism.
         \end{proof}
 
   \item \textit{Classification of Curves of Genus 2.} Fix an algebraically closed field $k$ of characteristic $\neq 2$.
         \begin{enumerate} [label=(\alph*)]
-          \item If $X$ is a curve of genus 2 over $k$, the canonical linear system $|K|$ determines a finite morphism $f : X \to \PP^1$ of degree 2 (Ex. 1.7). Show that it is ramified at exactly 6 points, with ramification index 2 at each one.
-                Note that $f$ is uniquely determined, up to an automorphism of $\PP^1$, so $X$ determines an (unordered) set of 6 points of $\PP^1$, up to an automorphism of $\PP^1$.
+          \item If $X$ is a curve of genus 2 over $k$, the canonical linear system $|K|$ determines a finite morphism $f : X \to \P^1$ of degree 2 (Ex. 1.7). Show that it is ramified at exactly 6 points, with ramification index 2 at each one.
+                Note that $f$ is uniquely determined, up to an automorphism of $\P^1$, so $X$ determines an (unordered) set of 6 points of $\P^1$, up to an automorphism of $\P^1$.
 
           \item Conversely, given six distinct elements $\alpha_1, \dots, \alpha_6 \in k$, let $K$ be the extension of $k(x)$ determined by the equation $z^2 = (x - \alpha_1) \cdots (x-\alpha_6)$.
-                Let $f : X \to \PP^1$ be the corresponding morphism of curves.
-                Show that $g(X) = 2$, the map $f$ is the same as the one determined by the canonical linear system, and $f$ is ramified over the six points $x = \alpha_i$ of $\PP^1$, and nowhere else.
+                Let $f : X \to \P^1$ be the corresponding morphism of curves.
+                Show that $g(X) = 2$, the map $f$ is the same as the one determined by the canonical linear system, and $f$ is ramified over the six points $x = \alpha_i$ of $\P^1$, and nowhere else.
 
-          \item Using (I, Ex. 6.6), show that if $P_1, P_2, P_3$ are three distinct points of $\PP^1$, then there exists a unique $\varphi \in \Aut{\PP^1}$ such that $\varphi(P_1) = 0$, $\varphi(P_2) = 1$, $\varphi(P_3) = \infty$.
-                Thus in (a), if we order the six points of $\PP^1$, and then normalize by sending the first three to $0, 1, \infty$, respectively, we may assume that $X$ is ramified over $0, 1, \infty, \beta_1, \beta_2, \beta_3$, where $\beta_1, \beta_2, \beta_3$ are three distinct elements of $k$, $\neq 0, 1$.
+          \item Using (I, Ex. 6.6), show that if $P_1, P_2, P_3$ are three distinct points of $\P^1$, then there exists a unique $\varphi \in \Aut{\P^1}$ such that $\varphi(P_1) = 0$, $\varphi(P_2) = 1$, $\varphi(P_3) = \infty$.
+                Thus in (a), if we order the six points of $\P^1$, and then normalize by sending the first three to $0, 1, \infty$, respectively, we may assume that $X$ is ramified over $0, 1, \infty, \beta_1, \beta_2, \beta_3$, where $\beta_1, \beta_2, \beta_3$ are three distinct elements of $k$, $\neq 0, 1$.
 
           \item Let $\Sigma_6$ be the symmetric group on 6 letters.
                 Define an action of $\Sigma_6$ on sets of three distinct elements $\beta_1, \beta_2, \beta_3$ of $k$, $\neq 0, 1$, as follows: reorder the set $0, 1, \infty, \beta_1, \beta_2, \beta_3$ according to a given element $\sigma \in \Sigma_6$, then renormalize as in (c) so that the three become $0, 1, \infty$ again.
@@ -48,7 +48,7 @@
           \begin{enumerate} [leftmargin=0cm]
             \item By Hurtwitz's theorem, the degree of the ramification divisor is computed to be
                   \begin{equation*}
-                    \deg{R} = \deg{K_X} - 2 \deg{K_{\PP^1}} = 6.
+                    \deg{R} = \deg{K_X} - 2 \deg{K_{\P^1}} = 6.
                   \end{equation*}
                   The ramification index at a point cannot exceed the degree of the morphism, so $f$ must be ramified at exactly 6 distinct points each having ramification index 2.
 
@@ -68,30 +68,30 @@
                     \dd x = - \frac{2z}{g'(x)} \dd z,
                   \end{equation*}
                   which means $\dd z$ generates $(\Omega_{B / k})_P$.
-                  Since $\dd x $ is a local parameter of $\PP^1$, we see that $P$ is ramified if and only if $z' = 0$ with ramification index $e_P = v_P( \dd x / \dd z) + 1 = 2$.
+                  Since $\dd x $ is a local parameter of $\P^1$, we see that $P$ is ramified if and only if $z' = 0$ with ramification index $e_P = v_P( \dd x / \dd z) + 1 = 2$.
                   There are six ramification points corresponding to the six roots of $g(x)$.
                   Hence, $g(X) = 2$ by the Hurwitz formula.
           \end{enumerate}
         \end{proof}
 
-  \item[\textbf{3.}] \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\PP^2$.
+  \item[\textbf{3.}] \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\P^2$.
         For each $P \in X$, let $T_P(X)$ be the tangent line to $X$ at $P$ (I, Ex.7.3).
-        Considering $T_P(X)$ as a point of the dual projective plane $(\PP^2)^*$, the map $P \to T_P(X)$ gives a morphism of $X$ to its \textit{dual curve} $X^*$ in $(\PP^2)^*$ (I, Ex. 7.3).
+        Considering $T_P(X)$ as a point of the dual projective plane $(\P^2)^*$, the map $P \to T_P(X)$ gives a morphism of $X$ to its \textit{dual curve} $X^*$ in $(\P^2)^*$ (I, Ex. 7.3).
         Note that even though $X$ is nonsingular, $X^*$ in general will have singularities.
-        We assume $\chr{k} = 0$ below.
+        We assume $\car{k} = 0$ below.
 
         \begin{itemize}
-          \item[(a)] Fix a line $L \subseteq \PP^2$ which is not tangent to $X$.
+          \item[(a)] Fix a line $L \subseteq \P^2$ which is not tangent to $X$.
                 Define a morphism $\varphi : X \to L$ by $\varphi(P) = L \cap T_P(X)$, for each point $P \in X$.
                 Show that $\varphi$ is ramified at $P$ if and only if either (1) $P \in L$, or (2) $P$ is an \textit{inflection point} of $X$, which means that the intersection multiplicity (I, Ex. 5.4) of $T_P(X)$ with $X$ at $P$ is $\geq 3$.
                 Conclude that $X$ has only finitely many inflection points.
 
-          \item[(b)] A line of $\PP^2$ is a \textit{multiple tangent} of $X$ if it is tangent to $X$ at more than one point.
+          \item[(b)] A line of $\P^2$ is a \textit{multiple tangent} of $X$ if it is tangent to $X$ at more than one point.
                 It is a \textit{bitangent} if it is tangent to $X$ at exactly two points.
                 If $L$ is a multiple tangent of $X$, tangent to $X$ at the points $P_1, \dots, P_r$, and if none of the $P_i$ is an inflection point, show that the corresponding point of the dual curve $X^*$ is an \textit{ordinary $r$-fold point}, which means a point of multiplicity $r$ with distinct tangent directions (I, Ex. 5.3).
                 Conclude that $X$ has only finitely many multiple tangents.
 
-          \item[(c)] Let $O \in \PP^2$ be a point which is not on $X$, nor on any inflectional or multiple tangent of $X$.
+          \item[(c)] Let $O \in \P^2$ be a point which is not on $X$, nor on any inflectional or multiple tangent of $X$.
                 Let $L$ be a line not containing $O$.
                 Let $\psi : X \to L$ be the morphism defined by projection from $O$.
                 Show that $\psi$ is ramified at $P \in X$ if and only if the line $OP$ is tangent to $X$ at $P$, and that the ramification index is 2.
@@ -120,7 +120,7 @@
 
         \begin{proof} $ $ \vspace{0pt}
           \begin{itemize} [leftmargin=0cm]
-            \item[(a)] Find local affine coordinates $x, y$ of $\PP^2$ such that $$X : y - f(x) = 0, \quad L : x = 0.$$
+            \item[(a)] Find local affine coordinates $x, y$ of $\P^2$ such that $$X : y - f(x) = 0, \quad L : x = 0.$$
                   Setting $x$ and $y$ to be local parameters for $X$ at $P$ and $L$ at $\varphi(P)$, respectively, we can write $\varphi$ in the form
                   \begin{equation*}
                     \varphi(x) = f(x) - xf'(x).
@@ -138,11 +138,11 @@
                   Thus, $v_P(\dd t / \dd u) > 0$ if and only if $v_P(x) > 0$ or $v_P(f'') > 0$ if and only if (10 )$P \in L$ or (2) $P$ is an inflection point of $X$.
                   Since $\varphi : X \to L$ ramifies at finitely many points, $X$ has finitely many inflection points.
 
-            \item[(b)] Find local affine coordinates $x, y$ of $\PP^2$ such that
+            \item[(b)] Find local affine coordinates $x, y$ of $\P^2$ such that
                   \begin{equation*}
                     X : y - f(x) = 0, \quad L : y = 0.
                   \end{equation*}
-                  This means $x$ is a local parameter of $X$, so we can write $\gamma : X$ $\ : X \to X^* \subset (\PP^2)^*$ in the form
+                  This means $x$ is a local parameter of $X$, so we can write $\gamma : X$ $\ : X \to X^* \subset (\P^2)^*$ in the form
                   \begin{equation*}
                     \gamma(x) = (-f'(x), xf'(x) - f(x)).
                   \end{equation*}
@@ -156,7 +156,7 @@
                   Each multiple tangent of $X$ corresponds to singular point of $X^*$, but a curve can have only finitely many singular points.
                   Hence, $X$ has finitely many multiple tangents.
 
-            \item[(c)] Find local affine coordinates $x, y$ of $\PP^2$ such that
+            \item[(c)] Find local affine coordinates $x, y$ of $\P^2$ such that
                   \begin{equation*}
                     X : y - f(x) = 0, \quad L : x = 0, \quad O = (1 : 0 : 0).
                   \end{equation*}
@@ -173,30 +173,30 @@
                   The genus of $X$ is related to $d$ by the degree genus formula.
                   Since $\psi$ has degree $d$ as a morphism of curves, Hurwitz's theorem can be used to compute the degree of the ramification divisor
                   \begin{equation*}
-                    \deg{R} = \deg{K_X} - d \deg{K_{\PP^1}} = d(d - 1).
+                    \deg{R} = \deg{K_X} - d \deg{K_{\P^1}} = d(d - 1).
                   \end{equation*}
                   The ramification index of each ramification point is 2, so the degree of $R$ equals to the number of tangents passing through $O$.
 
             \item[(d)] This is another application of Hurwitz's theorem.
                   The projection morphism $\psi : X - O \to L$ has degree $d - 1$, so the degree of the ramification divisor of $\psi$ is
                   \begin{equation*}
-                    \deg{R} = \deg K_X - (d - 1) \deg{K_{\PP^1}} = (d + 1)(d - 2).
+                    \deg{R} = \deg K_X - (d - 1) \deg{K_{\P^1}} = (d + 1)(d - 2).
                   \end{equation*}
                   A general point of $X$ does not lie on any multiple tangents of $X$.
                   Hence, the degree of $R$ equals to the number of tangents passing through $O$.
 
-            \item[(e)] Define $\pi : (\PP^2)^* - L \to L$ by $L' \mapsto L \cap L'$.
+            \item[(e)] Define $\pi : (\P^2)^* - L \to L$ by $L' \mapsto L \cap L'$.
                   Since $\varphi$ factors into $\varphi = \pi \circ \gamma$, the degree of $\varphi$ equals to the degree of the image of $\gamma$, which is $d(d - 1)$.
                   The degree of the ramification divisor of $\varphi$ is
                   \begin{equation*}
-                    \deg{R} = \deg K_X - d(d - 1) \deg{K_{\PP^1}} = 3d^2 - 5d.
+                    \deg{R} = \deg K_X - d(d - 1) \deg{K_{\P^1}} = 3d^2 - 5d.
                   \end{equation*}
                   The degree of the ramification index also counts the number of points $X \cap L$.
                   In particular, $X \cap L$ is generically $d$ distinct points, and the ramification index of each $P \in X \cap L$ is 2, so we need to subtract $d$ from $\deg{R}$ to get the total number of inflection points of $X$, which equals to $3d(d - 2)$.
                   If $r = 3$, an ordinary inflection point of $X$ corresponds to a twisted cubic in the dual curve locally, which has an ordinary cusp.
 
             \item[(f)] Let $\beta_1$ and $\beta_2$ be the number of bitangents and inflection points of $X$, respectively.
-                  We have two ways of computing the arithmetic genus of $X^*$: (1) in terms of $p_a(X)$, and (2) $X^* \subset (\PP^2)^*$ as a plane curve of degree $d(d - 1)$.
+                  We have two ways of computing the arithmetic genus of $X^*$: (1) in terms of $p_a(X)$, and (2) $X^* \subset (\P^2)^*$ as a plane curve of degree $d(d - 1)$.
 
                   (1) The morphism $\gamma : X \to X^*$ explicitly defined in (b) is generically one-to-one by, so $\gamma$ is a birational onto its image.
                   The results of (Ex. 1.8) say
@@ -206,7 +206,7 @@
                   where $\delta_P = 1$ if $P \in X^*$ is a node or ordinary cusp, zero otherwise.
                   In particular, $\delta = \beta_1 + \beta_2$ by (c) and (e).
 
-                  (2) On the otherhand, $X^*$ is a plane curve of degree $d(d - 1)$ in $(\PP^2)^*$.
+                  (2) On the otherhand, $X^*$ is a plane curve of degree $d(d - 1)$ in $(\P^2)^*$.
                   The degree-genus formula for plane curves (III, Ex. 4.7) gives
                   \begin{equation*}
                     p_a(X^*) = \frac{1}{2}(d - 2)(d + 1) (d^2 - d - 1)
@@ -218,7 +218,7 @@
                     \beta_1 = p_a(X^*) - p_a(X) - \beta_2 = \frac{1}{2}d(d - 2)(d - 3)(d + 3).
                   \end{equation*}
 
-            \item[(g)] Let $E \subset \PP^2$ be a plane cubic curve, let $P, Q \in E$ be two inflection points, and let $L$ the line through $P$ and $Q$.
+            \item[(g)] Let $E \subset \P^2$ be a plane cubic curve, let $P, Q \in E$ be two inflection points, and let $L$ the line through $P$ and $Q$.
                   If $P = Q$, then $L$ is the tangent line through $P$.
                   In this case, $P$ is an inflection point, so it is counted with a multiplicity of 3, i.e., $L$ meets no other point of $X$.
                   Otherwise, $L$ cannot be a tangent line for the same reason, and $L$ meets $X$ at a distinct point $R \neq P, Q$.

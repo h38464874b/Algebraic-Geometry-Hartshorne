@@ -10,107 +10,118 @@
 
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item A rational curve of degree 4 in $\PP^3$ is contained in a unique quadric surface $Q$, and $Q$ is necessarily nonsingular.
+    \item A rational curve of degree 4 in $\P^3$ is contained in a unique quadric surface $Q$, and $Q$ is necessarily nonsingular.
 
-\begin{proof}
-    Let $X$ be a rational curve of degree 4 in $\PP^3$, and let $\fI$ be its ideal sheaf.
-    Then we have an exact sequence
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
-    \end{tikzcd} \]
-    Twisting by $\fO_{\PP^3}(2)$ and taking cohomology gives
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
-    \end{tikzcd} \]
-    Now the middle vector space has dimension 10, and $\fO_X(2)$ corresponds to a linear system of degree 8, so it has dimension at most 9 by Riemann-Roch.
-    Then, $\cH^0(\PP^3, \fI(2))$ has dimension at least 1, so $X$ is contained in a quadric surface $Q$.
-    If $X$ is contained in another quadric surface, then it must be a complete intersection by reason of its degree, which implies $\omega_X = \fO_X$ (II, Ex. 8.4), a contradiction.
-    If $Q$ is singular, then $X$ must have genus 1 (6.4.1), which is a contradiction.
-    Hence, $Q$ must be a nonsingular quadric surface.
-\end{proof}
+          \begin{proof}
+              Let $X$ be a rational curve of degree 4 in $\P^3$, and let $\fI$ be its ideal sheaf.
+              Then we have an exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fI \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_X \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Twisting by $\fO_{\P^3}(2)$ and taking cohomology gives
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\P^3, \fI(2)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
+                  \end{tikzcd} \]
+              Now the middle vector space has dimension 10, and $\fO_X(2)$ corresponds to a linear system of degree 8, so it has dimension at most 9 by Riemann-Roch.
+              Then, $\cH^0(\P^3, \fI(2))$ has dimension at least 1, so $X$ is contained in a quadric surface $Q$.
+              If $X$ is contained in another quadric surface, then it must be a complete intersection by reason of its degree, which implies $\omega_X = \fO_X$ (II, Ex. 8.4), a contradiction.
+              If $Q$ is singular, then $X$ must have genus 1 (6.4.1), which is a contradiction.
+              Hence, $Q$ must be a nonsingular quadric surface.
+          \end{proof}
 
-\item A rational curve of degree 5 in $\PP^3$ is always contained in a cubic surface, but there are such curves which are not contained in any quadric surface.
+    \item A rational curve of degree 5 in $\P^3$ is always contained in a cubic surface, but there are such curves which are not contained in any quadric surface.
 
-\begin{proof}
-    Let $X$ be a rational curve of degree 5 in $\PP^3$, and let $\fI$ be its ideal sheaf.
-    Then we have an exact sequence
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
-    \end{tikzcd} \]
-    Twisting by $\fO_{\PP^3}(3)$ and taking cohomology gives
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \cH^0(\PP^3, \fI(3)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(3)) \arrow[r] & \cH^0(X, \fO_X(3)) \arrow[r] & \cdots.
-    \end{tikzcd} \]
-    Now, the middle vector space has dimension 20, and the right hand vector space has dimension 16 by Riemann-Roch on $X$ (note that $\fO_X(3)$ corresponds to a divisor of degree 15).
-    So we conclude that $h^0(\PP^3, \fI(3)) \geq 4$.
+          \begin{proof}
+              Let $X$ be a rational curve of degree 5 in $\P^3$, and let $\fI$ be its ideal sheaf.
+              Then we have an exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fI \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_X \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Twisting by $\fO_{\P^3}(3)$ and taking cohomology gives
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\P^3, \fI(3)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(3)) \arrow[r] & \cH^0(X, \fO_X(3)) \arrow[r] & \cdots.
+                  \end{tikzcd} \]
+              Now, the middle vector space has dimension 20, and the vector space on the right has dimension 16 by Riemann-Roch on $X$ (note that $\fO_X(3)$ corresponds to a divisor of degree 15).
+              So we conclude that $h^0(\P^3, \fI(3)) \geq 4$.
 
+              A degree 5 curve in $\P^3$ contained in a quadric cone must have genus 2 (6.4.1), so if $X$ is contained in a quadric surface, then it must be a nonsingular quadric surface.
+              Choosing a degree 5 embedding of $\P^1$ in $\P^3$ is the same as picking a 4-dimensional subspace of $\cH^0(\P^1, \fO_{\P^1}(5))$, which has dimension 6.
+              Thus, the family of embeddings $\P^1 \to \P^3$ of degree 5 is parametrized by the Grassmannian $\Gr(4, 6)$, which has dimension $4(6 - 4) = 8$.
+              On the other hand, if $X$ is contained in a nonsingular quadric surface $Q \subset \P^3$, then it corresponds to a divisor of type $(1, 4)$ on $Q$.
+              So choosing an embedding of $\P^1$ as a curve of type $(1, 4)$ in $Q$ is the same as picking a 2-dimensional subspace of $\cH^0(\P^1, \fO_{\P^1}(1)$ and a 2-dimensional subspace of $\cH^0(\P^1, \fO_{\P^1}(4))$.
+              Thus, the family of embeddings $\P^1 \to Q$ is parametrized by $\Gr(2, 2) \times \Gr(2, 5)$, which has dimension $1(2 - 1) + 2(5 - 2) = 7$.
+              Since the family of embeddings $Q \to \P^3$ has dimension one, there are plenty of embeddings of $\P^1$ as a degree 5 curve in $\P^3$ which are not contained in any quadric surface.
+          \end{proof}
 
-\end{proof}
+    \item A curve of degree 5 and genus 2 in $\P^3$ is contained in a unique quadric surface $Q$.
+          Show that for any abstract curve $X$ of genus 2, there exist embeddings of degree 5 in $\P^3$ for which $Q$ is nonsingular, and there exist other embeddings of degree 5 for which $Q$ is singular.
 
-\item A curve of degree 5 and genus 2 in $\PP^3$ is contained in a unique quadric surface $Q$.
-Show that for any abstract curve $X$ of genus 2, there exist embeddings of degree 5 in $\PP^3$ for which $Q$ is nonsingular, and there exist other embeddings of degree 5 for which $Q$ is singular.
+          \begin{proof}
+              Let $X$ be a curve of degree 5 and genus 2 in $\P^3$, and let $\fI$ be its ideal sheaf.
+              Then we have an exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fI \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_X \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Twisting by $\fO_{\P^3}(2)$ and taking cohomology gives
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\P^3, \fI(2)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
+                  \end{tikzcd} \]
+              The middle vector space has dimension 10, and the vector space on the right has dimension 9 by Riemann-Roch on $X$ (note that $\fO_X(2)$ corresponds to a nonspecial divisor of degree 10).
+              So we conclude that $h^0(\P^3, \fI(2)) \geq 1$.
+              By reason of degree, $X$ cannot be contained in two distinct quadric surfaces, so there is a unique irreducible quadric surface $Q$ containing $X$.
 
-\begin{proof}
-    Let $X$ be a curve of degree 5 and genus 2 in $\PP^3$, and let $\fI$ be its ideal sheaf.
-    Then we have an exact sequence
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
-    \end{tikzcd} \]
-    Twisting by $\fO_{\PP^3}(2)$ and taking cohomology gives
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
-    \end{tikzcd} \]
-    The middle vector space has dimension 10, and the right hand vector space has dimension 9 by Riemann-Roch on $X$ (note that $\fO_X(2)$ corresponds to a nonspecial divisor of degree 10).
-    So we conclude that $h^0(\PP^3, \fI(2)) \geq 1$.
-    By reason of degree, $X$ cannot be contained in two distinct quadric surfaces, so there is a unique irreducible quadric surface $Q$ containing $X$.
+              Similar to (Ex. 6.2), if $X$ is a genus 2 curve of degree 5 in a nonsingular quadric surface $Q \subset \P^3$, then it corresponds to a divisor of type $(2, 3)$ on $Q$.
+              Thus, choosing an embedding of $X$ as a curve of type $(2, 3)$ in $Q \subset \P^3$ is the same as picking a $g_2^1$ and $g_3^1$ on $X$.
+              Since $X$ is hyperelliptic, it always has a $g_2^1$ and $g_3^1$, so there are plenty of embeddings of $X$ into a nonsingular quadric surface.
+              In fact, any $g_3^1$ on $X$ is obtained by adding a point to the unique $g_2^1$, so the family of $g_3^1$'s on $X$ has dimension one, implying that the family of embeddings of $X$ into a nonsingular quadric has dimension one.
+              On the other hand, any effective divisor of degree 5 gives an embedding of $X$ in $\P^3$ (Ex. 3.1), which is the same as picking 5 points in $X$, so the family of embeddings $X \to \P^3$ has dimension at least 5.
 
+          \end{proof}
 
-\end{proof}
+    \item There is no curve of degree 9 and genus 11 in $\P^3$.
 
-\item There is no curve of degree 9 and genus 11 in $\PP^3$.
+          \begin{proof}
+              Suppose there exists a curve $X \subseteq \P^3$ of degree 9 and genus 11, and let $\fI$ be its ideal sheaf.
+              We have an exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(\P^3, \fI(2)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
+                  \end{tikzcd} \]
+              Then $\fO_X(2)$ is a very ample line bundle corresponding to a linear system of degree 18, say $|\fO_X(2)| = |D|$ for some very ample divisor $D$ of degree 18.
+              Riemann-Roch gives
+              \begin{equation*}
+                  \dim |D| - \dim |K - D| = 8.
+              \end{equation*}
+              If $D$ is nonspecial, then $\dim|D| = 8$.
+              If $D$ is special, Clifford's theorem (5.4) says
+              \begin{equation*}
+                  \dim|D| \leq \frac{1}{2} \deg{D} = 9,
+              \end{equation*}
+              and we have an equality if and only if $X$ is hyperelliptic and $D$ is a multiple of the unique $g_2^1$ on $X$.
+              But $D$ is very ample, so it cannot be a multiple of the $g_2^1$, and the inequality must be strict.
+              We conclude that
+              \begin{equation*}
+                  h^0(X, \fO_X(2)) = 1 + \dim|D| \leq 9,
+              \end{equation*}
+              and therefore, $\cH^0(\P^3, \fI(2)) \neq 0$.
+              Hence, $X$ must be contained in a quadric surface.
 
-\begin{proof}
-    Suppose there exists a curve $X \subseteq \PP^3$ of degree 9 and genus 11, and let $\fI$ be its ideal sheaf.
-    We have an exact sequence
-    \[ \begin{tikzcd}
-        0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
-    \end{tikzcd} \]
-    Then $\fO_X(2)$ is a very ample line bundle corresponding to a linear system of degree 18, say $|\fO_X(2)| = |D|$ for some very ample divisor $D$ of degree 18.
-    Riemann-Roch gives
-    \begin{equation*}
-        \dim |D| - \dim |K - D| = 8.
-    \end{equation*}
-    If $D$ is nonspecial, then $\dim|D| = 8$.
-    If $D$ is special, Clifford's theorem (5.4) says
-    \begin{equation*}
-        \dim|D| \leq \frac{1}{2} \deg{D} = 9,
-    \end{equation*}
-    and we have an equality if and only if $X$ is hyperelliptic and $D$ is a multiple of the unique $g_2^1$ on $X$.
-    But $D$ is very ample, so it cannot be a multiple of the $g_2^1$, and the inequality must be strict.
-    We conclude that
-    \begin{equation*}
-        h^0(X, \fO_X(2)) = 1 + \dim|D| \leq 9,
-    \end{equation*}
-    and therefore, $\cH^0(\PP^3, \fI(2)) \neq 0$.
-    Hence, $X$ must be contained in a quadric surface.
+              Following the discussion in (6.4.1), if $X$ is contained in nonsingular quadric surface, then it corresponds to a divisor of type $(a, b)$ such that
+              \begin{equation*}
+                  a + b = 9, \quad ab - a - b + 1 = 11,
+              \end{equation*}
+              which is not possible.
+              If $X$ is contained in a singular quadric surface, then $X$ must have genus 12.
+              Hence, there is no curve of degree 9 and genus 11 in $\P^3$.
+          \end{proof}
 
-    Following the discussion in (6.4.1), if $X$ is contained in nonsingular quadric surface, then it corresponds to a divisor of type $(a, b)$ such that
-    \begin{equation*}
-        a + b = 9, \quad ab - a - b + 1 = 11,
-    \end{equation*}
-    which is not possible.
-    If $X$ is contained in a singular quadric surface, then $X$ must have genus 12.
-    Hence, there is no curve of degree 9 and genus 11 in $\PP^3$.
-\end{proof}
+    \item If $X$ is a complete intersection of surfaces of degree $a, b$ in $\P^3$, then $X$ does not lie on any surface of degree $< \min(a, b)$.
 
-\item If $X$ is a complete intersection of surfaces of degree $a, b$ in $\PP^3$, then $X$ does not lie on any surface of degree $< \min(a, b)$.
-
-\begin{proof}
-    If $X$ is a complete intersection of surfaces $H, H'$ of degree $a, b$ respectively, in $\PP^3$, then $X$ has degree $ab$.
-    Without loss of generality, suppose $a \leq b$.
-    If $H''$ is surface of degree $c < a$ containing $X$, then the irreducible components of $H \cap H''$ can have degree at most $ac$ (I, 7.7), which is strictly less than $ab$, so $X$ cannot be an irreducible component of $H \cap H''$.
-    Hence, $X$ cannot lie on any surface of degree $< a$.
-\end{proof}
+          \begin{proof}
+              If $X$ is a complete intersection of surfaces $H, H'$ of degree $a, b$ respectively, in $\P^3$, then $X$ has degree $ab$.
+              Without loss of generality, suppose $a \leq b$.
+              If $H''$ is surface of degree $c < a$ containing $X$, then the irreducible components of $H \cap H''$ can have degree at most $ac$ (I, 7.7), which is strictly less than $ab$, so $X$ cannot be an irreducible component of $H \cap H''$.
+              Hence, $X$ cannot lie on any surface of degree $< a$.
+          \end{proof}
 
 \end{enumerate}
 

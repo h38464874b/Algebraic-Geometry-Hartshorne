@@ -1,9 +1,13 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 4, Section 5}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
   \item Show that a hyperelliptic curve can never be a complete intersection in any projective space.
@@ -15,13 +19,31 @@
   \item If $X$ is a curve of genus $\geq 2$ over a field of characteristic 0, show that the group $\Aut{X}$ of automorphisms of $X$ is finite.
 
         \begin{proof}
-          Suppose $X$ is hyperelliptic, and let $f : X \to \PP^1$ be the unique $g_2^1$ of $X$.
-          If $\sigma \in \Aut{X}$, then $f' = f \circ \sigma$ is also a $g_2^1$, so by uniqueness, there exists $\tau \in \Aut{\PP^1}$ such that $f' = \tau \circ f$.
-          In particular, $\tau$ sends the ramification points of $f$ to the ramification points of $f'$.
-          If $\tau = \id$, then either $\sigma = \id$ or $\sigma$ is the autormophism interchanging the sheets of $f$.
-          If $\tau \neq \id$, then $\tau$ gives an element of $S_{2g + 2}$, where $2g + 2$ is the number of ramification points of $f$.
+          \fbox{$X$ is hyperelliptic.} Let $\pi : X \to \P^1$ be the unique $g^1_2$ of $X$.
+          By the Riemann-Hurwitz formula, $\pi$ is ramified at $2g + 2$ points.
+          If $\sigma$ is an automorphism of $X$, then there exists $\tau \in \Aut(\P^1)$ such that we have the commutative diagram
+          \[ \begin{tikzcd}
+              X \arrow[r, "\sigma"] \arrow[d, "\pi"'] & X \arrow[d, "\pi"] \\
+              \P^1 \arrow[r, "\tau"]                  & \P^1
+            \end{tikzcd}. \]
+          This means $\Aut(X)$ permutes the branch points of $\pi$, so there is a group homorphism $\Aut(X) \to S_{2g + 2}$.
+          The latter is a finite group, so it remains to show it has finite kernel.
+          If $\sigma$ fixes every branch point, then $\tau$ is the identity, so $\sigma$ is either the identity map, or the unique hyperelliptic involution (think in terms of function fields and the fact that the hyperellitpic involution is induced by the unique non-trivial element in $\Gal(K(X)/K(\P^1))$).
 
-          \fbox{$X$ is not hyperelliptic.} Let $X \subseteq \PP^{g - 1}$ be the canonical embedding of $X$.
+          \fbox{$X$ is nonhyperelliptic.}
+          Consider the canonical embedding $X \hookrightarrow |K| \cong \P^{g - 1}$.
+          If $\sigma$ is an automorphism of $X$, then there exists $\tau \in \PGL(g - 1)$ such that we have the commutative diagram
+          \[ \begin{tikzcd}
+              X \arrow[r, "\sigma"] \arrow[d] & X \arrow[d] \\
+              \P^{g - 1} \arrow[r, "\tau"]                  & \P^{g - 1}
+            \end{tikzcd}. \]
+          By (Ex. 4.6), $X$ has $g(g^2- 1)$ hyperoscullation points in this embedding, and $\tau$ must permute them because linear transformations preserve incidence structures.
+          So there is a group homomorphism $\Aut(X) \to S_{g(g^2 - 1)}$, and since $S_{g(g^2 - 1)}$ is finite, it remains to show the kernel is finite.
+          For every $g \geq 3$, $X \cap H$ can contain at most point two hyperoscullation points for any hyperplane $H \subset \P^{g - 1}$, i.e., no three hyperoscullation points are collinear.
+          It is a general fact that any automorphism in $\PGL(n)$ is identity if it fixes at least $n + 2$ points in general position.
+          Since $g(g^2 - 1) \geq g + 1$ for every $g \geq 3$, if $\tau$ fixes the hyperoscullation points, it must be the identity.
+          Hence, $\sigma$ is the identity.
+          As a corollary, any automorphism of a nonhyperelliptic is induced by an automorphism of the canonical embedding, i.e., there exists an injective map $\Aut(X) \to \PGL(g - 1)$.
         \end{proof}
 
   \item \textit{Moduli of Curves of Genus 4.} The hyperelliptic curves of genus 4 form an irreducible family of dimension 7.
@@ -29,75 +51,125 @@
         The subset of those having only one $g_3^1$ is an irreducible family of dimension 8.
 
         \begin{proof}
-          Hyperelliptic elliptic curves of genus 4 are determined as two-fold coverings of $\PP^1$, ramified at $0, 1, \infty$, and $2g - 1 = 7$ additional points, up to the action of a certain finite group.
-          So the hyperelliptic curves form an irreducible subvariety of dimension 7 of $\goth{M}_4$.
+          Hyperelliptic elliptic curves of genus 4 are determined as two-fold coverings of $\P^1$, ramified at $0, 1, \infty$, and $2g - 1 = 7$ additional points, up to the action of a certain finite group.
+          So the hyperelliptic curves form an irreducible subvariety of dimension 7 of $\goth{M}_4$ (5.5.5).
 
-          The canonical embedding of nonhyperelliptic curves of genus 4 is a complete intersection of a unique irreducible quadric surface and an irreducible cubic surface.
+          The canonical model of a nonhyperelliptic curve of genus 4 is the complete intersection of a unique quadric surface and a cubic surface in $\P^3$ (5.2.2).
+          The family of all these curves is parametrized by the space $S$ of all complete intersections of a quadric surface and a cubic surface.
+          We can think of $S$ as the set of all homogenous ideals generated by a degree two and three homogenous polynomial in $k[x_1, \dots, x_4]$.
+          So there is a morphism $S \to \gM_4$, whose fibres are images of the group $\PGL(3)$, which has dimension 15.
+          It remains to compute the dimension of $S$.
+          There is a projection map $S \to \gQ$, where $\gQ$ is the space of all irreducible quadric surfaces in $\P^3$.
+          It is a locally closed subset of $\cH^0(\P^3, \fO_{\P^3}(2))|$, which has dimension $\binom{3 + 2}{2} - 1 = 9$.
+          The fibres of $S \to \gQ$ is the image of pullback of the linear system of cubic surfaces in $\P^3$, which is just $|\cH^0(Q, \fO_Q(3))|$ for some quadric surface $Q \subset \P^2$.
+          Note that the dimension of this space is independent of the choice of $Q$.
+          We have the short exact sequence
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \fO_{\P^3}(-2) \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_Q \arrow[r] & 0.
+            \end{tikzcd} \]
+          Tensoring by $\fO_{\P^3}(3)$ and taking cohomology gives
+          \[ \begin{tikzcd}
+              0 \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(1)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(3)) \arrow[r] & \cH^0(Q, \fO_Q(3)) \arrow[r] & 0.
+            \end{tikzcd} \]
+          By exactness, we have
+          \begin{equation*}
+            \dim |\cH^0(Q, \fO_Q(3))| = \binom{3 + 3}{3} - \binom(3 + 1){1} - 1 = 15,
+          \end{equation*}
+          which implies the fibres of $S \to \gQ$ have dimension 15.
+          So $S$ has dimension $9 + 15 = 24$.
+          Hence, $\gM_4$ has dimension $24 - 15 = 9$.
+          The subspace of $\gQ$ consisting of quadric cones have dimension 8, so the space of nonhyperelliptic curves of genus 4 with only one $g_3^1$ is an irreducible family of dimension 8.
 
-          Fix a quadric surface $Q \subseteq \PP^3$.
-          The family of all these curves is parametrized by an open set $U \subseteq \PP(\cH^0(Q, \fO_Q(3)))$, which has dimension 15.
-          So there is a morphism $U \to \goth{M}_4$ with $F_2 \in U$ mapped to the isomorphism class of the curve $F_2.Q$.
-
-          \fbox{$Q$ is nonsingular.} $U$ has dimension 15.
-          $Q.F \cong Q'.F'$ if and only if there exists $\sigma \in \PGL(3)$ such that $\sigma(Q).\sigma(F) = Q'.F'$ if and only if $\sigma(Q) = Q'$ and there exists $\tau \in \PGL(3)$ such that $\tau$ fixes $Q'$ and $\tau(\sigma(F)) = F'$.
-          Thus, the fibre of $U \to \goth{M}_4$ over $Q.F$ is the image of the subgroup $G \subseteq \PGL(3)$ fixing $Q$, which has dimension 6.
-          Note that $\sigma \in G$ fixing $Q$ is equivalent to fixing a nondegenerate quadratic form.
-          If $\sigma \in G$ fixes $Q.F$ as a subscheme of $Q$, then $\sigma$ induces a nontrivial automorphism of $Q.F$.
-          The automorphism group of a curve of genus $\geq 2$ is finite.
-          Hence, the fibres of $U \to \goth{M}_4$ over $Q.F$ has dimension 6, so the image of $U \to \goth{M}_4$ has dimension 9.
-
-          \fbox{$Q$ is singular.} $U$ has dimension 15, but subgroup $G \subseteq \PGL(3)$ fixing $Q$ has dimension $7$.
         \end{proof}
 
   \item[\textbf{5.}] \textit{Curves of Genus 5.} Assume $X$ is not hyperelliptic.
         \begin{itemize}
-          \item[(a)] The curves of genus 5 whose canonical model in $\PP^4$ is a complete intersection $F_2.F_2.F_2$ form a family of dimension 12.
+          \item[(a)] The curves of genus 5 whose canonical model in $\P^4$ is a complete intersection $F_2.F_2.F_2$ form a family of dimension 12.
           \item[(b)] $X$ has a $g_3^1$ if and only if it can be represented as a plane quintic with one node.
                 These form an irreducible family of dimension 11.
           \item[(c)] In that case, the conics through the node cut out the canonical system (not counting the fixed points at the node).
-                Mapping $\PP^2 \to \PP^4$ by this linear system of conics, show that the canonical curve $X$ is contained in a cubic surface $V \subseteq \PP^4$, with $V$ isomorphic to $\PP^2$ with one point blown up (II, Ex. 7.7).
+                Mapping $\P^2 \to \P^4$ by this linear system of conics, show that the canonical curve $X$ is contained in a cubic surface $V \subseteq \P^4$, with $V$ isomorphic to $\P^2$ with one point blown up (II, Ex. 7.7).
                 Furthermore, $V$ is the union of all the trisecants of $X$ corresponding to the $g_3^1$ (5.5.3), so $V$ is contained in the intersection of all the quadric hypersurfaces containing $X$.
                 Thus $V$ and $g_3^1$ are unique.
         \end{itemize}
 
         \begin{proof} $ $ \vspace{0pt}
           \begin{itemize} [leftmargin=0cm]
-            \item[(a)] $\dim \Stab(Q) = 15$, $\dim \PP \cH^0(Q, \fO_Q(2)) = $
+            \item[(a)] A curve of genus 5 whose canonical model in $\P^4$ is a complete intersection of three quadrics is given by a three-dimensional subspace of $\cH^0(\P^4, \fO_{\P^4}(2))$, which has dimension $\binom{4 + 2}{2} = 15$.
+                  Thus, the family of all these curves is parametrized by an open subset of the Grassmannian $\Gr(3, 15)$, which has dimension $3(15 - 3) = 36$.
+                  There is a natural action of $\PGL(4)$ on $\Gr(3, 15)$, and since the embedding is canonical, two three-dimensional subspaces in $\Gr(3, 15)$ give isomorphic curves if and only if they are in the same orbit of $\PGL(4)$.
+                  So there is a morphism $\Gr(3, 15) \dashrightarrow \gM_5$, whose fibres are the images of the group $\PGL(4)$ which has dimension $(4 + 1)^2 - 1 = 24$.
+                  Since any individual curve has only finitely many automorphisms (Ex. 5.2), the fibres have dimension $= 24$, and so the image of $\Gr(3, 15)$ has dimension $36 - 24 = 12$.
 
-            \item[(b)] Suppose there exists a birational morphism $f : X \to X'$ such that $X'$ is a plane quintic with one node.
-            Then $f$ is the normalization of $X'$, and the preimage of the node is a divisor $D$ of degree 2 on $X$.
+            \item[(b)] Let $X$ be a nonhyperelliptic curve of genus 5 in its canonical embedding as a curve of degree 8 in $\P^4$.
+            The converse direction is proven in (c), so it remains to show the other direction.
+            By (5.3.3), $X$ has a $g_3^1$ if and only if it has a trisecant $L$ in this embedding.
+            In $X \cap L = P_1, P_2, P_3$, the points are counted with multiplicity $= 8$
+            If $P$ is any point in $X$, then 
 
-            \item[(c)]
+
+                  By (3.11.1), the space $V_{d, r}$ of irreducible plane curves of degree $d$ and $r$ nodes is irreducible and has dimension $\frac{1}{2}d(d + 3) - r$.
+                  In our case, $V_{5, 1}$ has dimension $19$, and we have just shown $V_{5, 1}$ parametrizes the space of all genus 5 curves with a $g^1_3$.
+                  So there is a morphism $V_{5, 1} \to \gM_5$, whose fibres are images of the group $\PGL(2)$, which has dimension 8.
+                  Hence, the family of genus 5 curves with a $g^1_3$ form an irreducible family of dimension $19 - 8 = 11$.
+
+            \item[(c)] Let $\pi : V \to \P^2$ be the blowing up of $\P^2$ at the node $P$ of $X \to X' \subset \P^2$ as a plane quintic curve , and let $E \subset V$ be the exceptional locus of $\pi$.
+                  Let $H$ be any hyperplane in $\P^2$ so that $|2H|$ is the linear system of conics in $\P^2$.
+                  Using the results of (V, \SS 3) and (V, \SS 4), the linear system $|2H - P|$ of conics passing through $P$ has dimension $5 - 1 = 4$ with an assigned basepoint at $P$.
+                  By (II, 7.17.3), the rational map $\P^2 \dashrightarrow |2H - P| \cong \P^4$ extends to a morphism $V \to \P^4$.
+                  It is an embedding of $V$ into $\P^4$ because it corresponds to the linear system $|D|$ with $D = 2\pi^*H - E$ on $V$, which is very ample by (V, 4.2.2).
+                  By (V, Ex. 1.1) and (V, 3.2), the degree of $V$ in $\P^4$ equals to
+                  \begin{equation*}
+                    D^2 = 4H^2 + E^2 = 4 - 1 = 3.
+                  \end{equation*}
+                  The strict transform $\tilde{X}' \to X'$ is nonsingular, i.e., $\tilde{X}' \cong X$, and by (V, 3.6), it relates to $X'$ as divisors in $V$ in the following way
+                  \begin{equation*}
+                    \pi^*X' = \tilde{X}' + 2E.
+                  \end{equation*}
+                  Using the fact that $\tilde{X} \sim 5H$ in $\P^2$, by (V, Ex. 1) the degree of $\tilde{X}'$ as a curve in $\P^4$ equals to
+                  \begin{equation*}
+                    \tilde{X}'.D = (\pi^*X' - 2E).(2\pi^*H - E) = 10 (\pi^*H)^2 + 2E^2 = 10 - 2 = 8.
+                  \end{equation*}
+                  By the Riemann-Roch theorem, the only degree $2g - 2$ invertible sheaf with at least $g$ sections on a curve of genus $g$ is the canonical sheaf, so this embedding of $X$ in $\P^4$ is canonical.
           \end{itemize}
         \end{proof}
 
-  \item[\textbf{6.}] Show that a nonsingular plane curve of degree 5 has no $g_3^1$.
-  Show that there are nonhyperelliptic curves of genus 6 which cannot be represented as a nonsingular plane quintic curve.
+  \item[\textbf{6.}] Show that a nonsingular plane curve of degree 5 has no $g^1_3$.
+        Show that there are nonhyperelliptic curves of genus 6 which cannot be represented as a nonsingular plane quintic curve.
 
         \begin{proof}
-
+          For the second part, it is enough to show there exists nonhyperelliptic curves of genus 6 with a $g_3^1$.
+          Consider any irreducible nonsingular curve $X$ associated to a divisor of type $(3, 4)$ on the nonsingular quadric surface $Q$.
+          It has genus $(3 - 1)(4 - 1) = 6$, and one of the families of lines on $Q$ cuts out a $g_3^1$ on $X$.
+          Hence, $X$ cannot be represented as a nonsingular plane quintic curve.
+          The canonical sheaf of $Q$ is $\omega_Q = \fO_Q(-2, -2)$, so by (II, 8.20), the canonical sheaf of $X$ is
+          \begin{equation*}
+            \omega_X \cong (\omega_Q \otimes \fO_Q(X)) \otimes \fO_X = \fO_Q(1, 2) \otimes \fO_X.
+          \end{equation*}
+          Since $\fO_Q(1, 2)$ is a very ample on $Q$, $\omega_X$ is very ample on $X$.
+          Hence, $X$ is nonhyperelliptic (5.2).
         \end{proof}
 
-  \item[\textbf{7.}] \begin{itemize}
-          \item[(a)] Any automorphism of a curve of genus 3 is induced by an automorphism of $\PP^2$ via the canonical embedding.
-          \item[(b)] Assume $\chr{k} \neq 3$.
-                If $X$ is the curve given by
-                \begin{equation*}
-                  x^3y + y^3z + z^3 x = 0,
-                \end{equation*}
-                the group $\Aut{X}$ is the simple group of order 168, whose order is the maximum $84(g - 1)$ allowed by (Ex. 2.5).
-          \item[(c)] Most curves of genus 3 have no automorphisms except the identity.
-        \end{itemize}
+        % \item[\textbf{7.}] \begin{itemize}
+        %         \item[(a)] Any automorphism of a curve of genus 3 is induced by an automorphism of $\P^2$ via the canonical embedding.
+        %         \item[(b)] Assume $\car{k} \neq 3$.
+        %               If $X$ is the curve given by
+        %               \begin{equation*}
+        %                 x^3y + y^3z + z^3 x = 0,
+        %               \end{equation*}
+        %               the group $\Aut{X}$ is the simple group of order 168, whose order is the maximum $84(g - 1)$ allowed by (Ex. 2.5).
+        %         \item[(c)] Most curves of genus 3 have no automorphisms except the identity.
+        %       \end{itemize}
 
-        \begin{proof} $ $ \vspace{0pt}
-          \begin{itemize} [leftmargin=0cm]
-            \item[(a)]
+        %       \begin{proof} $ $ \vspace{0pt}
+        %         \begin{itemize} [leftmargin=0cm]
+        %           \item[(a)]
 
-            \item[(b)]
+        %           \item[(b)]
 
-            \item[(c)]
-          \end{itemize}
-        \end{proof}
+        %           \item[(c)]
+        %         \end{itemize}
+        %       \end{proof}
 
 \end{enumerate}
 

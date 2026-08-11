@@ -1,9 +1,13 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 4, Section 3}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
   \item If $X$ is a curve of genus 2, show that a divisor $D$ is very ample $\iff$ $\deg{D} \geq 5$.
@@ -11,45 +15,35 @@
 
         \begin{proof}
           Let $D$ be a very ample divisor on $X$.
-          By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, which implies $\ell(D) \geq 4$.
-          By the Riemann-Roch theorem, we have
+          By the degree-genus formula, a nonsingular plane curve cannot have genus equal to 2, which implies $\dim |D| \geq 3$.
+          Applying the Riemann-Roch theorem to $D$ gives
           \begin{equation*}
-            \deg{D} = \ell(D) - \ell(K - D) + 1 \geq 5 - \ell(K - D),
+            \deg{D} = \dim |D| - \dim |K - D| + 1 \geq 4 - \dim|K - D|.
           \end{equation*}
-          so it suffices to show $\ell(K - D) = 0$.
-          Indeed, $\deg{D} \geq 3$ by (Ex. 1.5), so $\deg(K - D) \leq -1$.
-          Hence, $\ell(K - D) = 0$.
+          By (Ex. 1.5), $D$ has degree at least 3 (Ex. 1.5), so $K - D$ has negative degree.
+          Hence, $|K - D|$ has dimension -1.
         \end{proof}
 
-  \item[\textbf{3.}] If $X$ is a curve of genus $\geq 2$ which is a complete intersection (II, Ex. 8.4) in some $\PP^n$, show that the canonical divisor $K$ is very ample.
-        Conclude that a curve of genus 2 can never be a complete intersection in any $\PP^n$.
+  \item[\textbf{3.}] If $X$ is a curve of genus $\geq 2$ which is a complete intersection (II, Ex. 8.4) in some $\P^n$, show that the canonical divisor $K$ is very ample.
+        Conclude that a curve of genus 2 can never be a complete intersection in any $\P^n$.
 
         \begin{proof}
-          Let $d$ be the degree of $X$ in $\PP^n$, and assume $X$ is not contained in any hyperplane.
-          Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(e)$, where $e = \sum d_i - n - 1$, so it suffices to show $e \geq 1$.
-          Indeed, we have two ways of computing $\deg{K}$, which are $\deg{K} = ed$ and $\deg{K} = 2g - 2 \geq 2$.
+          Let $d$ be the degree of $X$ in $\P^n$, and assume $X$ is not contained in any hyperplane.
+          Then $X$ is a complete intersection of $n - 1$ hypersurfaces of degree $d_i$, and by (II, Ex. 8.4), we have $\fO_X(K) \cong \fO_X(e)$, where $e = \sum d_i - n - 1$, so it is enough to show $e \geq 1$.
+          We have two ways of computing $\deg{K}$, which are $\deg{K} = ed$ and $\deg{K} = 2g - 2 \geq 2$.
           Hence, $e \geq 1$.
-
-          If $X$ is a curve of genus 2, then $\ell(K) = 2$, so $K$ corresponds to a morphism $X \to \PP^1$, which can never be an embedding.
+          The linear system given by the canonical sheaf of a curve of genus 2 is the unique $g^1_2$ (Ex. 1.7), which is never ample.
         \end{proof}
-
-        % \item[\textbf{5.}] Let $X$ be a curve in $\PP^3$, which is not contained in any plane.
-        % \begin{itemize}
-        %   \item[(a)] If $O \notin X$ is a point, such that the projection from $O$ induces a birational morphism $\varphi$ from $X$ to its image in $\PP^2$, show that $\varphi(X)$ \textit{must} be singular.
-        %   \item[(b)] If $X$ has degree $d$ and genus $g$, conclude that $g < \frac{1}{2}(d - 1)(d - 2)$.
-        %   \item[(c)] Now let $\{ X _t\}$ be the flat family of curves induced by the projection (III, 9.8.3) whose fibre over $t = 1$ is $X$, and whose fibre $X_0$ over $t = 0$ is the scheme with support $\varphi(X)$.
-        %   Show that $X_0$ always has nilpotent elements.
-        % \end{itemize}
 
   \item[\textbf{6.}] \textit{Curves of Degree 4.}
         \begin{itemize}
-          \item[(a)] If $X$ is a curve of degree 4 in some $\PP^n$, show that either
+          \item[(a)] If $X$ is a curve of degree 4 in some $\P^n$, show that either
                 \begin{itemize}
-                  \item[(1)] $g = 0$, in which case $X$ is either the rational normal quartic in $\PP^4$ (Ex. 3.4) or the rational quartic curve in $\PP^3$ (II, 7.8.6), or
-                  \item[(2)] $X \subseteq \PP^2$, in which case $g = 3$, or
-                  \item[(3)] $X \subseteq \PP^3$ and $g = 1$.
+                  \item[(1)] $g = 0$, in which case $X$ is either the rational normal quartic in $\P^4$ (Ex. 3.4) or the rational quartic curve in $\P^3$ (II, 7.8.6), or
+                  \item[(2)] $X \subseteq \P^2$, in which case $g = 3$, or
+                  \item[(3)] $X \subseteq \P^3$ and $g = 1$.
                 \end{itemize}
-          \item[(b)] In the case $g = 1$, show that $X$ is a complete intersection of two irreducible quadric surfaces in $\PP^3$ (I, Ex. 5.1).
+          \item[(b)] In the case $g = 1$, show that $X$ is a complete intersection of two irreducible quadric surfaces in $\P^3$ (I, Ex. 5.1).
         \end{itemize}
 
         \begin{proof} $ $ \vspace{0pt}
@@ -60,41 +54,53 @@
                   \end{equation*}
 
                   \fbox{$n = 3$} If $X$ is not contained in any hyperplane, then $g < 3$ (III, Ex. 9.11) (Ex. 3.5b).
-                  Since $g \neq 2$ by (Ex. 3.1), $X$ is either the rational quartic curve in $\PP^3$, or an elliptic curve.
+                  Since $g \neq 2$ by (Ex. 3.1), $X$ is either the rational quartic curve in $\P^3$, or an elliptic curve.
 
                   \fbox{$n = 4$} $X$ is rational by (Ex. 1.5).
 
-            \item[(b)] Let $\fI$ be the ideal sheaf of $X$ in $\PP^3$, and consider the exact sequence
+            \item[(b)] Let $\fI$ be the ideal sheaf of $X$ in $\P^3$, and consider the exact sequence
                   \[ \begin{tikzcd}
-                      0 \arrow[r] & \fI \arrow[r] & \fO_{\PP^3} \arrow[r] & \fO_X \arrow[r] & 0.
+                      0 \arrow[r] & \fI \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_X \arrow[r] & 0.
                     \end{tikzcd} \]
-                  Twisting by $\fO_{\PP_3}(2)$ and taking cohomology gives
+                  Twisting by $\fO_{\P_3}(2)$ and taking cohomology gives
                   \[ \begin{tikzcd}
-                      0 \arrow[r] & \cH^0(\PP^3, \fI(2)) \arrow[r] & \cH^0(\PP^3, \fO_{\PP^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
+                      0 \arrow[r] & \cH^0(\P^3, \fI(2)) \arrow[r] & \cH^0(\P^3, \fO_{\P^3}(2)) \arrow[r] & \cH^0(X, \fO_X(2)) \arrow[r] & \cdots.
                     \end{tikzcd} \]
                   Now, $X$ is an elliptic curve, and $\fO_X(2)$ corresponds to a divisor $D$ of degree 8.
-                  The Riemann Roch theorem gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\PP^3, \fI(2)) \geq 2$.
-                  An element of $\cH^0(\PP^3, \fI(2))$ is a form of degree 2, whose zero-set is a quadric surface containing $X$.
+                  The Riemann Roch theorem gives $\dim \cH^0(X, \fO_X(2)) = 8$, and the vector space in the middle has dimension 10, so we conclude that $h^0(\P^3, \fI(2)) \geq 2$.
+                  An element of $\cH^0(\P^3, \fI(2))$ is a form of degree 2, whose zero-set is a quadric surface containing $X$.
                   Any such quadric must be irreducible and reduced because $X$ is not contained in any hyperplane.
                   Hence, $X$ is contained in two distinct irreducible quadric surfaces and is a complete intersection because $X$ is a curve of degree 4.
           \end{itemize}
         \end{proof}
 
-  \item[\textbf{9.}] Prove the following lemma of Bertini: if $X$ is a curve of degree $d$ in $\PP^3$, not contained in any plane, then for almost all planes $H \subseteq \PP^3$ (meaning a Zariski open subset of the dual projective space $(\PP^3)^*$), the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
+  \item[\textbf{9.}] Prove the following lemma of Bertini: if $X$ is a curve of degree $d$ in $\P^3$, not contained in any plane, then for almost all planes $H \subseteq \P^3$ (meaning a Zariski open subset of the dual projective space $(\P^3)^*$), the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
 
         \begin{proof}
-          The statement is trivial for $d = 1, 2$, so assume $d \geq 3$.
+          Bertini's theorem says a general plane in $\P^3$ intersects $X$ in $d$ distinct points.
+          To show that no three of these points are collinear generically, it is enough to show a general plane in $\P^3$ does not contain a multisecant of $X$.
+          The proof of (3.10) shows that the set of multisecants of $X$ has dimension $\leq 1$ in $(\P^3)^*$, and a general plane in $\P^3$ corresponds to a line in $(\P^3)^*$.
+          Hence, for almost almost all planes $H \subseteq \P^3$, the intersection $X \cap H$ consists of exactly $d$ distinct points, no three of which are collinear.
         \end{proof}
 
   \item[\textbf{12.}] For each value of $d = 2, 3, 4, 5$ and $r$ satisfying $0 \leq r \leq \frac{1}{2}(d - 1)(d - 2)$, show that there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
 
         \begin{proof}
-          There is nothing to prove for $d = 2$ or $r = 0$, so assume otherwise.
-          By (Ex. 1.8) (3.10), for each $d = 2, 3, 4, 5$, we want to show there exists a smooth curve of degree $d$ and genus $0 \leq g \leq \frac{1}{2}(d - 1)(d - 2)$ in some $\PP^n$.
+          There is nothing to prove for $d = 2$, so fix any $d \geq 3$, and denote $g = \frac{1}{2}(d - 1)(d - 2)$.
 
-          \fbox{$d = 2$} There is nothing to prove.
 
-          \fbox{$d = 3$} $g = 0$ corresponds to the rational cubic in $\PP^3$, $g = 1$
+          Both extremes $r = 0, g$ are consructed in (3.11.1).
+
+          If $X$ is any elliptic curve and $P$ is any point in $X$, then the linear system $|dP|$ gives an embedding of $X$ in $\P^{d - 1}$ as a curve of degree $d$.
+          Projecting the curve into $\P^2$ by (3.5) and (3.10) gives a plane curve of degree $d$ and $g - 1$ nodes.
+
+          Similarly, any divisor of degree $\geq 5$ on a genus 2 curve is very ample by (Ex. 1.5), so there exists plane curves of degree $d \geq 5$ with $g - 2$ nodes.
+
+          More generally, any divisor of degree $d \geq 2g + 1$ on any curve of genus $g$ is very ample by (3.2), so there exists plane curves of degree $d$ and $g - d$ nodes.
+
+          \begin{proposition}
+            For every $0 < r < d$, there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
+          \end{proposition}
         \end{proof}
 
 \end{enumerate}

@@ -6,14 +6,29 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-    \item If $X$ is a birationally ruled surface, show that the curve $C$, such that $X$ is birationally equivalent to $C \times \PP^1$, is unique up to isomorphism.
+    \item If $X$ is a birationally ruled surface, show that the curve $C$, such that $X$ is birationally equivalent to $C \times \P^1$, is unique up to isomorphism.
 
     \begin{proof}
-      
+      It is enough to show $C \times \P^1$ and $C' \times \P^1$ are birational if and only if $C$ is isomorphic to $C'$.
     \end{proof}
 
-    \item Let $X$ be the ruled surface $\PP(\fE)$ over a curve $C$.
+    \item Let $X$ be the ruled surface $\P(\fE)$ over a curve $C$.
           Show that $\fE$ is decomposable if and only if there exist two sections $C', C''$ of $X$ such that $C' \cap C'' = \emptyset$.
+
+          \begin{proof}
+            Let $\fE = \fO_C \oplus \fO_C(\ge)$, with invariant $e = -\deg \ge \geq 0$.
+            Defining a section $C \to X$ is equivalent to giving a surjection $\fE \to \fL \to 0$.
+            The two natural choices for $\fL$ are the direct summands $\fO_C$ and $\fO_C(\ge)$.
+            The surjection $\fE \to \fO_C(\ge) \to 0$ correspond to the section $C_0 \subset X$ such that $\fO_X(C_0) \cong \fO_X(1)$.
+            By (2.9), the section $D$ corresponding to $\fE \to \fO_C$, $\fO_C$ has degree 0, which means $C_0.D = 0$.
+
+            Conversely, suppose we have two surjections $\fE \to \fL' \to 0, \fE \to \fL'' \to 0$ corresponding to $C', C''$, respectively.
+            Let $\fN'$ and $\fN''$ be the kernels.
+            \begin{equation*}
+                  \fN = \fO_C(\ge - \gd'), \quad \fN = \fO_C(\ge - \gd'')
+            \end{equation*}
+
+          \end{proof}
 
     \item \begin{itemize}
               \item[(a)] If $\fE$ is a locally free sheaf of rank $r$ on a nonsingular curve $C$, then there is a sequence
@@ -23,10 +38,10 @@
                     of subsheaves such that $\fE_i / \fE_{i - 1}$ is an invertible sheaf for each $i = 1, \dots, r$.
                     We say that $\fE$ is a \textit{successive extension} of invertible sheaves.
               \item[(b)] Show that this is false for varieties of dimension $\geq 2$.
-                    In particular, the sheaf of differentials $\Omega_{\PP^2}$ on $\PP^2$ is not an extension of invertible sheaves.
+                    In particular, the sheaf of differentials $\Omega_{\P^2}$ on $\P^2$ is not an extension of invertible sheaves.
           \end{itemize}
 
-    \item Let $C$ be a curve of genus $g$, and let $X$ be the ruled surface $C \times \PP^1$.
+    \item Let $C$ be a curve of genus $g$, and let $X$ be the ruled surface $C \times \P^1$.
           We consider the question, for what integers $s \in \Z$ does there exist a section $D$ of $X$ with $D^2 = s$?
           First show that $s$ is always an even integer, say $s = 2r$.
           \begin{itemize}
@@ -48,9 +63,9 @@
               \item[(d)] For $g = 2$, show that $e \geq -2$ is also necessary for the existence of $X$.
           \end{itemize}
 
-    \item Show that every locally free sheaf of finite rank on $\PP^1$ is isomorphic to a direct sum of invertible sheaves.
+    \item Show that every locally free sheaf of finite rank on $\P^1$ is isomorphic to a direct sum of invertible sheaves.
 
-    \item On the elliptic ruled surface $X$ of (2.11.6), show that the sections $C_0$ with $C_0^2 = 1$ form a one-dimensional algebraic family, parametrized by the points of th ebase curve $C$, and that no tow are linearly equivalent.
+    \item On the elliptic ruled surface $X$ of (2.11.6), show that the sections $C_0$ with $C_0^2 = 1$ form a one-dimensional algebraic family, parametrized by the points of th ebase curve $C$, and that no two are linearly equivalent.
 
     \item A locally free sheaf $\fE$ on a curve $C$ is said to be \textit{stable} if for every quotient locally free sheaf $\fE \to \fF \to 0$, $\fF \neq \fE$, $\fF \neq 0$, we have
           \begin{equation*}
@@ -63,30 +78,30 @@
               \item[(c)] Show that the indecomposable locally free sheaves $\fE$ of rank 2 that are not seistable are classified, up to isomorphism, by giving (1) an integer $0 < e \leq 2g - 2$, (2) an element $\fL \in \pic{C}$ of degree $-e$, and (3) a nonzero $\xi \in \cH^1(X, \fL^{-1})$, deterimned up to a nonzero scalar multiple.
           \end{itemize}
 
-    \item Let $Y$ be a nonsingular curve on a quadric cone $X_0$ in $\PP^3$.
+    \item Let $Y$ be a nonsingular curve on a quadric cone $X_0$ in $\P^3$.
           Show that either $Y$ is a complete intersection of $X_0$ with a surface of degree $a \geq 1$, in which case $\deg{Y} = 2a$, $g(Y) = (a - 1)^2$, or $\deg{Y}$ is odd, say $2a + 1$, and $g(Y) = a^2 - a$.
 
-    \item For any $n > e \geq 0$, let $X$ be the rational scroll of degree $d = 2n - e$ in $\PP^{d + 1}$ given by (2.19).
+    \item For any $n > e \geq 0$, let $X$ be the rational scroll of degree $d = 2n - e$ in $\P^{d + 1}$ given by (2.19).
           If $n \geq 2e - 2$, show that $X$ contains a nonsingular curve $Y$ of genus $g = d + 2$ which is a canonical curve in this embedding.
           Conclude that for every $g \geq 4$, there exists a nonhyperelliptic curve which has a $g_3^1$.
 
-    \item Let $X$ be a ruled surface over the curve $C$, defined by a normalized bundle $\fE$, and let $\goth{e}$ be the divisor on $C$ for which $\fO_C(\goth{e}) \cong \wedge^2 \fE$ (2.8.1).
-          Let $\goth{b}$ be any divisor on $C$.
+    \item Let $X$ be a ruled surface over the curve $C$, defined by a normalized bundle $\fE$, and let $\ge$ be the divisor on $C$ for which $\fO_C(\ge) \cong \bigwedge^2 \fE$ (2.8.1).
+          Let $\gb$ be any divisor on $C$.
           \begin{itemize}
-              \item[(a)] If $|\goth{b}|$ and $|\goth{b} + \goth{e}$ have no base points, and if $\goth{b}$ is nonspecial, then there is a section $D \sim C_0 + \goth{b}f$, and $|D|$ has no points.
-              \item[(b)] If $\goth{b}$ and $\goth{b} + \goth{e}$ are very ample on $C$, and for every point $P \in C$, we have $\goth{b} - P$ and $\goth{b} + \goth{e} - P$ nonspecial, then $C_0 + \goth{b}f$ is very ample.
+              \item[(a)] If $|\gb|$ and $|\gb + \ge|$ have no base points, and if $\gb$ is nonspecial, then there is a section $D \sim C_0 + \gb f$, and $|D|$ has no points.
+              \item[(b)] If $\goth{b}$ and $\goth{b} + \ge$ are very ample on $C$, and for every point $P \in C$, we have $\gb - P$ and $\gb + \ge - P$ nonspecial, then $C_0 + \gb f$ is very ample.
           \end{itemize}
 
     \item Let $X$ be a ruled surface with invariant $e$ over an elliptic curve $C$, and let $\goth{b}$ be a divisor on $C$.
           \begin{itemize}
-              \item[(a)] If $\deg{\goth{b}} \geq \goth{e} + 2$, then there is a section $D \sim C_0 + \goth{b}f$ such that $|D|$ has no base points.
-              \item[(b)] The linear system $|C_0 + \goth{b}f|$ is very ample if and only if $\deg{\goth{b}} \geq e + 3$.
+              \item[(a)] If $\deg{\gb} \geq \ge + 2$, then there is a section $D \sim C_0 + \goth{b}f$ such that $|D|$ has no base points.
+              \item[(b)] The linear system $|C_0 + \gb f|$ is very ample if and only if $\deg{\gb} \geq e + 3$.
           \end{itemize}
 
-    \item For every $e \geq -1$ and $n \geq e + 3$, there i san elliptic scroll of degree $d = 2n - e$ in $\PP^{d _ 1}$.
-          In particular, there is an elliptic scroll of degree 5 in $\PP^4$.
+    \item For every $e \geq -1$ and $n \geq e + 3$, there is an elliptic scroll of degree $d = 2n - e$ in $\P^{d _ 1}$.
+          In particular, there is an elliptic scroll of degree 5 in $\P^4$.
 
-    \item Let $X$ be a ruled surface over a curve of genus $g$, with invariant $e < 0$, and assume that $\chr{k} = p > 0$ and $g \geq 2$.
+    \item Let $X$ be a ruled surface over a curve of genus $g$, with invariant $e < 0$, and assume that $\car{k} = p > 0$ and $g \geq 2$.
           \begin{itemize}
               \item[(a)] If $Y \equiv aC_0 + bf$ is an irreducible curve $\neq C_0. f$, then either $a = 1$, $b \geq 0$, or $2 \leq a \leq p - 1$, $b \geq \frac{1}{2}ae$, or $a \geq p$, $b \geq \frac{1}{2} ae + 1 - g$.
               \item[(b)] If $a > 0$ and $b > a(\frac{1}{2}e + (1/p)(g - 1))$, then any divisor $D \equiv aC_0 + bf$ is ample.
@@ -111,12 +126,12 @@
           This is false for a projective curve.
 
     \item \begin{itemize}
-              \item[(a)] Let $\varphi : \PP_k^1 \to \PP_k^3$ be the 3-uple embedding.
+              \item[(a)] Let $\varphi : \P_k^1 \to \P_k^3$ be the 3-uple embedding.
                     Let $\fI$ be the sheaf of ideals of the twisted cubic curve $C$ which is the image of $\varphi$.
-                    Then $\fI / \fI^2$ is a locally free sheaf of rank 2 on $C$, so $\varphi^*(\fI / \fI^2)$ is a locally free sheaf of rank 2 on $\PP^1$.
+                    Then $\fI / \fI^2$ is a locally free sheaf of rank 2 on $C$, so $\varphi^*(\fI / \fI^2)$ is a locally free sheaf of rank 2 on $\P^1$.
                     By (2.14), therefore, $\varphi^*(\fI/\fI^2) \cong \fO(l) \oplus \fO(m)$ for some $l, m \in \Z$.
                     Determine $l$ and $m$.
-              \item[(b)] Repeat part (a) for the embedding $\varphi : \PP^1 \to \PP^3$ given by $x_0 = t^4, x_1 = t^3u, x_2 = tu^3, x_3 = u^4$, whose image is a nonsingular rational quartic curve.
+              \item[(b)] Repeat part (a) for the embedding $\varphi : \P^1 \to \P^3$ given by $x_0 = t^4, x_1 = t^3u, x_2 = tu^3, x_3 = u^4$, whose image is a nonsingular rational quartic curve.
           \end{itemize}
 
 \end{enumerate}

@@ -1,35 +1,46 @@
+% Layout
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amsfonts,mathtools,amsthm,amssymb}
-\usepackage[l2tabu,orthodox]{nag}
-\usepackage{microtype} % fixes spacing or whatever
+\usepackage{microtype}
 \usepackage{enumitem}
-\usepackage{tikz-cd}
-\usepackage{xcolor}
-\usepackage{physics}
-\usepackage{mathrsfs}
-\usepackage{cancel}
 \usepackage[toc,page]{appendix}
+
+% Mathematics
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{cancel}
+
+% Graphics
+\usepackage{xcolor}
+\usepackage{tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-% font stuff
+% Fonts
 \usepackage[T1]{fontenc}
 \usepackage{eucal}
 \usepackage[euler-digits,small]{eulervm}
 \usepackage{tgbonum}
 
-\newtheorem{proposition}{Proposition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{remark}{Remark}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
-
+% Utilities
 \usepackage{etoolbox}
 \usepackage{dynkin-diagrams}
+
+% Warnings
+\usepackage[l2tabu,orthodox]{nag}
+
+% Environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Dynkin Diagrams
 \def\row#1/#2!{\dynkin{#1}{#2}\\}
 \newcommand{\tble}[1]{
    \renewcommand*\do[1]{\row##1!}
@@ -38,84 +49,53 @@
    \]
 }
 
-\renewcommand{\epsilon}{\varepsilon}
-% \renewcommand{\phi}{\varphi}
-
+% Extra Fonts
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
-
 \newcommand{\goth}[1]{\mathfrak{#1}}
-\newcommand{\red}[1]{#1_{\text{red}}}
-\newcommand{\ad}[1]{#1_{\text{Ad}}}
-\newcommand{\reg}[1]{#1_{\text{reg}}}
-\newcommand{\sh}[1]{#1^{\text{sh}}}
-\newcommand{\cpdv}[2]{\cfrac{\partial #1}{\partial #2}}
+\newcommand{\pzc}[1]{\mathpzc{#1}}
 
-\newcommand{\fA}{\mathcal{A}}
-\newcommand{\fB}{\mathcal{B}}
-\newcommand{\fC}{\mathcal{C}}
-\newcommand{\fD}{\mathcal{D}}
-\newcommand{\fE}{\mathcal{E}}
-\newcommand{\fF}{\mathcal{F}}
-\newcommand{\fG}{\mathcal{G}}
-\newcommand{\fH}{\mathcal{H}}
-\newcommand{\fI}{\mathcal{I}}
-\newcommand{\fJ}{\mathcal{J}}
-\newcommand{\fK}{\mathcal{K}}
-\newcommand{\fL}{\mathcal{L}}
-\newcommand{\fM}{\mathcal{M}}
-\newcommand{\fN}{\mathcal{N}}
-\newcommand{\fO}{\mathcal{O}}
-\newcommand{\fP}{\mathcal{P}}
-\newcommand{\fQ}{\mathcal{Q}}
-\newcommand{\fR}{\mathcal{R}}
-\newcommand{\fS}{\mathcal{S}}
-\newcommand{\fT}{\mathcal{T}}
-\newcommand{\fU}{\mathcal{U}}
-\newcommand{\fX}{\mathcal{X}}
-\newcommand{\fY}{\mathcal{Y}}
-\newcommand{\fZ}{\mathcal{Z}}
+% Commands for FONT characters
+\let\SS\S
+\let\ag\gg
+\ExplSyntaxOn
+% Goth Font
+\clist_map_inline:nn
+{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+{
+   \cs_undefine:c { g#1 }
+   \cs_new:cpn { g#1 } { \goth{#1} }
+}
 
-\newcommand{\be}{\mathbf{e}}
-\newcommand{\bx}{\mathbf{x}}
-\newcommand{\bone}{\mathbf{1}}
-\newcommand{\cx}{\bar{x}}
-\newcommand{\cy}{\bar{y}}
-\newcommand{\vx}{\vec{x}}
-\newcommand{\vsigma}{\vec{\sigma}}
-\newcommand{\tzeta}{\tilde{\zeta}}
+% Cal Font
+\clist_map_inline:nn
+{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+{
+   \cs_new:cpn { f#1 } { \mathcal{#1} }
+}
 
-\newcommand{\gm}{\goth{m}}
-\newcommand{\gp}{\goth{p}}
-\newcommand{\gF}{\goth{F}}
-\newcommand{\gU}{\goth{U}}
-\newcommand{\gV}{\goth{V}}
+% Scr Font
+\clist_map_inline:nn
+{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+{
+   \cs_new:cpn { s#1 } { \mathscr{#1} }
+}
 
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\F}{\mathbb{F}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\bH}{\mathbb{H}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\PP}{\mathbb{P}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
-
-\newcommand{\dlog}{\dd\log}
+% BB Font
+\clist_map_inline:nn
+{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+{
+   \cs_undefine:c { #1 }
+   \cs_new:cpn { #1 } { \mathbb{#1} }
+}
+\ExplSyntaxOff
 
 % Cateogries
 \newcommand{\cSet}{\mathbf{Set}}
 \newcommand{\cAb}{\mathbf{Ab}}
 \newcommand{\cGroup}{\mathbf{Grp}}
-
 \newcommand{\ckSch}[1]{\mathbf{Sch}(#1)}
 \newcommand{\ckAlg}[1]{\mathbf{Alg}(#1)}
 \newcommand{\cMod}[1]{\mathbf{Mod}(#1)}
-
-\newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
-\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}
-\newcommand\gsec[2]{\Gamma({#1}, {#2})}
-\newcommand\gsecx[1]{\Gamma(X, {#1})}
 
 % Relative stuff
 \DeclareMathOperator{\rSpec}{\mathpzc{Spec}}
@@ -123,60 +103,64 @@
 \DeclareMathOperator{\rProj}{\mathpzc{Proj}}
 \DeclareMathOperator{\rExt}{\mathpzc{Ext}}
 
-% Linear Algebra related notions (?)
-\DeclareMathOperator{\deter}{det}
+% Linear Algebra/Abelian Category/General Notions (?)
 \DeclareMathOperator{\rk}{rank}
-
-\DeclareMathOperator{\chr}{char}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\pic}{Pic}
-\DeclareMathOperator{\cacl}{CaCl}
-\DeclareMathOperator{\trd}{tr.d.}
-\DeclareMathOperator{\cl}{Cl}
-\DeclareMathOperator{\depth}{depth}
-\DeclareMathOperator{\codim}{codim}
-\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\len}{length}
 \DeclareMathOperator{\height}{height}
-\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\id}{id}
+
+% AG/Commutative Algebra/Algebra
+\DeclareMathOperator{\car}{char}
 \DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\ch}{char}
-\DeclareMathOperator{\tor}{Tor}
+\DeclareMathOperator{\pic}{Pic}
+\DeclareMathOperator{\cacl}{CaCl}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\Gr}{Gr}
+
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Num}{Num}
 \DeclareMathOperator{\Ann}{Ann}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Perm}{Perm}
 \DeclareMathOperator{\Orb}{Orb}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\trd}{tr.d.}
+\DeclareMathOperator{\Frac}{Frac}
+
+% Homological Algebra
 \DeclareMathOperator{\Ext}{Ext}
 \DeclareMathOperator{\Tor}{Tor}
-\DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\hd}{hd}
 \DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\cH}{H}
+\DeclareMathOperator{\dR}{R}
+\DeclareMathOperator{\cdh}{h}
+\DeclareMathOperator{\depth}{depth}
+
+% Linear Algebraic Groups
+\DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\SU}{SU}
 \DeclareMathOperator{\Sp}{Sp}
-\DeclareMathOperator{\Oth}{O}
+\DeclareMathOperator{\Orth}{O}
 \DeclareMathOperator{\Uni}{U}
-\DeclareMathOperator{\evf}{ev}
-\DeclareMathOperator{\cH}{H}
-\DeclareMathOperator{\cdh}{h}
-\DeclareMathOperator{\dR}{R}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Hasse}{Hasse}
-\DeclareMathOperator{\Num}{Num}
 
+% Random Stuff
+\DeclareMathOperator{\Hasse}{Hasse}
+\newcommand{\dlog}{\dd \log}
+
+% Miscellaneous
 \author{James Lee}
 
 \allowdisplaybreaks
@@ -184,13 +168,20 @@
 % Solarized
 % \pagecolor[RGB]{0,20,26}
 % \color[RGB]{191,191,191}
-
+ 
 % Sephia
 % \pagecolor[RGB]{249,239,220}
-
+ 
 % Grey
 % \pagecolor[RGB]{200, 200, 200}
 
 % Black
-% \pagecolor[RGB]{20,20,20}
-% \color[RGB]{210,210,210}
+% \pagecolor[RGB]{10,10,10}
+% \color[RGB]{180,180,180}
+
+% Cyber Deep Sea
+\pagecolor[RGB]{10,18,24}
+\color[RGB]{176,204,208}
+
+% \newcommand\srestr[2]{{\left.\kern-\nulldelimiterspace #1\vphantom{\small|} \right|_{#2}}}
+% \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|} \right|_{#2}}}

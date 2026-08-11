@@ -1,13 +1,44 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 5, Section 3}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
 \item Let $X$ be a nonsingular projective variety of any dimension, let $Y$ be a nonsingular subvariety, and let $\pi : \tilde{X} \to X$ be obtained by blowing up $Y$.
 Show that $p_a(\tilde{X}) = p_a(X)$.
+
+\begin{proof}
+   We can generalize the proof of (3.4). 
+
+   \begin{proposition}
+        In the above setting, we have $\pi_*\fO_{\tilde{X}} = \fO_X$, and $\dR^i \pi_*\fO_{\tilde{X}} = 0$ for $i > 0$.
+        Therefore, $\cH^i(X, \fO_X) \cong \cH^i(\tilde{X}, \fO_{\tilde{X}})$ for all $i \geq 0$.
+   \end{proposition}
+
+   By (II, 8.24), the strict transform of $Y$ in $\tilde{X}$ is isomorphic to the projection space bundle $\P(\fI/\fI^2)$, where $\fI$ is the ideal sheaf $f$.
+   It is locally free of rank $r = \codim(Y, X)$ since $Y$ is nonsingular.
+   In particular, $\P(\fI/\fI^2)$ has dimension $Y + \codim{r} - 1$, so it corresponds to a divisor on $X$.
+   By (II, 7.15), there exists a commutative diagram
+   \[ \begin{tikzcd}
+\tilde{Y} \arrow[r, "\tilde{f}"] \arrow[d] & \tilde{X} \arrow[d] \\
+Y \arrow[r, "f"]                           & X                  
+\end{tikzcd} \]
+    where $f$ is a closed immersion, and so is $\tilde{f}$.
+    By the theorem on formal functionns, For any scheme theoretic point $y \in Y$,  the natural map
+    \begin{equation*}
+        \hat{\fF^i}_y = (\dR^i \pi_* \fO_{\tilde{X}})_y \otimes \widehat{\fO}_{y, Y} \cong \varprojlim \cH^i(Y_n, \fO_{Y_n}).
+    \end{equation*}
+    By (7.11), $\pi_*\fO_{\P(\fI/\fI^2)} = \fO_X$
+
+   Since $\pi$ is an isomorphism of $V = \tilde{X} - E$ onto $U = X - Y$ (II, 7.13).
+   The sheaves $\fF^i = \dR^i \pi_* \fO_{\tilde{X}}$ for $i > 0$ have support at $Y$.
+\end{proof}
 
 \item Let $C$ and $D$ be curves on a surface $X$, meeting at a point $P$.
 Let $\pi : \tilde{X} \to X$ be the monoidal transformation with center $P$.
@@ -21,17 +52,17 @@ Show that $2\pi^*D - E$ is ample on $\tilde{X}$.
 For any $l > 0$, let $\psi(l) = \len(A/\gm^i)$.
 We call $\psi$ the \textit{Hilbert-Samuel function} of $A$.
 \begin{itemize}
-    \item[(a)] Show that there is a polynomial $P_A(z) \in \Q[z]$ such that $P_A(l) = \psi(l)$ for all $l \gg 0$.
+    \item[(a)] Show that there is a polynomial $P_A(z) \in \Q[z]$ such that $P_A(l) = \psi(l)$ for all $l \ag 0$.
     This is the \textit{Hilbert-Samuel polynomial} of $A$.
     \item[(b)] Show that $\deg{P_A} = \dim{A}$.
     \item[(c)] Let $n = \dim{A}$.
-    Then we define the \textit{multiplicity} of $A$, denoted $\mu(A)$, to be $(n!) \cdot (\text{leading coefficient of $P_A$})$.
+    Then we define the \textit{multiplicity} of $A$, denoted $\mu(A)$, to be $(n!) \cdot $ leading coefficient of $P_A$.
     If $P$ is a point on a Noetherian scheme $X$, we define the \textit{multiplicity} of $P$ on $X$, $\mu_P(X)$, to be $\mu(\fO_{P, X})$.
     \item[(d)] Show that for a point $P$ on a curve $C$ on a surface $X$, this definition of $\mu_P(C)$ coincides with the one in the text just before (3.5.2).
-    \item[(e)] If $Y$ is a variety of degree $d$ in $\PP^n$, show that the vertex of the cone over $Y$ is a point of multiplicity $d$.
+    \item[(e)] If $Y$ is a variety of degree $d$ in $\P^n$, show that the vertex of the cone over $Y$ is a point of multiplicity $d$.
 \end{itemize}
 
-\item Let $a_1, \dots, a_r$, $r \geq 5$, be distinct elements of $k$, and let $C$ be the curve in $\PP^2$ given by the (affine) equation $y^2 = \prod_{i = 1}^r (x - a_i)$.
+\item Let $a_1, \dots, a_r$, $r \geq 5$, be distinct elements of $k$, and let $C$ be the curve in $\P^2$ given by the (affine) equation $y^2 = \prod_{i = 1}^r (x - a_i)$.
 Show that the point $P$ at infinity on the $y$-axis is a singular point.
 Compute $\delta_P$ and $g(\tilde{Y})$, where $\tilde{Y}$ is the normalization of $Y$.
 Show in this way that one obtains hyperelliptic curves of ever genus $g \geq 2$.
@@ -46,6 +77,46 @@ Show in this way that one obtains hyperelliptic curves of ever genus $g \geq 2$.
     \item[(d)] $x^3 + y^5 + y^6 = 0$
     \item[(e)] $x^3 + xy^3 + y^5 = 0$
 \end{itemize}
+
+\begin{proof} For each $f(x, y) = 0$, denote $F(x, y, z) = 0$ the projectivization.
+    For each homogenous degree $r$ polynomial $F(x, y, z) \in k[x, y, z]$, we compute the singular locus of $F$ as the ideal $J = (F, \partial_x F, \partial_y F, \partial_z F)$, where
+    \begin{equation*}
+        \partial_x F := \frac{\partial F}{\partial x}, \quad \partial_y F := \frac{\partial F}{\partial y}, \quad \partial_z F := \frac{\partial F}{\partial z}
+    \end{equation*}
+    Notice that $\mu_P(f) = 3$ for all $f$ above.
+    In particular, $\delta_P = 3$.
+
+\begin{itemize} [leftmargin=0cm]
+    \item[(a)]
+    The curve is parametrized by
+    \begin{equation*}
+        z \mapsto (z^5, -z^3).
+    \end{equation*}
+    The tangent vector vanishes at an order of 2, which means $\mu_P(C) = 3$.
+    
+    Blowing up in coordinates $x = ty$ gives
+    \begin{equation*}
+        y^3 (t^3 + y^2) = 0,
+    \end{equation*}
+    where the exceptional divisor $E_1$ is defined by $x = y = 0$.
+    Then $\pi^*C = \tilde{C} + 3E$.
+    Since $\tilde{C}$ is still singular, parametrized by
+    \begin{equation*}
+        z \mapsto (x, y, t) = (iz^5, iz^3, z^2).
+    \end{equation*}
+    The tangent vector vanishes at an order of 1, so we have $\mu_P(\tilde{C}) = 2$, so $\delta_P = 1$.
+    It is either the cusp or node, 
+
+    \item[(b)] 
+    
+
+    \item[(c)]
+
+    \item[(d)] $t^3+y^2+y^3=0$, cusp
+
+    \item[(e)] $t^3 + ty + y^2 = 0$, node
+\end{itemize}
+\end{proof}
 
 \item[\textbf{8.}] Show that the following two singularities have the same multiplicity, and the same configuration of infinitely near singular points with the same multiplicities, hence the same $\delta_P$, but are not equivalent.
 \begin{itemize}

@@ -1,9 +1,13 @@
 \documentclass[a4paper]{article}
+
 \input{../../etc/preamble.tex}
+
 \title{Chapter 4, Section 1}
 
 \begin{document}
+
 \maketitle
+
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
   \item Let $X$ be a curve, and let $P \in X$ be a point.
@@ -65,20 +69,20 @@
         \end{proof}
 
   \item[\textbf{6.}] Let $X$ be a curve of genus $g$.
-        Show that there is a finite morphism $f : X \to \PP^1$ of degree $\leq g + 1$.
+        Show that there is a finite morphism $f : X \to \P^1$ of degree $\leq g + 1$.
 
         \begin{proof}
           Fix a point $P \in X$, and consider the divisor $D = (g + 1)P$.
           By Riemann-Roch, $\ell(D) > 1$, which implies the existence of a nonconstant rational function $f \in K(X)$ with poles no worse than $D$.
           This means we can write $f = g / h$ such that the order of vanishing of $h$ at $P$ is at most $g + 1$, and $h$ has no other zeros.
-          The inclusion of fields $k(f) \subseteq K(X)$ induces a finite morphism $f : X \to \PP^1$.
+          The inclusion of fields $k(f) \subseteq K(X)$ induces a finite morphism $f : X \to \P^1$.
           Now, the degree of $f^{-1}(0)$ is at most $g + 1$ points, so $f$ has degree at most $g + 1$ by (II, 6.9).
         \end{proof}
 
-  \item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \PP^1$ of degree 2.
+  \item[\textbf{7.}] A curve $X$ is called \textit{hyperelliptic} if $g \geq 2$ and there exists a finite morphism $f : X \to \P^1$ of degree 2.
         \begin{enumerate} [label=(\alph*)]
           \item If $X$ is a curve of genus $g = 2$, show that the canonical divisor defines a complete linear system $|K|$ of degree 2 and dimension 1, without basepoints. Use (II, 7.8.1) to conclude that $X$ is hyperelliptic.
-          \item Show that the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\PP^1$. Thus, there exist hyperelliptic curves of any genus $g \geq 2$.
+          \item Show that the curves constructed in (1.1.1) all admit a morphism of degree 2 to $\P^1$. Thus, there exist hyperelliptic curves of any genus $g \geq 2$.
         \end{enumerate}
 
         \begin{proof} $ $ \vspace{0pt}
@@ -86,21 +90,22 @@
             \item By Riemann-Roch, $\deg{K} = 2 g - 2 = 2$ and $\dim{|K|} = \ell(K) - 1 = 1$.
                   For any $P \in X$, consider the exact sequence
                   \[\begin{tikzcd}
-                      0 \arrow[r] & \fO_X(K - P) \arrow[r] & \fO_X(K) \arrow[r] & \fO_P \arrow[r] & 0.
+                      0 \arrow[r] & \fO_X(K - P) \arrow[r] & \fO_X(K) \arrow[r] & k(P) \arrow[r] & 0.
                     \end{tikzcd} \]
                   The linear system $|K|$ is basepoint free if and only if $\cH^0(\fO_X(K)) \to \cH^0(\fO_P)$ is surjective for every $P \in X$.
                   Taking the long exact sequence in cohomology gives
                   \[\begin{tikzcd}
-                      0 \arrow[r] & \cH^0(\fO_X(K - P)) \arrow[r] & \cH^0(\fO_X(K)) \arrow[r] & \cH^0(\fO_P).
+                      0 \arrow[r] & \cH^0(X, \fO_X(K - P)) \arrow[r] & \cH^0(X, \fO_X(K)) \arrow[r] & \cH^0(P, \fO_P).
                     \end{tikzcd} \]
-                  Since $\ell(K) = 2$ and $h^0(\fO_P) = 1$, it suffices to show $h^0(\fO_X(K - P)) = 1$.
-                  Indeed, by the Riemann-Roch theorem, $\ell(K - P) = \ell(P)$, and $\ell(P) = 1$ because $X$ is not rational.
+                  Since $\ell(K) = 2$ and $h^0(P, \fO_P) = 1$, it is enough to show $h^0(X, \fO_X(K - P)) = 1$.
+                  Again, by the Riemann-Roch theorem, $\ell(K - P) = \ell(P)$, and $\ell(P) = 1$ because $X$ is not rational.
                   Hence, $\ell(K - P) = 1$.
 
-            \item If $D$ is a divisor of type $(a, b)$ with $a, b > 0$, then $D$ is very ample, so by Bertini's theorem there exists an irreducible nonsingular curve $C \subseteq Q = \PP^1 \times \PP^1$ that is linearly equivalent to $D$ and has type $(a, b)$ as a divisor in $Q$.
-            Also, $a = \deg \restr{p_2}{C}$ and $b = \deg \restr{p_1}{C}$.
+            \item If $D$ is a divisor of type $(a, b)$ with $a, b > 0$, then $D$ is very ample, so by Bertini's theorem there exists an irreducible nonsingular curve $C \subseteq Q = \P^1 \times \P^1$ that is linearly equivalent to $D$ and has type $(a, b)$ as a divisor in $Q$.
+            Also, $a = \deg p_2|_C$ and $b = \deg p_1|_C$.
             Suppose $(a, b) = (g + 1, 2)$.
-            By (III, Ex. 5.6), $C$ has genus $=(g + 1 - 1)(2 - 1) = g$, and $\restr{p_1}{C} : C \to \PP^1$ is a morphism of degree 2.
+            By (III, Ex. 5.6), $C$ has genus $=(g + 1 - 1)(2 - 1) = g$, and $p_1|_C : C \to \P^1$ is a morphism of degree 2.
+            Hence, $X$ is a hyperelliptic curve of genus $g$.
           \end{enumerate}
         \end{proof}
 
