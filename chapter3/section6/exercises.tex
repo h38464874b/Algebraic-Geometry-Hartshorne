@@ -46,11 +46,11 @@
 
           To prove injectivity, we show $\fF \cong \fI^0 \times_{\fI^1} \fF''$.
           Let $\alpha : \fF \to \fF''$ be the epimorphism from the extension.
-          By injectivity of $\fI^0$, there exists a morphism $\beta : \fF \to \fI^0$ that extends $\fF' \to \fI^0$, which induces a morphism $\gamma : \fF'' \to \fI^1$ making the diagram commute
+          By injectivity of $\fI^0$, there exists a morphism $\beta : \fF \to \fI^0$ that extends $\fF' \to \fI^0$, which induces a morphism $\gamma : \fF'' \to \fI^1$ making the following diagram commute
           \[ \begin{tikzcd}
               0 \arrow[r] & \fF' \arrow[r] \arrow[d, Rightarrow, no head] & \fF \arrow[r] \arrow[d, "\beta"'] & \fF'' \arrow[r] \arrow[d, "\gamma"'] & 0 \\
               0 \arrow[r] & \fF' \arrow[r]                                & \fI^0 \arrow[r]                   & \fJ \arrow[r]                       & 0
-            \end{tikzcd} \]
+            \end{tikzcd}. \]
           The pull-back $\fI^0 \times_{\fI^1} \fF''$ is unique up to unique isomorphism, so it remains to show $\gamma$ is a representative of $\xi$.
           Again, $\Hom(\fF'', \cdot)$ is a covariant $\delta$-functor with $\Hom(\fF'', \fF'') \to \Hom(\fF'', \fJ)$ given by composition with $\gamma$, so $\gamma$ is a representative of $\xi$.
 
@@ -78,14 +78,14 @@
                   \begin{equation*}
                     \rExt^i(\fF, \fG) \cong h^i(\rHom(\fL_\bullet, \fG)).
                   \end{equation*}
-                  By equivalence of categories between coherent $\fO_X$-modules and finitely generated $A$-modules (\S2, 5.5), one has
+                  By equivalence of categories between coherent $\fO_X$-modules and finitely generated $A$-modules (\SS 2, 5.5), one has
                   \begin{equation*}
                     \rHom(\fL_\bullet, \fG) \cong \widetilde{\Hom_A(F_\bullet, N)}.
                   \end{equation*}
-                  Each $\rHom(\fL_\bullet, \fG)$ is coherent because each $\Hom(F_\bullet, N)$ is finitely generated, and $A$ is Noetherian, so any sub-$\fO_X$-module of $\rHom(\fL_\bullet, \fG)$ is also coherent (\S2, 5.7).
+                  Each $\rHom(\fL_\bullet, \fG)$ is coherent because each $\Hom(F_\bullet, N)$ is finitely generated, and $A$ is Noetherian, so any sub-$\fO_X$-module of $\rHom(\fL_\bullet, \fG)$ is also coherent (\SS 2, 5.7).
                   Hence, $\rExt^i(\fF, \fG)$ is coherent for every $i \geq 0$.
 
-            \item[(b)] The proof is essentially the same as (a) except $\fG \cong \tilde{N}$ for some $A$-module $N$, and the result still follows by (\S2, 5.7).
+            \item[(b)] The proof is essentially the same as (a) except $\fG \cong \tilde{N}$ for some $A$-module $N$, and the result still follows by (\SS 2, 5.7).
           \end{itemize}
         \end{proof}
 
@@ -182,14 +182,14 @@
         \end{equation*}
 
         \begin{proof}
-          Both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Ab}$, and the functors $\Hom_X(\tilde{M}, \tilde{\cdot})$ and $\Hom_A(M, \cdot)$ are equal (\S2, 5.5), so their derived functors (as functors from $\goth{Mod}(A)$ to $\goth{Ab})$ are the same.
+          Both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Ab}$, and the functors $\Hom_X(\tilde{M}, \tilde{\cdot})$ and $\Hom_A(M, \cdot)$ are equal (\SS 2, 5.5), so their derived functors (as functors from $\goth{Mod}(A)$ to $\goth{Ab})$ are the same.
 
           For the next isomorphism, both sides are $\delta$-functors in $N$ from $\goth{Mod}(A)$ to $\goth{Mod}(X)$ because the $~\tilde{}~$-functor is an exact functor.
           Both sides vanish for $i > 0$ and $N$ injective $A$-module because localization is exact, and $\tilde{N}$ is flasque if $N$ is injective (3.4).
           Thus, to invoke (1.3A), we need to show the functors are equal for $i = 0$.
           We check locally.
           If $x \in X$ is a point, let $\goth{p}$ be the prime ideal in $A$ corresponding to $x$.
-          By (\S2, 5.1) and (6.8), we have
+          By (\SS 2, 5.1) and (6.8), we have
           \begin{equation*}
             \rExt_X^i(\tilde{M}, \tilde{N})_x \cong \Ext^i_{A_\goth{p}}(M_\goth{p}, N_\goth{p}), \quad \widetilde{\Ext_A^i(M, N)}_x \cong \Ext^i(M, N)_\goth{p},
           \end{equation*}
@@ -244,7 +244,7 @@
                 \begin{equation*}
                   \varphi_i : \Ext_X^i(\fF, f^!\fG) \to \Ext_Y^i(f_* \fF, \fG).
                 \end{equation*}
-          \item[(d)] Now assume that $X$ and $Y$ are separated, $\goth{Coh}(X)$ has enough locally frees, and assume that $f_*\fO_X$ is locally free on $Y$ (this is equivalent to saying $f$ flat - see \S 9). Show that $\varphi_i$ is an isomorphism for all $i$, all $\fF$ coherent on $X$, and all $\fG$ quasi-coherent on $Y$.
+          \item[(d)] Now assume that $X$ and $Y$ are separated, $\goth{Coh}(X)$ has enough locally frees, and assume that $f_*\fO_X$ is locally free on $Y$ (this is equivalent to saying $f$ flat - see \SS 9). Show that $\varphi_i$ is an isomorphism for all $i$, all $\fF$ coherent on $X$, and all $\fG$ quasi-coherent on $Y$.
         \end{itemize}
 
         \begin{proof} $ $ \vspace{0pt}
@@ -277,9 +277,6 @@
                     \xi_i : \Ext_Y^i(f_*\fF, f_*f^!\fG) \to \Ext_Y(f_*\fF, \fG).
                   \end{equation*}
                   Hence, $\varphi_i = \xi_i \circ \psi_i$ is our desired natural map.
-
-
-            \item[(d)]
           \end{itemize}
         \end{proof}
 

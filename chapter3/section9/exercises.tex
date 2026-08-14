@@ -99,7 +99,7 @@
             If $\bigcap_{n = 1}^\infty I^n(\goth{a} \otimes_A M) = 0$ for any ideal $\goth{a}$ of $A$, then the following are equivalent:
             \begin{itemize}
               \item[(i)] $M$ is flat over $A$;
-              \item[(ii)] $M/IM$ is flat over $A / I$, and $\tor_1^A(M, A / I) = 0$.
+              \item[(ii)] $M/IM$ is flat over $A / I$, and $\Tor_1^A(M, A / I) = 0$.
               \item[(iii)] $M / I^nM$ is flat over $A / I^n$ for every $n \geq 1$.
             \end{itemize}
           \end{lemma}
@@ -142,61 +142,61 @@
           \end{lemma}
 
           We are ready to prove Lemma 3 by using the criterion of Lemma 4.
-          The extended ideal $\goth{p}B_\goth{q}$ is contained in the maximal ideal of $B_{\goth{q}'}$ for any $\goth{q}' \in V(\goth{q})$, $B_{\goth{q}'}$ is flat over $A$ if and only if $B_{\goth{q}'} / \goth{p}B_{\goth{q}'}$ is flat over $A / \goth{p}$ and $\tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ (Lemma 5).
+          The extended ideal $\goth{p}B_\goth{q}$ is contained in the maximal ideal of $B_{\goth{q}'}$ for any $\goth{q}' \in V(\goth{q})$, $B_{\goth{q}'}$ is flat over $A$ if and only if $B_{\goth{q}'} / \goth{p}B_{\goth{q}'}$ is flat over $A / \goth{p}$ and $\Tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ (Lemma 5).
           Lemma 2 implies the isomorphism
           \begin{equation*}
-            B_\goth{q} \otimes_B \tor_1^A(B, A / \goth{p}) \cong \tor_1^A(B_\goth{q}, A / \goth{p}) = 0,
+            B_\goth{q} \otimes_B \Tor_1^A(B, A / \goth{p}) \cong \Tor_1^A(B_\goth{q}, A / \goth{p}) = 0,
           \end{equation*}
-          and $\tor_1^A(B, A / \goth{p})$ is a finitely generated $B$-module because it is a $B$-submodule of $\goth{p} \otimes_A B$, so there exists $g \in B - \goth{q}$ such that
+          and $\Tor_1^A(B, A / \goth{p})$ is a finitely generated $B$-module because it is a $B$-submodule of $\goth{p} \otimes_A B$, so there exists $g \in B - \goth{q}$ such that
           \begin{equation*}
-            B_g \otimes_B \tor_1^A(B, A / \goth{p}) \cong \tor_1^A(B_g, A / \goth{p}) = 0.
+            B_g \otimes_B \Tor_1^A(B, A / \goth{p}) \cong \Tor_1^A(B_g, A / \goth{p}) = 0.
           \end{equation*}
-          Thus, $\tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ for any $\goth{q}' \in V(\goth{q}) \cap X_g$.
+          Thus, $\Tor_1^A(B_{\goth{q}'}, A / \goth{p}) = 0$ for any $\goth{q}' \in V(\goth{q}) \cap X_g$.
           By Lemma 6, there exists $s \in A - \goth{p}$ such that $B_s / \goth{p}B_s$ is free over $A_s / \goth{p}A_s$, hence flat over $A / \goth{p}$ (Lemma 1).
           For any $\goth{q}' \in V(\goth{q}) \cap X_s$, $B_{\goth{q}'} / \goth{p}B_{\goth{q}'}$ is a localization of $B_{s} / \goth{p}B_s$, so it is flat over $A / \goth{p}$ as well.
           Hence, $V(\goth{q}) \cap X_g \cap X_s$ is a nonempty open subset of $V(\goth{q})$ contained in $E \cap V(\goth{q})$.
         \end{proof}
 
-  \item[\textbf{11.}] Let $Y$ be a nonsingular curve of degree $d$ in $\PP_k^n$, over an algebraically closed field $k$. Show that
+  \item[\textbf{11.}] Let $Y$ be a nonsingular curve of degree $d$ in $\P_k^n$, over an algebraically closed field $k$. Show that
         \begin{equation*}
           0 \leq p_a(Y) \leq \frac{1}{2}(d - 1)(d - 2).
         \end{equation*}
 
         \begin{proof}
           If $n = 2$, the inequalitie becomes an equality even if $Y$ is singular or not irreducible (I, Ex. 7.2b) (Ex. 4.7), so assume $n > 2$.
-          We claim there exists a linear subspace $L \subset \PP^n$ of dimension $n - 3$ such that $Y \cap L = \emptyset$.
+          We claim there exists a linear subspace $L \subset \P^n$ of dimension $n - 3$ such that $Y \cap L = \emptyset$.
           In fact, we can find a linear subspace of dimension $n - 2$ that does not meet $Y$, which is what we will prove.
-          A general hyperplane $H \subset \PP^n$ intersects $Y$ at $d$ distinct points, and we want to find a hyperplane plane of $H$, which is a linear subspace of $\PP^n$ with dimension $n - 2$, that does not meet $Y \cap H$.
-          Thus, the statement reduces to the following: for any set of distinct points $P_1, \dots, P_d \in \PP^n$, there exists a hyperplane $H \subset \PP^n$ such that $P_i \notin H$ for every $i$.
-          Proceeding by induction on $n$, let $(x_0 : \cdots : x_n)$ be homogenous coordinates for $\PP^n$.
-          The base case $n = 1$ is trivial because $k$ is infinite, so assume the statement for $\PP^{n - 1}$ with $n > 1$.
-          Let $U_0$ be the affine patch of $\PP^n$ defined by $x_0 \neq 0$ so that $\PP^n$ is the disjoint union $U_0 \cup \PP^{n - 1}$.
-          Relabel the points $P_1, \dots, P_{r}, Q_1, \dots, Q_s$ so that $P_i \in U_0$ and $Q_j \in \PP^{n - 1}$.
-          Applying the inductive step to $\PP^{n - 1}$ and $\{Q_j\}$ gives a hyperplane $H$ defined by $$H : \quad f(x_1, \dots, x_n) = a_1x_1 + \cdots + a_nx_n = 0, \quad a_i \in k,$$ such that $Q_j \notin H$.
-          Taking the projective cone of $H$ in $\PP^n$, we want to show there exists $a_0 \in k - \{0\}$ such that the hyperplane defined $a_0x_0 + f(x_1, \dots, x_n) = 0$ does not meet $P_i$ for every $i, \dots, r$.
+          A general hyperplane $H \subset \P^n$ intersects $Y$ at $d$ distinct points, and we want to find a hyperplane plane of $H$, which is a linear subspace of $\P^n$ with dimension $n - 2$, that does not meet $Y \cap H$.
+          Thus, the statement reduces to the following: for any set of distinct points $P_1, \dots, P_d \in \P^n$, there exists a hyperplane $H \subset \P^n$ such that $P_i \notin H$ for every $i$.
+          Proceeding by induction on $n$, let $(x_0 : \cdots : x_n)$ be homogenous coordinates for $\P^n$.
+          The base case $n = 1$ is trivial because $k$ is infinite, so assume the statement for $\P^{n - 1}$ with $n > 1$.
+          Let $U_0$ be the affine patch of $\P^n$ defined by $x_0 \neq 0$ so that $\P^n$ is the disjoint union $U_0 \cup \P^{n - 1}$.
+          Relabel the points $P_1, \dots, P_{r}, Q_1, \dots, Q_s$ so that $P_i \in U_0$ and $Q_j \in \P^{n - 1}$.
+          Applying the inductive step to $\P^{n - 1}$ and $\{Q_j\}$ gives a hyperplane $H$ defined by $$H : \quad f(x_1, \dots, x_n) = a_1x_1 + \cdots + a_nx_n = 0, \quad a_i \in k,$$ such that $Q_j \notin H$.
+          Taking the projective cone of $H$ in $\P^n$, we want to show there exists $a_0 \in k - \{0\}$ such that the hyperplane defined $a_0x_0 + f(x_1, \dots, x_n) = 0$ does not meet $P_i$ for every $i, \dots, r$.
           Indeed, if we consider $f(x_1, \dots, x_n)$ as a function on $U_0$, then we can pick any $a_0 \in k - \{0\}$ such that $a_0 \neq -f(P_i)$ for every $i = 1, \dots, r$.
 
-          Now, after a suitable automorphism of $\PP^n$ we can assume $L$ corresponds to the linear subspace defined by $x_i = 0$ for $i = 0, 1, 2$.
-          Consider the projection map $\pi : \PP^n - L \to \PP^2$ defined by $(x_0 : \cdots : x_n) \mapsto (x_0 : x_1 : x_2)$.
-          For each $a \in k$, $a \neq 0$, consider the automorphism $\sigma_a$ of $\PP^n$ defined by
+          Now, after a suitable automorphism of $\P^n$ we can assume $L$ corresponds to the linear subspace defined by $x_i = 0$ for $i = 0, 1, 2$.
+          Consider the projection map $\pi : \P^n - L \to \P^2$ defined by $(x_0 : \cdots : x_n) \mapsto (x_0 : x_1 : x_2)$.
+          For each $a \in k$, $a \neq 0$, consider the automorphism $\sigma_a$ of $\P^n$ defined by
           \begin{align*}
-            \sigma_a : \PP^n     & \to \PP^n,                                        \\
+            \sigma_a : \P^n      & \to \P^n,                                         \\
             (x_0 : \cdots : x_n) & \mapsto (x_0 : x_1 : x_2 : ax_3 : \cdots : ax_n).
           \end{align*}
           Further assume $\pi$ induces a birational from $Y$ to its image (I, Ex. 4.9).
           For each $a \neq 0$, let $Y_a = \sigma_a(Y)$ with $Y_1 = Y$.
-          Then the $Y_a$ form a flat family parametrized by $\A^1 - \{0\}$, and according to (9.8) this family extends uniquely to a flat family defined over all of $\A^1$, and the fibre $Y_0$ over 0 agrees set-theoretically with the projection $\pi(Y) \subseteq \PP^2$.
+          Then the $Y_a$ form a flat family parametrized by $\A^1 - \{0\}$, and according to (9.8) this family extends uniquely to a flat family defined over all of $\A^1$, and the fibre $Y_0$ over 0 agrees set-theoretically with the projection $\pi(Y) \subseteq \P^2$.
           The degree and arithmetic genus of $Y_a$ is independent of $a$ (9.10), which means
           \begin{equation*}
             p_a(Y_0) = p_a(Y), \quad \deg{Y_0} = d.
           \end{equation*}
           If we take $Y_{(0)}$ to be $Y_0$ with its reduced induced structure, then we have an isomorphism of schemes $Y_{(0)} \cong \pi(Y)$.
-          Since $\pi(Y)$ is a closed subscheme of $\PP^2$, one has
+          Since $\pi(Y)$ is a closed subscheme of $\P^2$, one has
           \begin{equation*}
             p_a(Y_{(0)}) = \frac{1}{2}(d' - 1)(d' - 2),
           \end{equation*}
-          where we take $d'$ to be the degree of $Y_{(0)}$ as a closed subscheme of $\PP^2$.
-          The Hilbert polynomial of $Y_{(0)}$ as a closed subscheme of $\PP^2$ is same as $Y_{{(0)}}$ considered as a closed subcheme of $\PP^n$.
+          where we take $d'$ to be the degree of $Y_{(0)}$ as a closed subscheme of $\P^2$.
+          The Hilbert polynomial of $Y_{(0)}$ as a closed subscheme of $\P^2$ is same as $Y_{{(0)}}$ considered as a closed subcheme of $\P^n$.
           This has the following implication: there is an exact sequence of $\fO_{Y_0}$-modules
           \[ \begin{tikzcd}
               0 \arrow[r] & \fI \arrow[r] & \fO_{Y_0} \arrow[r] & \fO_{Y_{(0)}} \arrow[r] & 0,
@@ -206,7 +206,7 @@
           \begin{equation*}
             P_{Y_{0}}(n) = P_{\fI}(n) + P_{Y_{(0)}}(n),
           \end{equation*}
-          where $P_{\fI}(n)$, $P_{Y_0}(n)$, and $P_{Y_{(0)}}(n)$ are the Hilbert polynomials of $\fI, \fO_{Y_0}$, and $\fO_{Y_{(0)}}$ with respect to $\fO_{\PP^n}(1)$, and by our remark, $d' = \deg P_{Y_{(0)}}(n)$.
+          where $P_{\fI}(n)$, $P_{Y_0}(n)$, and $P_{Y_{(0)}}(n)$ are the Hilbert polynomials of $\fI, \fO_{Y_0}$, and $\fO_{Y_{(0)}}$ with respect to $\fO_{\P^n}(1)$, and by our remark, $d' = \deg P_{Y_{(0)}}(n)$.
           If we can show the following:
           \begin{itemize}
             \item[(1)] $p_a(Y_0) \leq p_a(Y_{(0)})$, and
@@ -259,7 +259,7 @@
           Let $A \to B \to C$ be ring homomorphisms, and suppose $C$ is flat over $B$.
           Then for every ideal $\goth{a} \subseteq A$, there is a natural isomorphism
           \begin{equation*}
-            C \otimes_B \tor_1^A(B, A / \goth{a}) \cong \tor_1^A(C, A / \goth{a}).
+            C \otimes_B \Tor_1^A(B, A / \goth{a}) \cong \Tor_1^A(C, A / \goth{a}).
           \end{equation*}
         \end{lemma}
 
@@ -268,13 +268,13 @@
           \[ \begin{tikzcd}
               0 \arrow[r] & \goth{a} \arrow[r] & A \arrow[r] & A/\goth{a} \arrow[r] & 0.
             \end{tikzcd} \]
-          Tensoring by $B$ over $A$ gives an exact sequence with $\tor$
+          Tensoring by $B$ over $A$ gives an exact sequence with $\Tor$
           \[ \begin{tikzcd}
-              0\arrow[r] & \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A B \arrow[r] & B \arrow[r] & B/\goth{a}B \arrow[r] & 0.
+              0\arrow[r] & \Tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A B \arrow[r] & B \arrow[r] & B/\goth{a}B \arrow[r] & 0.
             \end{tikzcd} \]
           Each term in the sequence is a natural $B$-module, so we can tensor the sequence by $C$ over $B$
           \[ \begin{tikzcd}
-              0\arrow[r] & C \otimes_B \tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+              0\arrow[r] & C \otimes_B \Tor_1^A(B, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
             \end{tikzcd} \]
           Here, we used the fact that
           \begin{equation*}
@@ -282,17 +282,17 @@
           \end{equation*}
           We can also tensor the original sequence by $C$ over $A$ to get
           \[ \begin{tikzcd}
-              0\arrow[r] & \tor_1^A(C, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
+              0\arrow[r] & \Tor_1^A(C, A/\goth{a}) \arrow[r] & \goth{a} \otimes_A C \arrow[r] & C \arrow[r] & C/\goth{a}C \arrow[r] & 0.
             \end{tikzcd} \]
-          The $A$-module homomorphism $B \to C$ induces $\tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})$, and $\tor_1^A(C, A)$ is a natural $C$-module, so there is a natural map
+          The $A$-module homomorphism $B \to C$ induces $\Tor_1^A(B, A / \goth{a}) \to \Tor_1^A(C, A / \goth{a})$, and $\Tor_1^A(C, A)$ is a natural $C$-module, so there is a natural map
           \begin{equation*}
-            \phi : C \otimes_B \tor_1^A(B, A / \goth{a}) \to \tor_1^A(C, A / \goth{a})
+            \phi : C \otimes_B \Tor_1^A(B, A / \goth{a}) \to \Tor_1^A(C, A / \goth{a})
           \end{equation*}
           given by multiplication.
           Consider the commutative diagram
           \[ \begin{tikzcd}
-              0 \arrow[r] & {C \otimes_B \tor_1^A(B, A / \goth{a})} \arrow[r] \arrow[d, "\phi"] & \goth{a} \otimes_A C \arrow[r] \arrow[d, Rightarrow, no head] & C \arrow[r] \arrow[d, Rightarrow, no head] & C/\goth{a}C \arrow[r] \arrow[d, Rightarrow, no head] & 0 \\
-              0 \arrow[r] & {\tor_1^A(C, A / \goth{a})} \arrow[r]                       & \goth{a} \otimes_A C \arrow[r]                                & C \arrow[r]                                & C / \goth{a}C \arrow[r]                              & 0
+              0 \arrow[r] & {C \otimes_B \Tor_1^A(B, A / \goth{a})} \arrow[r] \arrow[d, "\phi"] & \goth{a} \otimes_A C \arrow[r] \arrow[d, Rightarrow, no head] & C \arrow[r] \arrow[d, Rightarrow, no head] & C/\goth{a}C \arrow[r] \arrow[d, Rightarrow, no head] & 0 \\
+              0 \arrow[r] & {\Tor_1^A(C, A / \goth{a})} \arrow[r]                       & \goth{a} \otimes_A C \arrow[r]                                & C \arrow[r]                                & C / \goth{a}C \arrow[r]                              & 0
             \end{tikzcd}. \]
           The five lemma implies $\phi$ is actually an isomorphism.
         \end{proof}

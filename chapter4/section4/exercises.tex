@@ -666,9 +666,10 @@
                         If $\Hasse(X) \neq 0$, then the $p$-linear map of cohomology $F^* : \cH^1(X, \fO_X) \to \cH^1(X, \fO_X)$ is non-zero, and commutes with $f^* : \cH^1(X, \fO_X) \to \cH^1(X, \fO_X)$.
                         In particular, $F^*(1) \neq 0$, and $(f \circ F)^*(1) = (F \circ f)^*(1)$.
                         Expanding both sides gives
-                        \begin{equation*}
-                            \lambda_f^p F^*(1) = \lambda_f \cdot F^*(1).
-                        \end{equation*}
+                        \begin{align*}
+                            (f \circ F)^*(1) & = F^*(f^*(1)) = F^*(\lambda_f \cdot 1) = \lambda_f^p \cdot F^*(1) \\
+                            (F \circ f)^*(1) & = f^*(F^*(1)) = \lambda_f \cdot F^*(1).
+                        \end{align*}
                         Since $F^*(1)$ is non-zero, we have $\lambda_f^p = \lambda_f$.
                         Hence, $\lambda_f$ is in $\F_p$.
               \end{itemize}

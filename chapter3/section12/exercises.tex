@@ -24,13 +24,13 @@
           \end{equation*}
         \end{proof}
 
-  \item Let $\{X_t\}$ be a family of hypersurfaces of the same degree in $\PP_k^n$. Show that for each $i$, the function $h^i(X_t, \fO_{X_t})$ is a constant function of $t$.
+  \item Let $\{X_t\}$ be a family of hypersurfaces of the same degree in $\P_k^n$. Show that for each $i$, the function $h^i(X_t, \fO_{X_t})$ is a constant function of $t$.
 
         \begin{proof}
-          Hypersurfaces of same degree in projective space $\PP^n$ have the same cohomology.
-          For any hypersurface $X \subset \PP^n$ of degree $d$, we have an exact sequence
+          Hypersurfaces of same degree in projective space $\P^n$ have the same cohomology.
+          For any hypersurface $X \subset \P^n$ of degree $d$, we have an exact sequence
           \[ \begin{tikzcd}
-              0 \arrow[r] & \fO_{\PP^n}(-d) \arrow[r] & \fO_{\PP^n} \arrow[r] & \fO_X \arrow[r] & 0,
+              0 \arrow[r] & \fO_{\P^n}(-d) \arrow[r] & \fO_{\P^n} \arrow[r] & \fO_X \arrow[r] & 0,
             \end{tikzcd} \]
           and $\cdh^i(X, \fO_X)$ is independent of the choice of $X$.
         \end{proof}
@@ -48,7 +48,7 @@
           is actually an isomorphism because $f_*(\fL \otimes \fM^{-1})$ is locally free of rank one, we obtain our desired result.
         \end{proof}
 
-  \item[\textbf{5.}] Let $Y$ be an integral scheme of finite type over an algebraically closed field $k$. Let $\mathscr{E}$ be a locally free sheaf on $Y$, and let $X = \PP(\fE)$. Then show that $\pic{X} \cong (\pic{Y}) \times \Z$. This strengthens (II, Ex. 7.9).
+  \item[\textbf{5.}] Let $Y$ be an integral scheme of finite type over an algebraically closed field $k$. Let $\mathscr{E}$ be a locally free sheaf on $Y$, and let $X = \P(\fE)$. Then show that $\pic{X} \cong (\pic{Y}) \times \Z$. This strengthens (II, Ex. 7.9).
 
         \begin{proof}
           Let $n$ be the rank of $\fE$, $\fO(1)$ the canonical invertible sheaf of $X$, and $\pi : X \to Y$ the natural projection morphism.
@@ -57,9 +57,9 @@
             \varphi : (\pic{Y}) \times \Z & \to \pic{X}                      \\
             (\fL, d)                      & \mapsto \fO(d) \otimes \pi^*\fL.
           \end{align*}
-          Since $\pi$ is a flat projective morphism, we can apply the results of \S 12.
-          In particular, if $\fM$ is an invertible sheaf on $X$, then $\fM_y$ is an invertible sheaf on $X_y \cong \PP_y^n$ for all $y \in Y$, where $\PP_y^n$ is the projective $n$-space over $k(y)$.
-          In particular, we can write $\fM_y \cong \fO_{\PP^n_y}(d_y)$ for some $d_y \in \Z$.
+          Since $\pi$ is a flat projective morphism, we can apply the results of \SS 12.
+          In particular, if $\fM$ is an invertible sheaf on $X$, then $\fM_y$ is an invertible sheaf on $X_y \cong \P_y^n$ for all $y \in Y$, where $\P_y^n$ is the projective $n$-space over $k(y)$.
+          In particular, we can write $\fM_y \cong \fO_{\P^n_y}(d_y)$ for some $d_y \in \Z$.
           We will show $d_y$ is constant for all $y \in Y$.
           It will follow by (Ex. 12.4) that there exists an invertible sheaf $\fN$ on $Y$ such that $\fM \cong \fO(d) \otimes \pi^*\fN$ for some $d \in \Z$, proving surjectivity of $\varphi$.
 
@@ -68,11 +68,11 @@
           After twisting by $\fO(-d_{y'})$, we can assume $d_{y'} = 0$.
           By (12.8), the function
           \begin{equation*}
-            \cdh^0(y, \fM) = \dim_{k(y)} \cH^0(\PP^n_y, \fO_{\PP^n_y}(d_y))
+            \cdh^0(y, \fM) = \dim_{k(y)} \cH^0(\P^n_y, \fO_{\P^n_y}(d_y))
           \end{equation*}
           is upper semicontinuous on $Y$ (12.8), and we have the strict inequality
           \begin{equation*}
-            \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{k(y)}}) < \dim_{k(\xi)} \cH^0(\PP_{\xi}^n, \fO_{\PP^n_{\xi}}(d_\xi))
+            \dim_{k(y')} \cH^0(\P_{y'}^n, \fO_{\P_{k(y)}}) < \dim_{k(\xi)} \cH^0(\P_{\xi}^n, \fO_{\P^n_{\xi}}(d_\xi))
           \end{equation*}
           by the explicit calculations of (5.1).
           But this implies the set $\{ y \in Y | h^0(y, \fM) \geq h^0(\xi, \fM)\}$ is a closed set containing $\xi$ and not containing $y'$, a contradiction.
@@ -81,8 +81,8 @@
           Next, we prove the inequality in the opposite direction.
           By Serre duality (5.1) (7.7), we have
           \begin{align*}
-            h^n(y, \fM) & = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(d_y))          \\
-                        & = \dim_{k(y)} \cH^n(\PP_y^n, \fO_{\PP_y^n}(-d_y - n - 1)) \\
+            h^n(y, \fM) & = \dim_{k(y)} \cH^n(\P_y^n, \fO_{\P_y^n}(d_y))          \\
+                        & = \dim_{k(y)} \cH^n(\P_y^n, \fO_{\P_y^n}(-d_y - n - 1)) \\
                         & = h^0(y, \fO(-n-1) \otimes \fM^{-1}),
           \end{align*}
           and $h^n(y, \fM)$ is also an upper semicontinuous on $Y$.
@@ -91,7 +91,7 @@
           In particular $d_{y'}$ is a positive integer.
           Again, we have the strict inequality
           \begin{equation*}
-            \dim_{k(y')} \cH^0(\PP_{y'}^n, \fO_{\PP_{y'}^n}(-d_{y'} - n - 1)) < \dim_{k(\xi)} \cH^0(\PP_\xi^n, \fO_{\PP_\xi^n}),
+            \dim_{k(y')} \cH^0(\P_{y'}^n, \fO_{\P_{y'}^n}(-d_{y'} - n - 1)) < \dim_{k(\xi)} \cH^0(\P_\xi^n, \fO_{\P_\xi^n}),
           \end{equation*}
           arriving at the same contradiction as above.
           Hence, $d_y$ is constant for all $y \in Y$, and we have shown $\varphi$ is surjective.
@@ -109,27 +109,29 @@
           for all $\fN \in \pic{Y}$, so if $f^*\fN \cong \fO_X$, then $$\fN \cong \pi_*\fO_X \cong \fO_Y.$$
         \end{proof}
 
-  \item[\textbf{6.}] Let $X$ be an integral projective scheme over an algebraically closed field $k$, and assume that $\cH^1(X, \fO_X) = 0$.
-        Let $T$ be a connected scheme of finite type over $k$.
-        \begin{itemize}
-          \item[(a)] If $\fL$ is an invertible sheaf on $X \times T$, show that the invertible sheaves $\fL_t$ on $X = X \times \{ t \}$ are isomorphic, for all closed points $t \in T$.
-          \item[(b)] Show that $\pic(X \times T) = \pic{X} \times \pic{T}$.
-        \end{itemize}
+        %   \item[\textbf{6.}] Let $X$ be an integral projective scheme over an algebraically closed field $k$, and assume that $\cH^1(X, \fO_X) = 0$.
+        %         Let $T$ be a connected scheme of finite type over $k$.
+        %         \begin{itemize}
+        %           \item[(a)] If $\fL$ is an invertible sheaf on $X \times T$, show that the invertible sheaves $\fL_t$ on $X = X \times \{ t \}$ are isomorphic, for all closed points $t \in T$.
+        %           \item[(b)] Show that $\pic(X \times T) = \pic{X} \times \pic{T}$.
+        %         \end{itemize}
+        % \end{enumerate}
+
+        % \begin{proof} $ $ \vspace{0pt}
+        %   \begin{enumerate} [leftmargin=0cm]
+        %     \item[(a)]
+
+        %     \item[(b)]
+        %   \end{enumerate}
+        % \end{proof}
+
 \end{enumerate}
-
-\begin{proof} $ $ \vspace{0pt}
-  \begin{enumerate} [leftmargin=0cm]
-    \item[(a)]
-
-    \item[(b)]
-  \end{enumerate}
-\end{proof}
 
 \end{document}
 
-% \item Let $X_1 \subseteq \PP_k^4$ be the \textit{rational normal quartic curve} (which is the $4$-uple embedding of $\PP^1$ in $\PP^4$). Let $X_0 \subseteq \PP^3$ be a nonsingular rational quartic curve, such as the one in (I, Ex. 3.18b). Use (9.8.3) to construct a flat family $\{X_t\}$ of curves in $\PP^4$, parameterized by $T = \A^1$, with the given fibers $X_1$ and $X_0$ for $t = 1$ and $t = 0$.
+% \item Let $X_1 \subseteq \P_k^4$ be the \textit{rational normal quartic curve} (which is the $4$-uple embedding of $\P^1$ in $\P^4$). Let $X_0 \subseteq \P^3$ be a nonsingular rational quartic curve, such as the one in (I, Ex. 3.18b). Use (9.8.3) to construct a flat family $\{X_t\}$ of curves in $\P^4$, parameterized by $T = \A^1$, with the given fibers $X_1$ and $X_0$ for $t = 1$ and $t = 0$.
 % 
-% Let $\fI \subseteq \fO_{\PP^4 \times T}$ be the ideal sheaf of the total family $X \subseteq \PP^4 \times T$. Show that $\fI$ is flat over $T$. Then show that
+% Let $\fI \subseteq \fO_{\P^4 \times T}$ be the ideal sheaf of the total family $X \subseteq \P^4 \times T$. Show that $\fI$ is flat over $T$. Then show that
 % \begin{equation*}
 %   h^0(t, \fI) = \begin{cases}
 %     0 & \text{for $t \neq 0$} \\
@@ -146,8 +148,8 @@
 % This gives another example of cohomology groups jumping at a special point.
 % 
 % \begin{proof}
-%   Suppose $X_1$ is given by the standard 4-uple embedding $\PP^1$ in $\PP^4$ (I, Ex. 2.12), and $X_0$ is given by (I, Ex. 3.18b).
-%   Then, the point $P = (0 : 0 : 1 : 0 : 0)$ does not lie in $X_1$, so by applying (9.8.3)  to the projection $\PP^{4} - P \to \PP^3$ and automorphisms $(x_0 : x_1 : x_2 : x_3 : x_4) \mapsto (x_0 : x_1 : ax_2 : x_3 : x_4)$ for each $a \neq 0$, we have our desired flat family $\{ X_t\}$ of curves in $\PP^4$.
+%   Suppose $X_1$ is given by the standard 4-uple embedding $\P^1$ in $\P^4$ (I, Ex. 2.12), and $X_0$ is given by (I, Ex. 3.18b).
+%   Then, the point $P = (0 : 0 : 1 : 0 : 0)$ does not lie in $X_1$, so by applying (9.8.3)  to the projection $\P^{4} - P \to \P^3$ and automorphisms $(x_0 : x_1 : x_2 : x_3 : x_4) \mapsto (x_0 : x_1 : ax_2 : x_3 : x_4)$ for each $a \neq 0$, we have our desired flat family $\{ X_t\}$ of curves in $\P^4$.
 %   To show $\fI$ is flat over $T$, we are just interested in what happens at each affine patch, so we will use affine coordinates $x, y, z, w$ in $\A^4$.
 %   Let $X_1$ be given by the parameteric equations
 %   \begin{equation*}
@@ -179,26 +181,26 @@
 %   \end{equation*}
 %   So we see that $X_0$ is a schme with support in $\A^3 = \spec{k[x, y, w]}$.
 %   It remains to check that $I_0$ gives a nonsingular rational quartic curve in $\A^3$.
-%   We proceed by going back to projective space $\PP^3$ and introducing another homogenous coordinate $v$.
+%   We proceed by going back to projective space $\P^3$ and introducing another homogenous coordinate $v$.
 %   Consider the surfaces defined by the last two generators of $I_0$
 %   \begin{equation*}
 %     V : v^2y - w^3 = 0, \quad Q : xv - yw = 0.
 %   \end{equation*}
 %   The intersection of $V$ and $Q$ should contain another curve of degree 2.
 % 
-%   By construction, $X_t$ for every $t \neq 0$ is isomorphic to $X_1$, so to compute $h^i(t, \fI)$ for $t \neq 0$, it suffices to compute $\cH^i(\PP^4, \fI_1)$.
-%   The exact sequence of $\fO_{\PP^4}$-modules
+%   By construction, $X_t$ for every $t \neq 0$ is isomorphic to $X_1$, so to compute $h^i(t, \fI)$ for $t \neq 0$, it suffices to compute $\cH^i(\P^4, \fI_1)$.
+%   The exact sequence of $\fO_{\P^4}$-modules
 %   \[ \begin{tikzcd}
-%     0 \arrow[r] & \fI_1 \arrow[r] & \fO_{\PP^4} \arrow[r] & \fO_{X_1} \arrow[r] & 0
+%     0 \arrow[r] & \fI_1 \arrow[r] & \fO_{\P^4} \arrow[r] & \fO_{X_1} \arrow[r] & 0
 %   \end{tikzcd} \]
 %   induces an exact sequence in cohomology
 %   \[ \begin{tikzcd}
-% 0 \arrow[r]  & \cH^0(\fI_1) \arrow[r] & \cH^0(\fO_{\PP^4}) \arrow[r] & \cH^0(\fO_{X_1}) \arrow[r] & {} \\
-% {} \arrow[r] & \cH^1(\fI_1) \arrow[r] & \cH^1(\fO_{\PP^4})           &                            &   
+% 0 \arrow[r]  & \cH^0(\fI_1) \arrow[r] & \cH^0(\fO_{\P^4}) \arrow[r] & \cH^0(\fO_{X_1}) \arrow[r] & {} \\
+% {} \arrow[r] & \cH^1(\fI_1) \arrow[r] & \cH^1(\fO_{\P^4})           &                            &   
 % \end{tikzcd}\]
-%   Since $X_1$ and $\PP^4$ are rational, we have the explicit calculations of (5.1)
+%   Since $X_1$ and $\P^4$ are rational, we have the explicit calculations of (5.1)
 %   \begin{equation*}
-%     h^0(\fO_{\PP^4}) = 1, \quad h^1(\fO_{X_1}) = 1, \quad h^1(\fO_{\PP^4}) = 0,
+%     h^0(\fO_{\P^4}) = 1, \quad h^1(\fO_{X_1}) = 1, \quad h^1(\fO_{\P^4}) = 0,
 %   \end{equation*}
-%   and since $\cH^0(\fO_{\PP^4}) \to \cH^1(\fO_{X_1})$ is surjective, by exactness we conclude that $h^i(\fI) = 0$ for $i = 0, 1$.
+%   and since $\cH^0(\fO_{\P^4}) \to \cH^1(\fO_{X_1})$ is surjective, by exactness we conclude that $h^i(\fI) = 0$ for $i = 0, 1$.
 % \end{proof}

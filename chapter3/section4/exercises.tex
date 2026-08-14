@@ -6,204 +6,208 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item Let $f : X \to Y$ be an affine morphism of Noetherian separated schemes (II, Ex. 5.17).
-Show that for any quasi-coherent sheaf $\fF$ on $X$, there are natural isomorphisms for all $i \geq 0$,
-\begin{equation*}
-  \cH^i(X, \fF) \cong \cH^i(Y, f_* \fF).
-\end{equation*}
+  \item Let $f : X \to Y$ be an affine morphism of Noetherian separated schemes (II, Ex. 5.17).
+        Show that for any quasi-coherent sheaf $\fF$ on $X$, there are natural isomorphisms for all $i \geq 0$,
+        \begin{equation*}
+          \cH^i(X, \fF) \cong \cH^i(Y, f_* \fF).
+        \end{equation*}
 
-\begin{proof}
-  Let $\goth{V}$ be an open affine cover of $Y$ so that $\goth{U} = (f^{-1}(V))_{V \in \goth{V}}$ is an open affine cover of $X$.
-  We can compute $H^i(X, \fF)$ using the Čech complex defined by the open covering $\goth{U}$.
-  Also, $f_*\fF$ is a quasi-coherent $\fO_Y$-module by (II, 5.8), so the cohomology of $f_*\fF$ can be computed via the Čech complex defined by $\goth{V}$ (4.5).
-  Lastly, $f_*\fF(V) = \fF(U)$ for all $V \in \goth{V}$ and corresponding $U = f^{-1}(V) \in \goth{U}$, so the Čech cohomology of $\fF$ and $f_*\fF$ with respect to $\goth{U}$ and $\goth{V}$, respectively, are isomorphic.
-  Hence, $\cH^i(X, \fF) \cong \cH^i(Y, f_*\fF)$ for all $i \geq 0$ by (4.5).
-\end{proof}
+        \begin{proof}
+          Let $\goth{V}$ be an open affine cover of $Y$ so that $\goth{U} = (f^{-1}(V))_{V \in \goth{V}}$ is an open affine cover of $X$.
+          We can compute $H^i(X, \fF)$ using the Čech complex defined by the open covering $\goth{U}$.
+          Also, $f_*\fF$ is a quasi-coherent $\fO_Y$-module by (II, 5.8), so the cohomology of $f_*\fF$ can be computed via the Čech complex defined by $\goth{V}$ (4.5).
+          Lastly, $f_*\fF(V) = \fF(U)$ for all $V \in \goth{V}$ and corresponding $U = f^{-1}(V) \in \goth{U}$, so the Čech cohomology of $\fF$ and $f_*\fF$ with respect to $\goth{U}$ and $\goth{V}$, respectively, are isomorphic.
+          Hence, $\cH^i(X, \fF) \cong \cH^i(Y, f_*\fF)$ for all $i \geq 0$ by (4.5).
+        \end{proof}
 
-\item Prove Chevalley's theorem: Let $f : X \to Y$ be a finite surjective morphism of Noetherian separated schemes, with $X$ affine. Then $Y$ is affine.
-\begin{itemize}
-  \item[(a)] Let $f : X \to Y$ be a finite surjective morphism of integral Noetherian schemes.
-  Show that there is a coherent sheaf $\fM$ on $X$, and a morphism of sheaves $\alpha : \fO_Y^r \to f_* \fM$ for some $r > 0$, such that $\alpha$ is an isomorphism at the generic point of $Y$.
+  \item Prove Chevalley's theorem: Let $f : X \to Y$ be a finite surjective morphism of Noetherian separated schemes, with $X$ affine. Then $Y$ is affine.
+        \begin{itemize}
+          \item[(a)] Let $f : X \to Y$ be a finite surjective morphism of integral Noetherian schemes.
+                Show that there is a coherent sheaf $\fM$ on $X$, and a morphism of sheaves $\alpha : \fO_Y^r \to f_* \fM$ for some $r > 0$, such that $\alpha$ is an isomorphism at the generic point of $Y$.
 
-  \item[(b)] For any coherent sheaf $\fF$ on $Y$, show that there is a coherent sheaf $\fG$ on $X$, and a morphism $\beta : f_* \fG \to \fF^r$ which is an isomorphism at the generic point of $Y$. 
+          \item[(b)] For any coherent sheaf $\fF$ on $Y$, show that there is a coherent sheaf $\fG$ on $X$, and a morphism $\beta : f_* \fG \to \fF^r$ which is an isomorphism at the generic point of $Y$.
 
-  \item[(c)] Now prove Chevalley's theorem.
-\end{itemize}
+          \item[(c)] Now prove Chevalley's theorem.
+        \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{enumerate} [label=(\alph*), leftmargin=0cm]
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{enumerate} [label=(\alph*), leftmargin=0cm]
 
-\item Let $\fL$ and $\fK$ be the sheaf of total quotient rings of $X$ and $Y$, respectively.
-Since the function field of $X$ is a finite field extension of that of $Y$, there exists an isomorphism $\phi : \fK^r \to f_*\fL$ for some $r > 0$.
-Let $\alpha : \fO_Y^r \to f_*\fL$ be the compositon of the natural map $\fO_Y^r \to \fK^r$ with $\phi$. 
-This is an isomorphism at the generic point of $Y$.
-Replacing $\fL$ by the sub-$\fO_X$-module spanned by the image of $\fK^r$, we obtain the desired $\fM$.
+            \item Let $\fL$ and $\fK$ be the sheaf of total quotient rings of $X$ and $Y$, respectively.
+                  Since the function field of $X$ is a finite field extension of that of $Y$, there exists an isomorphism $\phi : \fK^r \to f_*\fL$ for some $r > 0$.
+                  Let $\alpha : \fO_Y^r \to f_*\fL$ be the compositon of the natural map $\fO_Y^r \to \fK^r$ with $\phi$.
+                  This is an isomorphism at the generic point of $Y$.
+                  Replacing $\fL$ by the sub-$\fO_X$-module spanned by the image of $\fK^r$, we obtain the desired $\fM$.
 
-\item Let $\fF$ be any coherent sheaf $\fF$ on $Y$, $\fA = f_*\fO_X$, and $\alpha : \fO_Y^r \to f_* \fM$ as in (a) for some coherent sheaf $\fM$ on $X$.
-Applying $\rHom(\cdot, \fF)$ to $\alpha$ gives $\beta : \rHom(f_*\fM, \fF) \to \fF^r$,
-which is an isomorphism at the generic point of $Y$.
-The $\fO_Y$-module $\rHom(f_*\fM, \fF)$ is naturally a coherent $\fA$-module, and finite morphisms are also affine, so by the equivalence of categories of coherent $\fO_X$-modules and coherent $\fA$-modules (II, 5.17e), there exists a coherent sheaf $\fG$ on $X$ such that $f_*\fG \cong \rHom(f_*\fM, \fF).$
+            \item Let $\fF$ be any coherent sheaf $\fF$ on $Y$, $\fA = f_*\fO_X$, and $\alpha : \fO_Y^r \to f_* \fM$ as in (a) for some coherent sheaf $\fM$ on $X$.
+                  Applying $\rHom(\cdot, \fF)$ to $\alpha$ gives $\beta : \rHom(f_*\fM, \fF) \to \fF^r$,
+                  which is an isomorphism at the generic point of $Y$.
+                  The $\fO_Y$-module $\rHom(f_*\fM, \fF)$ is naturally a coherent $\fA$-module, and finite morphisms are also affine, so by the equivalence of categories of coherent $\fO_X$-modules and coherent $\fA$-modules (II, 5.17e), there exists a coherent sheaf $\fG$ on $X$ such that $f_*\fG \cong \rHom(f_*\fM, \fF).$
 
-\item Let $\red{X}$ and $\red{Y}$ be the reduced schemes of $X$ and $Y$, respectively (II, Ex. 2.3). By the universal property of $\red{Y} \to Y$, there exists a unique morphism $\red{X} \to \red{Y}$ making the following diagram commute
-\[ \begin{tikzcd}
-\red{X} \arrow[d] \arrow[r] & \red{Y} \arrow[d] \\
-X \arrow[r]                 & Y                
-\end{tikzcd} \]
-A scheme is affine if and only if its reduced scheme is affine (Ex. 3.1) so assume $X$ and $Y$ are reduced by replacing $X \to Y$ with $\red{X} \to \red{Y}$.
-Because $f$ is surjective, every irreducible component of $Y$ has a nonempty irreducible preimage and has a structure of a closed subscheme of $X$.
-All closed subschemes of $X$ are affine (II, Ex. 3.11b), so we reduce to the case $X$ and $Y$ integral.
+            \item Let $\red{X}$ and $\red{Y}$ be the reduced schemes of $X$ and $Y$, respectively (II, Ex. 2.3). By the universal property of $\red{Y} \to Y$, there exists a unique morphism $\red{X} \to \red{Y}$ making the following diagram commute
+                  \[ \begin{tikzcd}
+                      \red{X} \arrow[d] \arrow[r] & \red{Y} \arrow[d] \\
+                      X \arrow[r]                 & Y
+                    \end{tikzcd} \]
+                  A scheme is affine if and only if its reduced scheme is affine (Ex. 3.1) so assume $X$ and $Y$ are reduced by replacing $X \to Y$ with $\red{X} \to \red{Y}$.
+                  Because $f$ is surjective, every irreducible component of $Y$ has a nonempty irreducible preimage and has a structure of a closed subscheme of $X$.
+                  All closed subschemes of $X$ are affine (II, Ex. 3.11b), so we reduce to the case $X$ and $Y$ integral.
 
-Let $\fF$ be a coherent sheaf on $Y$.
-We will show $H^i(Y, \fF^r) = 0$ for all $i > 0$ (2.9) (3.7).
-Let $\beta : f_*\fG \to \fF^r$ as in (b).
-Suppose the set $\Sigma$ of proper closed subsets of $Y$ which are not affine is nonempty, and let $Z \subset Y$ be a minimal element in $\Sigma$.
-Thus, all proper closed subsets of $Z$ are affine.
-By replacing $X$ and $Y$ with $f^{-1}Z$ and $Z$, and $\fF$ with any coherent sheaf $\fF$ with support in $Z$, we show $Z$ must be affine, i.e., assume every proper closed subset of $Y$ is affine, and by noetherian induction, this implies $Y$ itself is affine.
+                  Let $\fF$ be a coherent sheaf on $Y$.
+                  We will show $H^i(Y, \fF^r) = 0$ for all $i > 0$ (2.9) (3.7).
+                  Let $\beta : f_*\fG \to \fF^r$ as in (b).
+                  Suppose the set $\Sigma$ of proper closed subsets of $Y$ which are not affine is nonempty, and let $Z \subset Y$ be a minimal element in $\Sigma$.
+                  Thus, all proper closed subsets of $Z$ are affine.
+                  By replacing $X$ and $Y$ with $f^{-1}Z$ and $Z$, and $\fF$ with any coherent sheaf $\fF$ with support in $Z$, we show $Z$ must be affine, i.e., assume every proper closed subset of $Y$ is affine, and by noetherian induction, this implies $Y$ itself is affine.
 
-By (II, 5.7), $\ker{\beta}$ and $\coker{\beta}$ are coherent sheaves on $Y$, so $K = \Supp(\ker{\beta})$ and $C = \Supp(\coker{\beta})$ are closed subsets of $Y$.
-Also, $K$ and $C$ are both proper subsets because $\beta$ is an isomorphism at the generic point, so by hypothesis, $K$ and $C$ are affine.
-For any closed subset $Z \subseteq Y$, let $j : Z \to Y$ denote the inclusion map.
-We have $\beta \cong j_*j^*\ker{\beta}$ and similarly for $\coker{\beta}$, so by (3.7) and (Ex. 4.1),
-\begin{equation*}
-  \cH^i(Y, \ker{\beta}) \cong \cH^i(K, j^*\ker{\beta}) = 0, \quad \cH^i(Y, \coker{\beta}) \cong \cH^i(C, j^*\coker{\beta}) = 0.
-\end{equation*}
-The exact sequence
-\[ \begin{tikzcd}
-0 \arrow[r] & \ker{\beta} \arrow[r] & f_*\fG \arrow[r] & \fF^r \arrow[r] & \coker{\beta} \arrow[r] & 0
-\end{tikzcd} \]
-induces two long exact sequences in cohomology
-\[ \begin{tikzcd}
-0 \arrow[r] & {\cH^0(Y, \ker{\beta})} \arrow[r] & {\cH^0(Y, f_*\fG)} \arrow[r] & {\cH^0(Y, \im{\beta})} \arrow[r]    & \cdots, \\
-0 \arrow[r] & {\cH^0(Y, \im{\beta})} \arrow[r]  & {\cH^0(Y, \fF^r)} \arrow[r]  & {\cH^0(Y, \coker{\beta})} \arrow[r] & \cdots.
-\end{tikzcd} \]
-Again by (Ex. 4.1), $\cH^i(Y, f_*\fG) \cong \cH^i(X, \fG) = 0$.
-By exactness of above, we conclude that $\cH^i(Y, \fF^r) = 0$.
+                  By (II, 5.7), $\ker{\beta}$ and $\coker{\beta}$ are coherent sheaves on $Y$, so $K = \Supp(\ker{\beta})$ and $C = \Supp(\coker{\beta})$ are closed subsets of $Y$.
+                  Also, $K$ and $C$ are both proper subsets because $\beta$ is an isomorphism at the generic point, so by hypothesis, $K$ and $C$ are affine.
+                  For any closed subset $Z \subseteq Y$, let $j : Z \to Y$ denote the inclusion map.
+                  We have $\beta \cong j_*j^*\ker{\beta}$ and similarly for $\coker{\beta}$, so by (3.7) and (Ex. 4.1),
+                  \begin{equation*}
+                    \cH^i(Y, \ker{\beta}) \cong \cH^i(K, j^*\ker{\beta}) = 0, \quad \cH^i(Y, \coker{\beta}) \cong \cH^i(C, j^*\coker{\beta}) = 0.
+                  \end{equation*}
+                  The exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \ker{\beta} \arrow[r] & f_*\fG \arrow[r] & \fF^r \arrow[r] & \coker{\beta} \arrow[r] & 0
+                    \end{tikzcd} \]
+                  induces two long exact sequences in cohomology
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & {\cH^0(Y, \ker{\beta})} \arrow[r] & {\cH^0(Y, f_*\fG)} \arrow[r] & {\cH^0(Y, \im{\beta})} \arrow[r]    & \cdots, \\
+                      0 \arrow[r] & {\cH^0(Y, \im{\beta})} \arrow[r]  & {\cH^0(Y, \fF^r)} \arrow[r]  & {\cH^0(Y, \coker{\beta})} \arrow[r] & \cdots.
+                    \end{tikzcd} \]
+                  Again by (Ex. 4.1), $\cH^i(Y, f_*\fG) \cong \cH^i(X, \fG) = 0$.
+                  By exactness of above, we conclude that $\cH^i(Y, \fF^r) = 0$.
+          \end{enumerate}
+        \end{proof}
+
+  \item Let $X = \A_k^2 = \spec{k[x, y]}$, and let $U = X - \{ (0, 0) \}$.
+        Using a suitable cover of $U$ by open affine subsets, show that $H^1(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$.
+        In particular, it is infinite-dimensional.
+
+        \begin{proof}
+          Let $\goth{U}$ be the open covering by the two open sets $V = X - \{ x = 0 \}$ and $U = X - \{ y = 0 \}$, with affine coordinates obtained by restricting the ones from $X$.
+          Then the Čech complex has only two terms:
+          \begin{align*}
+            C^0 & = \Gamma(V, \fO_V) \times \Gamma(W, \fO_W), \\
+            C^1 & = \Gamma(V \cap W, \fO_{V \cap W}).
+          \end{align*}
+          Now
+          \begin{align*}
+            \Gamma(V, \Omega)    & = k\bigg[ x, \frac{1}{x}, y \bigg]              \\
+            \Gamma(W, \Omega)    & = k\bigg[ x, y, \frac{1}{y}\bigg]               \\
+            \Gamma(V, W, \Omega) & = k\bigg[ x, y, \frac{1}{x}, \frac{1}{y} \bigg]
+          \end{align*}
+          and the map $d : C^0 \to C^1$ is given by $(f, g) \mapsto f - g$. To compute $\cH^1$, the image of $d$ is the set of all expressions $x^i y^j$ where at least one of $i, j$ is non-negative. Hence, $\cH^1(U, \fO_U)$ is spanned by $\{ x^iy^j \mid i, j < 0 \}$.
+        \end{proof}
+
+  \item On an arbitrary topological space $X$ with an arbitrary Abelian sheaf $\fF$, Čech cohomology may not give the same result as the derived functor cohomology.
+        But here we show that for $H^1$, there is an isomorphism if one takes the limit over all coverings.
+        \begin{itemize}
+          \item[(a)] Let $\goth{U} = (U_i)_{i \in I}$ be an open covering of the topological space $X$.
+                A \textit{refinement} of $\goth{U}$ is a covering $\goth{V} = (V_j)_{j \in J}$, together with a map $\lambda : J \to I$ of the index sets, such that for each $j \in J$, $V_j \subseteq U_{\lambda(j)}$.
+                If $\goth{V}$ is a refinement of $\goth{U}$, show that there is a natural induced map on Čech cohomology for any Abelian sheaf $\fF$, and for each $i$,
+                \begin{equation*}
+                  \lambda^i : \check{\cH}^i(\goth{U}, \fF) \to \check{\cH}^i(\goth{V}, \fF).
+                \end{equation*}
+                The coverings of $X$ form a partially ordered set under refinement, so we can consider the Čech cohomology in the limit
+                \begin{equation*}
+                  \varinjlim_\goth{U} \check{\cH}^i(\goth{U}, \fF).
+                \end{equation*}
+
+          \item[(b)]  For any Abelian sheaf $\fF$ on $X$, show that the natural maps (4.4) for each covering
+                \begin{equation*}
+                  \check{\cH}^i(\goth{U}, \fF) \to \cH^i(X, \fF)
+                \end{equation*}
+                are compatible with the refinement maps above.
+
+          \item[(c)] Now prove the following theorem.
+                Let $X$ be a topological space, $\fF$ a sheaf of Abelian groups.
+                Then the natural map
+                \begin{equation*}
+                  \varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fF) \to \cH^1(X, \fF)
+                \end{equation*}
+                is an isomorphism.
+        \end{itemize}
+
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)] An element $\alpha \in C^p(\goth{U}, \fF)$ is determined by giving an element
+                  \begin{equation*}
+                    \alpha_{i_0, \dots, i_p} \in \fF(U_{i_0, \dots, i_p}),
+                  \end{equation*}
+                  for each $(p + 1)$-tuple $i_0 < \cdots < i_p$ of elements of $I$.
+                  We define the map $\Lambda^p : C^p(\goth{U}) \to C^p(\goth{V})$ by setting
+                  \begin{equation*}
+                    (\Lambda \alpha)_{j_0, \dots, j_p} = \restr{\alpha_{\lambda(j_0), \dots, \lambda(j_p)}}{V_{j_0, \dots, j_p}}
+                  \end{equation*}
+                  if $\lambda(j_i)$ are all distinct, and $0$ otherwise.
+                  One has $d_\goth{V} \Lambda = \Lambda d_\goth{U}$., so $\Lambda$ induces a map of cohomology groups.
+
+            \item[(b)] We want to show the following diagram commutes
+                  \[ \begin{tikzcd}
+                      & \fI^\bullet &                                   \\
+                      {\fC^\bullet(\goth{U}, \fF)} \arrow[rr] \arrow[ru] &             & {\fC^\bullet(\goth{V}, \fF)} \arrow[lu]
+                    \end{tikzcd} \]
+                  where $0 \to \fF \to \fI^\bullet$ is any injective resolution of $\fF$ in $\goth{Ab}(X)$.
+                  This follows from the universal property of $\fI^\bullet$.
+                  In particular, there is only one extension of $\fF \to \fI^\bullet$ to $\fC^\bullet(\goth{U}, \fF)$.
+
+            \item[(c)] Embed $\fF$ in a flasque sheaf $\fG$, and let $\fR = \fG / \fF$, so that we have an exact sequence
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & \fF \arrow[r] & \fG \arrow[r] & \fR \arrow[r] & 0.
+                    \end{tikzcd} \]
+                  Define a complex $D^\bullet$ by
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & {C^\bullet (\goth{U}, \fF)} \arrow[r] & {C^\bullet (\goth{U}, \fF)} \arrow[r] & D^\bullet(\goth{U}) \arrow[r] & 0.
+                    \end{tikzcd} \]
+                  For any refinement $\goth{V}$ of $\goth{U}$, we have a commutative diagram
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & {C^\bullet(\goth{U}, \fF)} \arrow[d] \arrow[r] & {C^\bullet(\goth{U}, \fG)} \arrow[d] \arrow[r] & D^\bullet(\goth{U}) \arrow[d] \arrow[r] & 0 \\
+                      0 \arrow[r] & {C^\bullet(\goth{V}, \fF)} \arrow[r]           & {C^\bullet(\goth{V}, \fG)} \arrow[r]           & D^\bullet(\goth{V}) \arrow[r]           & 0
+                    \end{tikzcd} \]
+                  Let $\cH_D^i(\goth{U})$ be the cohomology of the complex $D^\bullet(\goth{U})$.
+                  The natural map of complex
+                  \begin{equation*}
+                    D^\bullet(\goth{U}) \to C^\bullet(\goth{U}, \fR)
+                  \end{equation*}
+                  induces a natural map of cohomology groups $H_D^i(\goth{U}) \to \check{H}^i(\goth{U}, \fR)$.
+                  Noting that the Čech cohomology of $\fG$ vanishes for $i > 0$, consider the following commutative diagram
+                  \[ \begin{tikzcd}
+                      0 \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^0(\goth{U}, \fF)} \arrow[d, "\wr"] \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^0(\goth{U}, \fG)} \arrow[r] \arrow[d, "\wr"] & \varinjlim_\goth{U} \cH_D^0(\goth{U}) \arrow[d] \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fF)} \arrow[d] \arrow[r] & 0 \\
+                      0 \arrow[r] & {\cH^0(X, \fF)} \arrow[r]                                                     & {\cH^0(X, \fG)} \arrow[r]                                                     & {\cH^0(X, \fR)} \arrow[r]                                 & {\cH^1(X, \fF)} \arrow[r]                                              & 0
+                    \end{tikzcd} \]
+                  By the Snake lemma, it suffices to show
+                  \begin{equation*}
+                    \varinjlim_\goth{U} \cH_D^0(\goth{U}) \cong \cH^0(X, \fR).
+                  \end{equation*}
+          \end{itemize}
+        \end{proof}
+
+  \item For any ringed space $(X, \fO_X)$, let $\pic{X}$ be the group of isomorphism classes of invertible sheaves (II, \SS 6).
+        Show that $\pic{X} \cong H^1(X, \fO_X^*)$ where $\fO_X^*$ denotes the sheaf whose sections over an open set $U$ are the units in the ring $\Gamma(U, \fO_X)$, with multiplication as the group operation.
+
+        \begin{proof}
+          For any invertible sheaf $\fL$ on $X$, let $\goth{U} = (U_i)_{i \in I}$ be an open cover of $X$ such that $\restr{\fL}{U_i}$ is free for each $i$.
+          Fix isomorphisms $\varphi_i : \fO_{U_i} \to \restr{\fL}{U_i}$.
+          Then on $U_i \cap U_j$, we get an isomorphism $\varphi_i^{-1} \circ \varphi_j$ of $\fO_{U_i \cap U_j}$ with itself.
+          In particular, $(\varphi_i^{-1} \circ \varphi_j)(1)$ is a unit in $\fO_{U_i \cap U_j}$.
+          For another $U_k \in \goth{U}$, one has
+          \begin{equation*}
+            \restr{(\varphi_j^{-1} \circ \varphi_k)(1)}{U_i \cap U_j \cap U_k} \cdot \restr{(\varphi_i^{-1} \circ \varphi_j)(1)}{U_i \cap U_j \cap U_k} = \restr{(\varphi_i^{-1} \circ \varphi_k)(1)}{U_i \cap U_j \cap U_k}
+          \end{equation*}
+          by (I, Ex. 1.22), so the isomorphisms $\varphi^{-1}_i \circ \varphi_j$ give an element of $\check{H}^1(\goth{U}, \fO_X^*)$.
+          Define a map
+          \begin{equation*}
+            L : \varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fO_X^*) \to \pic{X}
+          \end{equation*}
+          as follows: for every $\alpha \in \check{\cH}^1(\goth{U}, \fO_X^*)$, define $L(\alpha)$ to be the invertible sheaf on $X$ obtained by glueing $\fO_{U_i}$ via the transition functions defined by $\varphi_{ij}(1) = \alpha_{ij}$.
+          This is an isomorphism by the prevoius remarks, hence $\pic{X} \cong \cH^1(X, \fO_X^*)$ by (Ex. 4.4).
+        \end{proof}
+
 \end{enumerate}
-\end{proof}
 
-\item Let $X = \A_k^2 = \spec{k[x, y]}$, and let $U = X - \{ (0, 0) \}$.
-Using a suitable cover of $U$ by open affine subsets, show that $H^1(U, \fO_U)$ is isomorphic to the $k$-vector space spanned by $\{ x^i y^j \mid i, j < 0 \}$.
-In particular, it is infinite-dimensional.
-
-\begin{proof}
-  Let $\goth{U}$ be the open covering by the two open sets $V = X - \{ x = 0 \}$ and $U = X - \{ y = 0 \}$, with affine coordinates obtained by restricting the ones from $X$.
-  Then the Čech complex has only two terms:
-  \begin{align*}
-    C^0 & = \Gamma(V, \fO_V) \times \Gamma(W, \fO_W), \\
-    C^1 & = \Gamma(V \cap W, \fO_{V \cap W}).
-  \end{align*}
-  Now
-  \begin{align*}
-    \Gamma(V, \Omega) & = k\bigg[ x, \frac{1}{x}, y \bigg] \\
-    \Gamma(W, \Omega) & = k\bigg[ x, y, \frac{1}{y}\bigg] \\
-    \Gamma(V, W, \Omega) & = k\bigg[ x, y, \frac{1}{x}, \frac{1}{y} \bigg] 
-  \end{align*}
-  and the map $d : C^0 \to C^1$ is given by $(f, g) \mapsto f - g$. To compute $\cH^1$, the image of $d$ is the set of all expressions $x^i y^j$ where at least one of $i, j$ is non-negative. Hence, $\cH^1(U, \fO_U)$ is spanned by $\{ x^iy^j \mid i, j < 0 \}$.
-\end{proof}
-
-\item On an arbitrary topological space $X$ with an arbitrary Abelian sheaf $\fF$, Čech cohomology may not give the same result as the derived functor cohomology.
-But here we show that for $H^1$, there is an isomorphism if one takes the limit over all coverings.
-\begin{itemize}
-  \item[(a)] Let $\goth{U} = (U_i)_{i \in I}$ be an open covering of the topological space $X$.
-  A \textit{refinement} of $\goth{U}$ is a covering $\goth{V} = (V_j)_{j \in J}$, together with a map $\lambda : J \to I$ of the index sets, such that for each $j \in J$, $V_j \subseteq U_{\lambda(j)}$.
-  If $\goth{V}$ is a refinement of $\goth{U}$, show that there is a natural induced map on Čech cohomology for any Abelian sheaf $\fF$, and for each $i$,
-  \begin{equation*}
-    \lambda^i : \check{\cH}^i(\goth{U}, \fF) \to \check{\cH}^i(\goth{V}, \fF).
-  \end{equation*}
-  The coverings of $X$ form a partially ordered set under refinement, so we can consider the Čech cohomology in the limit
-  \begin{equation*}
-    \varinjlim_\goth{U} \check{\cH}^i(\goth{U}, \fF).
-  \end{equation*}
-
-  \item[(b)]  For any Abelian sheaf $\fF$ on $X$, show that the natural maps (4.4) for each covering
-  \begin{equation*}
-    \check{\cH}^i(\goth{U}, \fF) \to \cH^i(X, \fF)
-  \end{equation*}
-  are compatible with the refinement maps above.
-
-  \item[(c)] Now prove the following theorem.
-  Let $X$ be a topological space, $\fF$ a sheaf of Abelian groups.
-  Then the natural map
-  \begin{equation*}
-    \varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fF) \to \cH^1(X, \fF)
-  \end{equation*}
-  is an isomorphism.
-\end{itemize}
-
-\begin{proof} $ $ \vspace{0pt}
-  \begin{itemize} [leftmargin=0cm]
-    \item[(a)] An element $\alpha \in C^p(\goth{U}, \fF)$ is determined by giving an element
-    \begin{equation*}
-      \alpha_{i_0, \dots, i_p} \in \fF(U_{i_0, \dots, i_p}),
-    \end{equation*}
-    for each $(p + 1)$-tuple $i_0 < \cdots < i_p$ of elements of $I$.
-    We define the map $\Lambda^p : C^p(\goth{U}) \to C^p(\goth{V})$ by setting
-    \begin{equation*}
-      (\Lambda \alpha)_{j_0, \dots, j_p} = \restr{\alpha_{\lambda(j_0), \dots, \lambda(j_p)}}{V_{j_0, \dots, j_p}}
-    \end{equation*}
-    if $\lambda(j_i)$ are all distinct, and $0$ otherwise.
-    One has $d_\goth{V} \Lambda = \Lambda d_\goth{U}$., so $\Lambda$ induces a map of cohomology groups.
-
-    \item[(b)] We want to show the following diagram commutes
-    \[ \begin{tikzcd}
-                                             & \fI^\bullet &                                   \\
-{\fC^\bullet(\goth{U}, \fF)} \arrow[rr] \arrow[ru] &             & {\fC^\bullet(\goth{V}, \fF)} \arrow[lu]
-\end{tikzcd} \]
-    where $0 \to \fF \to \fI^\bullet$ is any injective resolution of $\fF$ in $\goth{Ab}(X)$.
-    This follows from the universal property of $\fI^\bullet$.
-    In particular, there is only one extension of $\fF \to \fI^\bullet$ to $\fC^\bullet(\goth{U}, \fF)$.
-
-    \item[(c)] Embed $\fF$ in a flasque sheaf $\fG$, and let $\fR = \fG / \fF$, so that we have an exact sequence
-    \[ \begin{tikzcd}
-      0 \arrow[r] & \fF \arrow[r] & \fG \arrow[r] & \fR \arrow[r] & 0.
-    \end{tikzcd} \]
-    Define a complex $D^\bullet$ by
-    \[ \begin{tikzcd}
-      0 \arrow[r] & {C^\bullet (\goth{U}, \fF)} \arrow[r] & {C^\bullet (\goth{U}, \fF)} \arrow[r] & D^\bullet(\goth{U}) \arrow[r] & 0.
-    \end{tikzcd} \]
-    For any refinement $\goth{V}$ of $\goth{U}$, we have a commutative diagram
-    \[ \begin{tikzcd}
-0 \arrow[r] & {C^\bullet(\goth{U}, \fF)} \arrow[d] \arrow[r] & {C^\bullet(\goth{U}, \fG)} \arrow[d] \arrow[r] & D^\bullet(\goth{U}) \arrow[d] \arrow[r] & 0 \\
-0 \arrow[r] & {C^\bullet(\goth{V}, \fF)} \arrow[r]           & {C^\bullet(\goth{V}, \fG)} \arrow[r]           & D^\bullet(\goth{V}) \arrow[r]           & 0
-\end{tikzcd} \]
-    Let $\cH_D^i(\goth{U})$ be the cohomology of the complex $D^\bullet(\goth{U})$.
-    The natural map of complex
-    \begin{equation*}
-      D^\bullet(\goth{U}) \to C^\bullet(\goth{U}, \fR)
-    \end{equation*}
-    induces a natural map of cohomology groups $H_D^i(\goth{U}) \to \check{H}^i(\goth{U}, \fR)$.
-    Noting that the Čech cohomology of $\fG$ vanishes for $i > 0$, consider the following commutative diagram
-    \[ \begin{tikzcd}
-0 \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^0(\goth{U}, \fF)} \arrow[d, "\wr"] \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^0(\goth{U}, \fG)} \arrow[r] \arrow[d, "\wr"] & \varinjlim_\goth{U} \cH_D^0(\goth{U}) \arrow[d] \arrow[r] & {\varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fF)} \arrow[d] \arrow[r] & 0 \\
-0 \arrow[r] & {\cH^0(X, \fF)} \arrow[r]                                                     & {\cH^0(X, \fG)} \arrow[r]                                                     & {\cH^0(X, \fR)} \arrow[r]                                 & {\cH^1(X, \fF)} \arrow[r]                                              & 0
-\end{tikzcd} \]
-By the Snake lemma, it suffices to show
-\begin{equation*}
-  \varinjlim_\goth{U} \cH_D^0(\goth{U}) \cong \cH^0(X, \fR).
-\end{equation*}
-  \end{itemize}
-\end{proof}
-
-\item For any ringed space $(X, \fO_X)$, let $\pic{X}$ be the group of isomorphism classes of invertible sheaves (II, \S 6).
-Show that $\pic{X} \cong H^1(X, \fO_X^*)$ where $\fO_X^*$ denotes the sheaf whose sections over an open set $U$ are the units in the ring $\Gamma(U, \fO_X)$, with multiplication as the group operation.
-
-\begin{proof}
-  For any invertible sheaf $\fL$ on $X$, let $\goth{U} = (U_i)_{i \in I}$ be an open cover of $X$ such that $\restr{\fL}{U_i}$ is free for each $i$.
-  Fix isomorphisms $\varphi_i : \fO_{U_i} \to \restr{\fL}{U_i}$.
-  Then on $U_i \cap U_j$, we get an isomorphism $\varphi_i^{-1} \circ \varphi_j$ of $\fO_{U_i \cap U_j}$ with itself.
-  In particular, $(\varphi_i^{-1} \circ \varphi_j)(1)$ is a unit in $\fO_{U_i \cap U_j}$.
-  For another $U_k \in \goth{U}$, one has
-  \begin{equation*}
-    \restr{(\varphi_j^{-1} \circ \varphi_k)(1)}{U_i \cap U_j \cap U_k} \cdot \restr{(\varphi_i^{-1} \circ \varphi_j)(1)}{U_i \cap U_j \cap U_k} = \restr{(\varphi_i^{-1} \circ \varphi_k)(1)}{U_i \cap U_j \cap U_k}
-  \end{equation*}
-  by (I, Ex. 1.22), so the isomorphisms $\varphi^{-1}_i \circ \varphi_j$ give an element of $\check{H}^1(\goth{U}, \fO_X^*)$.
-  Define a map
-  \begin{equation*}
-    L : \varinjlim_\goth{U} \check{\cH}^1(\goth{U}, \fO_X^*) \to \pic{X}
-  \end{equation*}
-  as follows: for every $\alpha \in \check{\cH}^1(\goth{U}, \fO_X^*)$, define $L(\alpha)$ to be the invertible sheaf on $X$ obtained by glueing $\fO_{U_i}$ via the transition functions defined by $\varphi_{ij}(1) = \alpha_{ij}$.
-  This is an isomorphism by the prevoius remarks, hence $\pic{X} \cong \cH^1(X, \fO_X^*)$ by (Ex. 4.4).
-\end{proof}
+\end{document}
 
 % \item Let $X$ be a nonsingular variety over an algebraically closed field $k$, and let $\fF$ be a coherent sheaf on $X$. Show that there is a one-to-one correspondence between the set of infinitesimal extensions of $X$ by $\fF$ (II, Ex. 8.7) up to isomorphism, and the group $H^1(X, \fF \otimes \fT)$, where $\fT$ is the tangent sheaf of $X$ (II, \S 8).
 % 
@@ -261,8 +265,8 @@ Show that $\pic{X} \cong H^1(X, \fO_X^*)$ where $\fO_X^*$ denotes the sheaf whos
 %   Then each $\delta_{ij}, \sigma_{ij}$ differ by an element in the image of $\prod_{i \in I} \Der_k(A_i, M_i)$ under the coboundary map.
 % \end{proof}
 
-\end{enumerate}
-\end{document}
+
+
 
 % \item Let $(X, \fO_X)$ be a ringed space, let $\fI$ be a sheaf of ideals with $\fI^2 = 0$, and let $X_0$ be the ringed space $(X, \fO_X / \fI)$.
 % Show that there is an exact sequence of sheaves of Abelian groups on $X$,

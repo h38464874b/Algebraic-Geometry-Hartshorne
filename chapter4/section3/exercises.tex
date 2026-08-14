@@ -87,20 +87,39 @@
 
         \begin{proof}
           There is nothing to prove for $d = 2$, so fix any $d \geq 3$, and denote $g = \frac{1}{2}(d - 1)(d - 2)$.
-
+          \begin{equation*}
+            d = 2, 3, 4, 5, \quad g = 0, 1, 3, 6
+          \end{equation*}
 
           Both extremes $r = 0, g$ are consructed in (3.11.1).
 
           If $X$ is any elliptic curve and $P$ is any point in $X$, then the linear system $|dP|$ gives an embedding of $X$ in $\P^{d - 1}$ as a curve of degree $d$.
           Projecting the curve into $\P^2$ by (3.5) and (3.10) gives a plane curve of degree $d$ and $g - 1$ nodes.
+          This gives $d = 4$ and $r = 2$.
+
+          By (Ex 3.6), the complete intersection of two quadric surfaces in $\P^3$ is an elliptic curve of degree 4.
+          Projecting from a point not in the curve by (3.10) gives a plane curve of degree $d = 4$ and $r = 2$ nodes
 
           Similarly, any divisor of degree $\geq 5$ on a genus 2 curve is very ample by (Ex. 1.5), so there exists plane curves of degree $d \geq 5$ with $g - 2$ nodes.
+          This gives $d = 5, r = 4$.
+
+          If $Q \subset \P^3$ is the nonsingular quadric suface, then there exists divisors of type $(a, b)$ for any $a, b > 0$ that are linearly equivalent to an irreducible nonsingular curve of degree $a + b$ and genus $(a - 1)(b - 1)$ as a curve in $\P^3$.
+
+          A divisor of type $(2, 3)$ gives a nonsingular curve of degree $2 + 3 = 5$ and genus $(2 - 1)(3 - 1) = 2$ in $\P^3$.
+          Projecting into $\P^2$ by (3.10) gives a plane curve of degree $d = 5$ and $r = 4$ nodes.
+          Projecting this curve from one of its own points that does not lie in a plane spanned by coplanar tangent lines gives a plane curve of degree $d = 4$ and $r = 1$ node.
+
+          Now, consider a divisor of type $(3, 3)$.
+          It is a nonsingular curve of degree $3 + 3 = 6$ and genus $(3 - 1)(3 - 1) = 4$ in $\P^3$.
+          Projecting this curve from one of its points that does not lie in a plane spanned by coplanar tangent lines gives a plane curve of degree $d = 5$ and $r = 2$ nodes.
+
+          Finally, consider the divisor of type $(4, 2)$.
+          It has degree $2 + 4 = 6$ and genus $(4 - 1)(2 - 1) = 3$ as a curve in $\P^3$.
+          Projecting this curve from one of its points that does not lie in a plane spanned by coplanar tangent lines gives a plane curve of degree $d = 5$ and $r = 3$ nodes.
 
           More generally, any divisor of degree $d \geq 2g + 1$ on any curve of genus $g$ is very ample by (3.2), so there exists plane curves of degree $d$ and $g - d$ nodes.
+          This gives $d = 5$ and $r = 1$.
 
-          \begin{proposition}
-            For every $0 < r < d$, there exists an irreducible plane curve of degree $d$ with $r$ nodes and no other singularities.
-          \end{proposition}
         \end{proof}
 
 \end{enumerate}

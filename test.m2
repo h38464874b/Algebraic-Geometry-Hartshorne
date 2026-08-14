@@ -1,23 +1,9 @@
-kk = QQ
+S = QQ[v, w, x, y];
 
-ringP2 = kk[x, y, z];
+A = w * x - v * y;
 
-d = 5
+B = v * y - (w^2);
 
-f = (x^2) - (y^2) + (x^3);
+C = w * y - (x^2);
 
-f = homogenize(f, z);
-
-factor f
-
-I = ideal(f)
-
-J = ideal(f, diff(x, f), diff(y, f), diff(z, f))
-
-X = Proj(ringP2 / I)
-
-codim singularLocus I
-
-primaryDecomposition J
-
-# decompose I
+(B^2) * C - (A^3)

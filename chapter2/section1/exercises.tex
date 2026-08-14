@@ -22,9 +22,9 @@
           \end{proof}
 
     \item \begin{itemize}
-              \item[(a)] For any morphism of sheaves $\varphi : \mathscr{F} \to \mathscr{G}$, show that for each point $P$, $(\ker{\varphi})_P = \ker{(\varphi_P)}$ and $(\im{\varphi})_P = \im{(\varphi_P)}$.
+              \item[(a)] For any morphism of sheaves $\varphi : \fF \to \fG$, show that for each point $P$, $(\ker{\varphi})_P = \ker{(\varphi_P)}$ and $(\im{\varphi})_P = \im{(\varphi_P)}$.
               \item[(b)] Show that $\varphi$ is injective (respectively, surjective) if and only if the induced maps on the stalks $\varphi_P$ is injective (respectively, surjective) for all $P$.
-              \item[(c)] Show that a sequence $\dots \to \mathscr{F}^{i - 1} \xrightarrow{\varphi^{i - 1}} \mathscr{F}^i \xrightarrow{\varphi^i} \mathscr{F}^{i + 1} \to \dots$ of sheaves and morphisms is exact if and only if for each $P \in X$ the corresponding sequence of stalks is exact as a sequence of abelian groups.
+              \item[(c)] Show that a sequence $\dots \to \fF^{i - 1} \xrightarrow{\varphi^{i - 1}} \fF^i \xrightarrow{\varphi^i} \fF^{i + 1} \to \dots$ of sheaves and morphisms is exact if and only if for each $P \in X$ the corresponding sequence of stalks is exact as a sequence of abelian groups.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
@@ -35,13 +35,13 @@
 
                         $\varphi$ is surjective $\iff$ $\im{\varphi} = \fG$ $\iff$ $\im(\varphi_P) = (\im{\varphi})_P = \fG_P$.
 
-                  \item[(c)] The sequence $\dots \to \mathscr{F}^{i - 1} \xrightarrow{\varphi^{i - 1}} \mathscr{F}^i \xrightarrow{\varphi^i} \mathscr{F}^{i + 1} \to \dots$ is exact $\iff$ $\im{\varphi^{i - 1}} = \ker{\varphi^i}$ for all $i$ $\iff$ $(\im{\varphi^{i - 1}})_P = (\ker{\varphi^i})_P$ for all $i$ and $P \in X$ $\iff$ $\im(\varphi^{i - 1}_P) = \ker(\varphi^i_P)$ for all $i$ and $P \in X$ by part (a) above.
+                  \item[(c)] The sequence $\dots \to \fF^{i - 1} \xrightarrow{\varphi^{i - 1}} \fF^i \xrightarrow{\varphi^i} \fF^{i + 1} \to \dots$ is exact $\iff$ $\im{\varphi^{i - 1}} = \ker{\varphi^i}$ for all $i$ $\iff$ $(\im{\varphi^{i - 1}})_P = (\ker{\varphi^i})_P$ for all $i$ and $P \in X$ $\iff$ $\im(\varphi^{i - 1}_P) = \ker(\varphi^i_P)$ for all $i$ and $P \in X$ by part (a) above.
               \end{itemize}
           \end{proof}
 
     \item \begin{itemize}
-              \item[(a)] Let $\varphi : \mathscr{F} \to \mathscr{G}$ be a morphism of sheaves on $X$. Show that $\varphi$ is surjective if and only if the following condition holds: for every open set $U \subseteq X$, and for every $s \in \mathscr{G}(U)$, there is a covering $\{ U_i \}$ of $U$, and there are elements $t_i \in \mathscr{F}(U_i)$, such that $\varphi(t_i) = \restr{s}{U_i}$ for all $i$.
-              \item[(b)] Give an example of a surjective morphism of sheaves $\varphi : \mathscr{F} \to \mathscr{G}$, and an open set $U$ such that $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is not surjective.
+              \item[(a)] Let $\varphi : \fF \to \fG$ be a morphism of sheaves on $X$. Show that $\varphi$ is surjective if and only if the following condition holds: for every open set $U \subseteq X$, and for every $s \in \fG(U)$, there is a covering $\{ U_i \}$ of $U$, and there are elements $t_i \in \fF(U_i)$, such that $\varphi(t_i) = \restr{s}{U_i}$ for all $i$.
+              \item[(b)] Give an example of a surjective morphism of sheaves $\varphi : \fF \to \fG$, and an open set $U$ such that $\varphi(U) : \fF(U) \to \fG(U)$ is not surjective.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
@@ -61,9 +61,9 @@
 
                   \item[(b)] We provide an example of a sheaf from open sets to sets that satisfies the condition.
                         Let $X, Y = S^1$. Let $\pi_X : X \to S^1$ be the identity map, and let $\tau : Y \to X$ be defined by $z \mapsto z^2$ where $X$, $Y$ is identified with the unit circle in the complex plane, and let $\pi_Y := \tau \circ \pi_X$.
-                        Define a sheaf $\mathscr{F}$ on $S^1$ for a nonempty open subset $U$ of $S^1$ as
+                        Define a sheaf $\fF$ on $S^1$ for a nonempty open subset $U$ of $S^1$ as
                         \begin{align*}
-                            \mathscr{F}(U) & = \{ \text{sections $s : U \to X$ with respect to $\pi_X$} \}                         \\
+                            \fF(U) & = \{ \text{sections $s : U \to X$ with respect to $\pi_X$} \}                         \\
                                            & = \{ \text{continuous maps $s : U \to X$ such that $\pi_X \circ s = \text{id}_U$} \},
                         \end{align*}
                         and similarly define $\fG$ as the map that maps $U$ to the set of sections from  $U$ to $Y$ with respect to $\pi_Y$. If $s \in \fG(U)$  so that $\pi_Y \circ s = \text{id}_U$, then we can compose $s$ with $\tau$ so that $$\pi_X \circ (\tau \circ s) = (\pi_X \circ \tau) \circ s = \pi_Y \circ s = \text{id}_U,$$ which shows $\tau \circ s$ is a section from to $X$, so we can define a morphism $\tau_\# : \fG \to \fF$ induced by $\tau$ as
@@ -82,11 +82,11 @@
           \end{proof}
 
     \item[\textbf{6.}] \begin{itemize}
-              \item[(a)] Let $\mathscr{F}'$ be a subsheaf of a sheaf $\mathscr{F}$. Show that the natural map of $\mathscr{F}$ to the quotient sheaf $\mathscr{F} / \mathscr{F}'$ is surjective, and has kernel $\mathscr{F}'$. Thus, there is an exact sequence
+              \item[(a)] Let $\fF'$ be a subsheaf of a sheaf $\fF$. Show that the natural map of $\fF$ to the quotient sheaf $\fF / \fF'$ is surjective, and has kernel $\fF'$. Thus, there is an exact sequence
                     \[ \begin{tikzcd}
-                            0 \arrow[r] & \mathscr{F}' \arrow[r] & \mathscr{F} \arrow[r] & \mathscr{F}/\mathscr{F}' \arrow[r] & 0.
+                            0 \arrow[r] & \fF' \arrow[r] & \fF \arrow[r] & \fF/\fF' \arrow[r] & 0.
                         \end{tikzcd} \]
-              \item[(b)] Conversely, if $0 \to \mathscr{F}' \to \mathscr{F} \to \mathscr{F}'' \to 0$ is an exact sequence, show that $\mathscr{F}'$ is isomorphic to a subsheaf of $\mathscr{F}$, and that $\mathscr{F}''$ is isomorphic to the quotient $\mathscr{F}$ by this subsheaf.
+              \item[(b)] Conversely, if $0 \to \fF' \to \fF \to \fF'' \to 0$ is an exact sequence, show that $\fF'$ is isomorphic to a subsheaf of $\fF$, and that $\fF''$ is isomorphic to the quotient $\fF$ by this subsheaf.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
@@ -95,8 +95,8 @@
 
                   \item[(b)] By Exercise 2, We have the following equivalent statements:
                         \begin{align*}
-                             & 0 \to \mathscr{F}' \to \mathscr{F} \to \mathscr{F}'' \to 0 \text{ is exact.}                 \\
-                             & \iff 0 \to \mathscr{F}'_P \to \mathscr{F}_P \to \mathscr{F}''_P \to 0 \text{ is exact.}      \\
+                             & 0 \to \fF' \to \fF \to \fF'' \to 0 \text{ is exact.}                 \\
+                             & \iff 0 \to \fF'_P \to \fF_P \to \fF''_P \to 0 \text{ is exact.}      \\
                              & \iff \fF_P' \subseteq \fF_P \text{ and } \fF_P'' \simeq \fF_P / \fF'_P \simeq (\fF / \fF')_P \\
                              & \iff \fF' \text{ is isomorphic to a subsheaf of $\fF$ and } \fF'' \cong \fF / \fF'.
                         \end{align*}
@@ -128,13 +128,13 @@
     \item[\textbf{9.}] \textit{Direct Sum.} Let $\fF$ and $\fG$ be sheaves on $X$. Show that the presheaf $U \mapsto \fF(U) \oplus \fG(U)$ is a sheaf. It is called the \textit{direct sum} of $\fF$ and $\fG$, and is denotes by $\fF \oplus \fG$. Show that it plays the role of direct sum and of direct product in the category of sheaves of abelian groups.
 
           \begin{proof}
-              Since the category of sheaves on $X$ is a full subcategory of presheaves on $X$, it suffices to show it satisfies the universal property of a direct sum and of direct product in the category of presheaves of abelian groups on $X$, then show it satisfies the sheaf property. Let $\pi_1 : \fF \oplus \fG \to \fF$, $\pi_2 : \fF \oplus \fG_ \to \fG$ be the canonical projection morphisms, and let $\mathscr{H} \in \mathfrak{PreSh}_X$ with morphisms $\tau_1 : \mathscr{H} \to \fF$ and $\tau_2 : \mathscr{H} \to \fG$ such that the following diagram commutes:
+              Since the category of sheaves on $X$ is a full subcategory of presheaves on $X$, it suffices to show it satisfies the universal property of a direct sum and of direct product in the category of presheaves of abelian groups on $X$, then show it satisfies the sheaf property. Let $\pi_1 : \fF \oplus \fG \to \fF$, $\pi_2 : \fF \oplus \fG_ \to \fG$ be the canonical projection morphisms, and let $\fH \in \mathfrak{PreSh}_X$ with morphisms $\tau_1 : \fH \to \fF$ and $\tau_2 : \fH \to \fG$ such that the following diagram commutes:
               \[ \begin{tikzcd}
-                      \mathscr{H} \arrow[rrd, "\tau_2", bend left] \arrow[rdd, "\tau_1"', bend right] \arrow[rd, "\alpha", dashed] &                                                                       &             \\
-                      & \mathscr{F} \oplus \mathscr{G} \arrow[d, "\pi_1"] \arrow[r, "\pi_2"'] & \mathscr{G} \\
-                      & \mathscr{F}                                                           &
+                      \fH \arrow[rrd, "\tau_2", bend left] \arrow[rdd, "\tau_1"', bend right] \arrow[rd, "\alpha", dashed] &                                                                       &             \\
+                      & \fF \oplus \fG \arrow[d, "\pi_1"] \arrow[r, "\pi_2"'] & \fG \\
+                      & \fF                                                           &
                   \end{tikzcd} \]
-              we find the find a unique morphism $\alpha : \mathscr{H} \to \fF \oplus \fG$ such that the diagram above commmutes. For any open $U \subseteq X$, define $\alpha(U) : \mathscr{H}(U) \to (\fF \oplus \fG)(U)$ as $\alpha(h) = (\tau_1(h), \tau_2(h))$. Since $\alpha(U)$ is unique by the same universal property for abelian groups, $\alpha$ must be the desired unique morphism, and since the direct sum and direct product are essentially the same for finite collections, we have shown $\fF \oplus \fG$ is a direct sum and product in the category of presheaves.
+              we find the find a unique morphism $\alpha : \fH \to \fF \oplus \fG$ such that the diagram above commmutes. For any open $U \subseteq X$, define $\alpha(U) : \fH(U) \to (\fF \oplus \fG)(U)$ as $\alpha(h) = (\tau_1(h), \tau_2(h))$. Since $\alpha(U)$ is unique by the same universal property for abelian groups, $\alpha$ must be the desired unique morphism, and since the direct sum and direct product are essentially the same for finite collections, we have shown $\fF \oplus \fG$ is a direct sum and product in the category of presheaves.
 
               Now we show $\fF \oplus \fG$ is a sheaf. Let $U$ be an open subset of $X$, and let $\{ V_i \}$ be a cover of $U$ by open sets. If $(s, t) \in \Gamma(U, \fF \oplus \fG)$, then $(\restr{s}{U_i}, \restr{t}{U_i}) = \restr{(s, t)}{U_i} = 0$ by universal property nonsense, so $s = 0$ and $t = 0$. Also, if we have elements $(s_i, t_i) \in \Gamma(V_i, \fF \oplus \fG)$ such that for all $i, j$, $\restr{(s_i, t_i)}{V_i \cap V_j} = \restr{(s_j, t_j)}{V_i \cap V_j}$, then again $(\restr{s_i}{U_i \cap U_j}, \restr{t_i}{U_i \cap U_j}) =(\restr{s_j}{U_i \cap U_j}, \restr{t_j}{U_i \cap U_j})$ if and only if $\restr{s_i}{U_i \cap U_j} = \restr{s_j}{U_i \cap U_j}$ and $\restr{t_i}{U_i \cap U_j} = \restr{t_j}{U_i \cap U_j}$, so by the sheaf properties of $\fF$ and $\fG$, there exists $s \in \Gamma(U, \fF)$ and $t \in \Gamma(U, \fG)$ such that $\restr{(s, t)}{U_i} = (s_i, t_i)$.
           \end{proof}
@@ -142,7 +142,7 @@
     \item[\textbf{10.}] \textit{Direct Limit.} Let $\{ \fF_i \}$ be a direct system of sheaves and morphisms on $X$. We define the \textit{direct limit} of the system $\{ \fF_i \}$, denoted $\varinjlim \fF_i$, to be the sheaf associated to the presheaf $U \mapsto \varinjlim \fF_i(U)$. Show that this is a direct limit in the category of sheaves on $X$.
 
           \begin{proof}
-              Let $\mathscr{F}$ denote the presheaf defined $U \mapsto \varinjlim \fF_i$, and let $\mathscr{F}^+$ denote the sheaf associated to $\mathscr{F}$ with associated morphism $\theta : \fF \to \fF^+$. From the direct system, we have morphisms $\mu_{ij} : \fF_i \to \fF_j$ and $\mu_i : \fF_i \to \fF$ such that for all $i, j$, $\mu_{i} = \mu_j \circ \mu_{ij}$. To show $\fF^+$ is a direct limit in the category-theoretic sense, we must provide the data of morphisms (between sheaves) $\alpha_i : \fF_i \to \fF^+$ such that $\alpha_i = \alpha_j \circ \mu_{ij}$ for all $i, j$ satisfying the following universal property: if $\fG$ is any sheaf on $X$ with the data of morphisms $\{ \phi_i : \fF_i \to \fG \}$ satisfying for all $i, j$, $\phi_i = \phi_j \circ \mu_{ij}$, then there exists a unique morphism $\phi : \fF^+ \to \fG$ such that $\phi_i = \phi \circ \alpha_i$. Observe the following commutative diagram:
+              Let $\fF$ denote the presheaf defined $U \mapsto \varinjlim \fF_i$, and let $\fF^+$ denote the sheaf associated to $\fF$ with associated morphism $\theta : \fF \to \fF^+$. From the direct system, we have morphisms $\mu_{ij} : \fF_i \to \fF_j$ and $\mu_i : \fF_i \to \fF$ such that for all $i, j$, $\mu_{i} = \mu_j \circ \mu_{ij}$. To show $\fF^+$ is a direct limit in the category-theoretic sense, we must provide the data of morphisms (between sheaves) $\alpha_i : \fF_i \to \fF^+$ such that $\alpha_i = \alpha_j \circ \mu_{ij}$ for all $i, j$ satisfying the following universal property: if $\fG$ is any sheaf on $X$ with the data of morphisms $\{ \phi_i : \fF_i \to \fG \}$ satisfying for all $i, j$, $\phi_i = \phi_j \circ \mu_{ij}$, then there exists a unique morphism $\phi : \fF^+ \to \fG$ such that $\phi_i = \phi \circ \alpha_i$. Observe the following commutative diagram:
               \[ \begin{tikzcd}
                       \fF_i \arrow[r, "\mu_i"] \arrow[rr, "\phi_i", bend left] \arrow[rd, "\alpha_i:=\theta\circ \mu_i"'] & \fF \arrow[d, "\theta"'] \arrow[r, "\psi", dashed] & \fG \\
                       & \fF^+ \arrow[ru, "\phi"', dashed]                  &
@@ -188,17 +188,17 @@
               We show $U - \text{Supp}~s$ is an open set. If $Q \in U$ such that $s_Q = 0$, then by definition of the direct limit, there exists an open neighborhood $V$ of $Q$ in $U$ such that $0 = (V, \restr{s}{V}) \in \fF_Q$, hence $s_R = 0$ for all $R \in V$.
           \end{proof}
 
-    \item[\textbf{15.}] \textit{Sheaf $\mathscr{H}om$.} Let $\fF$, $\fG$ be sheaves of abelian groups on $X$. For any open subset $U \subseteq X$, show that the set $\Hom{(\restr{\fF}{U}, \restr{\fG}{U})}$ of morphisms of the restricted sheaves has a natural structure of an abelian group. Show that the presheaf $U \mapsto \Hom(\restr{\fF}{U}, \restr{\fG}{U})$ is a sheaf. It is called the \textit{sheaf of local morphisms} of $\fF$ into $\fG$, "sheaf hom" for short, and is denoted $\mathscr{H}om(\fF, \fG)$.
+    \item[\textbf{15.}] \textit{Sheaf $\rHom$.} Let $\fF$, $\fG$ be sheaves of abelian groups on $X$. For any open subset $U \subseteq X$, show that the set $\Hom{(\restr{\fF}{U}, \restr{\fG}{U})}$ of morphisms of the restricted sheaves has a natural structure of an abelian group. Show that the presheaf $U \mapsto \Hom(\restr{\fF}{U}, \restr{\fG}{U})$ is a sheaf. It is called the \textit{sheaf of local morphisms} of $\fF$ into $\fG$, "sheaf hom" for short, and is denoted $\rHom(\fF, \fG)$.
 
           \begin{proof}
               Morphisms $f, g \in \Hom{(\restr{\fF}{U}, \restr{\fG}{U})}$ define for all open $V \subseteq U$ homomorphisms between abelian groups $f(V), g(V) : \fF(V) \to \fG(V)$, so we can define $f + g$ as $(f + g)(V) = f(V) + g(V)$. It is obviously an abelian group with identity $0$ as the zero morphism defined by $0(V) \equiv 0$.
 
-              Let $U$ be an open subset of $X$, and let $\{ V_i \}$ be an open cover of $U$. We make some clarifying remarks. If $s \in \Gamma(U, \mathscr{H}om{(\fF, \fG)}) = \Hom{(\restr{\fF}{U}, \restr{\fG}{U})}$, then $s$ is a natural transformation of functors $\restr{\fF}{U} \to \restr{\fG}{U}$, so $\restr{s}{V_i}$ refers to the induced natural transformation of functors $\restr{\fF}{V_i} \to \restr{\fG}{V_i}$ by only considering open subsets $W \subseteq V_i$. Thus, we have the following commutative diagram:
+              Let $U$ be an open subset of $X$, and let $\{ V_i \}$ be an open cover of $U$. We make some clarifying remarks. If $s \in \Gamma(U, \rHom{(\fF, \fG)}) = \Hom{(\restr{\fF}{U}, \restr{\fG}{U})}$, then $s$ is a natural transformation of functors $\restr{\fF}{U} \to \restr{\fG}{U}$, so $\restr{s}{V_i}$ refers to the induced natural transformation of functors $\restr{\fF}{V_i} \to \restr{\fG}{V_i}$ by only considering open subsets $W \subseteq V_i$. Thus, we have the following commutative diagram:
               \[ \begin{tikzcd}
                       0 \arrow[r] & {\Gamma(W, \fF)} \arrow[r] \arrow[d, "s(W)"'] & {\prod \Gamma(W \cap V_i, \fF)} \arrow[r] \arrow[d, "\prod s(W \cap V_i)"'] & {\prod \Gamma(W \cap V_i \cap V_j, \fF)} \arrow[d, "\prod s(W \cap V_i \cap V_j)"'] \\
                       0 \arrow[r]           & {\Gamma(W, \fG)} \arrow[r]                    & {\prod \Gamma(W \cap V_i, \fG)} \arrow[r]                                   & {\prod \Gamma(W \cap V_i \cap V_j, \fG)}
                   \end{tikzcd} \]
-              hence $\mathscr{H}om(\fF, \fG)$ is a sheaf.
+              hence $\rHom(\fF, \fG)$ is a sheaf.
           \end{proof}
 
     \item[\textbf{17.}] \textit{Skyscraper Sheaves.} Let $X$ be a topological space, let $P$ be a point, and let $A$ be an abelian group. Define a sheaf $i_P(A)$ on $X$ as follows: $i_P(A)(U) = A$ if $P\in U$, $0$ otherwise. Verify that the stalk of $i_P(A)$ is $A$ at every point $Q \in \overline{\{ P \}}$, and $0$ elsewhere. Hence, the name "Skyscraper sheaf." Show that this sheaf could also be described as $i_*(A)$, where $A$ denotes the constant sheaf $A$ on the closed subspace $\overline{\{ P \}}$, and $i : \overline{\{ P \}} \to X$ is the inclusion.
