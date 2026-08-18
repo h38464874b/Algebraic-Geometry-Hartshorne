@@ -246,9 +246,44 @@
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)]
+                  \item[(a)] We first consider the case when $D$ and $E$ are nonsingular irreducible curves meeting transversally.
+                        The pairing of cohomology is defined as the following: the natural map $\Omega_X \otimes \fO_D \to \Omega_D$ induces a linear map in cohomology $\cH^1(X, \Omega_X) \to \cH^1(D, \Omega_D)$.
+                        Since $\Omega_D$ is a dualizing sheaf for $D$, we have a trace map $t_D : \cH^1(D, \Omega_D) \to k$.
+                        Composing, we obtain a linear map $\theta_D : \cH^1(X, \Omega_X) \to k$.
+                        If $E$ is another irreducible divisor of $X$, then we can consider its image in $\cH^1(X, \Omega_X)$ under $c$.
+                        Hence, $\langle c(D), c(E) \rangle = \theta_D(c(E)) = \theta_E(c(D))$.
 
-                  \item[(b)]
+                        Generalizing, we want to show the following diagram commutes
+                        \[ \begin{tikzcd}
+                                {\pic(X)} \arrow[d, "c"'] \arrow[r, "(D.\cdot) \cdot 1"] & \Z \arrow[d] \\
+                                {\cH^1(X, \Omega_X)} \arrow[r, "\theta_D"]     & k
+                            \end{tikzcd}. \]
+                        The top row factos into
+                        \[ \begin{tikzcd}
+                                & {\pic{D}} \arrow[d, "\deg"] \\
+                                {\pic{X}} \arrow[r, "(D.\cdot) \cdot 1"] \arrow[ru] & \Z
+                            \end{tikzcd}. \]
+                        The bottom row factors into
+                        \[ \begin{tikzcd}
+                                & {\cH^1(D, \Omega_D)} \arrow[d, "t_D"] \\
+                                {\cH^1(X, \Omega_X)} \arrow[r, "\theta_D"] \arrow[ru] & k
+                            \end{tikzcd}. \]
+                        The left column factors into
+                        \[ \begin{tikzcd}
+                                {\pic{X}} \arrow[r] \arrow[d, "c"] & {\pic{D}} \arrow[d, "c"] \\
+                                {\cH^1(X, \Omega_X)} \arrow[r]     & {\cH^1(D, \Omega_D)}
+                            \end{tikzcd}. \]
+                        The result of (III, Ex. 7.4) gives the commutative diagram
+                        \[ \begin{tikzcd}
+                                {\pic{D}} \arrow[r, "\deg"] \arrow[d, "c"']    & \Z \arrow[d] \\
+                                {\cH^1(D, \Omega_D)} \arrow[r, "t_D"] & k
+                            \end{tikzcd}. \]
+                        So the original diagram commutes.
+                        For arbitrary divisor $D$, we can always write $D$ as a sum of irreducible curves.
+
+                  \item[(b)] We have an injection $c : \Num{X} \hookrightarrow \cH^1(X, \Omega_X)$, and in characteristic 0, this means $k \otimes_\Z \Num{X} \hookrightarrow \cH^1(X, \Omega_X)$ is also an injection.
+                  Since $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space, this means $\Num{X}$ is finitely generated.
+                  Also, $\Num{X}$ has no torsion, so $\Num{X}$ is actually a free finitely generated $\Z$-module.
               \end{itemize}
           \end{proof}
 
@@ -272,7 +307,19 @@
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)] By (1.9), (1.9.1), and (Ex. 1.8), the satement reduces to the Cauchy-Schwartz inequality for Lorenztian inner products.
 
-                  \item[(b)]
+                  \item[(b)] By Nakai-Moishezon (1.10), $H = l + m$ is ample, with $H^2 = 2$.
+                  Apply the previous exercise to $D' = D + al + bm$ and $H$, which simplifies to
+                  \begin{equation*}
+                    D'^2 \leq 2(a + b)^2.
+                  \end{equation*}
+                  Expanding the left-hand side gives
+                  \begin{equation*}
+                    D'^2 = D^2 + 2a^2 + 2b^2 + 2ab.
+                  \end{equation*}
+                  Substitutting and simplifying gives
+                  \begin{equation*}
+                    D^2 \leq 2ab.
+                  \end{equation*}
               \end{itemize}
           \end{proof}
 
@@ -290,23 +337,77 @@
           Then apply (Ex. 1.9) to $D = r\Gamma + s\Delta$ for all $r$ and $s$ to obtain the result.
 
           \begin{proof}
+              Applying the adjunction formula (1.5) to $\Gamma$ gives
+              \begin{equation*}
+                  \Gamma^2 = 2g - 2 - \Gamma.K,
+              \end{equation*}
+              where $K$ is a canonical divisor of $C \times C$.
+              We can choose $K$ to be $K = p_1^*K_C + p_2^*K_C$, where $K_C$ is a canonical divisor of $C$.
+              Each $p_i^*K_C$ is a sum of $2g - 2$ lines, either $l = C \times \text{pt}$ or $m = \text{pt} \times C$ depending on $i = 1, 2$.
+              Thus, $K = (2g - 2)(l + m)$.
+              Since $\Gamma$ is the graph of $f$, $\Gamma.l = \deg{f} = q$ and $\Gamma.m = 1$.
+
+              Now, we can compute $\Gamma.K$
+              \begin{equation*}
+                  \Gamma.K = (2g - 2)(\Gamma.(l + m)) = (2g - 2)(q + 1).
+              \end{equation*}
+              Plugging into (1.5) gives
+              \begin{equation*}
+                  \Gamma^2 = 2g - 2 - \Gamma.K = q(2 - 2g).
+              \end{equation*}
+
+              Notice that $\Gamma \cap \Delta$ set-theoretically consists of all the closed points of $(P, P)$ such that $P \in C$ is a fixed point of $f$.
+              By (1.4), we conclude that $\Gamma.\Delta = N$.
+
+              We have
+              \begin{equation*}
+                  D.l = r\Gamma.l + s \Delta.l = rq + s, \quad D.m = r\Gamma.m + s\Delta.m = r + s.
+              \end{equation*}
+              By (Ex. 1.8), we have
+              \begin{equation*}
+                  D^2 \leq 2(rq + s)(r + s).
+              \end{equation*}
+              Expanding the left-hand side gives
+              \begin{equation*}
+                  D^2 = r^2\Gamma^2 + 2rs\Gamma.\Delta + s^2\Delta^2 = r^2q(2 - 2g) + 2rsN + s^2(2 - 2g).
+              \end{equation*}
+              Hence, we have
+              \begin{equation*}
+                  r^2q(2 - 2g) + 2rsN + s^2(2 - 2g) \leq 2(rq + s)(r + s).
+              \end{equation*}
+              Plugging in $N = 1 - a + q$ and simplifying in a similar manner to (IV, Ex. 4.16) gives the inequality
+              \begin{equation*}
+                  |a| \leq |\theta q g + g / \theta|
+              \end{equation*}
+              for all $\theta \in \R$.
+              The local minimum and maximum of the right-hand side is $\pm 2 g \sqrt{q}$.
+              Hence, $|a| \leq 2g \sqrt{q}$.
           \end{proof}
 
-    \item In this problem, we assume that $X$ is a surface for which $\Num{X}$ is finitely generated.
-          \begin{itemize}
-              \item[(a)] If $H$ is an ample divisor on $X$, and $d \in \Z$, show that the set of effective divisors $D$ with $D.H = d$, modulo numerical equivalence, is a finite set.
-              \item[(b)] Now let $C$ be a curve of genus $g \geq 2$, and use (a) to show that the group of automorphisms of $C$ is finite, as follows.
-                    Given an automorphism $\sigma$ of $C$, let $\Gamma \subseteq X = C \times C$ be its graph.
-                    First show that if $\Gamma \equiv \Delta$, then $\Gamma = \Delta$, using the fact that $\Delta^2 < 0$, since $g \geq 2$ (Ex. 1.6).
-                    Then use (a).
-          \end{itemize}
+          % \item In this problem, we assume that $X$ is a surface for which $\Num{X}$ is finitely generated.
+          %       \begin{itemize}
+          %           \item[(a)] If $H$ is an ample divisor on $X$, and $d \in \Z$, show that the set of effective divisors $D$ with $D.H = d$, modulo numerical equivalence, is a finite set.
+          %           \item[(b)] Now let $C$ be a curve of genus $g \geq 2$, and use (a) to show that the group of automorphisms of $C$ is finite, as follows.
+          %                 Given an automorphism $\sigma$ of $C$, let $\Gamma \subseteq X = C \times C$ be its graph.
+          %                 First show that if $\Gamma \equiv \Delta$, then $\Gamma = \Delta$, using the fact that $\Delta^2 < 0$, since $g \geq 2$ (Ex. 1.6).
+          %                 Then use (a).
+          %       \end{itemize}
 
-    \item If $D$ is an ample divisor on the surface $X$, and $D' \equiv D$, then $D'$ is also ample.
-          Give an example to show, however, that if $D$ is very ample, $D'$ need not be very ample.
+          %       \begin{proof} $ $ \vspace{0pt}
+          %         \begin{itemize} [leftmargin=0cm]
+          %             \item[(a)]
+          %             \item[(b)] Let $l_P = P \times C, m_P = C \times P$ for any $P \in C$.
+          %             If $\Gamma \equiv \Delta$, then $\Gamma.l_P = \Delta.l_P = 1$ and $\Gamma.m_P = \Delta.m_P = 1$ for any $P \in C$, which implies $Q \in \Gamma$ if and only if $Q \in \Delta$.
+          %             Alternatively, we have $\Delta^2 = 2 - 2g < 0$ for $g \geq 2$ (Ex. 6a), so $\Gamma.\Delta < 0$, but $\Gamma$ and $\Delta$ are irreducible, so the inequality is possible if and only if $\Gamma = \Delta$.
+          %         \end{itemize}
+          %       \end{proof}
 
-          \begin{proof}
+          % \item If $D$ is an ample divisor on the surface $X$, and $D' \equiv D$, then $D'$ is also ample.
+          %       Give an example to show, however, that if $D$ is very ample, $D'$ need not be very ample.
 
-          \end{proof}
+          %       \begin{proof}
+
+          %       \end{proof}
 
 \end{enumerate}
 
