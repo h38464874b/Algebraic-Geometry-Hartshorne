@@ -26,6 +26,7 @@
 % \usepackage[sans]{dsfont}
 %\newcommand\dsone{\mathds{1}}
 \usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+\usepackage{upgreek}
 
 % Utilities
 \usepackage{etoolbox}
@@ -75,7 +76,7 @@
 \clist_map_inline:nn
 {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 {
-   \cs_new:cpn { f#1 } { \mathcal{#1} }
+   \cs_new:cpn { f#1 } { \mathscr{#1} }
 }
 
 % Scr Font
@@ -105,6 +106,7 @@
 % Relative stuff
 \DeclareMathOperator{\rSpec}{\mathpzc{Spec}}
 \DeclareMathOperator{\rHom}{\mathpzc{Hom}}
+\DeclareMathOperator{\rEnd}{\mathpzc{End}}
 \DeclareMathOperator{\rProj}{\mathpzc{Proj}}
 \DeclareMathOperator{\rExt}{\mathpzc{Ext}}
 
@@ -121,6 +123,8 @@
 \DeclareMathOperator{\id}{id}
 
 % AG/Commutative Algebra/Algebra
+\DeclareMathOperator{\Hilb}{Hilb}
+\DeclareMathOperator{\Def}{Def}
 \DeclareMathOperator{\car}{char}
 \DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\spec}{Spec}
@@ -152,6 +156,7 @@
 \DeclareMathOperator{\hd}{hd}
 \DeclareMathOperator{\pd}{pd}
 \DeclareMathOperator{\cH}{H}
+\DeclareMathOperator{\Ti}{T}
 \DeclareMathOperator{\dR}{R}
 \DeclareMathOperator{\cdh}{h}
 \DeclareMathOperator{\depth}{depth}

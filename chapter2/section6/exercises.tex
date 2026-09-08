@@ -6,44 +6,44 @@
 \maketitle
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-\item[\textbf{1.}] Let $X$ be a scheme satisfying ($*$). Then $X \times \PP^n$ also satisfies ($*$), and $\cl (X \times \PP^n) \cong (\cl X) \times \Z$.
+\item[\textbf{1.}] Let $X$ be a scheme satisfying ($*$). Then $X \times \P^n$ also satisfies ($*$), and $\cl (X \times \P^n) \cong (\cl X) \times \Z$.
 
 \begin{proof}
-    Since $\PP^n$ is a union of $n+1$ copies of $\A^n$, it is not hard to see from (6.6) that $X \times \PP^n$ is Noetherian and integral. It's left to show it is separated. Indeed, $X \times \PP^n \to X$ is a projective morphism of Noetherian schemes, hence it is proper by (4.9). Composition of separated morphisms is separated. Hence, $X \times \PP^n$ satisfies ($*$).
+    Since $\P^n$ is a union of $n+1$ copies of $\A^n$, it is not hard to see from (6.6) that $X \times \P^n$ is Noetherian and integral. It's left to show it is separated. Indeed, $X \times \P^n \to X$ is a projective morphism of Noetherian schemes, hence it is proper by (4.9). Composition of separated morphisms is separated. Hence, $X \times \P^n$ satisfies ($*$).
 
-    The projective $n$-space is the union of a hyperplane $\PP^{n - 1}$ and a copy of $\A^n$, and $\PP^{n - 1}$ is a prime divisor of $\PP^n$.
-    Thus, $X \times \PP^{n-1}$ is a prime divisor of $X \times \PP^n$.
-    Also, $X \times \PP^n - X \times \PP^{n-1} = X \times \A^n$, and $\cl(X \times \A^n) \cong \cl{X}$.
+    The projective $n$-space is the union of a hyperplane $\P^{n - 1}$ and a copy of $\A^n$, and $\P^{n - 1}$ is a prime divisor of $\P^n$.
+    Thus, $X \times \P^{n-1}$ is a prime divisor of $X \times \P^n$.
+    Also, $X \times \P^n - X \times \P^{n-1} = X \times \A^n$, and $\cl(X \times \A^n) \cong \cl{X}$.
     Hence, we have the exact sequence
     \begin{equation*}
-        0 \to \Z \xrightarrow{1 \mapsto X \times \PP^{n-1}} \cl(X \times \PP^n) \to \cl{X} \to 0.
+        0 \to \Z \xrightarrow{1 \mapsto X \times \P^{n-1}} \cl(X \times \P^n) \to \cl{X} \to 0.
     \end{equation*} 
-    This exact sequence splits via $Y \in \cl{X} \mapsto Y \times \PP^n \in \cl(X \times \PP^n)$.
-    Injectivity of this map follows from $\PP^n$ being birational to $\A^n$ and (6.6).
-    Hence, $\cl(X \times \PP^n) \cong \cl(X) \times \Z$.
+    This exact sequence splits via $Y \in \cl{X} \mapsto Y \times \P^n \in \cl(X \times \P^n)$.
+    Injectivity of this map follows from $\P^n$ being birational to $\A^n$ and (6.6).
+    Hence, $\cl(X \times \P^n) \cong \cl(X) \times \Z$.
 \end{proof}
 
-\item[\textbf{2.}] \textit{Varieties in Projective Space.} Let $k$ be an algebraically closed field, and let $X$ be a closed subvariety of $\PP_k^n$ which is nonsingular in codimension one (hence satisfies ($*$)). For any divisor $D = \sum n_i Y_i$ on $X$, we define the \textit{degree} of $D$ to be $\sum n_i \deg Y_i$, where $\deg Y_i$ is the degree of $Y_i$, considered as a projective variety itself.
+\item[\textbf{2.}] \textit{Varieties in Projective Space.} Let $k$ be an algebraically closed field, and let $X$ be a closed subvariety of $\P_k^n$ which is nonsingular in codimension one (hence satisfies ($*$)). For any divisor $D = \sum n_i Y_i$ on $X$, we define the \textit{degree} of $D$ to be $\sum n_i \deg Y_i$, where $\deg Y_i$ is the degree of $Y_i$, considered as a projective variety itself.
 \begin{itemize}
-    \item[(a)] Let $V$ be an irreducible hypersurface in $\PP^n$ which does not contain $X$, and let $Y_i$ be the irreducible components of $V \cap X$. They all have codimension $1$ by (I, Ex. 1.8). For each $i$, let $f_i$ be a local equation for $V$ on some open set $U_i$ of $\PP^n$ for which $Y_i \cap U_i \neq \emptyset$, and let $n_i = v_{Y_i}(\bar{f}_i)$, where $\bar{f}_i$ is the restriction of $f_i$ to $U_i \cap X$. Then we define the \textit{divisor} $V.X$ to be $\sum n_i Y_i$. Extend by linearity and show that this gives a well-defined homomorphism from the subgroup of $\Div \PP^n$ consisting of divisors, none of whose components contain $X$, to $\Div X$.
-    \item[(b)] If $D$ is a principal divisor on $\PP^n$, for which $D.X$ is defined as in (a), show that $D.X$ is principal on $X$. Thus, we get a homomorphism $\cl\PP^n \to \cl X$.
-    \item[(c)] Show that the integer $n_i$ defined in (a) is the same as the intersection multiplicity $i(X, V; Y_i)$ defined in (I, \textsection{7}). Then use the generalized Bézout's theorem (I, 7.7) to show that for any divisor $D$ on $\PP^n$, none of whose components contain $X$,
+    \item[(a)] Let $V$ be an irreducible hypersurface in $\P^n$ which does not contain $X$, and let $Y_i$ be the irreducible components of $V \cap X$. They all have codimension $1$ by (I, Ex. 1.8). For each $i$, let $f_i$ be a local equation for $V$ on some open set $U_i$ of $\P^n$ for which $Y_i \cap U_i \neq \emptyset$, and let $n_i = v_{Y_i}(\bar{f}_i)$, where $\bar{f}_i$ is the restriction of $f_i$ to $U_i \cap X$. Then we define the \textit{divisor} $V.X$ to be $\sum n_i Y_i$. Extend by linearity and show that this gives a well-defined homomorphism from the subgroup of $\Div \P^n$ consisting of divisors, none of whose components contain $X$, to $\Div X$.
+    \item[(b)] If $D$ is a principal divisor on $\P^n$, for which $D.X$ is defined as in (a), show that $D.X$ is principal on $X$. Thus, we get a homomorphism $\cl\P^n \to \cl X$.
+    \item[(c)] Show that the integer $n_i$ defined in (a) is the same as the intersection multiplicity $i(X, V; Y_i)$ defined in (I, \textsection{7}). Then use the generalized Bézout's theorem (I, 7.7) to show that for any divisor $D$ on $\P^n$, none of whose components contain $X$,
     \begin{equation*}
         \deg(D.X) = (\deg D) \cdot (\deg X).
     \end{equation*}
-    \item[(d)] If $D$ is a principal divisor on $X$, show that there is a rational function $f$ on $\PP^n$ such that $D = (f).X$. Conclude that $\deg D = 0$. Thus, the degree function defines a homomorphism $\deg : \cl X \to \Z$. Finally, there is a commutative diagram
+    \item[(d)] If $D$ is a principal divisor on $X$, show that there is a rational function $f$ on $\P^n$ such that $D = (f).X$. Conclude that $\deg D = 0$. Thus, the degree function defines a homomorphism $\deg : \cl X \to \Z$. Finally, there is a commutative diagram
     \[\begin{tikzcd}
-        \cl \PP^n \arrow[r] \arrow[d, "\cong"'] \arrow[d, "\deg "] & \cl X \arrow[d, "\deg"] \\
+        \cl \P^n \arrow[r] \arrow[d, "\cong"'] \arrow[d, "\deg "] & \cl X \arrow[d, "\deg"] \\
         \Z \arrow[r, "\cdot(\deg X)"']                                  & \Z                                 
         \end{tikzcd} \]
-    and in particular, we see that the map $\cl \PP^n \to \cl X$ is injective.
+    and in particular, we see that the map $\cl \P^n \to \cl X$ is injective.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
 \begin{itemize} [leftmargin=0cm]
-\item[(a)] Let $f_i'$ be another local equation for $V$ on some open set $U_i'$ of $\PP^n$ for which $Y_i \cap U_i' \neq \emptyset$. Since $X$ is irreducible, $U_i \cap U_i' \cap X \neq \emptyset$, and $f_i / f_i' \in \Gamma(U_i \cap U_i', \fO_{\PP^n}^*)$. Hence, $\bar{f}_i / \bar{f}_i' \in \Gamma(U_i \cap U_i' \cap X, \fO_X^*)$. Hence, $n_i$ is independent of the choice of $U_i$.
+\item[(a)] Let $f_i'$ be another local equation for $V$ on some open set $U_i'$ of $\P^n$ for which $Y_i \cap U_i' \neq \emptyset$. Since $X$ is irreducible, $U_i \cap U_i' \cap X \neq \emptyset$, and $f_i / f_i' \in \Gamma(U_i \cap U_i', \fO_{\P^n}^*)$. Hence, $\bar{f}_i / \bar{f}_i' \in \Gamma(U_i \cap U_i' \cap X, \fO_X^*)$. Hence, $n_i$ is independent of the choice of $U_i$.
 
-\item[(b)] Suppose $D = (f)$, and let $i : X \hookrightarrow \PP^n$ be a closed immersion. Then $D.X = (i^{-1}f)$.
+\item[(b)] Suppose $D = (f)$, and let $i : X \hookrightarrow \P^n$ be a closed immersion. Then $D.X = (i^{-1}f)$.
 
 \item[(c)] We recall the definition of the intersection multiplicity:  
 \[
@@ -51,7 +51,7 @@
 \]
 where \( S = k[x_0, \dots, x_n] \), and \( I_X, I_V \) are the homogeneous ideals defining \( X \) and \( V \), respectively. The homogeneous prime ideal \( \goth{p}_i \) defines \( Y_i \). Note that $\len_{S_{\goth{p}}} M_\goth{p} = \len_{S_{(\goth{p})}} M_{(\goth{p})}$. Let $\goth{P}_i$ be the image of $\goth{p}_i$ in $S / I_X$, and let $A = (S / I_X)_{(\goth{P}_i)}$. Then $A$ is precisely the valuation ring of $Y_i$ as a prime divisor of $X$. If we denote $I'_V$ the extension of the ideal $I_V$ in $S$, it is not hard to see that $\len_A A / I_V' = v_{Y_i}(\overline{f})$, where $f$ is any local equation defining $V$.
 
-Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurface not containing $X$. By the generalized Bézout's theorem,
+Let $D = \sum n_j V_j$ be any $\P^n$ with each $V_j$ an irreducible hypersurface not containing $X$. By the generalized Bézout's theorem,
 \begin{align*}
     \deg(D.X) & = \sum n_j \deg(V_j.X) \\
     & = \sum n_j \sum i(V_j, X ; V_{jk}) \deg{V_{jk}} \\
@@ -59,7 +59,7 @@ Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurfac
     & = (\deg{D}) \cdot (\deg{X}).
 \end{align*}
 
-\item[(d)] Let $D = (f)$ for some $f \in K(X)$, where $K(X)$ is the function field of $X$. If $X$ is locally defined by an ideal $I \subset k[y_1, \dots, y_n]$ on some open subset $\spec{k[y_1, \dots, y_n]}$ of $\PP^n$ where $f$ is regular, then we can write $f = g / h$ for some $g, h \in k[y_1, \dots, y_n]$ such that $h$ is nowhere zero on some open set in $X$, which is what we wanted to show. Since any principal divisor has degree zero, by (c), $\deg(D) = \deg((f).X) = 0 \cdot \deg{X} = 0$.
+\item[(d)] Let $D = (f)$ for some $f \in K(X)$, where $K(X)$ is the function field of $X$. If $X$ is locally defined by an ideal $I \subset k[y_1, \dots, y_n]$ on some open subset $\spec{k[y_1, \dots, y_n]}$ of $\P^n$ where $f$ is regular, then we can write $f = g / h$ for some $g, h \in k[y_1, \dots, y_n]$ such that $h$ is nowhere zero on some open set in $X$, which is what we wanted to show. Since any principal divisor has degree zero, by (c), $\deg(D) = \deg((f).X) = 0 \cdot \deg{X} = 0$.
 \end{itemize}
 \end{proof}
 
@@ -71,7 +71,7 @@ Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurfac
     If $\alpha = g + h \sqrt{f} \in K$, where $g, h \in k(x_1, \dots, x_n)$, then the minimal polynomial of $\alpha$ is $X^2 - 2g X + (g^2 - h^2f)$. Suppose $\alpha$ is integral over $k[x_1, \dots, x_n]$. Since $k[x_1, \dots, x_n]$ is integrally closed, the coefficients of $p_\alpha$ lie in $k[x_1, \dots, x_n]$ (A.M. 5.15). It follows $g, h \in k[x_1, \dots, x_n]$. Hence, the integral closure of $k[x_1, \dots, x_n]$ in $K$ lies in $A$. The converse is immediate by the formula for the minimal polynomial of any $\alpha \in K$. Hence, $A$ is an integrally closed ring.
 \end{proof}
 
-\item[\textbf{7.}] Let $X$ be the nodal cubic curve $y^2 z = x^3 + x^2 z$ in $\PP^2$. Imitate (6.11.4) and show that the group of Cartier divisors of degree $0$, $\cacl^\circ X$, is naturally isomorphic to the multiplicative group $\mathbb{G}_m$.
+\item[\textbf{7.}] Let $X$ be the nodal cubic curve $y^2 z = x^3 + x^2 z$ in $\P^2$. Imitate (6.11.4) and show that the group of Cartier divisors of degree $0$, $\cacl^\circ X$, is naturally isomorphic to the multiplicative group $\mathbb{G}_m$.
 
 \begin{proof}
    Take $Z = (0:0:1)$ and $P_0 = (0:1:0)$.
@@ -89,7 +89,7 @@ Let $D = \sum n_j V_j$ be any $\PP^n$ with each $V_j$ an irreducible hypersurfac
 
     \item[(b)] If $f$ is a finite morphism of nonsingular curves, show that this homomorphism corresponds to the homomorphism $f^* : \cl Y \to \cl X$ defined in the text, via the isomorphisms of (6.16).
 
-    \item[(c)] If $X$ is a locally factorial integral closed subscheme of $\PP_k^n$, and if $f : X \to \PP^n$ is the inclusion map, then $f^*$ on $\pic$ agrees with the homomorphism on divisor class groups defined in (Ex. 6.2) via the isomorphisms of (6.16).
+    \item[(c)] If $X$ is a locally factorial integral closed subscheme of $\P_k^n$, and if $f : X \to \P^n$ is the inclusion map, then $f^*$ on $\pic$ agrees with the homomorphism on divisor class groups defined in (Ex. 6.2) via the isomorphisms of (6.16).
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
@@ -169,10 +169,10 @@ Show that there is a unique way to define the \textit{degree} of any coherent sh
 
 \end{document}
 
-% \item \textit{Cones.} In this exercise we compare the class group of a projective variety $V$ to the class group of its cone. So let $V$ be a projective variety in $\PP^n$ which is of dimension $\geq 1$ and nonsingular in codimension $1$. Let $X = C(V)$ be the affine cone over $V$ in $\mathbb{A}^{n + 1}$, and let $\bar{X}$ be its projective closure in $\PP^{n + 1}$. Let $P \in X$ be the vertex of the cone.
+% \item \textit{Cones.} In this exercise we compare the class group of a projective variety $V$ to the class group of its cone. So let $V$ be a projective variety in $\P^n$ which is of dimension $\geq 1$ and nonsingular in codimension $1$. Let $X = C(V)$ be the affine cone over $V$ in $\mathbb{A}^{n + 1}$, and let $\bar{X}$ be its projective closure in $\P^{n + 1}$. Let $P \in X$ be the vertex of the cone.
 % \begin{itemize}
 %     \item[(a)] Let $\pi : \bar{X} - P \to V$ be the projection map. Show that $V$ can be covered by open subsets $U_i$ such that $\pi^{-1}(U_i) \cong U_i \times \mathbb{A}^1$ for each $i$, and then show as in (6.6) that $\pi^* : \cl V \to \cl(\bar{X} - P)$ is an isomorphism. Since $\cl~\bar{X} \simeq \cl(\bar{X} - P)$, we have also $\cl V \simeq \cl~\bar{X}$.
-%     \item[(b)] We have $V \subseteq \bar{X}$ as the hyperplane section at infinity. Show that the class of the divisor $V$ in $\cl \bar{X}$ is equal to $\pi^*$ (class of $V.H$) where $H$ is any hyperplane of $\PP^n$ not containing $V$. Thus conclude using (6.5) that there is an exact sequence
+%     \item[(b)] We have $V \subseteq \bar{X}$ as the hyperplane section at infinity. Show that the class of the divisor $V$ in $\cl \bar{X}$ is equal to $\pi^*$ (class of $V.H$) where $H$ is any hyperplane of $\P^n$ not containing $V$. Thus conclude using (6.5) that there is an exact sequence
 %     \begin{equation*}
 %         0 \to \Z \to \cl V \to \cl X \to 0,
 %     \end{equation*}
@@ -193,13 +193,13 @@ Show that there is a unique way to define the \textit{degree} of any coherent sh
 %         \item[(2)] If $r = 3$, then $\cl X \simeq \Z$;
 %         \item[(3)] If $r \geq 4$, then $\cl X = 0$.
 %     \end{itemize}
-%     \item[(c)] Now let $Q$ be the projective quadric hypersurface in $\PP^n$ defined by the same equation. Show that
+%     \item[(c)] Now let $Q$ be the projective quadric hypersurface in $\P^n$ defined by the same equation. Show that
 %     \begin{itemize}
 %         \item[(1)] If $r = 2$, $\cl Q \simeq \Z$, and the class of a hyperplane section $Q.H$ is twice the generator;
 %         \item[(2)] If $r = 3$, $\cl Q \simeq \Z \oplus \Z$;
 %         \item[(3)] If $r \geq 4$, $\cl Q \simeq \Z$, generated by $Q.H$.
 %     \end{itemize}
-%     \item[(d)] Prove Klein's theorem, which says that if $r \geq 4$, and if $Y$ is an irreducible subvariety of codimension $1$ on $Q$, then there is an irreducible hypersurface $V \subseteq \PP^n$ such that $V \cap Q = Y$, with multiplicity one. In other words, $Y$ is a complete intersection.
+%     \item[(d)] Prove Klein's theorem, which says that if $r \geq 4$, and if $Y$ is an irreducible subvariety of codimension $1$ on $Q$, then there is an irreducible hypersurface $V \subseteq \P^n$ such that $V \cap Q = Y$, with multiplicity one. In other words, $Y$ is a complete intersection.
 % \end{itemize}
 
 % \item Let $X$ be the nonsingular plane cubic curve $y^2 z = x^3 - xz^2$ of (6.10.2).

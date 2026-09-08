@@ -20,7 +20,8 @@
         \end{tikzcd} \]
     is exact on the left also.
 
-    \item[(b)] Generalize (8.8) as follows. With $B$, $k$ as above, assume furthermore that $k$ is perfect, and that $B$ is a localization of an algebra of finite type over $k$. Then show that $B$ is a regular local ring if and only if $\Omega_{B/k}$ is free of $\rk{} = \dim{B} + \trd k(B) / k$.
+    \item[(b)] Generalize (8.8) as follows. With $B$, $k$ as above, assume furthermore that $k$ is perfect, and that $B$ is a localization of an algebra of finite type over $k$.
+    Then show that $B$ is a regular local ring if and only if $\Omega_{B/k}$ is free of $\rk{} = \dim{B} + \trd k(B) / k$.
 
     \item[(c)] Strengthen (8.15) as follows.
     Let $X$ be an irreducible scheme of finite type over a perfect field $k$, and let $\dim{X} = n$.
@@ -90,7 +91,10 @@ A \arrow[r, "f"'] \arrow[ru, "g", dashed] & B \arrow[d]  \\
 \end{tikzcd} \]
 We call this result the \textit{Infinitesimal lifting property} for $A$. We prove this result in several steps.
 \begin{itemize}
-    \item[(a)] First suppose that $g : A \to B'$ is a given homomorphism lifting $f$. If $g' : A \to B'$ is another such homomorphism, show that $\theta = g - g'$ is a $k$-derivation of $A$ into $I$, which we can consider as an element of $\Hom_A(\Omega_{A / k}, I)$. Note that since $I^2 = 0$, $I$ has a natural structure of $B$-module and hence also of $A$-module. Conversely, for any $\theta \in \Hom_A(\Omega_{A/k}, I)$, $g' = g + \theta$ is another homomorphism lifting $f$. (For this step, you do not need the hypothesis about $\spec{A}$ being nonsingular.)
+    \item[(a)] First suppose that $g : A \to B'$ is a given homomorphism lifting $f$. If $g' : A \to B'$ is another such homomorphism, show that $\theta = g - g'$ is a $k$-derivation of $A$ into $I$, which we can consider as an element of $\Hom_A(\Omega_{A / k}, I)$.
+    Note that since $I^2 = 0$, $I$ has a natural structure of $B$-module and hence also of $A$-module.
+    Conversely, for any $\theta \in \Hom_A(\Omega_{A/k}, I)$, $g' = g + \theta$ is another homomorphism lifting $f$.
+    (For this step, you do not need the hypothesis about $\spec{A}$ being nonsingular.)
     
     \item[(b)] Now let $P = k[x_1, \dots, x_n]$ be a polynomial ring over $k$ of which $A$ is a quotient, and let $J$ be the kernel. Show that there does exist a homomorphism $h : P \to B'$ making a commutative diagram, \filbreak
     \[ \begin{tikzcd}
@@ -99,13 +103,12 @@ We call this result the \textit{Infinitesimal lifting property} for $A$. We prov
         P \arrow[d] \arrow[r, "h"]  & B' \arrow[d] \\
         A \arrow[d] \arrow[r, "f"'] & B \arrow[d]  \\
         0                           & 0           
-        \end{tikzcd} \]
+        \end{tikzcd} \] \filbreak
     and show that $h$ induces an $A$-linear map $\overline{h} : J / J^2 \to I$.
-    
     \item[(c)] Now use the hypothesis $\spec{A}$ nonsingular and (8.17) to obtain an exact sequence
     \[ \begin{tikzcd}
-        0 \arrow[r] & {J/J^2} \arrow[r] & {\Omega_{P/k} \otimes A} \arrow[r] & {\Omega_{A/k}} \arrow[r] & 0.
-        \end{tikzcd} \]
+        0 \arrow[r] & {J/J^2} \arrow[r] & {\Omega_{P/k} \otimes A} \arrow[r] & {\Omega_{A/k}} \arrow[r] & 0
+        \end{tikzcd}. \]
     Show furthermore that applying the functor $\Hom_A(\cdot, I)$ gives an exact sequence
     \[ \begin{tikzcd}
         0 \arrow[r] & {\Hom_A(\Omega_{A/k},I)} \arrow[r] & {\Hom_P(\Omega_{P/k},I)} \arrow[r] & {\Hom_A(J/J^2,I)} \arrow[r] & 0.
@@ -124,7 +127,10 @@ We call this result the \textit{Infinitesimal lifting property} for $A$. We prov
 \end{align*}
 Also, $g, g'$ are $k$-linear, so $\theta(\lambda) = 0$ for all $\lambda \in k$. Hence, $\theta$ is a $k$-derivation.
 
-In the converse direction, since $\im{\theta} \subseteq I$, $\pi \circ g = \pi \circ g'$, it is enough to check that $g'$ is indeed a homomorphism. It is clear it is additive. For any $a, a' \in A$, we have $\theta(a)\theta(a') \in I^2 = 0$ and $g(a)\theta(a') = a\theta(a'), g(a')\theta(a) = a'\theta(a)$. It follows that
+In the converse direction, since $\im{\theta} \subseteq I$, $\pi \circ g = \pi \circ g'$, it is enough to check that $g'$ is a well-defined homomorphism.
+It is clear it is additive.
+For any $a, a' \in A$, we have $\theta(a)\theta(a') \in I^2 = 0$ and $g(a)\theta(a') = a\theta(a'), g(a')\theta(a) = a'\theta(a)$.
+It follows that
 \begin{align*}
     g'(aa') & = g(aa') + \theta(aa') \\
     & = g(a)g(a') + a\theta(a') + a'\theta(a) \\
@@ -133,9 +139,15 @@ In the converse direction, since $\im{\theta} \subseteq I$, $\pi \circ g = \pi \
     & = g'(a)g'(a').
 \end{align*}
 
-\item[(b)] Let $y_i \in B$ be the image of $x_i \in P$ for all $i = 1, \dots, n$. Then $f(A) = k[y_i, \dots, y_n]$, and $\pi : B' \to B$ is surjective, so there exists $z_i \in B'$ such that $\pi(z_i) = y_i$. Let $A' = k[z_1, \dots, z_n] \subseteq B'$. We have $\pi(A') = f(A)$, There is a natural map $h : P \to A' \hookrightarrow B'$ defined by $x_i \mapsto z_i$. It satisfies the conditions by construction.
+\item[(b)] For each $i = 1, \dots, n$, let $y_i \in B$ be the image of $x_i \in P$.
+Then $f(A) = k[y_i, \dots, y_n]$, and $\pi : B' \to B$ is surjective, so there exists $z_i \in B'$ such that $\pi(z_i) = y_i$.
+Let $A' = k[z_1, \dots, z_n] \subseteq B'$.
+We have $\pi(A') = f(A)$, and there is a natural map $h : P \to A' \hookrightarrow B'$ defined by $x_i \mapsto z_i$.
+It satisfies the desired conditions by construction.
 
-To show $h$ induces an $A$-lienar map $\bar{h} : J/J^2 \to I$, we need to show $h(J) \subseteq I$ and $h(J^2) = 0$. Indeed, the diagram above commutes with $h$, and $J$ gets mapped to $0$ in $B$. Hence, $h(J) \subseteq \ker{\pi} = I$. Let $cc' \in J^2$ for some $c, c' \in J$. Then $h(cc') = h(c)h(c') \in I^2 = 0$ since $h(c), h(c) \in I$. Hence, we can obtain $\bar{h}$ by restricting $h$ to $J$ and passing to the quotient $J/J^2$.
+To show $h$ induces an $A$-lienar map $\bar{h} : J/J^2 \to I$, we need to show $h(J) \subseteq I$ and $h(J^2) = 0$.
+Indeed, the diagram above commutes with $h$, and $J$ gets mapped to $0$ in $B$. Hence, $h(J) \subseteq \ker{\pi} = I$.
+Let $cc' \in J^2$ for some $c, c' \in J$. Then $h(cc') = h(c)h(c') \in I^2 = 0$ since $h(c) \in I$. Hence, we can obtain $\bar{h}$ by restricting $h$ to $J$ and passing to the quotient $J/J^2$.
 
 \item[(c)] Let $X = \A^n = \spec{P}$, and let $X = \spec{A}$. By (8.17), (5.5), and (5.10), taking global sections of the exact sequence in (8.17) gives the desired exact sequence.
 
@@ -143,9 +155,11 @@ In general, $\Hom_A(\cdot, I)$ is only left exact. In particular, the sequence
 \[ \begin{tikzcd}
     0 \arrow[r] & {\Hom_A(\Omega_{A/k},I)} \arrow[r] & {\Hom_A(\Omega_{P/k} \otimes A,I)} \arrow[r] & {\Hom_A(J/J^2,I)} \arrow[r] & 0
     \end{tikzcd} \]
-is not necessarily exact on the right. However, the middle term is isomorphic to $\Hom_P(\Omega_{P/k}, I)$, which by definition can be identified with $\Der_k(P, I)$, the set of all $k$-derivations of $P$ to $I$. Noting that $P/J^2$ has dimension $1 + \dim{A}$ as a $k$-vector space by non-singularity of $X$ and $k$ being algebraically closed, we can uniquely write any element of $P/J^2$ as a sum $\lambda + c$, where $\lambda \in k, c \in J/J^2$. We conclude that the sequence above is exact on the right as well.
-
-Imitating the proof of (a), it remains to show $h'(J) = 0$. For any $\theta$, $\theta(J^2) = 0$, passing to the quotient $P/J^2$ gives us $h'(J) = (\bar{h} - \bar{h})(J + J^2) = 0$.
+is not necessarily exact on the right.
+However, the middle term is isomorphic to $\Hom_P(\Omega_{P/k}, I)$, which by definition can be identified with $\Der_k(P, I)$, the set of all $k$-derivations of $P$ to $I$.
+Noting that $P/J^2$ has dimension $1 + \dim{A}$ as a $k$-vector space by non-singularity of $X$ and $k$ being algebraically closed, we can uniquely write any element of $P/J^2$ as a sum $\lambda + c$, where $\lambda \in k, c \in J/J^2$.
+We conclude that the sequence above is exact on the right as well.
+Imitating the proof of (a), it remains to show $h'(J) = 0$. For any $\theta$, $\theta(J^2) = 0$, passing to the quotient $P/J^2$ gives $h'(J) = (\bar{h} - \bar{h})(J + J^2) = 0$.
 \end{itemize} 
 \end{proof}
 

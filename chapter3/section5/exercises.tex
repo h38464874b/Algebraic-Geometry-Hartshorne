@@ -76,7 +76,7 @@
                   \end{equation*}
                   by (III, Ex. 5.1).
                   Consider the coherent $\fO_X$-module $\fR$. It vanishes under the multiplication map $x_r$, where $x_r$ locally defines one of the coordinates such that $x_r = 0$  is the defining equation for $H$, and such that there is a inclusion $\Supp{\fR} \subseteq H$, which exists by Bertini's theorem.
-                  Since $H \cong \P^{r - 1}_k$, we can aPly the induction hypothesis to $\fR$ and $\fF_H$, so let $P_\fR(z), P_{\fF_H}(z) \in \Q[z]$ be polynomials such that
+                  Since $H \cong \P^{r - 1}_k$, we can apply the induction hypothesis to $\fR$ and $\fF_H$, so let $P_\fR(z), P_{\fF_H}(z) \in \Q[z]$ be polynomials such that
                   \begin{equation*}
                     \chi(\fR(n)) = P_\fR(n), \quad \chi(\fF_H(n)) = P_{\fF_H}(n).
                   \end{equation*}
@@ -114,7 +114,7 @@
                     \Hom_{\ckSch{k}}(X, \A^1) \cong \Hom_{\ckAlg{k}}(k[t], \Gamma(X, \fO_X)).
                   \end{equation*}
                   The space on the right is naturally isomorphic to $\cH^0(X, \fO_X)$ as vector spaces over $k$, so it is enough to show any morphism $f : X \to \A^1$ over $k$ must be constant.
-                  Since $X$ is projective over $k$, and $\A^1$ is separated scheme over $k$, by (II, Ex. 4.8) $f$ is a proper morphism.
+                  Since $X$ is projective over $k$, and $\A^1$ is a separated scheme over $k$, by (II, Ex. 4.8) $f$ is a proper morphism.
                   In particular, $f$ is a closed map, so the image of $X$ in $\A^1$ is a closed subscheme.
                   The proper closed subschemes of $\A^1$ are finite sets of points.
                   But the image of a proper scheme is proper (II, Ex. 4.4), and $\A^1$ is not a proper scheme over $k$.
@@ -129,52 +129,52 @@
           \end{itemize}
         \end{proof}
 
-  % \item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \P_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
-  %       These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
-  %       On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
-  %       Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
-  %       \begin{itemize}
-  %         \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\P^1$ in $Q$, to show:
-  %               \begin{itemize}
-  %                 \item[(1)] if $|a - b| \leq 1$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-  %                 \item[(2)] if $a, b < 0$, then $H^1(Q, \fO_Q(a, b)) = 0$;
-  %                 \item[(3)] if $a \leq -2$, then $H^1(Q, \fO_Q(a, 0)) \neq 0$.
-  %               \end{itemize}
-  %         \item[(b)] Now use these results to show:
-  %               \begin{itemize}
-  %                 \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
-  %                 \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
-  %                 \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\P^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
-  %               \end{itemize}
-  %         \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
-  %       \end{itemize}
+  \item[\textbf{6.}] \textit{Curves on a Nonsingular Quadric Surface.} Let $Q$ be the nonsingular quadric surface $xy = zw$ in $X = \P_k^3$ over a field $k$. We will consider locally principal closed subschemes $Y$ of $Q$.
+        These correspond to Cartier divisors on $Q$ by (II, 6.17.1).
+        On the other hand, we know that $\pic{Q} \cong \Z \oplus \Z$, so we can talk about the \textit{type $(a, b)$} of $Y$ (II, 6.16) and (II, 6.6.1). Let us denote the invertible sheaf $\fL(Y)$ by $\fO_Q(a, b)$.
+        Thus, for any $n \in \Z$, $\fO_Q(n) = \fO_Q(n, n)$.
+        \begin{itemize}
+          \item[(a)] Use the special cases $(q, 0)$ and $(0, q)$, with $q > 0$, when $Y$ is a disjoint union of $q$ lines $\P^1$ in $Q$, to show:
+                \begin{itemize}
+                  \item[(1)] if $|a - b| \leq 1$, then $\cH^1(Q, \fO_Q(a, b)) = 0$;
+                  \item[(2)] if $a, b < 0$, then $\cH^1(Q, \fO_Q(a, b)) = 0$;
+                  \item[(3)] if $a \leq -2$, then $\cH^1(Q, \fO_Q(a, 0)) \neq 0$.
+                \end{itemize}
+          \item[(b)] Now use these results to show:
+                \begin{itemize}
+                  \item[(1)] if $Y$ is a locally principal closed subscheme of type $(a, b)$ with $a, b > 0$, the $Y$ is connected;
+                  \item[(2)] now assume $k$ is algebraically closed. Then for any $a, b > 0$, there exists an irreducible nonsingular curve $Y$ of type $(a, b)$. Use (II, 7.6.2) and (II, 8.18).
+                  \item[(3)] an irreducible nonsingular curve $Y$ of type $(a, b)$, $a, b > 0$ on $Q$ is projectively normal (II, Ex. 5.14) if and only if $|a - b| \leq 1$. In particular, this gives lots of examples of nonsingular, but not projectively normal curves in $\P^3$. The simplest is the one of type $(1, 3)$, which is just the rational quartic curve (I, Ex. 3.18).
+                \end{itemize}
+          \item[(c)] If $Y$ is a locally principal subscheme of type $(a, b)$ in $Q$, show that $p_a(Y) = ab - a - b + 1 = (a - 1)(b - 1)$.
+        \end{itemize}
 
-  %       \begin{proof} $ $ \vspace{0pt}
-  %         \begin{itemize} [leftmargin=0cm]
-  %           \item[(a)]
-  %           \item[(b)]
-  %           \item[(c)]
-  %         \end{itemize}
-  %       \end{proof}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
+            \item[(b)]
+            \item[(c)]
+          \end{itemize}
+        \end{proof}
 
-  % \item[\textbf{7.}]  Let $X$ (respectively, $Y$) be proper schemes over a Noetherian ring $A$.
-  %       We note by $\fL$ an invertible sheaf.
-  %       \begin{itemize}
-  %         \item[(a)] If $\fL$ is ample on $X$, and $Y$ is any closed subscheme of $X$, then $i^* \fL$ is ample on $Y$, where $i : Y \to X$ is the inclusion.
-  %         \item[(b)] $\fL$ is ample on $X$ if and only if $\red{\fL} = \fL \otimes \fO_{\red{X}}$ is ample on $\red{X}$.
-  %         \item[(c)] SuPose $X$ is reduced. Then $\fL$ is ample on $X$ if and only if $\fL \otimes \fO_{X_i}$ is ample on $X_i$, for each irreducible component $X_i$ of $X$.
-  %         \item[(d)] Let $f : X \to Y$ be a finite surjective morphism, and let $\fL$ be an invertible sheaf on $Y$.
-  %               Then $\fL$ is ample on $Y$ if and only if $f^* \fL$ is ample on $X$.
-  %       \end{itemize}
+  \item[\textbf{7.}]  Let $X$ (respectively, $Y$) be proper schemes over a Noetherian ring $A$.
+        We note by $\fL$ an invertible sheaf.
+        \begin{itemize}
+          \item[(a)] If $\fL$ is ample on $X$, and $Y$ is any closed subscheme of $X$, then $i^* \fL$ is ample on $Y$, where $i : Y \to X$ is the inclusion.
+          \item[(b)] $\fL$ is ample on $X$ if and only if $\red{\fL} = \fL \otimes \fO_{\red{X}}$ is ample on $\red{X}$.
+          \item[(c)] SuPose $X$ is reduced. Then $\fL$ is ample on $X$ if and only if $\fL \otimes \fO_{X_i}$ is ample on $X_i$, for each irreducible component $X_i$ of $X$.
+          \item[(d)] Let $f : X \to Y$ be a finite surjective morphism, and let $\fL$ be an invertible sheaf on $Y$.
+                Then $\fL$ is ample on $Y$ if and only if $f^* \fL$ is ample on $X$.
+        \end{itemize}
 
-  %       \begin{proof} $ $ \vspace{0pt}
-  %         \begin{itemize} [leftmargin=0cm]
-  %           \item[(a)]
-  %           \item[(b)]
-  %           \item[(c)]
-  %           \item[(d)]
-  %         \end{itemize}
-  %       \end{proof}
+        \begin{proof} $ $ \vspace{0pt}
+          \begin{itemize} [leftmargin=0cm]
+            \item[(a)]
+            \item[(b)]
+            \item[(c)]
+            \item[(d)]
+          \end{itemize}
+        \end{proof}
 
   \item[\textbf{10.}] Let $X$ be a projective scheme over a Noetherian ring $A$, and let $\fF^1 \to \fF^2 \to \cdots \to \fF^r$ be an exact sequence of coherent sheaves on $X$. Show that there is an integer $n_0$, such that for all $n \geq n_0$, the sequence of global sections
         \[ \begin{tikzcd}

@@ -35,9 +35,13 @@
       N(ab) = (ab) \sigma(ab) = (ab)(\sigma(a) \sigma(b)) = (a \sigma(a))(b \sigma(b)) = N(a) \cdot N(b).
     \end{equation*}
 
-    \item[(d)] Let $u$ be a unit in $A$ and let $u^{-1}$ be its inverses. By (c), we have $N(u) N(u^{-1}) = 1$, so $N(u)$, $N(u^{-1})$ are units in $k[x]$. Since $k[x]$ is a polynomial ring, the units are precisely the nonzero elements of $k$, that is $N(u) \in k$. Since the norm fixes the degree, we must have $u \in k$.
+    \item[(d)] Let $u$ be a unit in $A$ and let $u^{-1}$ be its inverses. By (c), we have $N(u) N(u^{-1}) = 1$, so $N(u)$, $N(u^{-1})$ are units in $k[x]$.
+    Since $k[x]$ is a polynomial ring, the units are precisely the nonzero elements of $k$, that is $N(u) \in k$.
+    Since the norm fixes the degree, we must have $u \in k$.
 
-    Suppose $x = ab$ for some $a, b \in A$. Then, $x^2 = N(a) N(b)$ and $x$ is irreducible in $k[x]$, so either $N(a)$, $N(b)$ each are associates with $x$, or $N(a)$ is an associate of $x^2$ and $N(b)$ is a unit. It suffices to show $N$ is not onto $k[x]$, that is there does not exist $c \in A$ such that $N(c) = x$. By the formula above, the degree of $f^2$ is even while $(x^3 - x)g^2$ has degree $0$ or an odd number, so $f^2 - (x^3 - x)g^2$ must have degree greater than $1$. Therefore, $N(b)$ is a unit, hence $b$ is a unit. The case for $y$ follows similarly, since $N(y) = x(1 + x)(1 - x)$, so if $y = ab$, then either $N(a)$ is associates with $x$ or $x(1 + x)(1 - x)$, and the former case was shown to be impossible.
+    Suppose $x = ab$ for some $a, b \in A$.
+    Then, $x^2 = N(a) N(b)$ and $x$ is irreducible in $k[x]$, so either $N(a)$, $N(b)$ each are associates with $x$, or $N(a)$ is an associate of $x^2$ and $N(b)$ is a unit. It suffices to show $N$ is not onto $k[x]$, that is there does not exist $c \in A$ such that $N(c) = x$.
+    By the formula above, the degree of $f^2$ is even while $(x^3 - x)g^2$ has degree $0$ or an odd number, so $f^2 - (x^3 - x)g^2$ must have degree greater than $1$. Therefore, $N(b)$ is a unit, hence $b$ is a unit. The case for $y$ follows similarly, since $N(y) = x(1 + x)(1 - x)$, so if $y = ab$, then either $N(a)$ is associates with $x$ or $x(1 + x)(1 - x)$, and the former case was shown to be impossible.
     
     $A$ is not a unique factorization domain since $y^2 = x(x + 1)(x - 1)$, and $x$, $y$ are irreducible and hence prime but are not associates since the only units in $A$ are the nonzero elements of $k$.
   \end{itemize}
@@ -47,28 +51,41 @@
 
 \begin{proof} $ $ \vspace{0pt}
   \begin{itemize} [leftmargin=0cm]
-    \item[(a)] Consider the morphism $\A^2 - O \to \PP^1$ defined by mapping $(x, y)$ to a point in $\PP^1$ with homogenous coordinates $(x, y)$, where $O$ is the origin.
+    \item[(a)] Consider the morphism $\A^2 - O \to \P^1$ defined by mapping $(x, y)$ to a point in $\P^1$ with homogenous coordinates $(x, y)$, where $O$ is the origin.
 
-    \item[(b)] Let $X$ be an abstract nonsingular curve isomorphic to $\PP^1$ and write $\PP^1 = \A^1 \cup \{ \infty \}$. Then, we have an isomorphism $\varphi : \PP^1 - \infty \to \A^1$; however, $\varphi$ clearly cannot be extended to $\infty$.
+    \item[(b)] Let $X$ be an abstract nonsingular curve isomorphic to $\P^1$ and write $\P^1 = \A^1 \cup \{ \infty \}$.
+    Then, we have an isomorphism $\varphi : \P^1 - \infty \to \A^1$; however, $\varphi$ clearly cannot be extended to $\infty$.
   \end{itemize}
 \end{proof}
 \filbreak
 
-\item[\textbf{4.}] Let $Y$ be a nonsingular projective curve. Show that every nonconstant rational function $f$ on $Y$ defines a surjective morphism $\varphi : Y \to \PP^1$, and that for every $P \in \PP^1$, $\varphi^{-1}(P)$ is a finite set of points.
+\item[\textbf{4.}] Let $Y$ be a nonsingular projective curve. Show that every nonconstant rational function $f$ on $Y$ defines a surjective morphism $\varphi : Y \to \P^1$, and that for every $P \in \P^1$, $\varphi^{-1}(P)$ is a finite set of points.
 
 \begin{proof}
-  Identifying $k$ with the affine line, $f$ is a rational map between quasi-projective curves. We first show that if $f$ is nonconstant, then, $f$ is a dominant rational map into $\A^1$. Since the closed subsets of $\A^1$ are either finite subsets or the entire line $\A^1$, it suffices to show $\im{f}$ is an infinite set of points. If $\im{f}$ is a finite set of points, then it must be of cardinality greater than $1$ since $f$ is nonconstant. Every nonsingular projective curve is isomorphic to an abstract nonsingular curve, so the closed subsets of $Y$ are either finite set of points or the entire curve. If $\im{f} = \{ P_1, \dots, P_n \}$, $n > 1$, then $f^{-1}(P_i)$ cannot be the entire curve $Y$ for any $1 \leq i \leq n$, thus $Y = f^{-1}(\im{f}) = f^{-1}(P_1) \cup \dots \cup f^{-1}(P_n)$, which is a finite union of finite sets, implying $Y$ is a finite set of points. This is clearly not true by Exercise 4.8. Therefore, $\im{f}$ is infinite set of points, so its closure is the entire affine line, hence $f$ is a dominant rational map.
+  Identifying $k$ with the affine line, $f$ is a rational map between quasi-projective curves.
+  We first show that if $f$ is nonconstant, then, $f$ is a dominant rational map into $\A^1$.
+  Since the closed subsets of $\A^1$ are either finite subsets or the entire line $\A^1$, it suffices to show $\im{f}$ is an infinite set of points.
+  If $\im{f}$ is a finite set of points, then it must be of cardinality greater than $1$ since $f$ is nonconstant.
+  Every nonsingular projective curve is isomorphic to an abstract nonsingular curve, so the closed subsets of $Y$ are either finite set of points or the entire curve.
+  If $\im{f} = \{ P_1, \dots, P_n \}$, $n > 1$, then $f^{-1}(P_i)$ cannot be the entire curve $Y$ for any $1 \leq i \leq n$, thus $Y = f^{-1}(\im{f}) = f^{-1}(P_1) \cup \dots \cup f^{-1}(P_n)$, which is a finite union of finite sets, implying $Y$ is a finite set of points. This is clearly not true by (Ex. 4.8).
+  Therefore, $\im{f}$ is infinite set of points, so its closure is the entire affine line, hence $f$ is a dominant rational map.
 
-  Then, $\A^1$ is a rational curve, in particular it is birationally equivalent to $\PP^1$, so if $U$ is the largest open affine subset of $Y$ such that $f : U \to \A^1$ is defined as a morphism by Exercise 4.2, we have a dominant morphism $f' : U \to \A^1 \hookrightarrow \PP^1$. Since $U$ is open and nonempty, its complement $Y - U$ is closed and proper subset of $Y$, hence it is a finite set of points, so by (6.8) we can extend $f'$ to be a dominant morphism $\varphi: Y \to \PP^1$ between nonsingular projective curves. 
+  Then, $\A^1$ is a rational curve, in particular it is birationally equivalent to $\P^1$, so if $U$ is the largest open affine subset of $Y$ such that $f : U \to \A^1$ is defined as a morphism by (Ex. 4.2), we have a dominant morphism $f' : U \to \A^1 \hookrightarrow \P^1$.
+  Since $U$ is open and nonempty, its complement $Y - U$ is closed and proper subset of $Y$, hence it is a finite set of points, so by (6.8) we can extend $f'$ to be a dominant morphism $\varphi: Y \to \P^1$ between nonsingular projective curves.
   
-  It remains to show $\varphi$ is surjective. A dominant morphism $\varphi : Y \to \PP^1$ induces a $k$-homomorphism $\varphi^* : K(\PP^1) \to K(Y)$ between function fields, where $K(\PP^1) \simeq k(t)$ for some indeterminant $t$. Since $k(t)$ and $K(Y)$ both have transcendence degree $1$, $\varphi$ is injective; in particular every valuation ring of $k(t)$ can be extended to one of $K(Y)$ since $K(Y)$ is integrally closed over $k(t)$. The map $\varphi$ induces a morphism between abstract nonsingular curves $\varphi_\# : C_{K(Y)} \to C_{k(x)}$, where for $P \in C_{K(Y)}$ we have $\varphi_\# (P) = P \cap C_{k(x)}$ (the point $P$ can be identified with a valuation ring in $K(Y)$). Every valuation ring of $k(t)$ is the intersection of some valuation ring of $K(Y)$ and $k(t)$, which implies $\varphi_\#$ is surjective. Since we have the following commutative diagram
+  It remains to show $\varphi$ is surjective. A dominant morphism $\varphi : Y \to \P^1$ induces a $k$-homomorphism $\varphi^* : K(\P^1) \to K(Y)$ between function fields, where $K(\P^1) \simeq k(t)$ for some indeterminant $t$.
+  Since $k(t)$ and $K(Y)$ both have transcendence degree $1$, $\varphi$ is injective; in particular every valuation ring of $k(t)$ can be extended to one of $K(Y)$ since $K(Y)$ is integrally closed over $k(t)$.
+  The map $\varphi$ induces a morphism between abstract nonsingular curves $\varphi_\# : C_{K(Y)} \to C_{k(x)}$, where for $P \in C_{K(Y)}$ we have $\varphi_\# (P) = P \cap C_{k(x)}$ (the point $P$ can be identified with a valuation ring in $K(Y)$).
+  Every valuation ring of $k(t)$ is the intersection of some valuation ring of $K(Y)$ and $k(t)$, which implies $\varphi_\#$ is surjective.
+  Since we have the following commutative diagram
   \[ \begin{tikzcd}
-    Y \arrow[d] \arrow[r, "\varphi"]  & \PP^1 \arrow[d] \\
+    Y \arrow[d] \arrow[r, "\varphi"]  & \P^1 \arrow[d] \\
     C_{K(Y)} \arrow[r, "\varphi_\#"'] & C_{k(t)}       
     \end{tikzcd} \]
   where the vertical arrows are isomorphisms, $\varphi$ is also surjective.
 
-  Every nonsingular projective curve is isomorphic to an abstract nonsingular curve, where its closed sets are either finite set of points or the entire curve. This implies $\varphi^{-1}(P)$ is either finite set of points or all of $Y$, and it cannot be $Y$ since $\varphi$ is surjective onto $\PP^1$.
+  Every nonsingular projective curve is isomorphic to an abstract nonsingular curve, where its closed sets are either finite set of points or the entire curve.
+  This implies $\varphi^{-1}(P)$ is either finite set of points or all of $Y$, and it cannot be $Y$ since $\varphi$ is surjective onto $\P^1$.
 \end{proof}
 
 \end{enumerate}

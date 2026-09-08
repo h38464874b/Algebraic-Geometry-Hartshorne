@@ -22,43 +22,53 @@
     If $\varphi : X \to Y$ is a rational map, then the set of open subsets of $X$ on which $\varphi$ is represented by morphism function is nonempty, and since $X$ is a noetherian space, there is a maximal element in this set. Then, the largest open subset $U$ of $X$ on which $\varphi$ is represented by a morphism is the union of maximal elements in this subset of open subsets.
 \end{proof}
 
-\item[\textbf{4.}] A variety $Y$ is \textit{rational} if it is birationally equivalent to $\PP^n$ for some $n$ (or, equivalently by (4.5), if $K(Y)$ is a pure transcendental extension of $k$).
+\item[\textbf{4.}] A variety $Y$ is \textit{rational} if it is birationally equivalent to $\P^n$ for some $n$ (or, equivalently by (4.5), if $K(Y)$ is a pure transcendental extension of $k$).
 \begin{itemize}
-    \item[(a)] Any conic in $\PP^2$ is a rational curve.
+    \item[(a)] Any conic in $\P^2$ is a rational curve.
     \item[(b)] The cuspidal cubic $y^2 = x^3$ is a rational curve.
-    \item[(c)] Let $Y$ be the nodal cubic curve $y^2 z = x^2(x + z)$ in $\PP^2$. Show that the projection $\varphi$ from the point $P = (0, 0, 1)$ to the line $z = 0$ induces a birational map from $Y$ to $\PP^1$. Thus, $Y$ is a rational curve.
+    \item[(c)] Let $Y$ be the nodal cubic curve $y^2 z = x^2(x + z)$ in $\P^2$. Show that the projection $\varphi$ from the point $P = (0, 0, 1)$ to the line $z = 0$ induces a birational map from $Y$ to $\P^1$. Thus, $Y$ is a rational curve.
 \end{itemize}
 
 \begin{proof} $ $ \vspace{0pt}
     \begin{itemize} [leftmargin=0cm]
-        \item[(a)] A conic in $\PP^2$ can be covered by open affine varieties that are either isomorphic to $y = x^2$ or $xy = 1$.
-        The former is isomorphic to $\A^1$, hence it is isomorphic to an open subset of $\PP^1$, hence it is birationally equivalent to $\PP^1$.
-        The latter has function field isomorphic to $k(x)$, hence it is birationally equivalent to $\A^1$, hence it is also birationally equivalent to $\PP^1$.
+        \item[(a)] A conic in $\P^2$ can be covered by open affine varieties that are either isomorphic to $y = x^2$ or $xy = 1$.
+        The former is isomorphic to $\A^1$, hence it is isomorphic to an open subset of $\P^1$, hence it is birationally equivalent to $\P^1$.
+        The latter has function field isomorphic to $k(x)$, hence it is birationally equivalent to $\A^1$, hence it is also birationally equivalent to $\P^1$.
 
-        \item[(b)] The cuspidal cubic has coordinate ring $k[t^2, t^3]$, so its function field is $k(t)$, hence it is birationally equivalent to $\A^1$, hence it is birationally equivalent to $\PP^1$.
+        \item[(b)] The cuspidal cubic has coordinate ring $k[t^2, t^3]$, so its function field is $k(t)$, hence it is birationally equivalent to $\A^1$, hence it is birationally equivalent to $\P^1$.
 
-        \item[(c)] The line $z = 0$ in $\PP^2$ corresponds to a hyperplane isomorphic to $\PP^1$, so the projection $\varphi : \PP^2 - \{ P \} \to \PP^1$ is a morphism. In coordinates, $\varphi$ is defined as $(x_0, x_1, x_2) \mapsto (x_0, x_1)$, so $\varphi$ induces a morphism from $Y - P$ to $\PP^1$. Thus, $\varphi(Y - P)$ is the set of all lines in $\A^2$ that pass through the origin and a point in the affine nodal curve $y^2 = x^3 + x^2$. This is an open set in $\PP^1$ isomorphic to $\A^1$ since it contains all lines in $\A^2$ besides the one defined by $x = \pm y$. To further elaborate, if $(x, y) \in \PP^1$ with $x \neq \pm y$ and $x \neq 0$, say, then write $y = \lambda x$ with $\lambda \neq \pm 1$, so we have
+        \item[(c)] The line $z = 0$ in $\P^2$ corresponds to a hyperplane isomorphic to $\P^1$, so the projection $\varphi : \P^2 - \{ P \} \to \P^1$ is a morphism.
+        In coordinates, $\varphi$ is defined as $(x_0, x_1, x_2) \mapsto (x_0, x_1)$, so $\varphi$ induces a morphism from $Y - P$ to $\P^1$.
+        Thus, $\varphi(Y - P)$ is the set of all lines in $\A^2$ that pass through the origin and a point in the affine nodal curve $y^2 = x^3 + x^2$.
+        This is an open set in $\P^1$ isomorphic to $\A^1$ since it contains all lines in $\A^2$ besides the one defined by $x = \pm y$. To further elaborate, if $(x, y) \in \P^1$ with $x \neq \pm y$ and $x \neq 0$, say, then write $y = \lambda x$ with $\lambda \neq \pm 1$, so we have
         \begin{equation*}
-            \lambda^2 x^2 = x^3 + x^2 \implies x = \lambda^2 - 1,
+            \lambda^2 x^2 = x^3 + x^2 \implies x = \lambda^2 - 1.
         \end{equation*}
-        that is there exists a line in $\A^2$ passing through a point in $y^2 + x^3 + x^2$ with slope $y / x$. Rephrasing, we have shown that the map $\varphi : Y - P \to \PP^1$ is surjective besides at the two points $(1, 1)$ and $(1, -1)$. It is also injective since the $x_2$-coordinate can be completely determined by the values of $(x_0, x_1)$, that is if $x_0 \neq 0$, then setting $x_0 = 1$, we have
+        So there exists a line in $\A^2$ passing through a point in $y^2 + x^3 + x^2$ with slope $y / x$.
+        Rephrasing, we have shown that the map $\varphi : Y - P \to \P^1$ is surjective besides at the two points $(1, 1)$ and $(1, -1)$.
+        It is also injective since the $x_2$-coordinate can be completely determined by the values of $(x_0, x_1)$, that is if $x_0 \neq 0$, then setting $x_0 = 1$, we have
         \begin{equation*}
-            x_1^2 x_2 = 1 + x_2 \implies x_2 = \frac{1}{x_1^2 - 1}\text{ or } x_2 = 0,
+            x_1^2 x_2 = 1 + x_2 \implies x_2 = \frac{1}{x_1^2 - 1} \quad \text{or} \quad x_2 = 0,
         \end{equation*}
-        and $x_1 \neq \pm 1$ since $x_0 \neq \pm x_1$, and $x_2 \neq 0$ since the only point on $Y$ with $x_2 = 0$ is $P$, and $\varphi$ is restricted $Y - P$. Hence, $\varphi$ is an isomorphism of the open subset $Y - P$ of $Y$ to the open subset $\PP^1 - \{ (1, 1), (1, -1) \}$ in $\PP^1$, hence $Y$ is birationally equivalent to $\PP^1$.
+        and $x_1 \neq \pm 1$ since $x_0 \neq \pm x_1$, and $x_2 \neq 0$ since the only point on $Y$ with $x_2 = 0$ is $P$, and $\varphi$ is restricted $Y - P$.
+        Hence, $\varphi$ is an isomorphism of the open subset $Y - P$ of $Y$ to the open subset $\P^1 - \{ (1, 1), (1, -1) \}$ in $\P^1$, hence $Y$ is birationally equivalent to $\P^1$.
     \end{itemize}
 \end{proof}
 
-\item[\textbf{5.}] Show that the quadric surface $Q : xy = zw$ in $\PP^3$ is birational to $\PP^2$, but not isomorphic to $\PP^2$.
+\item[\textbf{5.}] Show that the quadric surface $Q : xy = zw$ in $\P^3$ is birational to $\P^2$, but not isomorphic to $\P^2$.
 
 \begin{proof}
-   $Q$ is the Segre embedding of $\PP^1 \times \PP^1$ in $\PP^3$, and $\PP^1 \times \PP^1$ contains a copy of $\A^1 \times \A^1$, so $Q$ contains a copy of $\A^2$, hence $Q$ is birational to $\PP^2$. It is an axiom of projective geometry that any two lines intersect in $\PP^2$; however, it was shown in Exercise 2.15 that there exists lines in $Q$ that do not intersect, hence $Q$ and $\PP^2$ cannot be isomorphic.
+   $Q$ is the Segre embedding of $\P^1 \times \P^1$ in $\P^3$, and $\P^1 \times \P^1$ contains a copy of $\A^1 \times \A^1$, so $Q$ contains a copy of $\A^2$, hence $Q$ is birational to $\P^2$.
+   It is an axiom of projective geometry that any two lines intersect in $\P^2$; however, it was shown in Exercise 2.15 that there exists lines in $Q$ that do not intersect, hence $Q$ and $\P^2$ cannot be isomorphic.
 \end{proof}
 
 \item[\textbf{10.}] Let $Y$ be the cuspidal cubic curve $y^2 = x^3$ in $\A^2$. Blow up the point $O = (0, 0)$, let $E$ be the exceptional curve, and let $\widetilde{Y}$ be the strict transform of $Y$. Show that $E$ meets $\widetilde{Y}$ in one point, and that $\tilde{Y} \cong \A^1$. In this case the morphism $\varphi : \widetilde{Y} \to Y$ is bijective and bicontinuous, but it is not an isomorphism.
 
 \begin{proof}
-    Let $t$, $u$ be homogenous coordinates for $\PP^1$. Then $X$, the blowing-up of $\A^2$ at $O$, is defined by the equation $xu = ty$ inside $\A^2 \times \PP^1$. We obtain the total inverse image of $Y$ in $X$ by considering the equations $y^2 = x^3$ and $xu = ty$ in $\A^2 \times \PP^1$. Now $\PP^1$ is covered by the open sets $t \neq 0$ and $u \neq 0$, which we consider separately. If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
+    Let $t$, $u$ be homogenous coordinates for $\P^1$.
+    Then $X$, the blowing-up of $\A^2$ at $O$, is defined by the equation $xu = ty$ inside $\A^2 \times \P^1$.
+    We obtain the total inverse image of $Y$ in $X$ by considering the equations $y^2 = x^3$ and $xu = ty$ in $\A^2 \times \P^1$.
+    Now $\P^1$ is covered by the open sets $t \neq 0$ and $u \neq 0$, which we consider separately. If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
     \begin{equation*}
         y^2 = x^3, \quad y = xu
     \end{equation*}

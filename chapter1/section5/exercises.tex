@@ -51,7 +51,7 @@
     \item[\textbf{3.}] \textit{Multiplicities.} Let $Y \subseteq \A^2$ be a curve defined by the equation $f(x, y) = 0$. Let $P = (a, b)$ be a point of $\A^2$. Make a linear change of coordinates so that $P$ becomes the point $(0, 0)$. Then write $f$ as a sum $f = f_0 + f_1 + \cdots + f_d$, where $f_i$ is a homogenous polynomial of degree $i$ in $x$ and $y$. Then we define the \textit{multiplicity} of $P$ on $Y$, denoted $\mu_P(Y)$, to be the least $r$ such that $f_r \neq 0$. (Note that $P \in Y$ $\iff$ $\mu_P(Y) > 0$.) The linear factors of $f_r$ are called the \textit{tangent directions at} $P$.
           \begin{itemize}
               \item[(a)] Show that $\mu_P(Y) = 1$ $\iff$ $P$ is a nonsingular point of $Y$.
-              \item[(b)] Find the multiplicity of each of the singular points in Exercise 1 above.
+              \item[(b)] Find the multiplicity of each of the singular points in (Ex. 5.1) above.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
@@ -65,14 +65,14 @@
 
     \item[\textbf{6.}] \textit{Blowing Up Curve Singularities.}
           \begin{itemize}
-              \item[(a)] Let $Y$ be the cusp or node of Exercise 1.
+              \item[(a)] Let $Y$ be the cusp or node of (Ex. 5.1).
                     Show that the curve $\widetilde{Y}$ obtained by blowing up $Y$ at $O = (0, 0)$ is nonsingular.
 
               \item[(b)] We define a \textit{node} (also called \textit{ordinary double point}) to be a double point (i.e., a point of multiplicity $2$) of a plane curve with distinct tangent directions.
                     If $P$ is a node on a plane curve $Y$, show that $\varphi^{-1}(P)$ consists of two distinct nonsingular points on the blown-up curve $\widetilde{Y}$.
                     We say that "blowing up $P$ resolves the singularity at $P$".
 
-              \item[(c)] Let $P \in Y$ be the tacnode of Exercise 1.
+              \item[(c)] Let $P \in Y$ be the tacnode of (Ex. 5.1).
                     If $\varphi : \widetilde{Y} \to Y$ is the blowing-up at $P$, show that $\varphi^{-1}(P)$ is a node.
                     Using (b) we see that the tacnode can be resolved by two successive blowing-ups.
 
@@ -82,7 +82,10 @@
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] Let $Y$ be the curve defined by the equation $xy = x^6 + y^6$. It is the node of Exercise 1. We consider the equations $xy = x^6 + y^6$ and $xu = ty$ in $\A^2 \times \PP^1$, where $t$, $u$ are homogenous coordinates for $\PP^1$. Now $\PP^1$ is covered by open sets $t \neq 0$ and $u \neq 0$, which we can consider separately. If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
+                  \item[(a)] Let $Y$ be the curve defined by the equation $xy = x^6 + y^6$. It is the node of (Ex. 5.1).
+                  We consider the equations $xy = x^6 + y^6$ and $xu = ty$ in $\A^2 \times \P^1$, where $t$, $u$ are homogenous coordinates for $\P^1$.
+                  Now $\P^1$ is covered by open sets $t \neq 0$ and $u \neq 0$, which we can consider separately.
+                If $t \neq 0$, we can set $t = 1$, and use $u$ as an affine parameter. Then we have the equations
                         \begin{align*}
                             xy & = x^6 + y^6 \\
                             y  & = xu
@@ -93,7 +96,9 @@
                         \end{equation*}
                         so $\widetilde{Y}$ is nonsingular for all points $t \neq 0$. The curve $Y$ is symmetric with respect to $x = y$, so $\widetilde{Y}$ is also nonsingular for all points $u \neq 0$, hence $\widetilde{Y}$ is nonsingular.
 
-                  \item[(b)] We can assume $P$ is the origin so that $Y$ is defined by $f = f_2 + f_3 + \cdots + f_r$. Thus, we can write $f_2 = (ax + by)(cx + dy)$, where $(a, b) \neq (c, d)$ as points in $\PP^1$. Take $t$, $u$ to be homogenous coordinates for $\PP^1$. If $t \neq 0$, substituting $y = xu$ we have the equation
+                  \item[(b)] We can assume $P$ is the origin so that $Y$ is defined by $f = f_2 + f_3 + \cdots + f_r$.
+                  Thus, we can write $f_2 = (ax + by)(cx + dy)$, where $(a, b) \neq (c, d)$ as points in $\P^1$.
+                  Take $t$, $u$ to be homogenous coordinates for $\P^1$. If $t \neq 0$, substituting $y = xu$ we have the equation
                         \begin{equation*}
                             F_u = (a + bu)(c + du) + f_3' + \cdots + f_r' = 0,
                         \end{equation*}
@@ -106,7 +111,7 @@
                             \pdv{F_u}{u}(0, 0, - a / b) = b\bigg( c - \frac{ad}{b} \bigg) \neq 0, \quad \pdv{F_t}{u}(0, 0, - c / d) = b\bigg( a - \frac{bc}{d} \bigg) \neq 0.
                         \end{equation*}
 
-                  \item[(c)] Let $Y$ be the plane curve defined by $x^2 = x^4 + y^4$ and let $t$, $u$, be homogenous coordinates for $\PP^1$. If $t \neq 0$, then we have the equations
+                  \item[(c)] Let $Y$ be the plane curve defined by $x^2 = x^4 + y^4$ and let $t$, $u$, be homogenous coordinates for $\P^1$. If $t \neq 0$, then we have the equations
                         \begin{align*}
                             x^2 & = x^4 + y^4 \\
                             y   & = xu
@@ -118,13 +123,13 @@
               \end{itemize}
           \end{proof}
 
-    \item[\textbf{8.}] Let $Y \subseteq \PP^n$ be a projective variety of dimension $r$. Let $f_1, \dots, f_t \in S = k[x_0, \dots, x_n]$ be homogenous polynomials which generate the ideal of $Y$. Let $P \in Y$ be a point, with homogenous coordinates $P = (a_0, \dots, a_n)$. Show that $P$ is nonsingular on $Y$ if and only if the rank of the matrix $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is $n - r$.
+    \item[\textbf{8.}] Let $Y \subseteq \P^n$ be a projective variety of dimension $r$. Let $f_1, \dots, f_t \in S = k[x_0, \dots, x_n]$ be homogenous polynomials which generate the ideal of $Y$. Let $P \in Y$ be a point, with homogenous coordinates $P = (a_0, \dots, a_n)$. Show that $P$ is nonsingular on $Y$ if and only if the rank of the matrix $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is $n - r$.
 
           \begin{proof}
               We follow the hint.
               The matrix $\norm{(\partial f_i / \partial x_i)(a_0, \dots, a_n)}$ has rank $n-r$ if and only if there exists a $(n - r) \times (n - r)$ submatrix with nonzero determinant.
               The determinant of a matrix of homogenous polynomials where entries of the same row have same degree is also a homogenous polynomial, hence the rank of $\norm{(\partial f_i / \partial x_j)(a_0, \dots, a_n)}$ is independent of the choice of homogenous coordinates of $P$.
-              Assuming $a_0 \neq 0$, we can pass to an open affine $U_0 \subseteq \PP^n$ containing $P$ and use the affine Jacobian matrix, where $U_0$ is the open affine subset consisting of all points with nonzero $0$th coordinate.
+              Assuming $a_0 \neq 0$, we can pass to an open affine $U_0 \subseteq \P^n$ containing $P$ and use the affine Jacobian matrix, where $U_0$ is the open affine subset consisting of all points with nonzero $0$th coordinate.
               In particular, f we set $Y_0 = Y \cap U_0$, then $g_i(y_1, \dots, y_n) = f_i(1, y_1, \dots, y_n)$ ($1 \leq i \leq t$) generate the ideal of $Y_0$.
               Thus, $P$ is nonsingular if and only if the rank of the matrix $\norm{(\partial g_i / \partial y_j)(a_1 / a_0, \dots, a_n / a_0)}$ is $n - r$.
               Then, we have
@@ -144,15 +149,16 @@ Since the rank of the Jacobian matrix is independent of the homogenous coordinat
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] Since $\goth{m} / \goth{m}^2$ is a finite dimension $k$-vector space, $\dim_k{T_p(X)} = \dim_k{\goth{m} / \goth{m}^2} \geq \dim{X}$ by (5.2A), and $\dim_k{\goth{m} / \goth{m}^2} = \dim{\fO_{P, X}} = \dim{X}$ by definition of nonsingular points and Exercise 3.12.
+                  \item[(a)] Since $\goth{m} / \goth{m}^2$ is a finite dimension $k$-vector space, $\dim_k{T_p(X)} = \dim_k{\goth{m} / \goth{m}^2} \geq \dim{X}$ by (5.2A), and by (Ex. 3.12), $$\dim_k{\goth{m} / \goth{m}^2} = \dim{\fO_{P, X}} = \dim{X}.$$
 
                   \item[(b)] A morphism $\varphi : X \to Y$ induces a map $\varphi_{P}^* : \fO_{\varphi(P), Y} \to \fO_{P, X}$ between local rings, where the maximal ideal $\goth{n}$ of $\fO_{\varphi(P), Y}$ is mapped into the maximal ideal $\goth{m}$ of $\fO_{P, X}$. Thus, we can define $T_P(\varphi)F$ as
                         \begin{equation*}
                             (T_P(\varphi)F)f = F(d_\varphi f) = F(f \circ \varphi),
                         \end{equation*}
-                        where $d_\varphi : \goth{n} / \goth{n}^2 \to \goth{m} / \goth{m}^2$ is the map induced by $\varphi_P^*$. It is clearly $k$-linear.
+                        where $d_\varphi : \goth{n} / \goth{n}^2 \to \goth{m} / \goth{m}^2$ is the map induced by $\varphi_P^*$.
 
-                  \item[(c)] By the formula above, it suffices to show $d_\varphi$ is the zero map at $0$. Let $X$ be the parabola $x = y^2$ and let $Y$ by the $x$-axis. The maximal ideal $\goth{m}$ of the local ring $\fO_{0, X}$ is generated by $y$, thus $\goth{m} / \goth{m}^2$ is a one dimensional $k$-vector space spanned by $y$, and similarly $\goth{n} / \goth{n}^2$ of $\fO_{0, Y}$ is a one dimensional $k$-vector space spanned by $x$. Thus, we have $\varphi^* x = y^2 \in \goth{m}^2$, hence $d_\varphi = 0$, hence $T_0(\varphi) = 0$.
+                  \item[(c)] By the formula above, it suffices to show $d_\varphi$ is the zero map at $0$. Let $X$ be the parabola $x = y^2$ and let $Y$ by the $x$-axis.
+                  The maximal ideal $\goth{m}$ of the local ring $\fO_{0, X}$ is generated by $y$, thus $\goth{m} / \goth{m}^2$ is a one dimensional $k$-vector space spanned by $y$, and similarly $\goth{n} / \goth{n}^2$ of $\fO_{0, Y}$ is a one dimensional $k$-vector space spanned by $x$. Thus, we have $\varphi^* x = y^2 \in \goth{m}^2$, hence $d_\varphi = 0$, hence $T_0(\varphi) = 0$.
               \end{itemize}
           \end{proof}
 

@@ -106,10 +106,13 @@ Then show that:
 \item[\textbf{9.}] Show that a composition of projective morphisms is projective. Conclude that projective morphisms have properties (a)-(f) of (Ex. 4.8) above.
 
 \begin{proof}
-    By the results of (Ex. 3.13), (4.6), and (4.8), it suffices to show if $f : X \to \PP^r$ is a projective morphism, then $X$ is projective over $\spec{\Z}$. If $f$ is projective, then there exists a closed embedding $i : X \to \PP^r \times \PP^s$ such that $f$ factors through $\PP^r \to \PP^s$. The Segre embedding (\S 1, 2.14) $\psi : \PP^r \times \PP^s \to \PP^{rs + r + s}$ is a closed embedding, so $\psi \circ i : X \to \PP^{rs + r + s}$ is a closed embedding such that $X \to \spec{\Z}$ factors through $\PP^{rs + r + s} \to \spec{\Z}$, which is what we wanted to show.
+    By the results of (Ex. 3.13), (4.6), and (4.8), it suffices to show if $f : X \to \P^r$ is a projective morphism, then $X$ is projective over $\spec{\Z}$.
+    If $f$ is projective, then there exists a closed embedding $i : X \to \P^r \times \P^s$ such that $f$ factors through $\P^r \to \P^s$.
+    The Segre embedding (\SS 1, 2.14) $\psi : \P^r \times \P^s \to \P^{rs + r + s}$ is a closed embedding, so $\psi \circ i : X \to \P^{rs + r + s}$ is a closed embedding such that $X \to \spec{\Z}$ factors through $\P^{rs + r + s} \to \spec{\Z}$, which is what we wanted to show.
 \end{proof}
 
 \end{enumerate}
+
 \end{document}
 
 % \item[\textbf{10.}] \textit{Chow's Lemma.} This result says that proper morphisms are fairly close to projective morphisms. Let $X$ be proper over a noetherian scheme $S$. Then there is a scheme $X'$ and a morphism $g : X' \to X$ such that $X'$ is projective over $S$, and there is an open dense subset $U \subseteq X$ such that $g$ induces an isomorphism of $g^{-1}(U)$ to $U$. Prove this result in the following steps:

@@ -51,79 +51,79 @@
   \item[\textbf{5.}] Let $Y$ be an integral scheme of finite type over an algebraically closed field $k$. Let $\mathscr{E}$ be a locally free sheaf on $Y$, and let $X = \P(\fE)$. Then show that $\pic{X} \cong (\pic{Y}) \times \Z$. This strengthens (II, Ex. 7.9).
 
         \begin{proof}
-          Let $n$ be the rank of $\fE$, $\fO(1)$ the canonical invertible sheaf of $X$, and $\pi : X \to Y$ the natural projection morphism.
-          There is an obvious map
-          \begin{align*}
-            \varphi : (\pic{Y}) \times \Z & \to \pic{X}                      \\
-            (\fL, d)                      & \mapsto \fO(d) \otimes \pi^*\fL.
-          \end{align*}
-          Since $\pi$ is a flat projective morphism, we can apply the results of \SS 12.
-          In particular, if $\fM$ is an invertible sheaf on $X$, then $\fM_y$ is an invertible sheaf on $X_y \cong \P_y^n$ for all $y \in Y$, where $\P_y^n$ is the projective $n$-space over $k(y)$.
-          In particular, we can write $\fM_y \cong \fO_{\P^n_y}(d_y)$ for some $d_y \in \Z$.
-          We will show $d_y$ is constant for all $y \in Y$.
-          It will follow by (Ex. 12.4) that there exists an invertible sheaf $\fN$ on $Y$ such that $\fM \cong \fO(d) \otimes \pi^*\fN$ for some $d \in \Z$, proving surjectivity of $\varphi$.
+Let $r$ be the rank of $\fE$, $\fO_X(1)$ the canonical invertible sheaf of $X$, and $\pi : X \to Y$ the natural projection morphism.
+For any point $y \in Y$, let $k(y)$ be the residue field of $y$, and let $\P_y$ be the fiber of $\pi$ over $y$, which is a projective $r$-space over $k(y)$.
+There is an obvious map
+\begin{align*}
+\varphi : \pic{Y} \times \Z & \to \pic{X}                      \\
+(\fL, d)                    & \mapsto \fO_X(d) \otimes \pi^*\fL.
+\end{align*}
+First, we show $\varphi$ is injective.
+If we have an isomorphism
+\begin{equation*}
+\fO_X(d) \otimes \pi^*\fL \cong \fO_X(d') \otimes \pi^* \fL',
+\end{equation*}
+then it is clear by checking on fibres that $d = d'$, so it remains to show $\pi^* : \pic{Y} \to \pic{X}$ is injective.
+We have $\pi_*\fO_X = \fO_Y$ (II, 7.11a), and for any $\fN \in \pic{Y}$, the projection formula gives
+\begin{equation*}
+\pi_*\pi^*\fN \cong \pi_*\fO_X \otimes \fN \cong \fN,
+\end{equation*}
+so if $\pi^*\fN \cong \fO_X$, then \(\fN \cong \pi_*\fO_X \cong \fO_Y.\) 
+Hence, $\varphi$ is injective.
 
-          We proceed by showing the minimum value of $d_y$ is obtained when $y = \xi$ is the generic point of $Y$.
-          Suppose there exists $y' \in Y$ such that $d_{y'} < d_\xi$.
-          After twisting by $\fO(-d_{y'})$, we can assume $d_{y'} = 0$.
-          By (12.8), the function
-          \begin{equation*}
-            \cdh^0(y, \fM) = \dim_{k(y)} \cH^0(\P^n_y, \fO_{\P^n_y}(d_y))
-          \end{equation*}
-          is upper semicontinuous on $Y$ (12.8), and we have the strict inequality
-          \begin{equation*}
-            \dim_{k(y')} \cH^0(\P_{y'}^n, \fO_{\P_{k(y)}}) < \dim_{k(\xi)} \cH^0(\P_{\xi}^n, \fO_{\P^n_{\xi}}(d_\xi))
-          \end{equation*}
-          by the explicit calculations of (5.1).
-          But this implies the set $\{ y \in Y | h^0(y, \fM) \geq h^0(\xi, \fM)\}$ is a closed set containing $\xi$ and not containing $y'$, a contradiction.
-          Hence, we have $d_\xi \leq d_{y}$ for all $y \in Y$.
+The hart part is to show $\varphi$ is surjective.
+Since $\pi$ is a flat projective morphism, we can apply the results of \SS 12.
+In particular, if $\fM$ is an invertible sheaf on $X$, then $\fM_y$ is an invertible sheaf on $\P_y$ for every $y \in Y$, so we can write $\fM_y \cong \fO(d_y)$ for some $d_y \in \Z$.
+If we can show $d_y$ is independent of $y \in Y$, then by (Ex. 12.4) there exists an invertible sheaf $\fN$ on $Y$ such that $\fM \cong \fO_X(d) \otimes \pi^*\fN$ for some $d \in \Z$, which proves $\varphi$ is surjective.
 
-          Next, we prove the inequality in the opposite direction.
-          By Serre duality (5.1) (7.7), we have
-          \begin{align*}
-            h^n(y, \fM) & = \dim_{k(y)} \cH^n(\P_y^n, \fO_{\P_y^n}(d_y))          \\
-                        & = \dim_{k(y)} \cH^n(\P_y^n, \fO_{\P_y^n}(-d_y - n - 1)) \\
-                        & = h^0(y, \fO(-n-1) \otimes \fM^{-1}),
-          \end{align*}
-          and $h^n(y, \fM)$ is also an upper semicontinuous on $Y$.
-          Suppose there exists $y' \in Y$ such that $d_\xi < d_{y'}$.
-          After twisting by $\fO(-d_\xi + n + 1)$, we can assume $d_\xi = n + 1$.
-          In particular $d_{y'}$ is a positive integer.
-          Again, we have the strict inequality
-          \begin{equation*}
-            \dim_{k(y')} \cH^0(\P_{y'}^n, \fO_{\P_{y'}^n}(-d_{y'} - n - 1)) < \dim_{k(\xi)} \cH^0(\P_\xi^n, \fO_{\P_\xi^n}),
-          \end{equation*}
-          arriving at the same contradiction as above.
-          Hence, $d_y$ is constant for all $y \in Y$, and we have shown $\varphi$ is surjective.
+We proceed by showing the minimum value of $d_y$ is obtained when $y = \eta$ is the generic point of $Y$.
+Suppose there exists $y' \in Y$ such that $d_{y'} < d_\eta$.
+After twisting by $\fO_X(-d_{y'})$, we can assume $d_{y'} = 0$.
+By (12.8), the function
+\begin{equation*}
+h^0(y, \fM) = \dim_{k(y)} \cH^0(\P_y, \fO_{\P_y}(d_y))
+\end{equation*}
+is upper semicontinuous on $Y$ (12.8), and we have the strict inequality
+\begin{equation*}
+\dim_{k(y')} \cH^0(\P_{y'}, \fO_{\P_{y'}}) < \dim_{k(\eta)} \cH^0(\P_{\eta}, \fO_{\P_{\eta}}(d_\eta))
+\end{equation*}
+by the explicit calculations of (5.1).
+But this implies the set $\{y \in Y \mid h^0(y, \fM) \geq h^0(\eta, \fM)\}$ is a closed set containing $\eta$ and not containing $y'$, a contradiction.
+Hence, we have $d_\eta \leq d_{y}$ for all $y \in Y$.
 
-          It remains to show $\varphi$ is injective.
-          If we have an isomorphism
-          \begin{equation*}
-            \fO(d) \otimes \pi^*\fL \cong \fO(d') \otimes \pi^* \fL',
-          \end{equation*}
-          then it is clear by checking on fibres that $d = d'$, so it suffices to check $\pi^* : \pic{Y} \to \pic{X}$ is injective.
-          Indeed, we have $\pi_*\fO_X = \fO_Y$ (II, 7.11a), and the projection formula gives
-          \begin{equation*}
-            \pi_*\pi^*\fN \cong \pi_*\fO_X \otimes \fN \cong \fN
-          \end{equation*}
-          for all $\fN \in \pic{Y}$, so if $f^*\fN \cong \fO_X$, then $$\fN \cong \pi_*\fO_X \cong \fO_Y.$$
-        \end{proof}
+Next, we prove the inequality in the opposite direction.
+By Serre duality (5.1) (7.7), we have
+\begin{align*}
+h^{r-1}(y, \fM) & = \dim_{k(y)} \cH^{r-1}(\P_{y}, \fO_{\P_{y}}(d_y))          \\
+& = \dim_{k(y)} \cH^{r-1}(\P_{y}, \fO_{\P_{y}}(-d_y-r)) \\
+& = h^0(y, \fO_X(-r) \otimes \fM^{-1}),
+\end{align*}
+and $h^{r-1}(y, \fM)$ is also an upper semicontinuous on $Y$.
+Suppose there exists $y' \in Y$ such that $d_\eta < d_{y'}$.
+After twisting by $\fO_X(-d_\eta + r)$, we can assume $d_\eta = r$.
+In particular $d_{y'}$ is a positive integer.
+Again, we have the strict inequality
+\begin{equation*}
+\dim_{k(y')} \cH^0(\P_{y'}, \fO_{\P_{y'}}(-d_{y'}-r)) < \dim_{k(\eta)} \cH^0(\P_{\eta}, \fO_{\P_{\eta}}),
+\end{equation*}
+arriving at the same contradiction as above.
+Hence, $d_y$ is independent of $y \in Y$.
+\end{proof}
 
-        %   \item[\textbf{6.}] Let $X$ be an integral projective scheme over an algebraically closed field $k$, and assume that $\cH^1(X, \fO_X) = 0$.
-        %         Let $T$ be a connected scheme of finite type over $k$.
-        %         \begin{itemize}
-        %           \item[(a)] If $\fL$ is an invertible sheaf on $X \times T$, show that the invertible sheaves $\fL_t$ on $X = X \times \{ t \}$ are isomorphic, for all closed points $t \in T$.
-        %           \item[(b)] Show that $\pic(X \times T) = \pic{X} \times \pic{T}$.
-        %         \end{itemize}
-        % \end{enumerate}
+\item[\textbf{6.}] Let $X$ be an integral projective scheme over an algebraically closed field $k$, and assume that $\cH^1(X, \fO_X) = 0$.
+Let $T$ be a connected scheme of finite type over $k$.
+\begin{itemize}
+  \item[(a)] If $\fL$ is an invertible sheaf on $X \times T$, show that the invertible sheaves $\fL_t$ on $X = X \times \{ t \}$ are isomorphic, for all closed points $t \in T$.
+  \item[(b)] Show that $\pic(X \times T) = \pic{X} \times \pic{T}$.
+\end{itemize}
 
-        % \begin{proof} $ $ \vspace{0pt}
-        %   \begin{enumerate} [leftmargin=0cm]
-        %     \item[(a)]
+\begin{proof} $ $ \vspace{0pt}
+  \begin{enumerate} [leftmargin=0cm]
+    \item[(a)]
 
-        %     \item[(b)]
-        %   \end{enumerate}
-        % \end{proof}
+    \item[(b)]
+  \end{enumerate}
+\end{proof}
 
 \end{enumerate}
 
