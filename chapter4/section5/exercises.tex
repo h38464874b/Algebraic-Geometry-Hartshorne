@@ -100,9 +100,11 @@
                   So there is a morphism $\Gr(3, 15) \dashrightarrow \gM_5$, whose fibres are the images of the group $\PGL(4)$ which has dimension $(4 + 1)^2 - 1 = 24$.
                   Since any individual curve has only finitely many automorphisms (Ex. 5.2), the fibres have dimension $= 24$, and so the image of $\Gr(3, 15)$ has dimension $36 - 24 = 12$.
 
-            \item[(b)] A $g^1_3$ on $X$ induces an embedding of $X$ in the nonsingular quadric surface $Q$ as a divisor of type $(3, 3)$.
-                  Under the standard embedding of $Q$ into $\P^3$ gives an embedding $X \to \P^3$ where the image is a degree $3 + 3 = 6$ curve in $\P^3$.
-                  Projecting $X$ from one of its points that does not lie on a plane spanned by coplnar tangent lines gives a plane quintic with one node.
+            \item[(b)] A canonical curve $X$ of genus 5 in $\P^4$ has a $g^1_3$ if and only if it has a trisecant.
+                  This means there exists distinct points $P, Q, R \in C$ such that $\dim |K - P - Q - R| = 2$ (5.5.3).
+                  The embedding of $X$ in $|K - P - Q - R| \cong \P^2$ gives a plane quintic with a singular point of multiplicity 2, which is either a cusp or a node.
+                  The embedding factors through the canoical embedding followed by a projection map onto a plane in $\P^4$ away from a trisecant.
+                  The proof of (3.10) readily shows there exists an open dense subset of planes in the space of planes in $\P^4$ which the projection of $X$ onto the plane gives a curve with only a node.
 
                   Conversely, suppose $X$ can be represented as a plane quintic $X' \subseteq \P^2$ with one node at $P \in X'$.
                   Let $\pi : V \to \P^2$ be the blowing up of $\P^2$ with center at $P$, and let $E \subset V$ be the exceptional divisor of $\pi$.

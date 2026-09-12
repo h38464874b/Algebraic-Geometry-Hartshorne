@@ -72,18 +72,26 @@
    \cs_new:cpn { g#1 } { \goth{#1} }
 }
 
-% Cal Font
+% Scr Font
 \clist_map_inline:nn
 {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 {
    \cs_new:cpn { f#1 } { \mathscr{#1} }
 }
 
-% Scr Font
+% Cal Font
 \clist_map_inline:nn
 {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 {
-   \cs_new:cpn { s#1 } { \mathscr{#1} }
+   \cs_new:cpn { s#1 } { \mathcal{#1} }
+}
+
+% mathbf Font
+\clist_map_inline:nn
+{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+{
+   \cs_undefine:c { #1 }
+   \cs_new:cpn { q#1 } { \mathbf{#1} }
 }
 
 % BB Font
@@ -102,6 +110,7 @@
 \newcommand{\ckSch}[1]{\mathbf{Sch}(#1)}
 \newcommand{\ckAlg}[1]{\mathbf{Alg}(#1)}
 \newcommand{\cMod}[1]{\mathbf{Mod}(#1)}
+\DeclareMathOperator{\Mor}{Mor}
 
 % Relative stuff
 \DeclareMathOperator{\rSpec}{\mathpzc{Spec}}
@@ -189,8 +198,8 @@
 % \pagecolor[RGB]{200, 200, 200}
 
 % Black
-% \pagecolor[RGB]{18,18,18}
-% \color[RGB]{168,174,187}
+% \pagecolor[RGB]{24,24,24}
+% \color[RGB]{170,180,190}
 
 % Cyber Deep Sea
 % \pagecolor[RGB]{10,18,24}

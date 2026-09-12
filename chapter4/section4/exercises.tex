@@ -197,13 +197,12 @@
 
           \begin{proof} Let the pair $(X, \fP)$ (resp. $(X', \fP')$) be the Jacobian of $(X, P_0)$ (resp. $(X', P_0')$).
               If $\fC$ is any category, and $T$ is any object in $\fC$, then denote by $h_T : \fC^\text{op} \to \cSet$ the contravariant Hom functor defined by $U \mapsto \Hom_\fC(U, T)$.
-              Recall that $X$ and $\fP \in \pic^\circ(X/X)$ satisfies the following universal property: if $T$ is any scheme of finite type over $k$, and for any $\fM \in \pic^\circ(X/T)$, there is a unique morphism $f : T \to X$ such that $f^*\fP \cong \fM$ in $\pic^\circ(X/T)$.
+              Recall that $X$ and $\fP \in \pic^\circ(X/X)$ satisfy the following universal property: if $T$ is any scheme of finite type over $k$, and for any $\fM \in \pic^\circ(X/T)$, there is a unique morphism $f : T \to X$ such that $f^*\fP \cong \fM$ in $\pic^\circ(X/T)$.
               In other words, $(X, \fP)$ represents the functor $\pic^\circ(X/-)$.
-              Lastly, since $(X, \fP)$ is a group object in the category of schemes of finite type over $k$, the set $h_X(T)$ has a group structure induced by $\pic^\circ(X/T)$.
+              Lastly, $(X, \fP)$ is a group object in the category of schemes of finite type over $k$, so for any $T$, $h_X(T)$ has a natural group structure induced by $\pic^\circ(X/T)$.
 
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)] Any morphism $f : X \to X'$ defines a natural transformation $f^* : \pic^\circ(X' / -) \to \pic^\circ(X / -)$ of group functors in the following way (4.10.2).
-
                         If $T$ is any scheme of finite type over $k$, then $f' = f \times 1_T : X' \times T \to X \times T$ induces a group homomorphism $f^* : \pic(X' \times T) \to \pic(X \times T)$.
                         Let $p : X \times T \to T$ and $p' : X' \times T \to T$ be the projection maps.
                         The image of $f^*$ lies in $\pic^\circ(X \times T)$, and $p = p' \circ f'$ implies $f^* p'^* \pic(T) = p^* \pic(T)$.

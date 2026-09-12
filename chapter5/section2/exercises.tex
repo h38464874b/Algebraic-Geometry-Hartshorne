@@ -67,10 +67,11 @@
                                 0 \arrow[r] & \fL \arrow[r] & \Omega \arrow[r] & \fM \arrow[r] & 0,
                             \end{tikzcd} \]
                         where $\fL$ and $\fM$ are invertible sheaves on $\P^2$.
-                        Then $\cH^1(\fL), \cH^1(\fM) = 0$, so by the long exact of cohomology, $\cH^1(\Omega) = 0$.
+                        Then $\cH^1(\fL), \cH^1(\fM) = 0$, so by the long exact sequence in cohomology, we have $\cH^1(\Omega) = 0$.
                         But by (III, Ex. 7.2), $\cH^1(\Omega) = k$, a contradiction.
               \end{itemize}
           \end{proof}
+          \filbreak
 
     \item Let $C$ be a curve of genus $g$, and let $X$ be the ruled surface $C \times \P^1$.
           We consider the question, for what integers $s \in \Z$ does there exist a section $D$ of $X$ with $D^2 = s$?
@@ -235,35 +236,35 @@
 
                         By naturality, we have a commutative diagram
                         \[ \begin{tikzcd}
-{\Hom(\fO(D), \fO(D))} \arrow[d, "i^*"] \arrow[r, "\delta"] & \Ext^1(\fO(D),  \fO) \arrow[d, "i^*"] \\
-{\Hom(\fO(D - E), \fO(D))} \arrow[r, "\delta_E"]       & {\Ext^1(\fO(D - E), \fO))}  
-\end{tikzcd}, \]
-where $\delta(1) = \xi$ and $i^*(1) = i$, so $\delta_E(i) = 0$ if and only if $i^*(\xi) = 0$.
-Now, if there exists $E$ of degree $< d$ such that $i : \fO(D - E) \to \fE$ factors through $\fE \to \fO(D)$, then $\fO(D - E) \to \fE$ must also be injective, which is a contradiction of $\fE$ being normalized, so it is enough to show there exists $E$ such that $i^*(\xi) = 0$.
+                                {\Hom(\fO(D), \fO(D))} \arrow[d, "i^*"] \arrow[r, "\delta"] & \Ext^1(\fO(D),  \fO) \arrow[d, "i^*"] \\
+                                {\Hom(\fO(D - E), \fO(D))} \arrow[r, "\delta_E"]       & {\Ext^1(\fO(D - E), \fO))}
+                            \end{tikzcd}, \]
+                        where $\delta(1) = \xi$ and $i^*(1) = i$, so $\delta_E(i) = 0$ if and only if $i^*(\xi) = 0$.
+                        Now, if there exists $E$ of degree $< d$ such that $i : \fO(D - E) \to \fE$ factors through $\fE \to \fO(D)$, then $\fO(D - E) \to \fE$ must also be injective, which is a contradiction of $\fE$ being normalized, so it is enough to show there exists $E$ such that $i^*(\xi) = 0$.
 
-The discussion above has the following geometric interpretation.
-By Serre duality, there is a natural identification
-\begin{equation*}
-    |D + K| = \P(\Ext^1(\fO(D), \fO)) = \P(\cH^0(\fO(D + K))^\vee),
-\end{equation*}
-so we can view the linear span of $\xi$ in $\Ext^1(\fO(D), \fO)$ as a point in $|D + K|$, which we will also denote by $\xi$.
-It follows that $i^*(\xi) = 0$ if and only if $\xi$ is contained in every hyperplane in $|D + K|$ which also contains $E$.
+                        The discussion above has the following geometric interpretation.
+                        By Serre duality, there is a natural identification
+                        \begin{equation*}
+                            |D + K| = \P(\Ext^1(\fO(D), \fO)) = \P(\cH^0(\fO(D + K))^\vee),
+                        \end{equation*}
+                        so we can view the linear span of $\xi$ in $\Ext^1(\fO(D), \fO)$ as a point in $|D + K|$, which we will also denote by $\xi$.
+                        It follows that $i^*(\xi) = 0$ if and only if $\xi$ is contained in every hyperplane in $|D + K|$ which also contains $E$.
 
-\fbox{$d = 3$} In either case, $D + K$ is a very ample divisor on $C$ (IV, Ex. 3.1), so consider the embedding of $C$ in $|D + K| \cong \P^3$.
-The secant variety of $C$ fills up the entire space (IV, \SS 3), so there is a secant line $L \subseteq |D + K|$ which contains $\xi$.
-A line is uniquely determined by two points, so we can take $E$ to be any effective divisor of degree 2 with support contained in $C \cap L$.
-Hence, any hyperplane $H \subseteq |D + K|$ containing $E$ also contains $L$, so $\xi$ must be a point in $H$ as well.
+                        \fbox{$d = 3$} In either case, $D + K$ is a very ample divisor on $C$ (IV, Ex. 3.1), so consider the embedding of $C$ in $|D + K| \cong \P^3$.
+                        The secant variety of $C$ fills up the entire space (IV, \SS 3), so there is a secant line $L \subseteq |D + K|$ which contains $\xi$.
+                        A line is uniquely determined by two points, so we can take $E$ to be any effective divisor of degree 2 with support contained in $C \cap L$.
+                        Hence, any hyperplane $H \subseteq |D + K|$ containing $E$ also contains $L$, so $\xi$ must be a point in $H$ as well.
 
-\fbox{$d = 4$} Again, consider $C$ in its embedding in $|D + K| \cong \P^4$.
-A plane is uniquely determined by three points, and the union of all planes going through at least three points of $C$ fills up all of $|D + K|$.
-This means we can find a plane $P$ in $|D + K|$ which contains $\xi$ and at least three points of $C$.
-So we can take $E$ to be any effective divisor of degree 3 with support contained in $C \cap P$.
-Hence, any hyperplane $H \subseteq |D + K|$ containing $E$ also contains $P$, so $\xi$ must be in $H$ as well.
-\end{itemize}
-\end{proof}
+                        \fbox{$d = 4$} Again, consider $C$ in its embedding in $|D + K| \cong \P^4$.
+                        A plane is uniquely determined by three points, and the union of all planes going through at least three points of $C$ fills up all of $|D + K|$.
+                        This means we can find a plane $P$ in $|D + K|$ which contains $\xi$ and at least three points of $C$.
+                        So we can take $E$ to be any effective divisor of degree 3 with support contained in $C \cap P$.
+                        Hence, any hyperplane $H \subseteq |D + K|$ containing $E$ also contains $P$, so $\xi$ must be in $H$ as well.
+              \end{itemize}
+          \end{proof}
 
-\item Show that every locally free sheaf of finite rank on $\P^1$ is isomorphic to a direct sum of invertible sheaves.
-\filbreak
+    \item Show that every locally free sheaf of finite rank on $\P^1$ is isomorphic to a direct sum of invertible sheaves.
+          \filbreak
 
           \begin{proof}
               We call any locally free sheaf $\fE$ on a curve $C$ \textit{normalized} if $\cH^0(C, \fE) \neq0$ and $\cH^0(C, \fE \otimes \fL) = 0$ for all invertible sheaves $\fL$ on $C$ with $\deg{\fL} < 0$.
@@ -294,43 +295,88 @@ Hence, any hyperplane $H \subseteq |D + K|$ containing $E$ also contains $P$, so
               Hence, the short exact sequence splits, and there is an isomorphism $\fE \cong \fO \oplus \fF$.
           \end{proof}
 
-\item On the elliptic ruled surface $X$ of (2.11.6), show that the sections $C_0$ with $C_0^2 = 1$ form a one-dimensional algebraic family, parametrized by the points of the base curve $C$, and that no two are linearly equivalent.
+    \item On the elliptic ruled surface $X$ of (2.11.6), show that the sections $C_0$ with $C_0^2 = 1$ form a one-dimensional algebraic family, parametrized by the points of the base curve $C$, and that no two are linearly equivalent.
 
-\begin{proof}
-    Combine (III, Ex. 11.5), (2.9), and the fact that any divisor of positive degree on an elliptic curve is linearly equivalent to an effective divisor.
-\end{proof}
+          \begin{proof}
+              Combine (III, Ex. 11.5), (2.9), and the fact that any divisor of positive degree on an elliptic curve is linearly equivalent to an effective divisor.
+          \end{proof}
 
-\item A locally free sheaf $\fE$ on a curve $C$ is said to be \textit{stable} if for every quotient locally free sheaf $\fE \to \fF \to 0$, $\fF \neq \fE$, $\fF \neq 0$, we have
-\begin{equation*}
-    (\deg{\fF}) / \rank{\fF} > (\deg{\fE}) / \rank{\fE}
-\end{equation*}
-Replacing $>$ by $\geq$ defines \textit{semistable.}
-\begin{itemize}
-    \item[(a)] A decomposable $\fE$ is never stable.
-    \item[(b)] If $\fE$ has rank 2 and is normalized, then $\fE$ is stable (respectively, semistable) if and only if $\deg{\fE} > 0$ (respectively, $\geq 0$).
-    \item[(c)] Show that the indecomposable locally free sheaves $\fE$ of rank 2 that are not semistable are classified, up to isomorphism, by giving (1) an integer $0 < e \leq 2g - 2$, (2) an element $\fL \in \pic{C}$ of degree $-e$, and (3) a nonzero $\xi \in \cH^1(X, \fL^{-1})$, determined up to a nonzero scalar multiple.
-\end{itemize}
+    \item A locally free sheaf $\fE$ on a curve $C$ is said to be \textit{stable} if for every quotient locally free sheaf $\fE \to \fF \to 0$, $\fF \neq \fE$, $\fF \neq 0$, we have
+          \begin{equation*}
+              (\deg{\fF}) / \rank{\fF} > (\deg{\fE}) / \rank{\fE}
+          \end{equation*}
+          Replacing $>$ by $\geq$ defines \textit{semistable.}
+          \begin{itemize}
+              \item[(a)] A decomposable $\fE$ is never stable.
+              \item[(b)] If $\fE$ has rank 2 and is normalized, then $\fE$ is stable (respectively, semistable) if and only if $\deg{\fE} > 0$ (respectively, $\geq 0$).
+              \item[(c)] Show that the indecomposable locally free sheaves $\fE$ of rank 2 that are not semistable are classified, up to isomorphism, by giving (1) an integer $0 < e \leq 2g - 2$, (2) an element $\fL \in \pic{C}$ of degree $-e$, and (3) a nonzero $\xi \in \cH^1(C, \fL^{-1})$, determined up to a nonzero scalar multiple.
+          \end{itemize}
 
-\begin{proof} $ $ \vspace{0pt}
-\begin{itemize} [leftmargin=0cm]
+          \begin{proof} $ $ \vspace{0pt}
+              \begin{itemize} [leftmargin=0cm]
 
-\item[(a)]
+                  \item[(a)] Denote $\mu(\fE) = (\deg \fE) / \rank{\fE}$ the slope of $\fE$, and let $\fF \subseteq \fE$ consist of the summands of $\fE$ that has degree $\leq \mu(\fE)$, which there must be at least one.
+                        There is a surjective morphism of locally free sheaves $\fE \to \fF \to 0$, and we have $\mu(\fF) \leq \mu(\fE)$.
+                        Hence, $\fE$ is not stable.
 
-\item[(b)]
+                  \item[(b)] If $\fE$ is normal with invariant $e = - \deg{\fE}$, then we have a quotient locally sheaf $\fE \to \fL \to 0$, where $\fL$ is an invertible sheaf of degree $-e$.
+                        If $\fE$ is stable (respectively, semistable), then $$-e = \mu(\fL) > \mu(\fE) = -e/2,$$
+                        (respectively, $\mu(\fL) \geq \mu(\fE)$), which implies $\deg{\fE} = -e > 0$ (respectively, $\geq 0$).
+                        Conversely, suppose $\deg \fE > 0$ (respectively, $\geq 0$), and let $\fE \to \fF \to 0$ be a quotient locally free sheaf.
+                        If $\fF$ has rank 2, then $\fE \to \fF \to 0$ is an isomorphism (II, Ex. 7.1).
+                        Otherwise, $\fF$ is an invertible sheaf, and because of the normalization of $\fE$, we must have $\deg{\fF} \geq \deg{\fE}$.
+                        Hence, $\mu(\fF) = \deg{\fF} \geq \deg{\fE} > \mu(\fE)$ (respectively, $\geq \mu(\fE)$) if $\deg{\fE} > 0$ (respectively, $\deg{\fE} \geq 0)$.
 
-\item[(c)]
-
-\end{itemize}
-\end{proof}
-
-\newpage
+                  \item[(c)] There is a small typo in the problem statement.
+                        The classification should concern \textit{normalized} indecomposable locally free sheaves of rank 2 that are not semistable.
+                        Combine (III, Ex. 6.1), (III, Ex. 12.5), (b), and the fact that the extension $0 \to \fO \to \fE \to \fL \to 0$ defined by $\xi \in \cH^1(C, \fL^{-1})$ is normalized if $e > 0$.
+              \end{itemize}
+          \end{proof}
 
     \item Let $Y$ be a nonsingular curve on a quadric cone $X_0$ in $\P^3$.
           Show that either $Y$ is a complete intersection of $X_0$ with a surface of degree $a \geq 1$, in which case $\deg{Y} = 2a$, $g(Y) = (a - 1)^2$, or $\deg{Y}$ is odd, say $2a + 1$, and $g(Y) = a^2 - a$.
 
+          \begin{proof}
+              A general hyperplane section of $X_0$ in $\P^3$ is a conic curve $C$, and $X_0$ is a cone over $C$ in $\P^3$ with vertex $P_0$.
+              If we blow up the point $P_0$ as in (2.11.4), then we obtain the rational ruled surface $\F$ with invariant $e = 2$, such that if $\pi : \F \to X_0$ is the projection map, then $\pi^{-1}(P_0)$ is a section $C_0$ with $C_0^2 = -2$.
+              In other words, $\F$ is isomorphic to the projective bundle of $\fE = \fO_{\P^1} \oplus \fO_{\P^1}(-2)$ over $\P^1$.
+              The hyperplane sections of $\pi : \F \to X_0 \hookrightarrow \P^3$ correspond to the linear system $|\fO_\F(1)| = |C_0 + 2f|$, and by (2.11), $K = -2C_0 - 4f$ is a canonical divisor of $\F$.
+
+              If $Y$ is a complete intersection of $X_0$ with a surface of degree $a \geq 1$, then $Y \sim a(C_0 + 2f)$, so $\deg{Y} = Y.(C_0 + 2f) = 2a$, and the adjunction formula gives
+              \begin{equation*}
+                  g = \frac{1}{2}Y.(Y + K) + 1 = (a - 1)^2.
+              \end{equation*}
+              Conversely, if $Y$ has even degree, say $\deg{Y} = 2a$, then $Y \sim a(C_0 + 2f) - bC_0$ with $0 \leq b < a$ (1.3) (2.20).
+              Let $\fI = \fO_\F(-Y)$ be the ideal sheaf of $Y$ as a closed subscheme of $\F$.
+              Tensoring by $\fO_\F(a)$, taking global sections, and applying (2.4) gives
+              \begin{equation*}
+                  \cH^0(\F, \fI(a)) \cong \cH^0(\P^1, S^b(\fE)),
+              \end{equation*}
+              where we have
+              \begin{equation*}
+                  S^b(\fE) \cong \bigoplus_{i = 0}^b \fO_{\P^1}(-2i).
+              \end{equation*}
+              It follows that there exists a section in $|\fO_\F(a)|$ containing $Y$, and since $\cH^0(\P^3, \fO_{\P^3}(a)) \to \cH^0(\F, \fO_\F(a)) \to 0$ is surjective, we can find a homogenous polynomial of degree $a$ in $\P^3$ containing $Y$.
+              So by reasons of degree, $Y$ is the complete intersection of $X_0$ with a surface of degree $a$.
+
+              If $Y$ has odd degree, say $\deg{Y} = 2a + 1$, then for the same reason in the case $\deg{Y}$ is even, $Y$ is contained in a surface of degree $a + 1$, so let $Z$ be any such surface in $\P^3$.
+              By (I, 7.7) $X_0 \cap Z$ has two irreducible components each of multiplicity one, consisting of $Y$ and a line $L$ in $\P^3$.
+              The latter must be a member of the one-dimensional family of lines in $X_0$ which go through the vertex $P_0$, and the inverse image $L' = L \times_{X_0} X$ of any of these lines is linearly eqiuvalent to $C_0 + f$, which means $Y \sim aC_0 + (2a + 1)f$.
+              Now, we can compute the genus of $Y$ using the adjunction formula of (1.5)
+              \begin{equation*}
+                  g = \frac{1}{2}Y.(Y + K) + 1 = a^2 - a.
+              \end{equation*}
+          \end{proof}
+
     \item For any $n > e \geq 0$, let $X$ be the rational scroll of degree $d = 2n - e$ in $\P^{d + 1}$ given by (2.19).
           If $n \geq 2e - 2$, show that $X$ contains a nonsingular curve $Y$ of genus $g = d + 2$ which is a canonical curve in this embedding.
           Conclude that for every $g \geq 4$, there exists a nonhyperelliptic curve which has a $g_3^1$.
+
+          \begin{proof}
+
+          \end{proof}
+
+          \newpage
 
     \item Let $X$ be a ruled surface over the curve $C$, defined by a normalized bundle $\fE$, and let $\ge$ be the divisor on $C$ for which $\fO_C(\ge) \cong \bigwedge^2 \fE$ (2.8.1).
           Let $\gb$ be any divisor on $C$.
