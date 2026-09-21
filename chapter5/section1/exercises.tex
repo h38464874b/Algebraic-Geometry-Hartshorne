@@ -149,15 +149,15 @@
                         Hence, $$K^2 = (d - 4)^2H^2 = d(d - 4)^2.$$
 
                   \item[(b)] By (II, Ex. 8.3), there is an isomorphism $\omega_{X} \cong p_1^*\omega_C \otimes p_2^*\omega_{C'}$.
-                        In particular, if $\gk'$ and $\gk'$ are canonical divisors of $C$ and $C'$, respectively, then $p_1^*\gk + p_2^*\gk'$ is a canonical divisor of $X$.
+                        In particular, if $\gk$ and $\gk'$ are canonical divisors of $C$ and $C'$, respectively, then $p_1^*\gk + p_2^*\gk'$ is a canonical divisor of $X$.
                         Denote $D = p_1^*\gk$ and $D' = p_2^*\gk'$.
-                        The support of $D$ consists of $2g - 2$ copies of $C'$ which are the fibres of the points in $\gk$ with respect to $p_1 : X \to C$.
+                        The support of $D$ consists of $2g - 2$ copies of $C'$ which are the fibres of the points in $\gk$ with respect to $p_1 : X \to C$, similarly for $D'$.
                         It follows that
                         \begin{equation*}
                             D.D' = (\deg{K_C}) \cdot (\deg{K_{C'}}) = 4(g - 1)(g' - 1).
                         \end{equation*}
                         Also, we can always find two canonical divisors with disjoint support, and since the intersection pairing only depends on the linear equivalence class, we have $D^2 = D'^2 = 0$.
-                        We conclude that $K^2 = 2D.D' = 8(g - 1)(g' - 1)$.
+                        We conclude that $$K^2 = 2D.D' = 8(g - 1)(g' - 1).$$
               \end{itemize}
           \end{proof}
 
@@ -171,6 +171,10 @@
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)] By definition, $\omega_{C} \cong \fO_X(-\Delta) \otimes \fO_\Delta$, and by (1.3), $\deg_\Delta(\fO_X(-\Delta) \otimes \fO_\Delta) = -\Delta^2$.
+                        Hence, we have
+                        \begin{equation*}
+                            \Delta^2 = - \deg_\Delta(\fO_X(-\Delta) \otimes \fO_\Delta) = -\deg(\omega_C) = 2 - 2g.
+                        \end{equation*}
 
                   \item[(b)] Suppose $D = a l + b m + c \Delta = 0$ in $\Num(C \times C)$ for some integers $a, b, c \in \Z$.
                         It is not hard to see
@@ -243,6 +247,7 @@
                     in $k$.
               \item[(b)] If $\car{k} = 0$, use the fact that $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space to show that $\Num{X}$ is a finitely generated free abelian group.
           \end{itemize}
+          \filbreak
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
@@ -281,8 +286,8 @@
                         So the original diagram commutes.
 
                   \item[(b)] We have an injection $c : \Num{X} \hookrightarrow \cH^1(X, \Omega_X)$, and in characteristic 0, this means $k \otimes_\Z \Num{X} \hookrightarrow \cH^1(X, \Omega_X)$ is also an injection.
-                  Since $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space, this means $\Num{X}$ is finitely generated.
-                  Also, $\Num{X}$ has no torsion, so $\Num{X}$ is actually a free finitely generated $\Z$-module.
+                        Since $\cH^1(X, \Omega_X)$ is a finite-dimensional vector space, this means $\Num{X}$ is finitely generated.
+                        Also, $\Num{X}$ has no torsion, so $\Num{X}$ is actually a free finitely generated $\Z$-module.
               \end{itemize}
           \end{proof}
 
@@ -304,21 +309,21 @@
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] By (1.9), (1.9.1), and (Ex. 1.8), the satement reduces to the Cauchy-Schwartz inequality for Lorenztian inner products.
+                  \item[(a)] By (1.9), (1.9.1), and (Ex. 1.8), the statement reduces to the Cauchy-Schwartz inequality for Lorenztian inner products.
 
                   \item[(b)] By Nakai-Moishezon (1.10), $H = l + m$ is ample, with $H^2 = 2$.
-                  Apply the previous exercise to $D' = D + al + bm$ and $H$, which simplifies to
-                  \begin{equation*}
-                    D'^2 \leq 2(a + b)^2.
-                  \end{equation*}
-                  Expanding the left-hand side gives
-                  \begin{equation*}
-                    D'^2 = D^2 + 2a^2 + 2b^2 + 2ab.
-                  \end{equation*}
-                  Substitutting and simplifying gives
-                  \begin{equation*}
-                    D^2 \leq 2ab.
-                  \end{equation*}
+                        Apply the previous exercise to $D' = D + al + bm$ and $H$, which simplifies to
+                        \begin{equation*}
+                            D'^2 \leq 2(a + b)^2.
+                        \end{equation*}
+                        Expanding the left-hand side gives
+                        \begin{equation*}
+                            D'^2 = D^2 + 2a^2 + 2b^2 + 2ab.
+                        \end{equation*}
+                        Substitutting and simplifying gives
+                        \begin{equation*}
+                            D^2 \leq 2ab.
+                        \end{equation*}
               \end{itemize}
           \end{proof}
 

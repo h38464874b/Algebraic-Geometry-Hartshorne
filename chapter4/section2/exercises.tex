@@ -74,7 +74,7 @@
           \end{enumerate}
         \end{proof}
 
-  \item[\textbf{3.}] \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\P^2$.
+  \item \textit{Plane Curves.} Let $X$ be a curve of degree $d$ in $\P^2$.
         For each $P \in X$, let $T_P(X)$ be the tangent line to $X$ at $P$ (I, Ex.7.3).
         Considering $T_P(X)$ as a point of the dual projective plane $(\P^2)^*$, the map $P \to T_P(X)$ gives a morphism of $X$ to its \textit{dual curve} $X^*$ in $(\P^2)^*$ (I, Ex. 7.3).
         Note that even though $X$ is nonsingular, $X^*$ in general will have singularities.
@@ -225,8 +225,24 @@
                   Hence, $R$ also has ramification index of 2, which is an inflection point.
           \end{itemize}
         \end{proof}
+  \item \textit{A Funny Curve in Characteristic $p$.} Let $X$ be the plane quartic curve $x^3 y + y^3 z + z^3 x = 0$ over a field of characteristic 3.
+        Show that $X$ is nonsingular, every point of $X$ is an inflection point, the dual curve $X^*$ is isomorphic to $X$, but the natural map $X \to X^*$ is purely inseparable.
 
-  \item[\textbf{5.}] \textit{Automorphisms of a Curve of Genus $\geq 2$.} Prove the theorem of Hurtwitz [1] that a curve $X$ of genus $g \geq 2$ over a field of characteristic 0 has at most $84(g - 1)$ automorphisms.
+        \begin{proof}
+          The partial derivatives of $f = x^3 y + y^3 z + z^3 x$ are
+          \begin{equation*}
+            \partial_x f = z^3, \quad \partial_y f = x^3, \quad \partial_z f = y^3,
+          \end{equation*}
+          so in coordinates, the dual morphism $X \to X^*$ is given by
+          \begin{equation*}
+            (x : y : z) \mapsto (x^3 : y^3 : z^3),
+          \end{equation*}
+          This immediately shows $X$ is nonsingular, every point of $X$ is an inflection point, and the natural map $X \to X^*$ is purely in separable.
+          Also, we can identify $X^* \subset (\P^2)^*$ with the image of $X$ under the $k$-linear Frobenius morphism $\P^2 \to \P^2$ (2.4.1), and under this identification, $f^3 = 0$ is a defining equation of $X^*$.
+          Hence, $X$ and $X^*$ are isomorphic as abstract projective $k$-schemes.
+        \end{proof}
+
+  \item \textit{Automorphisms of a Curve of Genus $\geq 2$.} Prove the theorem of Hurtwitz [1] that a curve $X$ of genus $g \geq 2$ over a field of characteristic 0 has at most $84(g - 1)$ automorphisms.
         We will see later (Ex. 5.2) or (V, Ex. 1.11) that the group $G = \Aut{X}$ is finite.
         So let $G$ have order $n$.
         Then $G$ acts on the function field $K(X)$.
@@ -269,7 +285,7 @@
           \end{enumerate}
         \end{proof}
 
-  \item[\textbf{6.}] \textit{$f_*$ for Divisors.} Let $f : X \to Y$ be a finite morphism of curves of degree $n$.
+  \item \textit{$f_*$ for Divisors.} Let $f : X \to Y$ be a finite morphism of curves of degree $n$.
         We define a homomorphism $f_* : \Div{X} \to \Div{Y}$ by $f_*(\sum n_i P_i) = \sum n_i f(P_i)$ for any divisor $D = \sum n_i P_i$ on $X$.
         \begin{itemize}
           \item[(a)] For any locally free sheaf $\fE$ on $Y$, of rank $r$, we define $\det \fE = \bigwedge^r \fE \in \pic{Y}$ (II, Ex. 6.11).
@@ -295,7 +311,7 @@
 
         \begin{proof} $ $ \vspace{0pt}
           \begin{itemize} [leftmargin=0cm]
-            \item[(a)] Let $P$ be any point in $X$, and let $f_*P = f(P)$ be the image of $P$. 
+            \item[(a)] Let $P$ be any point in $X$, and let $f_*P = f(P)$ be the image of $P$.
                   The skyskraper sheaf $k(f_*P)$ has a natural free resolution
                   \[ \begin{tikzcd}
                       0 \arrow[r] & \fO_Y(-f_*P) \arrow[r] & \fO_Y \arrow[r] & k(f_*P) \arrow[r] & 0.
@@ -362,7 +378,7 @@
           \end{itemize}
         \end{proof}
 
-  \item[\textbf{7.}] \textit{Étale Covers of Degree 2.} Let $Y$ be a curve over a field $k$ of characteristic $\neq 2$.
+  \item \textit{Étale Covers of Degree 2.} Let $Y$ be a curve over a field $k$ of characteristic $\neq 2$.
         We show there is a one-to-one correspondence between finite étale morphisms $f : X \to Y$ of degree 2, and 2-torsion elements of $\pic{Y}$, i.e., invertible sheaves $\fL$ on $Y$ with $\fL^2 \cong \fO_Y$.
         \begin{itemize}
           \item[(a)] Given an étale morphism $f : X \to Y$ of degree 2, there is a natural map $\fO_Y \to f_*\fO_X$.
