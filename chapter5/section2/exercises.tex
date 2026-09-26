@@ -361,7 +361,7 @@
 
               If $Y$ has odd degree, say $\deg{Y} = 2a + 1$, then $Y$ is contained in a surface of degree $a + 1$.
               If $Z$ is any such surface in $\P^3$, by (I, 7.7) $X_0 \cap Z$ has two irreducible components each of multiplicity one, consisting of $Y$ and a line $L$ in $\P^3$.
-              The latter must be a member of the one-dimensional family of lines in $X_0$ which go through the vertex $P_0$, and the inverse image $L' = L \times_{X_0} X$ of any of these lines is linearly eqiuvalent to $C_0 + f$, which means $Y \sim aC_0 + (2a + 1)f$.
+              The latter must be a member of the one-dimensional family of lines in $X_0$ which go through the vertex $P_0$, and the inverse image $\pi^*L = L \times_{X_0} X$ of any of these lines is linearly eqiuvalent to $C_0 + f$, which means $$Y \sim (a + 1)(C_0 + 2f) - (C_0 + f) = aC_0 + (2a + 1)f.$$
               To conclude, we can compute the genus of $Y$ using the adjunction formula of (1.5)
               \begin{equation*}
                   g = \frac{1}{2}Y.(Y + K) + 1 = a^2 - a.
@@ -413,45 +413,128 @@
                         \end{equation*}
                         Similar to the proof of (2.17), for the corresponding map $\fE \to \fO_C(\gb + \ge)$ to be surjective, it is enough that the divisors corresponding to $s$ and $t$ do not meet.
                         Consider the subset $B \subset X \times |\gb| \times |\gb + \ge|$ consisting of all triples $\langle P, D, E \rangle$ such that $P$ is in the support of both $D$ and $E$.
-                        If $|\gb|$ and $|\gb + \ge|$ are base point free, then the fibers of $p_1 : B \to X$ have codimension 2 in $|\gb| \times |\gb + \ge|$, so $B$ has dimension one less than that of $|\gb| \times |\gb + \ge|$.
+                        If $|\gb|$ and $|\gb + \ge|$ are base point free, then the fibers of $p_1 : B \to X$ have codimension 2 in $|\gb| \times |\gb + \ge|$ by (IV, 3.1), so $B$ has dimension one less than that of $|\gb| \times |\gb + \ge|$.
                         It follows that the image of $B$ under the second projection map $p_2 : B \to |\gb| \times |\gb + \ge|$ is proper, so there exists sections $s \in \cH^0(C, \fO_C(\gb))$ and $t \in \cH^0(C, \fO_C(\gb + \ge))$ that do not both vanish at any point in $C$.
-                        Hence, there exists a short exact sequence of locally free sheaves
+                        Hence, we have a short exact sequence of locally free sheaves on $C$
                         \[ \begin{tikzcd}
-                            0 \arrow[r] & \fO_C(-\gb) \arrow[r] & \fE \arrow[r] & \fO_C(\gb + \ge) \arrow[r] & 0,
-                        \end{tikzcd} \]
+                                0 \arrow[r] & \fO_C(-\gb) \arrow[r] & \fE \arrow[r] & \fO_C(\gb + \ge) \arrow[r] & 0
+                            \end{tikzcd} , \]
                         so by (2.9), there is a section $D \sim C_0 + \gb f$, and it remains to show $|D|$ has no base points.
-                        For any point $P \in X - C_0$, since $|\gb|$ has no base points, we can find a divisor $\gb'$ in $|\gb|$ such that $\gb'f$ misses $P$, so $C_0 + \gb' f \in |D|$ misses $P$.
-                        If $P$ is a point in $C_0 \subset X$, then $|D|$ restricts to $|\gb + \ge|$, which is also base point free, so we can lift a divisor in $|\gb + \ge|$ which misses $P$ to a divisor in $|D|$.
+                        We will show for every $P \in X$, there exists $D' \in |D|$ such that $P \notin \Supp{D'}$.
+                        Let $\pi : X \to C$ be the projection map, and let $\sigma : C \to X$ be the map corresponding to the section $C_0$.
+
+                        \fbox{$P \notin C_0$} A divisor of the form $D' = C_0 + \gb'f$ where $\gb' \in |\gb|$ misses $\pi(P)$ will do.
+
+                        \fbox{$P \in C_0$} Consider the short exact sequence
+                        \[ \begin{tikzcd}
+                                0 \arrow[r] & \fO_X(-C_0) \arrow[r] & \fO_X \arrow[r] & \fO_{C_0} \arrow[r] & 0
+                            \end{tikzcd} . \]
+                        Tensoring by $\fO_X(D)$ and taking cohomology gives
+                        \[ \begin{tikzcd}
+                                {\cH^0(X, \fO_X(D))} \arrow[r, "\alpha"] & {\cH^0(C_0, \fO_{C_0}(\gb + \ge))} \arrow[r] & {\cH^1(X, \fO_X(\gb f))}
+                            \end{tikzcd}. \]
+                        Since $\gb$ is nonspecial, by (2.4) we have
+                        \begin{equation*}
+                            \cH^1(X, \fO_X(\gb f)) \cong \cH^1(C, \fO_C(\gb)) = 0,
+                        \end{equation*}
+                        so $\alpha$ is a surjection by exactness.
+                        This means for any divisor $\gb' \in |\gb + \ge|$ on $C_0 \cong C$, we can find $D' \in |D|$ such that $\sigma^*D' = \gb'$.
+                        If $|\gb + \ge|$ has no base points, then we can find a divisor in $|\gb + \ge|$ that misses $P \in C_0$, and we can lift it to a divisor in $|D|$ which also misses $P$ by construction.
+
                         Hence, $|D|$ has no base points.
 
                   \item[(b)] We will show $D$ is very ample by showing that the linear system $|D|$ separates points $P \neq Q$ and tangent vectors $t \in T_PX$.
-                  Let $\pi : X \to C$ be the projection map.
+                        Note that if $\gd$ is any divisor on $C$, and if there exists a point $P \in C$ such that $\gd - P$ is nonspecial, then $\gd$ is a nonspecial divisor on $C$.
+                        In particular, $\gb$ and $\gb + \ge$ are nonspecial, so we can resume from (a).
 
-                  \fbox{Case 1: $P, Q$ not both in $C_0$, and not both in any fiber.} A divisor of the form $C_0 + \gb' f$ such that $\gb' \in |\gb|$ separates $\pi(P), \pi(Q)$ in $C$ will separate $P, Q$ in $X$.
+                        \fbox{Case 1: $P, Q$ not both in $C_0$, and not both in any fiber.} Since $\gb$ is very ample, there exists a divisor $\gb' \in |\gb|$ which separates $\pi(P), \pi(Q)$ in $C$, so $C_0 + \gb'f \in |D|$ separates $P, Q$ in $X$.
 
-                  \fbox{Case 2: $P, t$ not both in $C_0$, and not both in any fiber.} If $t$ is not in any fiber, then its pushforward $\pi_* t \in T_{\pi(P)}C$ is nonzero, so a divisor of the form $C_0 + \gb' f$ such that $\gb' \in |\gb|$ contains $\pi(P)$ in its support and separates $t$ lifts to a divisor in $X$ that separates $t$.
+                        \fbox{Case 2: $P, t$ not both in $C_0$, and not both in any fiber.} Again, $|\gb|$ is very ample, so if $t$ is not in any fiber, then its pushforward $\pi_* t \in T_{\pi(P)}C$ is nonzero.
+                        Thus, we can find a divisor of the form $C_0 + \gb' f$ such that $\gb' \in |\gb|$ contains $\pi(P)$ in its support and separates $\pi_* t$ so that  $C_0 + \gb'f$ contains $P$ and separates $t$ in $X$.
 
-                  \fbox{Case 3: $P, Q$ or $P, t$ are both in $C_0$.} Consider the short exact sequence
-                  \[ \begin{tikzcd}
-                    0 \arrow[r] & \fO_X(-C_0) \arrow[r] & \fO_X \arrow[r] & \fO_{C_0} \arrow[r] & 0.
-                  \end{tikzcd} \]
+                        \fbox{Case 3: $P, Q$ or $P, t$ are both in $C_0$.} Consider the short exact sequence
+                        \[\begin{tikzcd}
+                                0 \arrow[r] & \fO_X(-C_0) \arrow[r] & \fO_X \arrow[r] & \fO_{C_0} \arrow[r] & 0
+                            \end{tikzcd}. \]
+                        Tensoring by $\fO_X(D)$ and taking cohomology gives
+                        \[\begin{tikzcd}
+                                \cH^0(X, \fO_X(D)) \arrow[r, "\beta"] & \cH^0(C_0, \fO_X(D) \otimes \fO_{C_0}) \arrow[r] & \cH^1(X, \fO_X(\gb f))
+                            \end{tikzcd}. \]
+                        Since $\fO_X(D) \otimes \fO_{C_0} \cong \fO_{C_0}(\gb + \ge)$ is very ample on $C_0 \cong C$, it suffices to show $\beta$ is a surjection.
+                        By (2.4) and the assumption that $|\gb|$ is nonspecial, we have $$\cH^1(X, \fO_X(\gb f)) \cong \cH^1(C, \pi_* \fO_X(\gb f)) \cong \cH^1(C, \fO_C(\gb)) = 0.$$
+                        Hence, $\beta$ is a surjection by exactness.
 
-                  \fbox{Case 4: $P, Q$ or $P, t$ are both in the same fiber.}
+                        \fbox{Case 4: $P, Q$ or $P, t$ are both in the same fiber.}
+                        Let $f$ be the fiber containing $P, Q$ or $P, t$.
+                        We have the identification $f \sim \pi^*(\pi(P)) = \pi(P) f$.
+                        Consider the short exact sequence
+                        \[\begin{tikzcd}
+                                0 \arrow[r] & \fO_X(-f) \arrow[r] & \fO_X \arrow[r] & \fO_{f} \arrow[r] & 0
+                            \end{tikzcd}. \]
+                        Tensoring by $\fO_X(D)$ and taking cohomology gives
+                        \[\begin{tikzcd}
+                                \cH^0(X, \fO_X(D)) \arrow[r, "\gamma"] & \cH^0(f, \fO_X(D) \otimes \fO_{f}) \arrow[r] & \cH^1(X, \fO_X(D - f))
+                            \end{tikzcd}, \]
+                        Since $D.f = 1$, the invertible sheaf $\fO_X(D) \otimes \fO_f$ is very ample on $f \cong \P^1$.
+                        Thus, to separate $P, Q$ or $P, t$, it will be sufficient to show that $\gamma$ is a surjection.
+                        The cokernel of this map lands in $\cH^1(X, \fO_X(D - f))$, which by (2.4) is isomorphic to $$\cH^1(C, \pi_* \fO_X(D - f)).$$
+                        On the other hand, we have
+                        \begin{equation*}
+                            \pi_*(\fO_X(D - f)) \cong \pi_*(\fO_X(C_0)) \otimes \fO_C(\gb - \pi(P)) \cong \fE \otimes \fO_C(\gb - \pi(P)).
+                        \end{equation*}
+                        Consider the following exact sequence
+                        \[ \begin{tikzcd}
+                                0 \arrow[r] & \fO_C \arrow[r] & \fE \arrow[r] & \fO_C(\ge) \arrow[r] & 0.
+                            \end{tikzcd} \]
+                        Tensoring by $\fO_C(\gb - \pi(P))$ gives
+                        \[ \begin{tikzcd}
+                                0 \arrow[r] & \fO_C(\gb - \pi(P)) \arrow[r] & \fE \otimes \fO_C(\gb - \pi(P)) \arrow[r] & \fO_C(\gb + \ge - \pi(P)) \arrow[r] & 0
+                            \end{tikzcd} , \]
+                        and taking cohomology gives
+                        \[ \begin{tikzcd}
+                                \cH^1(C, \fO_C(\gb - \pi(P))) \arrow[r] & \cH^1(C, \fE \otimes \fO_C(\gb - \pi(P))) \arrow[r] & \cH^1(C, \fO_C(\gb + \ge - \pi(P))).
+                            \end{tikzcd} \]
+                        The terms on the left and right are zero since we assumed $\gb - Q$ and $\gb + \ge - Q$ are nonspecial for any $Q \in C$, so the term in the middle is zero by exactness.
+                        We conclude that $\gamma$ is a surjection.
+
+                        Hence, $D$ is very ample.
               \end{itemize}
           \end{proof}
 
     \item Let $X$ be a ruled surface with invariant $e$ over an elliptic curve $C$, and let $\goth{b}$ be a divisor on $C$.
           \begin{itemize}
-              \item[(a)] If $\deg{\gb} \geq \ge + 2$, then there is a section $D \sim C_0 + \goth{b}f$ such that $|D|$ has no base points.
+              \item[(a)] If $\deg{\gb} \geq e + 2$, then there is a section $D \sim C_0 + \goth{b}f$ such that $|D|$ has no base points.
               \item[(b)] The linear system $|C_0 + \gb f|$ is very ample if and only if $\deg{\gb} \geq e + 3$.
           \end{itemize}
 
-          \begin{proof} $ $ \vspace{0pt}
-              \begin{itemize} [leftmargin=0cm]
-                  \item[(a)]
+          \begin{proof} \fbox{$e \geq 0$} If $\gd$ is a divisor of degree $d$ on $C$, then $d \geq 1$ if and only if $\gd$ is ample and nonspecial, $d\geq 2$ if and only if $\gd$ is base point free, and $d \geq 3$ if and only if $\gd$ is very ample.
+              If $\deg{\gb} \geq e + 2 \geq 2$, then $|\gb|$ and $|\gb + \ge|$ have no base points, and $\gb$ is nonspecial, so by (Ex. 2.11) there is a section $D \sim C_0 + \gb f$ such that $|D|$ has no base points.
 
-                  \item[(b)]
-              \end{itemize}
+              If $C_0 + \gb f$ is very ample and $e \geq -1$, then $\fO_{X}(C_0 + \gb f) \otimes \fO_{C_0}$ is very ample on $C_0$, which is so if and only if
+              \begin{equation*}
+                  \deg{\gb} - e = C_0.(C_0 + \gb f) = \deg \fO_{X}(C_0 + \gb f) \otimes \fO_{C_0} \geq 3.
+              \end{equation*}
+              Conversely, if $\deg{\gb} \geq e + 3$, then $\gb$ and $\gb + \ge$ are very ample on $C$, and $\gb - P, \gb + \ge - P$ have positive degrees, so they are nonspecial.
+              Hence, by (Ex. 2.11) $C_0 + \gb f$ is very ample.
+
+              \fbox{$e = -1$} Pick a base point $P \in C$ such that $\ge = P$, $X = \P(\fE)$, and $\fE$ fits into the short exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fO_C \arrow[r] & \fE \arrow[r] & \fO_C(P) \arrow[r] & 0
+                  \end{tikzcd} . \]
+              For the first statement, if $\deg \gb \geq 2$, then we return to the situation $e \geq 0$, so assume $\gb = Q$ for some $Q \in C$.
+              We wanto to show there is a section $D \sim C_0 + Qf$ such that $|D|$ has no base points.
+              We can assume $P \neq Q$ by (Ex. 2.7), so take a point $R \in C$ such that $2R \sim P + Q$.
+              This is possible, because the linear system $|P + Q|$ defines a two-to-one map of $C$ to $\P^1$, ramified at four points, and we can take $R$ to be one of them.
+              Imitating the proof of (Ex. 2.11), we can find sections in $\cH^0(C, \fO_C(P))$ and $\cH^0(C, \fO_C(P + Q)) \cong \cH^0(C, \fO_C(2R))$ that do not both vanish at every point in $C$ since $P \neq R$.
+              Hence, there exists a short sequence of locally free sheaves
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \fO_C(-Q) \arrow[r] & \fE \arrow[r] & \fO_C(P + Q) \arrow[r] & 0
+                  \end{tikzcd} , \]
+            so there is a section $D \sim C_0 + Q f$, and it remains to show $|D|$ has no base points.
+
+              Now suppose $\gb$ is a divisor on $C$ with $\deg \gb \geq e + 3 = 2$.
+              If $\deg \gb \geq 3$, then we return to the situation $e \geq 0$, so assume $\deg \gb = 2$ and write $\gb = S + T$ for some points $S, T \in C$ not necessarily distinct.
+              We want to show the linear system $|C_0 + (S + T)f|$ is very ample.
           \end{proof}
 
     \item For every $e \geq -1$ and $n \geq e + 3$, there is an elliptic scroll of degree $d = 2n - e$ in $\P^{d - 1}$.
@@ -625,7 +708,7 @@
                         \begin{equation*}
                             s = u^2 \dd x_1 - t^2 \dd x_2.
                         \end{equation*}
-                        Its image under $\beta$ can be computed by plugging $x_2 = t^3 u$ and $x_3 = tu^3$,
+                        Its image under $\beta$ can be computed by plugging in $x_2 = t^3 u$ and $x_3 = tu^3$,
                         \begin{align*}
                             \beta'(s) & = u^2 \dd(t^3 u) - t^2 \dd (tu^3)                               \\
                                       & = u^2(3t^2 u \dd t + t^3 \dd u) - t^2(u^3 \dd t + 3 tu^2 \dd u) \\

@@ -40,12 +40,12 @@
         \begin{proof}
           If $f$ is flat, then $\fL \otimes \fM^{-1}$ is flat over $Y$.
           For each $y \in Y$, $(\fL \otimes \fM^{-1})_y \cong \fO_{X_y}$ on the fibre $X_y$, and each $X_y$ is integral and projective over $k(y)$, so we have $$\cdh^0(X_y, (\fL \otimes \fM^{-1})_y) = \cdh^0(X_y, \fO_{X_y}) = 1.$$
-          Thus, $f_*(\fL \otimes \fM^{-1})$ is locally free of rank one on $Y$ (12.9), say $f^*f_*(\fL \otimes \fM^{-1}) = \fN$ for some $\fN \in \pic{Y}$.
+          Thus, $f_*(\fL \otimes \fM^{-1})$ is locally free of rank one on $Y$ (12.9), say $f_*(\fL \otimes \fM^{-1}) = \fN$ for some $\fN \in \pic{Y}$.
           Applying $f^*$ to both sides, and using the fact that the natural morphism
           \begin{equation*}
             f^*f_*(\fL \otimes \fM^{-1}) \to \fL \otimes \fM^{-1}
           \end{equation*}
-          is actually an isomorphism because $f_*(\fL \otimes \fM^{-1})$ is locally free of rank one, we obtain our desired result.
+          is actually an isomorphism because $f_*(\fL \otimes \fM^{-1})$ is locally free of rank one, we obtain our desired isomorphism.
         \end{proof}
 
   \item[\textbf{5.}] Let $Y$ be an integral scheme of finite type over an algebraically closed field $k$. Let $\mathscr{E}$ be a locally free sheaf on $Y$, and let $X = \P(\fE)$. Then show that $\pic{X} \cong (\pic{Y}) \times \Z$. This strengthens (II, Ex. 7.9).
@@ -71,7 +71,7 @@
           so if $\pi^*\fN \cong \fO_X$, then \(\fN \cong \pi_*\fO_X \cong \fO_Y.\)
           Hence, $\varphi$ is injective.
 
-          The hart part is to show $\varphi$ is surjective.
+          The hard part is to show $\varphi$ is surjective.
           Since $\pi$ is a flat projective morphism, we can apply the results of \SS 12.
           In particular, if $\fM$ is an invertible sheaf on $X$, then $\fM_y$ is an invertible sheaf on $\P_y$ for every $y \in Y$, so we can write $\fM_y \cong \fO(d_y)$ for some $d_y \in \Z$.
           If we can show $d_y$ is independent of $y \in Y$, then by (Ex. 12.4) there exists an invertible sheaf $\fN$ on $Y$ such that $\fM \cong \fO_X(d) \otimes \pi^*\fN$ for some $d \in \Z$, which proves $\varphi$ is surjective.
