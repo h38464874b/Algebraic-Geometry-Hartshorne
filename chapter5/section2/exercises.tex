@@ -15,9 +15,12 @@
     \item If $X$ is a birationally ruled surface, show that the curve $C$, such that $X$ is birationally equivalent to $C \times \P^1$, is unique up to isomorphism.
 
           \begin{proof}
-              Let $C$ and $C'$ be two nonsingular curves such that $X$ is birational to $C \times \P^1$ and $C' \times \P^1$.
-              Then, there exists rational maps $\pi, \pi' : X \dasharrow C, C'$ and sections $\sigma, \sigma' : C, C' \to X$ such that $\pi \circ \sigma$ and $\pi' \circ \sigma'$ extend to the identity morphism on $C$ and $C'$, respectively.
-              Then $\pi' \circ \sigma : C \to C'$ and $\pi \circ \sigma' : C' \to C$ are inverses to each other, so we have an isomorphism $C \cong C'$.
+              Let $C$ and $C'$ be two nonsingular curves such that $X$ is birational to $C \times \P^1$ and $C' \times \P^1$, and suppose $\varphi : C \times \P^1 \to C' \times \P^1$ is a birational map with inverse $\psi$.
+              The case is trivial if either $C$ or $C'$ has genus 0, so assume otherwise.
+              For any fiber $f$ of $C \times \P^1$, consider the composition map $p_1 \circ \varphi : f \to C'$.
+              Since both $f$ and $C'$ are complete curves, $p_1 \circ \varphi$ extends to a morphism, and if $C'$ has genus $> 0$, then it must be constant.
+              Therefore, $p_1 \circ \varphi$ factors through $p_1 : C \times \P^1 \to C$, which extends to a morphism $C \to C'$.
+              Doing the same thing for $\psi$ gives an isomorphism of $C$ with $C'$.
           \end{proof}
 
     \item Let $X$ be the ruled surface $\P(\fE)$ over a curve $C$.
@@ -71,7 +74,6 @@
                         But by (III, Ex. 7.2), $\cH^1(\Omega) = k$, a contradiction.
               \end{itemize}
           \end{proof}
-          \filbreak
 
     \item Let $C$ be a curve of genus $g$, and let $X$ be the ruled surface $C \times \P^1$.
           We consider the question, for what integers $s \in \Z$ does there exist a section $D$ of $X$ with $D^2 = s$?
@@ -264,7 +266,6 @@
           \end{proof}
 
     \item Show that every locally free sheaf of finite rank on $\P^1$ is isomorphic to a direct sum of invertible sheaves.
-          \filbreak
 
           \begin{proof}
               We call any locally free sheaf $\fE$ on a curve $C$ \textit{normalized} if $\cH^0(C, \fE) \neq0$ and $\cH^0(C, \fE \otimes \fL) = 0$ for all invertible sheaves $\fL$ on $C$ with $\deg{\fL} < 0$.
@@ -348,7 +349,7 @@
               \end{equation*}
               Conversely, if $Y$ has even degree, say $\deg{Y} = 2a$, then $Y \sim a(C_0 + 2f) - bC_0$ with $0 \leq b < a$ (1.3) (2.20).
               Let $\fI = \fO_\F(-Y)$ be the ideal sheaf of $Y$ as a closed subscheme of $\F$.
-              Tensoring by $\fO_\F(a)$, taking global sections, and applying (2.4) gives
+              We can tensor by $\fO_\F(a)$, take global sections, and apply (2.4), which gives
               \begin{equation*}
                   \cH^0(\F, \fI(a)) \cong \cH^0(\P^1, S^b(\fE)),
               \end{equation*}
@@ -356,7 +357,7 @@
               \begin{equation*}
                   S^b(\fE) \cong \bigoplus_{i = 0}^b \fO_{\P^1}(-2i).
               \end{equation*}
-              It follows that there exists a section in $|\fO_\F(a)|$ containing $Y$, and since $\cH^0(\P^3, \fO_{\P^3}(a)) \to \cH^0(\F, \fO_\F(a)) \to 0$ is surjective, we can find a homogenous polynomial of degree $a$ in $\P^3$ containing $Y$.
+              It follows that there exists a section in $|\fO_\F(a)|$ containing $Y$, and since the restriction map $$\cH^0(\P^3, \fO_{\P^3}(a)) \to \cH^0(\F, \fO_\F(a)) \to 0$$ is surjective, we can find a homogenous polynomial of degree $a$ in $\P^3$ containing $Y$.
               So by reasons of degree, $Y$ is the complete intersection of $X_0$ with a surface of degree $a$.
 
               If $Y$ has odd degree, say $\deg{Y} = 2a + 1$, then $Y$ is contained in a surface of degree $a + 1$.
@@ -512,7 +513,7 @@
 
               If $C_0 + \gb f$ is very ample and $e \geq -1$, then $\fO_{X}(C_0 + \gb f) \otimes \fO_{C_0}$ is very ample on $C_0$, which is so if and only if
               \begin{equation*}
-                  \deg{\gb} - e = C_0.(C_0 + \gb f) = \deg \fO_{X}(C_0 + \gb f) \otimes \fO_{C_0} \geq 3.
+                  (\deg{\gb}) - e = C_0.(C_0 + \gb f) = \deg \fO_{X}(C_0 + \gb f) \otimes \fO_{C_0} \geq 3.
               \end{equation*}
               Conversely, if $\deg{\gb} \geq e + 3$, then $\gb$ and $\gb + \ge$ are very ample on $C$, and $\gb - P, \gb + \ge - P$ have positive degrees, so they are nonspecial.
               Hence, by (Ex. 2.11) $C_0 + \gb f$ is very ample.
@@ -522,19 +523,59 @@
                       0 \arrow[r] & \fO_C \arrow[r] & \fE \arrow[r] & \fO_C(P) \arrow[r] & 0
                   \end{tikzcd} . \]
               For the first statement, if $\deg \gb \geq 2$, then we return to the situation $e \geq 0$, so assume $\gb = Q$ for some $Q \in C$.
-              We wanto to show there is a section $D \sim C_0 + Qf$ such that $|D|$ has no base points.
-              We can assume $P \neq Q$ by (Ex. 2.7), so take a point $R \in C$ such that $2R \sim P + Q$.
+              We want to show there is a section $D \sim C_0 + Qf$ such that $|D|$ has no base points.
+              Take a point $R \in C$ distinct from $P$ and $Q$ such that $2R \sim P + Q$.
               This is possible, because the linear system $|P + Q|$ defines a two-to-one map of $C$ to $\P^1$, ramified at four points, and we can take $R$ to be one of them.
-              Imitating the proof of (Ex. 2.11), we can find sections in $\cH^0(C, \fO_C(P))$ and $\cH^0(C, \fO_C(P + Q)) \cong \cH^0(C, \fO_C(2R))$ that do not both vanish at every point in $C$ since $P \neq R$.
-              Hence, there exists a short sequence of locally free sheaves
+              Imitating the proof of (Ex. 2.11), we can find sections in $\cH^0(C, \fO_C(Q))$ and $\cH^0(C, \fO_C(P + Q)) \cong \cH^0(C, \fO_C(2R))$ that do not both vanish at every point in $C$ since $Q \neq R$.
+              Hence, we have a short sequence of locally free sheaves
               \[ \begin{tikzcd}
                       0 \arrow[r] & \fO_C(-Q) \arrow[r] & \fE \arrow[r] & \fO_C(P + Q) \arrow[r] & 0
                   \end{tikzcd} , \]
-            so there is a section $D \sim C_0 + Q f$, and it remains to show $|D|$ has no base points.
+              so there is a section $D \sim C_0 + Q f$, and it remains to show $|D|$ has no base points.
+              By (Ex. 2.7), any point $S \in C$ defines a section $C_S = C_0 + (S - P)f$ such that $C_S^2 = 1$ and $C_0 \cap C_S = S$.
+              Therefore, we can find a divisor of the form $C_0 + Qf$ or $C_S + (P + Q)f$ which misses any given point since the linear system $|P + Q|$ on $C$ is base point free.
 
               Now suppose $\gb$ is a divisor on $C$ with $\deg \gb \geq e + 3 = 2$.
-              If $\deg \gb \geq 3$, then we return to the situation $e \geq 0$, so assume $\deg \gb = 2$ and write $\gb = S + T$ for some points $S, T \in C$ not necessarily distinct.
-              We want to show the linear system $|C_0 + (S + T)f|$ is very ample.
+              If $\deg \gb \geq 3$, then we can apply the same argument as in $e \geq 0$, so assume $\deg \gb = 2$ and write $\gb = S + T$ for some points $S, T \in C$ not necessarily distinct.
+              Let $A \neq B$ be points in $X$, and let $t \in T_A X$.
+              We will show $D = C_0 + (S + T)f$ is very ample by imitating the proof of (Ex. 2.11).
+
+              \fbox{Case 1: $A, B$ not both in $C_0$, and not both in any fiber.}
+
+              \fbox{Case 2: $A, t$ not both in $C_0$, and not both in any fiber.}
+
+              \fbox{Case 3: $A, B$ or $A, t$ are both in $C_0$.}
+              Since $C_0.D = 3$, the invertible sheaf $\fO_X(D) \otimes \fO_{C_0}$ is very ample on $C_0 \cong C$, so it is enough to show the natural map
+              \begin{equation*}
+                  \cH^0(X, \fO_X(D)) \to \cH^0(C_0, \fO_X(D) \otimes \fO_{C_0})
+              \end{equation*}
+              is surjective.
+              The cokernel of this map lands in $\cH^1(X, \fO_X(D - C_0))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - C_0))$.
+              On the other hand, $D - C_0 \sim (S + T) f$, so
+              \begin{equation*}
+                  \pi_*\fO_X(D - C_0) \cong \fO_C(S + T),
+              \end{equation*}
+              which is nonspecial on $C$.
+              Hence, $\cH^1(X, \fO_X(D - C_0)) = 0$, and the map above is surjective.
+
+              \fbox{Case 4: $A, B$ or $A, t$ are both in the same fiber $f_Q = \pi^*Q$ for some $Q \in C$.}
+              Since $D.f_Q = 1$, the invertible sheaf $\fO_X(D) \otimes \fO_{f_Q}$ is very ample on $f_Q \cong \P^1$, so it is enough to show the natural map
+              \begin{equation*}
+                  \cH^0(X, \fO_X(D)) \to \cH^0(f_Q, \fO_X(D) \otimes \fO_{f_Q})
+              \end{equation*}
+              is surjective.
+              The cokernel of this map lands in $\cH^1(X, \fO_X(D - f_Q))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - f_Q))$.
+              On the other hand, $D - f_Q \sim C_0 + (S + T - Q)f$, so if we write $R \sim S + T - Q$ for some $R \in C$, then
+              \begin{equation*}
+                  \pi_*\fO_X(D - f_Q) \cong \fE \otimes \fO_{C_0}(R)
+              \end{equation*}
+              by the projection formula.
+              We have a short exact sequence
+              \[ \begin{tikzcd}
+                      {\cH^1(C, \fO_C(R))} \arrow[r] & {\cH^1(C, \fE \otimes \fO_C(R))} \arrow[r] & {\cH^1(C, \fO_C(P + R))}
+                  \end{tikzcd}, \]
+            and since the terms on the left and right are zero, the term in the middle is zero.
+            Hence, $\cH^1(X, \fO_X(D - f_Q)) = 0$, and the map above is surjective.
           \end{proof}
 
     \item For every $e \geq -1$ and $n \geq e + 3$, there is an elliptic scroll of degree $d = 2n - e$ in $\P^{d - 1}$.

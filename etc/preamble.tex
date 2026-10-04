@@ -1,5 +1,6 @@
 % Layout
 \usepackage[margin=1in]{geometry}
+
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage[toc,page]{appendix}
@@ -18,15 +19,22 @@
 
 % Fonts
 \usepackage[T1]{fontenc}
-% \usepackage{eucal}
-% \usepackage[euler-digits,small]{eulervm}
-% \usepackage{tgbonum}
-\usepackage[scaled=0.92]{helvet}	% set Helvetica as the sans-serif font
-\renewcommand{\rmdefault}{ptm}
-% \usepackage[sans]{dsfont}
-%\newcommand\dsone{\mathds{1}}
-\usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+\usepackage{tgschola}
+\usepackage[scaled=0.92]{helvet}
+
+\usepackage[
+   lite,
+   subscriptcorrection,
+   slantedGreek,
+   nofontinfo
+]{mtpro2}
+
 \usepackage{upgreek}
+\usepackage{dsfont}
+
+% Paragraph typography
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.25em}
 
 % Utilities
 \usepackage{etoolbox}
@@ -40,31 +48,39 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{outline}[theorem]{Outline}
 
 % Dynkin Diagrams
 \def\row#1/#2!{\dynkin{#1}{#2}\\}
+
 \newcommand{\tble}[1]{
    \renewcommand*\do[1]{\row##1!}
    \[
-      \begin{array}{ll}\docsvlist{#1}\end{array}
+      \begin{array}{ll}
+         \docsvlist{#1}
+      \end{array}
    \]
 }
 
 % Extra Fonts
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
 \newcommand{\goth}[1]{\mathfrak{#1}}
 \newcommand{\pzc}[1]{\mathpzc{#1}}
 
 % Commands for FONT characters
 \let\SS\S
 \let\ag\gg
+
 \ExplSyntaxOn
+
 % Goth Font
 \clist_map_inline:nn
 {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
@@ -102,9 +118,11 @@
    \cs_undefine:c { #1 }
    \cs_new:cpn { #1 } { \mathbb{#1} }
 }
+
 \ExplSyntaxOff
 
-% Cateogries
+% Categories
+\newcommand{\cC}{\mathbf{C}}
 \newcommand{\cSet}{\mathbf{Set}}
 \newcommand{\cAb}{\mathbf{Ab}}
 \newcommand{\cGroup}{\mathbf{Grp}}
@@ -112,6 +130,11 @@
 \newcommand{\ckAlg}[1]{\mathbf{Alg}(#1)}
 \newcommand{\cMod}[1]{\mathbf{Mod}(#1)}
 \newcommand{\cdh}{h}
+\newcommand{\opp}[1]{{#1}^\text{op}}
+\newcommand{\et}[1]{{#1}_\text{ét}}
+\newcommand{\sep}[1]{{#1}^\text{sep}}
+\DeclareMathOperator{\cSch}{\mathbf{Sch}}
+
 \DeclareMathOperator{\Mor}{Mor}
 
 % Relative stuff
@@ -159,6 +182,7 @@
 \DeclareMathOperator{\Supp}{Supp}
 \DeclareMathOperator{\trd}{tr.d.}
 \DeclareMathOperator{\Frac}{Frac}
+
 \newcommand{\red}[1]{{#1}_\text{red}}
 \newcommand{\gsecx}[1]{\Gamma(X, #1)}
 \newcommand{\sh}[1]{{#1}^\text{sh}}
