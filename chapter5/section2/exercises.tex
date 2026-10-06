@@ -299,7 +299,9 @@
     \item On the elliptic ruled surface $X$ of (2.11.6), show that the sections $C_0$ with $C_0^2 = 1$ form a one-dimensional algebraic family, parametrized by the points of the base curve $C$, and that no two are linearly equivalent.
 
           \begin{proof}
-              Combine (III, Ex. 11.5), (2.9), and the fact that any divisor of positive degree on an elliptic curve is linearly equivalent to an effective divisor.
+              Combine (III, Ex. 11.5), (2.9), (2.16) and the fact that any divisor of positive degree on an elliptic curve is linearly equivalent to an effective divisor.
+              The correspondence is given by for each closed point $Q \in C$, there is a section linearly inequivalent to $C_0 + (Q - P)f$, i.e., there is a surjection $\fE \to \fO_C(Q - P)$ of $\fO_C$-modules.
+              By (2.1), $\pi_*(\fO_X(C_0 + (Q - P)f))$ is isomorphic to $\fE \otimes \fO_C(Q - P)$, and by (2.16) these locally free sheaves of rank 2 are in one-to-one corresponding with the closed points of $C$.
           \end{proof}
 
     \item A locally free sheaf $\fE$ on a curve $C$ is said to be \textit{stable} if for every quotient locally free sheaf $\fE \to \fF \to 0$, $\fF \neq \fE$, $\fF \neq 0$, we have
@@ -532,98 +534,203 @@
                       0 \arrow[r] & \fO_C(-Q) \arrow[r] & \fE \arrow[r] & \fO_C(P + Q) \arrow[r] & 0
                   \end{tikzcd} , \]
               so there is a section $D \sim C_0 + Q f$, and it remains to show $|D|$ has no base points.
-              By (Ex. 2.7), any point $S \in C$ defines a section $C_S = C_0 + (S - P)f$ such that $C_S^2 = 1$ and $C_0 \cap C_S = S$.
-              Therefore, we can find a divisor of the form $C_0 + Qf$ or $C_S + (P + Q)f$ which misses any given point since the linear system $|P + Q|$ on $C$ is base point free.
+              From now, if $x$ is any point in $X$, then denote $P_x = \pi(x) \in C$, and if $Q$ is any point in $C$, then denote $f_Q = \pi^{-1}(Q)$.
+              In particular, $x \in X$ lies on the fiber $f_{\pi(x)}$.
+              We only need to check the points in the support of $C_0 + Qf$, and since $D.f_Q = 1$ and $D.C_0 = 2$, $\fO_X(D)$ restricts to a base-point free line bundle on $f_Q$ and $C_0$, so it is enough to show the natural maps
+              \begin{align}
+                  \cH^0(X, \fO_X(D)) & \to \cH^0(f_Q, \fO_X(D) \otimes \fO_{f_Q}), \\
+                  \cH^0(X, \fO_X(D)) & \to \cH^0(C_0, \fO_X(D) \otimes \fO_{C_0}),
+              \end{align}
+              are surjective.
+              We begin with $f_Q$.
+              The cokernel of (1) lands in $\cH^1(X, \fO_X(D - f_Q))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - f_Q))$.
+              On the other hand, $D - f_Q \sim C_0$, so
+              \begin{equation*}
+                  \pi_*\fO_X(D - f_Q) \cong \fE,
+              \end{equation*}
+              and $\cH^1(C, \fE) = 0$ since $\fE$ is the unique nontrivial extension of $\fO_C(P)$ by $\fO_C$.
+              Therefore, (1) is surjective.
+              Moving on to $C_0$, the cokernel of (2) lands in $\cH^1(X, \fO_X(D - C_0))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D -C_0))$.
+              On the other hand, $D - C_0 \sim f_Q$, so
+              \begin{equation*}
+                  \pi_*\fO_X(D - C_0) \cong \fO_C(Q),
+              \end{equation*}
+              which is nonspecial.
+              Therefore, $\cH^1(X, \fO_X(D - C_0)) = 0$, and (2) is surjective.
 
               Now suppose $\gb$ is a divisor on $C$ with $\deg \gb \geq e + 3 = 2$.
-              If $\deg \gb \geq 3$, then we can apply the same argument as in $e \geq 0$, so assume $\deg \gb = 2$ and write $\gb = S + T$ for some points $S, T \in C$ not necessarily distinct.
-              Let $A \neq B$ be points in $X$, and let $t \in T_A X$.
-              We will show $D = C_0 + (S + T)f$ is very ample by imitating the proof of (Ex. 2.11).
+              If $\deg \gb \geq 3$, then we can apply the same argument as in $e \geq 0$, so assume $\deg \gb = 2$, which means $\gb$ is a $g^1_2$ on $C$.
+              Let $x \neq y$ be points in $X$, and let $t$ be a tangent vector at $x$.
+              We will show $D = C_0 + \gb f$ is very ample by showing that the linear system $|D|$ separates points and tangent vectors.
 
-              \fbox{Case 1: $A, B$ not both in $C_0$, and not both in any fiber.}
+              \fbox{Case 1: $x, y$ not both in $C_0$, and not both in any fiber.}
+              Without loss of generality, assume $y \notin C_0$, and let $Q_x$ be a point in $C$ such that $P_x + Q_x \in |\gb|$.
+              If $P_y \neq Q_x$, then the divisor $C_0 + (P_x + Q_x)f$ separates $x$ and $y$.
+              Otherwise, we have $P_x + P_y \in |\gb|$, and for any point $z \in X$, consider the section $C_z = C_0 + (P_z - P)f$ (Ex. 2.7).
+              Note that if $P_z \neq P$, then $C_0 \cap C_z = P_z$.
+              If $P = P_x$, then $C_y + 2 f_P \in |D|$ goes through $x$ but not $y$.
+              The hard case is $P = P_y$, and we further divide to two cases.
 
-              \fbox{Case 2: $A, t$ not both in $C_0$, and not both in any fiber.}
+              \fbox{Case 1a. $x \in C_0$} Since $y \notin C_0$, let $S + T \in |\gb|$ such that $S, T \neq P_y$, then then divisor $C_0 + (S + T)f \in |D|$ goes through $x$ but not $y$.
 
-              \fbox{Case 3: $A, B$ or $A, t$ are both in $C_0$.}
+              \fbox{Case 1b. $x \notin C_0$} The section $C_x = C_0 + (P_x - P)f$ does not pass through $x$, and since $2P = 2P_y \in |\gb + P - P_x|$, the section $C_x + 2f_{P} \in |D|$ goes through $y$ but not $x$.
+              
+
+              \fbox{Case 2: $x, t$ not both in $C_0$, and not both in any fiber.} A divisor of the form $C_0 + (P_x + Q_x)f$ will do.
+
+              \fbox{Case 3: $x, y$ or $x, t$ are both in $C_0$.}
               Since $C_0.D = 3$, the invertible sheaf $\fO_X(D) \otimes \fO_{C_0}$ is very ample on $C_0 \cong C$, so it is enough to show the natural map
               \begin{equation*}
                   \cH^0(X, \fO_X(D)) \to \cH^0(C_0, \fO_X(D) \otimes \fO_{C_0})
               \end{equation*}
               is surjective.
               The cokernel of this map lands in $\cH^1(X, \fO_X(D - C_0))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - C_0))$.
-              On the other hand, $D - C_0 \sim (S + T) f$, so
+              On the other hand, $D - C_0 \sim \gb f$, so
               \begin{equation*}
-                  \pi_*\fO_X(D - C_0) \cong \fO_C(S + T),
+                  \pi_*\fO_X(D - C_0) \cong \fO_C(\gb),
               \end{equation*}
               which is nonspecial on $C$.
               Hence, $\cH^1(X, \fO_X(D - C_0)) = 0$, and the map above is surjective.
 
-              \fbox{Case 4: $A, B$ or $A, t$ are both in the same fiber $f_Q = \pi^*Q$ for some $Q \in C$.}
-              Since $D.f_Q = 1$, the invertible sheaf $\fO_X(D) \otimes \fO_{f_Q}$ is very ample on $f_Q \cong \P^1$, so it is enough to show the natural map
+              \fbox{Case 4: $x, y$ or $x, t$ are both in the same fiber $f = f_Q$ for some $Q \in C$.}
+              Since $D.f = 1$, the invertible sheaf $\fO_X(D) \otimes \fO_{f}$ is very ample on $f \cong \P^1$, so it is enough to show the natural map
               \begin{equation*}
-                  \cH^0(X, \fO_X(D)) \to \cH^0(f_Q, \fO_X(D) \otimes \fO_{f_Q})
+                  \cH^0(X, \fO_X(D)) \to \cH^0(f, \fO_X(D) \otimes \fO_{f})
               \end{equation*}
               is surjective.
-              The cokernel of this map lands in $\cH^1(X, \fO_X(D - f_Q))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - f_Q))$.
-              On the other hand, $D - f_Q \sim C_0 + (S + T - Q)f$, so if we write $R \sim S + T - Q$ for some $R \in C$, then
+              The cokernel of this map lands in $\cH^1(X, \fO_X(D - f))$, which by (2.4) is isomorphic to $\cH^1(C, \pi_*\fO_X(D - f))$.
+              On the other hand, $D - f \sim C_0 + (\gb - Q)f$, so if we write $R \sim \gb - Q$ for some $R \in C$, then
               \begin{equation*}
-                  \pi_*\fO_X(D - f_Q) \cong \fE \otimes \fO_{C_0}(R)
+                  \pi_*\fO_X(D - f) \cong \fE \otimes \fO_{C}(R)
               \end{equation*}
               by the projection formula.
               We have a short exact sequence
               \[ \begin{tikzcd}
                       {\cH^1(C, \fO_C(R))} \arrow[r] & {\cH^1(C, \fE \otimes \fO_C(R))} \arrow[r] & {\cH^1(C, \fO_C(P + R))}
                   \end{tikzcd}, \]
-            and since the terms on the left and right are zero, the term in the middle is zero.
-            Hence, $\cH^1(X, \fO_X(D - f_Q)) = 0$, and the map above is surjective.
+              and since the terms on the left and right are zero, the term in the middle is zero.
+              Hence, $\cH^1(X, \fO_X(D - f)) = 0$, and the map above is surjective.
           \end{proof}
 
     \item For every $e \geq -1$ and $n \geq e + 3$, there is an elliptic scroll of degree $d = 2n - e$ in $\P^{d - 1}$.
           In particular, there is an elliptic scroll of degree 5 in $\P^4$.
 
           \begin{proof}
-
+              For any divisor $\gb$ on $C$ of degree $n$, we use the divisor $D = C_0 + \gb f$.
+              By (Ex. 2.12), $C_0 + \gb f$ is very ample, and since $D.f = 1$ for any fiber $f$, the image of $X$ in $|D| \cong \P^N$ is a scroll.
+              The degree of the image is
+              \begin{equation*}
+                  D^2 = 2(\deg{\gb}) - e = 2n - e,
+              \end{equation*}
+              and it remains to compute $N$.
+              By (2.4), we find that
+              \begin{equation*}
+                  \cH^0(X, \fO_X(D)) = \cH^0(C, \pi_*\fO_X(D)) = \cH^0(C, \fE \otimes \fO_C(\gb)),
+              \end{equation*}
+              and as in the proof of (Ex. 2.12), we have a short exact sequence
+              \[ \begin{tikzcd}
+                      0 \arrow[r] & \cH^0(C, \fO_C(\gb)) \arrow[r] & \cH^0(C, \fE \otimes \fO_C(\gb)) \arrow[r] & \cH^0(C, \fO_C(\gb + P)) \arrow[r] & 0.
+                  \end{tikzcd} \]
+              Hence, we can compute $N$ using exactness of above
+              \begin{align*}
+                  N & = h^0(C, \fE \otimes \fO_C(\gb)) - 1                \\
+                    & = h^0(C, \fO_C(\gb)) + h^0(C, \fO_C(\gb + \ge)) - 1 \\
+                    & = 2(\deg \gb) + \deg{\ge} - 1                       \\
+                    & = 2n - e - 1.
+              \end{align*}
+              To obtain an elliptic scroll of degree 5 in $\P^4$, take $n = 2$ and $e = -1$.
           \end{proof}
 
     \item Let $X$ be a ruled surface over a curve of genus $g$, with invariant $e < 0$, and assume that $\car{k} = p > 0$ and $g \geq 2$.
           \begin{itemize}
-              \item[(a)] If $Y \equiv aC_0 + bf$ is an irreducible curve $\neq C_0. f$, then either $a = 1$, $b \geq 0$, or $2 \leq a \leq p - 1$, $b \geq \frac{1}{2}ae$, or $a \geq p$, $b \geq \frac{1}{2} ae + 1 - g$.
+              \item[(a)] If $Y \equiv aC_0 + bf$ is an irreducible curve $\neq C_0, f$, then either $a = 1$, $b \geq 0$, or $2 \leq a \leq p - 1$, $b \geq \frac{1}{2}ae$, or $a \geq p$, $b \geq \frac{1}{2} ae + 1 - g$.
               \item[(b)] If $a > 0$ and $b > a(\frac{1}{2}e + (1/p)(g - 1))$, then any divisor $D \equiv aC_0 + bf$ is ample.
                     On the other hand, if $D$ is ample, then $a > 0$ and $b > \frac{1}{2}ae$.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)]
+                  \item[(a)] Let $\tilde{Y}$ be the normalization of $Y$, and consider the composition of the natural map $\tilde{Y} \to Y$ with the projection $\pi : Y \to C$.
+                        If $a \leq p - 1$, then $\pi$ is separable, so we can apply the same argument as in (2.21).
+                        If $a \geq p$, then $\pi : \tilde{Y} \to C$ may not be separable.
+                        By (IV, 2.5.4), $\pi : \tilde{Y} \to C$ factors as the composite $\tilde{Y} \to Z \to C$, where $Z$ is a smooth curve over $k$, $\tilde{Y} \to Z$ is purely inseparable of degree $p^n$ for some $n \geq 0$, and $Z \to C$ is finite, separable of degree $d$ such that $a = d p^n$.
+                        By Hurwitz's theorem and the fact that $p_a(Y) \geq g(\tilde{Y})$, we have
+                        \begin{equation*}
+                            2p_a(Y) - 2 \geq 2g(\tilde{Y}) - 2 = 2g(Z) - 2 \geq d(2g - 2).
+                        \end{equation*}
+                        and the adjunction formula (1.5) gives
+                        \begin{equation*}
+                            2p_a(Y) - 2 = Y.(Y + K),
+                        \end{equation*}
+                        where $K$ is a canonical divisor of $X$.
+                        Substituting $Y \equiv aC_0 + bf$ and $K \equiv -2C_0 + (2g - 2 - e)f$ from (2.11), and combining with the inequality above, we find that
+                        \begin{equation*}
+                            b(a - 1) \geq \frac{1}{2}ae(a - 1) + (d - a)(g - 1).
+                        \end{equation*}
+                        If $a \geq p$, then $\frac{d - a}{a - 1} \geq -1$, so
+                        \begin{equation*}
+                            b \geq \frac{1}{2}ae + 1 - g.
+                        \end{equation*}
 
-                  \item[(b)]
+                  \item[(b)] If $D$ is ample, then by (1.10) $D.f = a > 0$, and $D^2 = 2ab - a^2 e > 0$, so $b > \frac{1}{2}ae$.
+                        If $a > 0$ and $b > a(\frac{1}{2}e + (1/p)(g - 1))$, then $D.f = a > 0$, $D.C_0 = a((1/p)(g - 1) - \frac{1}{2}e) > 0$, and
+                        \begin{equation*}
+                            D^2 = a(2b - ae) > \frac{2a}{p}(g - 1) > 0.
+                        \end{equation*}
+                        If $Y \equiv a'C_0 + b'f$ is any irreducible curve $\neq C_0, f$, then
+                        \begin{equation*}
+                            D.Y = ab' + a'b - aa'e.
+                        \end{equation*}
+                        Note that $b > \frac{1}{2}ae$, so the same argument as in (2.21) for when $1 \leq a' \leq p - 1$ applies here as well.
+                        Now if $a' = 1$, then $b' \geq 0$, so $$D.Y > \frac{1}{2}ae - ae = -\frac{1}{2}ae > 0.$$
+                        If $2 \leq a' \leq p - 1$, then $b' \geq \frac{1}{2}a'e$, so $$D.Y > \frac{1}{2}aa'e + \frac{1}{2}aa'e - aa'e = 0.$$
+                        If $a' \geq p$, then $b' \geq \frac{1}{2}a'e + 1 - g$, so
+                        \begin{equation*}
+                            D.Y > a (\frac{1}{2}a'e + 1 - g) + a'a(\frac{1}{2}e + (1/p)(g - 1)) - aa'e = \bigg( \frac{a'}{p} - 1 \bigg)a(g - 1) > 0.
+                        \end{equation*}
+                        Therefore by (1.10), $D$ is ample.
               \end{itemize}
           \end{proof}
 
-    \item \textit{Funny behaviour in characteristic $p$.} Let $C$ be the plane curve $x^3y + y^3z + z^3x = 0$ over a field $k$ of characteristic 3.
-          \begin{itemize}
-              \item[(a)] Show that the action of the $k$-linear Frobenius morphism $f$ on $\cH^1(C, \fO_C)$ is identically 0.
-              \item[(b)] Fix a point $P \in C$, and show that there is a nonzero $\xi \in \cH^1(C, \fO_C(-P))$ such that $f^*\xi = 0$ in $\cH^1(C, \fO_C(-3P))$.
-              \item[(c)] Now let $\fE$ be defined by $\xi$ as an extension
-                    \[ \begin{tikzcd}
-                            0 \arrow[r] & \fO_C \arrow[r] & \fE \arrow[r] & \fO_C(P) \arrow[r] & 0,
-                        \end{tikzcd} \]
-                    and let $X$ be the corresponding ruled surface over $C$.
-                    Show that $X$ contains a nonsingular curve $Y \equiv 3C_0 - 3f$, such that $\pi : Y \to C$ is purely inseparable.
-                    Show that the divisor $D = 2C_0$ satisfies the hypothesis of (2.21b), but is not ample.
-          \end{itemize}
+    % \item \textit{Funny behaviour in characteristic $p$.} Let $C$ be the plane curve $x^3y + y^3z + z^3x = 0$ over a field $k$ of characteristic 3.
+    %       \begin{itemize}
+    %           \item[(a)] Show that the action of the $k$-linear Frobenius morphism $f$ on $\cH^1(C, \fO_C)$ is identically 0.
+    %           \item[(b)] Fix a point $P \in C$, and show that there is a nonzero $\xi \in \cH^1(C, \fO_C(-P))$ such that $f^*\xi = 0$ in $\cH^1(C, \fO_C(-3P))$.
+    %           \item[(c)] Now let $\fE$ be defined by $\xi$ as an extension
+    %                 \[ \begin{tikzcd}
+    %                         0 \arrow[r] & \fO_C \arrow[r] & \fE \arrow[r] & \fO_C(P) \arrow[r] & 0,
+    %                     \end{tikzcd} \]
+    %                 and let $X$ be the corresponding ruled surface over $C$.
+    %                 Show that $X$ contains a nonsingular curve $Y \equiv 3C_0 - 3f$, such that $\pi : Y \to C$ is purely inseparable.
+    %                 Show that the divisor $D = 2C_0$ satisfies the hypothesis of (2.21b), but is not ample.
+    %       \end{itemize}
 
-          \begin{proof} $ $ \vspace{0pt}
-              \begin{itemize} [leftmargin=0cm]
-                  \item[(a)]
+    %       \begin{proof} $ $ \vspace{0pt}
+    %           \begin{itemize} [leftmargin=0cm]
+    %               \item[(a)] Imitating the discussion of (IV, 4.21), the action of the $k$-linear Frobenius morphism on $\cH^1(C, \fO_C)$ can be explicitly computed for plane curves in terms of the $p$-linear Frobenius morphism.
+    %                     In particular, since $C$ is a plane quartic curve, we have an isomorphism
+    %                     \begin{equation*}
+    %                         \cH^1(C, \fO_C) \cong \cH^2(\P^2_k, \fO_{\P^2_k}(-4)),
+    %                     \end{equation*}
+    %                     and the latter vector space has basis $(x^iy^jz^k)^{-1}$ where $i, j, k > 0$ and $i + j + k = 4$.
+    %                     The image of $(x^iy^jz^k)^{-1}$ under $F^* : \cH^1(C, \fO_C) \to \cH^1(C, \fO_C)$ is just the sum of the terms in
+    %                     \begin{equation*}
+    %                         (x^3y + y^3 z + z^3x)^2 \cdot (x^i y^j z^k)^{-3}
+    %                     \end{equation*}
+    %                     with negative exponent on $x, y, z$.
+    %                     Explicitly, we have
+    %                     \begin{equation*}
+    %                         (x^3 y + y^3 z + z^3x)^2 = x^6 y^2 + y^6 z^2 + x^2 z^6 + 2x^3 y^4 z + 2 x y^3 z^4 + 2 x^4 y z^3,
+    %                     \end{equation*}
+    %                     so $F^*$ is identically 0 on $\cH^1(C, \fO_C)$.
 
-                  \item[(b)]
+    %               \item[(b)] Now we use the actual $k$-linear Frobenius morphism, which is identified with the dual morphism (IV, Ex. 2.4).
 
-                  \item[(c)]
-              \end{itemize}
-          \end{proof}
+    %               \item[(c)]
+    %           \end{itemize}
+    %       \end{proof}
 
-    \item Let $C$ be a nonsingular affine curve.
+    \item[\textbf{16.}] Let $C$ be a nonsingular affine curve.
           Show that two locally free sheaves $\fE, \fE'$ of the same rank are isomorphic if and only if their classes in the Grothendieck group $K(X)$ are the same.
           This is false for a projective curve.
 
@@ -635,7 +742,7 @@
               If $N \cong A^{s} \oplus J$ is another $A$-module, then $M \cong N$ if and only if $r = s$ and $I \cong J$ in $\cl(A)$.
           \end{proof}
 
-    \item \begin{itemize}
+    \item[\textbf{17.}] \begin{itemize}
               \item[(a)] Let $\varphi : \P_k^1 \to \P_k^3$ be the 3-uple embedding.
                     Let $\fI$ be the sheaf of ideals of the twisted cubic curve $C$ which is the image of $\varphi$.
                     Then $\fI / \fI^2$ is a locally free sheaf of rank 2 on $C$, so $\varphi^*(\fI / \fI^2)$ is a locally free sheaf of rank 2 on $\P^1$.
@@ -643,6 +750,8 @@
                     Determine $l$ and $m$.
               \item[(b)] Repeat part (a) for the embedding $\varphi : \P^1 \to \P^3$ given by $x_0 = t^4, x_1 = t^3u, x_2 = tu^3, x_3 = u^4$, whose image is a nonsingular rational quartic curve.
           \end{itemize}
+
+          \newpage
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
