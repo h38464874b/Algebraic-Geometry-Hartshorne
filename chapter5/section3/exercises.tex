@@ -42,22 +42,22 @@
           %         Each time an intersection point is blown up, $C.D$ goes does by the product of the intersection multiplicities of each curve. 
           %       \end{proof}
 
-    \item[\textbf{3.}] Let $\pi : \tilde{X} \to X$ be a monoidal transformation, and let $D$ be a very ample divisor on $X$.
-          Show that $2\pi^*D - E$ is ample on $\tilde{X}$.
+    % \item[\textbf{3.}] Let $\pi : \tilde{X} \to X$ be a monoidal transformation, and let $D$ be a very ample divisor on $X$.
+    %       Show that $2\pi^*D - E$ is ample on $\tilde{X}$.
 
-          \begin{proof}
-              We use the Nakai-Moishezon Criterion (1.10) to show $D' = 2\pi^*D - E$ is ample.
-              The first provision is easy to check.
-              Since $D$ is ample, we have $D^2 > 0$ in $X$, so by (3.2), we have
-              \begin{equation*}
-                  D'^2 = 4D^2 - 1 > 0.
-              \end{equation*}
-              Let $C$ be any irreducible curve in $\tilde{X}$, and let $r = C.E$.
-              By (3.2), we have
-              \begin{equation*}
-                  D'.C = 2D.(\pi_*C) - r.
-              \end{equation*}
-          \end{proof}
+    %       \begin{proof}
+    %           We use the Nakai-Moishezon Criterion (1.10) to show $D' = 2\pi^*D - E$ is ample.
+    %           The first provision is easy to check.
+    %           Since $D$ is ample, we have $D^2 > 0$ in $X$, so by (3.2), we have
+    %           \begin{equation*}
+    %               D'^2 = 4D^2 - 1 > 0.
+    %           \end{equation*}
+    %           Now let $C$ be any irreducible curve in $\tilde{X}$, and let $r = C.E$.
+    %           By (3.2), we have
+    %           \begin{equation*}
+    %               D'.C = 2D.(\pi_*C) - r.
+    %           \end{equation*}
+    %       \end{proof}
 
           % \item \textit{Multiplicity of a Local Ring.} Let $A$ be a Noetherian local ring with maximal ideal $\gm$.
           % For any $l > 0$, let $\psi(l) = \len(A/\gm^i)$.
@@ -79,7 +79,44 @@
           Show in this way that one obtains hyperelliptic curves of genus $g \geq 2$.
 
           \begin{proof}
-
+              The point $P$ at infinity on the $y$-axis has homogenous coordinates $(0 : 1: 0)$, and the local equation of $Y$ at $P$ at the affine patch defined by $y \neq 0$ is given by $z^{r - 2} = \prod_{i = 1}^r (x - a_i z)$, so $Y$ has multiplicity $\mu_P(Y) = r - 2$.
+              Let us see what happens when we blow up $\P^2$ at $P$.
+              The substitution $z = ux$ gives
+              \begin{equation*}
+                  x^{r - 2}\bigg(u^{r - 2} - x^2 \prod_{i = 1}^r (1 - a_i u) \bigg) = 0,
+              \end{equation*}
+              so the strict transform $Y_1$ of $Y$ is
+              \begin{equation*}
+                  u^{r - 2} - x^2 \prod_{i = 1}^r (1 - a_i u) = 0.
+              \end{equation*}
+              Since $Y_1$ is still singular at $(0, 0)$, we blow up $Y_1$ by making the substitution $x = vu$, which gives
+              \begin{equation*}
+                  u^2\bigg( u^{r - 4} - v^2 \prod_{i = 1}^r (1 - a_i u)\bigg) = 0,
+              \end{equation*}
+              so the strict transform $Y_2$ of $Y_1$ is
+              \begin{equation*}
+                  u^{r - 4} - v^2 \prod_{i = 1}^r (1 - a_i u) = 0.
+              \end{equation*}
+              We can continue this process until the exponent of $u$ is either 0 or 1, which depends on whether $r$ is even or odd.
+              In the former case, $r$ is even, and the equation of the strict transform of $Y$ after $r/2$ blow-ups is given by
+              \begin{equation*}
+                  1 - w^2 \prod_{i = 1}^r (1 - a_i u) = 0,
+              \end{equation*}
+              which is nonsingular.
+              The multiplicities at the points that were blown up were $r - 2, 2, \dots, 2$, so the genus of $\tilde{Y}$ can be computed using (3.9.2)
+              \begin{equation*}
+                  g(\tilde{Y}) = \frac{(r-1)(r-2)}{2} -\frac{(r-2)(r-3)}{2} - \frac{r - 4}{2} =\boxed{\frac{r-2}{2}}.
+              \end{equation*}
+              If $r$ is odd, then the strict transform of $Y$ after $(r - 1)/2$ blow-ups is given by
+              \begin{equation*}
+                  u - w^2 \prod_{i = 1}^r (1 - a_i u) = 0,
+              \end{equation*}
+              which is also nonsingular.
+              Similar to the case $r$ is even, the genus of $\tilde{Y}$ can be computed using (3.9.2)
+              \begin{equation*}
+                  g(\widetilde Y) =\frac{(r-1)(r-2)}2 -\frac{(r-2)(r-3)}2 -\frac{r-3}{2} =\boxed{\frac{r-1}{2}}.
+              \end{equation*}
+              Composing the projection of $Y \to \P^1$ onto the $x$-axis with the normalization $\tilde{Y} \to Y$ is a $g^1_2$ on $\tilde{Y}$, so $\tilde{Y}$ is a hyperelliptic curve.
           \end{proof}
 
           % \item Show that analytically isomorphic curve singularities (I, 5.6.1) are equivalent in the sense of (3.9.4), but not conversely.
