@@ -1,0 +1,142 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{tikz}
+
+% Replace original page numbers with continuous numbering
+\newcommand{\combinedpagefooter}{%
+    \thispagestyle{empty}%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[
+            fill=white,
+            minimum width=3cm,
+            minimum height=0.6in,
+            inner sep=0pt,
+            font=\normalfont\normalsize
+        ] at ([yshift=0.55in]current page.south)
+        {\thepage};
+    \end{tikzpicture}%
+}
+
+\hypersetup{
+    pdftitle={Attempts at Hartshorne's \textit{Algebraic Geometry} Exercises},
+    bookmarksopen=true,
+    bookmarksnumbered=true
+}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+
+    {\Huge\bfseries
+    Attempts at Hartshorne's \textit{Algebraic Geometry} Exercises\par}
+
+    \vspace{2cm}
+    {\Large James Lee\par}
+
+    \vfill
+    {\large \today\par}
+\end{titlepage}
+
+% Hyperlinked table of contents
+\frontmatter
+\tableofcontents
+
+% Main content
+\mainmatter
+
+\chapter{Varieties}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 1,sec:1-1}]{chapter1/section1/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 2,sec:1-2}]{chapter1/section2/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 3,sec:1-3}]{chapter1/section3/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 4,sec:1-4}]{chapter1/section4/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 5,sec:1-5}]{chapter1/section5/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 6,sec:1-6}]{chapter1/section6/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 7,sec:1-7}]{chapter1/section7/exercises.pdf}
+
+\chapter{Schemes}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 1,sec:2-1}]{chapter2/section1/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 2,sec:2-2}]{chapter2/section2/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 3,sec:2-3}]{chapter2/section3/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 4,sec:2-4}]{chapter2/section4/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 5,sec:2-5}]{chapter2/section5/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 6,sec:2-6}]{chapter2/section6/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 7,sec:2-7}]{chapter2/section7/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 8,sec:2-8}]{chapter2/section8/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 9,sec:2-9}]{chapter2/section9/exercises.pdf}
+
+\chapter{Cohomology}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 2,sec:3-2}]{chapter3/section2/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 3,sec:3-3}]{chapter3/section3/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 4,sec:3-4}]{chapter3/section4/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 5,sec:3-5}]{chapter3/section5/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 6,sec:3-6}]{chapter3/section6/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 7,sec:3-7}]{chapter3/section7/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 8,sec:3-8}]{chapter3/section8/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 9,sec:3-9}]{chapter3/section9/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 10,sec:3-10}]{chapter3/section10/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 11,sec:3-11}]{chapter3/section11/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 12,sec:3-12}]{chapter3/section12/exercises.pdf}
+
+\chapter{Curves}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 1,sec:4-1}]{chapter4/section1/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 2,sec:4-2}]{chapter4/section2/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 3,sec:4-3}]{chapter4/section3/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 4,sec:4-4}]{chapter4/section4/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 5,sec:4-5}]{chapter4/section5/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 6,sec:4-6}]{chapter4/section6/exercises.pdf}
+
+\chapter{Surfaces}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 1,sec:5-1}]{chapter5/section1/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 2,sec:5-2}]{chapter5/section2/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 3,sec:5-3}]{chapter5/section3/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 4,sec:5-4}]{chapter5/section4/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 5,sec:5-5}]{chapter5/section5/exercises.pdf}
+
+\includepdf[pages=-,pagecommand={\combinedpagefooter},addtotoc={1,section,1,Section 6,sec:5-6}]{chapter5/section6/exercises.pdf}
+
+\end{document}
