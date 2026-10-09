@@ -9,5 +9,6 @@ Use at your own risk!
 Big shout out to the following websites:
 - https://tikzcd.yichuanshen.de/
 - https://detexify.kirelabs.org/classify.html
+- https://chatgpt.com/
 
 Any feedback is appreciated and welcomed: slee1241@arizona.edu
