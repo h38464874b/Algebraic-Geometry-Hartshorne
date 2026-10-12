@@ -192,6 +192,42 @@ for chapter in 1 2 3 4 5; do
 
 done
 
+# Include appendices, with continuous page numbering
+printf '\\appendix\n\n' >> "$MASTER"
+
+appendix_index=0
+
+for appendix in A B C; do
+    pdf="appendices/appendix${appendix}/exercises.pdf"
+
+    # Preserve appendix lettering even if an earlier PDF is missing
+    chapter_counter="$appendix_index"
+    appendix_index=$((appendix_index + 1))
+
+    if [[ ! -f "$pdf" ]]; then
+        echo "Skipping missing PDF: $pdf"
+        continue
+    fi
+
+    case "$appendix" in
+        A) appendix_title="Intersection Theory" ;;
+        B) appendix_title="Transcendental Methods" ;;
+        C) appendix_title="The Weil Conjectures" ;;
+    esac
+
+    printf '\\setcounter{chapter}{%s}\n' \
+        "$chapter_counter" >> "$MASTER"
+
+    # \chapter creates the appendix heading and linked TOC entry
+    printf '\\chapter{%s}\\label{app:%s}\n\n' \
+        "$appendix_title" "$appendix" >> "$MASTER"
+
+    printf '\\includepdf[pages=-,pagecommand={\\combinedpagefooter}]{%s}\n\n' \
+        "$pdf" >> "$MASTER"
+
+    echo "Added: Appendix ${appendix} ${appendix_title}"
+done
+
 echo '\end{document}' >> "$MASTER"
 
 # Compile twice to resolve hyperlinks and table of contents

@@ -13,24 +13,52 @@
       \item The linear system of conics in $\P^2$ with two assigned base points $P_1$ and $P_2$ (4.1) determines a morphism $\psi$ of $X'$ (which is $\P^2$ with $P_1$ and $P_2$ blown up) to a nonsingular quadric surface $Y$ in $\P^3$, and furthermore $X'$ via $\psi$ is isomorphic to $Y$ with one point blown up.
 
             \begin{proof}
+                  We have the commutative diagram
+                  \[ \begin{tikzcd}
+                              & X' \arrow[ld, "\pi"'] \arrow[rd, "\psi"] &                   &      \\
+                              \P^2 \arrow[rr, "\varphi", dashed] &                                         & Y \arrow[r, hook] & \P^3
+                        \end{tikzcd} , \]
+                  where $\varphi$ is defined by the linear system $\gd$ of conics on $\P^2$ with assigned base-points $P_1$ and $P_2$, $Y$ is the image of $\varphi$, and $X'$ is the blow-up of $\P^2$ at $P_1$ and $P_2$.
                   We may take the two points to be $P_1 = (1 : 0 : 0)$ and $P_2 = (0 : 1 : 0)$.
                   Then the vector space $V \subseteq \cH^0(\P^2, \fO_{\P^2}(2))$ corresponding to $\gd$ is spanned by
                   \begin{equation*}
                         y_0 = x_1 x_2, \quad y_1 = x_0 x_2, \quad y_2  = x_0 x_1, \quad y_3 = x_2^2,
                   \end{equation*}
                   where $y_i$ are the homogenous coordinates of $\P^3$.
-                  Therefore, the points in the image of $\psi$ satisfies the equation
+                  In particular, $\varphi$ is defined as
+                  \begin{equation*}
+                        \varphi(x_0 : x_1 : x_2) = (y_0 : y_1 : y_2: y_3),
+                  \end{equation*}
+                  and the points in the image of $\psi$ satisfies the equation
                   \begin{equation*}
                         y_0 y_1 - y_2 y_3 = 0,
                   \end{equation*}
                   which corresponds to a nonsingular quadric surface $Y \subset \P^3$.
+                  It is a birational map since if we restrict to the affine patch defined by $x_2 \neq 0$, then we can identify $\varphi$ with a quadratic transformation (4.2.3).
 
-                  Let $L_i$ be the strict transform of $P_i$ via $\pi$, let $L$ be the line through $P_1$ and $P_2$, which is defined by $x_2 = 0$ in $\P^2$, and let $\tilde{L}$ be the strict transform of $L$ in $X'$.
-
-                  \[ \begin{tikzcd}
-                              & X' \arrow[ld, "\pi"'] \arrow[rd, "\psi"] &                   &      \\
-                              \P^2 \arrow[rr, "\varphi", dashed] &                                         & Y \arrow[r, hook] & \P^3
-                        \end{tikzcd} \]
+                  For each $i = 1, 2$, let $E_i$ be the strict transform of $P_i$, let $M$ be the line through $P_1$ and $P_2$, which is defined by $x_2 = 0$ in $\P^2$, and let $\tilde{M}$ be the strict transform of $M$ in $X'$.
+                  By (3.6), we have
+                  \begin{equation*}
+                        \tilde{M} \sim \pi^* M - E_1 - E_2,
+                  \end{equation*}
+                  so by (3.2), $\tilde{M}$ has self intersection
+                  \begin{equation*}
+                        \tilde{M}^2 = (M)^2 + (E_1)^2 + (E_2)^2 = -1.
+                  \end{equation*}
+                  Let $\lambda$ be a local coordinate on $M$ such that $M$ consists of the points $(\lambda : 1 : 0)$.
+                  The image of $M$ under $\varphi$ for $\lambda \neq 0$ is computed to be
+                  \begin{equation*}
+                        \varphi(\lambda : 1 : 0) = (0 : 0 : \lambda : 0),
+                  \end{equation*}
+                  so denote by $Q$ the point $\varphi(M - \{ P_1, P_2 \}) = (0 : 0 : 1 : 0)$.
+                  We claim $X'$ can be identified with the blowing-up of $Y$ at $Q$.
+                  Indeed, $\varphi$ induces an isomorphism $$\P^2 - M \cong Y - \{ Q \} \cup \psi(E_1) \cup \psi(E_2) ,$$ and $\pi$ induces an isomorphism $$X' - E_1 \cup E_2 \cong \P^2 - \{ P_1, P_2 \},$$ so $\psi$ induces an isomorphism $$X' - \tilde{M} \cup E_1 \cup E_2 \cong Y - \{ Q \} \cup \psi(E_1) \cup \psi(E_2),$$
+                  and since $\psi(E_i)$ are lines in $\P^3$ which intersect at $Q$, we conclude that $\psi$ induces an isomorphism
+                  \begin{equation*}
+                        X' - \tilde{M} \cong Y - \{ Q \}.
+                  \end{equation*}
+                  Hence by (5.7), $X'$ can be identified with $Y$ blown-up at $Q$.
+                  (See [Manin, \SS 18] for more details.)
             \end{proof}
 
       \item Let $\varphi$ be the quadratic transformation of (4.2.3), centered at $P_1, P_2, P_3$.
@@ -46,24 +74,24 @@
                   Let $H$ be a hyperplane section of $\P^2$, so that $\varphi$ is given by the linear system $\gd = |2H - P_1 - P_2 - P_3|$, and let $E_1, E_2, E_3$ be the exceptional divisors of $X$ via the blowing-up of $\P^2$ at $P_1, P_2, P_3$, respectively.
                   By (3.6), the strict transform $\tilde{C}$ of $C$ by $\pi$ is linearly equivalent to
                   \begin{equation*}
-                       \tilde{C} = \pi^*C - r_1E_1 - r_2 E_2 - r_3 E_3. 
+                        \tilde{C} = \pi^*C - r_1E_1 - r_2 E_2 - r_3 E_3.
                   \end{equation*}
                   Since $\psi$ is given by the linear system $\gd' = |D|$ with $D = 2\pi^* H - E_1 - E_2 - E_3$, $\varphi$ is a birational map such that $C' = \varphi(C) = \psi(\tilde{C})$, and $C \sim dH$ in $\P^2$, the degree of $C'$ in $\P^2$ can be computed using (Ex. 1.2) and (3.2)
                   \begin{align*}
-                       \tilde{C}.D & = (d\pi^*H - r_1E_1 - r_2E_2 - r_3 E_3). (2\pi^*H - E_1 - E_2 - E_3) \\
-                       & = 2d(H^2) + r_1 (E_1)^2 + r_2 (E_2)^2 + r_3(E_3)^2 \\
-                       & = 2d - r_1 - r_2 - r_3.
+                        \tilde{C}.D & = (d\pi^*H - r_1E_1 - r_2E_2 - r_3 E_3). (2\pi^*H - E_1 - E_2 - E_3) \\
+                                    & = 2d(H^2) + r_1 (E_1)^2 + r_2 (E_2)^2 + r_3(E_3)^2                   \\
+                                    & = 2d - r_1 - r_2 - r_3.
                   \end{align*}
                   For each $i \neq j$, let $L_{ij}$ be the line which goes through $P_i$ and $P_j$.
                   By (3.6), for each $k = 1, 2, 3$, the multiplicity of $C'$ at $Q_k$ is the intersection of $\tilde{C}$ with the strict transform $\tilde{L}_{ij}$ of $L_{ij}$ with $i, j \neq k$ via $\pi$ (4.2.3), which by (3.6) is linearly equivalent to
                   \begin{equation*}
-                       \tilde{L}_{ij} = \pi^*L_{ij} - E_i - E_j.
+                        \tilde{L}_{ij} = \pi^*L_{ij} - E_i - E_j.
                   \end{equation*}
                   Again, we have $L_{ij} \sim H$ in $\P^2$, so
                   \begin{align*}
                         \tilde{C}.\tilde{L}_{ij} & = (d\pi^*H - r_1E_1 - r_2 E_2 - r_3E_3).(\pi^*H - E_i - E_j) \\
-                        & = d + r_i (E_i)^2 + r_j (E_j)^2 \\
-                        & = d - r_i - r_j.
+                                                 & = d(H)^2 + r_i (E_i)^2 + r_j (E_j)^2                         \\
+                                                 & = d - r_i - r_j.
                   \end{align*}
                   Hence, $C'$ has points of multiplicity $d - r_i - r_j$ at $Q_k$.
             \end{proof}
@@ -72,7 +100,9 @@
             Then there exists a finite sequence of quadratic transformations, centered at suitable triples of points, so that the strict transform $C'$ of $C$ has only \textit{ordinary} singularities, i.e., multiple points with all distinct tangent directions.
 
             \begin{proof}
-                  Consider the cuspidal cubic curve in $\P^2$ defined by $y^2 = x^3$.
+                  \begin{center}
+                        \includegraphics[width=0.85\linewidth]{../../Visualizations/CuspialCubicQuad/cuspidal_cubic_tikzcd.pdf}
+                  \end{center}
             \end{proof}
 
       \item \begin{itemize}
@@ -84,64 +114,25 @@
             \end{itemize}
 
             \begin{proof} $ $ \vspace{0pt}
-            \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] 
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)] Let $L_P$ be the line $PP'$, and similarly for $L_Q, L_R$, and let $M$ be the line going through $P''$ and $Q''$.
+                              The divisors $C$ and $L_P + L_Q + L_R$ belong to the linear system of conics in $\P^2$ with assigned base points $P, P', P'', Q, Q'', Q''', R, R'$, and they intersect at $R''$, so by (4.5) $R''$ is the unique point in $\P^2$ such that every cubic curve in $\P^2$ going through $P, P', P'', Q, Q'', Q''', R, R'$ also goes through $R''$.
+                              In particular, $L + L' + M$ belongs to this linear system, so it must go through $R''$.
+                              Therefore, $M$ must go through $R''$.
 
-                  \item[(b)]
-            \end{itemize} 
+                        \item[(b)] Let $P_1, P_2, P_3$ be regular points in $C$, let $L_{12}$ be the line $P_1P_2$, let $R_{12}$ be the third point $L_{12}$ meets $C$, let $L'_{12}$ be the line $P_0 R_{12}$, let $Q_{12} = P_1 + P_2$, and similarly for $L_{23}, L'_{23}$, and $Q_{23}$.
+                              Let $M_{12, 3}$ be the line $Q_{12}P_{3}$, let $S_{12, 3}$ be the third point $M_{12, 3}$ meets $C$, let $M'_{12, 3}$ be the line $P_0S_{12, 3}$, let $T_{12, 3} = Q_{12} + P_3$, and similarly for $M_{1, 23}, M'_{1, 23}$, and $T_{1, 23}$.
+
+                              \begin{center}
+                                    \includegraphics[width=1.0\linewidth]{../../Visualizations/AssocCubic/associativity_tikzcd.pdf}
+                              \end{center}
+                  \end{itemize}
             \end{proof}
 
       \item Prove Pascal's theorem: if $A, B, C, A', B', C'$ are any six points on a conic, then the points $P = AB'.A'B$, $Q = AC'.A'C$, and $R = BC'.B'C$ are collinear.
-            \[ \begin{tikzpicture}[scale=2]
-
-                  % Conic (ellipse for illustration)
-                  \draw[thick] (0,0) ellipse (2 and 1);
-
-                  % Points on the conic
-                  \coordinate (A) at (-1.5,0.66);
-                  \coordinate (B) at (-0.5,0.9682);
-                  \coordinate (C) at (1,0.866);
-                  \coordinate (Ap) at (-1,-0.866);
-                  \coordinate (Bp) at (0,-1);
-                  \coordinate (Cp) at (0.5,-0.9682);
-
-                  % % Opposite sides intersections
-                  \coordinate (P) at (-0.7963,-0.1187);
-                  \coordinate (Q) at (-0.334,-0.2892);
-                  \coordinate (R) at (0.263, -0.5093);
-
-                  \draw[] (A)--(Bp) (A)--(Cp);
-                  \draw[] (B)--(Ap) (B)--(Cp);
-                  \draw[] (C)--(Ap) (C)--(Bp);
-
-                  % % Pascal line
-                  \draw[dashed] (P)--(R);
-
-                  % % Labels
-                  \node[above left] at (A) {$A$};
-                  \node[circle, fill, inner sep=1pt] at (A) {};
-                  \node[above] at (B) {$B$};
-                  \node[circle, fill, inner sep=1pt] at (B) {};
-                  \node[above right] at (C) {$C$};
-                  \node[circle, fill, inner sep=1pt] at (C) {};
-                  \node[below left] at (Ap) {$A'$};
-                  \node[circle, fill, inner sep=1pt] at (Ap) {};
-                  \node[below] at (Bp) {$B'$};
-                  \node[circle, fill, inner sep=1pt] at (Bp) {};
-                  \node[below right] at (Cp) {$C'$};
-                  \node[circle, fill, inner sep=1pt] at (Cp) {};
-                  \node[left] at (P) {$P$};
-                  \node[circle, fill, inner sep=1pt] at (P) {};
-                  \node[below] at (Q) {$Q$};
-                  \node[circle, fill, inner sep=1pt] at (Q) {};
-                  \node[right] at (R) {$R$};
-                  \node[circle, fill, inner sep=1pt] at (R) {};
-
-                  % \node[red] at (P) {$P$};
-                  % \node[red] at (Q) {$Q$};
-                  % \node[red] at (R) {$R$};
-
-                  \end{tikzpicture} \]
+            \begin{center}
+                  \includegraphics[width=0.5\linewidth]{../../Visualizations/Pascal/pascal.pdf}
+            \end{center}
 
       \item Generalize (4.5) as follows: given 13 points $P_1, \dots, P_{13}$ in the plane, there are three additional determined points $P_{14}, P_{15}, P_{16}$, such that all quartic curves through $P_1, \dots, P_{13}$ also pass through $P_{14}, P_{15}, P_{16}$.
             What hypotheses are necessary on $P_1, \dots, P_{13}$ for this to be true?
