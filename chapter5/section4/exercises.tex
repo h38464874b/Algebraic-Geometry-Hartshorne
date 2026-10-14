@@ -96,14 +96,28 @@
                   Hence, $C'$ has points of multiplicity $d - r_i - r_j$ at $Q_k$.
             \end{proof}
 
+            \begin{center}
+                  \includegraphics[width=0.85\linewidth]{../../Visualizations/CuspialCubicQuad/cuspidal_cubic_tikzcd.pdf}
+            \end{center}
+
       \item Let $C$ be an irreducible curve in $\P^2$.
             Then there exists a finite sequence of quadratic transformations, centered at suitable triples of points, so that the strict transform $C'$ of $C$ has only \textit{ordinary} singularities, i.e., multiple points with all distinct tangent directions.
 
             \begin{proof}
-                  \begin{center}
-                        \includegraphics[width=0.85\linewidth]{../../Visualizations/CuspialCubicQuad/cuspidal_cubic_tikzcd.pdf}
-                  \end{center}
+                  If $C$ is a conic in $\P^2$, then it is nonsingular, so assume $C$ has degree $\geq 3$, and let $P_1$ be a non-ordinary singular point of $C$.
+                  Our goal is to find points $P_2, P_3 \in \P^2$ such that the quadratic transformation centered at $P_i$ improves the singularity at $P_1$ and only introduces ordinary singularities on the strict transform of $C$.
+                  To that end, for each $i \neq j$, let $L_{ij}$ be the line through $P_i$ and $P_j$.
+                  The restriction of the quadratic transformation $\varphi : \P^2 \to \P^2$ centered at $P_i$ to $\P^2 - \bigcup L_{ij}$ is an isomorphism onto its image, and each $L_{ij}$ is sent to a point $Q_k$ with $k \neq i, j$ such that if $M$ is a curve meeting $L_{ij}$ transversally away from the centers, then the strict transform of $M$ has ordinary singularities at $Q_k$.
+                  Therefore, we require that away from $P_1$, the lines $L_{ij}$ meets $C$ transversally, and $L_{12}, L_{13}$ are distinct from the tangent directions of $C$ at $P$.
+                  There are only finitely many tangent directions of $C$ at $P_1$, and since $C$ is not strange (IV, 3.8) (IV, 3.9), we can find many lines $L_{12}$ and $L_{13}$ through $P_1$ with tangent vectors distinct from that of $C$ at $P_1$ which meets $C$ transversally.
+                  Lastly, pick $L_{23}$ which avoids $P_1$, not parallel to $L_{12}, L_{13}$, meets $C$ transversally, and the points $P_2, P_3$ of intersection of $L_{23}$ with $L_{12}, L_{13}$, respectively, are not on $C$, which again exists because $C$ is not strange.
+                  The strict transform of $C$ under the quadratic transformation centered at $P_i$ improves the singularity at $P_1$ (3.7) and only introduces ordinary singularities at $Q_k$.
+                  By (3.9), we can repeat this process for each nonordinary singularity until the strict transform only has ordinary singularities introduced by the quadratic transformations.
             \end{proof}
+
+            \begin{center}
+                  \includegraphics[width=1\linewidth]{../../Visualizations/quadraticOrdinary/woohoo.pdf}
+            \end{center}
 
       \item \begin{itemize}
                   \item[(a)] Use (4.5) to prove the following lemma on cubics: If $C$ is an irreducible plane cubic curve, if $L$ is a line meeting $C$ in points $P, Q, R$, and $L'$ is a line meeting $C$ in points $P', Q', R'$, let $P''$ be the third intersection of the line $PP'$ with $C$, and define $Q''$, $R''$ similarly.
@@ -120,19 +134,36 @@
                               In particular, $L + L' + M$ belongs to this linear system, so it must go through $R''$.
                               Therefore, $M$ must go through $R''$.
 
-                        \item[(b)] Let $P_1, P_2, P_3$ be regular points in $C$, let $L_{12}$ be the line $P_1P_2$, let $R_{12}$ be the third point $L_{12}$ meets $C$, let $L'_{12}$ be the line $P_0 R_{12}$, let $Q_{12} = P_1 + P_2$, and similarly for $L_{23}, L'_{23}$, and $Q_{23}$.
-                              Let $M_{12, 3}$ be the line $Q_{12}P_{3}$, let $S_{12, 3}$ be the third point $M_{12, 3}$ meets $C$, let $M'_{12, 3}$ be the line $P_0S_{12, 3}$, let $T_{12, 3} = Q_{12} + P_3$, and similarly for $M_{1, 23}, M'_{1, 23}$, and $T_{1, 23}$.
-
-                              \begin{center}
-                                    \includegraphics[width=1.0\linewidth]{../../Visualizations/AssocCubic/associativity_tikzcd.pdf}
-                              \end{center}
+                        \item[(b)] Let $P_1, P_2, P_3$ be regular points of $C$, let $L_{12}$ be the line $P_1P_2$, let $R_{12}$ be the third point $L_{12}$ meets $C$, let $L'_{12}$ be the line $P_0 R_{12}$, let $Q_{12} = P_1 + P_2$, and similarly for $L_{23}, L'_{23}$, and $R_{23}, Q_{23}$.
+                              Let $M_{12, 3}$ be the line $Q_{12}P_{3}$, let $S_{12, 3}$ be the third point $M_{12, 3}$ meets $C$, let $M'_{12, 3}$ be the line $P_0S_{12, 3}$, let $T_{12, 3} = Q_{12} + P_3$, and similarly for $M_{1, 23}, M'_{1, 23}$, and $S_{1, 23}, T_{1, 23}$.
+                              We want to show $T_{12, 3} = T_{1, 23}$.
+                              Applying (a) to
+                              \begin{equation*}
+                                    L = L_{12}, \quad L' = L'_{23},
+                              \end{equation*}
+                              and
+                              \[ \begin{aligned}
+                                          PP' & = M_{1,23}, & P'' & = S_{1,23}, \\
+                                          QQ' & = L_{23},   & Q'' & = P_3,      \\
+                                          RR' & = L'_{12},  & R'' & = Q_{12},
+                                    \end{aligned} \]
+                              shows $S_{1, 23}$, $P_3$, and $Q_{12}$ are collinear.
+                              Therefore, $S_{1, 23} = S_{12, 3}$, and so $T_{1, 23} = T_{12, 3}$.
                   \end{itemize}
             \end{proof}
+
+            \begin{center}
+                  \includegraphics[width=1.0\linewidth]{../../Visualizations/AssocCubic/associativity_tikzcd.pdf}
+            \end{center}
 
       \item Prove Pascal's theorem: if $A, B, C, A', B', C'$ are any six points on a conic, then the points $P = AB'.A'B$, $Q = AC'.A'C$, and $R = BC'.B'C$ are collinear.
             \begin{center}
                   \includegraphics[width=0.6\linewidth]{../../Visualizations/Pascal/pascal.pdf}
             \end{center}
+
+            \begin{proof}
+                  
+            \end{proof}
 
       \item Generalize (4.5) as follows: given 13 points $P_1, \dots, P_{13}$ in the plane, there are three additional determined points $P_{14}, P_{15}, P_{16}$, such that all quartic curves through $P_1, \dots, P_{13}$ also pass through $P_{14}, P_{15}, P_{16}$.
             What hypotheses are necessary on $P_1, \dots, P_{13}$ for this to be true?
@@ -166,8 +197,8 @@
                   \item[(a)] The \textit{Weyl group} $\mathbf{A}_n$ is defined using the diagram
                         \tble{A/{}}
                         of $n - 1$ points, each joined to the next.
-                        Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\A_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\mathbf{A}_n \to \Sigma_n$.
-                        Then estimate the number of elements of $\A_n$ to show in fact it is an isomorphism.
+                        Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\A_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\qA_n \to \Sigma_n$.
+                        Then estimate the number of elements of $\qA_n$ to show in fact it is an isomorphism.
                   \item[(b)] The \textit{Weyl group} $\mathbf{E}_6$ is defined using the diagram
                         \tble{E/{6}}
                         Call the generators $x_1, \dots, x_5$ and $y$.

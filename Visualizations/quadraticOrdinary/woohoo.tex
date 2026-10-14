@@ -1,0 +1,101 @@
+% Compile with pdflatex; the cropped PDF is ready for \includegraphics.
+% These are SCHEMATIC GLOBAL views, not coordinate plots of the quartics.
+% The connected contours display the correct local contact orders and
+% ordinary nodes. The center triangles show schematic incidence data.
+% Drawing functions below are chosen only to obtain these local types:
+% y = +/- f(x) sqrt(1-(x/2.7)^2). They are NOT equations of C_i.
+% For general smooth auxiliary centers, both transformed curves have degree 4.
+% Contracting A_i B_i creates one node from two residual transverse points;
+% contracting P_i A_i or P_i B_i creates a smooth point. Choose the second
+% triangle to avoid N1, so N1 persists as N1'.
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usetikzlibrary{arrows.meta}
+\definecolor{ink}{HTML}{193347}
+\definecolor{branchA}{HTML}{156E9A}
+\definecolor{branchB}{HTML}{C06435}
+\definecolor{muted}{HTML}{667681}
+\definecolor{pale}{HTML}{F1F5F7}
+\pgfmathdeclarefunction{fzero}{1}{\pgfmathparse{2.3704*(#1)^3/(.55+(#1)^2)}}
+\pgfmathdeclarefunction{fone}{1}{\pgfmathparse{3.1316*((#1)+.65)^2*((#1)-1.35)/(1+(#1)^2)}}
+\pgfmathdeclarefunction{ftwo}{1}{\pgfmathparse{3.5577*(#1)*((#1)^2-1.69)/(.65+(#1)^2)}}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,text=ink,
+        every node/.style={font=\small},
+        a/.style={branchA,line width=1.25pt},
+        b/.style={branchB,line width=1.25pt},
+        panel/.style={rounded corners=4pt,fill=pale,draw=none},
+        triangle/.style={muted!85,dashed,line width=.8pt},
+        pointlabel/.style={fill=pale,inner sep=1.5pt}]
+    \node[font=\large\bfseries] at (8.2,5.85) {Two quadratic transformations};
+    \node at (8.2,5.3) {$C_0:\ (YZ-X^2)^2-Y^3Z=0$};
+    \node[font=\footnotesize,muted] at (8.2,4.8)
+    {Schematic global views: all singularities shown on each connected curve};
+    \foreach \x in {0,8.2,16.4}{
+            \path[panel] (\x-3.35,-4.65) rectangle (\x+3.35,4.25);
+        }
+    % Stage 0: third-order contact at the single singular point.
+    \begin{scope}
+        \node[font=\normalsize\bfseries] at (0,3.85) {$C_0$: triple contact $A_5$};
+        \coordinate (P0) at (0,0);
+        \coordinate (A0) at (-1.9,{-fzero(-1.9)*sqrt(1-1.9^2/2.7^2)});
+        \coordinate (B0) at (1.65,{fzero(1.65)*sqrt(1-1.65^2/2.7^2)});
+        \draw[triangle] (P0)--(A0)--(B0)--cycle;
+        \draw[a,domain=0:180,samples=361,variable=\t]
+        plot ({2.7*cos(\t)},{fzero(2.7*cos(\t))*sin(\t)});
+        \draw[b,domain=180:360,samples=361,variable=\t]
+        plot ({2.7*cos(\t)},{fzero(2.7*cos(\t))*sin(\t)});
+        \foreach \p in {P0,A0,B0}{\fill (\p) circle (2pt);}
+        \node[pointlabel,below=6pt] at (P0) {$P_0$};
+        \node[pointlabel,above left=5pt] at (A0) {$A_0$};
+        \node[pointlabel,above=10pt] at (B0) {$B_0$};
+        \node[font=\footnotesize] at (0,-3.55) {$\varphi_1\text{ centered at }\{P_0,A_0,B_0\}$};
+        \node at (0,-4.17) {$\operatorname{Sing}(C_0)=\{P_0\}$};
+    \end{scope}
+    \draw[->,line width=1pt] (3.5,0)--(4.7,0);
+    \node at (4.1,.5) {$\varphi_1$};
+    % Stage 1: second-order tangency and a transverse ordinary node.
+    \begin{scope}[shift={(8.2,0)}]
+        \node[font=\normalsize\bfseries] at (0,3.85) {$C_1$: tacnode $+$ one node};
+        \coordinate (P1) at (-.65,0);
+        \coordinate (N1) at (1.35,0);
+        \coordinate (A1) at (-1.95,{-fone(-1.95)*sqrt(1-1.95^2/2.7^2)});
+        \coordinate (B1) at (.35,{-fone(.35)*sqrt(1-.35^2/2.7^2)});
+        \draw[triangle] (P1)--(A1)--(B1)--cycle;
+        \draw[a,domain=0:180,samples=401,variable=\t]
+        plot ({2.7*cos(\t)},{fone(2.7*cos(\t))*sin(\t)});
+        \draw[b,domain=180:360,samples=401,variable=\t]
+        plot ({2.7*cos(\t)},{fone(2.7*cos(\t))*sin(\t)});
+        \foreach \p in {P1,N1,A1,B1}{\fill (\p) circle (2pt);}
+        \node[pointlabel,below=7pt] at (P1) {$P_1$};
+        \node[pointlabel,right=8pt] at (N1) {$N_1$};
+        \node[pointlabel,above left=5pt] at (A1) {$A_1$};
+        \node[pointlabel,above=10pt] at (B1) {$B_1$};
+        \node[font=\footnotesize] at (0,-3.22) {$N_1=q_1(\overline{A_0B_0})$};
+        \node[font=\footnotesize] at (0,-3.65) {$q_2\text{ centered at }\{P_1,A_1,B_1\}$};
+        \node at (0,-4.17) {$\operatorname{Sing}(C_1)=\{P_1,N_1\}$};
+    \end{scope}
+    \draw[->,line width=1pt] (11.7,0)--(12.9,0);
+    \node at (12.3,.5) {$\varphi_2$};
+    % Stage 2: three ordinary nodes on one connected curve, without insets.
+    \begin{scope}[shift={(16.4,0)}]
+        \node[font=\normalsize\bfseries] at (0,3.85) {$C_2$: three ordinary nodes};
+        \draw[a,domain=0:180,samples=451,variable=\t]
+        plot ({2.7*cos(\t)},{ftwo(2.7*cos(\t))*sin(\t)});
+        \draw[b,domain=180:360,samples=451,variable=\t]
+        plot ({2.7*cos(\t)},{ftwo(2.7*cos(\t))*sin(\t)});
+        \coordinate (N1p) at (-1.3,0);
+        \coordinate (P2) at (0,0);
+        \coordinate (N2) at (1.3,0);
+        \foreach \p in {N1p,P2,N2}{\fill (\p) circle (2pt);}
+        \node[pointlabel,right=8pt] at (N1p) {$N_1'$};
+        \node[pointlabel,right=8pt] at (P2) {$P_2$};
+        \node[pointlabel,right=8pt] at (N2) {$N_2$};
+        \node[font=\footnotesize] at (0,-3.22) {$N_1'=\varphi_2(N_1)$};
+        \node[font=\footnotesize] at (0,-3.65) {$N_2=\varphi_2(\overline{A_1B_1})$};
+        \node at (0,-4.17) {$\operatorname{Sing}(C_2)=\{P_2,N_1',N_2\}$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}
