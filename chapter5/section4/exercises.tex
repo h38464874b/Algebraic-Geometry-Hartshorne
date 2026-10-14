@@ -158,11 +158,14 @@
 
       \item Prove Pascal's theorem: if $A, B, C, A', B', C'$ are any six points on a conic, then the points $P = AB'.A'B$, $Q = AC'.A'C$, and $R = BC'.B'C$ are collinear.
             \begin{center}
-                  \includegraphics[width=0.6\linewidth]{../../Visualizations/Pascal/pascal.pdf}
+                  \includegraphics[width=0.55\linewidth]{../../Visualizations/Pascal/pascal.pdf}
             \end{center}
 
             \begin{proof}
-                  
+                  Denote the conic by $C$, and let $L$ be the line $PQ$.
+                  By (4.5), any cubic curve through the points $A, B, C, A', B', C', P, Q$ passes through a uniquely determined point, which we claim to be $R$.
+                  Indeed, the divisors $AB' + A'C + BC'$ and $AC' + A'B + B'C$ intersect at $R$, so $C + L$ passes through $R$.
+                  Hence, $L$ passes through $R$.
             \end{proof}
 
       \item Generalize (4.5) as follows: given 13 points $P_1, \dots, P_{13}$ in the plane, there are three additional determined points $P_{14}, P_{15}, P_{16}$, such that all quartic curves through $P_1, \dots, P_{13}$ also pass through $P_{14}, P_{15}, P_{16}$.
@@ -176,6 +179,17 @@
                   \end{cases*}
             \end{equation*}
             Show furthermore that for every $d > 0$, this maximum is achieved by some irreducible nonsingular curve.
+
+            \begin{proof}
+                  Let $D = a \ell - \sum b_i e_i$ be a divisor of degree $d$.
+                  By (4.8), we have
+                  \begin{align*}
+                        d & = 3a - \sum b_i, \\
+                        p_a(D) & = \frac{1}{2}(a - 1)(a - 2) - \frac{1}{2} \sum b_i(b_i - 1),
+                  \end{align*}
+                  so to find an upper bound on $p_a(D)$, we want to maximize $a$ and minimize $b_i$.
+                  If $d \equiv 0 \mod{3}$, then we can take $a = d / 3$ and $b_i = 0$ for all $i$.
+            \end{proof}
 
       \item Show that a divisor class $D$ on the cubic surface contains an irreducible curve $\iff$ it contains an irreducible nonsingular curve $\iff$ it is either (a) one of the 27 lines, or (b) a conic (meaning a curve of degree 2) with $D^2 = 0$, or (c) $D.L \geq 0$ for every line $L$, and $D^2 > 0$.
 
@@ -197,7 +211,7 @@
                   \item[(a)] The \textit{Weyl group} $\mathbf{A}_n$ is defined using the diagram
                         \tble{A/{}}
                         of $n - 1$ points, each joined to the next.
-                        Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\A_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\qA_n \to \Sigma_n$.
+                        Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\qA_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\qA_n \to \Sigma_n$.
                         Then estimate the number of elements of $\qA_n$ to show in fact it is an isomorphism.
                   \item[(b)] The \textit{Weyl group} $\mathbf{E}_6$ is defined using the diagram
                         \tble{E/{6}}
@@ -208,6 +222,21 @@
 
       \item Use (4.11) to show that if $D$ is any ample divisor on the cubic surface $X$, then $\cH^1(X, \fO_X(-D)) = 0$.
             This is Kodaira's vanishing theorem for the cubic surface (III, 7.15).
+
+            \begin{proof}
+                  By (4.11), $D$ is ample if and only if $D$ is very ample, so by Bertini's theorem, we can assume $D$ is irreducible and nonsingular as a closed subvariety of $X$.
+                  In particular, $\fO_X(-D)$ has no global sections, and we have a short exact sequence
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0
+                        \end{tikzcd} , \]
+                  where $\fO_D$ is the structure sheaf of $D$ as a variety.
+                  Since $X$ is a hypersurface of $\P^3$, we have $$\cH^1(X, \fO_X) = \cH^1(\P^3, \fO_{\P^3}) = 0,$$ so the long exact sequence in cohomology gives
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \cH^0(X, \fO_X) \arrow[r] & \cH^0(D, \fO_D) \arrow[r] & \cH^1(X, \fO_X(-D)) \arrow[r] & 0
+                        \end{tikzcd}, \]
+                  and since $D$ is irreducible, we have $$h^0(X, \fO_X) = h^0(D, \fO_D) = 1.$$
+                  Hence by exactness, we have $\cH^1(X, \fO_X(-D)) = 0$.
+            \end{proof}
 
       \item Let $X$ be the Del Pezzo surface of degree 4 in $\P^4$ obtained by blowing up 5 points of $\P^2$ (4.7).
             \begin{itemize}
