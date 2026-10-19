@@ -168,59 +168,119 @@
                   Hence, $L$ passes through $R$.
             \end{proof}
 
-      \item Generalize (4.5) as follows: given 13 points $P_1, \dots, P_{13}$ in the plane, there are three additional determined points $P_{14}, P_{15}, P_{16}$, such that all quartic curves through $P_1, \dots, P_{13}$ also pass through $P_{14}, P_{15}, P_{16}$.
-            What hypotheses are necessary on $P_1, \dots, P_{13}$ for this to be true?
+            % \item Generalize (4.5) as follows: given 13 points $P_1, \dots, P_{13}$ in the plane, there are three additional determined points $P_{14}, P_{15}, P_{16}$, such that all quartic curves through $P_1, \dots, P_{13}$ also pass through $P_{14}, P_{15}, P_{16}$.
+            %       What hypotheses are necessary on $P_1, \dots, P_{13}$ for this to be true?
 
-      \item If $D$ is any divisor of degree $d$ on the cubic surface (4.7.3), show that
-            \begin{equation*}
-                  p_a(D) \leq \begin{cases*}
-                        \cfrac{1}{6}(d - 1)(d - 2)                & \text{if $d \equiv 1, 2 \mod{3}$} \\
-                        \cfrac{1}{6}(d - 1)(d - 2) + \cfrac{2}{3} & \text{if $d \equiv 0 \mod{3}$.}
-                  \end{cases*}
-            \end{equation*}
-            Show furthermore that for every $d > 0$, this maximum is achieved by some irreducible nonsingular curve.
+            %       \begin{proof}
+            %             The quartics with no base points form a linear system of dimension 14.
+            %       \end{proof}
+
+            % \item[\textbf{7.}] If $D$ is any divisor of degree $d$ on the cubic surface (4.7.3), show that
+            %       \begin{equation*}
+            %             p_a(D) \leq \begin{cases*}
+            %                   \cfrac{1}{6}(d - 1)(d - 2)                & \text{if $d \equiv 1, 2 \mod{3}$} \\
+            %                   \cfrac{1}{6}(d - 1)(d - 2) + \cfrac{2}{3} & \text{if $d \equiv 0 \mod{3}$.}
+            %             \end{cases*}
+            %       \end{equation*}
+            %       Show furthermore that for every $d > 0$, this maximum is achieved by some irreducible nonsingular curve.
+
+            %       \begin{proof}
+            %             Let $D = a \ell - \sum b_i e_i$ be a divisor of degree $d$.
+            %             By (4.8), we have
+            %             \begin{align*}
+            %                   d      & = 3a - \sum b_i,                                             \\
+            %                   p_a(D) & = \frac{1}{2}(a - 1)(a - 2) - \frac{1}{2} \sum b_i(b_i - 1).
+            %             \end{align*}
+            %             If $d \equiv 0 \mod{3}$, then we can take $a = d / 3$ and $b_i = 0$, which gives
+            %             \begin{align*}
+            %                   p_a(D) & = \frac{1}{2}\bigg(\frac{d}{3} - 1\bigg)\bigg(\frac{d}{3} - 2 \bigg) \\
+            %                   & = \frac{1}{6}(d - 3)(d - 6) \\
+            %                   & = \frac{1}{6}(d - 1)(d - 2) + \frac{1}{6}(-6d)
+            %             \end{align*}
+            %       \end{proof}
+
+      \item[\textbf{8.}] Show that a divisor class $D$ on the cubic surface contains an irreducible curve $\Leftrightarrow$ it contains an irreducible nonsingular curve $\Leftrightarrow$ it is either (a) one of the 27 lines, or (b) a conic (meaning a curve of degree 2) with $D^2 = 0$, or (c) $D.L \geq 0$ for every line $L$, and $D^2 > 0$.
+
+            \begin{theorem}
+                  Let $X$ be a surface obtained by blowing up $r =$ 2, 3, 4, or 5 points of $\P^2$ with its embedding $X \to \P^{9 - r}$ as a surface of degree $9 - r$ (4.7).
+                  The following conditions are equivalent, for a divisor $D$ on $X$:
+                  \begin{itemize}
+                        \item[(i)] $D$ is very ample;
+                        \item[(ii)] $D$ is ample;
+                        \item[(iii)] $D^2 > 0$, and for every line $L \subset X$, $D.L \geq 0$;
+                        \item[(iv)] for every line $L \subset X$, $D.L > 0$.
+                  \end{itemize}
+            \end{theorem}
 
             \begin{proof}
-                  Let $D = a \ell - \sum b_i e_i$ be a divisor of degree $d$.
-                  By (4.8), we have
-                  \begin{align*}
-                        d & = 3a - \sum b_i, \\
-                        p_a(D) & = \frac{1}{2}(a - 1)(a - 2) - \frac{1}{2} \sum b_i(b_i - 1),
-                  \end{align*}
-                  so to find an upper bound on $p_a(D)$, we want to maximize $a$ and minimize $b_i$.
-                  If $d \equiv 0 \mod{3}$, then we can take $a = d / 3$ and $b_i = 0$ for all $i$.
+                  It is enough to show (iv) $\Rightarrow$ (i).
+                  We will first prove a lemma.
+
+                  \begin{lemma}
+                        Let $D \sim a \ell - \sum_{i = 1}^r b_i e_i$ be a divisor class on $X$, and suppose that $b_1 \geq b_2 \geq \cdots \geq b_r > 0$ and $a \geq b_1 + 2b_2$.
+                        Then $D$ is very ample.
+                  \end{lemma}
+
+                  \begin{proof}
+                        We use the general fact that a very ample divisor plus a divisor moving in a linear system without base points is very ample (II, Ex. 7.5).
+                        Let us consider the divisor classes
+                        \begin{equation*}
+                              D_0 = \ell, \quad D_1 = \ell - e_1, \quad D_i = 3\ell - e_1 - \cdots - e_i \quad (i \geq 2).
+                        \end{equation*}
+                        For each case $r = 2, 3, 4, 5$, only $D_0, D_1, \dots, D_r$ are defined on $X$.
+                        Then $|D_0|$, $|D_1|$ correspond to the linear system of lines in $\P^2$ with 0 or 1 assigned base points, which have no unassigned base points.
+                        Also, $|D_2|, |D_3|, \dots, |D_{r - 1}|$ have no base points by (4.3), and $|D_r|$ is very ample by (4.6).
+                        Therefore any linear combination of these, $D = \sum_{i = 0}^r c_iD_i$, with $c_i \geq 0$ and $c_r > 0$, will be very ample.
+
+                        Clearly $D_0, \dots, D_r$ form a free basis for $\pic{X} \cong \Z^{r + 1}$ (3.2).
+                        Writing $D \sim a \ell - \sum_{i = 1}^r b_i e_i$, we have
+                        \begin{equation*}
+                              a = c_0 + c_1 + 3(c_2 + \cdots + c_r), \quad b_i = c_i + \cdots + c_r.
+                        \end{equation*}
+                        where $c_i, b_i$ is understood as zero for $i > r$.
+                        Then one checks easily that the conditions $c_i \geq 0$ and $c_r > 0$ are equivalent to the conditions $b_1 \geq \cdots \geq b_r > 0$ and $a \geq b_1 + 2b_2$.
+                  \end{proof}
+
+                  \textit{Proof of (0.1), continued.}
+                  Suppose $D$ is a divisor satisfying $D.L > 0$ for every line $L \subset X$.
+
             \end{proof}
 
-      \item Show that a divisor class $D$ on the cubic surface contains an irreducible curve $\iff$ it contains an irreducible nonsingular curve $\iff$ it is either (a) one of the 27 lines, or (b) a conic (meaning a curve of degree 2) with $D^2 = 0$, or (c) $D.L \geq 0$ for every line $L$, and $D^2 > 0$.
+            \begin{proof} [Proof of (Ex. 4.8).]
+            \end{proof}
 
-      \item If $C$ is an irreducible non-singular curve of degree $d$ on the cubic surface, and if the genus $g > 0$, then
-            \begin{equation*}
-                  g \geq \begin{cases*}
-                        \cfrac{1}{2}(d - 6) & \text{if $d$ is even, $d \geq 8$,} \\
-                        \cfrac{1}{2}(d - 5) & \text{if $d$ is odd, $d \geq 13$,}
-                  \end{cases*}
-            \end{equation*}
-            and this minimum value of $g > 0$ is achieved for each $d$ in the range given.
+            % \item[\textbf{9.}] If $C$ is an irreducible non-singular curve of degree $d$ on the cubic surface, and if the genus $g > 0$, then
+            %       \begin{equation*}
+            %             g \geq \begin{cases*}
+            %                   \cfrac{1}{2}(d - 6) & \text{if $d$ is even, $d \geq 8$,} \\
+            %                   \cfrac{1}{2}(d - 5) & \text{if $d$ is odd, $d \geq 13$,}
+            %             \end{cases*}
+            %       \end{equation*}
+            %       and this minimum value of $g > 0$ is achieved for each $d$ in the range given.
 
-      \item A curious consequence of the implications (iv) $\implies$ (iii) of (4.11) is the following numerical fact: Given integers $a, b_1, \dots, b_6$ such that $b_i > 0$ for each $i$, $a - b_i - b_j > 0$ for each $i, j$, and $2a - \sum_{i \neq j} b_i > 0$ for each $j$, we must necessarily have $a^2 - \sum b_i^2 > 0$.
-            Prove this directly (for $a, b_1, \dots, b_6 \in \R$) using methods of freshman calculus.
+            %       \begin{proof}
 
-      \item \textit{The Weyl Groups.} Given any diagram consisting of points and line segments joining some of them, we define an abstract group, given by the generators and relations, as follows: each point represents a generator $x_i$.
-            The relations are $x_i^2 = 1$ for each $i$; $(x_ix_j)^2 = 1$ if $i$ and $j$ are not joined by a line segment, and $(x_ix_j)^3 = 1$ if $i$ and $j$ are joined by a line segment.
-            \begin{itemize}
-                  \item[(a)] The \textit{Weyl group} $\mathbf{A}_n$ is defined using the diagram
-                        \tble{A/{}}
-                        of $n - 1$ points, each joined to the next.
-                        Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\qA_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\qA_n \to \Sigma_n$.
-                        Then estimate the number of elements of $\qA_n$ to show in fact it is an isomorphism.
-                  \item[(b)] The \textit{Weyl group} $\mathbf{E}_6$ is defined using the diagram
-                        \tble{E/{6}}
-                        Call the generators $x_1, \dots, x_5$ and $y$.
-                        Show that one obtains a surjective homomorphism $\mathbf{E}_6 \to G$, the group of automorphisms of the configuration of 27 lines (4.10.1), by sending $x_1, \dots, x_5$ to the permutations $(12), (23), \dots, (56)$ of the $E_i$, respectively, and $y$ to the element associated with the quadratic transformation based at $P_1, P_2, P_3$.
-                  \item[(c)] Estimate the number of elements in $\mathbf{E}_6$, and thus conclude that $\mathbf{E}_6 \cong G$.
-            \end{itemize}
+            %       \end{proof}
 
-      \item Use (4.11) to show that if $D$ is any ample divisor on the cubic surface $X$, then $\cH^1(X, \fO_X(-D)) = 0$.
+            % \item A curious consequence of the implications (iv) $\implies$ (iii) of (4.11) is the following numerical fact: Given integers $a, b_1, \dots, b_6$ such that $b_i > 0$ for each $i$, $a - b_i - b_j > 0$ for each $i, j$, and $2a - \sum_{i \neq j} b_i > 0$ for each $j$, we must necessarily have $a^2 - \sum b_i^2 > 0$.
+            %       Prove this directly (for $a, b_1, \dots, b_6 \in \R$) using methods of freshman calculus.
+
+            % \item[\textbf{11.}] \textit{The Weyl Groups.} Given any diagram consisting of points and line segments joining some of them, we define an abstract group, given by the generators and relations, as follows: each point represents a generator $x_i$.
+            %       The relations are $x_i^2 = 1$ for each $i$; $(x_ix_j)^2 = 1$ if $i$ and $j$ are not joined by a line segment, and $(x_ix_j)^3 = 1$ if $i$ and $j$ are joined by a line segment.
+            %       \begin{itemize}
+            %             \item[(a)] The \textit{Weyl group} $\mathbf{A}_n$ is defined using the diagram
+            %                   \tble{A/{}}
+            %                   of $n - 1$ points, each joined to the next.
+            %                   Show that it is isomorphic to the symmetric group $\Sigma_n$ as follows: map the generators of $\qA_n$ to the elements $(12), (23), \dots, (n - 1, n)$ of $\Sigma_n$, to get a surjective homomorphism $\qA_n \to \Sigma_n$.
+            %                   Then estimate the number of elements of $\qA_n$ to show in fact it is an isomorphism.
+            %             \item[(b)] The \textit{Weyl group} $\mathbf{E}_6$ is defined using the diagram
+            %                   \tble{E/{6}}
+            %                   Call the generators $x_1, \dots, x_5$ and $y$.
+            %                   Show that one obtains a surjective homomorphism $\mathbf{E}_6 \to G$, the group of automorphisms of the configuration of 27 lines (4.10.1), by sending $x_1, \dots, x_5$ to the permutations $(12), (23), \dots, (56)$ of the $E_i$, respectively, and $y$ to the element associated with the quadratic transformation based at $P_1, P_2, P_3$.
+            %             \item[(c)] Estimate the number of elements in $\mathbf{E}_6$, and thus conclude that $\mathbf{E}_6 \cong G$.
+            %       \end{itemize}
+
+      \item[\textbf{12.}] Use (4.11) to show that if $D$ is any ample divisor on the cubic surface $X$, then $\cH^1(X, \fO_X(-D)) = 0$.
             This is Kodaira's vanishing theorem for the cubic surface (III, 7.15).
 
             \begin{proof}
@@ -238,16 +298,109 @@
                   Hence by exactness, we have $\cH^1(X, \fO_X(-D)) = 0$.
             \end{proof}
 
-      \item Let $X$ be the Del Pezzo surface of degree 4 in $\P^4$ obtained by blowing up 5 points of $\P^2$ (4.7).
+      \item[\textbf{13.}] Let $X$ be the Del Pezzo surface of degree 4 in $\P^4$ obtained by blowing up 5 points of $\P^2$ (4.7).
             \begin{itemize}
                   \item[(a)] Show that $X$ contains 16 lines.
                   \item[(b)] Show that $X$ is a complete intersection of two quadric hypersurfaces in $\P^4$ (the converse follows from (4.7.1)).
             \end{itemize}
 
-      \item Using the method of (4.13.1), verify that there are nonsingular curves in $\P^3$ with $d = 8$, $g = 6, 7$; $d = 9$, $g = 7, 8, 9$; $d = 10$, $g = 8, 9, 10, 11$.
+            \begin{proof} $ $ \vspace{0pt}
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)]
+                              \textit{Claim.} The 16 lines of $X$ are
+                              \begin{itemize}
+                                    \item[(i)] the exceptional curves $E_i \sim e_i$, $i = 1, \dots, 5$ (five of these),
+                                    \item[(ii)] the strict transform $F_{ij} \sim \ell - e_i - e_j$ of the line in $\P^2$ containing $P_i$ and $P_j$, $1 \leq i < j \leq 6$ (ten of these), and
+                                    \item[(iii)] the strict transform $G \sim 2\ell - \sum_{i = 1}^5 e_i$ of the conic in $\P^2$ containg the five $P_i$ (one of these).
+                              \end{itemize}
+                              Adjusting accordingly, the statements of (4.8) hold for $X$ as well.
+                              If $C \sim a\ell - \sum_{i =1 }^5 b_i e_i$ is a curve in $X$, then by (4.8)
+                              \begin{equation*}
+                                    p_a(C) = \frac{1}{2}(C^2 - \deg{C}) + 1,
+                              \end{equation*}
+                              so $C$ is a line in $X$ if and only if $\deg{C} = 1$ and $p_a(C) = 0$ if and only if $C$ is an irreducible curve on $X$ with $C^2 < 0$.
+
+                              Now, suppose $C$ is any irreducible curve on $X$ with $\deg{C} = 1$ and $C^2 = -1$.
+                              We want to show $C$ is one of the 16 lines listed.
+                              Assuming $C$ is not one of the $E_i$, we must have $a > 0$ and $b_i \geq 0$ by (4.8.1).
+                              Furthermore,
+                              \begin{align*}
+                                    \deg C & = 3a - \sum_{i = 1}^5 b_i = 1      \\
+                                    C^2    & = a^2 - \sum_{i = 1}^5 b_i^2 = -1.
+                              \end{align*}
+                              The proof of (4.9) follows verbatim, so Schwarz's inequality implies
+                              \begin{equation*}
+                                    (\sum_{i =1 }^5 b_i)^2 \leq 5 (\sum_{i = 1}^5 b_i^2).
+                              \end{equation*}
+                              Substituting $\sum_{i = 1}^5 b_i = 3a - 1$ and $\sum_{i = 1}^5 b_i^2 = a^2 + 1$ from above, we obtain
+                              \begin{equation*}
+                                    (2a +1)(a - 2) \leq 0,
+                              \end{equation*}
+                              which implies $a \leq 2$.
+                              Therefore, $a = 1$ or $2$.
+                              If $a = 1$, then $$ \sum_{i = 1}^5 b_i = 2, \quad \sum_{i = 1}^5 b_i = 2,$$ which gives $F_{ij}$ for some $i \neq j$.
+                              If $a = 2$, then
+                              \begin{equation*}
+                                    \sum_{i = 1}^5 b_i = 5, \quad \sum_{i = 1}^5 b_i^2 = 5,
+                              \end{equation*}
+                              and the only possible values are $b_i = 1$ for every $i = 1, \dots, 5$, which gives $G$.
+
+                        \item[(b)] Let $\fI_X$ be the ideal sheaf of $X$, and consider the short exact sequence
+                              \[ \begin{tikzcd}
+                                          0 \arrow[r] & \fI_X \arrow[r] & \fO_{\P^4} \arrow[r] & \fO_X \arrow[r] & 0
+                                    \end{tikzcd} . \]
+                              Twisting by $\fO_{\P^4}(2)$ and taking global sections give
+                              \[ \begin{tikzcd}
+                                          0 \arrow[r] & \cH^0(\P^4, \fI_X(2)) \arrow[r] & \cH^0(\P^4, \fO_{\P^4}(2)) \arrow[r] & \cH^0(X, \fO_X(2))
+                                    \end{tikzcd} .\]
+                              The vector space in the middle has dimension $\binom{4 + 2}{2} = 15$.
+                              On the other hand, $\fO_X(2) = \fO_X(-2K)$, where $K$ is a canonical divisor of $X$, so Riemann-Roch gives
+                              \begin{equation*}
+                                    h^0(X, \fO_X(-2K)) - h^1(X, \fO_X(-2K)) + h^2(X, \fO_X(-2K)) = 13,
+                              \end{equation*}
+                              and by Serre duality,
+                              \begin{equation*}
+                                    h^2(X, \fO_X(-2K)) = h^0(X, \fO_X(3K)) = h^0(X, \fO_X(-3)) = 0,
+                              \end{equation*}
+                              so it remains to compute $h^1(X, \fO_X(-2K))$.
+                              The Leray spectral sequence
+                              \begin{equation*}
+                                    \cH^i(\P^2, \dR^j \pi_*\fO_X(-2K)) \implies \cH^{i + j}(X, \fO_X(-2K))
+                              \end{equation*}
+                              degnerates, so we have $h^1(X, \fO_X(-2K)) = 0$.
+                              Combining everything gives $h^0(X, \fO_X(2)) = 13$, which means
+                              \begin{equation*}
+                                    \dim \cH^0(\P^4, \fI_X(2)) \geq 2.
+                              \end{equation*}
+                              \textit{The author will fill in the details of the Leray spectral sequence calculation in the future, after learning what they are.}
+                              An element of that space is a form of degree 2, whose zero-set will be a quadric hypersurface containing $X$, and there exists at least two distinct irreducible quadric hypersurfaces containing $X$.
+                              Hence by reasons of degree, $X$ is a complete intersection of two quadric hypersurfaces.
+                  \end{itemize}
+            \end{proof}
+
+      \item[\textbf{14.}] Using the method of (4.13.1), verify that there are nonsingular curves in $\P^3$ with $d = 8$, $g = 6, 7$; $d = 9$, $g = 7, 8, 9$; $d = 10$, $g = 8, 9, 10, 11$.
             Combining with (IV, \SS 6), this completes the determination of all possible $g$ for curves of degree $d \geq 10$ in $\P^3$.
 
-      \item Let $P_1, \dots, P_4$ be a fintie set of (ordinary) points of $\P^2$, no 3 collinear.
+            \begin{proof}
+                  \[
+                        \renewcommand{\arraystretch}{1.5}
+                        \setlength{\arraycolsep}{14pt}
+                        \begin{array}{c|c|c|c}
+                              d  & g  & a & (b_1,\ldots,b_6) \\ \hline
+                              8  & 6  & 7 & (3,3,2,2,2,1)    \\
+                              8  & 7  & 7 & (3,2,2,2,2,2)    \\ \hline
+                              9  & 7  & 7 & (3,3,2,2,1,1)    \\
+                              9  & 8  & 7 & (3,2,2,2,2,1)    \\
+                              9  & 9  & 7 & (2,2,2,2,2,2)    \\ \hline
+                              10 & 8  & 7 & (3,3,2,1,1,1)    \\
+                              10 & 9  & 7 & (3,2,2,2,1,1)    \\
+                              10 & 10 & 7 & (2,2,2,2,2,1)    \\
+                              10 & 11 & 8 & (3,3,2,2,2,2)
+                        \end{array}
+                  \]
+            \end{proof}
+
+      \item[\textbf{15.}] Let $P_1, \dots, P_4$ be a fintie set of (ordinary) points of $\P^2$, no 3 collinear.
             We define an \textit{admissible transformation} to be a quadratic transformation (4.2.3) centered at some three of the $P_i$ (call them $P_1, P_2, P_3$).
             This gives a new $\P^2$, and a new set of $r$ points, namely $Q_1, Q_2, Q_3$, and the images of $P_4, \dots, P_r$.
             We say that $P_1, \dots, P_r$ are in \textit{general position} if no three are collinear, and furthermore after any finite sequence of admissible transformations, the new set of $r$ points also have no three collinear.
@@ -262,7 +415,7 @@
                   \item[(e)] For $r = 9$, show that the surface $X$ defined in (d) has infinitely many irreducible nonsingular curves $C$ with $g = 0$ and $C^2 = -1$.
             \end{itemize}
 
-      \item For the \textit{Fermat cubic surface.} $x_0^3 + x_1^3 + x_2^3 + x_3^3 = 0$, find the equations of the 27 lines explicitly, and verify their incidence relations.
+      \item[\textbf{16.}] For the \textit{Fermat cubic surface.} $x_0^3 + x_1^3 + x_2^3 + x_3^3 = 0$, find the equations of the 27 lines explicitly, and verify their incidence relations.
             What is the group of automorphisms of this surface?
 
 \end{enumerate}
