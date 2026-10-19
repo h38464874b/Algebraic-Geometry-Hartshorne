@@ -10,14 +10,71 @@
 
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
-    \item Let $X$ be a surface in $\P^n$, $n \geq 3$, defined as the complete intersection of hypersurfaces of degree $d_1, \dots, d_{n - 2}$, with each $d_i \geq 2$.
-          Show that for all but finitely many choices of $(n, d_1, \dots, d_{n - 2})$, the surface $X$ is of general type.
-          List the exceptional cases, and where they fit into the classification picture.
+      \item Let $X$ be a surface in $\P^n$, $n \geq 3$, defined as the complete intersection of hypersurfaces of degree $d_1, \dots, d_{n - 2}$, with each $d_i \geq 2$.
+            Show that for all but finitely many choices of $(n, d_1, \dots, d_{n - 2})$, the surface $X$ is of general type.
+            List the exceptional cases, and where they fit into the classification picture.
 
-    \item Prove the following theorem of Chern and Griffiths.
-          Let $X$ be a nonsingular surface of degree $d$ in $\P_\C^{n + 1}$, which is not contained in any hyperplane.
-          If $d < 2n$, then $p_g(X) = 0$.
-          If $d = 2n$, then either $p_g(X) = 0$, or $p_g(X) = 1$ and $X$ is a K3 surface.
+            \begin{proof}
+                  We will use (II, Ex. 8.4e), which states the canonical sheaf $\omega_X$ is isomorphic to $\fO_X(\sum_{i = 1}^{n - 2} d_i - n - 1)$, and assume $d_i$ is in descending order.
+                  Since $d_i \geq 2$, for every $(n, d_1, \dots, d_{n - 2})$ with $n \geq 6$, the inequality $$\sum^{n - 2}_{i = 1} d_i - n - 1 > 0$$ always holds, which implies $\omega_X$ is very ample, hence $X$ is of general type.
+                  If $n = 3$ and $d_1 \geq 5$, then $X$ is of general type.
+                  If $n = 4$ and either $d_1 \geq 4$ or $d_2 \geq 3$, then $X$ is of general type.
+                  If $n = 5$ and $d_1 \geq 3$, then $X$ is of general type.
+                  Thus, the exceptional cases are:
+
+                  \fbox{$n = 3, d_1 = 2$} $X$ is the nonsingular quadric surface, isomorphic to $\P^1 \times \P^1$, and it is also the rational ruled surface with invariant $e = 0$.
+
+                  \fbox{$n = 3, d_1 = 3$} $X$ is a cubic surface, which is isomorphic to $\P^2$ with 6 points in general position blown up, and it is also called a Del Pezzo surface of degree 3.
+
+                  \fbox{$n = 3, d_1 = 4$} In this case, $\omega_X \cong \fO_X$, and we have a short exact sequence
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \fO_{\P^3}(-4) \arrow[r] & \fO_{\P^3} \arrow[r] & \fO_{X} \arrow[r] & 0
+                        \end{tikzcd} ,\]
+                  and the long exact sequence in cohomology gives
+                  \[ \begin{tikzcd}
+                              \cH^1(\P^3, \fO_{\P^3}) \arrow[r] & \cH^1(X, \fO_X) \arrow[r] & \cH^2(\P^3, \fO_{\P^3}(-4))
+                        \end{tikzcd}, \]
+                  so $q = h^1(X, \fO_X) = 0$.
+                  Hence, $X$ is a K3 surface.
+
+                  \fbox{$n = 4, d_1 = d_2 = 2$} $X$ is a Del Pezzo surface of degree 4 with $\omega_X \cong \fO_X(-1)$, which is isomorphic to $\P^2$ with 5 points blown up (Ex. 4.13).
+
+                  \fbox{$n = 4, d_1 = 3, d_2 = 2$} In this case, $\omega_X \cong \fO_X$.
+                  Let $\fI$ be the ideal sheaf of $X$ in $\P^4$.
+                  The long exact sequence in cohomology gives the isomorphism
+                  \begin{equation*}
+                        \cH^1(X, \fO_X) \cong \cH^2(\P^4, \fI).
+                  \end{equation*}
+                  By (III, \SS 7), we can use the Koszul resolution of $\fI$ to compute its cohomology
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \fO_{\P^4}(-5) \arrow[r] & \fO_{\P^5}(-3) \oplus \fO_{\P^4}(-2) \arrow[r] & \fI \arrow[r] & 0
+                        \end{tikzcd} ,\]
+                  which readily shows $\cH^2(\P^4, \fI) = 0$.
+                  Hence, $X$ is a K3 surface.
+
+                  \fbox{$n = 5, d_1 = d_2 = d_3 = 2$} In this case, $\omega_X \cong \fO_X$.
+                  Let $\fI$ be the ideal sheaf of $X$ in $\P^5$.
+                  The long exact sequence in cohomology gives the isomorphism
+                  \begin{equation*}
+                        \cH^1(X, \fO_X) \cong \cH^2(\P^5, \fI).
+                  \end{equation*}
+                  By (III, \SS 7), we can use the Koszul resolution of $\fI$ to compute its cohomology
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \fO_{\P^5}(-6) \arrow[r] & \fO_{\P^5}(-4)^{\oplus 3} \arrow[r] & \fO_{\P^5}(-2)^{\oplus 3} \arrow[r] & \fI \arrow[r] & 0
+                        \end{tikzcd} ,\]
+                  By (III, \SS 7), we can use the Koszul resolution of $\fI$ to compute its cohomology
+                  which readily shows $\cH^2(\P^5, \fI) = 0$.
+                  Hence, $X$ is a K3 surface.
+            \end{proof}
+
+      \item Prove the following theorem of Chern and Griffiths.
+            Let $X$ be a nonsingular surface of degree $d$ in $\P_\C^{n + 1}$, which is not contained in any hyperplane.
+            If $d < 2n$, then $p_g(X) = 0$.
+            If $d = 2n$, then either $p_g(X) = 0$, or $p_g(X) = 1$ and $X$ is a K3 surface.
+
+            \begin{proof}
+                  
+            \end{proof}
 \end{enumerate}
 
 \end{document}
