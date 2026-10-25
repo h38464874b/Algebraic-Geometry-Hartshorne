@@ -203,50 +203,100 @@
 
             \begin{theorem}
                   Let $X$ be a surface obtained by blowing up $r =$ 2, 3, 4, or 5 points of $\P^2$ with its embedding $X \to \P^{9 - r}$ as a surface of degree $9 - r$ (4.7).
-                  The following conditions are equivalent, for a divisor $D$ on $X$:
+                  The lines of $X$ are
+                  \begin{itemize}
+                        \item[(a)] the exceptional curves $E_i$, $i = 1, \dots, r$,
+                        \item[(b)] the strict transform of the lines in $\P^2$ containing $P_i$ and $P_j$, $1 \leq i < j \leq r$, and
+                        \item[(c)] if $r = 5$, the strict transform of the conic in $\P^2$ containing the five $P_i$.
+                  \end{itemize}
+                  \[
+                        \begin{array}{c|cccc}
+                              r                      & 2 & 3 & 4  & 5  \\ \hline
+                              \text{Number of lines} & 3 & 6 & 10 & 16
+                        \end{array}
+                  \]
+            \end{theorem}
+
+            \begin{theorem}
+                  Let $X$ be a surface obtained by blowing up $r =$ 2, 3, 4, or 5 points of $\P^2$ with its embedding $X \to \P^{9 - r}$ as a surface of degree $9 - r$ (4.7).
+                  For a divisor $D$ on $X$, the following conditions are equivalent:
                   \begin{itemize}
                         \item[(i)] $D$ is very ample;
                         \item[(ii)] $D$ is ample;
-                        \item[(iii)] $D^2 > 0$, and for every line $L \subset X$, $D.L \geq 0$;
+                        \item[(iii)] $D^2 > 0$, and for every line $L \subset X$, $D.L > 0$;
                         \item[(iv)] for every line $L \subset X$, $D.L > 0$.
                   \end{itemize}
             \end{theorem}
 
             \begin{proof}
                   It is enough to show (iv) $\Rightarrow$ (i).
-                  We will first prove a lemma.
+                  Suppose $D \sim a \ell - \sum b_i e_i$ is a divisor satisfying $D.L > 0$ for every line $L \subset X$.
+                  We will use the list in (0.1), and the general fact that a very ample divisor plus a divisor moving in a linear system without base points is very ample (II, Ex. 7.5).
+                  Consider the following divisor classes
+                  \begin{equation*}
+                        D_i = \ell - e_i, \quad E = 3\ell - \sum_{i = 1}^r e_i, \quad F_j = 2\ell - \sum_{i = 1}^j e_i,
+                  \end{equation*}
+                  where $D_i$ have no unassigned base points, $F_j$ has no unassigned base points if $j \leq 4$, and $E$ is very ample.
+                  We will proceed by cases, where $r = 5$ requires special care.
+                  In the case $r < 5$, the coefficients of $D$ satisfy
+                  \begin{equation*}
+                        b_i > 0, \quad a > b_i + b_j,
+                  \end{equation*}
+                  and since $\ell$ is base-point free, if we can show any divisor satisfying the extremal case
+                  \begin{equation*}
+                        b_1 \geq \cdots \geq b_r, \quad a = b_1 + b_2 + 1.
+                  \end{equation*}
+                  is very ample, then we are done.
+                  For all cases, assume the inequality.
+                  In all cases, our strategy will be to write $D - E$ as a sum of base-point free divisors.
 
-                  \begin{lemma}
-                        Let $D \sim a \ell - \sum_{i = 1}^r b_i e_i$ be a divisor class on $X$, and suppose that $b_1 \geq b_2 \geq \cdots \geq b_r > 0$ and $a \geq b_1 + 2b_2$.
-                        Then $D$ is very ample.
-                  \end{lemma}
+                  \fbox{$r = 2$}
+                  \begin{equation*}
+                        D = E + (b_1 - 1)D_1 + (b_2 - 1)D_2,
+                  \end{equation*}
 
-                  \begin{proof}
-                        We use the general fact that a very ample divisor plus a divisor moving in a linear system without base points is very ample (II, Ex. 7.5).
-                        Let us consider the divisor classes
-                        \begin{equation*}
-                              D_0 = \ell, \quad D_1 = \ell - e_1, \quad D_i = 3\ell - e_1 - \cdots - e_i \quad (i \geq 2).
-                        \end{equation*}
-                        For each case $r = 2, 3, 4, 5$, only $D_0, D_1, \dots, D_r$ are defined on $X$.
-                        Then $|D_0|$, $|D_1|$ correspond to the linear system of lines in $\P^2$ with 0 or 1 assigned base points, which have no unassigned base points.
-                        Also, $|D_2|, |D_3|, \dots, |D_{r - 1}|$ have no base points by (4.3), and $|D_r|$ is very ample by (4.6).
-                        Therefore any linear combination of these, $D = \sum_{i = 0}^r c_iD_i$, with $c_i \geq 0$ and $c_r > 0$, will be very ample.
+                  \fbox{$r = 3$}
+                  \begin{equation*}
+                        D - E = (b_3 - 1)F_3 + (b_1 - b_3)D_1 + (b_2 - b_3)D_2,
+                  \end{equation*}
 
-                        Clearly $D_0, \dots, D_r$ form a free basis for $\pic{X} \cong \Z^{r + 1}$ (3.2).
-                        Writing $D \sim a \ell - \sum_{i = 1}^r b_i e_i$, we have
-                        \begin{equation*}
-                              a = c_0 + c_1 + 3(c_2 + \cdots + c_r), \quad b_i = c_i + \cdots + c_r.
-                        \end{equation*}
-                        where $c_i, b_i$ is understood as zero for $i > r$.
-                        Then one checks easily that the conditions $c_i \geq 0$ and $c_r > 0$ are equivalent to the conditions $b_1 \geq \cdots \geq b_r > 0$ and $a \geq b_1 + 2b_2$.
-                  \end{proof}
+                  \fbox{$r = 4$}
+                  \begin{equation*}
+                        D - E = (b_4 - 1)F_4 + (b_3 - b_4)F_3 + (b_1 - b_3)D_1 + (b_2 - b_3)D_2,
+                  \end{equation*}
 
-                  \textit{Proof of (0.1), continued.}
-                  Suppose $D$ is a divisor satisfying $D.L > 0$ for every line $L \subset X$.
-
+                  \fbox{$r = 5$} We additionally have $D.F_5 > 0$, which means
+                  \begin{equation*}
+                        2a > b_1 + b_2 + b_3 + b_4 + b_5.
+                  \end{equation*}
+                  Unlike when $r < 5$, there is no obvious extremal case to reduce to, and $F_5$ is not base-point free.
+                  Nonetheless, we can write
+                  \begin{equation*}
+                        D - E = (a - 3) \ell - (b_1 - 1)e_1 - (b_2 - 1)e_2 - (b_3 - 1)e_3 - (b_4 - 1)e_4 - (b_5 - 1)e_5,
+                  \end{equation*}
+                  and the strategy remains the same.
+                  Repeating the case $r = 4$,
+                  \begin{equation*}
+                        D - E = (b_4 - 1)F_4 + (b_3 - b_4)F_3 + (b_2 - b_3)F_2 + (b_1 - b_2)F_1 + (a - 2b_1 - 1)\ell - (b_5 - 1)e_5,
+                  \end{equation*}
+                  so if $a - 2b_1 \geq b_5$, we are done.
+                  Otherwise, suppose $a - 2b_1 < b_5$, and for each $k = 2, \dots, 5$, consider the divisor classes
+                  \begin{equation*}
+                        F'_{k} = 2\ell - \sum_{i = 2}^k e_i.
+                  \end{equation*}
+                  Each $F'_{k}$ is base-point free as well, and we can repeat above so that
+                  \begin{equation*}
+                        D - E = (b_5 - 1)F_5' + (b_4 - b_5)F_4' + (b_3 - b_4)F_3' + (b_2 - b_3)F_2' + (a - 2b_2 - 1)\ell - (b_1 - 1)e_1,
+                  \end{equation*}
+                  Similar to above, if $a - 2b_2 \geq b_1$, then we are done, so assume otherwise.
+                  At this point, we have the inequalities
+                  \begin{equation*}
+                        a - 2b_1 < b_5, \quad a - 2b_2 < b_1.
+                  \end{equation*}
             \end{proof}
 
             \begin{proof} [Proof of (Ex. 4.8).]
+                  
             \end{proof}
 
             % \item[\textbf{9.}] If $C$ is an irreducible non-singular curve of degree $d$ on the cubic surface, and if the genus $g > 0$, then
@@ -290,12 +340,12 @@
                               0 \arrow[r] & \fO_X(-D) \arrow[r] & \fO_X \arrow[r] & \fO_D \arrow[r] & 0
                         \end{tikzcd} , \]
                   where $\fO_D$ is the structure sheaf of $D$ as a variety.
-                  Since $X$ is a hypersurface of $\P^3$, we have $$\cH^1(X, \fO_X) = \cH^1(\P^3, \fO_{\P^3}) = 0,$$ so the long exact sequence in cohomology gives
+                  Since $X$ is a hypersurface in $\P^3$, $$h^1(X, \fO_X) = h^1(\P^3, \fO_{\P^3}) = 0,$$ so the long exact sequence in cohomology gives
                   \[ \begin{tikzcd}
                               0 \arrow[r] & \cH^0(X, \fO_X) \arrow[r] & \cH^0(D, \fO_D) \arrow[r] & \cH^1(X, \fO_X(-D)) \arrow[r] & 0
                         \end{tikzcd}, \]
-                  and since $D$ is irreducible, we have $$h^0(X, \fO_X) = h^0(D, \fO_D) = 1.$$
-                  Hence by exactness, we have $\cH^1(X, \fO_X(-D)) = 0$.
+                  and since $D$ is irreducible, $$h^0(X, \fO_X) = h^0(D, \fO_D) = 1.$$
+                  Hence by exactness, $\cH^1(X, \fO_X(-D)) = 0$.
             \end{proof}
 
       \item[\textbf{13.}] Let $X$ be the Del Pezzo surface of degree 4 in $\P^4$ obtained by blowing up 5 points of $\P^2$ (4.7).
@@ -416,19 +466,39 @@
             \end{itemize}
 
             \begin{proof} $ $ \vspace{0pt}
-                 \begin{itemize} [leftmargin=0cm]
-                  \item[(a)]
+                  \begin{itemize} [leftmargin=0cm]
+                        \item[(a)] By (Ex. 4.2), the strict transform of a conic under a quadratic transformation centered points in the conic is a line, and conversely the strict transform of a line under a quadratic transformation centered away from the line is a conic.
 
-                  \item[(b)]
+                        \item[(b)] Follows from the fact that the inverse of a quadratic transformation is also a quadratic transformation.
 
-                  \item[(c)]
+                        \item[(c)]
 
-                  \item[(d)]
-                 \end{itemize} 
+                        \item[(d)]
+                  \end{itemize}
             \end{proof}
 
-      \item[\textbf{16.}] For the \textit{Fermat cubic surface.} $x_0^3 + x_1^3 + x_2^3 + x_3^3 = 0$, find the equations of the 27 lines explicitly, and verify their incidence relations.
+      \item[\textbf{16.}] For the \textit{Fermat cubic surface.} $x^3 + y^3 + z^3 + w^3 = 0$, find the equations of the 27 lines explicitly, and verify their incidence relations.
             What is the group of automorphisms of this surface?
+
+            \begin{center}
+                  \includegraphics[width=0.7\linewidth]{../../Visualizations/fermatSurface/twentySevenlines.pdf}
+            \end{center}
+
+            \begin{proof}
+                  Let $\omega^3 = 1$ be a primitive third root of unity in $k$.
+                  The line defined by the parametric equation
+                  \begin{equation*}
+                        t \mapsto (\omega^i t, - \omega^j t, - \omega^k), \quad i, j, k = 0, 1, 2,
+                  \end{equation*}
+                  is contained in $X$.
+                  There are 27 possible combinations of $(i, j, k)$, and $(i, j, k), (i + 1, j + 1, k + 1)$ define the same lines in $\P^3$, which gives nine of the lines.
+                  By symmetry of the defining equation, we obtain the rest.
+
+                  The automorphisms of $X$ are the following.
+                  Any permutation of the coordinates preserve the defining equation, which is an action of the symmetric group $\Sigma_4$.
+                  Also, multiplication of any of the coordinates by any power of $\omega$ also preserve the defining equation, which is an action of $(\Z/3)^{\oplus 4} / \Z(1, 1, 1, 1) \cong (\Z/3)^{\oplus 3}$.
+                  Hence, $\Aut{X} \cong \Sigma_4 \rtimes (\Z/3)^{\oplus 3}$, which has size 648.
+            \end{proof}
 
 \end{enumerate}
 

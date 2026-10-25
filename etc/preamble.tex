@@ -19,18 +19,16 @@
 
 % Fonts
 \usepackage[T1]{fontenc}
+\usepackage[mathscr]{euscript}
+\usepackage{mathbbol}
 % \usepackage{tgschola}
-% \usepackage[scaled=0.92]{helvet}
+% \usepackage{helvet}
+\usepackage[
+   lite,
+   subscriptcorrection,
+   nofontinfo
+]{mtpro2}
 
-% \usepackage[
-%    lite,
-%    subscriptcorrection,
-%    slantedGreek,
-%    nofontinfo
-% ]{mtpro2}
-
-% \usepackage{upgreek}
-\usepackage{dsfont}
 
 % Paragraph typography
 \setlength{\parskip}{0pt}
@@ -94,7 +92,7 @@
 \clist_map_inline:nn
 {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 {
-   \cs_new:cpn { f#1 } { \mathcal{#1} }
+   \cs_new:cpn { f#1 } { \mathscr{#1} }
 }
 
 % Cal Font
