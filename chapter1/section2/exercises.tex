@@ -28,14 +28,14 @@
           \end{itemize}
 
           \begin{proof}
-              (i) $\implies$ (ii) Let $S = k[x_0, \dots, x_n]$.
+              (i) $\Rightarrow$ (ii) Let $S = k[x_0, \dots, x_n]$.
               If $Z(\goth{a}) \empty$, then all homogenous polynomials in $S$ with degree $> 0$ are in $\sqrt{\goth{a}}$ by the Nullstellensatz, so we have $S_+ \subseteq \sqrt{\goth{a}}$.
               If $\sqrt{\goth{a}}$ contains any element in $S - S_+$, then $\sqrt{\goth{a}}$ contains an element in $S_0$, which is a unit.
               Hence, $\sqrt{\goth{a}} = S$.
 
-              (ii) $\implies$ (iii) Either case $S_+ \subseteq \sqrt{\goth{a}}$, so $x_i^{d_i} \in \goth{a}$ for some $d_i \geq 0$ for each $i$, which implies $S_d \subseteq \goth{a}$ where $d = \max{d_i}$.
+              (ii) $\Rightarrow$ (iii) Either case $S_+ \subseteq \sqrt{\goth{a}}$, so $x_i^{d_i} \in \goth{a}$ for some $d_i \geq 0$ for each $i$, which implies $S_d \subseteq \goth{a}$ where $d = \max{d_i}$.
 
-              (iii) $\implies$ (i) Let $d > 0$ be the smallest integer such that $\goth{a} \supseteq S_d$, then we have $\goth{a} \supseteq \bigoplus_{l \geq d} S_l$ so that $x_i^l \in \goth{a}$ for all $0 \leq i \leq n$ and $l \geq d$.
+              (iii) $\Rightarrow$ (i) Let $d > 0$ be the smallest integer such that $\goth{a} \supseteq S_d$, then we have $\goth{a} \supseteq \bigoplus_{l \geq d} S_l$ so that $x_i^l \in \goth{a}$ for all $0 \leq i \leq n$ and $l \geq d$.
               If there exists $P = (a_0, \dots, a_n) \in Z(\goth{a})$, then $a_i^d = a_i^{d + 1} = 0$, which implies $a_i = 0$ for all $0 \leq i \leq n$, which is impossible.
           \end{proof}
 

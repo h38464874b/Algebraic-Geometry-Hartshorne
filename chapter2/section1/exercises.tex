@@ -31,11 +31,11 @@
               \begin{itemize} [leftmargin=0cm]
                   \item[(a)] It is true in general that kernels commute with limits and cokernels commmute with colimits in any abelian category, since kernels and cokernels can be realized as limits and colimits, respectively.
 
-                  \item[(b)] $\varphi$ is injective $\iff$ $\ker{\varphi} = 0$ $\iff$ $(\ker{\varphi})_P = 0$ $\iff$ $\ker{\varphi_P} = 0$.
+                  \item[(b)] $\varphi$ is injective $\Leftrightarrow$ $\ker{\varphi} = 0$ $\Leftrightarrow$ $(\ker{\varphi})_P = 0$ $\Leftrightarrow$ $\ker{\varphi_P} = 0$.
 
-                        $\varphi$ is surjective $\iff$ $\im{\varphi} = \fG$ $\iff$ $\im(\varphi_P) = (\im{\varphi})_P = \fG_P$.
+                        $\varphi$ is surjective $\Leftrightarrow$ $\im{\varphi} = \fG$ $\Leftrightarrow$ $\im(\varphi_P) = (\im{\varphi})_P = \fG_P$.
 
-                  \item[(c)] The sequence $\dots \to \fF^{i - 1} \xrightarrow{\varphi^{i - 1}} \fF^i \xrightarrow{\varphi^i} \fF^{i + 1} \to \dots$ is exact $\iff$ $\im{\varphi^{i - 1}} = \ker{\varphi^i}$ for all $i$ $\iff$ $(\im{\varphi^{i - 1}})_P = (\ker{\varphi^i})_P$ for all $i$ and $P \in X$ $\iff$ $\im(\varphi^{i - 1}_P) = \ker(\varphi^i_P)$ for all $i$ and $P \in X$ by part (a) above.
+                  \item[(c)] The sequence $\dots \to \fF^{i - 1} \xrightarrow{\varphi^{i - 1}} \fF^i \xrightarrow{\varphi^i} \fF^{i + 1} \to \dots$ is exact $\Leftrightarrow$ $\im{\varphi^{i - 1}} = \ker{\varphi^i}$ for all $i$ $\Leftrightarrow$ $(\im{\varphi^{i - 1}})_P = (\ker{\varphi^i})_P$ for all $i$ and $P \in X$ $\Leftrightarrow$ $\im(\varphi^{i - 1}_P) = \ker(\varphi^i_P)$ for all $i$ and $P \in X$ by part (a) above.
               \end{itemize}
           \end{proof}
 
@@ -78,7 +78,7 @@
     \item[\textbf{5.}] Show that a morphism of sheaves is an isomorphism if and only if it is both injective and surjective.
 
           \begin{proof}
-              $\varphi : \fF \to \fG$ is an isomorphism $\iff$ $\varphi_P : \fF_P \to \fG_P$ is an isomorphism for all $P \in X$ $\iff$ $\varphi$ is injective and surjective by Exercise 2.
+              $\varphi : \fF \to \fG$ is an isomorphism $\Leftrightarrow$ $\varphi_P : \fF_P \to \fG_P$ is an isomorphism for all $P \in X$ $\Leftrightarrow$ $\varphi$ is injective and surjective by Exercise 2.
           \end{proof}
 
     \item[\textbf{6.}] \begin{itemize}
@@ -96,9 +96,9 @@
                   \item[(b)] By Exercise 2, We have the following equivalent statements:
                         \begin{align*}
                              & 0 \to \fF' \to \fF \to \fF'' \to 0 \text{ is exact.}                 \\
-                             & \iff 0 \to \fF'_P \to \fF_P \to \fF''_P \to 0 \text{ is exact.}      \\
-                             & \iff \fF_P' \subseteq \fF_P \text{ and } \fF_P'' \simeq \fF_P / \fF'_P \simeq (\fF / \fF')_P \\
-                             & \iff \fF' \text{ is isomorphic to a subsheaf of $\fF$ and } \fF'' \cong \fF / \fF'.
+                             & \Leftrightarrow 0 \to \fF'_P \to \fF_P \to \fF''_P \to 0 \text{ is exact.}      \\
+                             & \Leftrightarrow \fF_P' \subseteq \fF_P \text{ and } \fF_P'' \simeq \fF_P / \fF'_P \simeq (\fF / \fF')_P \\
+                             & \Leftrightarrow \fF' \text{ is isomorphic to a subsheaf of $\fF$ and } \fF'' \cong \fF / \fF'.
                         \end{align*}
               \end{itemize}
           \end{proof}
@@ -284,14 +284,14 @@
               Hence, $\alpha_*$ and $\beta^*$ are bijections with inverses to each other.
           \end{proof}
 
-    \item[\textbf{22.}] \textit{Glueing Sheaves.} Let $X$ be a topological space, let $\mathfrak{U} = \{ U_i \}$ be an open cover of $X$, and suppose we are given for each $i$ a sheaf $\fF_i$ on $U_i$, and for each $i$, $j$ an isomorphism $\varphi_{ij} : \restr{\fF_i}{U_i \cap U_j} \xrightarrow{\sim} \restr{\fF_j}{U_i \cap U_j}$ such that
-          \begin{itemize}
-              \item[(1)] for each $i$, $\varphi_{ii} = \text{id}$,
-              \item[(2)] and for each $i, j, k$, $\varphi_{ik} = \varphi_{jk} \circ \varphi_{ij}$ on $U_i \cap U_j \cap U_k$.
-          \end{itemize}
-          Then there exists a unique sheaf $\fF$ on $X$ together with isomorphisms $\psi_i : \restr{\fF}{U_i} \xrightarrow{\sim} \fF_i$ such that for each $i, j$, $\psi_j = \varphi_{ij} \circ \psi_i$ on $U_i \cap U_j$. We say loosely that $\fF$ is obtained by \textit{glueing} the sheaves $\fF_i$ via the isomorphisms $\varphi_{ij}$.
+    % \item[\textbf{22.}] \textit{Glueing Sheaves.} Let $X$ be a topological space, let $\mathfrak{U} = \{ U_i \}$ be an open cover of $X$, and suppose we are given for each $i$ a sheaf $\fF_i$ on $U_i$, and for each $i$, $j$ an isomorphism $\varphi_{ij} : \restr{\fF_i}{U_i \cap U_j} \xrightarrow{\sim} \restr{\fF_j}{U_i \cap U_j}$ such that
+    %       \begin{itemize}
+    %           \item[(1)] for each $i$, $\varphi_{ii} = \text{id}$,
+    %           \item[(2)] and for each $i, j, k$, $\varphi_{ik} = \varphi_{jk} \circ \varphi_{ij}$ on $U_i \cap U_j \cap U_k$.
+    %       \end{itemize}
+    %       Then there exists a unique sheaf $\fF$ on $X$ together with isomorphisms $\psi_i : \restr{\fF}{U_i} \xrightarrow{\sim} \fF_i$ such that for each $i, j$, $\psi_j = \varphi_{ij} \circ \psi_i$ on $U_i \cap U_j$. We say loosely that $\fF$ is obtained by \textit{glueing} the sheaves $\fF_i$ via the isomorphisms $\varphi_{ij}$.
 
-              {\color{red} Shame on James for skipping this ``standard exercise.''}
+    %           {\color{red} Shame on James for skipping this ``standard exercise.''}
 
 \end{enumerate}
 

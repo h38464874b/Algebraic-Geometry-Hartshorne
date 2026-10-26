@@ -41,4 +41,27 @@ for chapter in chapter*; do
     done
 done
 
-echo "All sections compiled successfully."
+# Loop through each appendix directory
+for appendix in appendices/appendix*; do
+
+    [[ -d "$appendix" ]] || continue
+
+    texfile="$appendix/exercises.tex"
+
+    if [[ -f "$texfile" ]]; then
+        echo "Compiling $texfile..."
+
+        pdflatex \
+            -interaction=nonstopmode \
+            -halt-on-error \
+            -output-directory="$appendix" \
+            "$texfile" > /dev/null
+
+        echo "Finished: $appendix"
+    else
+        echo "No exercises.tex found in $appendix"
+    fi
+
+done
+
+echo "All chapters and appendices compiled successfully."

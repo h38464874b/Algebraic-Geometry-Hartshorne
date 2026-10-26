@@ -71,8 +71,70 @@
             If $d < 2n$, then $p_g(X) = 0$.
             If $d = 2n$, then either $p_g(X) = 0$, or $p_g(X) = 1$ and $X$ is a K3 surface.
 
-            \begin{proof}
+            \begin{lemma}
+                  Let $H$ be an ample divisor on a surface $X$.
+                  If $D$ is a divisor on $X$ such that $D.H = 0$ and $\cH^0(X, \fO_X(D)) \neq 0$, then $\fO_X(D) \cong \fO_X$.
+            \end{lemma}
 
+            \begin{proof}
+                  A non-zero section $s \in \cH^0(X, \fO_X(D))$ defines an effective divisor $D_0 = (s)_0$ linearly equivalent to $D$.
+                  If $D.H = 0$, then $D_0.H = 0$, which is possible if and only if $D_0 = 0$ by (1.10).
+                  Hence, $\fO_X(D) \cong \fO_X$.
+            \end{proof}
+
+            \begin{proof} [Proof of (Ex. 6.2).]
+                  Let $\fO_X(1)$ be the very ample line bundle on $X$ corresponding to the embedding $X \to \P^{n + 1}_\C$, let $K$ be a canonical divisor on $X$, and let $\omega_X = \fO_X(K)$ be the canonical sheaf of $X$.
+                  By Bertini's theorem (II, 8.18), a generic hyperplane section of $X$ cuts a smooth irreducible curve $C \subset X$ of degree $d$ with $\fO_X(1) \cong \fO_X(C)$.
+
+                  If $d < 2n$, the contrapositive of Clifford's theorem (IV, 5.6) implies $\fO_C(1) = \fO_X(C) \otimes \fO_C$ is a nonspecial line bundle on $C$, i.e., $h^1(C, \fO_C(1)) = 0$.
+                  Let $\omega_C$ be the canonical sheaf of $C$.
+                  By the adjunction formula (II, 8.20), we have an isomorphism of line bundles
+                  \begin{equation*}
+                        \omega_C \cong \omega_X \otimes \fO_X(C) \otimes \fO_C,
+                  \end{equation*}
+                  so by Serre duality (III, 7.7),
+                  \begin{equation*}
+                        h^0(C, \omega_X \otimes \fO_C) = h^1(C, \fO_X(C) \otimes \fO_C) = 0.
+                  \end{equation*}
+                  If there exists a nonzero section $s \in \cH^0(X, \omega_X)$, then the zero locus $D = (s)_0$ is an effective divisor of $X$ with finitely many irreducible components.
+                  By above, $s$ restricts to zero on any smooth irreducible hyperplane section $C$, so $D$ must contain $C$ in its support.
+                  This is impossible, because there are infinitely many distinct irreducible hyperplane sections of $X$ in $\P^{n + 1}_\C$.
+                  Therefore,
+                  \begin{equation*}
+                        p_g(X) = h^0(X, \omega_X) = 0.
+                  \end{equation*}
+                  If $d = 2n$ and $\fO_C(1)$ is a special line bundle on $C$, then by Clifford's theorem, $C$ is a nonhyperelliptic canonical curve of degree $d = C^2 = 2n$ (Ex. 1.2) and genus $g_C = n + 1$, i.e., $\omega_C \cong \fO_C(1)$.
+                  Combining with the adjunction formula gives the isomorphism
+                  \begin{equation*}
+                        \omega_X \otimes \fO_X(C) \otimes \fO_C \cong \omega_C \cong \fO_X(C) \otimes \fO_C,
+                  \end{equation*}
+                  which implies
+                  \begin{equation*}
+                        \omega_X \otimes \fO_C \cong \fO_C, \quad C.K = 0.
+                  \end{equation*}
+                  Consider the short exact sequence
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \fO_X(-C) \arrow[r] & \fO_X \arrow[r] & \fO_C \arrow[r] & 0
+                        \end{tikzcd} . \]
+                  Tensoring by $\omega_X$ and taking the long exact sequence in cohomology gives
+                  \[ \begin{tikzcd}
+                              0 \arrow[r] & \cH^0(X, \fO_X(K -C)) \arrow[r] & \cH^0(X, \omega_X) \arrow[r] & \cH^0(C, \fO_C)
+                        \end{tikzcd} . \]
+                  Since $C$ is very ample and $(K - C).C = -C^2 < 0$, by (1.10) $h^0(X, \fO_X(K - C)) = 0$, so by exactness,
+                  \begin{equation*}
+                        p_g(X) = h^0(X, \omega_X) \leq h^0(C, \fO_C) = 1.
+                  \end{equation*}
+                  If $p_g(X) = 1$, by (0.1) $K \sim 0$.
+                  Consider the long exact sequence in cohomology of the short exact sequence above
+                  \[ \begin{tikzcd}
+                              {\cH^1(X, \fO_X(-C))} \arrow[r] & {\cH^1(X, \fO_X)} \arrow[r] & {\cH^1(C, \fO_C)} \arrow[r] & {\cH^2(X, \fO_X(-C))} \arrow[r] & \cH^2(\fO_X) \arrow[r] & 0
+                        \end{tikzcd} .\]
+                  By the Kodaira vanishing theorem, $h^1(X, \fO_X(-C)) = 0$, and by Serre duality,
+                  \begin{equation*}
+                        h^2(X, \fO_X(-C)) = h^0(X, \fO_X(C)) = n + 2, \quad h^2(X, \fO_X) = h^0(X, \fO_X) = 1.
+                  \end{equation*}
+                  Since $h^1(C, \fO_C) = g_C = n + 1$, we conclude by exactness that $h^1(X, \fO_X) = 0$.
+                  Hence, $X$ is a K3 surface.
             \end{proof}
 \end{enumerate}
 

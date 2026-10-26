@@ -162,7 +162,7 @@ We say that $X$ is obtained by \textit{glueing} the schemes $X_i$ along the isom
 
 \begin{proof} $ $ \vspace{0pt}
     \begin{itemize} [leftmargin=0cm]
-        \item[(a)] By (Ex. 2.2), $Z((0)) = \proj{S} = \emptyset$ $\iff$ $\sqrt{(0)} \supseteq S_+$ $\iff$ $S_+$ is nilpotent.
+        \item[(a)] By (Ex. 2.2), $Z((0)) = \proj{S} = \emptyset$ $\Leftrightarrow$ $\sqrt{(0)} \supseteq S_+$ $\Leftrightarrow$ $S_+$ is nilpotent.
 
         \item[(b)] Notice that $U = \proj{T} - V(\varphi(S_+))$, so $U$ is indeed open. We can define $f : U \to \proj{S}$ to be $f(\goth{p}) = \varphi^{-1}(\goth{p})$. Since $\varphi$ does not contain $\varphi(S_+)$, $\varphi^{-1}(\goth{p})$ does not contain $S_+$, so it is an element of $\proj{S}$. Also, $\varphi$ preserves degrees; in particular the preimage of a homogenous element is homogenous, so if $\goth{p}$ is a homogenous prime ideal, then so is $f(\goth{p})$.
 
@@ -184,7 +184,7 @@ We say that $X$ is obtained by \textit{glueing} the schemes $X_i$ along the isom
 
 \begin{proof} $ $ \vspace{0pt}
     \begin{itemize} [leftmargin=0cm]
-        \item[(a)] $P \in t(V)$ is a closed point $\iff$ $t(Y) = \{ P \}$ for some closed subset $Y \subseteq V$ $\iff$ $Y$ is a closed point in $V$ $\iff$ its residue field is $k$.
+        \item[(a)] $P \in t(V)$ is a closed point $\Leftrightarrow$ $t(Y) = \{ P \}$ for some closed subset $Y \subseteq V$ $\Leftrightarrow$ $Y$ is a closed point in $V$ $\Leftrightarrow$ its residue field is $k$.
 
         \item[(b)] We can reduce to the case when $X$ and $Y$ are affine over $k$ by taking open affine neighborhoods of $P$ and $f(P)$. Let $X = \spec{A}$ and $Y = \spec{B}$ where $A, B$ are $k$-algebras. A morphism of affine schemes $f : X \to Y$ correspond to a ring homomorphism $\varphi : B \to A$. The point $P \in X$ corresponds to a prime ideal $\goth{p}$ in $A$, and $f(P) \in Y$ corresponds to the prime ideal $\goth{P} = \varphi^{-1}(\goth{p})$ in $B$. If $P$ has residue field $k$, then $\varphi$ induces a map $B / \goth{P} \to  k$ since $A / \goth{p} = k$, so the residue field of $f(P)$ is a subfield of $k$. Since the residue field of $f(P)$ is also a $k$-algebra and $k$ is algebraically closed, $f(P)$ must have $k$ as its residue field.
 
@@ -234,11 +234,11 @@ We say that $X$ is obtained by \textit{glueing} the schemes $X_i$ along the isom
 \end{itemize}
 
 \begin{proof}
-    (i) $\implies$ (iii) Write $\spec{A} = \spec{A/\goth{a}_1} \amalg \spec{A/\goth{a}_2}$ where $\goth{a}_i$ are the ideals corresponding to the open and closed sets $U_i = \spec{A/\goth{a}_i}$ for $i = 1, 2$. We have $$V(\goth{a}_1) \cup V(\goth{a}_2) = V(\goth{a}_1 \goth{a}_2 ) = V((0)) = \spec{A}$$ and $$V(\goth{a}_1) \cap V(\goth{a}_2) = V(\goth{a}_1 + \goth{a}_2)= V((1)) = \emptyset.$$ By (A, M Prop 1.10), $A \simeq A/\goth{a}_1 \times A/\goth{a}_2$.
+    (i) $\Rightarrow$ (iii) Write $\spec{A} = \spec{A/\goth{a}_1} \amalg \spec{A/\goth{a}_2}$ where $\goth{a}_i$ are the ideals corresponding to the open and closed sets $U_i = \spec{A/\goth{a}_i}$ for $i = 1, 2$. We have $$V(\goth{a}_1) \cup V(\goth{a}_2) = V(\goth{a}_1 \goth{a}_2 ) = V((0)) = \spec{A}$$ and $$V(\goth{a}_1) \cap V(\goth{a}_2) = V(\goth{a}_1 + \goth{a}_2)= V((1)) = \emptyset.$$ By (A, M Prop 1.10), $A \simeq A/\goth{a}_1 \times A/\goth{a}_2$.
 
-    (iii) $\implies$ (ii) $e_1 = (1, 0), e_2 = (0, 1)$
+    (iii) $\Rightarrow$ (ii) $e_1 = (1, 0), e_2 = (0, 1)$
 
-    (ii) $\implies$ (i) $\spec{A} = V((e_1)) \amalg V((e_2))$ because any prime ideal of $A$ must contain either $e_i$ since $e_1 e_2 = 0$, but cannot contain both.
+    (ii) $\Rightarrow$ (i) $\spec{A} = V((e_1)) \amalg V((e_2))$ because any prime ideal of $A$ must contain either $e_i$ since $e_1 e_2 = 0$, but cannot contain both.
 \end{proof}
 
 \end{enumerate}

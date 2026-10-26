@@ -42,7 +42,11 @@
     \item[\textbf{6.}] Any nonempty open subset of an irreducible topological space is dense and irreducible. If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology, then the closure $\overline{Y}$ is also irreducible.
 
           \begin{proof}
-              Let $X$ be an irreducible topological space and let $U$ be a non-empty proper open subset of $X$. Then $C = X - U$ is a proper closed subset of $X$, so we have $X = \overline{U} \cup C$, hence $\overline{U} = X$. Conversely, if every open subset of a topological space is dense, and we have $X = C_1 \cup C_2$ for two closed subsets of $X$ with $C_1$ proper, then $U_1 = X - C_1$ is an open subset contained in $C_2$, which implies $X = \overline{U_1} \subseteq \overline{C_2} = C_2$, hence $C_2 = X$. It follows immediately that any open subset of an irreducible space is irreducible: if $V \subset U$ are open subsets, then the closure of $V$ as a subspace of $U$ is the intersection of $U$ and its closure as a subspace of $X$, and $V$ is dense in $X$, hence it is dense in $U$. Now, if $U$ is an open subset of $\overline{Y}$ for an irreducible subset $Y$ of any topological space $X$, then it must meet $Y$ by definition of the closure of a subset, then the closure of $U$ as a subspace of $X$ contains $Y$ since $U$ is dense in $Y$, hence $\overline{U} \cap \overline{Y} = \overline{Y}$.
+              Let $X$ be an irreducible topological space and let $U$ be a non-empty proper open subset of $X$.
+              Then $C = X - U$ is a proper closed subset of $X$, so we have $X = \overline{U} \cup C$, hence $\overline{U} = X$.
+              Conversely, if every open subset of a topological space is dense, and we have $X = C_1 \cup C_2$ for two closed subsets of $X$ with $C_1$ proper, then $U_1 = X - C_1$ is an open subset contained in $C_2$, which implies $X = \overline{U_1} \subseteq \overline{C_2} = C_2$, hence $C_2 = X$.
+              It follows immediately that any open subset of an irreducible space is irreducible: if $V \subset U$ are open subsets, then the closure of $V$ as a subspace of $U$ is the intersection of $U$ and its closure as a subspace of $X$, and $V$ is dense in $X$, hence it is dense in $U$.
+              Now, if $U$ is an open subset of $\overline{Y}$ for an irreducible subset $Y$ of any topological space $X$, then it must meet $Y$ by definition of the closure of a subset, then the closure of $U$ as a subspace of $X$ contains $Y$ since $U$ is dense in $Y$, hence $\overline{U} \cap \overline{Y} = \overline{Y}$.
           \end{proof}
 
     \item[\textbf{7.}]
@@ -64,13 +68,13 @@
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] (i) $\implies$ (ii) If (ii) is false there is a non-empty collection $T$ of closed subsets with no minimal element, and we can construct inductively a non-terminating strictly decreasing sequence in $T$.
+                  \item[(a)] (i) $\Rightarrow$ (ii) If (ii) is false there is a non-empty collection $T$ of closed subsets with no minimal element, and we can construct inductively a non-terminating strictly decreasing sequence in $T$.
 
-                        (ii) $\implies$ (iii) Let $U_1 \subset U_2 \subset \cdots$ be an ascending chain of open subsets of $X$ and let $C_i = X - U_i$. Then $\{ C_i \}_{i \geq 1}$ is a non-empty collection of closed subsets of $X$, hence has a minimal element, say $C_m$. Hence, we have $U_m = U_{m + 1} = \cdots$.
+                        (ii) $\Rightarrow$ (iii) Let $U_1 \subset U_2 \subset \cdots$ be an ascending chain of open subsets of $X$ and let $C_i = X - U_i$. Then $\{ C_i \}_{i \geq 1}$ is a non-empty collection of closed subsets of $X$, hence has a minimal element, say $C_m$. Hence, we have $U_m = U_{m + 1} = \cdots$.
 
-                        (iii) $\implies$ (iv) If (iv) is false, then there is a non-empty collection $S$ of open subsets with no maximal element, and we can construct inductively a non-terminating strictly increasing sequence in $S$.
+                        (iii) $\Rightarrow$ (iv) If (iv) is false, then there is a non-empty collection $S$ of open subsets with no maximal element, and we can construct inductively a non-terminating strictly increasing sequence in $S$.
 
-                        (iv) $\implies$ (i) Let $C_1 \supseteq C_2 \supseteq \cdots$ be a descending chain of closed subsets of $X$ and let $U_i = X - C_i$. Then $\{ U_i \}_{i \geq 1}$ is a non-empty collection of open subsets of $X$, hence has a maximal element, say $U_m$. Hence, we have $C_m = C_{m + 1} = \cdots$.
+                        (iv) $\Rightarrow$ (i) Let $C_1 \supseteq C_2 \supseteq \cdots$ be a descending chain of closed subsets of $X$ and let $U_i = X - C_i$. Then $\{ U_i \}_{i \geq 1}$ is a non-empty collection of open subsets of $X$, hence has a maximal element, say $U_m$. Hence, we have $C_m = C_{m + 1} = \cdots$.
 
                   \item[(b)] Suppose $X$ is not quasi-compact so that the set $\Sigma$ of non-quasi-compact closed subsets of $X$ is non-empty. Let $Y$ be a minimal element in $\Sigma$. If $U$ is an open subset of $Y$, then $A = \overline{U}$ and $B = Y - U$  are closed subsets of $X$ contained in $Y$ such that $Y = A \cup B$. Since $Y$ is minimal amongst the set of non-quasi-compact closed subsets in $X$,  $A$ and $B$ must be compact; however, a finite union of compact sets is compact, a contradiction.
 

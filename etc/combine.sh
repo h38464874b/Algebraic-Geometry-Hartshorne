@@ -19,11 +19,11 @@ OUTPUT="$SCRIPT_DIR/Hartshorne-Solutions.pdf"
 cat > "$MASTER" <<'EOF'
 \documentclass[oneside,openany]{book}
 
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
+\input{preamble.tex}
 \usepackage{pdfpages}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tikz}
+
 
 % Replace original page numbers with continuous numbering
 \newcommand{\combinedpagefooter}{%

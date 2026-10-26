@@ -48,15 +48,15 @@
           \end{center}
           (a) is the pinch point, (b) is the conical double point, and (c) is the double line.
 
-    \item[\textbf{3.}] \textit{Multiplicities.} Let $Y \subseteq \A^2$ be a curve defined by the equation $f(x, y) = 0$. Let $P = (a, b)$ be a point of $\A^2$. Make a linear change of coordinates so that $P$ becomes the point $(0, 0)$. Then write $f$ as a sum $f = f_0 + f_1 + \cdots + f_d$, where $f_i$ is a homogenous polynomial of degree $i$ in $x$ and $y$. Then we define the \textit{multiplicity} of $P$ on $Y$, denoted $\mu_P(Y)$, to be the least $r$ such that $f_r \neq 0$. (Note that $P \in Y$ $\iff$ $\mu_P(Y) > 0$.) The linear factors of $f_r$ are called the \textit{tangent directions at} $P$.
+    \item[\textbf{3.}] \textit{Multiplicities.} Let $Y \subseteq \A^2$ be a curve defined by the equation $f(x, y) = 0$. Let $P = (a, b)$ be a point of $\A^2$. Make a linear change of coordinates so that $P$ becomes the point $(0, 0)$. Then write $f$ as a sum $f = f_0 + f_1 + \cdots + f_d$, where $f_i$ is a homogenous polynomial of degree $i$ in $x$ and $y$. Then we define the \textit{multiplicity} of $P$ on $Y$, denoted $\mu_P(Y)$, to be the least $r$ such that $f_r \neq 0$. (Note that $P \in Y$ $\Leftrightarrow$ $\mu_P(Y) > 0$.) The linear factors of $f_r$ are called the \textit{tangent directions at} $P$.
           \begin{itemize}
-              \item[(a)] Show that $\mu_P(Y) = 1$ $\iff$ $P$ is a nonsingular point of $Y$.
+              \item[(a)] Show that $\mu_P(Y) = 1$ $\Leftrightarrow$ $P$ is a nonsingular point of $Y$.
               \item[(b)] Find the multiplicity of each of the singular points in (Ex. 5.1) above.
           \end{itemize}
 
           \begin{proof} $ $ \vspace{0pt}
               \begin{itemize} [leftmargin=0cm]
-                  \item[(a)] Let $f'$ be the polynomial $f(x, y)$ after change of coordinates so that $P$ becomes the origin and let $O = (0, 0)$ be the origin. Then, $P$ is a nonsingular point of $Y$ $\iff$ $(\partial f / \partial x)(P), ~ (\partial f / \partial y)(P) \neq 0$ $\iff$ $(\partial f' / \partial x)(O), ~ (\partial f' / \partial y)(O) \neq 0$ $\iff$ $\partial f' / \partial x, ~ \partial f' / \partial y = \text{higher degree terms} + \text{constant}$ $\iff$ $f'$ has linear terms $\iff$ $\mu_P(Y) = 1$.
+                  \item[(a)] Let $f'$ be the polynomial $f(x, y)$ after change of coordinates so that $P$ becomes the origin and let $O = (0, 0)$ be the origin. Then, $P$ is a nonsingular point of $Y$ $\Leftrightarrow$ $(\partial f / \partial x)(P), ~ (\partial f / \partial y)(P) \neq 0$ $\Leftrightarrow$ $(\partial f' / \partial x)(O), ~ (\partial f' / \partial y)(O) \neq 0$ $\Leftrightarrow$ $\partial f' / \partial x, ~ \partial f' / \partial y = \text{higher degree terms} + \text{constant}$ $\Leftrightarrow$ $f'$ has linear terms $\Leftrightarrow$ $\mu_P(Y) = 1$.
 
                   \item[(b)] (a), (b), and (c) has multiplicity $2$, and (d) has multiplicity $3$ at $O$.
               \end{itemize}
