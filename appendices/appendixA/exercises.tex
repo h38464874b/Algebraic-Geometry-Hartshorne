@@ -26,6 +26,10 @@
       \item Let $X$ be a nonsingular projective variety of dimension $n$, and let $\Delta \subset X \times X$ be the diagonal.
       Show that $c_n(\fT_X) = \Delta^2$ in $A^n(X)$, under the natural isomorphism of $X$ with $\Delta$.
 
+      \begin{proof}
+            
+      \end{proof}
+
       \item Let $X$ be a nonsingular projective 3-fold, with Chern classes $c_1, c_2, c_3$.
       Show that
       \begin{equation*}
@@ -36,9 +40,62 @@
             \chi(\fO_X(D)) = \frac{1}{12}D.(D - K).(2D - K) + \frac{1}{12} D.c_2 + 1 - p_a.
       \end{equation*}
 
+      \begin{proof}
+           Let $\fE = \fO_X(D)$ for some divisor $D$.
+           Then
+           \begin{equation*}
+            \chern(\fE) = 1 + D + \frac{1}{2}D^2 + \frac{1}{6}D^3.
+           \end{equation*}
+           We denote by $c_1$, $c_2$, and $c_3$ the Chern classes of the tangent sheaf $\fT_X$.
+           Since $\fT_X$ is the dual of $\Omega_X$, and since $c_1(\Omega_X) = c_1(\wedge^3 \Omega_X)$ by (C5), and since $\wedge^3 \Omega_X = \omega_X$ is just $\fO_X(K)$, where $K$ is the canonical divisor, we see that $c_1(\fT_X) = -K$.
+           Using $c_1 = -K$ and $c_2, c_3$, we have
+           \begin{equation*}
+            \todd(\fT_X) = 1 - \frac{1}{2}K + \frac{1}{12}(K^2 + c_2) - \frac{1}{24}K.c_2.
+           \end{equation*}
+           We can write (4.1) as
+           \begin{align*}
+            \chi(\fO_X(D)) & = \deg\bigg( \bigg(1 + D + \frac{1}{2}D^2 + \frac{1}{6}D^3 \bigg) . \bigg( 1 - \frac{1}{2}K + \frac{1}{12}(K^2 + c_2) - \frac{1}{24}K.c_2 \bigg)\bigg)_3 \\
+            & = \frac{1}{6}D^3 - \frac{1}{4}D^2.K + \frac{1}{12}D.(K^2 + c_2) - \frac{1}{24}K.c_2 \\
+            & = \frac{1}{12}(2D^3 - 3D^2.K + D.K^2) + \frac{1}{12}D.c_2 - \frac{1}{24}K.c_2 \\
+            & = \frac{1}{12}D.(D - K).(2D - K) + \frac{1}{12}D.c_2 - \frac{1}{24}K.c_2.
+           \end{align*}
+           In particular, for $D = 0$, we find that
+           \begin{equation*}
+            \chi(\fO_X) = -\frac{1}{24}K.c_2 = \frac{1}{24}c_1.c_2,
+           \end{equation*}
+           and by definition of the arithmetic genus (III, Ex. 5.3), this says
+           \begin{equation*}
+            1 - p_a = \frac{1}{24}c_1.c_2.
+           \end{equation*}
+      \end{proof}
+
       \item Let $\fE$ be a locally free sheaf of rank 2 on $\P^3$, with Chern classes $c_1, c_2$.
       Since $A(\P^3) \cong \Z[h]/(h^4)$, we can think of $c_1$ and $c_2$ as integers.
       Show that $c_1 c_2 \equiv 0 \mod{2}$.
+
+      \begin{proof}
+           The exponential Chern character of $\fE$ is given by 
+           \begin{equation*}
+            \chern(\fE) = 2 + c_1 + \frac{1}{2}(c_1^2 - 2c_2) + \frac{1}{6}(c_1^3 - 3c_1c_2)
+           \end{equation*}
+           Following the computation in (4.1.3), the Chern polynomial of $\fT_{\P^3}$ is given by
+           \begin{equation*}
+            c_t(\fT_{\P^3}) = (1 + ht)^4 = 1 + 4ht + 6h^2t^2 + 4h^3t^3,
+           \end{equation*}
+           so the Todd class of $\fT_{\P^3}$ is given by
+           \begin{equation*}
+            \todd(\fT_{\P^3}) = 1 + 2h + \frac{11}{6}h^2 + h^3,
+           \end{equation*}
+           where we substituted $K = -4h$.
+           By (4.1), we have
+           \begin{align*}
+            \chi(\fE) & = \deg\bigg( \bigg( 2 + c_1 + \frac{1}{2}(c_1^2 - 2c_2) + \frac{1}{6}(c_1^3 - 3c_1c_2) \bigg).\bigg(1 + 2h + \frac{11}{6}h^2 + h^3\bigg)\bigg)_3 \\
+            & = 2 + \frac{11}{6}c_1 + c_1^2 - 2c_2 + \frac{1}{6}c_1^3 - \frac{1}{2}c_1c_2 \\
+            & = 1 + \binom{c_1 + 3}{3} - 2c_2 - \frac{1}{2}c_1c_2.
+           \end{align*}
+           \textit{A priori} $\chi(\fE)$ and every term above besides $\frac{1}{2}c_1c_2$ is an integer, so $\frac{1}{2}c_1c_2$ must be an integer as well.
+           Hence, $c_1c_2 \equiv 0 \mod{2}$.
+      \end{proof}
 
       \item \textit{Surfaces in $\P^4$}
       \begin{itemize}
@@ -48,7 +105,83 @@
             \item[(d)] Determine which of the rational ruled surfaces $X_e$, $e \geq 0$ (V, \SS 2), admit an embedding in $\P^4$.
       \end{itemize}
 
-      \item Use the fact that the tangent sheaf of an Abelian variety is free, to show that it is impossible to embed an Abelian 3-fold in $\P^5$.
+      \begin{proof} $ $ \vspace{0pt}
+           \begin{itemize} [leftmargin=0cm]
+            \item[(a)] The rational cubic scroll $X \subset \P^4$ is a surface of degree $d = 3$ and invariant $e = 1$, and it is embedded in $\P^4$ via the complete linear system associated to the divisor $H = C_0 + 2f$, where $C_0$ is the divisor class of a section such that $C_0^2 = -e = -1$ and $f$ is the divisor class of a fiber.
+            The canonical divisor is linearly equivalent to $K \sim -2C_0 - 3f$ (2.11), so that $$K^2 = 8, \quad H.K =-5,$$ and it has arithmetic genus $p_a(X) = 0$ (V, 2.5).
+            Combining everything,
+            \begin{equation*}
+                  d^2 - 10d - 5H.K - 2K^2 + 12 + 12p_a = 9 - 30 + 25 - 16 + 12 + 0 = 0,
+            \end{equation*}
+            so the formula of (4.1.3) indeed holds.
+
+            We compute some other invariants.
+            The second Chern class of $X$ can be computed using (4.1),
+            \begin{equation*}
+                  1 + p_a(X) = \frac{1}{12}(K^2 + c_2) \quad \implies \quad c_2 = 4.
+            \end{equation*}
+            Let $\fN$ be the normal sheaf of $X$ in $\P^4$.
+            Then, we have
+            \begin{align*}
+                  c_1(\fN) & = 5H + K = 3C_0 + 7f \\
+                  c_2(\fN) & = 10H^2 - c_2 + 5H.K + K^2 = 29.
+            \end{align*}
+
+            \item[(b)] If $X$ is a K3 surface, then $K \sim 0$ and $p_a(X) = 1$.
+            Plugging these values into the formula of (4.1.3) gives the quadratic polynomial
+            \begin{equation*}
+                  d^2 - 10d + 24 = 0,
+            \end{equation*}
+            so we must have $d =$ 4 or 6.
+
+            \item[(c)] The arithmetic genus of a K3 surface is $p_a(X) = -1$, and since $H$ is very ample and $12K \sim 0$, we have $H.K = 0$ and $K^2 = 0$.
+            The formula of (4.1.3) gives
+            \begin{equation*}
+                  d^2 - 10d = 0 \quad \implies \quad d = 10.
+            \end{equation*}
+           \end{itemize} 
+      \end{proof}
+
+      \item Use the fact that the tangent sheaf of an abelian variety is free, to show that it is impossible to embed an abelian 3-fold in $\P^5$.
+
+      \begin{proof}
+            Let $X$ be an abelian 3-fold, and suppose there exists an embedding $i : X \hookrightarrow \P^5$ of degree $d$.
+            In the Chow ring of $\P^5$, $X$ is equivalent to $d$ times a 3-plane $h^2$, where $h \in A^1(\P^5)$ is the class of a hyperplane, so $X.X = d^2h^4$.
+            On the other hand, the self-intersection formula (C5) says
+            \begin{equation*}
+                  i_*(c_2(\fN)) = X.X,
+            \end{equation*}
+            where $\fN$ is the normal sheaf of $X$ in $\P^5$.
+            There is an exact sequence
+            \[ \begin{tikzcd}
+                  0 \arrow[r] & \fT_X \arrow[r] & i^* \fT_{\P^5} \arrow[r] & \fN \arrow[r] & 0
+            \end{tikzcd} . \]
+            We use this sequence and the fact that $\fT_X \cong \fO_X^{\oplus 3}$ to compute $c_2(\fN)$, and thus get a contradiction.
+
+            First, we use the exact sequence
+            \[ \begin{tikzcd}
+                  0 \arrow[r] & \fO_{\P^5} \arrow[r] & \fO_{\P^5}(1)^{\oplus 6} \arrow[r] & \fT_{\P^5} \arrow[r] & 0
+            \end{tikzcd} , \]
+            so we see that
+            \begin{equation*}
+                  c_t(\fT_{\P^5}) = (1 + ht)^6 = 1 + 6ht + 15h^2t^2 + \cdots.
+            \end{equation*}
+            On the other hand,
+            \begin{equation*}
+                  c_t(\fT_X) = c_t(\fO_X^{\oplus 3}) = c_t(\fO_X)^3 = 1.
+            \end{equation*}
+            Therefore, denoting by $H \in A^1(X)$ the class of a hyperplane section of $X$, we have from the exact sequence above, using (C3), that
+            \begin{equation*}
+                  c_t(\fN) = 1 + 6Ht + 15H^2t^2
+            \end{equation*}
+            Comparing coefficients of $t^2$, we find that
+            \begin{equation*}
+                  c_2(\fN) = 15H^2 \quad \implies \quad i_* c_2(\fN) = 15 h^4.
+            \end{equation*}
+            But $d^2 = 15$ is impossible.
+            Hence, $X$ cannot be embedded in $\P^5$.
+      \end{proof}
+
 \end{enumerate}
 
 \end{document}

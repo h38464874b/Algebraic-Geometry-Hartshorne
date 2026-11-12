@@ -18,16 +18,33 @@
 
       \item Let $X = \P^n_k$, where $k = \F_q$, and show from the definition of the zeta function that
       \begin{equation*}
-            Z(\P^n_k, t) = \frac{1}{(1 - t)(1 - qt) \cdots (1 - q^n t)}.
+            Z(\P^n_k; t) = \frac{1}{(1 - t)(1 - qt) \cdots (1 - q^n t)}.
       \end{equation*}
       Verify the Weil conjectures for $\P^n_k$.
 
-      \item Let $X$ be a scheme of finite type over $\F_q$, and let $\A^1$ be teh affine lines.
+      \begin{proof}
+            We can write $\P^n_k$ as a union of locally closed subschemes
+            \begin{equation*}
+                  \P^n_k = \A^n_k \cup \A^{n - 1}_k \cup \cdots \cup \A^1_k \cup \A^0_k,
+            \end{equation*}
+            where we can take $\A^0_k = \spec{k}$ to have $\F_q$-coordinates.
+            Over any finite field and $n \geq 0$, $\A^n_k$ has $q^n$ number of $\F_q$-points.
+            Hence, $N_r(\A^n_k) = q^{rn}$, and it is easy to compute
+            \begin{equation*}
+                  Z(\A^n_k, t) = \exp\bigg(\sum_{r = 1}^\infty N_r(\A^n_k) \frac{t^r}{r}\bigg) = \exp\bigg(\sum_{r = 1}^\infty \frac{(q^n t)^r}{r}\bigg) = \frac{1}{1 - q^n t}.
+            \end{equation*}
+            Combining with (Ex. 1), we have
+            \begin{equation*}
+                  Z(\P^n_k; t) = \prod_{i = 0}^n Z(\A^i_k; t) = \frac{1}{(1 - t)(1 - qt) \cdots (1 - q^n t)}.
+            \end{equation*}
+      \end{proof}
+
+      \item Let $X$ be a scheme of finite type over $\F_q$, and let $\A^1$ be th affine line.
       Show that
       \begin{equation*}
             Z(X \times \A^1, t) = Z(X, qt).
       \end{equation*}
-      
+
       \item The \textit{Riemann zeta function} is defined as
       \begin{equation*}
             \zeta(s) = \prod \frac{1}{1 - p^{-s}},

@@ -11,10 +11,28 @@
 \begin{enumerate} [label=\textbf{\arabic*.}, leftmargin=0em]
 
     \item Let $f$ be a rational function on the surface $X$.
-          Show that it is possible to ``resolve the singularities of $f$'' in the following sense: there is a birational moprhism $g : X' \to X$ so that $f$ induces a morphism of $X'$ to $\P^1$.
+          Show that it is possible to ``resolve the singularities of $f$'' in the following sense: there is a birational morphism $g : X' \to X$ so that $f$ induces a morphism of $X'$ to $\P^1$.
 
           \begin{proof}
-              Let $f : X \to \P^1$ be a rational map, and write the divisor of $f$ as $(f) = \sum n_i C_i$.
+              Assume $f$ is nonconstant, and let $f : X \dashrightarrow \P^1$ be the rational map induced by $f$.
+              By (I, Ex. 4.2), there is a largest open set $U \subset X$ on which $f$ is represented by a morphism $\varphi : U \to \P^1$.
+              If $t$ is a point in $\P^1$, denote by $f^{-1}(t)$ the closure of $\varphi^{-1}(t)$ in $X$.
+              The proof of (5.1) follows through for any rational map of smooth projective varieties.
+              In particular, the locus of indeterminacy $Z = X - U$ of $f$ is a finite set of points, and the fibers $\varphi^{-1}(t) \subset U$ are nonempty of dimension 1 (II, Ex. 3.22).
+              Indeed, if $\varphi^{-1}(t)$ is empty for some $t$, then $\varphi$ factors through $\A^1 \hookrightarrow \P^1$, which implies the existence of a regular function on $U$.
+              This is not possible, because $\dim(X - U) = 0$, so every regular function on $U$ extends uniquely to a regular function on $X$, and since $X$ is projective, the only regular functions on $X$ are the constant ones.
+
+              Now, we claim that if $P$ is a closed point in $X$, then $P$ is a point of indeterminacy of $f$ if and only if $P$ is contained in two distinct fibers of $f$.
+              The reverse direction is clear by continuity, and conversely, if $P$ is a point contained in only one fiber $f^{-1}(t)$, then the map $\varphi' : U \cup \{ P \} \to \P^1$ defined by $\restr{\varphi'}{U} = \varphi$ and $\varphi'(P) = t$ is also a morphism representing $f$, so by assumption on $U$ being the largest open set for which $f$ is a morphism, $P$ must be in $U$.
+              Write the divisor of $f$ as $(f) = \sum n_i C_i$.
+              Applying the embedded resolution (3.9) to the curve $Y = \bigcup C_i$ gives a birational morphism $\pi : \tilde{X} \to X$ such that $\pi^{-1}(Y)$ is a divisor with normal crossings.
+              Let $\tilde{f} = f \circ \pi$, and let $\tilde{Z} \subset \tilde{X}$ be the locus of indeterminacy of $\tilde{f}$, which is also a finite set of points contained in $\pi^{-1}(Z)$.
+              Similarly define the fiber $\tilde{f}^{-1}(t) = \pi^{-1}(f^{-1}(t))$.
+              The divisor of $\tilde{f}$ can be written as a difference of effective divisors $(\tilde{f}) = E - D$, where $E = \sum a_i E_i$, $D = \sum b_j D_j$, every summand is an irreducible nonsingular curve, and whenever $E_i, D_j$ intersect at a point $P \in \tilde{X}$, the local equations form a part of a regular system of parameters at $P$.
+              The latter provision combined with (Ex. 3.2) implies that the strict transforms of $E_i$ and $D_j$ are disjoint after a sufficient number of blow ups of $\tilde{X}$ at $P$, and for the same reason as above, a point of intersection of $E_i, D_j$ must be a point in $\tilde{Z}$.
+              Let $\pi' : X' \to \tilde{X}$ be a composition of monoidal transformations so that $\pi'^{-1}(E)$ and $\pi'^{-1}(D)$ are disjoint, and let $f' = \tilde{f} \circ \pi'$.
+              If $\tilde{E}$ and $\tilde{D}$ are disjoint, then $\tilde{E}.\tilde{D} = 0$, and since any two fibers of $\tilde{f}$ are linearly equivalent with a possible intersection at a point in $\tilde{Z}$, the strict transforms of every fiber $\tilde{f}^{-1}(t)$ in $X'$ are also disjoint.
+              Hence, $f'$ is a morphism of $X'$ to $\P^1$.
           \end{proof}
 
           % \item Let $Y \cong \P^1$ be a curve in a surface $X$, with $Y^2 < 0$.
@@ -34,15 +52,71 @@
           Show that there is a finite sequence of elementary transformations (5.7.1) which transform $X$ into $X'$.
 
           \begin{proof}
+              Let $P$ be a point in $X$, and let $L$ be the fiber of $\pi$ containing $P$.
+              Consider the elementary transform of $X$ with center at $P$, which we denote by $\elm_P X$.
+              Consider the diagram
+              \[ \begin{tikzcd}
+                      & \tilde{X} \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"] &          \\
+                      X &                                                    & \elm_P X
+                  \end{tikzcd}, \]
+              where $\pi_1$ is the monoidal transformation of $X$ centered at $P$ with exceptional curve $E$, and if $\tilde{L}$ is the strict transform of $L$ on $\tilde{X}$, then $\pi_2$ is the contraction of $\tilde{L}$, i.e., $Q = \pi_2(\tilde{L})$ is a point.
+              Let $M = \pi_2(E)$, and let $D$ be a section of $\pi$ containing $P$.
+              By (3.6), if $\tilde{D}$ is the strict transform of $D$ on $\tilde{X}$, then $\tilde{D} \sim \pi_1^*D - E$, so if $D'$ is the strict transform of $D$ by $\elm_P$, then $D' \sim \pi_{2*}\tilde{D}$.
+              Also, $\pi_2$ is the monoidal transformation of $\elm_P X$ centered at $Q$, and $D'$ does not meet $Q$, so $\pi_2^*D' = \tilde{D}$ by (3.6).
+              Thus by (3.2), $D'^2 = \tilde{D}^2 = D^2 - 1.$
 
+              If $X$ has invariant $e$, then it is defined by the projective bundle $\P(\fE)$, where $\fE$ is a normalized locally free sheaf of rank 2, and $\bigwedge^2 \fE \cong \fO_C(\ge)$ for some divisor $\ge$ of degree $-e$ (2.9).
+              Let $C_0$ be the section of $\pi$ corresponding to the surjection $\fE \to \fO_C(\ge)$.
+              If $D \sim C_0 + (\gd - \ge)f$ is any section of $\pi$, then $\deg(\gd - \ge) \geq 0$ by the assumption that $\fE$ is normalized.
+              A consequence is $e \geq - D^2$, or expressed differently, $-e$ is the minimum value for the self-intersection of a section on a ruled surface.
+              Let $X_1$ be an elementary transform of $X$ centered at a point in $C_0$, and let $\tilde{C}_0$ be the strict transform of $C_0$.
+              If $X_1$ has invariant $e_1$, then it follows by the above that $e_1 \geq -\tilde{C}_0^2 = e + 1$.
+              Therefore, $X$ can be transformed into a geometrically ruled surface with arbitrarily high invariant.
+              By (2.12), $\fE$ is decomposable if $e > 2g - 2$, so it remains to prove the statement for geometrically ruled surfaces determined by decomposable locally free sheaves.
+              In fact, it suffices to show $X$ can be transformed to the trivial ruled surface $\P(\fO_C \oplus \fO_C) \cong C \times \P^1$.
+
+              Now, let us consider how $\fE$ behaves under elementary transformations of $X$ if $\fE = \fO_C \oplus \fO_C(\ge)$ and $e = -\deg{\ge} > 0$.
+              Ruled surfaces determined by decomposable locally free sheaves have two distinguished sections $C_0, C_1$ corresponding to the surjections of $\fE$ onto each summand $\fO_C(\ge), \fO_C$, respectively, such that $C_0^2 = -e$, $C_1^2 = e$, and $C_0 \cap C_1 = \emptyset$.
+              Let $P$ be a point in $X$ lying over $R = \pi(P) \in C$, and consider the elementary transform $X''$ of $X$ centered at $P$.
+              Following the notation of the above, we have a commutative diagram
+              \[ \begin{tikzcd}
+                      & \tilde{X} \arrow[ld, "\pi_1"']                     &                                       \\
+                      X &                                                    & X'' \arrow[lu, "\pi_2^{-1}"', dashed] \\
+                      & C \arrow[ru, "\sigma_i''"'] \arrow[lu, "\sigma_i"] &
+                  \end{tikzcd} , \]
+              where $\sigma_i, \sigma_i''$ are sections defining either $C_i, \tilde{C}_i$ for each $i = 0, 1$.
+              Let $\tilde{C}_0, \tilde{C}_1$ denote the strict transforms of $C_0, C_1$, respectively.
+              There are two cases we will consider, which are $P \in C_0$ or $P \in C_1$, and in either case, $\tilde{C}_0 \cap \tilde{C}_1 = \emptyset$, so $X''$ is decomposable by (Ex. 2.2).
+
+              \fbox{$P \in C_0$} We claim $X'' \cong \P(\fO_C \oplus\fO_C(\ge - R))$.
+              Under the identifications $\tilde{C}_i \cong C$ for each $i = 0, 1$ via $\sigma_i''$, we have the isomorphisms
+              \begin{equation*}
+                  \fO_{X''}(\tilde{C}_0) \otimes \fO_{\tilde{C}_0} \cong \fO_C(\ge - R), \quad \fO_{X''}(\tilde{C}_1) \otimes \fO_{\tilde{C}_1} \cong \fO_C.
+              \end{equation*}
+              Indeed, $\pi_2^{-1} \circ \sigma_0''$ is a morphism, and $\pi_2^{-1}$ is an isomorphism outside of the strict transform of the fiber containing $P$, so there is an isomorphism of invertible sheaves under the identification $\tilde{C}_0 \cong C$,
+              \begin{equation*}
+                  \fO_{X''}(\tilde{C}_0)  \otimes \fO_{\tilde{C}_0} \cong \sigma_0''^* \fO_{X''}(\tilde{C}_0) \cong (\pi_2^{-1} \circ \sigma_0'')^* \fO_{\tilde{X}}(\pi_1^*C_0 - E) \cong \fO_C(\ge - R),
+              \end{equation*}
+              and similarly for $\fO_{X''}(\tilde{C}_1) \otimes \fO_{\tilde{C}_1} \cong \fO_C$.
+              We conclude by the proof of (Ex. 2.2) that $X'' \cong \P(\fE'')$, where $\fE'' = \fO_C \oplus \fO_C(\ge - R)$.
+
+              \fbox{$P \in C_1$} We claim $X'' \cong \P(\fO_C \oplus \fO_C(\ge + R))$.
+              Similar to the previous case, we have the isomorphisms
+              \begin{equation*}
+                  \fO_{X''}(\tilde{C}_0) \otimes \fO_{\tilde{C}_0} \cong \fO_C(\ge), \quad \fO_{X''}(\tilde{C}_1) \otimes \fO_{\tilde{C}_1}\cong \fO_C(-R).
+              \end{equation*}
+              Therefore, $X'' \cong \P(\fE'')$, where $\fE'' = \fO_C(-R) \oplus \fO_C(\ge)$, which is isomorphic to the projective bundle of $\fO_C \oplus \fO_C(\ge + R)$.
+
+              If we write $\ge = \sum n_i P_i$, performing the appropriate elementary transforms centered at points in the fibers over $P_i$ will give a ruled surface $X'' = \P(\fE'')$ with $\fE'' = \fO_C \oplus \fO_C$.
+              Hence, any ruled surface over $C$ can be transformed to $C \times \P^1$ with a finite sequence of elementary transforms.
           \end{proof}
 
-    \item[\textbf{6.}] Let $X$ be a surface with function field $K$.
-          Show that every valuation ring $R$ of $K/k$ is one of the three kinds described in (II, Ex 4.12).
+          % \item[\textbf{6.}] Let $X$ be a surface with function field $K$.
+          %       Show that every valuation ring $R$ of $K/k$ is one of the three kinds described in (II, Ex 4.12).
 
-          \begin{proof}
+          %       \begin{proof}
 
-          \end{proof}
+          %       \end{proof}
 
           % \item Let $Y$ be an irreducible curve on a surface $X$, and suppose there is a morphism $f : X \to X_0$ to a projective variety $X_0$ of dimension 2, such that $f(Y)$ is a point $P$ and $f^{-1}(P) = Y$.
           % Then show that $Y^2 < 0$.
